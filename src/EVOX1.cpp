@@ -1,6 +1,36 @@
-#include <Evo.h>
+/**
+ * @file EVOX1.cpp
+ *
+ * @mainpage Doxygen Example Project
+ *
+ * @section description Description
+ * An example sketch demonstrating how to use Doxygen style comments for
+ * generating source code documentation with Doxygen.
+ *
+ * @section circuit Circuit
+ * - Red LED connected to pin D2.
+ * - Momentary push button connected to pin D3.
+ *
+ * @section libraries Libraries
+ * - Arduino_LSM6DS3 (https://github.com/arduino-libraries/Arduino_LSM6DS3)
+ *   - Interacts with on-board IMU.
+ *
+ * @section notes Notes
+ * - Comments are Doxygen compatible.
+ *
+ * @section todo TODO
+ * - Don't use Doxygen style formatting inside the body of a function.
+ *
+ * @section author Author
+ * - Created by John Woolsey on 03/12/2020.
+ * - Modified by John Woolsey on 03/16/2020.
+ *
+ * Copyright (c) 2025 TribalStudioz.  All rights reserved.
+ */
 
-void EVO::begin()
+#include <EVO.h>
+
+void EVOX1::begin()
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     display.begin();
@@ -10,14 +40,15 @@ void EVO::begin()
     setRGB(0, 0, 0);
 }
 
-float EVO::getBattery()
+float EVOX1::getBattery()
 {
     charger.wdReset();
     charger.setADC_EN(true);
     charger.pollAllRegs();
     return charger.getADC_VBAT();
 }
-float EVO::getTopBattery()
+
+float EVOX1::getTopBattery()
 {
     charger.wdReset();
     charger.setADC_EN(true);
@@ -25,7 +56,7 @@ float EVO::getTopBattery()
     return charger.getADC_VCELLTOP();
 }
 
-float EVO::getBottomBattery()
+float EVOX1::getBottomBattery()
 {
     charger.wdReset();
     charger.setADC_EN(true);
@@ -33,21 +64,20 @@ float EVO::getBottomBattery()
     return charger.getADC_VCELLBOT();
 }
 
-void EVO::playTone(uint frequency, int duration)
+void EVOX1::playTone(uint frequency, int duration)
 {
     pinMode(BUZZER_PIN, OUTPUT);
     tone(BUZZER_PIN, frequency, duration);
 }
 
-void EVO::clearDisplay()
+void EVOX1::clearDisplay()
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     display.clearBuffer();
 }
 
-void EVO::writeToDisplay(int value, int x, int y, bool clear, bool draw)
+void EVOX1::writeToDisplay(int value, int x, int y, bool clear, bool draw)
 {
-
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     if (clear)
     {
@@ -61,7 +91,8 @@ void EVO::writeToDisplay(int value, int x, int y, bool clear, bool draw)
         this->drawDisplay();
     }
 }
-void EVO::setFontSize(uint8_t size)
+
+void EVOX1::setFontSize(uint8_t size)
 {
     display.setFontPosTop();
     switch (size)
@@ -95,7 +126,7 @@ void EVO::setFontSize(uint8_t size)
     }
 }
 
-void EVO::writeToDisplay(double f, int x, int y, bool clear, bool draw)
+void EVOX1::writeToDisplay(double f, int x, int y, bool clear, bool draw)
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     if (clear)
@@ -110,7 +141,8 @@ void EVO::writeToDisplay(double f, int x, int y, bool clear, bool draw)
         this->drawDisplay();
     }
 }
-void EVO::writeToDisplay(const char *c, int x, int y, bool clear, bool draw)
+
+void EVOX1::writeToDisplay(const char *c, int x, int y, bool clear, bool draw)
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     if (clear)
@@ -124,26 +156,43 @@ void EVO::writeToDisplay(const char *c, int x, int y, bool clear, bool draw)
     }
 }
 
-void EVO::waitForButton()
+void EVOX1::waitForButton()
 {
     pinMode(BUTTON_PIN, INPUT_PULLUP);
     while (digitalRead(BUTTON_PIN))
         ;
 }
 
-void EVO::drawDisplay()
+void EVOX1::drawDisplay()
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     display.sendBuffer();
 }
 
-void EVO::setRGB(int r, int g, int b)
+void EVOX1::setRGB(int r, int g, int b)
 {
     rgb.setPixelColor(0, rgb.Color(r, g, b));
     rgb.show();
 }
 
-void EVO::selectI2CChannel(I2CChannel channel)
+void EVOX1::selectI2CChannel(I2CChannel channel)
 {
     i2CDevice.selectChannel(channel);
+}
+
+int EVOX1::scanI2CChannel(I2CChannel channel, uint8_t *addresses, int maxAddresses = 5)
+{
+    int count = 0;
+    selectI2CChannel(channel);
+
+    for (uint8_t address = 1; address < 127; ++address)
+    {
+        if (count < maxAddresses)
+            i2CDevice.isI2CConnected(address);
+        {
+            addresses[count] = address;
+            count++;
+        }
+    }
+    return count;
 }
