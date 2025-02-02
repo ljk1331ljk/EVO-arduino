@@ -10,33 +10,33 @@ int clamp(int value, int min, int max)
         return value;
 }
 
-EvoMotor::EvoMotor(MotorType motorType, MotorPort motorPort, bool motorFlip)
+EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
 {
     switch (motorType)
     {
-    case EV3:
-        _min= -4000;
-        _max = 4000;
-        _countPerRevolution = 720;
-        _kp = 5;
-        _kd = 30;
+    case GENERICWITHENCODER:
+        setParameters(motorPort, motorFlip, -4000, 4000, true, 360, 5, 30, 30);
         break;
-    case ITER:
-        _min = -5000;
-        _max = 5000;
-        _countPerRevolution = 1204;
-        _kp = 10;
-        _kd = 50;
+    case GENERISWITHOUTENCODER:
+        setParameters(motorPort, motorFlip, -4000, 4000, false);
         break;
-    case Default:
-        _min = -4000;
-        _max = 4000;
-        _countPerRevolution = 360;
-        _kp = 5;
-        _kd = 30;
+    case EV3LargeMotor:
+        setParameters(motorPort, motorFlip, -4000, 4000, true, 720, 5, 30, 30);
+        break;
+    case EV3MediumMotor:
+        setParameters(motorPort, motorFlip, -4000, 4000, true, 720, 5, 30, 30);
+        break;
+    case GeekServoDCMotor:
+        setParameters(motorPort, motorFlip, -4000, 4000, false);
+        break;
+    case ITERSpeed:
+        setParameters(motorPort, motorFlip, -4000, 4000, true, 1204, 5, 30, 30);
+        break;
+    case ITERTorque:
+        setParameters(motorPort, motorFlip, -4000, 4000, true, 1204, 5, 30, 30);
         break;
     }
-    
+
     _motorPort = motorPort;
     _motorFlip = motorFlip;
     switch (_motorPort)
@@ -67,12 +67,27 @@ EvoMotor::EvoMotor(MotorType motorType, MotorPort motorPort, bool motorFlip)
         break;
     }
 }
+
+void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int minSpeed, int maxSpeed, bool encoderAvailable, int countPerRevolution, float kp, float ki, float kd)
+{
+    _motorFlip = motorFlip;
+    _motorPort = motorPort;
+    _minSpeed = minSpeed;
+    _maxSpeed = maxSpeed;
+    _countPerRevolution = countPerRevolution;
+    _kp = kp;
+    _ki = ki;
+    _kd = kd;
+    _encoderAvailable = encoderAvailable;
+}
+
 void EvoMotor::begin()
 {
-    
     driver.begin();
     driver.setPWM(_motorPins.power1, 0, 4096);
     driver.setPWM(_motorPins.power2, 0, 4096);
+    setStopBehaviour(BRAKE);
+    setStallThresholds(50, 10);
     encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
     encoder.clearCount();
     xTaskCreate(motorControlTask, "Motor Control Task", 2048, this, 1, NULL);
@@ -84,7 +99,7 @@ void EvoMotor::setSpeedLimit(int minSpeed, int maxSpeed)
     _maxSpeed = maxSpeed;
 }
 
-void EvoMotor::getSpeedLimit(int* minSpeed, int* maxSpeed)
+void EvoMotor::getSpeedLimit(int *minSpeed, int *maxSpeed)
 {
     *minSpeed = _minSpeed;
     *maxSpeed = _maxSpeed;
@@ -92,10 +107,10 @@ void EvoMotor::getSpeedLimit(int* minSpeed, int* maxSpeed)
 
 void EvoMotor::setEncoderAvailable(bool encoderAvailable)
 {
-    _encoderAvailable = encoderAvailable;    
+    _encoderAvailable = encoderAvailable;
 }
-    
-//Method to get encoder availability
+
+// Method to get encoder availability
 bool EvoMotor::isEncoderAvailable()
 {
     return _encoderAvailable;
@@ -106,22 +121,22 @@ void EvoMotor::setCountPerRevolution(int countPerRevolution)
     _countPerRevolution = countPerRevolution;
 }
 
-//Method to get encoder count per revolution
+// Method to get encoder count per revolution
 int EvoMotor::getCountPerRevolution()
-{ 
-    return _countPerRevolution;    
+{
+    return _countPerRevolution;
 }
 
 // Method to get the encoder count
 int EvoMotor::getCount()
 {
-    return encoder.getConut();
+    return encoder.getCount();
 }
 
 // Method to set the encoder count
 void EvoMotor::setCount(int count)
 {
-    encoder.setCount(count);    
+    encoder.setCount(count);
 }
 
 // Method to reset the encoder count
@@ -144,45 +159,46 @@ void EvoMotor::resetAngle()
 
 void EvoMotor::setAngle(int angle)
 {
-    encoder.setCount(angle*_countPerRevolution/360);
+    encoder.setCount(angle * _countPerRevolution / 360);
 }
 
 // Method returns if the motor is stalled
-bool EvoMotor::stalled(){
+bool EvoMotor::stalled()
+{
     return _stalled;
 }
-
 
 // Method to set the motor stall thersholds
 void EvoMotor::setStallThresholds(int timems, int count)
 {
     _stallTime = timems;
-    _stallcountThreshold = count;
+    _stallCountThreshold = count;
 }
 
 // Method to stop the motor
 void EvoMotor::setStopBehaviour(MotorState motorStopState)
 {
-    _motorStopState = motorStopState;    
+    _motorStopState = motorStopState;
 }
 
-
 // Method to stop the motor using motorStopState
-void EvoMotor::stop();
-    switch(_motorStopState)
+void EvoMotor::stop()
+{
+    switch (_motorStopState)
     {
-        case BRAKE:
-            brake();
-            break;
-        case COAST:
-            coast();
-            break;
-        case HOLD:
-            hold();
-            break;
-        default:
-            brake();
+    case BRAKE:
+        brake();
+        break;
+    case COAST:
+        coast();
+        break;
+    case HOLD:
+        hold();
+        break;
+    default:
+        brake();
     }
+}
 // Method to stop the motor
 void EvoMotor::coast()
 {
@@ -191,6 +207,13 @@ void EvoMotor::coast()
 
 // Method to brake the motor
 void EvoMotor::brake()
+{
+    this->_motorState = BRAKE;
+    driver.setPWM(_motorPins.power1, 4096, 0);
+    driver.setPWM(_motorPins.power2, 4096, 0);
+}
+
+void EvoMotor::hold()
 {
     this->resetAngle();
     this->_targetAngle = 0;
@@ -224,13 +247,22 @@ void EvoMotor::run(int speed)
     vTaskDelay(1 / portTICK_PERIOD_MS);
 }
 
-
 // Method to run the motor for a specified number of degrees
 void EvoMotor::runAngle(int speed, int angle)
 {
     this->resetAngle();
-    this->_motorState = RUN;
-    while (abs(this->getAngle()) < degrees);
+    this->run(speed);
+    while (abs(this->getAngle()) < angle)
+        ;
+    this->stop();
+}
+
+void EvoMotor::runTime(int speed, int timeMS)
+{
+    this->run(speed);
+    int timeNow = millis();
+    while ((millis() - timeNow) < timeMS)
+        ;
     this->stop();
 }
 
@@ -242,7 +274,7 @@ void EvoMotor::runTarget(int speed, int angle, bool blocking)
     this->_motorState = TARGET;
     if (blocking)
     {
-        while ((abs(this->getAngle()) - degrees) < 2)
+        while ((abs(this->getAngle()) - this->_targetAngle) < 2)
             ;
     }
 }
@@ -250,43 +282,57 @@ void EvoMotor::runTarget(int speed, int angle, bool blocking)
 void EvoMotor::runUntilStalled(int speed)
 {
     this->run(speed);
-    while(!this->_stalled);
+    delay(_stallTime * 2);
+    _stalled = false;
+    while (!this->_stalled)
+    {
+        vTaskDelay(1 / portTICK_PERIOD_MS);
+    }
     this->stop();
 }
 
 void EvoMotor::motorControlTask(void *parameter)
 {
-    EvoMotor *motor = (EvoMotor *)parameter;
+    EvoMotor *motor = static_cast<EvoMotor *>(parameter);
     int _motorSpeed;
     int _error;
-    int encoder, prevencoder, lastreadtime = 0;
+    int encoder, prevencoder = 0, lastreadtime = 0;
     int _measuredSpeed;
+    int timeNow, lastReadTime = 0;
     for (;;)
     {
         encoder = motor->getAngle();
         switch (motor->_motorState)
         {
         case BRAKE:
-            motor->move((encoder - motor->_targetAngle) * -30);
             break;
         case TARGET:
             _error = encoder - motor->_targetAngle;
-            _motorSpeed = clamp(error * motor->_kp * -1, motor->_targetSpeed * -1, motor->_targetSpeed);
+            _motorSpeed = clamp(_error * motor->_kp * -1, motor->_targetSpeed * -1, motor->_targetSpeed);
             motor->move(_motorSpeed);
             break;
         case COAST:
             motor->move(0);
             break;
         case RUN:
-            timenow = millis();
-            if ((timenow - lastreadtime)>motor->_stallTime)
+            timeNow = millis();
+            if ((timeNow - lastReadTime) > motor->_stallTime)
             {
-                if ((encoder - prevencoder) > motor->_stallcountThreshold)
+                Serial.print(abs(encoder - prevencoder));
+                Serial.print(" ");
+                Serial.print(motor->_stallCountThreshold);
+                Serial.print(" ");
+                Serial.println(motor->_stalled);
+                if (abs(encoder - prevencoder) < motor->_stallCountThreshold)
                 {
                     motor->_stalled = true;
-                } else {
+                }
+                else
+                {
                     motor->_stalled = false;
                 }
+                lastReadTime = timeNow;
+                prevencoder = encoder;
             }
             break;
         }
