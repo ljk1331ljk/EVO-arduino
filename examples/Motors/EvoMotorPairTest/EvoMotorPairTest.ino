@@ -2,7 +2,7 @@
 #include <EvoMotor.h>
 #include <EvoMotorPair.h>
 
-EVO evo;
+EVOX1 evo;
 EvoMotor left(M1, true);
 EvoMotor right(M4);
 EvoMotorPair robot(&left, &right);
