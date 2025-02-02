@@ -163,7 +163,7 @@ void EvoMotor::setAngle(int angle)
 }
 
 // Method returns if the motor is stalled
-bool EvoMotor::stalled()
+bool EvoMotor::isStalled()
 {
     return _stalled;
 }
@@ -253,7 +253,8 @@ void EvoMotor::runAngle(int speed, int angle)
     this->resetAngle();
     this->run(speed);
     while (abs(this->getAngle()) < angle)
-        ;
+        vTaskDelay(1);
+    ;
     this->stop();
 }
 
@@ -262,7 +263,9 @@ void EvoMotor::runTime(int speed, int timeMS)
     this->run(speed);
     int timeNow = millis();
     while ((millis() - timeNow) < timeMS)
-        ;
+    {
+        vTaskDelay(1);
+    }
     this->stop();
 }
 
@@ -275,7 +278,9 @@ void EvoMotor::runTarget(int speed, int angle, bool blocking)
     if (blocking)
     {
         while ((abs(this->getAngle()) - this->_targetAngle) < 2)
-            ;
+        {
+            vTaskDelay(1);
+        }
     }
 }
 
@@ -286,7 +291,7 @@ void EvoMotor::runUntilStalled(int speed)
     _stalled = false;
     while (!this->_stalled)
     {
-        vTaskDelay(1 / portTICK_PERIOD_MS);
+        vTaskDelay(1);
     }
     this->stop();
 }

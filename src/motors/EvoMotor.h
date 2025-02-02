@@ -112,7 +112,7 @@ public:
     void resetAngle();
 
     // Method returns if the motor is stalled
-    bool stalled();
+    bool isStalled();
 
     // Method to set the motor stall thersholds
     void setStallThresholds(int timems, int count);
