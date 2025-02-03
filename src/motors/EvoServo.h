@@ -10,7 +10,6 @@ enum ServoType
     GeekServo360Grey,    // Grey
     GeekServo360Orange,  // Orange
     GeekServoContinuous, // Green
-
 };
 
 enum ServoChannel
@@ -30,33 +29,7 @@ class EvoServo
 {
 
 public:
-    EvoServo(ServoChannel servoChannel, ServoType servoType = Default)
-    {
-        _servoChannel = static_cast<uint8_t>(servoChannel);
-        switch (servoType)
-        {
-        case SG90:
-            setPulse(300, 1200);
-            setRange(0, 180);
-            break;
-        case GeekServo360Grey:
-            setPulse(200, 980);
-            setRange(0, 360);
-            break;
-        case GeekServo360Orange:
-            setPulse(200, 980);
-            setRange(0, 360);
-            break;
-        case GeekServoContinuous:
-            setPulse(180, 1040);
-            setRange(-100, 100);
-            break;
-        case Default:
-            setPulse(300, 1200);
-            setRange(0, 180);
-            break;
-        }
-    }
+    EvoServo(ServoChannel servoChannel, ServoType servoType = Default);
     void begin();
     void setPulse(int minPulse, int maxPulse);
     void setRange(int minRange, int maxRange);
