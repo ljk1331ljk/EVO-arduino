@@ -2,15 +2,17 @@
 
 EVOX1 evo;
 
-EvoMotor motor(M4, GENERICWITHENCODER, true);
-/* available motor types
+EvoMotor motor(M3, EVOMotor100, true);
+/* Available motor types
   GENERICWITHENCODER,
   GENERISWITHOUTENCODER,
   EV3LargeMotor,
   EV3MediumMotor,
   GeekServoDCMotor,
   ITERSpeed,
-  ITERTorque
+  ITERTorque,
+  EVOMotor300,
+  EVOMotor100
 */
 void setup()
 {
@@ -22,19 +24,22 @@ void setup()
 
   evo.waitForButton();
 
-  motor.runDegrees(4000);
+  motor.runAngle(4000, 360);
   delay(1000);
-  motor.brake();
-  evo.waitForButton();
-  motor.run(-4000);
-  delay(2000);
+  motor.runTime(4000, 1000);
+  delay(1000);
+  motor.resetAngle();
+  motor.runTarget(2000, -360, true);
+  delay(1000);
+  motor.runUntilStalled(2000);
+  delay(1000);
   motor.coast();
-  evo.playTone(300, 200);
 }
 
 void loop()
 {
   evo.clearDisplay();
   evo.writeToDisplay(motor.getAngle(), 0, 0);
+  evo.writeToDisplay(motor.getCount(), 0, 8);
   evo.drawDisplay();
 }
