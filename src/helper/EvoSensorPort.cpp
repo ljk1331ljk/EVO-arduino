@@ -44,7 +44,7 @@ bool EvoSensorPort::begin(int retries)
         this,
         1,
         &_sensorHandle, // Task handle
-        0);
+        1);
     int timeout = 10000;
     int timenow = millis();
     while (millis() - timenow < timeout)
@@ -53,6 +53,7 @@ bool EvoSensorPort::begin(int retries)
         {
             return true;
         }
+        vTaskDelay(1);
     }
     Serial.println("begin timeout");
     return false;
@@ -73,6 +74,7 @@ void EvoSensorPort::sensorThread(void *parameter)
         {
             sensor->sensorCommThread();
         }
+        vTaskDelay(1);
     }
 }
 
