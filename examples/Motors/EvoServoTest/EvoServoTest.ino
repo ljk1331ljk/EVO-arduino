@@ -1,4 +1,4 @@
-#include <EVO.h>
+#include <Evo.h>
 
 EVOX1 evo;
 EvoServo ser(SERVO1, GeekServo360Grey);
