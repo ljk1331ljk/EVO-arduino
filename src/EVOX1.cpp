@@ -28,7 +28,7 @@
  * Copyright (c) 2025 TribalStudioz.  All rights reserved.
  */
 
-#include <EVO.h>
+#include <Evo.h>
 
 void EVOX1::begin()
 {
