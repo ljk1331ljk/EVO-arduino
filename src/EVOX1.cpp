@@ -28,7 +28,7 @@
  * Copyright (c) 2025 TribalStudioz.  All rights reserved.
  */
 
-#include <EVO.h>
+#include <Evo.h>
 
 void EVOX1::begin()
 {
@@ -66,7 +66,6 @@ float EVOX1::getBottomBattery()
 
 void EVOX1::playTone(uint frequency, int duration)
 {
-    pinMode(BUZZER_PIN, OUTPUT);
     tone(BUZZER_PIN, frequency, duration);
 }
 
@@ -160,6 +159,8 @@ void EVOX1::waitForButton()
 {
     pinMode(BUTTON_PIN, INPUT_PULLUP);
     while (digitalRead(BUTTON_PIN))
+        ;
+    while (!digitalRead(BUTTON_PIN))
         ;
 }
 
