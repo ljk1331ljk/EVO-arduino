@@ -145,6 +145,78 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
     }
 }
 
+void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brake)
+{
+    _m1->resetAngle();
+    _m2->resetAngle();
+    int leftDir, rightDir;
+    float leftPowerRatio, rightPowerRatio;
+    int left = _minSpeed;
+    int right = _minSpeed;
+    int degToDecel, degError, pDegError = 0;
+    int PSync, DSync;
+
+    leftDir = leftSpeed == 0 ? 0 : (leftSpeed > 0 ? 1 : -1);
+    rightDir = rightSpeed == 0 ? 0 : (rightSpeed > 0 ? 1 : -1);
+    if (leftSpeed != 0 && rightSpeed != 0)
+    {
+        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs(rightSpeed / leftSpeed);
+        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs(leftSpeed / rightSpeed) : 1;
+    }
+    else
+    {
+        leftPowerRatio = leftSpeed == 0 ? 0 : 1;
+        rightPowerRatio = leftSpeed == 0 ? 1 : 0;
+    }
+
+    int currentLeftSpeed, currentRightSpeed;
+    unsigned long timenow = millis();
+    while ((millis() - timenow) < timems)
+    {
+        if (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < _accelDeg)
+        {
+            if (leftSpeed == 0)
+            {
+                currentLeftSpeed = 0;
+                currentRightSpeed = right * rightDir;
+                right += _accel;
+            }
+            else if (rightSpeed == 0)
+            {
+                currentLeftSpeed = left * leftDir;
+                currentRightSpeed = 0;
+                left += _accel;
+            }
+            else
+            {
+                if (left < abs(leftSpeed) && right < abs(rightSpeed))
+                {
+                    left += _accel;
+                    right += _accel;
+                }
+                pDegError = degError;
+            }
+        }
+        degError = abs(_m1->getAngle() * leftPowerRatio) - abs(_m2->getAngle() * rightPowerRatio);
+        PSync = degError * _kpSync;
+        DSync = (degError - pDegError) * _kdSync;
+        currentLeftSpeed = ((left - ((PSync + DSync)) * rightPowerRatio)) * leftDir;
+        currentRightSpeed = ((right + ((PSync + DSync)) * leftPowerRatio)) * rightDir;
+        _m1->run(currentLeftSpeed);
+        _m2->run(currentRightSpeed);
+    }
+    if (brake)
+    {
+        _m1->brake();
+        _m2->brake();
+    }
+    else
+    {
+        _m1->coast();
+        _m2->coast();
+    }
+}
+
 void EvoMotorPair::brake()
 {
     _m1->brake();

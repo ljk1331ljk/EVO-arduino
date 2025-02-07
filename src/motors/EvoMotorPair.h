@@ -22,8 +22,10 @@ public:
 
     void move(int leftSpeed, int rightSpeed);
     void moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool brake = true);
+    void moveTime(int leftSpeed, int rightSpeed, int timems, bool brake = true);
     void brake();
     void coast();
+
     void resetAngle();
     int getAngle();
 };

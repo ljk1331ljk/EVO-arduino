@@ -1,7 +1,7 @@
 #ifndef EVOMOTOR_H
 #define EVOMOTOR_H
-#include "../helper/EvoPWMDriver.h "
-#include "../helper/X1pins.h "
+#include "../helper/EvoPWMDriver.h"
+#include "../helper/X1pins.h"
 #include <ESP32Encoder.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
@@ -22,7 +22,9 @@ enum MotorType
     EV3MediumMotor,
     GeekServoDCMotor,
     ITERSpeed,
-    ITERTorque
+    ITERTorque,
+    EVOMotor300,
+    EVOMotor100
 };
 
 enum MotorPort
@@ -66,7 +68,7 @@ private:
 
     static void motorControlTask(void *parameter);
     void move(int speed);
-    void setParameters(MotorPort motorPort, bool motorFlip, int minSpeed, int maxSpeed, bool encoderAvailable, int countPerRevolution = 0, float kp = 0, float ki = 0, float kd = 0);
+    void setParameters(MotorPort motorPort, bool motorFlip, int minSpeed, int maxSpeed, bool encoderAvailable, int countPerRevolution = 0);
 
 public:
     // Constructor with port and positive direction
@@ -115,7 +117,7 @@ public:
     bool isStalled();
 
     // Method to set the motor stall thersholds
-    void setStallThresholds(int timems, int count);
+    void setStallThresholds(int timems, int angle);
 
     // Method to stop the motor
     void setStopBehaviour(MotorState motorStopState);
