@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_6adb56cee76d6d026f8f38e703b50393" kind="dir">
+    <compoundname>src/motors</compoundname>
+    <innerfile refid="_evo_motor_8cpp">EvoMotor.cpp</innerfile>
+    <innerfile refid="_evo_motor_8h">EvoMotor.h</innerfile>
+    <innerfile refid="_evo_motor_pair_8cpp">EvoMotorPair.cpp</innerfile>
+    <innerfile refid="_evo_motor_pair_8h">EvoMotorPair.h</innerfile>
+    <innerfile refid="_evo_servo_8cpp">EvoServo.cpp</innerfile>
+    <innerfile refid="_evo_servo_8h">EvoServo.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/motors/"/>
+  </compounddef>
+</doxygen>

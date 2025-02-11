@@ -1,0 +1,43 @@
+\doxysection{Evo\+TCS34725.\+h}
+\hypertarget{_evo_t_c_s34725_8h_source}{}\label{_evo_t_c_s34725_8h_source}\index{src/sensors/EvoTCS34725.h@{src/sensors/EvoTCS34725.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVO\_TCS34725\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVO\_TCS34725\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../helper/EvoI2CDevice.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Adafruit\_TCS34725.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }EvoTCS34725}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ Adafruit\_TCS34725\ tcs;}
+\DoxyCodeLine{00011\ \ \ \ \ I2CChannel\ \_channel;}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_i2_c_device}{I2CDevice}}\ \&i2CDevice\ =\ I2CDevice::getInstance();}
+\DoxyCodeLine{00013\ \ \ \ \ uint8\_t\ \_tcs34725IntegrationTime\ =\ TCS34725\_INTEGRATIONTIME\_2\_4MS;}
+\DoxyCodeLine{00014\ \ \ \ \ tcs34725Gain\_t\ \_tcs34725Gain\ =\ TCS34725\_GAIN\_16X;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Constructor\ with\ port\ and\ positive\ direction}}
+\DoxyCodeLine{00018\ \ \ \ \ EvoTCS34725(I2CChannel\ channel)\ :\ tcs(TCS34725\_INTEGRATIONTIME\_2\_4MS,\ TCS34725\_GAIN\_16X)}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_channel\ =\ channel;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ begin();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ setIntegrationTime(uint8\_t\ it);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ setGain(tcs34725Gain\_t\ gain);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ getRGB(\textcolor{keywordtype}{float}\ *r,\ \textcolor{keywordtype}{float}\ *g,\ \textcolor{keywordtype}{float}\ *b);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ getRawRGBC(uint16\_t\ *r,\ uint16\_t\ *g,\ uint16\_t\ *b,\ uint16\_t\ *c);}
+\DoxyCodeLine{00029\ \ \ \ \ uint16\_t\ getRawRed();}
+\DoxyCodeLine{00030\ \ \ \ \ uint16\_t\ getRawGreen();}
+\DoxyCodeLine{00031\ \ \ \ \ uint16\_t\ getRawBlue();}
+\DoxyCodeLine{00032\ \ \ \ \ uint16\_t\ getRawClear();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{float}\ getRed();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ getGreen();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ getBlue();}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

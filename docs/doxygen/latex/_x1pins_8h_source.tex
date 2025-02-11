@@ -1,0 +1,120 @@
+\doxysection{X1pins.\+h}
+\hypertarget{_x1pins_8h_source}{}\label{_x1pins_8h_source}\index{src/helper/X1pins.h@{src/helper/X1pins.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ X1PINS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ X1PINS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ V3\_0}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifdef\ V3\_0}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ LEGO\ Sensor\ pins}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ S11\ 10}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ S12\ 9}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ S21\ 8}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ S22\ 3}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ S31\ 7}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ S32\ 6}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ S41\ 5}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ S42\ 4}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ GPIO1\ 10}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ GPIO2\ 9}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ GPIO3\ 8}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ GPIO4\ 3}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ GPIO5\ 7}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ GPIO6\ 6}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ GPIO7\ 5}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ GPIO8\ 4}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Motor\ pins}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ TACH41\ 42}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ TACH42\ 41}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ TACH31\ 40}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ TACH32\ 39}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ TACH21\ 38}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ TACH22\ 48}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ TACH11\ 47}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ TACH12\ 21}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ Through\ PCA9685PW}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ MOTOR21\ 13}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ MOTOR22\ 12}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ MOTOR11\ 14}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ MOTOR12\ 15}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MOTOR41\ 9}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ MOTOR42\ 8}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MOTOR31\ 11}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ MOTOR32\ 10}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 11}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ BUTTON\_PIN\ 14}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ PIXEL\_PIN\ 14}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ I2C}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ SDA0\_PIN\ 1}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ SCL0\_PIN\ 2}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ TCA9548A\_ADDR\ (0x70)}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ SSD1309\_ADDR\ (0x3C)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SSD1309\_CHANNEL\ I2C8}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ SDA1\_PIN\ 12}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ SCL1\_PIN\ 13}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ BATTERY\_CHARGER\_ADDRESS\ (0x6A)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ PCA9685PW\_ADDRESS\ (0x40)}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ V2.0}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ S11\ 41}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ S12\ 42}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ S21\ 39}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ S22\ 40}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ S31\ 38}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ S32\ 48}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ S41\ 47}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ S42\ 21}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ Motor\ pins}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ TACH41\ 4}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ TACH42\ 5}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ TACH31\ 6}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ TACH32\ 7}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ TACH21\ 15}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ TACH22\ 16}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ TACH11\ 8}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ TACH12\ 9}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ Through\ PCA9685PW}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ MOTOR11\ 8}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ MOTOR12\ 9}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ MOTOR21\ 10}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ MOTOR22\ 11}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ MOTOR31\ 12}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ MOTOR32\ 13}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ MOTOR41\ 14}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ MOTOR42\ 15}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ BUZZER\_PIN\ 14}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ PIXEL\_PIN\ 10}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ I2C}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ SDA0\_PIN\ 1}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ SCL0\_PIN\ 2}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ TCA9548A\_ADDR\ (0x70)}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ SSD1309\_ADDR\ (0x3C)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ SSD1309\_CHANNEL\ I2C8}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ SDA1\_PIN\ 12}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ SCL1\_PIN\ 13}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ BATTERY\_CHARGER\_ADDRESS\ (0x6A)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ PCA9685PW\_ADDRESS\ (0x40)}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

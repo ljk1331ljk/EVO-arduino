@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Doxygen Example Project</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1description">
+<title>Description</title><para>An example sketch demonstrating how to use Doxygen style comments for generating source code documentation with Doxygen.</para>
+</sect1>
+<sect1 id="index_1circuit">
+<title>Circuit</title><para><itemizedlist>
+<listitem><para>Red LED connected to pin D2.</para>
+</listitem><listitem><para>Momentary push button connected to pin D3.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1libraries">
+<title>Libraries</title><para><itemizedlist>
+<listitem><para>Arduino_LSM6DS3 (<ulink url="https://github.com/arduino-libraries/Arduino_LSM6DS3">https://github.com/arduino-libraries/Arduino_LSM6DS3</ulink>)<itemizedlist>
+<listitem><para>Interacts with on-board IMU.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1notes">
+<title>Notes</title><para><itemizedlist>
+<listitem><para>Comments are Doxygen compatible.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1todo">
+<title>TODO</title><para><itemizedlist>
+<listitem><para>Don&apos;t use Doxygen style formatting inside the body of a function.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1author">
+<title>Author</title><para><itemizedlist>
+<listitem><para>Created by John Woolsey on 03/12/2020.</para>
+</listitem><listitem><para>Modified by John Woolsey on 03/16/2020.</para>
+</listitem></itemizedlist>
+</para>
+<para>Copyright (c) 2025 TribalStudioz. All rights reserved. </para>
+</sect1>
+    </detaileddescription>
+    <location file="src/EVOX1.cpp"/>
+  </compounddef>
+</doxygen>

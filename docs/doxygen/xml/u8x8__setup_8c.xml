@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="u8x8__setup_8c" kind="file" language="C++">
+    <compoundname>u8x8_setup.c</compoundname>
+    <includes refid="u8x8_8h" local="yes">u8x8.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>u8x8.h</label>
+        <link refid="u8x8_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/helper/U8g2/clib/u8x8_setup.c</label>
+        <link refid="u8x8__setup_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>limits.h</label>
+      </node>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5">
+        <label>stddef.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="u8x8__setup_8c_1a4218082950b7d62e8cd2fc47fe59c0e2" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="structu8x8__display__info__struct" kindref="compound">u8x8_display_info_t</ref></type>
+        <definition>const u8x8_display_info_t u8x8_null_display_info</definition>
+        <argsstring></argsstring>
+        <name>u8x8_null_display_info</name>
+        <initializer>=
+{
+   0,
+   1,
+  
+   0,
+   0,
+   0, 
+   0, 
+   0,		
+   0,	
+   4000000UL,	
+   0,		
+   4,
+   0,
+   0,
+   1,		
+   1,
+   0,
+   0,
+   8,
+   8
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_setup.c" line="47" column="34" bodyfile="src/helper/U8g2/clib/u8x8_setup.c" bodystart="47" bodyend="69"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="u8x8__setup_8c_1a247ce363164c2b70f8590b17b5e960bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t u8x8_dummy_cb</definition>
+        <argsstring>(U8X8_UNUSED u8x8_t *u8x8, U8X8_UNUSED uint8_t msg, U8X8_UNUSED uint8_t arg_int, U8X8_UNUSED void *arg_ptr)</argsstring>
+        <name>u8x8_dummy_cb</name>
+        <param>
+          <type>U8X8_UNUSED <ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>U8X8_UNUSED uint8_t</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>U8X8_UNUSED uint8_t</type>
+          <declname>arg_int</declname>
+        </param>
+        <param>
+          <type>U8X8_UNUSED void *</type>
+          <declname>arg_ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_setup.c" line="40" column="9" bodyfile="src/helper/U8g2/clib/u8x8_setup.c" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__setup_8c_1aa293fe60f3b314a01c9a6e0c2d7daef8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t u8x8_d_null_cb</definition>
+        <argsstring>(u8x8_t *u8x8, uint8_t msg, U8X8_UNUSED uint8_t arg_int, U8X8_UNUSED void *arg_ptr)</argsstring>
+        <name>u8x8_d_null_cb</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>U8X8_UNUSED uint8_t</type>
+          <declname>arg_int</declname>
+        </param>
+        <param>
+          <type>U8X8_UNUSED void *</type>
+          <declname>arg_ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_setup.c" line="73" column="9" bodyfile="src/helper/U8g2/clib/u8x8_setup.c" bodystart="73" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__setup_8c_1a92db14b7811ac046177421f0eb7174da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_SetupDefaults</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_SetupDefaults</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_setup.c" line="95" column="6" bodyfile="src/helper/U8g2/clib/u8x8_setup.c" bodystart="95" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__setup_8c_1ae5a0492a3f5116a7b55b96ba184f7096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_Setup</definition>
+        <argsstring>(u8x8_t *u8x8, u8x8_msg_cb display_cb, u8x8_msg_cb cad_cb, u8x8_msg_cb byte_cb, u8x8_msg_cb gpio_and_delay_cb)</argsstring>
+        <name>u8x8_Setup</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>u8x8_msg_cb</type>
+          <declname>display_cb</declname>
+        </param>
+        <param>
+          <type>u8x8_msg_cb</type>
+          <declname>cad_cb</declname>
+        </param>
+        <param>
+          <type>u8x8_msg_cb</type>
+          <declname>byte_cb</declname>
+        </param>
+        <param>
+          <type>u8x8_msg_cb</type>
+          <declname>gpio_and_delay_cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_setup.c" line="133" column="6" bodyfile="src/helper/U8g2/clib/u8x8_setup.c" bodystart="133" bodyend="146"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>u8x8_setup.c</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>Universal<sp/>8bit<sp/>Graphics<sp/>Library<sp/>(https://github.com/olikraus/u8g2/)</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>Copyright<sp/>(c)<sp/>2016,<sp/>olikraus@gmail.com</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.<sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;u8x8.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>universal<sp/>dummy<sp/>callback,<sp/>which<sp/>will<sp/>be<sp/>default<sp/>for<sp/>all<sp/>callbacks<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">uint8_t<sp/>u8x8_dummy_cb(U8X8_UNUSED<sp/>u8x8_t<sp/>*u8x8,<sp/>U8X8_UNUSED<sp/>uint8_t<sp/>msg,<sp/>U8X8_UNUSED<sp/>uint8_t<sp/>arg_int,<sp/>U8X8_UNUSED<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg_ptr)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>dummy<sp/>callback<sp/>will<sp/>not<sp/>handle<sp/>any<sp/>message<sp/>and<sp/>will<sp/>fail<sp/>for<sp/>all<sp/>messages<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>u8x8_display_info_t<sp/>u8x8_null_display_info<sp/>=</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>chip_enable_level<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>chip_disable_level<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>1,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>post_chip_enable_wait_ns<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>pre_chip_disable_wait_ns<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>reset_pulse_width_ms<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,<sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>post_reset_wait_ms<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>sda_setup_time_ns<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>sck_pulse_width_ns<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,<sp/></highlight><highlight class="comment">/*<sp/>half<sp/>of<sp/>cycle<sp/>time<sp/>(100ns<sp/>according<sp/>to<sp/>datasheet),<sp/>AVR:<sp/>below<sp/>70:<sp/>8<sp/>MHz,<sp/>&gt;=<sp/>70<sp/>--&gt;<sp/>4MHz<sp/>clock<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>sck_clock_hz<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>4000000UL,<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>since<sp/>Arduino<sp/>1.6.0,<sp/>the<sp/>SPI<sp/>bus<sp/>speed<sp/>in<sp/>Hz.<sp/>Should<sp/>be<sp/><sp/>1000000000/sck_pulse_width_ns<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>spi_mode<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>active<sp/>high,<sp/>rising<sp/>edge<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>i2c_bus_clock_100kHz<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>4,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>data_setup_time_ns<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>write_pulse_width_ns<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>tile_width<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>1,<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>8x8<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>tile_hight<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>1,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>default_x_offset<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>flipmode_x_offset<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>0,</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>pixel_width<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>8,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>pixel_height<sp/>=<sp/>*/</highlight><highlight class="normal"><sp/>8</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>a<sp/>special<sp/>null<sp/>device<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">uint8_t<sp/>u8x8_d_null_cb(u8x8_t<sp/>*u8x8,<sp/>uint8_t<sp/>msg,<sp/>U8X8_UNUSED<sp/>uint8_t<sp/>arg_int,<sp/>U8X8_UNUSED<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg_ptr)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(msg)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>U8X8_MSG_DISPLAY_SETUP_MEMORY:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_d_helper_display_setup_memory(u8x8,<sp/>&amp;u8x8_null_display_info);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>U8X8_MSG_DISPLAY_INIT:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_d_helper_display_init(u8x8);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>null<sp/>device<sp/>callback<sp/>will<sp/>succeed<sp/>for<sp/>all<sp/>messages<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/>Description:</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/>Setup<sp/>u8x8</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/>u8x8<sp/><sp/><sp/><sp/>An<sp/>empty<sp/>u8x8<sp/>structure</highlight></codeline>
+<codeline lineno="94"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_SetupDefaults(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;display_info<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;display_cb<sp/>=<sp/>u8x8_dummy_cb;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;cad_cb<sp/>=<sp/>u8x8_dummy_cb;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;byte_cb<sp/>=<sp/>u8x8_dummy_cb;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;gpio_and_delay_cb<sp/>=<sp/>u8x8_dummy_cb;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;is_font_inverse_mode<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//u8x8-&gt;device_address<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;utf8_state<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>also<sp/>reset<sp/>by<sp/>u8x8_utf8_init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;bus_clock<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>issue<sp/>769<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;i2c_address<sp/>=<sp/>255;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;debounce_default_pin_state<sp/>=<sp/>255;<sp/></highlight><highlight class="comment">/*<sp/>assume<sp/>all<sp/>low<sp/>active<sp/>buttons<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>U8X8_USE_PINS<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>i;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>U8X8_PIN_CNT;<sp/>i++<sp/>)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8-&gt;pins[i]<sp/>=<sp/>U8X8_PIN_NONE;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/>Description:</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/>Setup<sp/>u8x8<sp/>and<sp/>assign<sp/>the<sp/>callback<sp/>function.<sp/>The<sp/>dummy<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/>callback<sp/>&quot;u8x8_dummy_cb&quot;<sp/>can<sp/>be<sp/>used,<sp/>if<sp/>no<sp/>callback<sp/>is<sp/>required.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>setup<sp/>will<sp/>not<sp/>communicate<sp/>with<sp/>the<sp/>display<sp/>itself.</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/>Use<sp/>u8x8_InitDisplay()<sp/>to<sp/>send<sp/>the<sp/>startup<sp/>code<sp/>to<sp/>the<sp/>Display.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/>u8x8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>An<sp/>empty<sp/>u8x8<sp/>structure</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/>display_cb<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display/controller<sp/>specific<sp/>callback<sp/>function</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/>cad_cb<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display<sp/>controller<sp/>specific<sp/>communication<sp/>callback<sp/>function</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/>byte_cb<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Display<sp/>controller/communication<sp/>specific<sp/>callback<sp/>funtion</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/>gpio_and_delay_cb<sp/><sp/><sp/>Environment<sp/>specific<sp/>callback<sp/>function</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"></highlight></codeline>
+<codeline lineno="132"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_Setup(u8x8_t<sp/>*u8x8,<sp/>u8x8_msg_cb<sp/>display_cb,<sp/>u8x8_msg_cb<sp/>cad_cb,<sp/>u8x8_msg_cb<sp/>byte_cb,<sp/>u8x8_msg_cb<sp/>gpio_and_delay_cb)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>setup<sp/>defaults<sp/>and<sp/>reset<sp/>pins<sp/>to<sp/>U8X8_PIN_NONE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>u8x8_SetupDefaults(u8x8);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>setup<sp/>specific<sp/>callbacks<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>u8x8-&gt;display_cb<sp/>=<sp/>display_cb;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>u8x8-&gt;cad_cb<sp/>=<sp/>cad_cb;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>u8x8-&gt;byte_cb<sp/>=<sp/>byte_cb;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>u8x8-&gt;gpio_and_delay_cb<sp/>=<sp/>gpio_and_delay_cb;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>setup<sp/>display<sp/>info<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>u8x8_SetupMemory(u8x8);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/helper/U8g2/clib/u8x8_setup.c"/>
+  </compounddef>
+</doxygen>

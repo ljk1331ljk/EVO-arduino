@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="struct__u8sl__struct" kind="struct" language="C++" prot="public">
+    <compoundname>_u8sl_struct</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct__u8sl__struct_1a767c52696a15c3338a5f8479ba881f14" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _u8sl_struct::visible</definition>
+        <argsstring></argsstring>
+        <name>visible</name>
+        <qualifiedname>_u8sl_struct::visible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8.h" line="1044" column="13" bodyfile="src/helper/U8g2/clib/u8x8.h" bodystart="1044" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__u8sl__struct_1adc520645c9a91ea132c022837d5daa13" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _u8sl_struct::total</definition>
+        <argsstring></argsstring>
+        <name>total</name>
+        <qualifiedname>_u8sl_struct::total</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8.h" line="1045" column="13" bodyfile="src/helper/U8g2/clib/u8x8.h" bodystart="1045" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__u8sl__struct_1a533f3360558d930992e3932198dad0f8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _u8sl_struct::first_pos</definition>
+        <argsstring></argsstring>
+        <name>first_pos</name>
+        <qualifiedname>_u8sl_struct::first_pos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8.h" line="1046" column="13" bodyfile="src/helper/U8g2/clib/u8x8.h" bodystart="1046" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__u8sl__struct_1ae542e666203cc14e5f47486abc2ab9ed" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _u8sl_struct::current_pos</definition>
+        <argsstring></argsstring>
+        <name>current_pos</name>
+        <qualifiedname>_u8sl_struct::current_pos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8.h" line="1047" column="13" bodyfile="src/helper/U8g2/clib/u8x8.h" bodystart="1047" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__u8sl__struct_1a57feb4ef0f8da333dbb4791928fda169" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _u8sl_struct::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>_u8sl_struct::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8.h" line="1049" column="13" bodyfile="src/helper/U8g2/clib/u8x8.h" bodystart="1049" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct__u8sl__struct_1a4f1be1a3bc1063d9cb5df21df7951d20" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t _u8sl_struct::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>_u8sl_struct::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8.h" line="1050" column="13" bodyfile="src/helper/U8g2/clib/u8x8.h" bodystart="1050" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/helper/U8g2/clib/u8x8.h" line="1042" column="3" bodyfile="src/helper/U8g2/clib/u8x8.h" bodystart="1043" bodyend="1051"/>
+    <listofallmembers>
+      <member refid="struct__u8sl__struct_1ae542e666203cc14e5f47486abc2ab9ed" prot="public" virt="non-virtual"><scope>_u8sl_struct</scope><name>current_pos</name></member>
+      <member refid="struct__u8sl__struct_1a533f3360558d930992e3932198dad0f8" prot="public" virt="non-virtual"><scope>_u8sl_struct</scope><name>first_pos</name></member>
+      <member refid="struct__u8sl__struct_1adc520645c9a91ea132c022837d5daa13" prot="public" virt="non-virtual"><scope>_u8sl_struct</scope><name>total</name></member>
+      <member refid="struct__u8sl__struct_1a767c52696a15c3338a5f8479ba881f14" prot="public" virt="non-virtual"><scope>_u8sl_struct</scope><name>visible</name></member>
+      <member refid="struct__u8sl__struct_1a57feb4ef0f8da333dbb4791928fda169" prot="public" virt="non-virtual"><scope>_u8sl_struct</scope><name>x</name></member>
+      <member refid="struct__u8sl__struct_1a4f1be1a3bc1063d9cb5df21df7951d20" prot="public" virt="non-virtual"><scope>_u8sl_struct</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

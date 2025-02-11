@@ -1,0 +1,529 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="u8x8__display_8c" kind="file" language="C++">
+    <compoundname>u8x8_display.c</compoundname>
+    <includes refid="u8x8_8h" local="yes">u8x8.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>u8x8.h</label>
+        <link refid="u8x8_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/helper/U8g2/clib/u8x8_display.c</label>
+        <link refid="u8x8__display_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>limits.h</label>
+      </node>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5">
+        <label>stddef.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="u8x8__display_8c_1aa3f86e8b5d15f1537e873c2c6d44205d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_d_helper_display_setup_memory</definition>
+        <argsstring>(u8x8_t *u8x8, const u8x8_display_info_t *display_info)</argsstring>
+        <name>u8x8_d_helper_display_setup_memory</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structu8x8__display__info__struct" kindref="compound">u8x8_display_info_t</ref> *</type>
+          <declname>display_info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="52" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="52" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a8b6dbb59d3b8eb6e21f1acbb9bcc0bc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_d_helper_display_init</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_d_helper_display_init</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="64" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="64" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1aca81ff545019f4ec462ee63353409d99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t u8x8_DrawTile</definition>
+        <argsstring>(u8x8_t *u8x8, uint8_t x, uint8_t y, uint8_t cnt, uint8_t *tile_ptr)</argsstring>
+        <name>u8x8_DrawTile</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>cnt</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>tile_ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="82" column="9" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="82" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a5818b915a353d2be7c88cd1e11e9f78b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_SetupMemory</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_SetupMemory</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="93" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a82946cb1577c975ae6fbec3da6a5d351" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_InitInterface</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_InitInterface</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="109" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a3eb2c0beca6b26b1069a5cd5f0e35f36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_InitDisplay</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_InitDisplay</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="135" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="135" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1aaffc55bddbff19e6c860c86d897334f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_SetPowerSave</definition>
+        <argsstring>(u8x8_t *u8x8, uint8_t is_enable)</argsstring>
+        <name>u8x8_SetPowerSave</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>is_enable</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="141" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="141" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a9c4c4d196c44ef6d55fd06387031dbf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_SetFlipMode</definition>
+        <argsstring>(u8x8_t *u8x8, uint8_t mode)</argsstring>
+        <name>u8x8_SetFlipMode</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="146" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="146" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1ac0d697f6936da09d7a193ecdb4ddb139" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_SetContrast</definition>
+        <argsstring>(u8x8_t *u8x8, uint8_t value)</argsstring>
+        <name>u8x8_SetContrast</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="151" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="151" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a4a1017cf7a7e1f03fce580a5994a4409" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_RefreshDisplay</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_RefreshDisplay</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="156" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a80dd9b388eb0a40aba585bb3dd95ad50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_ClearDisplayWithTile</definition>
+        <argsstring>(u8x8_t *u8x8, const uint8_t *buf)</argsstring>
+        <name>u8x8_ClearDisplayWithTile</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="161" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="161" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a318f6563ecc0b5ce1ae6dd9192f454e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_ClearDisplay</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_ClearDisplay</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="179" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="179" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a48bff23e527d6f9ed5db34260d06082f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_FillDisplay</definition>
+        <argsstring>(u8x8_t *u8x8)</argsstring>
+        <name>u8x8_FillDisplay</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="185" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="185" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__display_8c_1a1fdac078bd7b442e67beb0111d97cac7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8x8_ClearLine</definition>
+        <argsstring>(u8x8_t *u8x8, uint8_t line)</argsstring>
+        <name>u8x8_ClearLine</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_display.c" line="191" column="6" bodyfile="src/helper/U8g2/clib/u8x8_display.c" bodystart="191" bodyend="203"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>u8x8_display.c</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>Universal<sp/>8bit<sp/>Graphics<sp/>Library<sp/>(https://github.com/olikraus/u8g2/)</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>Copyright<sp/>(c)<sp/>2016,<sp/>olikraus@gmail.com</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.<sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/>Abstraction<sp/>layer<sp/>for<sp/>the<sp/>graphics<sp/>controller.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/>Main<sp/>goal<sp/>is<sp/>the<sp/>placement<sp/>of<sp/>a<sp/>8x8<sp/>pixel<sp/>block<sp/>(tile)<sp/>on<sp/>the<sp/>display.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;u8x8.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*==========================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>internal<sp/>library<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>this<sp/>is<sp/>a<sp/>helper<sp/>function<sp/>for<sp/>the<sp/>U8X8_MSG_DISPLAY_SETUP_MEMORY<sp/>function.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/>It<sp/>can<sp/>be<sp/>called<sp/>within<sp/>the<sp/>display<sp/>callback<sp/>function<sp/>to<sp/>carry<sp/>out<sp/>the<sp/>usual<sp/>standard<sp/>tasks.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_d_helper_display_setup_memory(u8x8_t<sp/>*u8x8,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>u8x8_display_info_t<sp/>*display_info)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>1)<sp/>set<sp/>display<sp/>info<sp/>struct<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8-&gt;display_info<sp/>=<sp/>display_info;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8-&gt;x_offset<sp/>=<sp/>u8x8-&gt;display_info-&gt;default_x_offset;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/>this<sp/>is<sp/>a<sp/>helper<sp/>function<sp/>for<sp/>the<sp/>U8X8_MSG_DISPLAY_INIT<sp/>function.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/>It<sp/>can<sp/>be<sp/>called<sp/>within<sp/>the<sp/>display<sp/>callback<sp/>function<sp/>to<sp/>carry<sp/>out<sp/>the<sp/>usual<sp/>standard<sp/>tasks.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_d_helper_display_init(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>2)<sp/>apply<sp/>port<sp/>directions<sp/>to<sp/>the<sp/>GPIO<sp/>lines<sp/>and<sp/>apply<sp/>default<sp/>values<sp/>for<sp/>the<sp/>IO<sp/>lines*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_gpio_Init(u8x8);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_cad_Init(u8x8);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>this<sp/>will<sp/>also<sp/>call<sp/>U8X8_MSG_BYTE_INIT,<sp/>byte<sp/>init<sp/>will<sp/>NOT<sp/>call<sp/>GPIO_INIT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>3)<sp/>do<sp/>reset<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_gpio_SetReset(u8x8,<sp/>1);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_gpio_Delay(u8x8,<sp/>U8X8_MSG_DELAY_MILLI,<sp/>u8x8-&gt;display_info-&gt;reset_pulse_width_ms);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_gpio_SetReset(u8x8,<sp/>0);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_gpio_Delay(u8x8,<sp/>U8X8_MSG_DELAY_MILLI,<sp/>u8x8-&gt;display_info-&gt;reset_pulse_width_ms);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_gpio_SetReset(u8x8,<sp/>1);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_gpio_Delay(u8x8,<sp/>U8X8_MSG_DELAY_MILLI,<sp/>u8x8-&gt;display_info-&gt;post_reset_wait_ms);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*==========================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>official<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">uint8_t<sp/>u8x8_DrawTile(u8x8_t<sp/>*u8x8,<sp/>uint8_t<sp/>x,<sp/>uint8_t<sp/>y,<sp/>uint8_t<sp/>cnt,<sp/>uint8_t<sp/>*tile_ptr)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>u8x8_tile_t<sp/>tile;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>tile.x_pos<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>tile.y_pos<sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>tile.cnt<sp/>=<sp/>cnt;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>tile.tile_ptr<sp/>=<sp/>tile_ptr;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_DRAW_TILE,<sp/>1,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)&amp;tile);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>should<sp/>be<sp/>implemented<sp/>as<sp/>macro<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_SetupMemory(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_SETUP_MEMORY,<sp/>0,<sp/>NULL);<sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/>This<sp/>will<sp/>just<sp/>init<sp/>the<sp/>display<sp/>interface,<sp/>compared<sp/>to<sp/>InitDisplay,<sp/>it<sp/>will<sp/>not<sp/>issue<sp/>a<sp/>reset<sp/>and<sp/>also<sp/>not<sp/>upload<sp/>the<sp/>init<sp/>code.</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/>Comparison:</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/>Call<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_InitInterface<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_InitDisplay</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/>Init<sp/>Interface<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yes<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yes</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/>Reset<sp/>Display<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>no<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yes</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/>Upload<sp/>Display<sp/>Init<sp/>Code<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>no<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yes</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/>u8x8_InitInterface()<sp/>is<sp/>an<sp/>alternative<sp/>function<sp/>to<sp/>u8x8_InitDisplay().<sp/>Do<sp/>not<sp/>call<sp/>both.</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_InitInterface(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>u8x8_gpio_Init(u8x8);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>u8x8_cad_Init(u8x8);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>this<sp/>will<sp/>also<sp/>call<sp/>U8X8_MSG_BYTE_INIT,<sp/>byte<sp/>init<sp/>will<sp/>NOT<sp/>call<sp/>GPIO_INIT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/>This<sp/>will<sp/>sent<sp/>the<sp/>display<sp/>init<sp/>message<sp/>to<sp/>the<sp/>display.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/>The<sp/>display<sp/>itself<sp/>will<sp/>then<sp/>call<sp/>u8x8_d_helper_display_init()<sp/>from<sp/>above.<sp/>This<sp/>includes:</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/>GPIO<sp/>Init<sp/>(set<sp/>port<sp/>directions)</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/>BYTE<sp/>init<sp/>(part<sp/>of<sp/>CAD<sp/>init:<sp/>which<sp/>may<sp/>set<sp/>some<sp/>levels)</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/>CAD<sp/>init<sp/>(which<sp/>will<sp/>set<sp/>things<sp/>like<sp/>I2C<sp/>default<sp/>address)</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/>Issue<sp/>a<sp/>reset<sp/>to<sp/>the<sp/>display:<sp/>This<sp/>will<sp/>usually<sp/>turn<sp/>off<sp/>the<sp/>display</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/>Additonally<sp/>each<sp/>display<sp/>will<sp/>set<sp/>the<sp/>init<sp/>code<sp/>to<sp/>the<sp/>display,<sp/>which<sp/>will<sp/>also<sp/>turn<sp/>of<sp/>the<sp/>display<sp/>in<sp/>most<sp/>cases<sp/>(Arduino<sp/>code<sp/>disable<sp/>power<sp/>save<sp/>mode<sp/>later)</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"></highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/>Actually<sp/>this<sp/>procedure<sp/>should<sp/>be<sp/>better<sp/>called<sp/>InitInterfaceAndDisplay,<sp/>because<sp/>it<sp/>actually<sp/>does<sp/>both.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/>(actually<sp/>u8x8_InitInterface()<sp/>is<sp/>not<sp/>called<sp/>directly<sp/>but<sp/>only<sp/>u8x8_gpio_Init<sp/>and<sp/>u8x8_cad_Init<sp/>which</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/>in<sp/>turn<sp/>is<sp/>called<sp/>by<sp/>u8x8_InitInterface())</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"></highlight></codeline>
+<codeline lineno="128"><highlight class="comment"></highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/>InitDisplay<sp/>is<sp/>called<sp/>by<sp/>the<sp/>Arduino<sp/>begin()<sp/>function<sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="comment"></highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/>In<sp/>some<sp/>cases<sp/>it<sp/>is<sp/>not<sp/>required<sp/>to<sp/>init<sp/>the<sp/>display<sp/>(for<sp/>example<sp/>if<sp/>the<sp/>display<sp/>is<sp/>already<sp/>running,<sp/>but<sp/>the<sp/>controller<sp/>comes<sp/>out<sp/>of<sp/>deep<sp/>sleep<sp/>mode).</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/>Then<sp/>InitDisplay<sp/>can<sp/>be<sp/>skipped,<sp/>but<sp/>u8x8_InitInterface()<sp/><sp/>(==<sp/>u8x8_gpio_Init()<sp/>and<sp/>u8x8_cad_Init())<sp/>need<sp/>to<sp/>be<sp/>executed.</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"></highlight></codeline>
+<codeline lineno="134"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_InitDisplay(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_INIT,<sp/>0,<sp/>NULL);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>this<sp/>will<sp/>call<sp/>u8x8_d_helper_display_init()<sp/>and<sp/>send<sp/>the<sp/>init<sp/>seqence<sp/>to<sp/>the<sp/>display<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_SET_FLIP_MODE,<sp/>0,<sp/>NULL);<sp/><sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>It<sp/>would<sp/>make<sp/>sense<sp/>to<sp/>call<sp/>flip<sp/>mode<sp/>0<sp/>here<sp/>after<sp/>U8X8_MSG_DISPLAY_INIT<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_SetPowerSave(u8x8_t<sp/>*u8x8,<sp/>uint8_t<sp/>is_enable)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_SET_POWER_SAVE,<sp/>is_enable,<sp/>NULL);<sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_SetFlipMode(u8x8_t<sp/>*u8x8,<sp/>uint8_t<sp/>mode)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_SET_FLIP_MODE,<sp/>mode,<sp/>NULL);<sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_SetContrast(u8x8_t<sp/>*u8x8,<sp/>uint8_t<sp/>value)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_SET_CONTRAST,<sp/>value,<sp/>NULL);<sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_RefreshDisplay(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_REFRESH,<sp/>0,<sp/>NULL);<sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_ClearDisplayWithTile(u8x8_t<sp/>*u8x8,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*buf)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>u8x8_tile_t<sp/>tile;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>uint8_t<sp/>h;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>tile.x_pos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>tile.cnt<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>tile.tile_ptr<sp/>=<sp/>(uint8_t<sp/>*)buf;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>tile_ptr<sp/>should<sp/>be<sp/>const,<sp/>but<sp/>isn&apos;t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>h<sp/>=<sp/>u8x8-&gt;display_info-&gt;tile_height;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>tile.y_pos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_DRAW_TILE,<sp/>u8x8-&gt;display_info-&gt;tile_width,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)&amp;tile);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>tile.y_pos++;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>tile.y_pos<sp/>&lt;<sp/>h<sp/>);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_ClearDisplay(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>uint8_t<sp/>buf[8]<sp/>=<sp/>{<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>u8x8_ClearDisplayWithTile(u8x8,<sp/>buf);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_FillDisplay(u8x8_t<sp/>*u8x8)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>uint8_t<sp/>buf[8]<sp/>=<sp/>{<sp/>255,<sp/>255,<sp/>255,<sp/>255,<sp/>255,<sp/>255,<sp/>255,<sp/>255<sp/>};</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>u8x8_ClearDisplayWithTile(u8x8,<sp/>buf);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8x8_ClearLine(u8x8_t<sp/>*u8x8,<sp/>uint8_t<sp/>line)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>uint8_t<sp/>buf[8]<sp/>=<sp/>{<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0,<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>u8x8_tile_t<sp/>tile;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>line<sp/>&lt;<sp/>u8x8-&gt;display_info-&gt;tile_height<sp/>)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>tile.x_pos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>tile.y_pos<sp/>=<sp/>line;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>tile.cnt<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>tile.tile_ptr<sp/>=<sp/>(uint8_t<sp/>*)buf;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>tile_ptr<sp/>should<sp/>be<sp/>const,<sp/>but<sp/>isn&apos;t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8-&gt;display_cb(u8x8,<sp/>U8X8_MSG_DISPLAY_DRAW_TILE,<sp/>u8x8-&gt;display_info-&gt;tile_width,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)&amp;tile);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>}<sp/><sp/></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/helper/U8g2/clib/u8x8_display.c"/>
+  </compounddef>
+</doxygen>

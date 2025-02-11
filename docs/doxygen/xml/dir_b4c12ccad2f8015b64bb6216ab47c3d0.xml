@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_b4c12ccad2f8015b64bb6216ab47c3d0" kind="dir">
+    <compoundname>src/helper/U8g2</compoundname>
+    <innerdir refid="dir_9284ee6decca528f6ec000cf351171d3">src/helper/U8g2/clib</innerdir>
+    <innerfile refid="_u8g2lib_8cpp">U8g2lib.cpp</innerfile>
+    <innerfile refid="_u8g2lib_8h">U8g2lib.h</innerfile>
+    <innerfile refid="_u8x8lib_8cpp">U8x8lib.cpp</innerfile>
+    <innerfile refid="_u8x8lib_8h">U8x8lib.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/helper/U8g2/"/>
+  </compounddef>
+</doxygen>

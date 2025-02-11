@@ -1,0 +1,86 @@
+\doxysection{EVOX1.\+h}
+\hypertarget{_e_v_o_x1_8h_source}{}\label{_e_v_o_x1_8h_source}\index{src/EVOX1.h@{src/EVOX1.h}}
+\mbox{\hyperlink{_e_v_o_x1_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ EVOX1\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ EVOX1\_H}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \#define\ SH110X\_NO\_SPLASH}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <helper/X1pins.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <helper/Tones.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <helper/EvoI2CDevice.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <helper/EvoBQ25887.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <Adafruit\_NeoPixel.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <helper/U8g2/U8g2lib.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }EVOX1}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ U8G2\_SSD1306\_128X64\_NONAME\_F\_HW\_I2C\ display;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ Adafruit\_NeoPixel\ rgb;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_e_v_o_x1_ad6fa48fd17460ccbe0f4d415355d99ad}{EVOX1}}(\textcolor{keyword}{const}\ EVOX1\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ EVOX1\ \&operator=(\textcolor{keyword}{const}\ EVOX1\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_i2_c_device}{I2CDevice}}\ \&i2CDevice\ =\ I2CDevice::getInstance();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_e_v_o_x1_ad6fa48fd17460ccbe0f4d415355d99ad}{EVOX1}}()\ :\ display(U8G2\_R0,\ U8X8\_PIN\_NONE),\ rgb(1,\ PIXEL\_PIN,\ NEO\_GRBW\ +\ NEO\_KHZ800)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ EVOX1\ \&\mbox{\hyperlink{class_e_v_o_x1_af3a2cbe75b2c841d30b2031845780e25}{getInstance}}()}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ EVOX1\ instance;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_evo_b_q25887}{EvoBQ25887}}\ \mbox{\hyperlink{class_e_v_o_x1_a68727c7ee42efbbbb8a83aad2d8dc026}{charger}}\ =\ \mbox{\hyperlink{class_evo_b_q25887}{EvoBQ25887}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_acfa5db0e8275e769bf7a44eb862567a6}{begin}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a1ce7c07c25a2a66dda417208d04cf658}{selectI2CChannel}}(I2CChannel\ channel);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_e_v_o_x1_a5a17f181e3fe81dccaea80148e01cc5e}{scanI2CChannel}}(I2CChannel\ channel,\ uint8\_t\ *addresses,\ \textcolor{keywordtype}{int}\ maxAddresses);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ ===\ Battery\ Functions\ ===}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_e_v_o_x1_a2d8b5b3b782f5cf68b0032798192d076}{getTopBattery}}();}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_e_v_o_x1_a98c96b3a7ec90a3065371fc246f7ec1a}{getBottomBattery}}();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_e_v_o_x1_a5dc350b8ace794ae36b14564905d21ce}{getBattery}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ ===\ Display\ Functions\ ===}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a9bcae9bed5af1697e95853e34e032744}{clearDisplay}}();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a596f6a9e60e2c410ac663f720f0a0f59}{writeToDisplay}}(\textcolor{keywordtype}{int}\ value,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{bool}\ clear\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ draw\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a596f6a9e60e2c410ac663f720f0a0f59}{writeToDisplay}}(\textcolor{keywordtype}{double}\ f,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{bool}\ clear\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ draw\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a596f6a9e60e2c410ac663f720f0a0f59}{writeToDisplay}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *c,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{bool}\ clear\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{bool}\ draw\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a547b6e5ab9b035462cc1148031d37faf}{drawDisplay}}();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a4524bcd7f2e78decfeadffb33a5555a8}{setFontSize}}(uint8\_t\ size);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{comment}{//\ ===\ Button\ Functions\ ===}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a1c1b7f315b41d4802c4a6e56220b37f9}{waitForButton}}();}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ ===\ Buzzer\ Functions\ ===}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a0b6466b1faaf530c58c3cd8dcfb974d6}{playTone}}(uint\ frequency,\ \textcolor{keywordtype}{int}\ duration);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{comment}{//\ ===\ RGB\ LED\ Functions\ ===}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_e_v_o_x1_a7257fd59f8b9fc14e983e898d17ad9e7}{setRGB}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ g,\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00187\ \};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EVOX1\_H}}
+
+\end{DoxyCode}

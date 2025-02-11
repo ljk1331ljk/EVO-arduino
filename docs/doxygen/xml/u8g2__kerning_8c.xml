@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="u8g2__kerning_8c" kind="file" language="C++">
+    <compoundname>u8g2_kerning.c</compoundname>
+    <includes refid="u8g2_8h" local="yes">u8g2.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>u8g2.h</label>
+        <link refid="u8g2_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/helper/U8g2/clib/u8g2_kerning.c</label>
+        <link refid="u8g2__kerning_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>u8x8.h</label>
+        <link refid="u8x8_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="u8g2__kerning_8c_1a17f638073d7f18e6a50da1514c6ff92e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t u8g2_GetKerning</definition>
+        <argsstring>(U8X8_UNUSED u8g2_t *u8g2, u8g2_kerning_t *kerning, uint16_t e1, uint16_t e2)</argsstring>
+        <name>u8g2_GetKerning</name>
+        <param>
+          <type>U8X8_UNUSED <ref refid="structu8g2__struct" kindref="compound">u8g2_t</ref> *</type>
+          <declname>u8g2</declname>
+        </param>
+        <param>
+          <type><ref refid="struct__u8g2__kerning__t" kindref="compound">u8g2_kerning_t</ref> *</type>
+          <declname>kerning</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>e1</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>e2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8g2_kerning.c" line="47" column="9" bodyfile="src/helper/U8g2/clib/u8g2_kerning.c" bodystart="47" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="u8g2__kerning_8c_1a4583740bf9879e468e1f9898840008a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t u8g2_GetKerningByTable</definition>
+        <argsstring>(U8X8_UNUSED u8g2_t *u8g2, const uint16_t *kt, uint16_t e1, uint16_t e2)</argsstring>
+        <name>u8g2_GetKerningByTable</name>
+        <param>
+          <type>U8X8_UNUSED <ref refid="structu8g2__struct" kindref="compound">u8g2_t</ref> *</type>
+          <declname>u8g2</declname>
+        </param>
+        <param>
+          <type>const uint16_t *</type>
+          <declname>kt</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>e1</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>e2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8g2_kerning.c" line="78" column="9" bodyfile="src/helper/U8g2/clib/u8g2_kerning.c" bodystart="78" bodyend="93"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>u8g2_kerning.c</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>Universal<sp/>8bit<sp/>Graphics<sp/>Library<sp/>(https://github.com/olikraus/u8g2/)</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>Copyright<sp/>(c)<sp/>2016,<sp/>olikraus@gmail.com</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.<sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;u8g2.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>this<sp/>function<sp/>is<sp/>used<sp/>as<sp/>&quot;u8g2_get_kerning_cb&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">uint8_t<sp/>u8g2_GetNullKerning(u8g2_t<sp/>*u8g2,<sp/>uint16_t<sp/>e1,<sp/>uint16_t<sp/>e2)</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>this<sp/>function<sp/>is<sp/>used<sp/>as<sp/>&quot;u8g2_get_kerning_cb&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">uint8_t<sp/>u8g2_GetKerning(U8X8_UNUSED<sp/>u8g2_t<sp/>*u8g2,<sp/>u8g2_kerning_t<sp/>*kerning,<sp/>uint16_t<sp/>e1,<sp/>uint16_t<sp/>e2)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>uint16_t<sp/>i1,<sp/>i2,<sp/>cnt,<sp/>end;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>kerning<sp/>==<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>search<sp/>for<sp/>the<sp/>encoding<sp/>in<sp/>the<sp/>first<sp/>table<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>cnt<sp/>=<sp/>kerning-&gt;first_table_cnt;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>cnt--;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ignore<sp/>the<sp/>last<sp/>element<sp/>of<sp/>the<sp/>table,<sp/>which<sp/>is<sp/>0x0ffff<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i1<sp/>=<sp/>0;<sp/>i1<sp/>&lt;<sp/>cnt;<sp/>i1++<sp/>)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>kerning-&gt;first_encoding_table[i1]<sp/>==<sp/>e1<sp/>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>i1<sp/>&gt;=<sp/>cnt<sp/>)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>e1<sp/>not<sp/>part<sp/>of<sp/>the<sp/>kerning<sp/>table,<sp/>return<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>get<sp/>the<sp/>upper<sp/>index<sp/>for<sp/>i2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>end<sp/>=<sp/>kerning-&gt;index_to_second_table[i1+1];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i2<sp/>=<sp/>kerning-&gt;index_to_second_table[i1];<sp/>i2<sp/>&lt;<sp/>end;<sp/>i2++<sp/>)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>kerning-&gt;second_encoding_table[i2]<sp/>==<sp/>e2<sp/>)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>i2<sp/>&gt;=<sp/>end<sp/>)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>e2<sp/>not<sp/>part<sp/>of<sp/>any<sp/>pair<sp/>with<sp/>e1,<sp/>return<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>kerning-&gt;kerning_values[i2];</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">uint8_t<sp/>u8g2_GetKerningByTable(U8X8_UNUSED<sp/>u8g2_t<sp/>*u8g2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint16_t<sp/>*kt,<sp/>uint16_t<sp/>e1,<sp/>uint16_t<sp/>e2)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>uint16_t<sp/>i;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>kt<sp/>==<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>kt[i]<sp/>==<sp/>0x0ffff<sp/>)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>kt[i]<sp/>==<sp/>e1<sp/>&amp;&amp;<sp/>kt[i+1]<sp/>==<sp/>e2<sp/>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>kt[i+2];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>i+=3;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/helper/U8g2/clib/u8g2_kerning.c"/>
+  </compounddef>
+</doxygen>

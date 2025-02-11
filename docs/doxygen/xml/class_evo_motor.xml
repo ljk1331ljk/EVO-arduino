@@ -1,0 +1,1003 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_motor" kind="class" language="C++" prot="public">
+    <compoundname>EvoMotor</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_motor_1af803a152981207abe69a4a01a76f6188" prot="private" static="no" mutable="no">
+        <type>MotorType</type>
+        <definition>MotorType EvoMotor::_motorType</definition>
+        <argsstring></argsstring>
+        <name>_motorType</name>
+        <qualifiedname>EvoMotor::_motorType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="51" column="15" bodyfile="src/motors/EvoMotor.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a8ad4eb02c94296a3239bba8f25446749" prot="private" static="no" mutable="no">
+        <type>MotorPort</type>
+        <definition>MotorPort EvoMotor::_motorPort</definition>
+        <argsstring></argsstring>
+        <name>_motorPort</name>
+        <qualifiedname>EvoMotor::_motorPort</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="52" column="15" bodyfile="src/motors/EvoMotor.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a9eebf6d5e0644b34a6fe1a077c4fda28" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_motor_pins" kindref="compound">MotorPins</ref></type>
+        <definition>MotorPins EvoMotor::_motorPins</definition>
+        <argsstring></argsstring>
+        <name>_motorPins</name>
+        <qualifiedname>EvoMotor::_motorPins</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="53" column="15" bodyfile="src/motors/EvoMotor.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1aeed80795947b85bbadf3b5b5cb1603d6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_minSpeed</definition>
+        <argsstring></argsstring>
+        <name>_minSpeed</name>
+        <qualifiedname>EvoMotor::_minSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="55" column="9" bodyfile="src/motors/EvoMotor.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a750904e39beba6a1aa6fbaf0f861d171" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_maxSpeed</definition>
+        <argsstring></argsstring>
+        <name>_maxSpeed</name>
+        <qualifiedname>EvoMotor::_maxSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="55" column="19" bodyfile="src/motors/EvoMotor.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a227a9e026f6cd4d6f1926f37a9c51429" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EvoMotor::_motorFlip</definition>
+        <argsstring></argsstring>
+        <name>_motorFlip</name>
+        <qualifiedname>EvoMotor::_motorFlip</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="56" column="10" bodyfile="src/motors/EvoMotor.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a61f7bd8bdab9131b65fbb87b88750b6e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EvoMotor::_encoderAvailable</definition>
+        <argsstring></argsstring>
+        <name>_encoderAvailable</name>
+        <qualifiedname>EvoMotor::_encoderAvailable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="56" column="21" bodyfile="src/motors/EvoMotor.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1adfe03a2c525bcf3abb03b1fe76f04137" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_countPerRevolution</definition>
+        <argsstring></argsstring>
+        <name>_countPerRevolution</name>
+        <qualifiedname>EvoMotor::_countPerRevolution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="57" column="9" bodyfile="src/motors/EvoMotor.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1aa07b1826c1844d375f32e79d1e1df02c" prot="private" static="no" mutable="no">
+        <type>MotorState</type>
+        <definition>MotorState EvoMotor::_motorState</definition>
+        <argsstring></argsstring>
+        <name>_motorState</name>
+        <qualifiedname>EvoMotor::_motorState</qualifiedname>
+        <initializer>= COAST</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="60" column="16" bodyfile="src/motors/EvoMotor.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a49403e5151ea630b4ec918b881f2cfe9" prot="private" static="no" mutable="no">
+        <type>MotorState</type>
+        <definition>MotorState EvoMotor::_motorStopState</definition>
+        <argsstring></argsstring>
+        <name>_motorStopState</name>
+        <qualifiedname>EvoMotor::_motorStopState</qualifiedname>
+        <initializer>= COAST</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="60" column="29" bodyfile="src/motors/EvoMotor.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a5a5aedf824f4e2cc38353b59d3e9fb75" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_stallTime</definition>
+        <argsstring></argsstring>
+        <name>_stallTime</name>
+        <qualifiedname>EvoMotor::_stallTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="61" column="9" bodyfile="src/motors/EvoMotor.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a05063ffa4f023b94bc93fca9e180e6c1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_stallCountThreshold</definition>
+        <argsstring></argsstring>
+        <name>_stallCountThreshold</name>
+        <qualifiedname>EvoMotor::_stallCountThreshold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="61" column="20" bodyfile="src/motors/EvoMotor.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1ae04be6cbb1ddeea9dc7264ff5584be49" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_targetSpeed</definition>
+        <argsstring></argsstring>
+        <name>_targetSpeed</name>
+        <qualifiedname>EvoMotor::_targetSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="62" column="9" bodyfile="src/motors/EvoMotor.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1af6a7de75bd12b135dc303aae075f638b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_targetAngle</definition>
+        <argsstring></argsstring>
+        <name>_targetAngle</name>
+        <qualifiedname>EvoMotor::_targetAngle</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="62" column="22" bodyfile="src/motors/EvoMotor.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a2c7dae0934c5bf9c19299ad4a29b6ab0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotor::_targetEncoder</definition>
+        <argsstring></argsstring>
+        <name>_targetEncoder</name>
+        <qualifiedname>EvoMotor::_targetEncoder</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="62" column="36" bodyfile="src/motors/EvoMotor.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a2ca1482f1180b43216e9b7100df1d0d2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EvoMotor::_completed</definition>
+        <argsstring></argsstring>
+        <name>_completed</name>
+        <qualifiedname>EvoMotor::_completed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="63" column="10" bodyfile="src/motors/EvoMotor.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1ad167329d200606bea61e3841dab1e8ff" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EvoMotor::_stalled</definition>
+        <argsstring></argsstring>
+        <name>_stalled</name>
+        <qualifiedname>EvoMotor::_stalled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="63" column="21" bodyfile="src/motors/EvoMotor.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a398576331671dc23385c5646cd484a43" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoMotor::_kp</definition>
+        <argsstring></argsstring>
+        <name>_kp</name>
+        <qualifiedname>EvoMotor::_kp</qualifiedname>
+        <initializer>= 5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="64" column="11" bodyfile="src/motors/EvoMotor.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a6b60d6537bce61112b4dced80a72f2ee" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoMotor::_ki</definition>
+        <argsstring></argsstring>
+        <name>_ki</name>
+        <qualifiedname>EvoMotor::_ki</qualifiedname>
+        <initializer>= 0.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="64" column="16" bodyfile="src/motors/EvoMotor.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1a9d61b30e2c06c59836d27b3aa66c92b9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoMotor::_kd</definition>
+        <argsstring></argsstring>
+        <name>_kd</name>
+        <qualifiedname>EvoMotor::_kd</qualifiedname>
+        <initializer>= 30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="64" column="21" bodyfile="src/motors/EvoMotor.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1abc4f6df47f14fdc8ffcab6b6b36bab4a" prot="private" static="no" mutable="no">
+        <type>ESP32Encoder</type>
+        <definition>ESP32Encoder EvoMotor::encoder</definition>
+        <argsstring></argsstring>
+        <name>encoder</name>
+        <qualifiedname>EvoMotor::encoder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="66" column="18" bodyfile="src/motors/EvoMotor.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_1acbe9813880b50914240ba9e0b94f1181" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evo_p_w_m_driver" kindref="compound">EvoPWMDriver</ref> &amp;</type>
+        <definition>EvoPWMDriver&amp; EvoMotor::driver</definition>
+        <argsstring></argsstring>
+        <name>driver</name>
+        <qualifiedname>EvoMotor::driver</qualifiedname>
+        <initializer>= EvoPWMDriver::getInstance()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="67" column="18" bodyfile="src/motors/EvoMotor.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_evo_motor_1ab093d5fcdc780e891630fbb7c781e896" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::motorControlTask</definition>
+        <argsstring>(void *parameter)</argsstring>
+        <name>motorControlTask</name>
+        <qualifiedname>EvoMotor::motorControlTask</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="69" column="17" bodyfile="src/motors/EvoMotor.cpp" bodystart="303" bodyend="352"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_evo_motor_1a451bc58fa07cf9071844b9869e996505" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::move</definition>
+        <argsstring>(int speed)</argsstring>
+        <name>move</name>
+        <qualifiedname>EvoMotor::move</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="70" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="227" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a251c65e07cd84a8f13268f48e3252466" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setParameters</definition>
+        <argsstring>(MotorPort motorPort, bool motorFlip, int minSpeed, int maxSpeed, bool encoderAvailable, int countPerRevolution=0)</argsstring>
+        <name>setParameters</name>
+        <qualifiedname>EvoMotor::setParameters</qualifiedname>
+        <param>
+          <type>MotorPort</type>
+          <declname>motorPort</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>motorFlip</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxSpeed</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>encoderAvailable</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>countPerRevolution</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="71" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="75" bodyend="83"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_motor_1a6346f5971155f78a2efd2e51fd77b31c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EvoMotor::EvoMotor</definition>
+        <argsstring>(MotorPort motorPort, MotorType motorType=GENERICWITHENCODER, bool motorFlip=false)</argsstring>
+        <name>EvoMotor</name>
+        <qualifiedname>EvoMotor::EvoMotor</qualifiedname>
+        <param>
+          <type>MotorPort</type>
+          <declname>motorPort</declname>
+        </param>
+        <param>
+          <type>MotorType</type>
+          <declname>motorType</declname>
+          <defval>GENERICWITHENCODER</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>motorFlip</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="75" column="5" bodyfile="src/motors/EvoMotor.cpp" bodystart="13" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1abc3637db9cefe0fdfd6a99c72c0b0c1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoMotor::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="78" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="85" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a74c8a02ca8e92a3fd9e88878c146c224" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setSpeedLimit</definition>
+        <argsstring>(int minSpeed, int maxSpeed)</argsstring>
+        <name>setSpeedLimit</name>
+        <qualifiedname>EvoMotor::setSpeedLimit</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>minSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="81" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="100" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a4bfbca1a7cd304d93dd4efa4b7352c53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::getSpeedLimit</definition>
+        <argsstring>(int *minSpeed, int *maxSpeed)</argsstring>
+        <name>getSpeedLimit</name>
+        <qualifiedname>EvoMotor::getSpeedLimit</qualifiedname>
+        <param>
+          <type>int *</type>
+          <declname>minSpeed</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>maxSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="84" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="106" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1abbcad00bdaf3275b0164ecfa13ad966e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setEncoderAvailable</definition>
+        <argsstring>(bool avail)</argsstring>
+        <name>setEncoderAvailable</name>
+        <qualifiedname>EvoMotor::setEncoderAvailable</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>avail</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="87" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a944778da0033279bceb0026902577345" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EvoMotor::isEncoderAvailable</definition>
+        <argsstring>()</argsstring>
+        <name>isEncoderAvailable</name>
+        <qualifiedname>EvoMotor::isEncoderAvailable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="90" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="118" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a5b2f286924597207a538ee522cbdda4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setCountPerRevolution</definition>
+        <argsstring>(int countPerRevolution)</argsstring>
+        <name>setCountPerRevolution</name>
+        <qualifiedname>EvoMotor::setCountPerRevolution</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>countPerRevolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="93" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="123" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ab2e17c576940847b38a02c923859d3cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoMotor::getCountPerRevolution</definition>
+        <argsstring>()</argsstring>
+        <name>getCountPerRevolution</name>
+        <qualifiedname>EvoMotor::getCountPerRevolution</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="96" column="9" bodyfile="src/motors/EvoMotor.cpp" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ad3859f851356b2e878408fc06c036a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoMotor::getCount</definition>
+        <argsstring>()</argsstring>
+        <name>getCount</name>
+        <qualifiedname>EvoMotor::getCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="99" column="9" bodyfile="src/motors/EvoMotor.cpp" bodystart="135" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a81a3f806b55458d700aafc6c5d5f21d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setCount</definition>
+        <argsstring>(int count)</argsstring>
+        <name>setCount</name>
+        <qualifiedname>EvoMotor::setCount</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="102" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="141" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ae16e2596364e4322edf40e9cda5a768a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::resetCount</definition>
+        <argsstring>()</argsstring>
+        <name>resetCount</name>
+        <qualifiedname>EvoMotor::resetCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="105" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="147" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a28faa613ee6d55bc6d06f40a7c669125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoMotor::getAngle</definition>
+        <argsstring>()</argsstring>
+        <name>getAngle</name>
+        <qualifiedname>EvoMotor::getAngle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="108" column="9" bodyfile="src/motors/EvoMotor.cpp" bodystart="153" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a49a24183c8f1684114e246e2b797ebb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setAngle</definition>
+        <argsstring>(int degrees)</argsstring>
+        <name>setAngle</name>
+        <qualifiedname>EvoMotor::setAngle</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>degrees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="111" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="164" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a47281b8e341fb6349fffbae7ebcebe90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::resetAngle</definition>
+        <argsstring>()</argsstring>
+        <name>resetAngle</name>
+        <qualifiedname>EvoMotor::resetAngle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="114" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a5eb90564a2077ec6938a2dbe9739b03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EvoMotor::isStalled</definition>
+        <argsstring>()</argsstring>
+        <name>isStalled</name>
+        <qualifiedname>EvoMotor::isStalled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="117" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="170" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a4e7190391b5bc47f2f1c0bb6fb397d08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setStallThresholds</definition>
+        <argsstring>(int timems, int angle)</argsstring>
+        <name>setStallThresholds</name>
+        <qualifiedname>EvoMotor::setStallThresholds</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>timems</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="120" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="176" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a6027cdb09304cffa8778de1e9bcbc163" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setStopBehaviour</definition>
+        <argsstring>(MotorState motorStopState)</argsstring>
+        <name>setStopBehaviour</name>
+        <qualifiedname>EvoMotor::setStopBehaviour</qualifiedname>
+        <param>
+          <type>MotorState</type>
+          <declname>motorStopState</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="123" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="183" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ad32a14a56a1d3c463cd0dd0db3de378b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <qualifiedname>EvoMotor::stop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="126" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="189" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a6edf0927edb7c319bc31f6e2620beb40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::hold</definition>
+        <argsstring>()</argsstring>
+        <name>hold</name>
+        <qualifiedname>EvoMotor::hold</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="129" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="220" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ab4c99fbfbe3a027d2d6e4c692e7da077" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::coast</definition>
+        <argsstring>()</argsstring>
+        <name>coast</name>
+        <qualifiedname>EvoMotor::coast</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="132" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="207" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a1d9542d3a6ee558e0fcd5705ec4ad90c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::brake</definition>
+        <argsstring>()</argsstring>
+        <name>brake</name>
+        <qualifiedname>EvoMotor::brake</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="135" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="213" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a580820b3328cbaa82acda794427ae279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::run</definition>
+        <argsstring>(int speed)</argsstring>
+        <name>run</name>
+        <qualifiedname>EvoMotor::run</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="138" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a3169c87be9f322948306230df02a6187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::runCount</definition>
+        <argsstring>(int speed, int count, bool wait)</argsstring>
+        <name>runCount</name>
+        <qualifiedname>EvoMotor::runCount</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>wait</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="140" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1addce2286d7a2bb8128b91fb099ddcb9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::runAngle</definition>
+        <argsstring>(int speed, int degrees)</argsstring>
+        <name>runAngle</name>
+        <qualifiedname>EvoMotor::runAngle</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>degrees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="143" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="255" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ac8b702718ac7cf452b6c1136cb77c28c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::runTime</definition>
+        <argsstring>(int speed, int timeMS)</argsstring>
+        <name>runTime</name>
+        <qualifiedname>EvoMotor::runTime</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeMS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="146" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="265" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ac57060a4d79becaa61b879caadc3e2f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::runTarget</definition>
+        <argsstring>(int speed, int degrees, bool blocking=false)</argsstring>
+        <name>runTarget</name>
+        <qualifiedname>EvoMotor::runTarget</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>degrees</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>blocking</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="149" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="276" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a7fd8e4406dc3da44d023a6abe415033d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::runUntilStalled</definition>
+        <argsstring>(int speed)</argsstring>
+        <name>runUntilStalled</name>
+        <qualifiedname>EvoMotor::runUntilStalled</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="152" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="291" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1a3259055c24da0e0cf0265349887971ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::setPID</definition>
+        <argsstring>(float kp, float ki, float kd)</argsstring>
+        <name>setPID</name>
+        <qualifiedname>EvoMotor::setPID</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ki</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="154" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="354" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_1ad0fd961fb20124de3c230a51c0c68fcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotor::getPID</definition>
+        <argsstring>(float *kp, float *ki, float *kd)</argsstring>
+        <name>getPID</name>
+        <qualifiedname>EvoMotor::getPID</qualifiedname>
+        <param>
+          <type>float *</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>ki</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>kd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="156" column="10" bodyfile="src/motors/EvoMotor.cpp" bodystart="361" bodyend="366"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/motors/EvoMotor.h" line="47" column="1" bodyfile="src/motors/EvoMotor.h" bodystart="48" bodyend="157"/>
+    <listofallmembers>
+      <member refid="class_evo_motor_1a2ca1482f1180b43216e9b7100df1d0d2" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_completed</name></member>
+      <member refid="class_evo_motor_1adfe03a2c525bcf3abb03b1fe76f04137" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_countPerRevolution</name></member>
+      <member refid="class_evo_motor_1a61f7bd8bdab9131b65fbb87b88750b6e" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_encoderAvailable</name></member>
+      <member refid="class_evo_motor_1a9d61b30e2c06c59836d27b3aa66c92b9" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_kd</name></member>
+      <member refid="class_evo_motor_1a6b60d6537bce61112b4dced80a72f2ee" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_ki</name></member>
+      <member refid="class_evo_motor_1a398576331671dc23385c5646cd484a43" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_kp</name></member>
+      <member refid="class_evo_motor_1a750904e39beba6a1aa6fbaf0f861d171" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_maxSpeed</name></member>
+      <member refid="class_evo_motor_1aeed80795947b85bbadf3b5b5cb1603d6" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_minSpeed</name></member>
+      <member refid="class_evo_motor_1a227a9e026f6cd4d6f1926f37a9c51429" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_motorFlip</name></member>
+      <member refid="class_evo_motor_1a9eebf6d5e0644b34a6fe1a077c4fda28" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_motorPins</name></member>
+      <member refid="class_evo_motor_1a8ad4eb02c94296a3239bba8f25446749" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_motorPort</name></member>
+      <member refid="class_evo_motor_1aa07b1826c1844d375f32e79d1e1df02c" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_motorState</name></member>
+      <member refid="class_evo_motor_1a49403e5151ea630b4ec918b881f2cfe9" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_motorStopState</name></member>
+      <member refid="class_evo_motor_1af803a152981207abe69a4a01a76f6188" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_motorType</name></member>
+      <member refid="class_evo_motor_1a05063ffa4f023b94bc93fca9e180e6c1" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_stallCountThreshold</name></member>
+      <member refid="class_evo_motor_1ad167329d200606bea61e3841dab1e8ff" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_stalled</name></member>
+      <member refid="class_evo_motor_1a5a5aedf824f4e2cc38353b59d3e9fb75" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_stallTime</name></member>
+      <member refid="class_evo_motor_1af6a7de75bd12b135dc303aae075f638b" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_targetAngle</name></member>
+      <member refid="class_evo_motor_1a2c7dae0934c5bf9c19299ad4a29b6ab0" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_targetEncoder</name></member>
+      <member refid="class_evo_motor_1ae04be6cbb1ddeea9dc7264ff5584be49" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>_targetSpeed</name></member>
+      <member refid="class_evo_motor_1abc3637db9cefe0fdfd6a99c72c0b0c1c" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>begin</name></member>
+      <member refid="class_evo_motor_1a1d9542d3a6ee558e0fcd5705ec4ad90c" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>brake</name></member>
+      <member refid="class_evo_motor_1ab4c99fbfbe3a027d2d6e4c692e7da077" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>coast</name></member>
+      <member refid="class_evo_motor_1acbe9813880b50914240ba9e0b94f1181" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>driver</name></member>
+      <member refid="class_evo_motor_1abc4f6df47f14fdc8ffcab6b6b36bab4a" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>encoder</name></member>
+      <member refid="class_evo_motor_1a6346f5971155f78a2efd2e51fd77b31c" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>EvoMotor</name></member>
+      <member refid="class_evo_motor_1a28faa613ee6d55bc6d06f40a7c669125" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>getAngle</name></member>
+      <member refid="class_evo_motor_1ad3859f851356b2e878408fc06c036a70" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>getCount</name></member>
+      <member refid="class_evo_motor_1ab2e17c576940847b38a02c923859d3cb" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>getCountPerRevolution</name></member>
+      <member refid="class_evo_motor_1ad0fd961fb20124de3c230a51c0c68fcc" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>getPID</name></member>
+      <member refid="class_evo_motor_1a4bfbca1a7cd304d93dd4efa4b7352c53" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>getSpeedLimit</name></member>
+      <member refid="class_evo_motor_1a6edf0927edb7c319bc31f6e2620beb40" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>hold</name></member>
+      <member refid="class_evo_motor_1a944778da0033279bceb0026902577345" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>isEncoderAvailable</name></member>
+      <member refid="class_evo_motor_1a5eb90564a2077ec6938a2dbe9739b03d" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>isStalled</name></member>
+      <member refid="class_evo_motor_1ab093d5fcdc780e891630fbb7c781e896" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>motorControlTask</name></member>
+      <member refid="class_evo_motor_1a451bc58fa07cf9071844b9869e996505" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>move</name></member>
+      <member refid="class_evo_motor_1a47281b8e341fb6349fffbae7ebcebe90" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>resetAngle</name></member>
+      <member refid="class_evo_motor_1ae16e2596364e4322edf40e9cda5a768a" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>resetCount</name></member>
+      <member refid="class_evo_motor_1a580820b3328cbaa82acda794427ae279" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>run</name></member>
+      <member refid="class_evo_motor_1addce2286d7a2bb8128b91fb099ddcb9d" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>runAngle</name></member>
+      <member refid="class_evo_motor_1a3169c87be9f322948306230df02a6187" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>runCount</name></member>
+      <member refid="class_evo_motor_1ac57060a4d79becaa61b879caadc3e2f0" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>runTarget</name></member>
+      <member refid="class_evo_motor_1ac8b702718ac7cf452b6c1136cb77c28c" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>runTime</name></member>
+      <member refid="class_evo_motor_1a7fd8e4406dc3da44d023a6abe415033d" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>runUntilStalled</name></member>
+      <member refid="class_evo_motor_1a49a24183c8f1684114e246e2b797ebb1" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setAngle</name></member>
+      <member refid="class_evo_motor_1a81a3f806b55458d700aafc6c5d5f21d4" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setCount</name></member>
+      <member refid="class_evo_motor_1a5b2f286924597207a538ee522cbdda4a" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setCountPerRevolution</name></member>
+      <member refid="class_evo_motor_1abbcad00bdaf3275b0164ecfa13ad966e" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setEncoderAvailable</name></member>
+      <member refid="class_evo_motor_1a251c65e07cd84a8f13268f48e3252466" prot="private" virt="non-virtual"><scope>EvoMotor</scope><name>setParameters</name></member>
+      <member refid="class_evo_motor_1a3259055c24da0e0cf0265349887971ae" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setPID</name></member>
+      <member refid="class_evo_motor_1a74c8a02ca8e92a3fd9e88878c146c224" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setSpeedLimit</name></member>
+      <member refid="class_evo_motor_1a4e7190391b5bc47f2f1c0bb6fb397d08" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setStallThresholds</name></member>
+      <member refid="class_evo_motor_1a6027cdb09304cffa8778de1e9bcbc163" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>setStopBehaviour</name></member>
+      <member refid="class_evo_motor_1ad32a14a56a1d3c463cd0dd0db3de378b" prot="public" virt="non-virtual"><scope>EvoMotor</scope><name>stop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

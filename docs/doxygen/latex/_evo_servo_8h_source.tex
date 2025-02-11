@@ -1,0 +1,51 @@
+\doxysection{Evo\+Servo.\+h}
+\hypertarget{_evo_servo_8h_source}{}\label{_evo_servo_8h_source}\index{src/motors/EvoServo.h@{src/motors/EvoServo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVO\_SERVO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVO\_SERVO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../helper/EvoPWMDriver.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{enum}\ ServoType}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ Default,}
+\DoxyCodeLine{00009\ \ \ \ \ SG90,}
+\DoxyCodeLine{00010\ \ \ \ \ GeekServo360Grey,\ \ \ \ \textcolor{comment}{//\ Grey}}
+\DoxyCodeLine{00011\ \ \ \ \ GeekServo360Orange,\ \ \textcolor{comment}{//\ Orange}}
+\DoxyCodeLine{00012\ \ \ \ \ GeekServoContinuous,\ \textcolor{comment}{//\ Green}}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{enum}\ ServoChannel}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ SERVOUNDEFINED\ =\ -\/1,}
+\DoxyCodeLine{00018\ \ \ \ \ SERVO1\ =\ 0,\ \textcolor{comment}{//\ Channel\ 0\ on\ the\ multiplexer}}
+\DoxyCodeLine{00019\ \ \ \ \ SERVO2\ =\ 1,\ \textcolor{comment}{//\ Channel\ 1\ on\ the\ multiplexer}}
+\DoxyCodeLine{00020\ \ \ \ \ SERVO3\ =\ 2,\ \textcolor{comment}{//\ Channel\ 2\ on\ the\ multiplexer}}
+\DoxyCodeLine{00021\ \ \ \ \ SERVO4\ =\ 3,\ \textcolor{comment}{//\ Channel\ 3\ on\ the\ multiplexer}}
+\DoxyCodeLine{00022\ \ \ \ \ SERVO5\ =\ 4,\ \textcolor{comment}{//\ Channel\ 4\ on\ the\ multiplexer}}
+\DoxyCodeLine{00023\ \ \ \ \ SERVO6\ =\ 5,\ \textcolor{comment}{//\ Channel\ 5\ on\ the\ multiplexer}}
+\DoxyCodeLine{00024\ \ \ \ \ SERVO7\ =\ 6,\ \textcolor{comment}{//\ Channel\ 6\ on\ the\ multiplexer}}
+\DoxyCodeLine{00025\ \ \ \ \ SERVO8\ =\ 7\ \ \textcolor{comment}{//\ Channel\ 7\ on\ the\ multiplexer}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }EvoServo}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ EvoServo(ServoChannel\ servoChannel,\ ServoType\ servoType\ =\ Default);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ begin();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setPulse(\textcolor{keywordtype}{int}\ minPulse,\ \textcolor{keywordtype}{int}\ maxPulse);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setRange(\textcolor{keywordtype}{int}\ minRange,\ \textcolor{keywordtype}{int}\ maxRange);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ write(\textcolor{keywordtype}{int}\ position);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ setPWM(\textcolor{keywordtype}{int}\ on,\ \textcolor{keywordtype}{int}\ off);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_evo_p_w_m_driver}{EvoPWMDriver}}\ \&driver\ =\ EvoPWMDriver::getInstance();}
+\DoxyCodeLine{00041\ \ \ \ \ uint8\_t\ \_servoChannel;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \_minPulse\ =\ 300,\ \_maxPulse\ =\ 1100;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \_minRange\ =\ 0,\ \_maxRange\ =\ 180;}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="u8x8__message_8c" kind="file" language="C++">
+    <compoundname>u8x8_message.c</compoundname>
+    <includes refid="u8x8_8h" local="yes">u8x8.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>u8x8.h</label>
+        <link refid="u8x8_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/helper/U8g2/clib/u8x8_message.c</label>
+        <link refid="u8x8__message_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>limits.h</label>
+      </node>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="5">
+        <label>stddef.h</label>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="u8x8__message_8c_1a64f77962c06b17dfa30833f430747a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t u8x8_draw_button_line</definition>
+        <argsstring>(u8x8_t *u8x8, uint8_t y, uint8_t w, uint8_t cursor, const char *s)</argsstring>
+        <name>u8x8_draw_button_line</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>cursor</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_message.c" line="38" column="9" bodyfile="src/helper/U8g2/clib/u8x8_message.c" bodystart="38" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="u8x8__message_8c_1a839fbc937bc4d1b0a696f96bba8b3018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t u8x8_UserInterfaceMessage</definition>
+        <argsstring>(u8x8_t *u8x8, const char *title1, const char *title2, const char *title3, const char *buttons)</argsstring>
+        <name>u8x8_UserInterfaceMessage</name>
+        <param>
+          <type><ref refid="structu8x8__struct" kindref="compound">u8x8_t</ref> *</type>
+          <declname>u8x8</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title2</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title3</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>buttons</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8x8_message.c" line="88" column="9" bodyfile="src/helper/U8g2/clib/u8x8_message.c" bodystart="88" bodyend="151"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>u8x8_message.c</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>Universal<sp/>8bit<sp/>Graphics<sp/>Library<sp/>(https://github.com/olikraus/u8g2/)</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>Copyright<sp/>(c)<sp/>2016,<sp/>olikraus@gmail.com</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.<sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;u8x8.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">uint8_t<sp/>u8x8_draw_button_line(u8x8_t<sp/>*u8x8,<sp/>uint8_t<sp/>y,<sp/>uint8_t<sp/>w,<sp/>uint8_t<sp/>cursor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>uint8_t<sp/>i;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>uint8_t<sp/>cnt;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>uint8_t<sp/>total;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>uint8_t<sp/>d;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>uint8_t<sp/>x;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>cnt<sp/>=<sp/>u8x8_GetStringLineCnt(s);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>calculate<sp/>the<sp/>width<sp/>of<sp/>the<sp/>button<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>total<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>cnt;<sp/>i++<sp/>)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>total<sp/>+=<sp/>u8x8_GetUTF8Len(u8x8,<sp/>u8x8_GetStringLineStart(i,<sp/>s));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>total<sp/>+=<sp/>(cnt-1);<sp/></highlight><highlight class="comment">/*<sp/>had<sp/>one<sp/>space<sp/>between<sp/>the<sp/>buttons<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>calculate<sp/>the<sp/>left<sp/>offset<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>d<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>total<sp/>&lt;<sp/>w<sp/>)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>=<sp/>w;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>-=<sp/>total;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/>/=<sp/>2;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>draw<sp/>the<sp/>buttons<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>x<sp/>=<sp/>d;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>u8x8_SetInverseFont(u8x8,<sp/>0);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>cnt;<sp/>i++<sp/>)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>==<sp/>cursor<sp/>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_SetInverseFont(u8x8,<sp/>1);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>x+=u8x8_DrawUTF8(u8x8,<sp/>x,<sp/>y,<sp/>u8x8_GetStringLineStart(i,<sp/>s));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8_SetInverseFont(u8x8,<sp/>0);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>x+=u8x8_DrawUTF8(u8x8,<sp/>x,<sp/>y,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>return<sp/>the<sp/>number<sp/>of<sp/>buttons<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cnt;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/>title1:<sp/><sp/><sp/>Multiple<sp/>lines,separated<sp/>by<sp/>&apos;\n&apos;</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/>title2:<sp/><sp/><sp/>A<sp/>single<sp/>line/string<sp/>which<sp/>is<sp/>terminated<sp/>by<sp/>&apos;\0&apos;<sp/>or<sp/>&apos;\n&apos;<sp/>.<sp/>&quot;title2&quot;<sp/>accepts<sp/>the<sp/>return<sp/>value<sp/>from<sp/>u8x8_GetStringLineStart()</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/>title3:<sp/><sp/><sp/>Multiple<sp/>lines,separated<sp/>by<sp/>&apos;\n&apos;</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/>buttons:<sp/><sp/>one<sp/>more<sp/>more<sp/>buttons<sp/>separated<sp/>by<sp/>&apos;\n&apos;<sp/>and<sp/>terminated<sp/>with<sp/>&apos;\0&apos;</highlight></codeline>
+<codeline lineno="86"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">uint8_t<sp/>u8x8_UserInterfaceMessage(u8x8_t<sp/>*u8x8,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title3,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buttons)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>uint8_t<sp/>height;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>uint8_t<sp/>y;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>uint8_t<sp/>cursor<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>uint8_t<sp/>button_cnt;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>uint8_t<sp/>event;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>u8x8_SetInverseFont(u8x8,<sp/>0);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>calculate<sp/>overall<sp/>height<sp/>of<sp/>the<sp/>message<sp/>box<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>height<sp/>=<sp/>1;<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>button<sp/>line<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>height<sp/>+=<sp/>u8x8_GetStringLineCnt(title1);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>title2<sp/>!=<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>height<sp/>++;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>height<sp/>+=<sp/>u8x8_GetStringLineCnt(title3);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>calculate<sp/>offset<sp/>from<sp/>top<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>height<sp/>&lt;<sp/>u8x8_GetRows(u8x8)<sp/><sp/>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>u8x8_GetRows(u8x8);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>-=<sp/>height;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>/=<sp/>2;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>draw<sp/>message<sp/>box<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>u8x8_ClearDisplay(u8x8);<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>required,<sp/>because<sp/>not<sp/>everything<sp/>is<sp/>filled<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>y<sp/>+=<sp/>u8x8_DrawUTF8Lines(u8x8,<sp/>0,<sp/>y,<sp/>u8x8_GetCols(u8x8),<sp/>title1);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>title2<sp/>!=<sp/>NULL<sp/>)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>u8x8_DrawUTF8Line(u8x8,<sp/>0,<sp/>y,<sp/>u8x8_GetCols(u8x8),<sp/>title2);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>y++;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>y<sp/>+=<sp/>u8x8_DrawUTF8Lines(u8x8,<sp/>0,<sp/>y,<sp/>u8x8_GetCols(u8x8),<sp/>title3);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>button_cnt<sp/>=<sp/>u8x8_draw_button_line(u8x8,<sp/>y,<sp/>u8x8_GetCols(u8x8),<sp/>cursor,<sp/>buttons);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/>=<sp/>u8x8_GetMenuEvent(u8x8);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>event<sp/>==<sp/>U8X8_MSG_GPIO_MENU_SELECT<sp/>)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cursor+1;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>event<sp/>==<sp/>U8X8_MSG_GPIO_MENU_HOME<sp/>)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>event<sp/>==<sp/>U8X8_MSG_GPIO_MENU_NEXT<sp/>||<sp/>event<sp/>==<sp/>U8X8_MSG_GPIO_MENU_UP<sp/>)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cursor++;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>cursor<sp/>&gt;=<sp/>button_cnt<sp/>)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>cursor<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_draw_button_line(u8x8,<sp/>y,<sp/>u8x8_GetCols(u8x8),<sp/>cursor,<sp/>buttons);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>event<sp/>==<sp/>U8X8_MSG_GPIO_MENU_PREV<sp/>||<sp/>event<sp/>==<sp/>U8X8_MSG_GPIO_MENU_DOWN<sp/><sp/>)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>cursor<sp/>==<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>cursor<sp/>=<sp/>button_cnt;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cursor--;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8x8_draw_button_line(u8x8,<sp/>y,<sp/>u8x8_GetCols(u8x8),<sp/>cursor,<sp/>buttons);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>}<sp/><sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/helper/U8g2/clib/u8x8_message.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="u8g2__d__setup_8c" kind="file" language="C++">
+    <compoundname>u8g2_d_setup.c</compoundname>
+    <includes refid="u8g2_8h" local="yes">u8g2.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>u8g2.h</label>
+        <link refid="u8g2_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/helper/U8g2/clib/u8g2_d_setup.c</label>
+        <link refid="u8g2__d__setup_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>u8x8.h</label>
+        <link refid="u8x8_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="u8g2__d__setup_8c_1a7bff241153e2b03522ddb601f4787e1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8g2_Setup_ssd1306_i2c_128x64_noname_f</definition>
+        <argsstring>(u8g2_t *u8g2, const u8g2_cb_t *rotation, u8x8_msg_cb byte_cb, u8x8_msg_cb gpio_and_delay_cb)</argsstring>
+        <name>u8g2_Setup_ssd1306_i2c_128x64_noname_f</name>
+        <param>
+          <type><ref refid="structu8g2__struct" kindref="compound">u8g2_t</ref> *</type>
+          <declname>u8g2</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structu8g2__cb__struct" kindref="compound">u8g2_cb_t</ref> *</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>u8x8_msg_cb</type>
+          <declname>byte_cb</declname>
+        </param>
+        <param>
+          <type>u8x8_msg_cb</type>
+          <declname>gpio_and_delay_cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8g2_d_setup.c" line="7" column="6" bodyfile="src/helper/U8g2/clib/u8g2_d_setup.c" bodystart="7" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>u8g2_d_setup.c<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>generated<sp/>code,<sp/>codebuild,<sp/>u8g2<sp/>project<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;u8g2.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ssd1306<sp/>f<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8g2_Setup_ssd1306_i2c_128x64_noname_f(u8g2_t<sp/>*u8g2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>u8g2_cb_t<sp/>*rotation,<sp/>u8x8_msg_cb<sp/>byte_cb,<sp/>u8x8_msg_cb<sp/>gpio_and_delay_cb)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>uint8_t<sp/>tile_buf_height;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>uint8_t<sp/>*buf;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>u8g2_SetupDisplay(u8g2,<sp/>u8x8_d_ssd1306_128x64_noname,<sp/>u8x8_cad_ssd13xx_fast_i2c,<sp/>byte_cb,<sp/>gpio_and_delay_cb);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/>buf<sp/>=<sp/>u8g2_m_16_8_f(&amp;tile_buf_height);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>u8g2_SetupBuffer(u8g2,<sp/>buf,<sp/>tile_buf_height,<sp/>u8g2_ll_hvline_vertical_top_lsb,<sp/>rotation);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>end<sp/>of<sp/>generated<sp/>code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/helper/U8g2/clib/u8g2_d_setup.c"/>
+  </compounddef>
+</doxygen>

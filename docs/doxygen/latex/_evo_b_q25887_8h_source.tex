@@ -1,0 +1,389 @@
+\doxysection{Evo\+BQ25887.\+h}
+\hypertarget{_evo_b_q25887_8h_source}{}\label{_evo_b_q25887_8h_source}\index{src/helper/EvoBQ25887.h@{src/helper/EvoBQ25887.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVO\_BQ25887\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVO\_BQ25887\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}X1pins.h"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ BQ25887\ I2C\ Address*/}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BQ25887\_I2C\_ADDRESS\ 0x6A}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ BQ25887\_PARTINFO\ 0x29\ }\textcolor{comment}{//\ 0b00101001}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*REGISTER\ DEFINITIONS*/}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CELL\_VOLTAGE\_LIMIT\ 0x00\ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGE\_CURRENT\_LIMIT\ 0x01\ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_INPUT\_VOLTAGE\_LIMIT\ 0x02\ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_INPUT\_CURRENT\_LIMIT\ 0x03\ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_PRE\_TERM\_CURRENT\_LIMIT\ 0x04\ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_CONTROL\_1\ 0x05\ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_CONTROL\_2\ 0x06\ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_CONTROL\_3\ 0x07\ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_CONTROL\_4\ 0x08\ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ \#define\ BQ25887\_REG\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x09\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ RESERVED}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_ICO\_CURRENT\_LIMIT\ 0x0A\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_STATUS\_1\ 0x0B\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_STATUS\_2\ 0x0C\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_NTC\_STATUS\ 0x0D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_FAULT\_STATUS\ 0x0E\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_FLAG\_1\ 0x0F\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_FLAG\_2\ 0x10\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_FAULT\_FLAG\ 0x11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_MASK\_1\ 0x12\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CHARGER\_MASK\_2\ 0x13\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_FAULT\_MASK\ 0x14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_ADC\_CONTROL\ 0x15\ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_ADC\_FUNCTION\_DISABLE\ 0x16\ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_IBUS\_ADC\_1\ 0x17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_IBUS\_ADC\_0\ 0x18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_ICHG\_ADC\_1\ 0x19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_ICHG\_ADC\_0\ 0x1A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VBUS\_ADC\_1\ 0x1B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VBUS\_ADC\_0\ 0x1C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VBAT\_ADC\_1\ 0x1D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VBAT\_ADC\_0\ 0x1E\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VCELL\_TOP\_ADC\_1\ 0x1F\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VCELL\_TOP\_ADC\_0\ 0x20\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_TS\_ADC\_1\ 0x21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_TS\_ADC\_0\ 0x22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_TDIE\_ADC\_1\ 0x23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_TDIE\_ADC\_0\ 0x24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_PART\_INFORMATION\ 0x25\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VCELL\_BOT\_ADC\_1\ 0x26\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_VCELL\_BOT\_ADC\_0\ 0x27\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CELL\_BALANCING\_CONTROL\_1\ 0x28\ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CELL\_BALANCING\_CONTROL\_2\ 0x29\ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CELL\_BALANCING\_STAT\_CONT\ 0x2A\ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CELL\_BALANCING\_FLAG\ 0x2B\ \ \ \ \ \ }\textcolor{comment}{//\ (R)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BQ25887\_REG\_CELL\_BALANCING\_MASK\ 0x2C\ \ \ \ \ \ }\textcolor{comment}{//\ (R/W)}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }EvoBQ25887}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ public\ variables}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ public\ methods}}
+\DoxyCodeLine{00068\ \ \ \ \ EvoBQ25887();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ begin();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ uint8\_t\ readCellVoltageLimitReg();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{float}\ getCellVoltageLimit();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ uint8\_t\ readChargeCurrentLimitReg();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{float}\ getChargeCurrentLimit();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHIZMode();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ getILIMPinFunction();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ uint8\_t\ readInputVoltageLimitReg();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{float}\ getInputVoltageLimit();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEN\_VINDPM\_RST();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEN\_BAT\_DISCHG();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPFM\_OOA\_DIS();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ uint8\_t\ readInputCurrentLimitReg();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{float}\ getInputCurrentLimit();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ getFORCE\_ICO();}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ getFORCE\_INDET();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEN\_ICO();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ uint8\_t\ readPreTermCurrentLimitReg();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{float}\ getPrechargeCurrentLimit();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ getTerminationCurrentLimit();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ uint32\_t\ readChargeControlSettingsReg();}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEN\_TERM();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ getSTAT\_DIS();}
+\DoxyCodeLine{00098\ \ \ \ \ uint8\_t\ getWATCHDOG();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEN\_TIMER();}
+\DoxyCodeLine{00100\ \ \ \ \ uint8\_t\ getCHG\_TIMER();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTMR2X\_EN();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ getAUTO\_INDET\_EN();}
+\DoxyCodeLine{00103\ \ \ \ \ uint8\_t\ getT\_REG\_THRESH();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ getEN\_CHG();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{float}\ getCELLLOWV\_THRESH();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{float}\ getVCELL\_RECHG\_THRESH\_OFF();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPFM\_DIS();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ getWD\_RST();}
+\DoxyCodeLine{00109\ \ \ \ \ uint8\_t\ getTOPOFF\_TIMER();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{float}\ getJEITA\_VSET();}
+\DoxyCodeLine{00111\ \ \ \ \ uint8\_t\ getJEITA\_ISETH();}
+\DoxyCodeLine{00112\ \ \ \ \ uint8\_t\ getJEITA\_ISETC();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ uint8\_t\ readIcoCurrentLimitReg();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{float}\ getICOCurrentLimit();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ uint16\_t\ readChargeStatusReg();}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ getIINDPM\_STAT();}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVINDPM\_STAT();}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTREG\_STAT();}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ getWD\_STAT();}
+\DoxyCodeLine{00122\ \ \ \ \ uint8\_t\ getCHRG\_STAT();}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPG\_STAT();}
+\DoxyCodeLine{00124\ \ \ \ \ uint8\_t\ getVBUS\_STAT();}
+\DoxyCodeLine{00125\ \ \ \ \ uint8\_t\ getICO\_STAT();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ uint8\_t\ readNtcStatusReg();}
+\DoxyCodeLine{00128\ \ \ \ \ uint8\_t\ getNTCStatus();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ uint8\_t\ readFaultStatusReg();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVBUS\_OVP\_STAT();}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTSHUT\_STAT();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTMR\_STAT();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ uint16\_t\ readChargeFlagsReg();}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ getIINDPM\_FLAG();}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVINDPM\_FLAG();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTREG\_FLAG();}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{bool}\ getWD\_FLAG();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCHRG\_FLAG();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPG\_FLAG();}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVBUS\_FLAG();}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTS\_FLAG();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{bool}\ getICO\_FLAG();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ uint8\_t\ readFaultFlagsReg();}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVBUS\_OVP\_FLAG();}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTSHUT\_FLAG();}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTMR\_FLAG();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ uint16\_t\ readChargerIntMaskReg();}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ getADC\_DONE\_MASK();}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ getIINDPM\_MASK();}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVINDPM\_MASK();}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{bool}\ getT\_REG\_MASK();}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ getWD\_MASK();}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCHRG\_MASK();}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{bool}\ getPG\_MASK();}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVBUS\_MASK();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTS\_MASK();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{bool}\ getICO\_MASK();}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ uint8\_t\ readFaultIntMaskReg();}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVBUS\_OVP\_MASK();}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTSHUT\_MASK();}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTMR\_MASK();}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ getSNS\_SHORT\_MASK();}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ uint8\_t\ readADCControlSettingsReg();}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{bool}\ getADC\_EN();}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{bool}\ getADC\_ONE\_SHOT();}
+\DoxyCodeLine{00172\ \ \ \ \ uint8\_t\ getADC\_SAMPLE\_SPEED();}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ uint8\_t\ readADCFuncDisSettingsReg();}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{bool}\ getIBUS\_ADC\_DIS();}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{bool}\ getICHG\_ADC\_DIS();}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVBUS\_ADC\_DIS();}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVBAT\_ADC\_DIS();}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTS\_ADC\_DIS();}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{bool}\ getVCELL\_ADC\_DIS();}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{bool}\ getTDIE\_ADC\_DIS();}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ int16\_t\ readADCIbusReg();}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_IBUS();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ int16\_t\ readADCIchgReg();}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_ICHG();}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ int16\_t\ readADCVbusReg();}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_VBUS();}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ int16\_t\ readADCVbatReg();}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_VBAT();}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ int16\_t\ readADCVCellTopReg();}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_VCELLTOP();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ uint16\_t\ readADCTsReg();}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_TS();}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ uint16\_t\ readADCTDieReg();}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_TDIE();}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ int16\_t\ readADCVCellBotReg();}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{float}\ getADC\_VCELLBOT();}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ uint8\_t\ readPartInfoReg();}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{bool}\ getREG\_RST();}
+\DoxyCodeLine{00209\ \ \ \ \ uint8\_t\ getPartNumber();}
+\DoxyCodeLine{00210\ \ \ \ \ uint8\_t\ getDevRev();}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ uint16\_t\ readCellBalContSettingsReg();}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{float}\ getVDIFF\_END\_OFFSET();}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{float}\ getTCB\_QUAL\_INTERVAL();}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{float}\ getTCB\_ACTIVE();}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{float}\ getTSETTLE();}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{float}\ getVQUAL\_TH();}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{float}\ getVDIFF\_START();}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ uint8\_t\ readCellBalStatReg();}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_CHG\_DIS();}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_AUTO\_EN();}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_STAT();}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHS\_CV\_STAT();}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{bool}\ getLS\_CV\_STAT();}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHS\_OV\_STAT();}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{bool}\ getLS\_OV\_STAT();}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_OC\_STAT();}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ uint8\_t\ readCellBalFlagsReg();}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{bool}\ getQCBH\_EN();}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{bool}\ getQCBL\_EN();}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_FLAG();}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHS\_CV\_FLAG();}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{bool}\ getLS\_CV\_FLAG();}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHS\_OV\_FLAG();}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{bool}\ getLS\_OV\_FLAG();}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_OC\_FLAG();}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ uint8\_t\ readCellBalIntMaskReg();}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_MASK();}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHS\_CV\_MASK();}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{bool}\ getLS\_CV\_MASK();}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{bool}\ getHS\_OV\_MASK();}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{bool}\ getLS\_OV\_MASK();}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{bool}\ getCB\_OC\_MASK();}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ pollAllRegs();}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ setCellVoltageLimit(\textcolor{keywordtype}{float}\ voltLimit);}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ setChargeCurrentLimit(\textcolor{keywordtype}{float}\ chgCurrentLimit);}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ setHIZMode(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ setILIMPinFunction(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{void}\ setInputVoltageLimit(\textcolor{keywordtype}{float}\ inputVoltLimit);}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ setEN\_VINDPM\_RST(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ setEN\_BAT\_DISCHG(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ setPFM\_OOA\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{void}\ setInputCurrentLimit(\textcolor{keywordtype}{float}\ inputCurLimit);}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{void}\ setFORCE\_ICO(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{void}\ setFORCE\_INDET(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ setEN\_ICO(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordtype}{void}\ setPrechargeCurrentLimit(\textcolor{keywordtype}{float}\ preCurrentLimit);}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{void}\ setTerminationCurrentLimit(\textcolor{keywordtype}{float}\ termCurrentLimit);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{void}\ setEN\_TERM(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ setSTAT\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{void}\ setWATCHDOG(uint8\_t\ timerSetting);}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{void}\ setEN\_TIMER(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ setCHG\_TIMER(uint8\_t\ timerSetting);}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{void}\ setTMR2X\_EN(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{void}\ setAUTO\_INDET\_EN(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{void}\ setT\_REG\_THRESH(uint8\_t\ thermalRegulationThreshold);}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{void}\ setEN\_CHG(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{void}\ setCELLLOWV\_THRESH(uint8\_t\ cellLowThreshold);}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{void}\ setVCELL\_RECHG\_THRESH\_OFF(uint8\_t\ rechargeThresholdOffset);}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{void}\ setPFM\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{void}\ wdReset();}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ setTOPOFF\_TIMER(uint8\_t\ topOffTimer);}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{void}\ setJEITA\_VSET(uint8\_t\ jeitaSetting);}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{void}\ setJEITA\_ISETH(uint8\_t\ jeitaSetting);}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{void}\ setJEITA\_ISETC(uint8\_t\ jeitaSetting);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{void}\ setADC\_DONE\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{void}\ setIINDPM\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{void}\ setVINDPM\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ setT\_REG\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{void}\ setWD\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordtype}{void}\ setCHRG\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{void}\ setPG\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{void}\ setVBUS\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{void}\ setTS\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{void}\ setICO\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{void}\ setVBUS\_OVP\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{void}\ setTSHUT\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{void}\ setTMR\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{void}\ setSNS\_SHORT\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{void}\ setADC\_EN(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{void}\ setADC\_ONE\_SHOT(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{void}\ setADC\_SAMPLE\_SPEED(uint8\_t\ sampleSpeed);}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{void}\ setIBUS\_ADC\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{void}\ setICHG\_ADC\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{void}\ setVBUS\_ADC\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{void}\ setVBAT\_ADC\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{void}\ setTS\_ADC\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{void}\ setVCELL\_ADC\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordtype}{void}\ setTDIE\_ADC\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{void}\ registerReset();}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordtype}{void}\ setVDIFF\_END\_OFFSET(uint8\_t\ cellBalExitThresh);}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{void}\ setTCB\_QUAL\_INTERVAL(uint8\_t\ cbQualInterval);}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{void}\ setTCB\_ACTIVE(uint8\_t\ tcbActive);}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{void}\ setTSETTLE(uint8\_t\ tSettle);}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{void}\ setVQUAL\_TH(uint8\_t\ vQualThreshold);}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{void}\ setVDIFF\_START(uint8\_t\ vDiffStartThreshold);}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{void}\ setCB\_CHG\_DIS(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{void}\ setCB\_AUTO\_EN(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{void}\ setQCBL\_EN(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{void}\ setQCBH\_EN(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{void}\ setCB\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{void}\ setHS\_CV\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{void}\ setLS\_CV\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{void}\ setHS\_OV\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{void}\ setLS\_OV\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordtype}{void}\ setCB\_OC\_MASK(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{comment}{//\ protected:}}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{comment}{//\ private\ variables}}
+\DoxyCodeLine{00340\ \ \ \ \ uint8\_t\ rawCellVoltageLimitReg;}
+\DoxyCodeLine{00341\ \ \ \ \ uint8\_t\ rawChargeCurrentLimitReg;}
+\DoxyCodeLine{00342\ \ \ \ \ uint8\_t\ rawInputVoltageLimitReg;}
+\DoxyCodeLine{00343\ \ \ \ \ uint8\_t\ rawInputCurrentLimitReg;}
+\DoxyCodeLine{00344\ \ \ \ \ uint8\_t\ rawPreTermCurrentLimitReg;}
+\DoxyCodeLine{00345\ \ \ \ \ uint32\_t\ rawChargeControlSettingsReg;}
+\DoxyCodeLine{00346\ \ \ \ \ uint8\_t\ rawIcoCurrentLimitReg;}
+\DoxyCodeLine{00347\ \ \ \ \ uint16\_t\ rawChargeStatusReg;}
+\DoxyCodeLine{00348\ \ \ \ \ uint8\_t\ rawNtcStatusReg;}
+\DoxyCodeLine{00349\ \ \ \ \ uint8\_t\ rawFaultStatusReg;}
+\DoxyCodeLine{00350\ \ \ \ \ uint16\_t\ rawChargeFlagsReg;}
+\DoxyCodeLine{00351\ \ \ \ \ uint8\_t\ rawFaultFlagsReg;}
+\DoxyCodeLine{00352\ \ \ \ \ uint16\_t\ rawChargerIntMaskReg;}
+\DoxyCodeLine{00353\ \ \ \ \ uint8\_t\ rawFaultIntMaskReg;}
+\DoxyCodeLine{00354\ \ \ \ \ uint8\_t\ rawADCControlSettingsReg;}
+\DoxyCodeLine{00355\ \ \ \ \ uint8\_t\ rawADCFuncDisSettingsReg;}
+\DoxyCodeLine{00356\ \ \ \ \ int16\_t\ rawADCIbusReg;}
+\DoxyCodeLine{00357\ \ \ \ \ int16\_t\ rawADCIchgReg;}
+\DoxyCodeLine{00358\ \ \ \ \ int16\_t\ rawADCVbusReg;}
+\DoxyCodeLine{00359\ \ \ \ \ int16\_t\ rawADCVbatReg;}
+\DoxyCodeLine{00360\ \ \ \ \ int16\_t\ rawADCVCellTopReg;}
+\DoxyCodeLine{00361\ \ \ \ \ uint16\_t\ rawADCTsReg;}
+\DoxyCodeLine{00362\ \ \ \ \ uint16\_t\ rawADCTDieReg;}
+\DoxyCodeLine{00363\ \ \ \ \ int16\_t\ rawADCVCellBotReg;}
+\DoxyCodeLine{00364\ \ \ \ \ uint8\_t\ rawPartInfoReg;}
+\DoxyCodeLine{00365\ \ \ \ \ uint16\_t\ rawCellBalContSettingsReg;}
+\DoxyCodeLine{00366\ \ \ \ \ uint8\_t\ rawCellBalStatReg;}
+\DoxyCodeLine{00367\ \ \ \ \ uint8\_t\ rawCellBalFlagsReg;}
+\DoxyCodeLine{00368\ \ \ \ \ uint8\_t\ rawCellBalIntMaskReg;}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{comment}{//\ private\ methods}}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{comment}{//\ uint8\_t\ getCellVoltageLimitReg();}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{comment}{//\ private\ read/write\ methods}}
+\DoxyCodeLine{00374\ \ \ \ \ uint8\_t\ read8(uint8\_t\ reg);}
+\DoxyCodeLine{00375\ \ \ \ \ uint16\_t\ read16(uint8\_t\ reg);}
+\DoxyCodeLine{00376\ \ \ \ \ uint32\_t\ read32(uint8\_t\ reg);}
+\DoxyCodeLine{00377\ \ \ \ \ int16\_t\ readADC(uint8\_t\ reg);}
+\DoxyCodeLine{00378\ \ \ \ \ \textcolor{keywordtype}{void}\ write8(uint8\_t\ reg,\ uint8\_t\ data);}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keywordtype}{void}\ write16(uint8\_t\ reg,\ uint16\_t\ data);}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{void}\ write32(uint8\_t\ reg,\ uint32\_t\ data);}
+\DoxyCodeLine{00381\ \};}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

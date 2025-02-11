@@ -1,0 +1,98 @@
+\doxysection{Evo\+Motor Class Reference}
+\hypertarget{class_evo_motor}{}\label{class_evo_motor}\index{EvoMotor@{EvoMotor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_evo_motor_a6346f5971155f78a2efd2e51fd77b31c}\label{class_evo_motor_a6346f5971155f78a2efd2e51fd77b31c} 
+{\bfseries Evo\+Motor} (Motor\+Port motor\+Port, Motor\+Type motor\+Type=GENERICWITHENCODER, bool motor\+Flip=false)
+\item 
+\Hypertarget{class_evo_motor_abc3637db9cefe0fdfd6a99c72c0b0c1c}\label{class_evo_motor_abc3637db9cefe0fdfd6a99c72c0b0c1c} 
+void {\bfseries begin} ()
+\item 
+\Hypertarget{class_evo_motor_a74c8a02ca8e92a3fd9e88878c146c224}\label{class_evo_motor_a74c8a02ca8e92a3fd9e88878c146c224} 
+void {\bfseries set\+Speed\+Limit} (int min\+Speed, int max\+Speed)
+\item 
+\Hypertarget{class_evo_motor_a4bfbca1a7cd304d93dd4efa4b7352c53}\label{class_evo_motor_a4bfbca1a7cd304d93dd4efa4b7352c53} 
+void {\bfseries get\+Speed\+Limit} (int \texorpdfstring{$\ast$}{*}min\+Speed, int \texorpdfstring{$\ast$}{*}max\+Speed)
+\item 
+\Hypertarget{class_evo_motor_abbcad00bdaf3275b0164ecfa13ad966e}\label{class_evo_motor_abbcad00bdaf3275b0164ecfa13ad966e} 
+void {\bfseries set\+Encoder\+Available} (bool avail)
+\item 
+\Hypertarget{class_evo_motor_a944778da0033279bceb0026902577345}\label{class_evo_motor_a944778da0033279bceb0026902577345} 
+bool {\bfseries is\+Encoder\+Available} ()
+\item 
+\Hypertarget{class_evo_motor_a5b2f286924597207a538ee522cbdda4a}\label{class_evo_motor_a5b2f286924597207a538ee522cbdda4a} 
+void {\bfseries set\+Count\+Per\+Revolution} (int count\+Per\+Revolution)
+\item 
+\Hypertarget{class_evo_motor_ab2e17c576940847b38a02c923859d3cb}\label{class_evo_motor_ab2e17c576940847b38a02c923859d3cb} 
+int {\bfseries get\+Count\+Per\+Revolution} ()
+\item 
+\Hypertarget{class_evo_motor_ad3859f851356b2e878408fc06c036a70}\label{class_evo_motor_ad3859f851356b2e878408fc06c036a70} 
+int {\bfseries get\+Count} ()
+\item 
+\Hypertarget{class_evo_motor_a81a3f806b55458d700aafc6c5d5f21d4}\label{class_evo_motor_a81a3f806b55458d700aafc6c5d5f21d4} 
+void {\bfseries set\+Count} (int count)
+\item 
+\Hypertarget{class_evo_motor_ae16e2596364e4322edf40e9cda5a768a}\label{class_evo_motor_ae16e2596364e4322edf40e9cda5a768a} 
+void {\bfseries reset\+Count} ()
+\item 
+\Hypertarget{class_evo_motor_a28faa613ee6d55bc6d06f40a7c669125}\label{class_evo_motor_a28faa613ee6d55bc6d06f40a7c669125} 
+int {\bfseries get\+Angle} ()
+\item 
+\Hypertarget{class_evo_motor_a49a24183c8f1684114e246e2b797ebb1}\label{class_evo_motor_a49a24183c8f1684114e246e2b797ebb1} 
+void {\bfseries set\+Angle} (int degrees)
+\item 
+\Hypertarget{class_evo_motor_a47281b8e341fb6349fffbae7ebcebe90}\label{class_evo_motor_a47281b8e341fb6349fffbae7ebcebe90} 
+void {\bfseries reset\+Angle} ()
+\item 
+\Hypertarget{class_evo_motor_a5eb90564a2077ec6938a2dbe9739b03d}\label{class_evo_motor_a5eb90564a2077ec6938a2dbe9739b03d} 
+bool {\bfseries is\+Stalled} ()
+\item 
+\Hypertarget{class_evo_motor_a4e7190391b5bc47f2f1c0bb6fb397d08}\label{class_evo_motor_a4e7190391b5bc47f2f1c0bb6fb397d08} 
+void {\bfseries set\+Stall\+Thresholds} (int timems, int angle)
+\item 
+\Hypertarget{class_evo_motor_a6027cdb09304cffa8778de1e9bcbc163}\label{class_evo_motor_a6027cdb09304cffa8778de1e9bcbc163} 
+void {\bfseries set\+Stop\+Behaviour} (Motor\+State motor\+Stop\+State)
+\item 
+\Hypertarget{class_evo_motor_ad32a14a56a1d3c463cd0dd0db3de378b}\label{class_evo_motor_ad32a14a56a1d3c463cd0dd0db3de378b} 
+void {\bfseries stop} ()
+\item 
+\Hypertarget{class_evo_motor_a6edf0927edb7c319bc31f6e2620beb40}\label{class_evo_motor_a6edf0927edb7c319bc31f6e2620beb40} 
+void {\bfseries hold} ()
+\item 
+\Hypertarget{class_evo_motor_ab4c99fbfbe3a027d2d6e4c692e7da077}\label{class_evo_motor_ab4c99fbfbe3a027d2d6e4c692e7da077} 
+void {\bfseries coast} ()
+\item 
+\Hypertarget{class_evo_motor_a1d9542d3a6ee558e0fcd5705ec4ad90c}\label{class_evo_motor_a1d9542d3a6ee558e0fcd5705ec4ad90c} 
+void {\bfseries brake} ()
+\item 
+\Hypertarget{class_evo_motor_a580820b3328cbaa82acda794427ae279}\label{class_evo_motor_a580820b3328cbaa82acda794427ae279} 
+void {\bfseries run} (int speed)
+\item 
+\Hypertarget{class_evo_motor_a3169c87be9f322948306230df02a6187}\label{class_evo_motor_a3169c87be9f322948306230df02a6187} 
+void {\bfseries run\+Count} (int speed, int count, bool wait)
+\item 
+\Hypertarget{class_evo_motor_addce2286d7a2bb8128b91fb099ddcb9d}\label{class_evo_motor_addce2286d7a2bb8128b91fb099ddcb9d} 
+void {\bfseries run\+Angle} (int speed, int degrees)
+\item 
+\Hypertarget{class_evo_motor_ac8b702718ac7cf452b6c1136cb77c28c}\label{class_evo_motor_ac8b702718ac7cf452b6c1136cb77c28c} 
+void {\bfseries run\+Time} (int speed, int time\+MS)
+\item 
+\Hypertarget{class_evo_motor_ac57060a4d79becaa61b879caadc3e2f0}\label{class_evo_motor_ac57060a4d79becaa61b879caadc3e2f0} 
+void {\bfseries run\+Target} (int speed, int degrees, bool blocking=false)
+\item 
+\Hypertarget{class_evo_motor_a7fd8e4406dc3da44d023a6abe415033d}\label{class_evo_motor_a7fd8e4406dc3da44d023a6abe415033d} 
+void {\bfseries run\+Until\+Stalled} (int speed)
+\item 
+\Hypertarget{class_evo_motor_a3259055c24da0e0cf0265349887971ae}\label{class_evo_motor_a3259055c24da0e0cf0265349887971ae} 
+void {\bfseries set\+PID} (float kp, float ki, float kd)
+\item 
+\Hypertarget{class_evo_motor_ad0fd961fb20124de3c230a51c0c68fcc}\label{class_evo_motor_ad0fd961fb20124de3c230a51c0c68fcc} 
+void {\bfseries get\+PID} (float \texorpdfstring{$\ast$}{*}kp, float \texorpdfstring{$\ast$}{*}ki, float \texorpdfstring{$\ast$}{*}kd)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/motors/Evo\+Motor.\+h\item 
+src/motors/Evo\+Motor.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="u8log__u8g2_8c" kind="file" language="C++">
+    <compoundname>u8log_u8g2.c</compoundname>
+    <includes refid="u8g2_8h" local="yes">u8g2.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>u8g2.h</label>
+        <link refid="u8g2_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/helper/U8g2/clib/u8log_u8g2.c</label>
+        <link refid="u8log__u8g2_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>u8x8.h</label>
+        <link refid="u8x8_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stddef.h</label>
+      </node>
+      <node id="4">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="u8log__u8g2_8c_1a5e8fe076038fa32e871d0ca5c81f4653" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8g2_DrawLog</definition>
+        <argsstring>(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8log_t *u8log)</argsstring>
+        <name>u8g2_DrawLog</name>
+        <param>
+          <type><ref refid="structu8g2__struct" kindref="compound">u8g2_t</ref> *</type>
+          <declname>u8g2</declname>
+        </param>
+        <param>
+          <type>u8g2_uint_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>u8g2_uint_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type><ref refid="structu8log__struct" kindref="compound">u8log_t</ref> *</type>
+          <declname>u8log</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8log_u8g2.c" line="51" column="6" bodyfile="src/helper/U8g2/clib/u8log_u8g2.c" bodystart="51" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="u8log__u8g2_8c_1a8443d53f932939877a543512e437cb77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void u8log_u8g2_cb</definition>
+        <argsstring>(u8log_t *u8log)</argsstring>
+        <name>u8log_u8g2_cb</name>
+        <param>
+          <type><ref refid="structu8log__struct" kindref="compound">u8log_t</ref> *</type>
+          <declname>u8log</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8log_u8g2.c" line="85" column="6" bodyfile="src/helper/U8g2/clib/u8log_u8g2.c" bodystart="85" bodyend="97"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>u8log_u8g2.c</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>Universal<sp/>8bit<sp/>Graphics<sp/>Library<sp/>(https://github.com/olikraus/u8g2/)</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>Copyright<sp/>(c)<sp/>2018,<sp/>olikraus@gmail.com</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"></highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without<sp/>modification,<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright<sp/>notice,<sp/>this<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT<sp/>HOLDER<sp/>OR<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.<sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;u8g2.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/>Draw<sp/>the<sp/>u8log<sp/>text<sp/>at<sp/>the<sp/>specified<sp/>x/y<sp/>position.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/>x/y<sp/>position<sp/>is<sp/>the<sp/>reference<sp/>position<sp/>of<sp/>the<sp/>first<sp/>char<sp/>of<sp/>the<sp/>first<sp/>line.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/>the<sp/>line<sp/>height<sp/>is<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/>u8g2_GetAscent(u8g2)<sp/>-<sp/>u8g2_GetDescent(u8g2)<sp/>+<sp/>line_height_offset;</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/>line_height_offset<sp/>can<sp/>be<sp/>set<sp/>with<sp/>u8log_SetLineHeightOffset()</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/>Use</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/>u8g2_SetFontRefHeightText(u8g2_t<sp/>*u8g2);</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/>u8g2_SetFontRefHeightExtendedText(u8g2_t<sp/>*u8g2);</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/>u8g2_SetFontRefHeightAll(u8g2_t<sp/>*u8g2);</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/>to<sp/>change<sp/>the<sp/>return<sp/>values<sp/>for<sp/>u8g2_GetAscent<sp/>and<sp/>u8g2_GetDescent</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8g2_DrawLog(u8g2_t<sp/>*u8g2,<sp/>u8g2_uint_t<sp/>x,<sp/>u8g2_uint_t<sp/>y,<sp/>u8log_t<sp/>*u8log)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>u8g2_uint_t<sp/>disp_x,<sp/>disp_y;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>uint8_t<sp/>buf_x,<sp/>buf_y;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>uint8_t<sp/>c;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>disp_y<sp/>=<sp/>y;<sp/><sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>u8g2_SetFontDirection(u8g2,<sp/>0);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>buf_y<sp/>=<sp/>0;<sp/>buf_y<sp/>&lt;<sp/>u8log-&gt;height;<sp/>buf_y++<sp/>)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>disp_x<sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>buf_x<sp/>=<sp/>0;<sp/>buf_x<sp/>&lt;<sp/>u8log-&gt;width;<sp/>buf_x++<sp/>)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/>u8log-&gt;screen_buffer[buf_y<sp/>*<sp/>u8log-&gt;width<sp/>+<sp/>buf_x];</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>disp_x<sp/>+=<sp/>u8g2_DrawGlyph(u8g2,<sp/>disp_x,<sp/>disp_y,<sp/>c);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>disp_y<sp/>+=<sp/>u8g2_GetAscent(u8g2)<sp/>-<sp/>u8g2_GetDescent(u8g2);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>disp_y<sp/>+=<sp/>u8log-&gt;line_height_offset;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/>u8lib<sp/>callback<sp/>for<sp/>u8g2</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/>Only<sp/>font<sp/>direction<sp/>0<sp/>is<sp/>supported:<sp/>u8g2_SetFontDirection(u8g2,<sp/>0)</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/>Use</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/>u8g2_SetFontRefHeightText(u8g2_t<sp/>*u8g2);</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/>u8g2_SetFontRefHeightExtendedText(u8g2_t<sp/>*u8g2);</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/>u8g2_SetFontRefHeightAll(u8g2_t<sp/>*u8g2);</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/>to<sp/>change<sp/>the<sp/>top<sp/>offset<sp/>and<sp/>the<sp/>line<sp/>height<sp/>and</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/>u8log_SetLineHeightOffset(u8log_t<sp/>*u8log,<sp/>int8_t<sp/>line_height_offset)</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/>to<sp/>change<sp/>the<sp/>line<sp/>height.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>u8log_u8g2_cb(u8log_t<sp/>*<sp/>u8log)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>u8g2_t<sp/>*u8g2<sp/>=<sp/>(u8g2_t<sp/>*)(u8log-&gt;aux_data);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>u8log-&gt;is_redraw_line<sp/>||<sp/>u8log-&gt;is_redraw_all<sp/>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>u8g2_FirstPage(u8g2);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u8g2_DrawLog(<sp/>u8g2,<sp/>0,<sp/>u8g2_GetAscent(u8g2),<sp/>u8log);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>u8g2_NextPage(u8g2)<sp/>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/helper/U8g2/clib/u8log_u8g2.c"/>
+  </compounddef>
+</doxygen>

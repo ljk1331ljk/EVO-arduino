@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_t_c_s34725" kind="class" language="C++" prot="public">
+    <compoundname>EvoTCS34725</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_t_c_s34725_1ad3234413660e9381beaaf89802bf2171" prot="private" static="no" mutable="no">
+        <type>Adafruit_TCS34725</type>
+        <definition>Adafruit_TCS34725 EvoTCS34725::tcs</definition>
+        <argsstring></argsstring>
+        <name>tcs</name>
+        <qualifiedname>EvoTCS34725::tcs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="10" column="23" bodyfile="src/sensors/EvoTCS34725.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_t_c_s34725_1a29c30a8e6e311dcb97c69b1d5b83e94b" prot="private" static="no" mutable="no">
+        <type>I2CChannel</type>
+        <definition>I2CChannel EvoTCS34725::_channel</definition>
+        <argsstring></argsstring>
+        <name>_channel</name>
+        <qualifiedname>EvoTCS34725::_channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="11" column="16" bodyfile="src/sensors/EvoTCS34725.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_t_c_s34725_1a68e0731533fd95c5e7ef20fd4aa4112d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        <definition>I2CDevice&amp; EvoTCS34725::i2CDevice</definition>
+        <argsstring></argsstring>
+        <name>i2CDevice</name>
+        <qualifiedname>EvoTCS34725::i2CDevice</qualifiedname>
+        <initializer>= I2CDevice::getInstance()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="12" column="15" bodyfile="src/sensors/EvoTCS34725.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_t_c_s34725_1a29d37068868f7f5caa9134b2202135b5" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t EvoTCS34725::_tcs34725IntegrationTime</definition>
+        <argsstring></argsstring>
+        <name>_tcs34725IntegrationTime</name>
+        <qualifiedname>EvoTCS34725::_tcs34725IntegrationTime</qualifiedname>
+        <initializer>= TCS34725_INTEGRATIONTIME_2_4MS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="13" column="13" bodyfile="src/sensors/EvoTCS34725.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_t_c_s34725_1a56ec7083df9ade912bbfbf954c748586" prot="private" static="no" mutable="no">
+        <type>tcs34725Gain_t</type>
+        <definition>tcs34725Gain_t EvoTCS34725::_tcs34725Gain</definition>
+        <argsstring></argsstring>
+        <name>_tcs34725Gain</name>
+        <qualifiedname>EvoTCS34725::_tcs34725Gain</qualifiedname>
+        <initializer>= TCS34725_GAIN_16X</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="14" column="20" bodyfile="src/sensors/EvoTCS34725.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a803efa994423cf326b5ed56b27d554a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EvoTCS34725::EvoTCS34725</definition>
+        <argsstring>(I2CChannel channel)</argsstring>
+        <name>EvoTCS34725</name>
+        <qualifiedname>EvoTCS34725::EvoTCS34725</qualifiedname>
+        <param>
+          <type>I2CChannel</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="18" column="5" bodyfile="src/sensors/EvoTCS34725.h" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a039fff25dcaea72f7624b89be5092926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTCS34725::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoTCS34725::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="22" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="3" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1aca92216d91bea091a53129aa38b20031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTCS34725::setIntegrationTime</definition>
+        <argsstring>(uint8_t it)</argsstring>
+        <name>setIntegrationTime</name>
+        <qualifiedname>EvoTCS34725::setIntegrationTime</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>it</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="24" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a43460244cea2d8cba6c2d2ef88dc5736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTCS34725::setGain</definition>
+        <argsstring>(tcs34725Gain_t gain)</argsstring>
+        <name>setGain</name>
+        <qualifiedname>EvoTCS34725::setGain</qualifiedname>
+        <param>
+          <type>tcs34725Gain_t</type>
+          <declname>gain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="25" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="29" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTCS34725::getRGB</definition>
+        <argsstring>(float *r, float *g, float *b)</argsstring>
+        <name>getRGB</name>
+        <qualifiedname>EvoTCS34725::getRGB</qualifiedname>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="27" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTCS34725::getRawRGBC</definition>
+        <argsstring>(uint16_t *r, uint16_t *g, uint16_t *b, uint16_t *c)</argsstring>
+        <name>getRawRGBC</name>
+        <qualifiedname>EvoTCS34725::getRawRGBC</qualifiedname>
+        <param>
+          <type>uint16_t *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="28" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawRed</definition>
+        <argsstring>()</argsstring>
+        <name>getRawRed</name>
+        <qualifiedname>EvoTCS34725::getRawRed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="29" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="35" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawGreen</definition>
+        <argsstring>()</argsstring>
+        <name>getRawGreen</name>
+        <qualifiedname>EvoTCS34725::getRawGreen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="30" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="42" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawBlue</definition>
+        <argsstring>()</argsstring>
+        <name>getRawBlue</name>
+        <qualifiedname>EvoTCS34725::getRawBlue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="31" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="49" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawClear</definition>
+        <argsstring>()</argsstring>
+        <name>getRawClear</name>
+        <qualifiedname>EvoTCS34725::getRawClear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="32" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="56" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoTCS34725::getRed</definition>
+        <argsstring>()</argsstring>
+        <name>getRed</name>
+        <qualifiedname>EvoTCS34725::getRed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="33" column="11" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="64" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoTCS34725::getGreen</definition>
+        <argsstring>()</argsstring>
+        <name>getGreen</name>
+        <qualifiedname>EvoTCS34725::getGreen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="34" column="11" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="79" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoTCS34725::getBlue</definition>
+        <argsstring>()</argsstring>
+        <name>getBlue</name>
+        <qualifiedname>EvoTCS34725::getBlue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="35" column="11" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="94" bodyend="108"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/EvoTCS34725.h" line="7" column="1" bodyfile="src/sensors/EvoTCS34725.h" bodystart="8" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_evo_t_c_s34725_1a29c30a8e6e311dcb97c69b1d5b83e94b" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>_channel</name></member>
+      <member refid="class_evo_t_c_s34725_1a56ec7083df9ade912bbfbf954c748586" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>_tcs34725Gain</name></member>
+      <member refid="class_evo_t_c_s34725_1a29d37068868f7f5caa9134b2202135b5" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>_tcs34725IntegrationTime</name></member>
+      <member refid="class_evo_t_c_s34725_1a039fff25dcaea72f7624b89be5092926" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>begin</name></member>
+      <member refid="class_evo_t_c_s34725_1a803efa994423cf326b5ed56b27d554a1" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>EvoTCS34725</name></member>
+      <member refid="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getBlue</name></member>
+      <member refid="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getGreen</name></member>
+      <member refid="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawBlue</name></member>
+      <member refid="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawClear</name></member>
+      <member refid="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawGreen</name></member>
+      <member refid="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawRed</name></member>
+      <member refid="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawRGBC</name></member>
+      <member refid="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRed</name></member>
+      <member refid="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRGB</name></member>
+      <member refid="class_evo_t_c_s34725_1a68e0731533fd95c5e7ef20fd4aa4112d" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>i2CDevice</name></member>
+      <member refid="class_evo_t_c_s34725_1a43460244cea2d8cba6c2d2ef88dc5736" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>setGain</name></member>
+      <member refid="class_evo_t_c_s34725_1aca92216d91bea091a53129aa38b20031" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>setIntegrationTime</name></member>
+      <member refid="class_evo_t_c_s34725_1ad3234413660e9381beaaf89802bf2171" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>tcs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

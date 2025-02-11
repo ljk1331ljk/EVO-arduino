@@ -1,0 +1,165 @@
+\doxysection{Evo\+Motor.\+h}
+\hypertarget{_evo_motor_8h_source}{}\label{_evo_motor_8h_source}\index{src/motors/EvoMotor.h@{src/motors/EvoMotor.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVOMOTOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVOMOTOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../helper/EvoPWMDriver.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../helper/X1pins.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <ESP32Encoder.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <freertos/FreeRTOS.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <freertos/task.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_motor_pins}{MotorPins}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ uint8\_t\ power1;}
+\DoxyCodeLine{00012\ \ \ \ \ uint8\_t\ power2;}
+\DoxyCodeLine{00013\ \ \ \ \ uint8\_t\ tach1;}
+\DoxyCodeLine{00014\ \ \ \ \ uint8\_t\ tach2;}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{enum}\ MotorType}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ GENERICWITHENCODER,}
+\DoxyCodeLine{00020\ \ \ \ \ GENERISWITHOUTENCODER,}
+\DoxyCodeLine{00021\ \ \ \ \ EV3LargeMotor,}
+\DoxyCodeLine{00022\ \ \ \ \ EV3MediumMotor,}
+\DoxyCodeLine{00023\ \ \ \ \ GeekServoDCMotor,}
+\DoxyCodeLine{00024\ \ \ \ \ ITERSpeed,}
+\DoxyCodeLine{00025\ \ \ \ \ ITERTorque,}
+\DoxyCodeLine{00026\ \ \ \ \ EVOMotor300,}
+\DoxyCodeLine{00027\ \ \ \ \ EVOMotor100}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{enum}\ MotorPort}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ M1\ =\ 8,}
+\DoxyCodeLine{00033\ \ \ \ \ M2\ =\ 10,}
+\DoxyCodeLine{00034\ \ \ \ \ M3\ =\ 12,}
+\DoxyCodeLine{00035\ \ \ \ \ M4\ =\ 14}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{enum}\ MotorState}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ RUN,}
+\DoxyCodeLine{00041\ \ \ \ \ TARGET,}
+\DoxyCodeLine{00042\ \ \ \ \ BRAKE,}
+\DoxyCodeLine{00043\ \ \ \ \ COAST,}
+\DoxyCodeLine{00044\ \ \ \ \ HOLD}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }EvoMotor}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ Motor\ parameters}}
+\DoxyCodeLine{00051\ \ \ \ \ MotorType\ \_motorType;}
+\DoxyCodeLine{00052\ \ \ \ \ MotorPort\ \_motorPort;}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{struct_motor_pins}{MotorPins}}\ \_motorPins;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ \_minSpeed,\ \_maxSpeed;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_motorFlip,\ \_encoderAvailable;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \_countPerRevolution;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ Motor\ runtime\ parameters}}
+\DoxyCodeLine{00060\ \ \ \ \ MotorState\ \_motorState\ =\ COAST,\ \_motorStopState\ =\ COAST;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \_stallTime,\ \_stallCountThreshold;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \_targetSpeed,\ \_targetAngle\ =\ 0,\ \_targetEncoder\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_completed,\ \_stalled;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{float}\ \_kp\ =\ 5,\ \_ki\ =\ 0.1,\ \_kd\ =\ 30;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ ESP32Encoder\ encoder;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_evo_p_w_m_driver}{EvoPWMDriver}}\ \&driver\ =\ EvoPWMDriver::getInstance();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ motorControlTask(\textcolor{keywordtype}{void}\ *parameter);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ move(\textcolor{keywordtype}{int}\ speed);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ setParameters(MotorPort\ motorPort,\ \textcolor{keywordtype}{bool}\ motorFlip,\ \textcolor{keywordtype}{int}\ minSpeed,\ \textcolor{keywordtype}{int}\ maxSpeed,\ \textcolor{keywordtype}{bool}\ encoderAvailable,\ \textcolor{keywordtype}{int}\ countPerRevolution\ =\ 0);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ Constructor\ with\ port\ and\ positive\ direction}}
+\DoxyCodeLine{00075\ \ \ \ \ EvoMotor(MotorPort\ motorPort,\ MotorType\ motorType\ =\ GENERICWITHENCODER,\ \textcolor{keywordtype}{bool}\ motorFlip\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ Initialises\ the\ motor\ parameters}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ begin();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ set\ the\ minimum\ and\ maximum\ speed\ of\ the\ motor}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ setSpeedLimit(\textcolor{keywordtype}{int}\ minSpeed,\ \textcolor{keywordtype}{int}\ maxSpeed);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ get\ the\ minimum\ and\ maximum\ speed\ of\ the\ motor}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ getSpeedLimit(\textcolor{keywordtype}{int}\ *minSpeed,\ \textcolor{keywordtype}{int}\ *maxSpeed);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ set\ encoder\ availability}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ setEncoderAvailable(\textcolor{keywordtype}{bool}\ avail);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ get\ encoder\ availability}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEncoderAvailable();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ set\ encoder\ count\ per\ revolution}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ setCountPerRevolution(\textcolor{keywordtype}{int}\ countPerRevolution);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ get\ encoder\ count\ per\ revolution}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ getCountPerRevolution();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ get\ the\ encoder\ count}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ getCount();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ set\ the\ encoder\ count}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ setCount(\textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ reset\ the\ encoder\ count}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ resetCount();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ get\ current\ degrees}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ getAngle();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ set\ current\ degrees}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ setAngle(\textcolor{keywordtype}{int}\ degrees);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ reset\ angle}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ resetAngle();}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Method\ returns\ if\ the\ motor\ is\ stalled}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ isStalled();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ set\ the\ motor\ stall\ thersholds}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ setStallThresholds(\textcolor{keywordtype}{int}\ timems,\ \textcolor{keywordtype}{int}\ angle);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ stop\ the\ motor}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ setStopBehaviour(MotorState\ motorStopState);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ stop\ the\ motor\ using\ motorStopState}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ stop();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ hold\ the\ motor\ at\ a\ specified\ position}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ hold();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ coast\ the\ motor}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ coast();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ brake\ the\ motor}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ brake();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ run\ the\ motor\ at\ a\ specified\ speed}}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ run(\textcolor{keywordtype}{int}\ speed);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ runCount(\textcolor{keywordtype}{int}\ speed,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{bool}\ wait);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ run\ the\ motor\ for\ a\ specified\ number\ of\ degrees}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ runAngle(\textcolor{keywordtype}{int}\ speed,\ \textcolor{keywordtype}{int}\ degrees);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ run\ the\ motor\ for\ a\ specified\ amount\ of\ time}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ runTime(\textcolor{keywordtype}{int}\ speed,\ \textcolor{keywordtype}{int}\ timeMS);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ run\ the\ motor\ to\ a\ specified\ potision}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ runTarget(\textcolor{keywordtype}{int}\ speed,\ \textcolor{keywordtype}{int}\ degrees,\ \textcolor{keywordtype}{bool}\ blocking\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ run\ the\ motor\ until\ it\ is\ stalled}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ runUntilStalled(\textcolor{keywordtype}{int}\ speed);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ setPID(\textcolor{keywordtype}{float}\ kp,\ \textcolor{keywordtype}{float}\ ki,\ \textcolor{keywordtype}{float}\ kd);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ getPID(\textcolor{keywordtype}{float}\ *kp,\ \textcolor{keywordtype}{float}\ *ki,\ \textcolor{keywordtype}{float}\ *kd);}
+\DoxyCodeLine{00157\ \};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

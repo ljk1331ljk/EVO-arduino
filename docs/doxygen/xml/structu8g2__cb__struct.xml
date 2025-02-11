@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structu8g2__cb__struct" kind="struct" language="C++" prot="public">
+    <compoundname>u8g2_cb_struct</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structu8g2__cb__struct_1ae88bf8f9c4b2bac61915aabc9d4e0ae5" prot="public" static="no" mutable="no">
+        <type>u8g2_update_dimension_cb</type>
+        <definition>u8g2_update_dimension_cb u8g2_cb_struct::update_dimension</definition>
+        <argsstring></argsstring>
+        <name>update_dimension</name>
+        <qualifiedname>u8g2_cb_struct::update_dimension</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8g2.h" line="297" column="30" bodyfile="src/helper/U8g2/clib/u8g2.h" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structu8g2__cb__struct_1abf6764280be7a90355d82b7c4833fab4" prot="public" static="no" mutable="no">
+        <type>u8g2_update_page_win_cb</type>
+        <definition>u8g2_update_page_win_cb u8g2_cb_struct::update_page_win</definition>
+        <argsstring></argsstring>
+        <name>update_page_win</name>
+        <qualifiedname>u8g2_cb_struct::update_page_win</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8g2.h" line="298" column="29" bodyfile="src/helper/U8g2/clib/u8g2.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structu8g2__cb__struct_1a638252906aaaaf648740797814e74d78" prot="public" static="no" mutable="no">
+        <type>u8g2_draw_l90_cb</type>
+        <definition>u8g2_draw_l90_cb u8g2_cb_struct::draw_l90</definition>
+        <argsstring></argsstring>
+        <name>draw_l90</name>
+        <qualifiedname>u8g2_cb_struct::draw_l90</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/U8g2/clib/u8g2.h" line="299" column="22" bodyfile="src/helper/U8g2/clib/u8g2.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>_u8g2_font_decode_t</label>
+        <link refid="struct__u8g2__font__decode__t"/>
+      </node>
+      <node id="6">
+        <label>_u8g2_font_info_t</label>
+        <link refid="struct__u8g2__font__info__t"/>
+      </node>
+      <node id="1">
+        <label>u8g2_cb_struct</label>
+        <link refid="structu8g2__cb__struct"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>draw_l90</edgelabel>
+          <edgelabel>update_dimension</edgelabel>
+          <edgelabel>update_page_win</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>u8g2_struct</label>
+        <link refid="structu8g2__struct"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>u8x8</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>font_calc_vref</edgelabel>
+          <edgelabel>ll_hvline</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>font_decode</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>font_info</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>u8x8_display_info_struct</label>
+        <link refid="structu8x8__display__info__struct"/>
+      </node>
+      <node id="3">
+        <label>u8x8_struct</label>
+        <link refid="structu8x8__struct"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>display_info</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>byte_cb</edgelabel>
+          <edgelabel>cad_cb</edgelabel>
+          <edgelabel>display_cb</edgelabel>
+          <edgelabel>gpio_and_delay_cb</edgelabel>
+          <edgelabel>next_cb</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/helper/U8g2/clib/u8g2.h" line="295" column="3" bodyfile="src/helper/U8g2/clib/u8g2.h" bodystart="296" bodyend="300"/>
+    <listofallmembers>
+      <member refid="structu8g2__cb__struct_1a638252906aaaaf648740797814e74d78" prot="public" virt="non-virtual"><scope>u8g2_cb_struct</scope><name>draw_l90</name></member>
+      <member refid="structu8g2__cb__struct_1ae88bf8f9c4b2bac61915aabc9d4e0ae5" prot="public" virt="non-virtual"><scope>u8g2_cb_struct</scope><name>update_dimension</name></member>
+      <member refid="structu8g2__cb__struct_1abf6764280be7a90355d82b7c4833fab4" prot="public" virt="non-virtual"><scope>u8g2_cb_struct</scope><name>update_page_win</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

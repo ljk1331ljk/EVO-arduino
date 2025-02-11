@@ -1,0 +1,256 @@
+\doxysection{U8\+G2\+\_\+\+BITMAP Class Reference}
+\hypertarget{class_u8_g2___b_i_t_m_a_p}{}\label{class_u8_g2___b_i_t_m_a_p}\index{U8G2\_BITMAP@{U8G2\_BITMAP}}
+Inheritance diagram for U8\+G2\+\_\+\+BITMAP\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_u8_g2___b_i_t_m_a_p}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u8_g2___b_i_t_m_a_p_af86b0614a06c67bd3a778bd74bc3cbd6}\label{class_u8_g2___b_i_t_m_a_p_af86b0614a06c67bd3a778bd74bc3cbd6} 
+{\bfseries U8\+G2\+\_\+\+BITMAP} (uint16\+\_\+t pixel\+\_\+width, uint16\+\_\+t pixel\+\_\+height, const \mbox{\hyperlink{structu8g2__cb__struct}{u8g2\+\_\+cb\+\_\+t}} \texorpdfstring{$\ast$}{*}rotation)
+\item 
+\Hypertarget{class_u8_g2___b_i_t_m_a_p_af272ca3c466e41a8d18fadbb2c3fce32}\label{class_u8_g2___b_i_t_m_a_p_af272ca3c466e41a8d18fadbb2c3fce32} 
+void {\bfseries change\+Size} (uint16\+\_\+t pixel\+\_\+width, uint16\+\_\+t pixel\+\_\+height)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_u8_g2}{U8\+G2}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structu8x8__struct}{u8x8\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries get\+U8x8} (void)
+\item 
+\mbox{\hyperlink{structu8g2__struct}{u8g2\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries get\+U8g2} (void)
+\item 
+void {\bfseries sendF} (const char \texorpdfstring{$\ast$}{*}fmt,...)
+\item 
+uint32\+\_\+t {\bfseries get\+Bus\+Clock} (void)
+\item 
+void {\bfseries set\+Bus\+Clock} (uint32\+\_\+t clock\+\_\+speed)
+\item 
+void {\bfseries set\+I2\+CAddress} (uint8\+\_\+t adr)
+\item 
+void {\bfseries enable\+UTF8\+Print} (void)
+\item 
+void {\bfseries disable\+UTF8\+Print} (void)
+\item 
+uint8\+\_\+t {\bfseries get\+Cols} (void)
+\item 
+uint8\+\_\+t {\bfseries get\+Rows} (void)
+\item 
+void {\bfseries draw\+Tile} (uint8\+\_\+t x, uint8\+\_\+t y, uint8\+\_\+t cnt, uint8\+\_\+t \texorpdfstring{$\ast$}{*}tile\+\_\+ptr)
+\item 
+uint8\+\_\+t {\bfseries get\+Menu\+Event} (void)
+\item 
+void {\bfseries init\+Display} (void)
+\item 
+void {\bfseries init\+Interface} (void)
+\item 
+void {\bfseries clear\+Display} (void)
+\item 
+void {\bfseries set\+Power\+Save} (uint8\+\_\+t is\+\_\+enable)
+\item 
+void {\bfseries set\+Flip\+Mode} (uint8\+\_\+t mode)
+\item 
+void {\bfseries set\+Contrast} (uint8\+\_\+t value)
+\item 
+void {\bfseries set\+Display\+Rotation} (const \mbox{\hyperlink{structu8g2__cb__struct}{u8g2\+\_\+cb\+\_\+t}} \texorpdfstring{$\ast$}{*}u8g2\+\_\+cb)
+\item 
+bool {\bfseries begin} (void)
+\item 
+void {\bfseries begin\+Simple} (void)
+\item 
+void {\bfseries set\+Max\+Clip\+Window} (void)
+\item 
+void {\bfseries set\+Clip\+Window} (u8g2\+\_\+uint\+\_\+t clip\+\_\+x0, u8g2\+\_\+uint\+\_\+t clip\+\_\+y0, u8g2\+\_\+uint\+\_\+t clip\+\_\+x1, u8g2\+\_\+uint\+\_\+t clip\+\_\+y1)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+Display\+Height} (void)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+Display\+Width} (void)
+\item 
+void {\bfseries send\+Buffer} (void)
+\item 
+void {\bfseries clear\+Buffer} (void)
+\item 
+void {\bfseries first\+Page} (void)
+\item 
+uint8\+\_\+t {\bfseries next\+Page} (void)
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries get\+Buffer\+Ptr} (void)
+\item 
+uint8\+\_\+t {\bfseries get\+Buffer\+Tile\+Height} (void)
+\item 
+uint8\+\_\+t {\bfseries get\+Buffer\+Tile\+Width} (void)
+\item 
+uint8\+\_\+t {\bfseries get\+Page\+Curr\+Tile\+Row} (void)
+\item 
+void {\bfseries set\+Page\+Curr\+Tile\+Row} (uint8\+\_\+t row)
+\item 
+uint8\+\_\+t {\bfseries get\+Buffer\+Curr\+Tile\+Row} (void)
+\item 
+void {\bfseries set\+Buffer\+Curr\+Tile\+Row} (uint8\+\_\+t row)
+\item 
+void {\bfseries set\+Auto\+Page\+Clear} (uint8\+\_\+t mode)
+\item 
+void {\bfseries update\+Display\+Area} (uint8\+\_\+t tx, uint8\+\_\+t ty, uint8\+\_\+t tw, uint8\+\_\+t th)
+\item 
+void {\bfseries update\+Display} (void)
+\item 
+void {\bfseries refresh\+Display} (void)
+\item 
+void {\bfseries set\+Draw\+Color} (uint8\+\_\+t color\+\_\+index)
+\item 
+uint8\+\_\+t {\bfseries get\+Draw\+Color} (void)
+\item 
+void {\bfseries draw\+Pixel} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y)
+\item 
+void {\bfseries draw\+HLine} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t w)
+\item 
+void {\bfseries draw\+VLine} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t h)
+\item 
+void {\bfseries draw\+HVLine} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t len, uint8\+\_\+t dir)
+\item 
+void {\bfseries draw\+Frame} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t w, u8g2\+\_\+uint\+\_\+t h)
+\item 
+void {\bfseries draw\+RFrame} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t w, u8g2\+\_\+uint\+\_\+t h, u8g2\+\_\+uint\+\_\+t r)
+\item 
+void {\bfseries draw\+Box} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t w, u8g2\+\_\+uint\+\_\+t h)
+\item 
+void {\bfseries draw\+RBox} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t w, u8g2\+\_\+uint\+\_\+t h, u8g2\+\_\+uint\+\_\+t r)
+\item 
+void {\bfseries draw\+Button\+UTF8} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t flags, u8g2\+\_\+uint\+\_\+t width, u8g2\+\_\+uint\+\_\+t padding\+\_\+h, u8g2\+\_\+uint\+\_\+t padding\+\_\+v, const char \texorpdfstring{$\ast$}{*}text)
+\item 
+void {\bfseries draw\+Circle} (u8g2\+\_\+uint\+\_\+t x0, u8g2\+\_\+uint\+\_\+t y0, u8g2\+\_\+uint\+\_\+t rad, uint8\+\_\+t opt=U8\+G2\+\_\+\+DRAW\+\_\+\+ALL)
+\item 
+void {\bfseries draw\+Disc} (u8g2\+\_\+uint\+\_\+t x0, u8g2\+\_\+uint\+\_\+t y0, u8g2\+\_\+uint\+\_\+t rad, uint8\+\_\+t opt=U8\+G2\+\_\+\+DRAW\+\_\+\+ALL)
+\item 
+void {\bfseries draw\+Ellipse} (u8g2\+\_\+uint\+\_\+t x0, u8g2\+\_\+uint\+\_\+t y0, u8g2\+\_\+uint\+\_\+t rx, u8g2\+\_\+uint\+\_\+t ry, uint8\+\_\+t opt=U8\+G2\+\_\+\+DRAW\+\_\+\+ALL)
+\item 
+void {\bfseries draw\+Filled\+Ellipse} (u8g2\+\_\+uint\+\_\+t x0, u8g2\+\_\+uint\+\_\+t y0, u8g2\+\_\+uint\+\_\+t rx, u8g2\+\_\+uint\+\_\+t ry, uint8\+\_\+t opt=U8\+G2\+\_\+\+DRAW\+\_\+\+ALL)
+\item 
+void {\bfseries draw\+Arc} (u8g2\+\_\+uint\+\_\+t x0, u8g2\+\_\+uint\+\_\+t y0, u8g2\+\_\+uint\+\_\+t rad, uint8\+\_\+t start, uint8\+\_\+t end)
+\item 
+void {\bfseries draw\+Line} (u8g2\+\_\+uint\+\_\+t x1, u8g2\+\_\+uint\+\_\+t y1, u8g2\+\_\+uint\+\_\+t x2, u8g2\+\_\+uint\+\_\+t y2)
+\item 
+void {\bfseries set\+Bitmap\+Mode} (uint8\+\_\+t is\+\_\+transparent)
+\item 
+void {\bfseries draw\+Bitmap} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t cnt, u8g2\+\_\+uint\+\_\+t h, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}bitmap)
+\item 
+void {\bfseries draw\+XBM} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t w, u8g2\+\_\+uint\+\_\+t h, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}bitmap)
+\item 
+void {\bfseries draw\+XBMP} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, u8g2\+\_\+uint\+\_\+t w, u8g2\+\_\+uint\+\_\+t h, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}bitmap)
+\item 
+void {\bfseries draw\+Triangle} (int16\+\_\+t x0, int16\+\_\+t y0, int16\+\_\+t x1, int16\+\_\+t y1, int16\+\_\+t x2, int16\+\_\+t y2)
+\item 
+void {\bfseries draw\+Log} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, class \mbox{\hyperlink{class_u8_g2_l_o_g}{U8\+G2\+LOG}} \&u8g2log)
+\item 
+void {\bfseries set\+Font} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}font)
+\item 
+void {\bfseries set\+Font\+Mode} (uint8\+\_\+t is\+\_\+transparent)
+\item 
+void {\bfseries set\+Font\+Direction} (uint8\+\_\+t dir)
+\item 
+int8\+\_\+t {\bfseries get\+Ascent} (void)
+\item 
+int8\+\_\+t {\bfseries get\+Descent} (void)
+\item 
+void {\bfseries set\+Font\+Pos\+Baseline} (void)
+\item 
+void {\bfseries set\+Font\+Pos\+Bottom} (void)
+\item 
+void {\bfseries set\+Font\+Pos\+Top} (void)
+\item 
+void {\bfseries set\+Font\+Pos\+Center} (void)
+\item 
+void {\bfseries set\+Font\+Ref\+Height\+Text} (void)
+\item 
+void {\bfseries set\+Font\+Ref\+Height\+Extended\+Text} (void)
+\item 
+void {\bfseries set\+Font\+Ref\+Height\+All} (void)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries draw\+Glyph} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, uint16\+\_\+t encoding)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries draw\+Glyph\+X2} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, uint16\+\_\+t encoding)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries draw\+Str} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, const char \texorpdfstring{$\ast$}{*}s)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries draw\+Str\+X2} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, const char \texorpdfstring{$\ast$}{*}s)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries draw\+UTF8} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, const char \texorpdfstring{$\ast$}{*}s)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries draw\+UTF8\+X2} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, const char \texorpdfstring{$\ast$}{*}s)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries draw\+Ext\+UTF8} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y, uint8\+\_\+t to\+\_\+left, const uint16\+\_\+t \texorpdfstring{$\ast$}{*}kerning\+\_\+table, const char \texorpdfstring{$\ast$}{*}s)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+Str\+Width} (const char \texorpdfstring{$\ast$}{*}s)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+UTF8\+Width} (const char \texorpdfstring{$\ast$}{*}s)
+\item 
+int8\+\_\+t {\bfseries get\+XOffset\+Glyph} (uint16\+\_\+t encoding)
+\item 
+int8\+\_\+t {\bfseries get\+XOffset\+UTF8} (const char \texorpdfstring{$\ast$}{*}utf8)
+\item 
+size\+\_\+t {\bfseries write} (uint8\+\_\+t v)
+\item 
+size\+\_\+t {\bfseries write} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t size)
+\item 
+uint8\+\_\+t {\bfseries user\+Interface\+Selection\+List} (const char \texorpdfstring{$\ast$}{*}title, uint8\+\_\+t start\+\_\+pos, const char \texorpdfstring{$\ast$}{*}sl)
+\item 
+uint8\+\_\+t {\bfseries user\+Interface\+Message} (const char \texorpdfstring{$\ast$}{*}title1, const char \texorpdfstring{$\ast$}{*}title2, const char \texorpdfstring{$\ast$}{*}title3, const char \texorpdfstring{$\ast$}{*}buttons)
+\item 
+uint8\+\_\+t {\bfseries user\+Interface\+Input\+Value} (const char \texorpdfstring{$\ast$}{*}title, const char \texorpdfstring{$\ast$}{*}pre, uint8\+\_\+t \texorpdfstring{$\ast$}{*}value, uint8\+\_\+t lo, uint8\+\_\+t hi, uint8\+\_\+t digits, const char \texorpdfstring{$\ast$}{*}post)
+\item 
+void {\bfseries home} (void)
+\item 
+void {\bfseries clear} (void)
+\item 
+void {\bfseries no\+Display} (void)
+\item 
+void {\bfseries display} (void)
+\item 
+void {\bfseries set\+Cursor} (u8g2\+\_\+uint\+\_\+t x, u8g2\+\_\+uint\+\_\+t y)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+CursorX} ()
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+CursorY} ()
+\item 
+void {\bfseries sleep\+On} (void)
+\item 
+void {\bfseries sleep\+Off} (void)
+\item 
+void {\bfseries set\+Color\+Index} (uint8\+\_\+t color\+\_\+index)
+\item 
+uint8\+\_\+t {\bfseries get\+Color\+Index} (void)
+\item 
+int8\+\_\+t {\bfseries get\+Font\+Ascent} (void)
+\item 
+int8\+\_\+t {\bfseries get\+Font\+Descent} (void)
+\item 
+int8\+\_\+t {\bfseries get\+Max\+Char\+Height} (void)
+\item 
+int8\+\_\+t {\bfseries get\+Max\+Char\+Width} (void)
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+Height} ()
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries get\+Width} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_u8_g2}{U8\+G2}}}
+\begin{DoxyCompactItemize}
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries tx}
+\item 
+u8g2\+\_\+uint\+\_\+t {\bfseries ty}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_u8_g2}{U8\+G2}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structu8g2__struct}{u8g2\+\_\+t}} {\bfseries u8g2}
+\item 
+u8x8\+\_\+char\+\_\+cb {\bfseries cpp\+\_\+next\+\_\+cb}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/helper/\+U8g2/U8g2lib.\+h\end{DoxyCompactItemize}

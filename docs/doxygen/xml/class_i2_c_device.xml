@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_i2_c_device" kind="class" language="C++" prot="public">
+    <compoundname>I2CDevice</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_i2_c_device_1af562668fad08d4a3118bbf8a4692da25" prot="private" static="no" mutable="no">
+        <type>TwoWire &amp;</type>
+        <definition>TwoWire&amp; I2CDevice::wire</definition>
+        <argsstring></argsstring>
+        <name>wire</name>
+        <qualifiedname>I2CDevice::wire</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="41" column="13" bodyfile="src/helper/EvoI2CDevice.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_i2_c_device_1a1736767d7be7439603cce9964543b6a9" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t I2CDevice::muxAddr</definition>
+        <argsstring></argsstring>
+        <name>muxAddr</name>
+        <qualifiedname>I2CDevice::muxAddr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="42" column="13" bodyfile="src/helper/EvoI2CDevice.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_i2_c_device_1a99897f1db08c9bdc6e64b376062228f5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool I2CDevice::initialized</definition>
+        <argsstring></argsstring>
+        <name>initialized</name>
+        <qualifiedname>I2CDevice::initialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="43" column="10" bodyfile="src/helper/EvoI2CDevice.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_i2_c_device_1a8f7dfd662d8c33c9587c518c211bf92d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int I2CDevice::sdaPin</definition>
+        <argsstring></argsstring>
+        <name>sdaPin</name>
+        <qualifiedname>I2CDevice::sdaPin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="44" column="9" bodyfile="src/helper/EvoI2CDevice.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_i2_c_device_1a3edc53020644e3f0e2808f6dc5cdbd8d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int I2CDevice::sclPin</definition>
+        <argsstring></argsstring>
+        <name>sclPin</name>
+        <qualifiedname>I2CDevice::sclPin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="45" column="9" bodyfile="src/helper/EvoI2CDevice.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_i2_c_device_1ac7be58323dfdcaab1114885464a3aad1" prot="private" static="no" mutable="no">
+        <type>I2CChannel</type>
+        <definition>I2CChannel I2CDevice::channelSelected</definition>
+        <argsstring></argsstring>
+        <name>channelSelected</name>
+        <qualifiedname>I2CDevice::channelSelected</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="46" column="16" bodyfile="src/helper/EvoI2CDevice.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_i2_c_device_1a620ad9a1f5086046414fcdd4d985d883" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        <definition>I2CDevice &amp; I2CDevice::getInstance</definition>
+        <argsstring>(uint8_t muxAddress=0x70, int sda=1, int scl=2)</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>I2CDevice::getInstance</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>muxAddress</declname>
+          <defval>0x70</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sda</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scl</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="23" column="22" bodyfile="src/helper/EvoI2CDevice.cpp" bodystart="4" bodyend="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_i2_c_device_1a5c381d741c3f7695bc5473c34b1466dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool I2CDevice::selectChannel</definition>
+        <argsstring>(I2CChannel channel)</argsstring>
+        <name>selectChannel</name>
+        <qualifiedname>I2CDevice::selectChannel</qualifiedname>
+        <param>
+          <type>I2CChannel</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="26" column="10" bodyfile="src/helper/EvoI2CDevice.cpp" bodystart="30" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i2_c_device_1a54bf30fc1e8a276fac32a79cc9a3042a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t I2CDevice::getChannel</definition>
+        <argsstring>()</argsstring>
+        <name>getChannel</name>
+        <qualifiedname>I2CDevice::getChannel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="29" column="13" bodyfile="src/helper/EvoI2CDevice.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i2_c_device_1adbe44d03dec819636efe57dde1664977" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool I2CDevice::isI2CConnected</definition>
+        <argsstring>(uint8_t address)</argsstring>
+        <name>isI2CConnected</name>
+        <qualifiedname>I2CDevice::isI2CConnected</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="31" column="10" bodyfile="src/helper/EvoI2CDevice.cpp" bodystart="58" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i2_c_device_1a51855608a16e77e2e830c5fc9cf19e94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>TwoWire &amp;</type>
+        <definition>TwoWire &amp; I2CDevice::getBus</definition>
+        <argsstring>()</argsstring>
+        <name>getBus</name>
+        <qualifiedname>I2CDevice::getBus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="34" column="13" bodyfile="src/helper/EvoI2CDevice.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_i2_c_device_1a4a4a0e52bb313a098ab4cf5678b67156" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>I2CDevice::I2CDevice</definition>
+        <argsstring>(uint8_t muxAddress=0x70, int sda=1, int scl=2)</argsstring>
+        <name>I2CDevice</name>
+        <qualifiedname>I2CDevice::I2CDevice</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>muxAddress</declname>
+          <defval>0x70</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sda</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scl</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="37" column="5" bodyfile="src/helper/EvoI2CDevice.cpp" bodystart="11" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i2_c_device_1af566147af7ca324ac388750789e705f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>I2CDevice::I2CDevice</definition>
+        <argsstring>(const I2CDevice &amp;)=delete</argsstring>
+        <name>I2CDevice</name>
+        <qualifiedname>I2CDevice::I2CDevice</qualifiedname>
+        <param>
+          <type>const <ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="38" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i2_c_device_1a852d2b79f097d315a9b51ec23bb24d80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        <definition>I2CDevice &amp; I2CDevice::operator=</definition>
+        <argsstring>(const I2CDevice &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>I2CDevice::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="39" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_i2_c_device_1a4ede61ddd5028ac4acd796bb919fc28b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void I2CDevice::initBus</definition>
+        <argsstring>()</argsstring>
+        <name>initBus</name>
+        <qualifiedname>I2CDevice::initBus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helper/EvoI2CDevice.h" line="47" column="10" bodyfile="src/helper/EvoI2CDevice.cpp" bodystart="18" bodyend="27"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/helper/EvoI2CDevice.h" line="19" column="1" bodyfile="src/helper/EvoI2CDevice.h" bodystart="20" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_i2_c_device_1ac7be58323dfdcaab1114885464a3aad1" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>channelSelected</name></member>
+      <member refid="class_i2_c_device_1a51855608a16e77e2e830c5fc9cf19e94" prot="public" virt="non-virtual"><scope>I2CDevice</scope><name>getBus</name></member>
+      <member refid="class_i2_c_device_1a54bf30fc1e8a276fac32a79cc9a3042a" prot="public" virt="non-virtual"><scope>I2CDevice</scope><name>getChannel</name></member>
+      <member refid="class_i2_c_device_1a620ad9a1f5086046414fcdd4d985d883" prot="public" virt="non-virtual"><scope>I2CDevice</scope><name>getInstance</name></member>
+      <member refid="class_i2_c_device_1a4a4a0e52bb313a098ab4cf5678b67156" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>I2CDevice</name></member>
+      <member refid="class_i2_c_device_1af566147af7ca324ac388750789e705f9" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>I2CDevice</name></member>
+      <member refid="class_i2_c_device_1a4ede61ddd5028ac4acd796bb919fc28b" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>initBus</name></member>
+      <member refid="class_i2_c_device_1a99897f1db08c9bdc6e64b376062228f5" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>initialized</name></member>
+      <member refid="class_i2_c_device_1adbe44d03dec819636efe57dde1664977" prot="public" virt="non-virtual"><scope>I2CDevice</scope><name>isI2CConnected</name></member>
+      <member refid="class_i2_c_device_1a1736767d7be7439603cce9964543b6a9" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>muxAddr</name></member>
+      <member refid="class_i2_c_device_1a852d2b79f097d315a9b51ec23bb24d80" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>operator=</name></member>
+      <member refid="class_i2_c_device_1a3edc53020644e3f0e2808f6dc5cdbd8d" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>sclPin</name></member>
+      <member refid="class_i2_c_device_1a8f7dfd662d8c33c9587c518c211bf92d" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>sdaPin</name></member>
+      <member refid="class_i2_c_device_1a5c381d741c3f7695bc5473c34b1466dd" prot="public" virt="non-virtual"><scope>I2CDevice</scope><name>selectChannel</name></member>
+      <member refid="class_i2_c_device_1af562668fad08d4a3118bbf8a4692da25" prot="private" virt="non-virtual"><scope>I2CDevice</scope><name>wire</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

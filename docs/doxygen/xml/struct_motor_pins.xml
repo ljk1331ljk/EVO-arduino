@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="struct_motor_pins" kind="struct" language="C++" prot="public">
+    <compoundname>MotorPins</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_motor_pins_1a02d4987a094466c28422be18bf7144b1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t MotorPins::power1</definition>
+        <argsstring></argsstring>
+        <name>power1</name>
+        <qualifiedname>MotorPins::power1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="11" column="13" bodyfile="src/motors/EvoMotor.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_pins_1a8c6d406240da77475781efc2d7055919" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t MotorPins::power2</definition>
+        <argsstring></argsstring>
+        <name>power2</name>
+        <qualifiedname>MotorPins::power2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="12" column="13" bodyfile="src/motors/EvoMotor.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_pins_1a4cdd3158b3158006e55889173d95c0c8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t MotorPins::tach1</definition>
+        <argsstring></argsstring>
+        <name>tach1</name>
+        <qualifiedname>MotorPins::tach1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="13" column="13" bodyfile="src/motors/EvoMotor.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_motor_pins_1ade81ff1dd75fda87f5b431acb4a8de02" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t MotorPins::tach2</definition>
+        <argsstring></argsstring>
+        <name>tach2</name>
+        <qualifiedname>MotorPins::tach2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="14" column="13" bodyfile="src/motors/EvoMotor.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/motors/EvoMotor.h" line="9" column="1" bodyfile="src/motors/EvoMotor.h" bodystart="10" bodyend="15"/>
+    <listofallmembers>
+      <member refid="struct_motor_pins_1a02d4987a094466c28422be18bf7144b1" prot="public" virt="non-virtual"><scope>MotorPins</scope><name>power1</name></member>
+      <member refid="struct_motor_pins_1a8c6d406240da77475781efc2d7055919" prot="public" virt="non-virtual"><scope>MotorPins</scope><name>power2</name></member>
+      <member refid="struct_motor_pins_1a4cdd3158b3158006e55889173d95c0c8" prot="public" virt="non-virtual"><scope>MotorPins</scope><name>tach1</name></member>
+      <member refid="struct_motor_pins_1ade81ff1dd75fda87f5b431acb4a8de02" prot="public" virt="non-virtual"><scope>MotorPins</scope><name>tach2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

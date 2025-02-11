@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_7349e89ef19c117195f8e371603e1b1f" kind="dir">
+    <compoundname>src/sensors</compoundname>
+    <innerfile refid="_e_v3_color_sensor_8cpp">EV3ColorSensor.cpp</innerfile>
+    <innerfile refid="_e_v3_color_sensor_8h">EV3ColorSensor.h</innerfile>
+    <innerfile refid="_evo_t_c_s34725_8cpp">EvoTCS34725.cpp</innerfile>
+    <innerfile refid="_evo_t_c_s34725_8h">EvoTCS34725.h</innerfile>
+    <innerfile refid="_evo_v_l53_l0_x_8cpp">EvoVL53L0X.cpp</innerfile>
+    <innerfile refid="_evo_v_l53_l0_x_8h">EvoVL53L0X.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/"/>
+  </compounddef>
+</doxygen>

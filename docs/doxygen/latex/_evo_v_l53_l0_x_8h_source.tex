@@ -1,0 +1,27 @@
+\doxysection{Evo\+VL53\+L0\+X.\+h}
+\hypertarget{_evo_v_l53_l0_x_8h_source}{}\label{_evo_v_l53_l0_x_8h_source}\index{src/sensors/EvoVL53L0X.h@{src/sensors/EvoVL53L0X.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVO\_VL53L0X\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVO\_VL53L0X\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../helper/EvoI2CDevice.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <Adafruit\_VL53L0X.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }EvoVL53L0X}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ Adafruit\_VL53L0X\ lox;}
+\DoxyCodeLine{00011\ \ \ \ \ I2CChannel\ \_channel;}
+\DoxyCodeLine{00012\ \ \ \ \ VL53L0X\_RangingMeasurementData\_t\ measure;}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_i2_c_device}{I2CDevice}}\ \&i2CDevice\ =\ I2CDevice::getInstance();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Constructor\ with\ port\ and\ positive\ direction}}
+\DoxyCodeLine{00017\ \ \ \ \ EvoVL53L0X(I2CChannel\ channel);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ begin();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ getDistance();}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
