@@ -921,6 +921,8 @@
     <member refid="conf_8py_1ae850ae634911b713e036b43894fdd525" kind="variable"><name>templates_path</name></member>
     <member refid="conf_8py_1a012ba9863b958ed7baa933116f2a05b6" kind="variable"><name>html_theme</name></member>
     <member refid="conf_8py_1afd97e650fdd263ec0e1f6aa6532f3dd3" kind="variable"><name>epub_show_urls</name></member>
+    <member refid="conf_8py_1ad7fcd78de73b7505cc99717d4abf2ac1" kind="variable"><name>breathe_projects</name></member>
+    <member refid="conf_8py_1a15ff89fd36856d4530d4ed2083e6dfc7" kind="variable"><name>breathe_default_project</name></member>
   </compound>
   <compound refid="conf_8py" kind="file"><name>conf.py</name>
   </compound>

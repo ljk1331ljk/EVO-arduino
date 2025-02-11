@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="5" column="1" bodyfile="docs/source/conf.py" bodystart="5" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="8" column="1" bodyfile="docs/source/conf.py" bodystart="8" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1aa11e0a8e9c47ccc775796bd64c295d2c" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="6" column="1" bodyfile="docs/source/conf.py" bodystart="6" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="9" column="1" bodyfile="docs/source/conf.py" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1a0b68e66074bc74dbb7460951f810b4c8" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="7" column="1" bodyfile="docs/source/conf.py" bodystart="7" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="10" column="1" bodyfile="docs/source/conf.py" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1aca7e23e5f354ec5d8e18d6b5769908c9" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="9" column="1" bodyfile="docs/source/conf.py" bodystart="9" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="12" column="1" bodyfile="docs/source/conf.py" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1a082ce7a1be62a491bf884702146210d3" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="10" column="1" bodyfile="docs/source/conf.py" bodystart="10" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="13" column="1" bodyfile="docs/source/conf.py" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1ae475e080536acb271a0a0efe56c3ba42" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -85,6 +85,7 @@
         <name>extensions</name>
         <qualifiedname>conf.extensions</qualifiedname>
         <initializer>=  [
+    &apos;breathe&apos;,
     &apos;sphinx.ext.duration&apos;,
     &apos;sphinx.ext.doctest&apos;,
     &apos;sphinx.ext.autodoc&apos;,
@@ -97,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="14" column="1" bodyfile="docs/source/conf.py" bodystart="14" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="17" column="1" bodyfile="docs/source/conf.py" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1a92a41f663d41803fc3a5545f9f050a02" prot="public" static="no" mutable="no">
         <type>dict</type>
@@ -115,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="22" column="1" bodyfile="docs/source/conf.py" bodystart="22" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="26" column="1" bodyfile="docs/source/conf.py" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1add30bc2b840e6f9095377f0fce483e84" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -130,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="26" column="1" bodyfile="docs/source/conf.py" bodystart="26" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="30" column="1" bodyfile="docs/source/conf.py" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1ae850ae634911b713e036b43894fdd525" prot="public" static="no" mutable="no">
         <type>list</type>
@@ -145,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="28" column="1" bodyfile="docs/source/conf.py" bodystart="28" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="32" column="1" bodyfile="docs/source/conf.py" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1a012ba9863b958ed7baa933116f2a05b6" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -160,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="32" column="1" bodyfile="docs/source/conf.py" bodystart="32" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="36" column="1" bodyfile="docs/source/conf.py" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="conf_8py_1afd97e650fdd263ec0e1f6aa6532f3dd3" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -175,7 +176,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="docs/source/conf.py" line="35" column="1" bodyfile="docs/source/conf.py" bodystart="35" bodyend="-1"/>
+        <location file="docs/source/conf.py" line="39" column="1" bodyfile="docs/source/conf.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="conf_8py_1ad7fcd78de73b7505cc99717d4abf2ac1" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict conf.breathe_projects</definition>
+        <argsstring></argsstring>
+        <name>breathe_projects</name>
+        <qualifiedname>conf.breathe_projects</qualifiedname>
+        <initializer>=  {&quot;MyLibrary&quot;: &quot;../doxygen/xml&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="docs/source/conf.py" line="41" column="1" bodyfile="docs/source/conf.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="conf_8py_1a15ff89fd36856d4530d4ed2083e6dfc7" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.breathe_default_project</definition>
+        <argsstring></argsstring>
+        <name>breathe_default_project</name>
+        <qualifiedname>conf.breathe_default_project</qualifiedname>
+        <initializer>=  &quot;MyLibrary&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="docs/source/conf.py" line="42" column="1" bodyfile="docs/source/conf.py" bodystart="42" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
