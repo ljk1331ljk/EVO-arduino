@@ -1,7 +1,5 @@
 API
 ===
 
-.. autosummary::
-   :toctree: generated
-
-   lumache
+.. doxygenindex::
+   :project: MyLibrary
