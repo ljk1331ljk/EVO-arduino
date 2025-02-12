@@ -77,6 +77,9 @@ public:
     // Initialises the motor parameters
     void begin();
 
+    // FLips the direction of the encoder
+    void flipEncoderDirection(bool flip);
+
     // Method to set the minimum and maximum speed of the motor
     void setSpeedLimit(int minSpeed, int maxSpeed);
 
