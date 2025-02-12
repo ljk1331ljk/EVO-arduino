@@ -1,0 +1,5 @@
+EvoMotor
+=======================
+
+.. doxygenclass:: EvoMotor
+   :members:

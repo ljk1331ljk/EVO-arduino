@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_evo_servo_8h" kind="file" language="C++">
+    <compoundname>EvoServo.h</compoundname>
+    <includes local="yes">../helper/EvoPWMDriver.h</includes>
+    <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>../helper/EvoPWMDriver.h</label>
+      </node>
+      <node id="1">
+        <label>src/motors/EvoServo.h</label>
+        <link refid="_evo_servo_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Evo.h</label>
+        <link refid="_evo_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/motors/EvoServo.h</label>
+        <link refid="_evo_servo_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_evo_servo" prot="public">EvoServo</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ServoType</name>
+        <enumvalue id="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3a79935518a3889663d8688b6b01fff051" prot="public">
+          <name>Default</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3a990c6c9c65221e3d2fae1b710827a493" prot="public">
+          <name>SG90</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3a1d17d6f8bfafda37455e19c201e588e2" prot="public">
+          <name>GeekServo360Grey</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3a3e96f798de339c8857590de6b1e16d97" prot="public">
+          <name>GeekServo360Orange</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3ac6e7a7a8f37b3c9791f2166c25e81d99" prot="public">
+          <name>GeekServoContinuous</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoServo.h" line="6" column="1" bodyfile="src/motors/EvoServo.h" bodystart="7" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="enum" id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>ServoChannel</name>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0ab63cea354452e46af23c54eb8a1639ce" prot="public">
+          <name>SERVOUNDEFINED</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0aa6e257efc757f0f46794c25bb4eb58bd" prot="public">
+          <name>SERVO1</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0ad75ed2b0c4a8ddb48e78ce5fc89116fa" prot="public">
+          <name>SERVO2</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0a71ce50dcaf0ac24392ab0b73a1279e77" prot="public">
+          <name>SERVO3</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0a56d6e3c760848759943f422bcb779da4" prot="public">
+          <name>SERVO4</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0a78fe545bb62df09bfafd43ba1b36520b" prot="public">
+          <name>SERVO5</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0ac41925ab95f1a2d4d91b63ec690924ea" prot="public">
+          <name>SERVO6</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0adfa66c3c76afcaca58f980ee191081d8" prot="public">
+          <name>SERVO7</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0a549c88fda994303357abb159f2a4bc4e" prot="public">
+          <name>SERVO8</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoServo.h" line="15" column="1" bodyfile="src/motors/EvoServo.h" bodystart="16" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVO_SERVO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_SERVO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/EvoPWMDriver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>ServoType</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>Default,</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>SG90,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>GeekServo360Grey,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Grey</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>GeekServo360Orange,<sp/><sp/></highlight><highlight class="comment">//<sp/>Orange</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>GeekServoContinuous,<sp/></highlight><highlight class="comment">//<sp/>Green</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>ServoChannel</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVOUNDEFINED<sp/>=<sp/>-1,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO1<sp/>=<sp/>0,<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>0<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO2<sp/>=<sp/>1,<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>1<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO3<sp/>=<sp/>2,<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>2<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO4<sp/>=<sp/>3,<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>3<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO5<sp/>=<sp/>4,<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>4<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO6<sp/>=<sp/>5,<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>5<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO7<sp/>=<sp/>6,<sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>6<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>SERVO8<sp/>=<sp/>7<sp/><sp/></highlight><highlight class="comment">//<sp/>Channel<sp/>7<sp/>on<sp/>the<sp/>multiplexer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EvoServo</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoServo(ServoChannel<sp/>servoChannel,<sp/>ServoType<sp/>servoType<sp/>=<sp/>Default);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>begin();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setPulse(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minPulse,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxPulse);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRange(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minRange,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxRange);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>write(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setPWM(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>on,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>off);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoPWMDriver<sp/>&amp;driver<sp/>=<sp/>EvoPWMDriver::getInstance();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>_servoChannel;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_minPulse<sp/>=<sp/>300,<sp/>_maxPulse<sp/>=<sp/>1100;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_minRange<sp/>=<sp/>0,<sp/>_maxRange<sp/>=<sp/>180;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/motors/EvoServo.h"/>
+  </compounddef>
+</doxygen>

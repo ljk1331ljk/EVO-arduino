@@ -1,0 +1,393 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_evo_motor_8h" kind="file" language="C++">
+    <compoundname>EvoMotor.h</compoundname>
+    <includes local="yes">../helper/EvoPWMDriver.h</includes>
+    <includes local="yes">../helper/X1pins.h</includes>
+    <includes local="no">ESP32Encoder.h</includes>
+    <includes local="no">freertos/FreeRTOS.h</includes>
+    <includes local="no">freertos/task.h</includes>
+    <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
+    <includedby refid="_evo_motor_pair_8h" local="yes">src/motors/EvoMotorPair.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>../helper/EvoPWMDriver.h</label>
+      </node>
+      <node id="3">
+        <label>../helper/X1pins.h</label>
+      </node>
+      <node id="1">
+        <label>src/motors/EvoMotor.h</label>
+        <link refid="_evo_motor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ESP32Encoder.h</label>
+      </node>
+      <node id="5">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="6">
+        <label>freertos/task.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Evo.h</label>
+        <link refid="_evo_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/motors/EvoMotor.h</label>
+        <link refid="_evo_motor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/motors/EvoMotorPair.h</label>
+        <link refid="_evo_motor_pair_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_motor_pins" prot="public">MotorPins</innerclass>
+    <innerclass refid="class_evo_motor" prot="public">EvoMotor</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>MotorType</name>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a53a00f62d33156cf1939616942f3fde7" prot="public">
+          <name>GENERICWITHENCODER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Generic motor with encoder </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3afe1af200edf0aacfb7b9721ef1d31229" prot="public">
+          <name>GENERICWITHOUTENCODER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Generic motor without encoder </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aa205c6489713024afeff4c9b317cc7e3" prot="public">
+          <name>EV3LargeMotor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>EV3 Large Motor </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a3390414988bdc309762d948223485fa6" prot="public">
+          <name>EV3MediumMotor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>EV3 Medium Motor </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aeeadb54321e160838668b4a256731429" prot="public">
+          <name>GeekServoDCMotor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>GeekServo DC Motor </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ab8a666a57027a7ccf9ed619b101c4c9e" prot="public">
+          <name>ITERSpeed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>ITER Speed motor </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a214a5bafd55d2eda1fd5ce9468ab0bb8" prot="public">
+          <name>ITERTorque</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>ITER Torque motor </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a11f738d220b218d14f372e7f83fb59f3" prot="public">
+          <name>EVOMotor300</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>EVO Motor 300 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ad57989a4121060bce339670d1b5b8f7b" prot="public">
+          <name>EVOMotor100</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>EVO Motor 100 </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of different motor types supported. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="30" column="1" bodyfile="src/motors/EvoMotor.h" bodystart="31" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="enum" id="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" prot="public" static="no" strong="no">
+        <type></type>
+        <name>MotorPort</name>
+        <enumvalue id="_evo_motor_8h_1ab699736bb74479e355616050ebf95493a9808b46e2d406a1e70ebb182678eb396" prot="public">
+          <name>M1</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1ab699736bb74479e355616050ebf95493a64b65340d5db828a81335b08a87346ca" prot="public">
+          <name>M2</name>
+          <initializer>= 10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1ab699736bb74479e355616050ebf95493a3a20456b77b5a99695ff09fcede047a4" prot="public">
+          <name>M3</name>
+          <initializer>= 12</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1ab699736bb74479e355616050ebf95493aee2d528d4709f2b27aecc22948517d8b" prot="public">
+          <name>M4</name>
+          <initializer>= 14</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of available motor ports. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="47" column="1" bodyfile="src/motors/EvoMotor.h" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="enum" id="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5" prot="public" static="no" strong="no">
+        <type></type>
+        <name>MotorState</name>
+        <enumvalue id="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a439c688a4e9ed31638d5922a50680a8e" prot="public">
+          <name>RUN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Motor is running </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a09aa9e75617e9d8719738ca163c09137" prot="public">
+          <name>TARGET</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Motor is moving to a target position </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a8b23c50cc938e0b366df8d8eeeb1bf9f" prot="public">
+          <name>BRAKE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Motor is braking </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5ae509e364ab4c8f25b108b70b0840b142" prot="public">
+          <name>COAST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Motor is coasting </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a9cfa27b414cab750fb14ec07cdf5cf6a" prot="public">
+          <name>HOLD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Motor is holding position </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enumeration of motor states. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotor.h" line="59" column="1" bodyfile="src/motors/EvoMotor.h" bodystart="60" bodyend="66"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class for controlling various types of motors with encoders using the EvoPWMDriver. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EVOMOTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVOMOTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/EvoPWMDriver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/X1pins.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ESP32Encoder.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;freertos/FreeRTOS.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;freertos/task.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="struct_motor_pins" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_motor_pins" kindref="compound">MotorPins</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20" refid="struct_motor_pins_1a02d4987a094466c28422be18bf7144b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_motor_pins_1a02d4987a094466c28422be18bf7144b1" kindref="member">power1</ref>;<sp/></highlight></codeline>
+<codeline lineno="21" refid="struct_motor_pins_1a8c6d406240da77475781efc2d7055919" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_motor_pins_1a8c6d406240da77475781efc2d7055919" kindref="member">power2</ref>;<sp/></highlight></codeline>
+<codeline lineno="22" refid="struct_motor_pins_1a4cdd3158b3158006e55889173d95c0c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_motor_pins_1a4cdd3158b3158006e55889173d95c0c8" kindref="member">tach1</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="23" refid="struct_motor_pins_1ade81ff1dd75fda87f5b431acb4a8de02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="struct_motor_pins_1ade81ff1dd75fda87f5b431acb4a8de02" kindref="member">tach2</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3" kindref="member">MotorType</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a53a00f62d33156cf1939616942f3fde7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a53a00f62d33156cf1939616942f3fde7" kindref="member">GENERICWITHENCODER</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="33" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3afe1af200edf0aacfb7b9721ef1d31229" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3afe1af200edf0aacfb7b9721ef1d31229" kindref="member">GENERICWITHOUTENCODER</ref>,<sp/></highlight></codeline>
+<codeline lineno="34" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aa205c6489713024afeff4c9b317cc7e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aa205c6489713024afeff4c9b317cc7e3" kindref="member">EV3LargeMotor</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a3390414988bdc309762d948223485fa6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a3390414988bdc309762d948223485fa6" kindref="member">EV3MediumMotor</ref>,<sp/></highlight></codeline>
+<codeline lineno="36" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aeeadb54321e160838668b4a256731429" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aeeadb54321e160838668b4a256731429" kindref="member">GeekServoDCMotor</ref>,<sp/></highlight></codeline>
+<codeline lineno="37" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ab8a666a57027a7ccf9ed619b101c4c9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ab8a666a57027a7ccf9ed619b101c4c9e" kindref="member">ITERSpeed</ref>,<sp/></highlight></codeline>
+<codeline lineno="38" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a214a5bafd55d2eda1fd5ce9468ab0bb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a214a5bafd55d2eda1fd5ce9468ab0bb8" kindref="member">ITERTorque</ref>,<sp/></highlight></codeline>
+<codeline lineno="39" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a11f738d220b218d14f372e7f83fb59f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a11f738d220b218d14f372e7f83fb59f3" kindref="member">EVOMotor300</ref>,<sp/></highlight></codeline>
+<codeline lineno="40" refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ad57989a4121060bce339670d1b5b8f7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ad57989a4121060bce339670d1b5b8f7b" kindref="member">EVOMotor100</ref><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" kindref="member">MotorPort</ref></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>M1<sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>M2<sp/>=<sp/>10,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>M3<sp/>=<sp/>12,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>M4<sp/>=<sp/>14</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5" kindref="member">MotorState</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61" refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a439c688a4e9ed31638d5922a50680a8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a439c688a4e9ed31638d5922a50680a8e" kindref="member">RUN</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a09aa9e75617e9d8719738ca163c09137" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a09aa9e75617e9d8719738ca163c09137" kindref="member">TARGET</ref>,<sp/></highlight></codeline>
+<codeline lineno="63" refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a8b23c50cc938e0b366df8d8eeeb1bf9f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a8b23c50cc938e0b366df8d8eeeb1bf9f" kindref="member">BRAKE</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="64" refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5ae509e364ab4c8f25b108b70b0840b142" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5ae509e364ab4c8f25b108b70b0840b142" kindref="member">COAST</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a9cfa27b414cab750fb14ec07cdf5cf6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a9cfa27b414cab750fb14ec07cdf5cf6a" kindref="member">HOLD</ref><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="class_evo_motor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_evo_motor_1a6346f5971155f78a2efd2e51fd77b31c" kindref="member">EvoMotor</ref></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3" kindref="member">MotorType</ref><sp/>_motorType;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" kindref="member">MotorPort</ref><sp/>_motorPort;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_motor_pins" kindref="compound">MotorPins</ref><sp/>_motorPins;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_minSpeed,<sp/>_maxSpeed;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_motorFlip,<sp/>_encoderAvailable;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_countPerRevolution;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Motor<sp/>runtime<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5" kindref="member">MotorState</ref><sp/>_motorState<sp/>=<sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5ae509e364ab4c8f25b108b70b0840b142" kindref="member">COAST</ref>,<sp/>_motorStopState<sp/>=<sp/><ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5ae509e364ab4c8f25b108b70b0840b142" kindref="member">COAST</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_stallTime,<sp/>_stallCountThreshold;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_targetSpeed,<sp/>_targetAngle<sp/>=<sp/>0,<sp/>_targetEncoder<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_completed,<sp/>_stalled;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_kp<sp/>=<sp/>5,<sp/>_ki<sp/>=<sp/>0.1,<sp/>_kd<sp/>=<sp/>30;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>ESP32Encoder<sp/>encoder;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoPWMDriver<sp/>&amp;driver<sp/>=<sp/>EvoPWMDriver::getInstance();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>motorControlTask(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*parameter);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>move(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setParameters(<ref refid="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" kindref="member">MotorPort</ref><sp/>motorPort,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>motorFlip,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minSpeed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxSpeed,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>encoderAvailable,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>countPerRevolution<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="class_evo_motor_1a6346f5971155f78a2efd2e51fd77b31c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_motor_1a6346f5971155f78a2efd2e51fd77b31c" kindref="member">EvoMotor</ref>(<ref refid="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" kindref="member">MotorPort</ref><sp/>motorPort,<sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3" kindref="member">MotorType</ref><sp/>motorType<sp/>=<sp/><ref refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a53a00f62d33156cf1939616942f3fde7" kindref="member">GENERICWITHENCODER</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>motorFlip<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="class_evo_motor_1abc3637db9cefe0fdfd6a99c72c0b0c1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1abc3637db9cefe0fdfd6a99c72c0b0c1c" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="116" refid="class_evo_motor_1a9fa8b158812910747a764639a6134113" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a9fa8b158812910747a764639a6134113" kindref="member">flipEncoderDirection</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>flip);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="123" refid="class_evo_motor_1a74c8a02ca8e92a3fd9e88878c146c224" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a74c8a02ca8e92a3fd9e88878c146c224" kindref="member">setSpeedLimit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minSpeed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxSpeed);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="class_evo_motor_1a4bfbca1a7cd304d93dd4efa4b7352c53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a4bfbca1a7cd304d93dd4efa4b7352c53" kindref="member">getSpeedLimit</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*minSpeed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*maxSpeed);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="class_evo_motor_1abbcad00bdaf3275b0164ecfa13ad966e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1abbcad00bdaf3275b0164ecfa13ad966e" kindref="member">setEncoderAvailable</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>avail);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141" refid="class_evo_motor_1a944778da0033279bceb0026902577345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a944778da0033279bceb0026902577345" kindref="member">isEncoderAvailable</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146" refid="class_evo_motor_1a5b2f286924597207a538ee522cbdda4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a5b2f286924597207a538ee522cbdda4a" kindref="member">setCountPerRevolution</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>countPerRevolution);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152" refid="class_evo_motor_1ab2e17c576940847b38a02c923859d3cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ab2e17c576940847b38a02c923859d3cb" kindref="member">getCountPerRevolution</ref>();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="class_evo_motor_1ad3859f851356b2e878408fc06c036a70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ad3859f851356b2e878408fc06c036a70" kindref="member">getCount</ref>();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="class_evo_motor_1a81a3f806b55458d700aafc6c5d5f21d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a81a3f806b55458d700aafc6c5d5f21d4" kindref="member">setCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168" refid="class_evo_motor_1ae16e2596364e4322edf40e9cda5a768a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ae16e2596364e4322edf40e9cda5a768a" kindref="member">resetCount</ref>();</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="class_evo_motor_1a28faa613ee6d55bc6d06f40a7c669125" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a28faa613ee6d55bc6d06f40a7c669125" kindref="member">getAngle</ref>();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179" refid="class_evo_motor_1a49a24183c8f1684114e246e2b797ebb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a49a24183c8f1684114e246e2b797ebb1" kindref="member">setAngle</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>degrees);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184" refid="class_evo_motor_1a47281b8e341fb6349fffbae7ebcebe90" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a47281b8e341fb6349fffbae7ebcebe90" kindref="member">resetAngle</ref>();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="class_evo_motor_1a5eb90564a2077ec6938a2dbe9739b03d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a5eb90564a2077ec6938a2dbe9739b03d" kindref="member">isStalled</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="class_evo_motor_1a4e7190391b5bc47f2f1c0bb6fb397d08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a4e7190391b5bc47f2f1c0bb6fb397d08" kindref="member">setStallThresholds</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timems,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>angle);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="class_evo_motor_1a6027cdb09304cffa8778de1e9bcbc163" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a6027cdb09304cffa8778de1e9bcbc163" kindref="member">setStopBehaviour</ref>(<ref refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5" kindref="member">MotorState</ref><sp/>motorStopState);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205" refid="class_evo_motor_1ad32a14a56a1d3c463cd0dd0db3de378b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ad32a14a56a1d3c463cd0dd0db3de378b" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210" refid="class_evo_motor_1a6edf0927edb7c319bc31f6e2620beb40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a6edf0927edb7c319bc31f6e2620beb40" kindref="member">hold</ref>();</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="class_evo_motor_1ab4c99fbfbe3a027d2d6e4c692e7da077" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ab4c99fbfbe3a027d2d6e4c692e7da077" kindref="member">coast</ref>();</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="class_evo_motor_1a1d9542d3a6ee558e0fcd5705ec4ad90c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a1d9542d3a6ee558e0fcd5705ec4ad90c" kindref="member">brake</ref>();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226" refid="class_evo_motor_1a580820b3328cbaa82acda794427ae279" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a580820b3328cbaa82acda794427ae279" kindref="member">run</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="class_evo_motor_1a655db9c39e7823a65b3a02de26f31937" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a655db9c39e7823a65b3a02de26f31937" kindref="member">runCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="240" refid="class_evo_motor_1addce2286d7a2bb8128b91fb099ddcb9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1addce2286d7a2bb8128b91fb099ddcb9d" kindref="member">runAngle</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>degrees);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="246" refid="class_evo_motor_1ac8b702718ac7cf452b6c1136cb77c28c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ac8b702718ac7cf452b6c1136cb77c28c" kindref="member">runTime</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeMS);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="254" refid="class_evo_motor_1ac57060a4d79becaa61b879caadc3e2f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ac57060a4d79becaa61b879caadc3e2f0" kindref="member">runTarget</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>degrees,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>blocking<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260" refid="class_evo_motor_1a7fd8e4406dc3da44d023a6abe415033d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a7fd8e4406dc3da44d023a6abe415033d" kindref="member">runUntilStalled</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="268" refid="class_evo_motor_1a3259055c24da0e0cf0265349887971ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1a3259055c24da0e0cf0265349887971ae" kindref="member">setPID</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kp,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ki,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kd);</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="class_evo_motor_1ad0fd961fb20124de3c230a51c0c68fcc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_motor_1ad0fd961fb20124de3c230a51c0c68fcc" kindref="member">getPID</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*kp,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ki,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*kd);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/motors/EvoMotor.h"/>
+  </compounddef>
+</doxygen>
