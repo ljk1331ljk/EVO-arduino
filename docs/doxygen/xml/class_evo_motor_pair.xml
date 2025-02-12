@@ -1,0 +1,417 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_motor_pair" kind="class" language="C++" prot="public">
+    <compoundname>EvoMotorPair</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_motor_pair_1a7ab51dc6a7e8011ad0ff505c58de5152" prot="private" static="no" mutable="no">
+        <type>EvoMotor *</type>
+        <definition>EvoMotor* EvoMotorPair::_m1</definition>
+        <argsstring></argsstring>
+        <name>_m1</name>
+        <qualifiedname>EvoMotorPair::_m1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="9" column="14" bodyfile="src/motors/EvoMotorPair.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1a23cdf06bdf897c50ba10450c4f1b6170" prot="private" static="no" mutable="no">
+        <type>EvoMotor *</type>
+        <definition>EvoMotor* EvoMotorPair::_m2</definition>
+        <argsstring></argsstring>
+        <name>_m2</name>
+        <qualifiedname>EvoMotorPair::_m2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="10" column="14" bodyfile="src/motors/EvoMotorPair.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1aa10411a6bec1a0493b642d1a737dddec" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotorPair::_minSpeed</definition>
+        <argsstring></argsstring>
+        <name>_minSpeed</name>
+        <qualifiedname>EvoMotorPair::_minSpeed</qualifiedname>
+        <initializer>= 800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="11" column="9" bodyfile="src/motors/EvoMotorPair.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotorPair::_accelDeg</definition>
+        <argsstring></argsstring>
+        <name>_accelDeg</name>
+        <qualifiedname>EvoMotorPair::_accelDeg</qualifiedname>
+        <initializer>= 2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="11" column="20" bodyfile="src/motors/EvoMotorPair.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1a878fbd3d02eca72a36c2521b35250ef2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoMotorPair::_decelDeg</definition>
+        <argsstring></argsstring>
+        <name>_decelDeg</name>
+        <qualifiedname>EvoMotorPair::_decelDeg</qualifiedname>
+        <initializer>= 2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="11" column="31" bodyfile="src/motors/EvoMotorPair.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1a6ff3d6af2d604ae358755c7508a3c4e8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoMotorPair::_accel</definition>
+        <argsstring></argsstring>
+        <name>_accel</name>
+        <qualifiedname>EvoMotorPair::_accel</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="12" column="11" bodyfile="src/motors/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1affdde844d3736b9c727d89b33e4bc8a1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoMotorPair::_decel</definition>
+        <argsstring></argsstring>
+        <name>_decel</name>
+        <qualifiedname>EvoMotorPair::_decel</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="12" column="19" bodyfile="src/motors/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1ac6c5f3dde695bf91f4ca4dd4bfe300b2" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoMotorPair::_kpSync</definition>
+        <argsstring></argsstring>
+        <name>_kpSync</name>
+        <qualifiedname>EvoMotorPair::_kpSync</qualifiedname>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="12" column="27" bodyfile="src/motors/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_motor_pair_1aabea08734d7a185cdd49cba3162847ed" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoMotorPair::_kdSync</definition>
+        <argsstring></argsstring>
+        <name>_kdSync</name>
+        <qualifiedname>EvoMotorPair::_kdSync</qualifiedname>
+        <initializer>= 200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="12" column="36" bodyfile="src/motors/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_motor_pair_1a2ec392d6004aaa0a85557c498347f2ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EvoMotorPair::EvoMotorPair</definition>
+        <argsstring>(EvoMotor *m1, EvoMotor *m2)</argsstring>
+        <name>EvoMotorPair</name>
+        <qualifiedname>EvoMotorPair::EvoMotorPair</qualifiedname>
+        <param>
+          <type>EvoMotor *</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>EvoMotor *</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="16" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1a599c94cbdb1d9623a8af6dd698c2c65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::setMinimumSpeed</definition>
+        <argsstring>(int minSpeed)</argsstring>
+        <name>setMinimumSpeed</name>
+        <qualifiedname>EvoMotorPair::setMinimumSpeed</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>minSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="18" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1a1e01be165eba3c20f876c41d3bb037f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::setAcceleration</definition>
+        <argsstring>(float accel, int accelDeg)</argsstring>
+        <name>setAcceleration</name>
+        <qualifiedname>EvoMotorPair::setAcceleration</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>accel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>accelDeg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="19" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1a8ac2d4c0350d331de5794aa5ab39e00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::setDeceleration</definition>
+        <argsstring>(float decel, int decelDeg)</argsstring>
+        <name>setDeceleration</name>
+        <qualifiedname>EvoMotorPair::setDeceleration</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>decel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>decelDeg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="20" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1ad49d35beca2b31314c004ee6aa9f6ddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::setPD</definition>
+        <argsstring>(float kp, float kd)</argsstring>
+        <name>setPD</name>
+        <qualifiedname>EvoMotorPair::setPD</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="21" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1a9c137b67db89843a4c980869381bbc04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::move</definition>
+        <argsstring>(int leftSpeed, int rightSpeed)</argsstring>
+        <name>move</name>
+        <qualifiedname>EvoMotorPair::move</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>leftSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rightSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="23" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1a6bd00b3eb06838df90a32efabeeb5248" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::moveDegrees</definition>
+        <argsstring>(int leftSpeed, int rightSpeed, int degrees, bool brake=true)</argsstring>
+        <name>moveDegrees</name>
+        <qualifiedname>EvoMotorPair::moveDegrees</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>leftSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rightSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>degrees</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>brake</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="24" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1af48734873b5c532f4bd6fa14d81b81b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::moveTime</definition>
+        <argsstring>(int leftSpeed, int rightSpeed, int timems, bool brake=true)</argsstring>
+        <name>moveTime</name>
+        <qualifiedname>EvoMotorPair::moveTime</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>leftSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rightSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timems</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>brake</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="25" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1afdf62d2c9f4b1a41d94f3b2bfb83f7b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::brake</definition>
+        <argsstring>()</argsstring>
+        <name>brake</name>
+        <qualifiedname>EvoMotorPair::brake</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="26" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1ab78b6f84726c6c2bc6fcc4a7ef5acde6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::coast</definition>
+        <argsstring>()</argsstring>
+        <name>coast</name>
+        <qualifiedname>EvoMotorPair::coast</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="27" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1a5cbf5869e56fc874ca0ae5f4495b7b0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoMotorPair::resetAngle</definition>
+        <argsstring>()</argsstring>
+        <name>resetAngle</name>
+        <qualifiedname>EvoMotorPair::resetAngle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="29" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_motor_pair_1a651ee2a7479ae387a7c15a3c211ef9ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoMotorPair::getAngle</definition>
+        <argsstring>()</argsstring>
+        <name>getAngle</name>
+        <qualifiedname>EvoMotorPair::getAngle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/motors/EvoMotorPair.h" line="30" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/motors/EvoMotorPair.h" line="6" column="1" bodyfile="src/motors/EvoMotorPair.h" bodystart="7" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_evo_motor_pair_1a6ff3d6af2d604ae358755c7508a3c4e8" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_accel</name></member>
+      <member refid="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_accelDeg</name></member>
+      <member refid="class_evo_motor_pair_1affdde844d3736b9c727d89b33e4bc8a1" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_decel</name></member>
+      <member refid="class_evo_motor_pair_1a878fbd3d02eca72a36c2521b35250ef2" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_decelDeg</name></member>
+      <member refid="class_evo_motor_pair_1aabea08734d7a185cdd49cba3162847ed" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_kdSync</name></member>
+      <member refid="class_evo_motor_pair_1ac6c5f3dde695bf91f4ca4dd4bfe300b2" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_kpSync</name></member>
+      <member refid="class_evo_motor_pair_1a7ab51dc6a7e8011ad0ff505c58de5152" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_m1</name></member>
+      <member refid="class_evo_motor_pair_1a23cdf06bdf897c50ba10450c4f1b6170" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_m2</name></member>
+      <member refid="class_evo_motor_pair_1aa10411a6bec1a0493b642d1a737dddec" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_minSpeed</name></member>
+      <member refid="class_evo_motor_pair_1afdf62d2c9f4b1a41d94f3b2bfb83f7b0" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>brake</name></member>
+      <member refid="class_evo_motor_pair_1ab78b6f84726c6c2bc6fcc4a7ef5acde6" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>coast</name></member>
+      <member refid="class_evo_motor_pair_1a2ec392d6004aaa0a85557c498347f2ba" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>EvoMotorPair</name></member>
+      <member refid="class_evo_motor_pair_1a651ee2a7479ae387a7c15a3c211ef9ab" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>getAngle</name></member>
+      <member refid="class_evo_motor_pair_1a9c137b67db89843a4c980869381bbc04" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>move</name></member>
+      <member refid="class_evo_motor_pair_1a6bd00b3eb06838df90a32efabeeb5248" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>moveDegrees</name></member>
+      <member refid="class_evo_motor_pair_1af48734873b5c532f4bd6fa14d81b81b1" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>moveTime</name></member>
+      <member refid="class_evo_motor_pair_1a5cbf5869e56fc874ca0ae5f4495b7b0e" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>resetAngle</name></member>
+      <member refid="class_evo_motor_pair_1a1e01be165eba3c20f876c41d3bb037f6" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>setAcceleration</name></member>
+      <member refid="class_evo_motor_pair_1a8ac2d4c0350d331de5794aa5ab39e00a" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>setDeceleration</name></member>
+      <member refid="class_evo_motor_pair_1a599c94cbdb1d9623a8af6dd698c2c65a" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>setMinimumSpeed</name></member>
+      <member refid="class_evo_motor_pair_1ad49d35beca2b31314c004ee6aa9f6ddf" prot="public" virt="non-virtual"><scope>EvoMotorPair</scope><name>setPD</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

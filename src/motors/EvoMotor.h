@@ -1,3 +1,8 @@
+/**
+ * @file EvoMotor.h
+ * @brief Class for controlling various types of motors with encoders using the EvoPWMDriver.
+ */
+
 #ifndef EVOMOTOR_H
 #define EVOMOTOR_H
 #include "../helper/EvoPWMDriver.h"
@@ -6,27 +11,39 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 
+/**
+ * @struct MotorPins
+ * @brief Structure to store motor pin configurations.
+ */
 struct MotorPins
 {
-    uint8_t power1;
-    uint8_t power2;
-    uint8_t tach1;
-    uint8_t tach2;
+    uint8_t power1; /**< PWM power pin 1 */
+    uint8_t power2; /**< PWM power pin 2 */
+    uint8_t tach1;  /**< Encoder signal pin 1 */
+    uint8_t tach2;  /**< Encoder signal pin 2 */
 };
 
+/**
+ * @enum MotorType
+ * @brief Enumeration of different motor types supported.
+ */
 enum MotorType
 {
-    GENERICWITHENCODER,
-    GENERISWITHOUTENCODER,
-    EV3LargeMotor,
-    EV3MediumMotor,
-    GeekServoDCMotor,
-    ITERSpeed,
-    ITERTorque,
-    EVOMotor300,
-    EVOMotor100
+    GENERICWITHENCODER,  /**< Generic motor with encoder */
+    GENERICWITHOUTENCODER, /**< Generic motor without encoder */
+    EV3LargeMotor,  /**< EV3 Large Motor */
+    EV3MediumMotor, /**< EV3 Medium Motor */
+    GeekServoDCMotor, /**< GeekServo DC Motor */
+    ITERSpeed, /**< ITER Speed motor */
+    ITERTorque, /**< ITER Torque motor */
+    EVOMotor300, /**< EVO Motor 300 */
+    EVOMotor100  /**< EVO Motor 100 */
 };
 
+/**
+ * @enum MotorPort
+ * @brief Enumeration of available motor ports.
+ */
 enum MotorPort
 {
     M1 = 8,
@@ -35,19 +52,26 @@ enum MotorPort
     M4 = 14
 };
 
+/**
+ * @enum MotorState
+ * @brief Enumeration of motor states.
+ */
 enum MotorState
 {
-    RUN,
-    TARGET,
-    BRAKE,
-    COAST,
-    HOLD
+    RUN,    /**< Motor is running */
+    TARGET, /**< Motor is moving to a target position */
+    BRAKE,  /**< Motor is braking */
+    COAST,  /**< Motor is coasting */
+    HOLD    /**< Motor is holding position */
 };
 
+/**
+ * @class EvoMotor
+ * @brief Class to control a motor using EvoPWMDriver and an encoder.
+ */
 class EvoMotor
 {
 private:
-    // Motor parameters
     MotorType _motorType;
     MotorPort _motorPort;
     MotorPins _motorPins;
@@ -71,91 +95,184 @@ private:
     void setParameters(MotorPort motorPort, bool motorFlip, int minSpeed, int maxSpeed, bool encoderAvailable, int countPerRevolution = 0);
 
 public:
-    // Constructor with port and positive direction
+
+    /**
+     * @brief Constructor for EvoMotor.
+     * @param motorPort The motor port.
+     * @param motorType The type of motor.
+     * @param motorFlip Whether the motor direction should be flipped.
+     */
     EvoMotor(MotorPort motorPort, MotorType motorType = GENERICWITHENCODER, bool motorFlip = false);
 
-    // Initialises the motor parameters
+    /**
+     * @brief Initializes the motor.
+     */
     void begin();
-
-    // FLips the direction of the encoder
+ 
+    /**
+     * @brief Flips the direction of the encoder.
+     * @param flip Whether the encoder direction should be flipped.
+     */
     void flipEncoderDirection(bool flip);
-
-    // Method to set the minimum and maximum speed of the motor
+  
+    /**
+     * @brief Sets the minimum and maximum speed of the motor.
+     * @param minSpeed Minimum speed.
+     * @param maxSpeed Maximum speed.
+     */
     void setSpeedLimit(int minSpeed, int maxSpeed);
 
-    // Method to get the minimum and maximum speed of the motor
+    /**
+     * @brief Gets the speed limits.
+     * @param minSpeed Pointer to store the minimum speed.
+     * @param maxSpeed Pointer to store the maximum speed.
+     */
     void getSpeedLimit(int *minSpeed, int *maxSpeed);
 
-    // Method to set encoder availability
+    /**
+     * @brief Sets encoder availability.
+     */
     void setEncoderAvailable(bool avail);
-
-    // Method to get encoder availability
+    
+    /**
+     * @brief Checks if encoder is available.
+     * @return True if encoder is available, false otherwise.
+     */
     bool isEncoderAvailable();
-
-    // Method to set encoder count per revolution
+    
+    /**
+     * @brief Sets encoder count per revolution.
+     */
     void setCountPerRevolution(int countPerRevolution);
-
-    // Method to get encoder count per revolution
+    
+    /**
+     * @brief Gets encoder count per revolution.
+     * @return The count per revolution.
+     */
     int getCountPerRevolution();
 
-    // Method to get the encoder count
+    /**
+     * @brief Gets the encoder count.
+     * @return The encoder count.
+     */
     int getCount();
 
-    // Method to set the encoder count
+    /**
+     * @brief Sets the encoder count.
+     */
     void setCount(int count);
 
-    // Method to reset the encoder count
+    /**
+     * @brief Resets the encoder count.
+     */
     void resetCount();
 
-    // Method to get current degrees
+    /**
+     * @brief Gets the current motor angle.
+     * @return The angle in degrees.
+     */
     int getAngle();
 
-    // Method to set current degrees
+    /**
+     * @brief Sets the current motor angle.
+     */
     void setAngle(int degrees);
 
-    // Method to reset angle
+    /**
+     * @brief Resets the motor angle.
+     */
     void resetAngle();
 
-    // Method returns if the motor is stalled
+    /**
+     * @brief Checks if the motor is stalled.
+     * @return True if stalled, false otherwise.
+     */
     bool isStalled();
 
-    // Method to set the motor stall thersholds
+    /**
+     * @brief Sets motor stall thresholds.
+     */
     void setStallThresholds(int timems, int angle);
 
-    // Method to stop the motor
+    /**
+     * @brief Sets motor stop behavior.
+     */
     void setStopBehaviour(MotorState motorStopState);
 
-    // Method to stop the motor using motorStopState
+    /**
+     * @brief Stops the motor based on the stop behaviour set using setStopBehaviour(MotorState motorStopState).
+     */
     void stop();
 
-    // Method to hold the motor at a specified position
+    /**
+     * @brief Holds the motor in its current position.
+     */
     void hold();
 
-    // Method to coast the motor
+    /**
+     * @brief Removes power from the motors.
+     */
     void coast();
 
-    // Method to brake the motor
+    /**
+     * @brief Applys braking force on the motor to stop the motor.
+     */
     void brake();
 
-    // Method to run the motor at a specified speed
+    /**
+     * @brief Runs the motor at a specified speed.
+     * @param speed Motor speed.
+     */
     void run(int speed);
 
-    void runCount(int speed, int count, bool wait);
-
-    // Method to run the motor for a specified number of degrees
+    /**
+     * @brief Runs the motor for a specified encoder count.
+     * @param speed Motor speed.
+     * @param count Encoder count.
+     */
+    void runCount(int speed, int count);
+    
+    /**
+     * @brief Runs the motor for a specified motor degree.
+     * @param speed Motor speed.
+     * @param degrees Motor degrees.
+     */
     void runAngle(int speed, int degrees);
-
-    // Method to run the motor for a specified amount of time
+    
+    /**
+     * @brief Runs the motor for a specified time.
+     * @param timeMS Time in miliseconds.
+     */
     void runTime(int speed, int timeMS);
-
-    // Method to run the motor to a specified potision
+    
+    /**
+     * @brief Runs the motor to a specified absolute position.
+     * @param speed Motor speed.
+     * @param degrees Motor absolute degree.
+     * @param blocking Wait for action to be completed.
+     */
     void runTarget(int speed, int degrees, bool blocking = false);
 
-    // Method to run the motor until it is stalled
+    /**
+     * @brief Runs the motor until it is stalled.
+     * @param speed Motor speed.
+     */
     void runUntilStalled(int speed);
-
+    
+    /**
+     * @brief Sets PID control values for runTarget()
+     * @param kp Proportional gain.
+     * @param ki Integral gain.
+     * @param kd Derivative gain.
+     */
     void setPID(float kp, float ki, float kd);
 
+    /**
+     * @brief Gets the PID control values for runTarget()
+     * @param kp Pointer to store proportional gain.
+     * @param ki Pointer to store integral gain.
+     * @param kd Pointer to store derivative gain.
+     */
     void getPID(float *kp, float *ki, float *kd);
 };
 

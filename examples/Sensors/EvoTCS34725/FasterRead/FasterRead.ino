@@ -17,6 +17,7 @@ void setup() {
 }
 
 void loop() {
+
   cs.getRawRGBC(&rr, &rg, &rb, &rc);
   cs.getRGB(&r, &g, &b);
 
