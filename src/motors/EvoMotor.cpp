@@ -97,6 +97,22 @@ void EvoMotor::begin()
     xTaskCreate(motorControlTask, "Motor Control Task", 2048, this, 1, NULL);
 }
 
+void EvoMotor::flipEncoderDirection(bool flip)
+{
+    if (flip)
+    {
+        encoder.detach();
+        encoder.attachFullQuad(_motorPins.tach2, _motorPins.tach1);
+        encoder.clearCount();
+    }
+    else
+    {
+        encoder.detach();
+        encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
+        encoder.clearCount();
+    }
+}
+
 void EvoMotor::setSpeedLimit(int minSpeed, int maxSpeed)
 {
     _minSpeed = minSpeed;

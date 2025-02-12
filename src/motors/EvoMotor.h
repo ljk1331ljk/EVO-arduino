@@ -108,7 +108,13 @@ public:
      * @brief Initializes the motor.
      */
     void begin();
-
+ 
+    /**
+     * @brief Flips the direction of the encoder.
+     * @param flip Whether the encoder direction should be flipped.
+     */
+    void flipEncoderDirection(bool flip);
+  
     /**
      * @brief Sets the minimum and maximum speed of the motor.
      * @param minSpeed Minimum speed.
