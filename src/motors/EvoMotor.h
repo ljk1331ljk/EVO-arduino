@@ -76,7 +76,7 @@ private:
     MotorPort _motorPort;
     MotorPins _motorPins;
 
-    int _negmaxSpd, _maxSpd, _negminSpd, _minSpd;
+    int _maxSpd, _minSpd;
     bool _motorFlip, _encoderAvailable;
     int _countPerRevolution;
 
@@ -92,7 +92,7 @@ private:
 
     static void motorControlTask(void *parameter);
     void move(int speed);
-    void setParameters(MotorPort motorPort, bool motorFlip, int negmaxSpd, int maxSpd, int negminSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution = 0);
+    void setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution = 0);
 
 public:
 
@@ -117,17 +117,17 @@ public:
   
     /**
      * @brief Sets the minimum and maximum speed of the motor.
-     * @param negmaxSpd Minimum speed.
      * @param maxSpd Maximum speed.
+     * @param minSpd Minimum speed.
      */
-    void setSpeedLimit(int negmaxSpd, int maxSpd, int negminSpd, int minSpd);
+    void setSpeedLimit(int maxSpd, int minSpd);
 
     /**
      * @brief Gets the speed limits.
-     * @param negmaxSpd Pointer to store the minimum speed.
      * @param maxSpd Pointer to store the maximum speed.
+     * @param minSpd Pointer to store the minimum speed
      */
-    void getSpeedLimit(int *negmaxSpd, int *maxSpd, int *negminSpd, int *minSpd);
+    void getSpeedLimit(int *maxSpd, int *minSpd);
 
     /**
      * @brief Sets encoder availability.
