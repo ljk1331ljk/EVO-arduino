@@ -1,4 +1,4 @@
-MyLibrary Documentation
+EVOX1
 =======================
 
 .. doxygenclass:: EVOX1

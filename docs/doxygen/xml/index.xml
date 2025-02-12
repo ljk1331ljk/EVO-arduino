@@ -41,6 +41,7 @@
     <member refid="class_evo_motor_1a251c65e07cd84a8f13268f48e3252466" kind="function"><name>setParameters</name></member>
     <member refid="class_evo_motor_1a6346f5971155f78a2efd2e51fd77b31c" kind="function"><name>EvoMotor</name></member>
     <member refid="class_evo_motor_1abc3637db9cefe0fdfd6a99c72c0b0c1c" kind="function"><name>begin</name></member>
+    <member refid="class_evo_motor_1a9fa8b158812910747a764639a6134113" kind="function"><name>flipEncoderDirection</name></member>
     <member refid="class_evo_motor_1a74c8a02ca8e92a3fd9e88878c146c224" kind="function"><name>setSpeedLimit</name></member>
     <member refid="class_evo_motor_1a4bfbca1a7cd304d93dd4efa4b7352c53" kind="function"><name>getSpeedLimit</name></member>
     <member refid="class_evo_motor_1abbcad00bdaf3275b0164ecfa13ad966e" kind="function"><name>setEncoderAvailable</name></member>
@@ -61,7 +62,7 @@
     <member refid="class_evo_motor_1ab4c99fbfbe3a027d2d6e4c692e7da077" kind="function"><name>coast</name></member>
     <member refid="class_evo_motor_1a1d9542d3a6ee558e0fcd5705ec4ad90c" kind="function"><name>brake</name></member>
     <member refid="class_evo_motor_1a580820b3328cbaa82acda794427ae279" kind="function"><name>run</name></member>
-    <member refid="class_evo_motor_1a3169c87be9f322948306230df02a6187" kind="function"><name>runCount</name></member>
+    <member refid="class_evo_motor_1a655db9c39e7823a65b3a02de26f31937" kind="function"><name>runCount</name></member>
     <member refid="class_evo_motor_1addce2286d7a2bb8128b91fb099ddcb9d" kind="function"><name>runAngle</name></member>
     <member refid="class_evo_motor_1ac8b702718ac7cf452b6c1136cb77c28c" kind="function"><name>runTime</name></member>
     <member refid="class_evo_motor_1ac57060a4d79becaa61b879caadc3e2f0" kind="function"><name>runTarget</name></member>
@@ -167,13 +168,14 @@
     <member refid="struct_motor_pins_1ade81ff1dd75fda87f5b431acb4a8de02" kind="variable"><name>tach2</name></member>
   </compound>
   <compound refid="_evo_8h" kind="file"><name>Evo.h</name>
+    <member refid="_evo_8h_1a8650e6793d46032c617bb7b824f90bfd" kind="define"><name>LIBRARY_VERSION</name></member>
   </compound>
   <compound refid="_e_v_o_x1_8h" kind="file"><name>EVOX1.h</name>
   </compound>
   <compound refid="_evo_motor_8h" kind="file"><name>EvoMotor.h</name>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3" kind="enum"><name>MotorType</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a53a00f62d33156cf1939616942f3fde7" kind="enumvalue"><name>GENERICWITHENCODER</name></member>
-    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a1cf872c9752b33ac67a4f1832a509b96" kind="enumvalue"><name>GENERISWITHOUTENCODER</name></member>
+    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3afe1af200edf0aacfb7b9721ef1d31229" kind="enumvalue"><name>GENERICWITHOUTENCODER</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aa205c6489713024afeff4c9b317cc7e3" kind="enumvalue"><name>EV3LargeMotor</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a3390414988bdc309762d948223485fa6" kind="enumvalue"><name>EV3MediumMotor</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aeeadb54321e160838668b4a256731429" kind="enumvalue"><name>GeekServoDCMotor</name></member>

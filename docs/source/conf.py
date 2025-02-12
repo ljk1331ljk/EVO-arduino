@@ -38,5 +38,5 @@ html_theme = 'sphinx_rtd_theme'
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-breathe_projects = {"MyLibrary": "../doxygen/xml"}
-breathe_default_project = "MyLibrary"
+breathe_projects = {"API": "../doxygen/xml"}
+breathe_default_project = "API"

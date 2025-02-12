@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="29" column="41" bodyfile="src/EVOX1.h" bodystart="29" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="28" column="41" bodyfile="src/EVOX1.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v_o_x1_1ac35df0bfa755ece3175697b8c22aeb00" prot="private" static="no" mutable="no">
         <type>Adafruit_NeoPixel</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="34" column="23" bodyfile="src/EVOX1.h" bodystart="34" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="33" column="23" bodyfile="src/EVOX1.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v_o_x1_1a0e80d22348855596141d70accba4a63e" prot="private" static="no" mutable="no">
         <type>I2CDevice &amp;</type>
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="49" column="15" bodyfile="src/EVOX1.h" bodystart="49" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="48" column="15" bodyfile="src/EVOX1.h" bodystart="48" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="72" column="16" bodyfile="src/EVOX1.h" bodystart="72" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="71" column="16" bodyfile="src/EVOX1.h" bodystart="71" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="39" column="5"/>
+        <location file="src/EVOX1.h" line="38" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a555775df46b67fb8b35be45894463eab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_e_v_o_x1" kindref="compound">EVOX1</ref> &amp;</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="44" column="11"/>
+        <location file="src/EVOX1.h" line="43" column="11"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="56" column="5" bodyfile="src/EVOX1.h" bodystart="56" bodyend="58"/>
+        <location file="src/EVOX1.h" line="55" column="5" bodyfile="src/EVOX1.h" bodystart="55" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1acfa5db0e8275e769bf7a44eb862567a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="77" column="10"/>
+        <location file="src/EVOX1.h" line="76" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a1ce7c07c25a2a66dda417208d04cf658" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="83" column="10"/>
+        <location file="src/EVOX1.h" line="82" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a5a17f181e3fe81dccaea80148e01cc5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -223,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="92" column="9"/>
+        <location file="src/EVOX1.h" line="91" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a2d8b5b3b782f5cf68b0032798192d076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -241,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="100" column="11"/>
+        <location file="src/EVOX1.h" line="99" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a98c96b3a7ec90a3065371fc246f7ec1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -259,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="106" column="11"/>
+        <location file="src/EVOX1.h" line="105" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a5dc350b8ace794ae36b14564905d21ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -277,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="112" column="11"/>
+        <location file="src/EVOX1.h" line="111" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a9bcae9bed5af1697e95853e34e032744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -292,7 +292,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="119" column="10"/>
+        <location file="src/EVOX1.h" line="118" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a596f6a9e60e2c410ac663f720f0a0f59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -371,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="129" column="10"/>
+        <location file="src/EVOX1.h" line="128" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1aa22b3f7707142bf83d9c37f51732dbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -450,7 +450,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="139" column="10"/>
+        <location file="src/EVOX1.h" line="138" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a31f6412aca8e1e0b424ebaab2cc12d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -529,7 +529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="149" column="10"/>
+        <location file="src/EVOX1.h" line="148" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a547b6e5ab9b035462cc1148031d37faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -544,7 +544,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="154" column="10"/>
+        <location file="src/EVOX1.h" line="153" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a4524bcd7f2e78decfeadffb33a5555a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -573,7 +573,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="160" column="10"/>
+        <location file="src/EVOX1.h" line="159" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a1c1b7f315b41d4802c4a6e56220b37f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -588,7 +588,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="167" column="10"/>
+        <location file="src/EVOX1.h" line="166" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a0b6466b1faaf530c58c3cd8dcfb974d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -629,7 +629,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="176" column="10"/>
+        <location file="src/EVOX1.h" line="175" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a7257fd59f8b9fc14e983e898d17ad9e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -682,7 +682,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="186" column="10"/>
+        <location file="src/EVOX1.h" line="185" column="10"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -702,7 +702,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="63" column="18" bodyfile="src/EVOX1.h" bodystart="63" bodyend="67"/>
+        <location file="src/EVOX1.h" line="62" column="18" bodyfile="src/EVOX1.h" bodystart="62" bodyend="66"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -711,7 +711,7 @@
     <detaileddescription>
 <para>This class implements a singleton pattern to ensure only one instance is created. </para>
     </detaileddescription>
-    <location file="src/EVOX1.h" line="23" column="1" bodyfile="src/EVOX1.h" bodystart="24" bodyend="187"/>
+    <location file="src/EVOX1.h" line="22" column="1" bodyfile="src/EVOX1.h" bodystart="23" bodyend="186"/>
     <listofallmembers>
       <member refid="class_e_v_o_x1_1acfa5db0e8275e769bf7a44eb862567a6" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>begin</name></member>
       <member refid="class_e_v_o_x1_1a68727c7ee42efbbbb8a83aad2d8dc026" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>charger</name></member>

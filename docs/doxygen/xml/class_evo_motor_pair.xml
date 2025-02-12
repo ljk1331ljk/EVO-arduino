@@ -4,7 +4,7 @@
     <compoundname>EvoMotorPair</compoundname>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_evo_motor_pair_1a7ab51dc6a7e8011ad0ff505c58de5152" prot="private" static="no" mutable="no">
-        <type>EvoMotor *</type>
+        <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
         <definition>EvoMotor* EvoMotorPair::_m1</definition>
         <argsstring></argsstring>
         <name>_m1</name>
@@ -18,7 +18,7 @@
         <location file="src/motors/EvoMotorPair.h" line="9" column="14" bodyfile="src/motors/EvoMotorPair.h" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a23cdf06bdf897c50ba10450c4f1b6170" prot="private" static="no" mutable="no">
-        <type>EvoMotor *</type>
+        <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
         <definition>EvoMotor* EvoMotorPair::_m2</definition>
         <argsstring></argsstring>
         <name>_m2</name>
@@ -145,11 +145,11 @@
         <name>EvoMotorPair</name>
         <qualifiedname>EvoMotorPair::EvoMotorPair</qualifiedname>
         <param>
-          <type>EvoMotor *</type>
+          <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
           <declname>m1</declname>
         </param>
         <param>
-          <type>EvoMotor *</type>
+          <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
           <declname>m2</declname>
         </param>
         <briefdescription>

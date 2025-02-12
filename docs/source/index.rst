@@ -26,5 +26,5 @@ Contents
 .. toctree::
 
    usage
-   api
-   EVOX1
+   API/EVOX1
+   API/EvoMotor
