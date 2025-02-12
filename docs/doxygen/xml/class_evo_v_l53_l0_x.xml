@@ -46,7 +46,7 @@
         <location file="src/sensors/EvoVL53L0X.h" line="12" column="38" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_v_l53_l0_x_1ad52766520608a17385eb54895680992e" prot="private" static="no" mutable="no">
-        <type><ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        <type>I2CDevice &amp;</type>
         <definition>I2CDevice&amp; EvoVL53L0X::i2CDevice</definition>
         <argsstring></argsstring>
         <name>i2CDevice</name>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="17" column="5" bodyfile="src/sensors/EvoVL53L0X.cpp" bodystart="3" bodyend="6"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="17" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_v_l53_l0_x_1af2f5b6f36e76e5a281586160c4f0f1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="18" column="10" bodyfile="src/sensors/EvoVL53L0X.cpp" bodystart="8" bodyend="16"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="18" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_v_l53_l0_x_1ae069516a043dd39f891d283ed66e92eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="19" column="9" bodyfile="src/sensors/EvoVL53L0X.cpp" bodystart="18" bodyend="27"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="19" column="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

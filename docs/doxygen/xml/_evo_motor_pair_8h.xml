@@ -4,35 +4,25 @@
     <compoundname>EvoMotorPair.h</compoundname>
     <includes refid="_evo_motor_8h" local="yes">EvoMotor.h</includes>
     <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
-    <includedby refid="_evo_motor_pair_8cpp" local="yes">src/motors/EvoMotorPair.cpp</includedby>
     <incdepgraph>
-      <node id="5">
-        <label>Adafruit_PWMServoDriver.h</label>
-      </node>
       <node id="3">
         <label>../helper/EvoPWMDriver.h</label>
-        <link refid="_evo_p_w_m_driver_8h_source"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
       </node>
-      <node id="6">
+      <node id="4">
         <label>../helper/X1pins.h</label>
-        <link refid="_x1pins_8h_source"/>
       </node>
       <node id="2">
         <label>EvoMotor.h</label>
         <link refid="_evo_motor_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -41,29 +31,20 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="7">
+      <node id="5">
         <label>ESP32Encoder.h</label>
       </node>
-      <node id="4">
-        <label>Wire.h</label>
-      </node>
-      <node id="8">
+      <node id="6">
         <label>freertos/FreeRTOS.h</label>
       </node>
-      <node id="9">
+      <node id="7">
         <label>freertos/task.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
-        <label>src/EVOX1.cpp</label>
-        <link refid="_e_v_o_x1_8cpp"/>
-      </node>
       <node id="2">
         <label>src/Evo.h</label>
         <link refid="_evo_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
       </node>
       <node id="1">
         <label>src/motors/EvoMotorPair.h</label>
@@ -83,17 +64,17 @@
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;EvoMotor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6" refid="class_evo_motor_pair" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EvoMotorPair</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EvoMotorPair</highlight></codeline>
 <codeline lineno="7"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*_m1;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*_m2;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoMotor<sp/>*_m1;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoMotor<sp/>*_m2;</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_minSpeed<sp/>=<sp/>800,<sp/>_accelDeg<sp/>=<sp/>2000,<sp/>_decelDeg<sp/>=<sp/>2000;</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_accel<sp/>=<sp/>8,<sp/>_decel<sp/>=<sp/>8,<sp/>_kpSync<sp/>=<sp/>20,<sp/>_kdSync<sp/>=<sp/>200;</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Constructor<sp/>with<sp/>port<sp/>and<sp/>positive<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoMotorPair(<ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*m1,<sp/><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*m2);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoMotorPair(EvoMotor<sp/>*m1,<sp/>EvoMotor<sp/>*m2);</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setMinimumSpeed(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minSpeed);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setAcceleration(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>accel,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>accelDeg);</highlight></codeline>

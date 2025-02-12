@@ -4,7 +4,7 @@
     <compoundname>EvoServo</compoundname>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_evo_servo_1a7b1ad83f4bc1fb4501ef8a4346d74303" prot="private" static="no" mutable="no">
-        <type><ref refid="class_evo_p_w_m_driver" kindref="compound">EvoPWMDriver</ref> &amp;</type>
+        <type>EvoPWMDriver &amp;</type>
         <definition>EvoPWMDriver&amp; EvoServo::driver</definition>
         <argsstring></argsstring>
         <name>driver</name>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="32" column="5" bodyfile="src/motors/EvoServo.cpp" bodystart="3" bodyend="29"/>
+        <location file="src/motors/EvoServo.h" line="32" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1abfa3fc316c34051d618c463b2d293753" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="33" column="10" bodyfile="src/motors/EvoServo.cpp" bodystart="31" bodyend="34"/>
+        <location file="src/motors/EvoServo.h" line="33" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1abcb02311307ad74a549db785b0dfac66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -151,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="34" column="10" bodyfile="src/motors/EvoServo.cpp" bodystart="35" bodyend="39"/>
+        <location file="src/motors/EvoServo.h" line="34" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1a744a31b7a1c05849d034bc7992f5a0b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -173,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="35" column="10" bodyfile="src/motors/EvoServo.cpp" bodystart="40" bodyend="44"/>
+        <location file="src/motors/EvoServo.h" line="35" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1a9489eda55822fb7a531ecbaf7bc72b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -191,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="36" column="10" bodyfile="src/motors/EvoServo.cpp" bodystart="45" bodyend="48"/>
+        <location file="src/motors/EvoServo.h" line="36" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1a2701bf2c49ea2aa3c1d493841a674996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -213,7 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="37" column="10" bodyfile="src/motors/EvoServo.cpp" bodystart="49" bodyend="52"/>
+        <location file="src/motors/EvoServo.h" line="37" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

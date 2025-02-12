@@ -2,11 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
-    <innerdir refid="dir_2e47e0659bfa766bdc2119893b60e2d4">src/helper</innerdir>
     <innerdir refid="dir_6adb56cee76d6d026f8f38e703b50393">src/motors</innerdir>
     <innerdir refid="dir_7349e89ef19c117195f8e371603e1b1f">src/sensors</innerdir>
     <innerfile refid="_evo_8h">Evo.h</innerfile>
-    <innerfile refid="_e_v_o_x1_8cpp">EVOX1.cpp</innerfile>
     <innerfile refid="_e_v_o_x1_8h">EVOX1.h</innerfile>
     <briefdescription>
     </briefdescription>

@@ -2,77 +2,58 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="_evo_motor_8h" kind="file" language="C++">
     <compoundname>EvoMotor.h</compoundname>
-    <includes refid="_evo_p_w_m_driver_8h" local="yes">../helper/EvoPWMDriver.h</includes>
-    <includes refid="_x1pins_8h" local="yes">../helper/X1pins.h</includes>
+    <includes local="yes">../helper/EvoPWMDriver.h</includes>
+    <includes local="yes">../helper/X1pins.h</includes>
     <includes local="no">ESP32Encoder.h</includes>
     <includes local="no">freertos/FreeRTOS.h</includes>
     <includes local="no">freertos/task.h</includes>
     <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
-    <includedby refid="_evo_motor_8cpp" local="yes">src/motors/EvoMotor.cpp</includedby>
     <includedby refid="_evo_motor_pair_8h" local="yes">src/motors/EvoMotorPair.h</includedby>
     <incdepgraph>
-      <node id="4">
-        <label>Adafruit_PWMServoDriver.h</label>
-      </node>
       <node id="2">
         <label>../helper/EvoPWMDriver.h</label>
-        <link refid="_evo_p_w_m_driver_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
       </node>
-      <node id="5">
+      <node id="3">
         <label>../helper/X1pins.h</label>
-        <link refid="_x1pins_8h_source"/>
       </node>
       <node id="1">
         <label>src/motors/EvoMotor.h</label>
         <link refid="_evo_motor_8h"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
       </node>
-      <node id="6">
+      <node id="4">
         <label>ESP32Encoder.h</label>
       </node>
-      <node id="3">
-        <label>Wire.h</label>
-      </node>
-      <node id="7">
+      <node id="5">
         <label>freertos/FreeRTOS.h</label>
       </node>
-      <node id="8">
+      <node id="6">
         <label>freertos/task.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
-        <label>src/EVOX1.cpp</label>
-        <link refid="_e_v_o_x1_8cpp"/>
-      </node>
       <node id="2">
         <label>src/Evo.h</label>
         <link refid="_evo_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
       </node>
       <node id="1">
         <label>src/motors/EvoMotor.h</label>
         <link refid="_evo_motor_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="3">
         <label>src/motors/EvoMotorPair.h</label>
         <link refid="_evo_motor_pair_8h_source"/>
         <childnode refid="2" relation="include">
@@ -259,7 +240,7 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;freertos/FreeRTOS.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;freertos/task.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9" refid="struct_motor_pins" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_motor_pins" kindref="compound">MotorPins</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">MotorPins</highlight></codeline>
 <codeline lineno="10"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>power1;</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>power2;</highlight></codeline>
@@ -297,13 +278,13 @@
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>HOLD</highlight></codeline>
 <codeline lineno="45"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47" refid="class_evo_motor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EvoMotor</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EvoMotor</highlight></codeline>
 <codeline lineno="48"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Motor<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>MotorType<sp/>_motorType;</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>MotorPort<sp/>_motorPort;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_motor_pins" kindref="compound">MotorPins</ref><sp/>_motorPins;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>MotorPins<sp/>_motorPins;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_minSpeed,<sp/>_maxSpeed;</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_motorFlip,<sp/>_encoderAvailable;</highlight></codeline>
@@ -317,7 +298,7 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_kp<sp/>=<sp/>5,<sp/>_ki<sp/>=<sp/>0.1,<sp/>_kd<sp/>=<sp/>30;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>ESP32Encoder<sp/>encoder;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_p_w_m_driver" kindref="compound">EvoPWMDriver</ref><sp/>&amp;driver<sp/>=<sp/>EvoPWMDriver::getInstance();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>EvoPWMDriver<sp/>&amp;driver<sp/>=<sp/>EvoPWMDriver::getInstance();</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>motorControlTask(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*parameter);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>move(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed);</highlight></codeline>

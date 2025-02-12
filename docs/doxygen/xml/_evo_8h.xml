@@ -9,18 +9,26 @@
     <includes refid="_e_v3_color_sensor_8h" local="yes">sensors/EV3ColorSensor.h</includes>
     <includes refid="_evo_t_c_s34725_8h" local="yes">sensors/EvoTCS34725.h</includes>
     <includes refid="_evo_v_l53_l0_x_8h" local="yes">sensors/EvoVL53L0X.h</includes>
-    <includedby refid="_e_v_o_x1_8cpp" local="no">src/EVOX1.cpp</includedby>
     <incdepgraph>
-      <node id="9">
+      <node id="21">
+        <label>../helper/EvoI2CDevice.h</label>
+      </node>
+      <node id="11">
+        <label>../helper/EvoPWMDriver.h</label>
+      </node>
+      <node id="19">
+        <label>../helper/EvoSensorPort.h</label>
+      </node>
+      <node id="12">
+        <label>../helper/X1pins.h</label>
+      </node>
+      <node id="8">
         <label>Adafruit_NeoPixel.h</label>
       </node>
-      <node id="20">
-        <label>Adafruit_PWMServoDriver.h</label>
-      </node>
-      <node id="31">
+      <node id="22">
         <label>Adafruit_TCS34725.h</label>
       </node>
-      <node id="33">
+      <node id="24">
         <label>Adafruit_VL53L0X.h</label>
       </node>
       <node id="3">
@@ -37,11 +45,11 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -49,190 +57,92 @@
         <link refid="_evo_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="18" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-      </node>
-      <node id="8">
-        <label>helper/EvoBQ25887.h</label>
-        <link refid="_evo_b_q25887_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>helper/EvoI2CDevice.h</label>
-        <link refid="_evo_i2_c_device_8h_source"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="19">
-        <label>../helper/EvoPWMDriver.h</label>
-        <link refid="_evo_p_w_m_driver_8h_source"/>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
-      <node id="27">
-        <label>../helper/EvoSensorPort.h</label>
-        <link refid="_evo_sensor_port_8h_source"/>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>helper/Tones.h</label>
-        <link refid="_tones_8h_source"/>
-      </node>
-      <node id="10">
-        <label>helper/U8g2/U8g2lib.h</label>
-        <link refid="_u8g2lib_8h_source"/>
-        <childnode refid="11" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-      </node>
-      <node id="11">
-        <label>U8x8lib.h</label>
-        <link refid="_u8x8lib_8h_source"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="17">
-        <label>clib/u8g2.h</label>
-        <link refid="u8g2_8h_source"/>
+      <node id="10">
+        <label>motors/EvoMotor.h</label>
+        <link refid="_evo_motor_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-      </node>
-      <node id="12">
-        <label>clib/u8x8.h</label>
-        <link refid="u8x8_8h_source"/>
         <childnode refid="13" relation="include">
         </childnode>
         <childnode refid="14" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+      </node>
+      <node id="16">
+        <label>motors/EvoMotorPair.h</label>
+        <link refid="_evo_motor_pair_8h_source"/>
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>helper/X1pins.h</label>
-        <link refid="_x1pins_8h_source"/>
+      <node id="17">
+        <label>motors/EvoServo.h</label>
+        <link refid="_evo_servo_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
       </node>
       <node id="18">
-        <label>motors/EvoMotor.h</label>
-        <link refid="_evo_motor_8h_source"/>
+        <label>sensors/EV3ColorSensor.h</label>
+        <link refid="_e_v3_color_sensor_8h_source"/>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
+      </node>
+      <node id="20">
+        <label>sensors/EvoTCS34725.h</label>
+        <link refid="_evo_t_c_s34725_8h_source"/>
         <childnode refid="21" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-      </node>
-      <node id="24">
-        <label>motors/EvoMotorPair.h</label>
-        <link refid="_evo_motor_pair_8h_source"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
-      <node id="25">
-        <label>motors/EvoServo.h</label>
-        <link refid="_evo_servo_8h_source"/>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="26">
-        <label>sensors/EV3ColorSensor.h</label>
-        <link refid="_e_v3_color_sensor_8h_source"/>
-        <childnode refid="27" relation="include">
-        </childnode>
-      </node>
-      <node id="30">
-        <label>sensors/EvoTCS34725.h</label>
-        <link refid="_evo_t_c_s34725_8h_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
-      <node id="32">
-        <label>sensors/EvoVL53L0X.h</label>
-        <link refid="_evo_v_l53_l0_x_8h_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-      </node>
-      <node id="21">
-        <label>ESP32Encoder.h</label>
-      </node>
-      <node id="29">
-        <label>SoftwareSerial.h</label>
-      </node>
-      <node id="7">
-        <label>Wire.h</label>
-      </node>
-      <node id="22">
-        <label>freertos/FreeRTOS.h</label>
       </node>
       <node id="23">
-        <label>freertos/task.h</label>
-      </node>
-      <node id="28">
-        <label>functional</label>
-      </node>
-      <node id="16">
-        <label>limits.h</label>
-      </node>
-      <node id="14">
-        <label>stdarg.h</label>
-      </node>
-      <node id="15">
-        <label>stddef.h</label>
-      </node>
-      <node id="13">
-        <label>stdint.h</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="2">
-        <label>src/EVOX1.cpp</label>
-        <link refid="_e_v_o_x1_8cpp"/>
-      </node>
-      <node id="1">
-        <label>src/Evo.h</label>
-        <link refid="_evo_8h"/>
-        <childnode refid="2" relation="include">
+        <label>sensors/EvoVL53L0X.h</label>
+        <link refid="_evo_v_l53_l0_x_8h_source"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
-    </invincdepgraph>
+      <node id="13">
+        <label>ESP32Encoder.h</label>
+      </node>
+      <node id="14">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="15">
+        <label>freertos/task.h</label>
+      </node>
+      <node id="7">
+        <label>helper/EvoBQ25887.h</label>
+      </node>
+      <node id="6">
+        <label>helper/EvoI2CDevice.h</label>
+      </node>
+      <node id="5">
+        <label>helper/Tones.h</label>
+      </node>
+      <node id="9">
+        <label>helper/U8g2/U8g2lib.h</label>
+      </node>
+      <node id="4">
+        <label>helper/X1pins.h</label>
+      </node>
+    </incdepgraph>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

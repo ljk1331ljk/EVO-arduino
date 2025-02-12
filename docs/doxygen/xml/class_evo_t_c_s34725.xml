@@ -32,7 +32,7 @@
         <location file="src/sensors/EvoTCS34725.h" line="11" column="16" bodyfile="src/sensors/EvoTCS34725.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_t_c_s34725_1a68e0731533fd95c5e7ef20fd4aa4112d" prot="private" static="no" mutable="no">
-        <type><ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        <type>I2CDevice &amp;</type>
         <definition>I2CDevice&amp; EvoTCS34725::i2CDevice</definition>
         <argsstring></argsstring>
         <name>i2CDevice</name>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="22" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="3" bodyend="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="22" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1aca92216d91bea091a53129aa38b20031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -126,7 +126,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="24" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="23" bodyend="28"/>
+        <location file="src/sensors/EvoTCS34725.h" line="24" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a43460244cea2d8cba6c2d2ef88dc5736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="25" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="29" bodyend="34"/>
+        <location file="src/sensors/EvoTCS34725.h" line="25" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -170,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="27" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="12" bodyend="16"/>
+        <location file="src/sensors/EvoTCS34725.h" line="27" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="28" column="10" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="17" bodyend="21"/>
+        <location file="src/sensors/EvoTCS34725.h" line="28" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -214,7 +214,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="29" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="35" bodyend="41"/>
+        <location file="src/sensors/EvoTCS34725.h" line="29" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -228,7 +228,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="30" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="42" bodyend="48"/>
+        <location file="src/sensors/EvoTCS34725.h" line="30" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -242,7 +242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="31" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="49" bodyend="55"/>
+        <location file="src/sensors/EvoTCS34725.h" line="31" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -256,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="32" column="14" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="56" bodyend="62"/>
+        <location file="src/sensors/EvoTCS34725.h" line="32" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="33" column="11" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="64" bodyend="78"/>
+        <location file="src/sensors/EvoTCS34725.h" line="33" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -284,7 +284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="34" column="11" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="79" bodyend="93"/>
+        <location file="src/sensors/EvoTCS34725.h" line="34" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -298,7 +298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="35" column="11" bodyfile="src/sensors/EvoTCS34725.cpp" bodystart="94" bodyend="108"/>
+        <location file="src/sensors/EvoTCS34725.h" line="35" column="11"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

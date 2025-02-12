@@ -11,7 +11,7 @@
         <name>display</name>
         <qualifiedname>EVOX1::display</qualifiedname>
         <briefdescription>
-<para>OLED display instance using <ref refid="class_u8_g2" kindref="compound">U8G2</ref> library. </para>
+<para>OLED display instance using U8G2 library. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -35,14 +35,14 @@
         <location file="src/EVOX1.h" line="34" column="23" bodyfile="src/EVOX1.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v_o_x1_1a0e80d22348855596141d70accba4a63e" prot="private" static="no" mutable="no">
-        <type><ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref> &amp;</type>
+        <type>I2CDevice &amp;</type>
         <definition>I2CDevice&amp; EVOX1::i2CDevice</definition>
         <argsstring></argsstring>
         <name>i2CDevice</name>
         <qualifiedname>EVOX1::i2CDevice</qualifiedname>
         <initializer>= I2CDevice::getInstance()</initializer>
         <briefdescription>
-<para>Singleton instance of <ref refid="class_i2_c_device" kindref="compound">I2CDevice</ref>. </para>
+<para>Singleton instance of I2CDevice. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -53,12 +53,12 @@
     </sectiondef>
     <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="class_e_v_o_x1_1a68727c7ee42efbbbb8a83aad2d8dc026" prot="public" static="no" mutable="no">
-        <type><ref refid="class_evo_b_q25887" kindref="compound">EvoBQ25887</ref></type>
+        <type>EvoBQ25887</type>
         <definition>EvoBQ25887 EVOX1::charger</definition>
         <argsstring></argsstring>
         <name>charger</name>
         <qualifiedname>EVOX1::charger</qualifiedname>
-        <initializer>= <ref refid="class_evo_b_q25887" kindref="compound">EvoBQ25887</ref>()</initializer>
+        <initializer>= EvoBQ25887()</initializer>
         <briefdescription>
 <para>Battery charger instance. </para>
         </briefdescription>
@@ -139,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="77" column="10" bodyfile="src/EVOX1.cpp" bodystart="33" bodyend="41"/>
+        <location file="src/EVOX1.h" line="77" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a1ce7c07c25a2a66dda417208d04cf658" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="83" column="10" bodyfile="src/EVOX1.cpp" bodystart="179" bodyend="182"/>
+        <location file="src/EVOX1.h" line="83" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a5a17f181e3fe81dccaea80148e01cc5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -223,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="92" column="9" bodyfile="src/EVOX1.cpp" bodystart="184" bodyend="199"/>
+        <location file="src/EVOX1.h" line="92" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a2d8b5b3b782f5cf68b0032798192d076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -241,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="100" column="11" bodyfile="src/EVOX1.cpp" bodystart="51" bodyend="57"/>
+        <location file="src/EVOX1.h" line="100" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a98c96b3a7ec90a3065371fc246f7ec1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -259,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="106" column="11" bodyfile="src/EVOX1.cpp" bodystart="59" bodyend="65"/>
+        <location file="src/EVOX1.h" line="106" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a5dc350b8ace794ae36b14564905d21ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -277,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="112" column="11" bodyfile="src/EVOX1.cpp" bodystart="43" bodyend="49"/>
+        <location file="src/EVOX1.h" line="112" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a9bcae9bed5af1697e95853e34e032744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -292,7 +292,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="119" column="10" bodyfile="src/EVOX1.cpp" bodystart="72" bodyend="76"/>
+        <location file="src/EVOX1.h" line="119" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a596f6a9e60e2c410ac663f720f0a0f59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -371,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="129" column="10" bodyfile="src/EVOX1.cpp" bodystart="78" bodyend="92"/>
+        <location file="src/EVOX1.h" line="129" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1aa22b3f7707142bf83d9c37f51732dbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -450,7 +450,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="139" column="10" bodyfile="src/EVOX1.cpp" bodystart="128" bodyend="142"/>
+        <location file="src/EVOX1.h" line="139" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a31f6412aca8e1e0b424ebaab2cc12d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -529,7 +529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="149" column="10" bodyfile="src/EVOX1.cpp" bodystart="144" bodyend="156"/>
+        <location file="src/EVOX1.h" line="149" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a547b6e5ab9b035462cc1148031d37faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -544,7 +544,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="154" column="10" bodyfile="src/EVOX1.cpp" bodystart="167" bodyend="171"/>
+        <location file="src/EVOX1.h" line="154" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a4524bcd7f2e78decfeadffb33a5555a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -573,7 +573,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="160" column="10" bodyfile="src/EVOX1.cpp" bodystart="94" bodyend="126"/>
+        <location file="src/EVOX1.h" line="160" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a1c1b7f315b41d4802c4a6e56220b37f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -588,7 +588,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="167" column="10" bodyfile="src/EVOX1.cpp" bodystart="158" bodyend="165"/>
+        <location file="src/EVOX1.h" line="167" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a0b6466b1faaf530c58c3cd8dcfb974d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -629,7 +629,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="176" column="10" bodyfile="src/EVOX1.cpp" bodystart="67" bodyend="70"/>
+        <location file="src/EVOX1.h" line="176" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a7257fd59f8b9fc14e983e898d17ad9e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -682,7 +682,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="186" column="10" bodyfile="src/EVOX1.cpp" bodystart="173" bodyend="177"/>
+        <location file="src/EVOX1.h" line="186" column="10"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -711,19 +711,6 @@
     <detaileddescription>
 <para>This class implements a singleton pattern to ensure only one instance is created. </para>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="1">
-        <label>EVOX1</label>
-        <link refid="class_e_v_o_x1"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>charger</edgelabel>
-        </childnode>
-      </node>
-      <node id="2">
-        <label>EvoBQ25887</label>
-        <link refid="class_evo_b_q25887"/>
-      </node>
-    </collaborationgraph>
     <location file="src/EVOX1.h" line="23" column="1" bodyfile="src/EVOX1.h" bodystart="24" bodyend="187"/>
     <listofallmembers>
       <member refid="class_e_v_o_x1_1acfa5db0e8275e769bf7a44eb862567a6" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>begin</name></member>
