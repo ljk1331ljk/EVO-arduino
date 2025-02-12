@@ -34,8 +34,8 @@ enum MotorType
     EV3LargeMotor,  /**< EV3 Large Motor */
     EV3MediumMotor, /**< EV3 Medium Motor */
     GeekServoDCMotor, /**< GeekServo DC Motor */
-    ITERSpeed, /**< ITER Speed motor */
-    ITERTorque, /**< ITER Torque motor */
+    ITERMKS, /**< ITER Speed motor */
+    ITERMKT, /**< ITER Torque motor */
     EVOMotor300, /**< EVO Motor 300 */
     EVOMotor100  /**< EVO Motor 100 */
 };
@@ -76,7 +76,7 @@ private:
     MotorPort _motorPort;
     MotorPins _motorPins;
 
-    int _minSpeed, _maxSpeed;
+    int _negmaxSpd, _maxSpd, _negminSpd, _minSpd;
     bool _motorFlip, _encoderAvailable;
     int _countPerRevolution;
 
@@ -92,7 +92,7 @@ private:
 
     static void motorControlTask(void *parameter);
     void move(int speed);
-    void setParameters(MotorPort motorPort, bool motorFlip, int minSpeed, int maxSpeed, bool encoderAvailable, int countPerRevolution = 0);
+    void setParameters(MotorPort motorPort, bool motorFlip, int negmaxSpd, int maxSpd, int negminSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution = 0);
 
 public:
 
@@ -108,7 +108,7 @@ public:
      * @brief Initializes the motor.
      */
     void begin();
- 
+
     /**
      * @brief Flips the direction of the encoder.
      * @param flip Whether the encoder direction should be flipped.
@@ -117,17 +117,17 @@ public:
   
     /**
      * @brief Sets the minimum and maximum speed of the motor.
-     * @param minSpeed Minimum speed.
-     * @param maxSpeed Maximum speed.
+     * @param negmaxSpd Minimum speed.
+     * @param maxSpd Maximum speed.
      */
-    void setSpeedLimit(int minSpeed, int maxSpeed);
+    void setSpeedLimit(int negmaxSpd, int maxSpd, int negminSpd, int minSpd);
 
     /**
      * @brief Gets the speed limits.
-     * @param minSpeed Pointer to store the minimum speed.
-     * @param maxSpeed Pointer to store the maximum speed.
+     * @param negmaxSpd Pointer to store the minimum speed.
+     * @param maxSpd Pointer to store the maximum speed.
      */
-    void getSpeedLimit(int *minSpeed, int *maxSpeed);
+    void getSpeedLimit(int *negmaxSpd, int *maxSpd, int *negminSpd, int *minSpd);
 
     /**
      * @brief Sets encoder availability.

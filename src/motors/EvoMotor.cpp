@@ -15,31 +15,31 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     switch (motorType)
     {
     case GENERICWITHENCODER:
-        setParameters(motorPort, motorFlip, -4000, 4000, true, 360);
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 5, 30, true, 360);
         break;
     case GENERISWITHOUTENCODER:
-        setParameters(motorPort, motorFlip, -4000, 4000, false);
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 0, 0, false);
         break;
     case EV3LargeMotor:
-        setParameters(motorPort, motorFlip, -4000, 4000, true, 720);
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 5, 30, true, 720);
         break;
     case EV3MediumMotor:
-        setParameters(motorPort, motorFlip, -4000, 4000, true, 720);
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 5, 30, true, 720);
         break;
     case GeekServoDCMotor:
-        setParameters(motorPort, motorFlip, -4000, 4000, false);
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 0, 0, false);
         break;
-    case ITERSpeed:
-        setParameters(motorPort, motorFlip, -4000, 4000, true, 1204);
+    case ITERMKS:
+        setParameters(motorPort, motorFlip, -4000, 4000, 500, -500, 10, 50, true, 1204);
         break;
-    case ITERTorque:
-        setParameters(motorPort, motorFlip, -4000, 4000, true, 1204);
+    case ITERMKT:
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 10, 50,true, 1204);
         break;
     case EVOMotor300:
-        setParameters(motorPort, motorFlip, -4000, 4000, true, 2800);
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 10, 50, true, 2800);
         break;
     case EVOMotor100:
-        setParameters(motorPort, motorFlip, -4000, 4000, true, 8400);
+        setParameters(motorPort, motorFlip, -4000, 4000, 100, -100, 10, 50, true, 8400);
         break;
     }
 
@@ -72,14 +72,17 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     }
 }
 
-void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int minSpeed, int maxSpeed, bool encoderAvailable, int countPerRevolution)
+void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int negmaxSpd, int maxSpd, int negminSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution)
 {
     _motorFlip = motorFlip;
     _motorPort = motorPort;
-    _minSpeed = minSpeed;
-    _maxSpeed = maxSpeed;
+    _negmaxSpd = negmaxSpd;
+    _maxSpd = maxSpd;
+    _negminSpd = minSpd;
     _countPerRevolution = countPerRevolution;
     _encoderAvailable = encoderAvailable;
+    _kp = kp;
+    _kd = kd;
 }
 
 void EvoMotor::begin()
@@ -90,7 +93,6 @@ void EvoMotor::begin()
 
     setStopBehaviour(BRAKE);
     setStallThresholds(50, 10);
-    setPID(20, 30, 80);
 
     coast();
 
@@ -113,16 +115,20 @@ void EvoMotor::flipEncoderDirection(bool flip)
     }
 }
 
-void EvoMotor::setSpeedLimit(int minSpeed, int maxSpeed)
+void EvoMotor::setSpeedLimit(int negmaxSpd, int maxSpd, int negminSpd, int minSpd)
 {
-    _minSpeed = minSpeed;
-    _maxSpeed = maxSpeed;
+    _negmaxSpd = negmaxSpd;
+    _maxSpd = maxSpd;
+    _negminSpd = negminSpd;
+    _minSpd = minSpd;
 }
 
-void EvoMotor::getSpeedLimit(int *minSpeed, int *maxSpeed)
+void EvoMotor::getSpeedLimit(int *negmaxSpd, int *maxSpd, int *negminSpd, int *minSpd)
 {
-    *minSpeed = _minSpeed;
-    *maxSpeed = _maxSpeed;
+    *negmaxSpd = _negmaxSpd;
+    *maxSpd = _maxSpd;
+    *negminSpd = _negminSpd;
+    *minSpd = _minSpd;
 }
 
 void EvoMotor::setEncoderAvailable(bool encoderAvailable)
@@ -235,14 +241,24 @@ void EvoMotor::brake()
 
 void EvoMotor::hold()
 {
-    this->runTarget(_maxSpeed, this->getAngle());
+    this->runTarget(_maxSpd, this->getAngle());
     // this->_targetAngle = this->getCount();
     // this->_motorState = TARGET;
 }
 
 void EvoMotor::move(int speed)
 {
-    speed = clamp(speed, -4000, 4000);
+    speed = clamp(speed, _negmaxSpd, _maxSpd);
+
+    if (speed > 0)
+    {
+        speed = clamp(speed, _minSpd, _maxSpd);
+    }
+    else if (speed < 0)
+    {
+        speed = clamp(speed, _negmaxSpd, _negminSpd);
+    }
+
     if (speed > 0)
     {
         driver.setPWM(_motorPins.power1, 0, speed);
@@ -265,6 +281,10 @@ void EvoMotor::run(int speed)
     this->_motorState = RUN;
     this->move(speed);
     vTaskDelay(1 / portTICK_PERIOD_MS);
+}
+void EvoMotor::runCount(int speed, int count)
+{
+    this->resetCount();
 }
 
 // Method to run the motor for a specified number of degrees
