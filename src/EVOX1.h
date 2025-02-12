@@ -5,7 +5,6 @@
 
 #ifndef EVOX1_H
 #define EVOX1_H
-// #define SH110X_NO_SPLASH
 #include <Arduino.h>
 #include <helper/X1pins.h>
 #include <helper/Tones.h>
