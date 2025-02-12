@@ -282,9 +282,15 @@ void EvoMotor::run(int speed)
     this->move(speed);
     vTaskDelay(1 / portTICK_PERIOD_MS);
 }
+
 void EvoMotor::runCount(int speed, int count)
 {
     this->resetCount();
+    this->run(speed);
+    while(abs(this->getCount()) < abs(count))
+        vTaskDelay(1);
+    ;
+    this->stop();s
 }
 
 // Method to run the motor for a specified number of degrees
@@ -292,7 +298,7 @@ void EvoMotor::runAngle(int speed, int angle)
 {
     this->resetAngle();
     this->run(speed);
-    while (abs(this->getAngle()) < angle)
+    while (abs(this->getAngle()) < abs(angle))
         vTaskDelay(1);
     ;
     this->stop();
