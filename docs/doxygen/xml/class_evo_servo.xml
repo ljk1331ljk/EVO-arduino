@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="class_evo_servo" kind="class" language="C++" prot="public">
     <compoundname>EvoServo</compoundname>
+    <includes refid="_evo_servo_8h" local="no">EvoServo.h</includes>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_evo_servo_1a7b1ad83f4bc1fb4501ef8a4346d74303" prot="private" static="no" mutable="no">
         <type>EvoPWMDriver &amp;</type>
@@ -13,10 +14,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Reference to the singleton PWM driver </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="40" column="18" bodyfile="src/motors/EvoServo.h" bodystart="40" bodyend="-1"/>
+        <location file="src/motors/EvoServo.h" line="89" column="18" bodyfile="src/motors/EvoServo.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_servo_1a647da09971e9c3c425be5a355d08e622" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -27,10 +29,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The assigned servo channel </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="41" column="13" bodyfile="src/motors/EvoServo.h" bodystart="41" bodyend="-1"/>
+        <location file="src/motors/EvoServo.h" line="90" column="13" bodyfile="src/motors/EvoServo.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_servo_1ae144b1d3803aba9dc69ed8e3daed0c4b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -42,10 +45,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Minimum pulse width </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="42" column="9" bodyfile="src/motors/EvoServo.h" bodystart="42" bodyend="-1"/>
+        <location file="src/motors/EvoServo.h" line="91" column="9" bodyfile="src/motors/EvoServo.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_servo_1a1602fe14b056d7c5cce11a3e6557914f" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -57,10 +61,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Maximum pulse width </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="42" column="20" bodyfile="src/motors/EvoServo.h" bodystart="42" bodyend="-1"/>
+        <location file="src/motors/EvoServo.h" line="92" column="9" bodyfile="src/motors/EvoServo.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_servo_1a90816afbcd3e4a37386ba6b67067a4f9" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -72,10 +77,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Minimum servo angle </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="43" column="9" bodyfile="src/motors/EvoServo.h" bodystart="43" bodyend="-1"/>
+        <location file="src/motors/EvoServo.h" line="93" column="9" bodyfile="src/motors/EvoServo.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_servo_1a39661c7e6c41777e963e0da5fa4c3326" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -87,10 +93,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Maximum servo angle </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="43" column="20" bodyfile="src/motors/EvoServo.h" bodystart="43" bodyend="-1"/>
+        <location file="src/motors/EvoServo.h" line="94" column="9" bodyfile="src/motors/EvoServo.h" bodystart="94" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -101,21 +108,40 @@
         <name>EvoServo</name>
         <qualifiedname>EvoServo::EvoServo</qualifiedname>
         <param>
-          <type>ServoChannel</type>
+          <type><ref refid="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0" kindref="member">ServoChannel</ref></type>
           <declname>servoChannel</declname>
         </param>
         <param>
-          <type>ServoType</type>
+          <type><ref refid="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3" kindref="member">ServoType</ref></type>
           <declname>servoType</declname>
           <defval>Default</defval>
         </param>
         <briefdescription>
+<para>Constructs an <ref refid="class_evo_servo" kindref="compound">EvoServo</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>servoChannel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The servo channel to use. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>servoType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of servo motor (default is Default). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="32" column="5"/>
+        <location file="src/motors/EvoServo.h" line="54" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1abfa3fc316c34051d618c463b2d293753" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -124,12 +150,13 @@
         <name>begin</name>
         <qualifiedname>EvoServo::begin</qualifiedname>
         <briefdescription>
+<para>Initializes the servo motor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="33" column="10"/>
+        <location file="src/motors/EvoServo.h" line="59" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1abcb02311307ad74a549db785b0dfac66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -146,12 +173,31 @@
           <declname>maxPulse</declname>
         </param>
         <briefdescription>
+<para>Sets the pulse width range for the servo. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minPulse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum pulse width. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxPulse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum pulse width. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="34" column="10"/>
+        <location file="src/motors/EvoServo.h" line="66" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1a744a31b7a1c05849d034bc7992f5a0b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,12 +214,31 @@
           <declname>maxRange</declname>
         </param>
         <briefdescription>
+<para>Sets the rotation range of the servo. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minRange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum angle (in degrees). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxRange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum angle (in degrees). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="35" column="10"/>
+        <location file="src/motors/EvoServo.h" line="73" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1a9489eda55822fb7a531ecbaf7bc72b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -186,12 +251,23 @@
           <declname>position</declname>
         </param>
         <briefdescription>
+<para>Moves the servo to a specific position. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target position (in degrees). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="36" column="10"/>
+        <location file="src/motors/EvoServo.h" line="79" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_servo_1a2701bf2c49ea2aa3c1d493841a674996" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -208,19 +284,39 @@
           <declname>off</declname>
         </param>
         <briefdescription>
+<para>Sets the PWM signal for the servo. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>on</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start time of the pulse. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>off</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End time of the pulse. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/motors/EvoServo.h" line="37" column="10"/>
+        <location file="src/motors/EvoServo.h" line="86" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Class to control a servo motor using the EvoPWMDriver. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/motors/EvoServo.h" line="28" column="1" bodyfile="src/motors/EvoServo.h" bodystart="29" bodyend="44"/>
+    <location file="src/motors/EvoServo.h" line="45" column="1" bodyfile="src/motors/EvoServo.h" bodystart="46" bodyend="95"/>
     <listofallmembers>
       <member refid="class_evo_servo_1a1602fe14b056d7c5cce11a3e6557914f" prot="private" virt="non-virtual"><scope>EvoServo</scope><name>_maxPulse</name></member>
       <member refid="class_evo_servo_1a39661c7e6c41777e963e0da5fa4c3326" prot="private" virt="non-virtual"><scope>EvoServo</scope><name>_maxRange</name></member>

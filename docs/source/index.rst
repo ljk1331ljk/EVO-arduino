@@ -24,7 +24,15 @@ Contents
 --------
 
 .. toctree::
-
+   :maxdepth: 2
+   :caption: Getting Started
+   
    usage
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Library Reference
+
    API/EVOX1
    API/EvoMotor
+   API/EvoServo
