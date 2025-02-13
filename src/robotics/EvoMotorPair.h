@@ -1,7 +1,7 @@
 #ifndef EVO_MOTORPAIR_H
 #define EVO_MOTORPAIR_H
 
-#include "EvoMotor.h"
+#include "../motors/EvoMotor.h"
 
 class EvoMotorPair
 {
