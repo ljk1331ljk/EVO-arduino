@@ -17,7 +17,7 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     case GENERICWITHENCODER:
         setParameters(motorPort, motorFlip, 4000, 100, 5, 30, true, 360);
         break;
-    case GENERISWITHOUTENCODER:
+    case GENERICWITHOUTENCODER:
         setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
         break;
     case EV3LargeMotor:
@@ -33,7 +33,7 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
         setParameters(motorPort, motorFlip, 4000, 500, 10, 50, true, 1204);
         break;
     case ITERMKT:
-        setParameters(motorPort, motorFlip, 4000, 100, 10, 50,true, 1204);
+        setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 1204);
         break;
     case EVOMotor300:
         setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 2800);
@@ -282,7 +282,7 @@ void EvoMotor::runCount(int speed, int count)
 {
     this->resetCount();
     this->run(speed);
-    while(abs(this->getCount()) < abs(count))
+    while (abs(this->getCount()) < abs(count))
         vTaskDelay(1);
     ;
     this->stop();
