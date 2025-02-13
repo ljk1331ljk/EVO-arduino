@@ -1,4 +1,4 @@
-Programming with ArduinIDE
+Programming with ArduinoIDE
 =====
 
 .. _installation:
