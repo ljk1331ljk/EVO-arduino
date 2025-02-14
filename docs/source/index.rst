@@ -24,7 +24,28 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Getting Started
+   
+   getting-started/first-boot
+   getting-started/programming-with-ArduinoIDE
+   getting-started/installing-libraries
+   getting-started/hardware-overview
 
-   usage
-   API/EVOX1
-   API/EvoMotor
+.. toctree::
+   :maxdepth: 2
+   :caption: Library Reference
+
+   library-reference/EVOX1
+   library-reference/EvoMotor
+   library-reference/EvoServo
+   library-reference/EvoTCS34725
+   library-reference/EvoVL53L0X
+   
+   
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Advanced features
+   
+   

@@ -17,8 +17,8 @@
     <member refid="class_evo_motor_1af803a152981207abe69a4a01a76f6188" kind="variable"><name>_motorType</name></member>
     <member refid="class_evo_motor_1a8ad4eb02c94296a3239bba8f25446749" kind="variable"><name>_motorPort</name></member>
     <member refid="class_evo_motor_1a9eebf6d5e0644b34a6fe1a077c4fda28" kind="variable"><name>_motorPins</name></member>
-    <member refid="class_evo_motor_1aeed80795947b85bbadf3b5b5cb1603d6" kind="variable"><name>_minSpeed</name></member>
-    <member refid="class_evo_motor_1a750904e39beba6a1aa6fbaf0f861d171" kind="variable"><name>_maxSpeed</name></member>
+    <member refid="class_evo_motor_1a45ff9c4a56723f79f4918cd80024079a" kind="variable"><name>_maxSpd</name></member>
+    <member refid="class_evo_motor_1a987a83967d3fdce40690f2117fe5af34" kind="variable"><name>_minSpd</name></member>
     <member refid="class_evo_motor_1a227a9e026f6cd4d6f1926f37a9c51429" kind="variable"><name>_motorFlip</name></member>
     <member refid="class_evo_motor_1a61f7bd8bdab9131b65fbb87b88750b6e" kind="variable"><name>_encoderAvailable</name></member>
     <member refid="class_evo_motor_1adfe03a2c525bcf3abb03b1fe76f04137" kind="variable"><name>_countPerRevolution</name></member>
@@ -38,12 +38,12 @@
     <member refid="class_evo_motor_1acbe9813880b50914240ba9e0b94f1181" kind="variable"><name>driver</name></member>
     <member refid="class_evo_motor_1a17d42e0b08c1222eca48678b7e37943c" kind="function"><name>motorControlTask</name></member>
     <member refid="class_evo_motor_1a451bc58fa07cf9071844b9869e996505" kind="function"><name>move</name></member>
-    <member refid="class_evo_motor_1a251c65e07cd84a8f13268f48e3252466" kind="function"><name>setParameters</name></member>
+    <member refid="class_evo_motor_1afd99ccce7555f3aa9567dc0c4efba568" kind="function"><name>setParameters</name></member>
     <member refid="class_evo_motor_1a6346f5971155f78a2efd2e51fd77b31c" kind="function"><name>EvoMotor</name></member>
     <member refid="class_evo_motor_1abc3637db9cefe0fdfd6a99c72c0b0c1c" kind="function"><name>begin</name></member>
     <member refid="class_evo_motor_1a9fa8b158812910747a764639a6134113" kind="function"><name>flipEncoderDirection</name></member>
-    <member refid="class_evo_motor_1a74c8a02ca8e92a3fd9e88878c146c224" kind="function"><name>setSpeedLimit</name></member>
-    <member refid="class_evo_motor_1a4bfbca1a7cd304d93dd4efa4b7352c53" kind="function"><name>getSpeedLimit</name></member>
+    <member refid="class_evo_motor_1abc8d2428917b40c1420706b4f0162232" kind="function"><name>setSpeedLimit</name></member>
+    <member refid="class_evo_motor_1aafbf01e74f7d4bf03c1c7615cf9b8c95" kind="function"><name>getSpeedLimit</name></member>
     <member refid="class_evo_motor_1abbcad00bdaf3275b0164ecfa13ad966e" kind="function"><name>setEncoderAvailable</name></member>
     <member refid="class_evo_motor_1a944778da0033279bceb0026902577345" kind="function"><name>isEncoderAvailable</name></member>
     <member refid="class_evo_motor_1a5b2f286924597207a538ee522cbdda4a" kind="function"><name>setCountPerRevolution</name></member>
@@ -117,8 +117,6 @@
     <member refid="class_evo_t_c_s34725_1a039fff25dcaea72f7624b89be5092926" kind="function"><name>begin</name></member>
     <member refid="class_evo_t_c_s34725_1aca92216d91bea091a53129aa38b20031" kind="function"><name>setIntegrationTime</name></member>
     <member refid="class_evo_t_c_s34725_1a43460244cea2d8cba6c2d2ef88dc5736" kind="function"><name>setGain</name></member>
-    <member refid="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" kind="function"><name>getRGB</name></member>
-    <member refid="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" kind="function"><name>getRawRGBC</name></member>
     <member refid="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" kind="function"><name>getRawRed</name></member>
     <member refid="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" kind="function"><name>getRawGreen</name></member>
     <member refid="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" kind="function"><name>getRawBlue</name></member>
@@ -126,6 +124,8 @@
     <member refid="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" kind="function"><name>getRed</name></member>
     <member refid="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" kind="function"><name>getGreen</name></member>
     <member refid="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" kind="function"><name>getBlue</name></member>
+    <member refid="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" kind="function"><name>getRGB</name></member>
+    <member refid="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" kind="function"><name>getRawRGBC</name></member>
   </compound>
   <compound refid="class_evo_v_l53_l0_x" kind="class"><name>EvoVL53L0X</name>
     <member refid="class_evo_v_l53_l0_x_1a89ea00487b2d5dbd46fe2da2bb900baf" kind="variable"><name>lox</name></member>
@@ -179,8 +179,8 @@
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aa205c6489713024afeff4c9b317cc7e3" kind="enumvalue"><name>EV3LargeMotor</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a3390414988bdc309762d948223485fa6" kind="enumvalue"><name>EV3MediumMotor</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aeeadb54321e160838668b4a256731429" kind="enumvalue"><name>GeekServoDCMotor</name></member>
-    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ab8a666a57027a7ccf9ed619b101c4c9e" kind="enumvalue"><name>ITERSpeed</name></member>
-    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a214a5bafd55d2eda1fd5ce9468ab0bb8" kind="enumvalue"><name>ITERTorque</name></member>
+    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ada00e760ed435a4b9f32141e312fc35e" kind="enumvalue"><name>ITERMKS</name></member>
+    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a97dbb74836f4041d6a9e54e14bea5549" kind="enumvalue"><name>ITERMKT</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a11f738d220b218d14f372e7f83fb59f3" kind="enumvalue"><name>EVOMotor300</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ad57989a4121060bce339670d1b5b8f7b" kind="enumvalue"><name>EVOMotor100</name></member>
     <member refid="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" kind="enum"><name>MotorPort</name></member>
@@ -194,8 +194,6 @@
     <member refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a8b23c50cc938e0b366df8d8eeeb1bf9f" kind="enumvalue"><name>BRAKE</name></member>
     <member refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5ae509e364ab4c8f25b108b70b0840b142" kind="enumvalue"><name>COAST</name></member>
     <member refid="_evo_motor_8h_1a518f7f0a9b3952f781fefa0bb72cddc5a9cfa27b414cab750fb14ec07cdf5cf6a" kind="enumvalue"><name>HOLD</name></member>
-  </compound>
-  <compound refid="_evo_motor_pair_8h" kind="file"><name>EvoMotorPair.h</name>
   </compound>
   <compound refid="_evo_servo_8h" kind="file"><name>EvoServo.h</name>
     <member refid="_evo_servo_8h_1ad0662fc04fff667bd896f8d92bebb0f3" kind="enum"><name>ServoType</name></member>
@@ -214,6 +212,8 @@
     <member refid="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0ac41925ab95f1a2d4d91b63ec690924ea" kind="enumvalue"><name>SERVO6</name></member>
     <member refid="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0adfa66c3c76afcaca58f980ee191081d8" kind="enumvalue"><name>SERVO7</name></member>
     <member refid="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0a549c88fda994303357abb159f2a4bc4e" kind="enumvalue"><name>SERVO8</name></member>
+  </compound>
+  <compound refid="_evo_motor_pair_8h" kind="file"><name>EvoMotorPair.h</name>
   </compound>
   <compound refid="_e_v3_color_sensor_8h" kind="file"><name>EV3ColorSensor.h</name>
     <member refid="_e_v3_color_sensor_8h_1abc28261c70dad421060cfc132490b174" kind="enum"><name>EV3ColorSensorColor</name></member>
@@ -239,6 +239,8 @@
   <compound refid="_evo_v_l53_l0_x_8h" kind="file"><name>EvoVL53L0X.h</name>
   </compound>
   <compound refid="dir_6adb56cee76d6d026f8f38e703b50393" kind="dir"><name>src/motors</name>
+  </compound>
+  <compound refid="dir_e6a61510919f187eaeca2aca7530646c" kind="dir"><name>src/robotics</name>
   </compound>
   <compound refid="dir_7349e89ef19c117195f8e371603e1b1f" kind="dir"><name>src/sensors</name>
   </compound>

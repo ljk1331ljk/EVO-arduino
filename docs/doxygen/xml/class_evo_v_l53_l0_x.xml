@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="class_evo_v_l53_l0_x" kind="class" language="C++" prot="public">
     <compoundname>EvoVL53L0X</compoundname>
+    <includes refid="_evo_v_l53_l0_x_8h" local="no">EvoVL53L0X.h</includes>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_evo_v_l53_l0_x_1a89ea00487b2d5dbd46fe2da2bb900baf" prot="private" static="no" mutable="no">
         <type>Adafruit_VL53L0X</type>
@@ -12,10 +13,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Instance of the Adafruit VL53L0X driver </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="10" column="22" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="10" bodyend="-1"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="18" column="22" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_v_l53_l0_x_1a2cfe6c4e89b58435760388f7aab24d53" prot="private" static="no" mutable="no">
         <type>I2CChannel</type>
@@ -26,10 +28,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>I2C channel used for communication </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="11" column="16" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="11" bodyend="-1"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="19" column="16" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_v_l53_l0_x_1a8877053beb00d13d2f36b8546e938efa" prot="private" static="no" mutable="no">
         <type>VL53L0X_RangingMeasurementData_t</type>
@@ -40,10 +43,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Struct to store distance measurement data </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="12" column="38" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="12" bodyend="-1"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="20" column="38" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_v_l53_l0_x_1ad52766520608a17385eb54895680992e" prot="private" static="no" mutable="no">
         <type>I2CDevice &amp;</type>
@@ -55,10 +59,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Reference to the singleton I2CDevice instance </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="13" column="15" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="13" bodyend="-1"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="21" column="15" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="21" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -73,12 +78,23 @@
           <declname>channel</declname>
         </param>
         <briefdescription>
+<para>Constructs an <ref refid="class_evo_v_l53_l0_x" kindref="compound">EvoVL53L0X</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C channel to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="17" column="5"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="28" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_v_l53_l0_x_1af2f5b6f36e76e5a281586160c4f0f1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -87,12 +103,13 @@
         <name>begin</name>
         <qualifiedname>EvoVL53L0X::begin</qualifiedname>
         <briefdescription>
+<para>Initializes the VL53L0X sensor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="18" column="10"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="33" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_v_l53_l0_x_1ae069516a043dd39f891d283ed66e92eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -101,19 +118,24 @@
         <name>getDistance</name>
         <qualifiedname>EvoVL53L0X::getDistance</qualifiedname>
         <briefdescription>
+<para>Retrieves the distance measured by the sensor. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Distance in millimeters. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="19" column="9"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="39" column="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Class to interact with the VL53L0X Time-of-Flight (ToF) distance sensor. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EvoVL53L0X.h" line="7" column="1" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="8" bodyend="20"/>
+    <location file="src/sensors/EvoVL53L0X.h" line="15" column="1" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="16" bodyend="40"/>
     <listofallmembers>
       <member refid="class_evo_v_l53_l0_x_1a2cfe6c4e89b58435760388f7aab24d53" prot="private" virt="non-virtual"><scope>EvoVL53L0X</scope><name>_channel</name></member>
       <member refid="class_evo_v_l53_l0_x_1af2f5b6f36e76e5a281586160c4f0f1cb" prot="public" virt="non-virtual"><scope>EvoVL53L0X</scope><name>begin</name></member>

@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="class_evo_t_c_s34725" kind="class" language="C++" prot="public">
     <compoundname>EvoTCS34725</compoundname>
+    <includes refid="_evo_t_c_s34725_8h" local="no">EvoTCS34725.h</includes>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_evo_t_c_s34725_1ad3234413660e9381beaaf89802bf2171" prot="private" static="no" mutable="no">
         <type>Adafruit_TCS34725</type>
@@ -12,10 +13,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Instance of the Adafruit TCS34725 driver </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="10" column="23" bodyfile="src/sensors/EvoTCS34725.h" bodystart="10" bodyend="-1"/>
+        <location file="src/sensors/EvoTCS34725.h" line="18" column="23" bodyfile="src/sensors/EvoTCS34725.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_t_c_s34725_1a29c30a8e6e311dcb97c69b1d5b83e94b" prot="private" static="no" mutable="no">
         <type>I2CChannel</type>
@@ -26,10 +28,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>I2C channel used for communication </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="11" column="16" bodyfile="src/sensors/EvoTCS34725.h" bodystart="11" bodyend="-1"/>
+        <location file="src/sensors/EvoTCS34725.h" line="19" column="16" bodyfile="src/sensors/EvoTCS34725.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_t_c_s34725_1a68e0731533fd95c5e7ef20fd4aa4112d" prot="private" static="no" mutable="no">
         <type>I2CDevice &amp;</type>
@@ -41,10 +44,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Reference to the singleton I2CDevice instance </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="12" column="15" bodyfile="src/sensors/EvoTCS34725.h" bodystart="12" bodyend="-1"/>
+        <location file="src/sensors/EvoTCS34725.h" line="20" column="15" bodyfile="src/sensors/EvoTCS34725.h" bodystart="20" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_t_c_s34725_1a29d37068868f7f5caa9134b2202135b5" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -56,10 +60,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Integration time for color sensing </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="13" column="13" bodyfile="src/sensors/EvoTCS34725.h" bodystart="13" bodyend="-1"/>
+        <location file="src/sensors/EvoTCS34725.h" line="21" column="13" bodyfile="src/sensors/EvoTCS34725.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_t_c_s34725_1a56ec7083df9ade912bbfbf954c748586" prot="private" static="no" mutable="no">
         <type>tcs34725Gain_t</type>
@@ -71,10 +76,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Gain setting for the sensor </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="14" column="20" bodyfile="src/sensors/EvoTCS34725.h" bodystart="14" bodyend="-1"/>
+        <location file="src/sensors/EvoTCS34725.h" line="22" column="20" bodyfile="src/sensors/EvoTCS34725.h" bodystart="22" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -89,12 +95,23 @@
           <declname>channel</declname>
         </param>
         <briefdescription>
+<para>Constructs an <ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C channel to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="18" column="5" bodyfile="src/sensors/EvoTCS34725.h" bodystart="18" bodyend="21"/>
+        <location file="src/sensors/EvoTCS34725.h" line="29" column="5" bodyfile="src/sensors/EvoTCS34725.h" bodystart="29" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a039fff25dcaea72f7624b89be5092926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -103,12 +120,13 @@
         <name>begin</name>
         <qualifiedname>EvoTCS34725::begin</qualifiedname>
         <briefdescription>
+<para>Initializes the TCS34725 sensor. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="22" column="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="37" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1aca92216d91bea091a53129aa38b20031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -121,12 +139,23 @@
           <declname>it</declname>
         </param>
         <briefdescription>
+<para>Sets the integration time for the sensor. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>it</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integration time in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="24" column="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="43" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a43460244cea2d8cba6c2d2ef88dc5736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -139,12 +168,149 @@
           <declname>gain</declname>
         </param>
         <briefdescription>
+<para>Sets the gain level for the sensor. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gain value from the tcs34725Gain_t enum. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="25" column="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="49" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawRed</definition>
+        <argsstring>()</argsstring>
+        <name>getRawRed</name>
+        <qualifiedname>EvoTCS34725::getRawRed</qualifiedname>
+        <briefdescription>
+<para>Retrieves the raw red sensor value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Raw red value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="55" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawGreen</definition>
+        <argsstring>()</argsstring>
+        <name>getRawGreen</name>
+        <qualifiedname>EvoTCS34725::getRawGreen</qualifiedname>
+        <briefdescription>
+<para>Retrieves the raw green sensor value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Raw green value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="61" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawBlue</definition>
+        <argsstring>()</argsstring>
+        <name>getRawBlue</name>
+        <qualifiedname>EvoTCS34725::getRawBlue</qualifiedname>
+        <briefdescription>
+<para>Retrieves the raw blue sensor value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Raw blue value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="67" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTCS34725::getRawClear</definition>
+        <argsstring>()</argsstring>
+        <name>getRawClear</name>
+        <qualifiedname>EvoTCS34725::getRawClear</qualifiedname>
+        <briefdescription>
+<para>Retrieves the raw clear sensor value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Raw clear value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="73" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoTCS34725::getRed</definition>
+        <argsstring>()</argsstring>
+        <name>getRed</name>
+        <qualifiedname>EvoTCS34725::getRed</qualifiedname>
+        <briefdescription>
+<para>Retrieves the filtered red value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Filtered red value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="79" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoTCS34725::getGreen</definition>
+        <argsstring>()</argsstring>
+        <name>getGreen</name>
+        <qualifiedname>EvoTCS34725::getGreen</qualifiedname>
+        <briefdescription>
+<para>Retrieves the filtered green value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Filtered green value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="85" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoTCS34725::getBlue</definition>
+        <argsstring>()</argsstring>
+        <name>getBlue</name>
+        <qualifiedname>EvoTCS34725::getBlue</qualifiedname>
+        <briefdescription>
+<para>Retrieves the filtered blue value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Filtered blue value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="91" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -165,12 +331,39 @@
           <declname>b</declname>
         </param>
         <briefdescription>
+<para>Retrieves the RGB color values as floating-point values. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the red value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the green value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the blue value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="27" column="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="99" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -195,117 +388,55 @@
           <declname>c</declname>
         </param>
         <briefdescription>
+<para>Retrieves the raw RGBC (Red, Green, Blue, Clear) sensor values. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the raw red value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the raw green value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the raw blue value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the raw clear value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="28" column="10"/>
-      </memberdef>
-      <memberdef kind="function" id="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>uint16_t</type>
-        <definition>uint16_t EvoTCS34725::getRawRed</definition>
-        <argsstring>()</argsstring>
-        <name>getRawRed</name>
-        <qualifiedname>EvoTCS34725::getRawRed</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="29" column="14"/>
-      </memberdef>
-      <memberdef kind="function" id="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>uint16_t</type>
-        <definition>uint16_t EvoTCS34725::getRawGreen</definition>
-        <argsstring>()</argsstring>
-        <name>getRawGreen</name>
-        <qualifiedname>EvoTCS34725::getRawGreen</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="30" column="14"/>
-      </memberdef>
-      <memberdef kind="function" id="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>uint16_t</type>
-        <definition>uint16_t EvoTCS34725::getRawBlue</definition>
-        <argsstring>()</argsstring>
-        <name>getRawBlue</name>
-        <qualifiedname>EvoTCS34725::getRawBlue</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="31" column="14"/>
-      </memberdef>
-      <memberdef kind="function" id="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>uint16_t</type>
-        <definition>uint16_t EvoTCS34725::getRawClear</definition>
-        <argsstring>()</argsstring>
-        <name>getRawClear</name>
-        <qualifiedname>EvoTCS34725::getRawClear</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="32" column="14"/>
-      </memberdef>
-      <memberdef kind="function" id="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>float</type>
-        <definition>float EvoTCS34725::getRed</definition>
-        <argsstring>()</argsstring>
-        <name>getRed</name>
-        <qualifiedname>EvoTCS34725::getRed</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="33" column="11"/>
-      </memberdef>
-      <memberdef kind="function" id="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>float</type>
-        <definition>float EvoTCS34725::getGreen</definition>
-        <argsstring>()</argsstring>
-        <name>getGreen</name>
-        <qualifiedname>EvoTCS34725::getGreen</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="34" column="11"/>
-      </memberdef>
-      <memberdef kind="function" id="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>float</type>
-        <definition>float EvoTCS34725::getBlue</definition>
-        <argsstring>()</argsstring>
-        <name>getBlue</name>
-        <qualifiedname>EvoTCS34725::getBlue</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="35" column="11"/>
+        <location file="src/sensors/EvoTCS34725.h" line="108" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Class to interact with the TCS34725 color sensor. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EvoTCS34725.h" line="7" column="1" bodyfile="src/sensors/EvoTCS34725.h" bodystart="8" bodyend="36"/>
+    <location file="src/sensors/EvoTCS34725.h" line="15" column="1" bodyfile="src/sensors/EvoTCS34725.h" bodystart="16" bodyend="109"/>
     <listofallmembers>
       <member refid="class_evo_t_c_s34725_1a29c30a8e6e311dcb97c69b1d5b83e94b" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>_channel</name></member>
       <member refid="class_evo_t_c_s34725_1a56ec7083df9ade912bbfbf954c748586" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>_tcs34725Gain</name></member>
