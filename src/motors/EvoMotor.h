@@ -29,15 +29,15 @@ struct MotorPins
  */
 enum MotorType
 {
-    GENERICWITHENCODER,  /**< Generic motor with encoder */
+    GENERICWITHENCODER,    /**< Generic motor with encoder */
     GENERICWITHOUTENCODER, /**< Generic motor without encoder */
-    EV3LargeMotor,  /**< EV3 Large Motor */
-    EV3MediumMotor, /**< EV3 Medium Motor */
-    GeekServoDCMotor, /**< GeekServo DC Motor */
-    ITERMKS, /**< ITER Speed motor */
-    ITERMKT, /**< ITER Torque motor */
-    EVOMotor300, /**< EVO Motor 300 */
-    EVOMotor100  /**< EVO Motor 100 */
+    EV3LargeMotor,         /**< EV3 Large Motor */
+    EV3MediumMotor,        /**< EV3 Medium Motor */
+    GeekServoDCMotor,      /**< GeekServo DC Motor */
+    ITERMKS,               /**< ITER Speed motor */
+    ITERMKT,               /**< ITER Torque motor */
+    EVOMotor300,           /**< EVO Motor 300 */
+    EVOMotor100            /**< EVO Motor 100 */
 };
 
 /**
@@ -95,7 +95,6 @@ private:
     void setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution = 0);
 
 public:
-
     /**
      * @brief Constructor for EvoMotor.
      * @param motorPort The motor port.
@@ -114,7 +113,7 @@ public:
      * @param flip Whether the encoder direction should be flipped.
      */
     void flipEncoderDirection(bool flip);
-  
+
     /**
      * @brief Sets the minimum and maximum speed of the motor.
      * @param maxSpd Maximum speed.
@@ -133,18 +132,18 @@ public:
      * @brief Sets encoder availability.
      */
     void setEncoderAvailable(bool avail);
-    
+
     /**
      * @brief Checks if encoder is available.
      * @return True if encoder is available, false otherwise.
      */
     bool isEncoderAvailable();
-    
+
     /**
      * @brief Sets encoder count per revolution.
      */
     void setCountPerRevolution(int countPerRevolution);
-    
+
     /**
      * @brief Gets encoder count per revolution.
      * @return The count per revolution.
@@ -231,20 +230,21 @@ public:
      * @param count Encoder count.
      */
     void runCount(int speed, int count);
-    
+
     /**
      * @brief Runs the motor for a specified motor degree.
      * @param speed Motor speed.
      * @param degrees Motor degrees.
      */
     void runAngle(int speed, int degrees);
-    
+
     /**
      * @brief Runs the motor for a specified time.
+     * @param speed Motor speed.
      * @param timeMS Time in miliseconds.
      */
     void runTime(int speed, int timeMS);
-    
+
     /**
      * @brief Runs the motor to a specified absolute position.
      * @param speed Motor speed.
@@ -258,7 +258,7 @@ public:
      * @param speed Motor speed.
      */
     void runUntilStalled(int speed);
-    
+
     /**
      * @brief Sets PID control values for runTarget()
      * @param kp Proportional gain.

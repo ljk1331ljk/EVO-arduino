@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="_evo_motor_pair_8h" kind="file" language="C++">
     <compoundname>EvoMotorPair.h</compoundname>
-    <includes refid="_evo_motor_8h" local="yes">EvoMotor.h</includes>
+    <includes refid="_evo_motor_8h" local="yes">../motors/EvoMotor.h</includes>
     <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
     <incdepgraph>
       <node id="3">
@@ -12,7 +12,7 @@
         <label>../helper/X1pins.h</label>
       </node>
       <node id="2">
-        <label>EvoMotor.h</label>
+        <label>../motors/EvoMotor.h</label>
         <link refid="_evo_motor_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
@@ -26,7 +26,7 @@
         </childnode>
       </node>
       <node id="1">
-        <label>src/motors/EvoMotorPair.h</label>
+        <label>src/robotics/EvoMotorPair.h</label>
         <link refid="_evo_motor_pair_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -47,7 +47,7 @@
         <link refid="_evo_8h_source"/>
       </node>
       <node id="1">
-        <label>src/motors/EvoMotorPair.h</label>
+        <label>src/robotics/EvoMotorPair.h</label>
         <link refid="_evo_motor_pair_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -62,7 +62,7 @@
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVO_MOTORPAIR_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_MOTORPAIR_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_motor_8h" kindref="compound">EvoMotor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_motor_8h" kindref="compound">../motors/EvoMotor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EvoMotorPair</highlight></codeline>
 <codeline lineno="7"><highlight class="normal">{</highlight></codeline>
@@ -92,6 +92,6 @@
 <codeline lineno="31"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="src/motors/EvoMotorPair.h"/>
+    <location file="src/robotics/EvoMotorPair.h"/>
   </compounddef>
 </doxygen>
