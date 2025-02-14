@@ -1,5 +1,5 @@
 Hardware Overview
-=====
+=======================
 
 .. _Pinouts:
 

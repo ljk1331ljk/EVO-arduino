@@ -1,5 +1,5 @@
 Programming with ArduinoIDE
-=====
+===========================
 
 .. _installation:
 

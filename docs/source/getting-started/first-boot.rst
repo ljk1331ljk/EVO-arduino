@@ -1,5 +1,5 @@
 First Boot
-=====
+=======================
 
 .. _Battery Installation:
 
