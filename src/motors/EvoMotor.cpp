@@ -305,7 +305,8 @@ void EvoMotor::runTime(int speed, int timeMS)
     int timeNow = millis();
     while ((millis() - timeNow) < timeMS)
     {
-        vTaskDelay(1);
+        this->run(speed);
+        vTaskDelay(10);
     }
     this->stop();
 }
