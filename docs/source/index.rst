@@ -29,7 +29,6 @@ Contents
    
    getting-started/first-boot
    getting-started/programming-with-ArduinoIDE
-   getting-started/installing-libraries
    getting-started/hardware-overview
 
 .. toctree::

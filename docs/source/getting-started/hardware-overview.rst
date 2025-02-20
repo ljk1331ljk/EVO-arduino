@@ -28,7 +28,15 @@ Connecting Hardware
 ------------
 
 The pins on the EVOX1 are color coded. Do exercise caution when connecting any hardware to the ports.
-Black - Ground Pins
-Red - Power Pins
-Yellow - Data pins
 
+.. list-table:: Wire Color Codes
+   :header-rows: 1
+
+   * - Color
+     - Pin
+   * - Black
+     - Ground
+   * - Red
+     - Power Pins
+   * - Yellow
+     - Data Pins
