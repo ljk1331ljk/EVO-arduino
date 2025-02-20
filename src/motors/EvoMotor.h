@@ -92,7 +92,7 @@ private:
 
     static void motorControlTask(void *parameter);
     void move(int speed);
-    void setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution = 0);
+    void setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, int minSpd, bool encoderAvailable, int countPerRevolution = 0, float kp = 0, float kd = 0, );
 
 public:
     /**

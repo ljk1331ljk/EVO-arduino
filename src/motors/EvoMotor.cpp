@@ -15,31 +15,31 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     switch (motorType)
     {
     case GENERICWITHENCODER:
-        setParameters(motorPort, motorFlip, 4000, 100, 5, 30, true, 360);
+        setParameters(motorPort, motorFlip, 4000, 100, true, 360, 5, 30);
         break;
     case GENERICWITHOUTENCODER:
-        setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
+        setParameters(motorPort, motorFlip, 4000, 100, false);
         break;
     case EV3LargeMotor:
-        setParameters(motorPort, motorFlip, 4000, 100, 5, 30, true, 720);
+        setParameters(motorPort, motorFlip, 4000, 100, true, 720, 5, 30);
         break;
     case EV3MediumMotor:
-        setParameters(motorPort, motorFlip, 4000, 100, 5, 30, true, 720);
+        setParameters(motorPort, motorFlip, 4000, 100, true, 720, 5, 30);
         break;
     case GeekServoDCMotor:
-        setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
+        setParameters(motorPort, motorFlip, 4000, 100, false);
         break;
     case ITERMKS:
-        setParameters(motorPort, motorFlip, 4000, 500, 10, 50, true, 1204);
+        setParameters(motorPort, motorFlip, 4000, 500, true, 1204, 10, 50);
         break;
     case ITERMKT:
-        setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 1204);
+        setParameters(motorPort, motorFlip, 4000, 100, true, 1204, 10, 50);
         break;
     case EVOMotor300:
-        setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 2800);
+        setParameters(motorPort, motorFlip, 4000, 100, true, 2800, 10, 50);
         break;
     case EVOMotor100:
-        setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 8400);
+        setParameters(motorPort, motorFlip, 4000, 100, true, 8400, 10, 50);
         break;
     }
 
@@ -72,7 +72,7 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     }
 }
 
-void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution)
+void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, int minSpd, bool encoderAvailable, int countPerRevolution, float kp, float kd)
 {
     _motorFlip = motorFlip;
     _motorPort = motorPort;
@@ -87,12 +87,15 @@ void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, in
 void EvoMotor::begin()
 {
     driver.begin();
-    encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
-    encoder.clearCount();
+    if (_encoderAvailable())
+    {
+        encoder.detach();
+        encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
+        encoder.clearCount();
+        setStallThresholds(50, 10);
+    }
 
     setStopBehaviour(BRAKE);
-    setStallThresholds(50, 10);
-
     coast();
 
     xTaskCreate(motorControlTask, "Motor Control Task", 2048, this, 1, NULL);
@@ -100,17 +103,20 @@ void EvoMotor::begin()
 
 void EvoMotor::flipEncoderDirection(bool flip)
 {
-    if (flip)
+    if (_encoderAvailable())
     {
-        encoder.detach();
-        encoder.attachFullQuad(_motorPins.tach2, _motorPins.tach1);
-        encoder.clearCount();
-    }
-    else
-    {
-        encoder.detach();
-        encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
-        encoder.clearCount();
+        if (flip)
+        {
+            encoder.detach();
+            encoder.attachFullQuad(_motorPins.tach2, _motorPins.tach1);
+            encoder.clearCount();
+        }
+        else
+        {
+            encoder.detach();
+            encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
+            encoder.clearCount();
+        }
     }
 }
 
@@ -128,6 +134,13 @@ void EvoMotor::getSpeedLimit(int *maxSpd, int *minSpd)
 
 void EvoMotor::setEncoderAvailable(bool encoderAvailable)
 {
+    if (!_encoderAvailable() && encoderAvailable)
+    {
+        encoder.detach();
+        encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
+        encoder.clearCount();
+        setStallThresholds(50, 10);
+    }
     _encoderAvailable = encoderAvailable;
 }
 
@@ -139,66 +152,106 @@ bool EvoMotor::isEncoderAvailable()
 // Method to set encoder count per revolution
 void EvoMotor::setCountPerRevolution(int countPerRevolution)
 {
-    _countPerRevolution = countPerRevolution;
+    if (_encoderAvailable())
+    {
+        _countPerRevolution = countPerRevolution;
+    }
 }
 
 // Method to get encoder count per revolution
 int EvoMotor::getCountPerRevolution()
 {
-    return _countPerRevolution;
+    if (_encoderAvailable())
+    {
+        return _countPerRevolution;
+    }
+    return 0;
 }
 
 // Method to get the encoder count
 int EvoMotor::getCount()
 {
-    return encoder.getCount();
+    if (_encoderAvailable())
+    {
+        return encoder.getCount();
+    }
+    return 0;
 }
 
 // Method to set the encoder count
 void EvoMotor::setCount(int count)
 {
-    encoder.setCount(count);
+    if (_encoderAvailable())
+    {
+        encoder.setCount(count);
+    }
+    return 0;
 }
 
 // Method to reset the encoder count
 void EvoMotor::resetCount()
 {
-    encoder.setCount(0);
+    if (_encoderAvailable())
+    {
+        encoder.setCount(0);
+    }
+    return 0;
 }
 
 // Method to get current angle
 int EvoMotor::getAngle()
 {
-    return encoder.getCount() * 360 / _countPerRevolution;
+    if (_encoderAvailable())
+    {
+        return encoder.getCount() * 360 / _countPerRevolution;
+    }
+    return 0;
 }
 
 // Method to reset angle
 void EvoMotor::resetAngle()
 {
-    encoder.setCount(0);
+    if (_encoderAvailable())
+    {
+        encoder.setCount(0);
+    }
 }
 
 void EvoMotor::setAngle(int angle)
 {
-    encoder.setCount(angle * _countPerRevolution / 360);
+    if (_encoderAvailable())
+    {
+        encoder.setCount(angle * _countPerRevolution / 360);
+    }
 }
 
 // Method returns if the motor is stalled
 bool EvoMotor::isStalled()
 {
-    return _stalled;
+    if (_encoderAvailable())
+    {
+        return _stalled;
+    }
+    return false;
 }
 
 // Method to set the motor stall thersholds
 void EvoMotor::setStallThresholds(int timems, int angle)
 {
-    _stallTime = timems;
-    _stallCountThreshold = angle;
+    if (_encoderAvailable())
+    {
+        _stallTime = timems;
+        _stallCountThreshold = angle;
+    }
 }
 
 // Method to stop the motor
 void EvoMotor::setStopBehaviour(MotorState motorStopState)
 {
+    if (!_encoderAvailable() && motorStopState == TARGET)
+    {
+        return;
+    }
     _motorStopState = motorStopState;
 }
 
@@ -214,7 +267,14 @@ void EvoMotor::stop()
         coast();
         break;
     case HOLD:
-        hold();
+        if (_encoderAvailable())
+        {
+            hold();
+        }
+        else
+        {
+            brake();
+        }
         break;
     default:
         brake();
@@ -236,9 +296,14 @@ void EvoMotor::brake()
 
 void EvoMotor::hold()
 {
-    this->runTarget(_maxSpd, this->getAngle());
-    // this->_targetAngle = this->getCount();
-    // this->_motorState = TARGET;
+    if (_encoderAvailable())
+    {
+        this->runTarget(_maxSpd, this->getAngle());
+    }
+    else
+    {
+        brake();
+    }
 }
 
 void EvoMotor::move(int speed)
@@ -280,23 +345,29 @@ void EvoMotor::run(int speed)
 
 void EvoMotor::runCount(int speed, int count)
 {
-    this->resetCount();
-    this->run(speed);
-    while (abs(this->getCount()) < abs(count))
-        vTaskDelay(1);
-    ;
-    this->stop();
+    if (_encoderAvailable())
+    {
+        this->resetCount();
+        this->run(speed);
+        while (abs(this->getCount()) < abs(count))
+            vTaskDelay(1);
+        ;
+        this->stop();
+    }
 }
 
 // Method to run the motor for a specified number of degrees
 void EvoMotor::runAngle(int speed, int angle)
 {
-    this->resetAngle();
-    this->run(speed);
-    while (abs(this->getAngle()) < abs(angle))
-        vTaskDelay(1);
-    ;
-    this->stop();
+    if (_encoderAvailable())
+    {
+        this->resetAngle();
+        this->run(speed);
+        while (abs(this->getAngle()) < abs(angle))
+            vTaskDelay(1);
+        ;
+        this->stop();
+    }
 }
 
 void EvoMotor::runTime(int speed, int timeMS)
@@ -313,29 +384,35 @@ void EvoMotor::runTime(int speed, int timeMS)
 
 void EvoMotor::runTarget(int speed, int angle, bool blocking)
 {
-    this->_targetSpeed = speed;
-    this->_targetAngle = angle;
-    this->_completed = false;
-    this->_motorState = TARGET;
-    if (blocking)
+    if (_encoderAvailable())
     {
-        while (abs(this->getAngle() - this->_targetAngle) > 2)
+        this->_targetSpeed = speed;
+        this->_targetAngle = angle;
+        this->_completed = false;
+        this->_motorState = TARGET;
+        if (blocking)
         {
-            vTaskDelay(1);
+            while (abs(this->getAngle() - this->_targetAngle) > 2)
+            {
+                vTaskDelay(1);
+            }
         }
     }
 }
 
 void EvoMotor::runUntilStalled(int speed)
 {
-    this->run(speed);
-    delay(_stallTime * 2);
-    _stalled = false;
-    while (!this->_stalled)
+    if (_encoderAvailable())
     {
-        vTaskDelay(1);
+        this->run(speed);
+        delay(_stallTime * 2);
+        _stalled = false;
+        while (!this->_stalled)
+        {
+            vTaskDelay(1);
+        }
+        this->stop();
     }
-    this->stop();
 }
 
 void EvoMotor::motorControlTask(void *parameter)
