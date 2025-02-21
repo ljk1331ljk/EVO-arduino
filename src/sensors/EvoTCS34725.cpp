@@ -20,6 +20,48 @@ void EvoTCS34725::getRawRGBC(uint16_t *r, uint16_t *g, uint16_t *b, uint16_t *c)
     tcs.getRawData(r, g, b, c);
 }
 
+void EvoTCS34725::getHSV(float *h, float *s, float *v)
+{
+    uint16_t r, g, b, c;
+    getRawRGBC(&r, &g, &b, &c);
+
+    // Normalize RGB values to 0-1s
+    float rNorm = r / 1024.0f;
+    float gNorm = g / 1024.0f;
+    float bNorm = b / 1024.0f;
+
+    // Find minimum and maximum values among R, G, B
+    float minVal = min(rNorm, min(gNorm, bNorm));
+    float maxVal = max(rNorm, max(gNorm, bNorm));
+    float delta = maxVal - minVal;
+
+    // Calculate Value
+    *v = maxVal * 100;
+
+    // Calculate Saturation
+    if (maxVal != 0)
+        *s = (delta / maxVal) * 100;
+    else
+    {
+        *s = 0;
+        *h = -1;
+        return;
+    }
+
+    // Calculate Hue
+    if (delta == 0)
+        *h = 0;
+    else if (maxVal == rNorm)
+        *h = 60 * (fmod(((gNorm - bNorm) / delta), 6));
+    else if (maxVal == gNorm)
+        *h = 60 * (((bNorm - rNorm) / delta) + 2);
+    else if (maxVal == bNorm)
+        *h = 60 * (((rNorm - gNorm) / delta) + 4);
+
+    if (*h < 0)
+        *h += 360;
+}
+
 void EvoTCS34725::setIntegrationTime(uint8_t it)
 {
     i2CDevice.selectChannel(_channel);

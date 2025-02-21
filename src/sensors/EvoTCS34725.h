@@ -45,6 +45,12 @@ public:
     /**
      * @brief Sets the gain level for the sensor.
      * @param gain Gain value from the tcs34725Gain_t enum.
+     * Default is TCS34725_GAIN_16X.
+     * Gain Values are:
+     * - TCS34725_GAIN_1X
+     * - TCS34725_GAIN_4X
+     * - TCS34725_GAIN_16X
+     * - TCS34725_GAIN_60X 
      */
     void setGain(tcs34725Gain_t gain);
 
@@ -106,5 +112,13 @@ public:
      * @param c Pointer to store the raw clear value.
      */
     void getRawRGBC(uint16_t *r, uint16_t *g, uint16_t *b, uint16_t *c);
+
+    /**
+     * @brief Retrieves the HSV (Hue, Saturation, Value) color values.
+     * @param h Pointer to store the hue value (0-360).
+     * @param s Pointer to store the saturation value (0-100).
+     * @param v Pointer to store the value (0-100).
+     */
+    void getHSV(float *h, float *s, float *v);
 };
 #endif
