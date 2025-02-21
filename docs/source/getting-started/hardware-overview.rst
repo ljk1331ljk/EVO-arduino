@@ -90,6 +90,8 @@ Pherperials
         Connected to the same IO14 as the programable button
    * - 4kHz Buzzer        
      - Programmable buzzer 
+   * - 128 x 64 OLED Display        
+     - Programmable OLED Display
 
 .. _Pinouts:
 
