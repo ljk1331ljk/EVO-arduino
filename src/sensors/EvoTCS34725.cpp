@@ -22,8 +22,8 @@ void EvoTCS34725::getRawRGBC(uint16_t *r, uint16_t *g, uint16_t *b, uint16_t *c)
 
 void EvoTCS34725::getHSV(float *h, float *s, float *v)
 {
-    uint16_t r, g, b, c;
-    getRawRGBC(&r, &g, &b, &c);
+    float r, g, b;
+    getRGB(&r, &g, &b);
 
     // Normalize RGB values to 0-1s
     float rNorm = r / 1024.0f;
