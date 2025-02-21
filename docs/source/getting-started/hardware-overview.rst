@@ -5,17 +5,29 @@ The EVOX1 is a 3.3V logic microcontroller. Sensors will need to be 3.3V compaita
 
 The EVOX1 boasts the following features:
 
-* Bluetooth Classic via inbuilt HC-05
-* Bluetooth Low Energy 5.0
-* Integrated Wi-Fi 4 (802.11b/g/n, 2.4GHz) 
-* EV3 Motor ports x 4 
-* Motor ports with encoder x 4 (shared with EV3 Motor ports)
-* Servo Ports x 8
-* I2C multiplexed ports x 8
-* EV3 Sensor ports x 4
-* GPIO ports x 8 (shared with EV3 Sensor ports)
-* UART/ SPI hybrid port x 2
-* I2C port x 2
+* **Ports**
+
+    * EV3 Motor ports x 4 
+    * Motor ports with encoder x 4 (shared pins with EV3 Motor ports)
+    * Servo Ports x 8
+    * I2C multiplexed ports x 8
+    * EV3 Sensor ports x 4
+    * GPIO ports x 8 (shared pins with EV3 Sensor ports)
+    * UART/ SPI hybrid port x 2
+    * I2C port x 2
+
+* **Peripherals**
+
+    * 4kHz Buzzer
+    * 128 x 64 1.54 inch OLED display
+    * Programmable button
+    * RGB LED indicator (shared pins with programmable button)
+
+* **Wireless Functionalities**
+
+    * Bluetooth Classic via inbuilt HC-05
+    * Bluetooth Low Energy 5.0
+    * Integrated Wi-Fi 4 (802.11b/g/n, 2.4GHz) 
 
 .. _Pinouts:
 
@@ -30,7 +42,7 @@ Pinouts
 Connecting Hardware
 ----------------------
 
-The pins on the EVOX1 are color coded. Do exercise caution when connecting any hardware to the ports.
+The pins on the EVOX1 are color coded. Exercise caution when connecting any hardware to the ports.
 
 .. list-table:: Wire Color Codes
    :header-rows: 1
