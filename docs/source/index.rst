@@ -28,19 +28,19 @@ Contents
    :caption: Getting Started
    
    getting-started/first-boot
-   getting-started/programming-with-ArduinoIDE
-   getting-started/installing-libraries
    getting-started/hardware-overview
+   getting-started/programming-with-ArduinoIDE
+   getting-started/downloading-your-first-program
+   
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Library Reference
 
    library-reference/EVOX1
-   library-reference/EvoMotor
-   library-reference/EvoServo
-   library-reference/EvoTCS34725
-   library-reference/EvoVL53L0X
+   library-reference/Motors
+   library-reference/Sensors
+   library-reference/Robotics
    
    
 
