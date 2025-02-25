@@ -19,7 +19,7 @@ The EVO library comes with example code that you can use to help you get started
 .. _Connecting to the EVOX1 Board:
 
 Connecting to the EVOX1 Board
----------------------------
+------------------------------
 
 1. Connect the EVOX1 to the computer and turn it on. A new port will appear in the drop down on the top left corner.
 
@@ -59,7 +59,7 @@ The EVOX1 uses the USB peripheral pins for program upload and serial communicati
 .. _Uploading to the EVOX1:
 
 Uploading to the EVOX1
----------------------
+-----------------------
 
 4. Click on the upload button on the top left corner to upload your program. The first compile and upload for each Arduino sketch will take the longest. Subsequent compilation will be faster as the compiler uses the already compiled libraries for upload. When upload is complete you should see the following.
 
