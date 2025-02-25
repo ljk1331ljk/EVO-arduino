@@ -28,8 +28,10 @@ Contents
    :caption: Getting Started
    
    getting-started/first-boot
-   getting-started/programming-with-ArduinoIDE
    getting-started/hardware-overview
+   getting-started/programming-with-ArduinoIDE
+   getting-started/downloading-your-first-program
+   
 
 .. toctree::
    :maxdepth: 2
