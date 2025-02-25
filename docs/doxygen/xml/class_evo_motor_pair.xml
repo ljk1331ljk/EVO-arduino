@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="class_evo_motor_pair" kind="class" language="C++" prot="public">
     <compoundname>EvoMotorPair</compoundname>
+    <includes refid="_evo_motor_pair_8h" local="no">EvoMotorPair.h</includes>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_evo_motor_pair_1a7ab51dc6a7e8011ad0ff505c58de5152" prot="private" static="no" mutable="no">
         <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
@@ -15,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="9" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="9" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="13" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a23cdf06bdf897c50ba10450c4f1b6170" prot="private" static="no" mutable="no">
         <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
@@ -29,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="10" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="10" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="14" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1aa10411a6bec1a0493b642d1a737dddec" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -44,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="11" column="9" bodyfile="src/robotics/EvoMotorPair.h" bodystart="11" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="15" column="9" bodyfile="src/robotics/EvoMotorPair.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -59,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="11" column="20" bodyfile="src/robotics/EvoMotorPair.h" bodystart="11" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="15" column="20" bodyfile="src/robotics/EvoMotorPair.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a878fbd3d02eca72a36c2521b35250ef2" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -74,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="11" column="31" bodyfile="src/robotics/EvoMotorPair.h" bodystart="11" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="15" column="31" bodyfile="src/robotics/EvoMotorPair.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a6ff3d6af2d604ae358755c7508a3c4e8" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -89,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="12" column="11" bodyfile="src/robotics/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="16" column="11" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1affdde844d3736b9c727d89b33e4bc8a1" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -104,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="12" column="19" bodyfile="src/robotics/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="16" column="19" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1ac6c5f3dde695bf91f4ca4dd4bfe300b2" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -119,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="12" column="27" bodyfile="src/robotics/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="16" column="27" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1aabea08734d7a185cdd49cba3162847ed" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -134,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="12" column="36" bodyfile="src/robotics/EvoMotorPair.h" bodystart="12" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="16" column="36" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -153,12 +154,31 @@
           <declname>m2</declname>
         </param>
         <briefdescription>
+<para>Constructor to initialize a motor pair. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>m1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the first <ref refid="class_evo_motor" kindref="compound">EvoMotor</ref>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>m2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the second <ref refid="class_evo_motor" kindref="compound">EvoMotor</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="16" column="5"/>
+        <location file="src/robotics/EvoMotorPair.h" line="24" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a599c94cbdb1d9623a8af6dd698c2c65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -171,12 +191,23 @@
           <declname>minSpeed</declname>
         </param>
         <briefdescription>
+<para>Sets the minimum speed for the motors. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>minSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum speed value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="18" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="30" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a1e01be165eba3c20f876c41d3bb037f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -193,12 +224,31 @@
           <declname>accelDeg</declname>
         </param>
         <briefdescription>
+<para>Sets the acceleration parameters. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>accel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The acceleration factor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>accelDeg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of degrees over which acceleration occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="19" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="37" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a8ac2d4c0350d331de5794aa5ab39e00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -215,12 +265,31 @@
           <declname>decelDeg</declname>
         </param>
         <briefdescription>
+<para>Sets the deceleration parameters. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>decel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The deceleration factor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>decelDeg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of degrees over which deceleration occurs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="20" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="44" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1ad49d35beca2b31314c004ee6aa9f6ddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -237,12 +306,31 @@
           <declname>kd</declname>
         </param>
         <briefdescription>
+<para>Sets the proportional-derivative (PD) control parameters for the motor pairing. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proportional gain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derivative gain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="21" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="51" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a9c137b67db89843a4c980869381bbc04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -259,12 +347,31 @@
           <declname>rightSpeed</declname>
         </param>
         <briefdescription>
+<para>Moves the motors at the specified speeds. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>leftSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed for the left motor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rightSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed for the right motor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="23" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="58" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a6bd00b3eb06838df90a32efabeeb5248" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -290,12 +397,47 @@
           <defval>true</defval>
         </param>
         <briefdescription>
+<para>Moves the motors a specified number of degrees. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>leftSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed for the left motor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rightSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed for the right motor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of degrees to move. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>brake</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to brake at the end of movement (default: true). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="24" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="67" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1af48734873b5c532f4bd6fa14d81b81b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -321,12 +463,47 @@
           <defval>true</defval>
         </param>
         <briefdescription>
+<para>Moves the motors for a specified duration. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>leftSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed for the left motor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rightSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Speed for the right motor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>brake</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to brake at the end of movement (default: true). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="25" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="76" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1afdf62d2c9f4b1a41d94f3b2bfb83f7b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -335,12 +512,13 @@
         <name>brake</name>
         <qualifiedname>EvoMotorPair::brake</qualifiedname>
         <briefdescription>
+<para>Applies braking to both motors. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="26" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="81" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1ab78b6f84726c6c2bc6fcc4a7ef5acde6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -349,12 +527,13 @@
         <name>coast</name>
         <qualifiedname>EvoMotorPair::coast</qualifiedname>
         <briefdescription>
+<para>Coasts both motors to a stop. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="27" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="86" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a5cbf5869e56fc874ca0ae5f4495b7b0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -363,12 +542,13 @@
         <name>resetAngle</name>
         <qualifiedname>EvoMotorPair::resetAngle</qualifiedname>
         <briefdescription>
+<para>Resets both motor angles to zero. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="29" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="91" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a651ee2a7479ae387a7c15a3c211ef9ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -377,19 +557,24 @@
         <name>getAngle</name>
         <qualifiedname>EvoMotorPair::getAngle</qualifiedname>
         <briefdescription>
+<para>Gets the current motor angle. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The angle in degrees. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="30" column="9"/>
+        <location file="src/robotics/EvoMotorPair.h" line="97" column="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>A class to control a pair of EvoMotors synchronously. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/robotics/EvoMotorPair.h" line="6" column="1" bodyfile="src/robotics/EvoMotorPair.h" bodystart="7" bodyend="31"/>
+    <location file="src/robotics/EvoMotorPair.h" line="10" column="1" bodyfile="src/robotics/EvoMotorPair.h" bodystart="11" bodyend="98"/>
     <listofallmembers>
       <member refid="class_evo_motor_pair_1a6ff3d6af2d604ae358755c7508a3c4e8" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_accel</name></member>
       <member refid="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_accelDeg</name></member>
