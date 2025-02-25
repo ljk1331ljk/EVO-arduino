@@ -126,6 +126,7 @@
     <member refid="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" kind="function"><name>getBlue</name></member>
     <member refid="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" kind="function"><name>getRGB</name></member>
     <member refid="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" kind="function"><name>getRawRGBC</name></member>
+    <member refid="class_evo_t_c_s34725_1a32961d506551df13b05903df6369a3a3" kind="function"><name>getHSV</name></member>
   </compound>
   <compound refid="class_evo_v_l53_l0_x" kind="class"><name>EvoVL53L0X</name>
     <member refid="class_evo_v_l53_l0_x_1a89ea00487b2d5dbd46fe2da2bb900baf" kind="variable"><name>lox</name></member>
