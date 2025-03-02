@@ -4,7 +4,7 @@ void EVOX1::begin()
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     display.begin();
-    this->setFontSize(7);
+    this->setFontSize(8);
     charger.begin();
     rgb.begin();
     setRGB(0, 0, 0);
@@ -39,6 +39,38 @@ void EVOX1::playTone(uint frequency, int duration)
     tone(BUZZER_PIN, frequency, duration);
 }
 
+void EVOX1::setFontSize(uint8_t size)
+{
+    _fontSize = size;
+    display.setFontPosTop();
+    switch (size)
+    {
+    case 4:
+        display.setFont(u8g2_font_minimal3x3_tu);
+        break;
+    case 5:
+        display.setFont(u8g2_font_u8glib_4_tf);
+        break;
+    case 6:
+        display.setFont(u8g2_font_tiny5_tf);
+        break;
+    case 7:
+        display.setFont(u8g2_font_5x7_tf);
+        break;
+    case 8:
+        display.setFont(u8g2_font_6x10_tf);
+        break;
+    case 9:
+        display.setFont(u8g2_font_profont12_tf);
+        break;
+    case 10:
+        display.setFont(u8g2_font_6x13_tf);
+        break;
+    default:
+        display.setFont(u8g2_font_5x7_tf);
+    }
+}
+
 void EVOX1::clearDisplay()
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
@@ -61,40 +93,6 @@ void EVOX1::writeToDisplay(int value, int x, int y, bool clear, bool draw)
     }
 }
 
-void EVOX1::setFontSize(uint8_t size)
-{
-    display.setFontPosTop();
-    switch (size)
-    {
-    case 3:
-        display.setFont(u8g2_font_minimal3x3_tu);
-        break;
-    case 4:
-        display.setFont(u8g2_font_u8glib_4_tf);
-        break;
-    case 5:
-        display.setFont(u8g2_font_tiny5_tf);
-        break;
-    case 6:
-        display.setFont(u8g2_font_5x7_tf);
-        break;
-    case 7:
-        display.setFont(u8g2_font_6x10_tf);
-        break;
-    case 8:
-        display.setFont(u8g2_font_profont12_tf);
-        break;
-    case 9:
-        display.setFont(u8g2_font_6x13_tf);
-        break;
-    case 10:
-        display.setFont(u8g2_font_7x14_tf);
-        break;
-    default:
-        display.setFont(u8g2_font_5x7_tf);
-    }
-}
-
 void EVOX1::writeToDisplay(double f, int x, int y, bool clear, bool draw)
 {
     i2CDevice.selectChannel(SSD1309_CHANNEL);
@@ -103,7 +101,7 @@ void EVOX1::writeToDisplay(double f, int x, int y, bool clear, bool draw)
         this->clearDisplay();
     }
     char myString[16];
-    dtostrf(f, 6, 2, myString);
+    dtostrf(f, 1, 2, myString);
     display.drawStr(x, y, myString);
     if (draw)
     {
@@ -125,13 +123,19 @@ void EVOX1::writeToDisplay(const char *c, int x, int y, bool clear, bool draw)
     }
 }
 
-void EVOX1::waitForButton()
+void EVOX1::writeLineToDisplay(int value, int line, bool clear, bool draw)
 {
-    pinMode(BUTTON_PIN, INPUT_PULLUP);
-    while (digitalRead(BUTTON_PIN))
-        ;
-    while (!digitalRead(BUTTON_PIN))
-        ;
+    writeToDisplay(value, 0, line * _fontSize, clear, draw);
+}
+
+void EVOX1::writeLineToDisplay(double f, int line, bool clear, bool draw)
+{
+    writeToDisplay(f, 0, line * _fontSize, clear, draw);
+}
+
+void EVOX1::writeLineToDisplay(const char *c, int line, bool clear, bool draw)
+{
+    writeToDisplay(c, 0, line * _fontSize, clear, draw);
 }
 
 void EVOX1::drawDisplay()
@@ -140,8 +144,71 @@ void EVOX1::drawDisplay()
     display.sendBuffer();
 }
 
+void EVOX1::waitForButton()
+{
+    if (pinState != BUTTON_STATE)
+    {
+        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinState = BUTTON_STATE;
+    }
+    while (digitalRead(BUTTON_PIN))
+        ;
+    while (!digitalRead(BUTTON_PIN))
+        ;
+}
+
+void EVOX1::waitForPress(int debouncems)
+{
+    if (pinState != BUTTON_STATE)
+    {
+        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinState = BUTTON_STATE;
+    }
+    while (digitalRead(BUTTON_PIN))
+        ;
+    delay(debouncems);
+}
+
+void EVOX1::waitForRelease(int debouncems)
+{
+    if (pinState != BUTTON_STATE)
+    {
+        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinState = BUTTON_STATE;
+    }
+    while (!digitalRead(BUTTON_PIN))
+        ;
+    delay(debouncems);
+}
+
+void EVOX1::waitForBump(int debouncems)
+{
+    if (pinState != BUTTON_STATE)
+    {
+        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinState = BUTTON_STATE;
+    }
+    while (digitalRead(BUTTON_PIN))
+        ;
+    delay(debouncems);
+    while (!digitalRead(BUTTON_PIN))
+        ;
+    delay(debouncems);
+}
+
+ButtonState EVOX1::getButton()
+{
+    if (pinState != BUTTON_STATE)
+    {
+        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinState = BUTTON_STATE;
+    }
+    return static_cast<ButtonState>(digitalRead(BUTTON_PIN));
+}
+
 void EVOX1::setRGB(int r, int g, int b)
 {
+    this->pinState != RGB_LED_STATE;
     rgb.setPixelColor(0, rgb.Color(r, g, b));
     rgb.show();
 }
