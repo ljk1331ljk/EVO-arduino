@@ -17,7 +17,7 @@ void EvoHuskyLens::setMode(protocolAlgorithm algorithmType)
     _algorithmType = algorithmType;
 }
 
-bool EvoHuskyLens::requestBlocks(HUSKYLENSResult *result, int16_t ID)
+bool EvoHuskyLens::requestBlocks(HUSKYLENSResult &result, int16_t ID)
 {
     i2CDevice.selectChannel(_channel);
     if (_algorithmType == ALGORITHM_LINE_TRACKING)
@@ -51,7 +51,7 @@ bool EvoHuskyLens::requestBlocks(HUSKYLENSResult *result, int16_t ID)
     return true;
 }
 
-bool EvoHuskyLens::requestArrows(HUSKYLENSResult *result, int16_t ID)
+bool EvoHuskyLens::requestArrows(HUSKYLENSResult &result, int16_t ID)
 {
     i2CDevice.selectChannel(_channel);
     if (_algorithmType != ALGORITHM_LINE_TRACKING)
@@ -66,14 +66,15 @@ bool EvoHuskyLens::requestArrows(HUSKYLENSResult *result, int16_t ID)
     return true;
 }
 
-bool EvoHuskyLens::writeString(String text, uint16_t x, uint8_t y)
+void EvoHuskyLens::writeString(String text, uint16_t x, uint8_t y)
 {
     i2CDevice.selectChannel(_channel);
     huskylens.customText(text, x, y);
 }
-bool EvoHuskyLens::clearScreen()
+void EvoHuskyLens::clearScreen()
 {
     i2CDevice.selectChannel(_channel);
+
     huskylens.clearCustomText();
 }
 
