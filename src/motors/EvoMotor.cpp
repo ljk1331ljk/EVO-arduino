@@ -305,7 +305,8 @@ void EvoMotor::runTime(int speed, int timeMS)
     int timeNow = millis();
     while ((millis() - timeNow) < timeMS)
     {
-        vTaskDelay(1);
+        this->run(speed);
+        vTaskDelay(10);
     }
     this->stop();
 }
@@ -366,11 +367,6 @@ void EvoMotor::motorControlTask(void *parameter)
             timeNow = millis();
             if ((timeNow - lastReadTime) > motor->_stallTime)
             {
-                Serial.print(abs(encoder - prevencoder));
-                Serial.print(" ");
-                Serial.print(motor->_stallCountThreshold);
-                Serial.print(" ");
-                Serial.println(motor->_stalled);
                 if (abs(encoder - prevencoder) < motor->_stallCountThreshold)
                 {
                     motor->_stalled = true;

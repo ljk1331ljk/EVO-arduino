@@ -14,6 +14,22 @@
 #include <helper/U8g2/U8g2lib.h>
 
 /**
+ * @enum ButtonState
+ * @brief Enumeration of different button states.
+ */
+enum ButtonState
+{
+    PRESSED,
+    RELEASED,
+};
+
+enum PinState
+{
+    BUTTON_STATE,
+    RGB_LED_STATE
+};
+
+/**
  * @class EVOX1
  * @brief Manages the EVOX1 controller, handling display, battery, I2C, buttons, and RGB functions.
  *
@@ -31,6 +47,17 @@ private:
      * @brief RGB LED instance using Adafruit NeoPixel.
      */
     Adafruit_NeoPixel rgb;
+
+    /**
+     * @brief Size of font for display
+     */
+    uint8_t _fontSize = 8;
+
+    /**
+     * @enum PinState
+     * @brief Enumeration of different pin state
+     */
+    PinState pinState = RGB_LED_STATE;
 
     /**
      * @brief Deleted copy constructor to prevent copying.
@@ -52,7 +79,8 @@ public:
      * @brief Gets the singleton instance of EVOX1.
      * @return Reference to the singleton instance.
      */
-    EVOX1() : display(U8G2_R0, U8X8_PIN_NONE), rgb(1, PIXEL_PIN, NEO_GRBW + NEO_KHZ800)
+    EVOX1() : display(U8G2_R0, U8X8_PIN_NONE),
+              rgb(1, PIXEL_PIN, NEO_GRBW + NEO_KHZ800)
     {
     }
     /**
@@ -120,8 +148,8 @@ public:
     /**
      * @brief Writes an integer to the display at a specific position.
      * @param value The integer value to display.
-     * @param x X-coordinate position.
-     * @param y Y-coordinate position.
+     * @param x X-coordinate position (0-128).
+     * @param y Y-coordinate position (0-64).
      * @param clear Whether to clear the screen before drawing.
      * @param draw Whether to immediately draw the screen.
      */
@@ -130,8 +158,8 @@ public:
     /**
      * @brief Writes a floating-point number to the display at a specific position.
      * @param f The floating-point number to display.
-     * @param x X-coordinate position.
-     * @param y Y-coordinate position.
+     * @param x X-coordinate position (0-128).
+     * @param y Y-coordinate position (0-64).
      * @param clear Whether to clear the screen before drawing.
      * @param draw Whether to immediately draw the screen.
      */
@@ -140,12 +168,18 @@ public:
     /**
      * @brief Writes a string to the display at a specific position.
      * @param c The string to display.
-     * @param x X-coordinate position.
-     * @param y Y-coordinate position.
+     * @param x X-coordinate position (0-128).
+     * @param y Y-coordinate position (0-64).
      * @param clear Whether to clear the screen before drawing.
      * @param draw Whether to immediately draw the screen.
      */
     void writeToDisplay(const char *c, int x, int y, bool clear = false, bool draw = false);
+
+    void writeLineToDisplay(int value, int line, bool clear = false, bool draw = false);
+
+    void writeLineToDisplay(double f, int line, bool clear = false, bool draw = false);
+
+    void writeLineToDisplay(const char *c, int line, bool clear = false, bool draw = false);
 
     /**
      * @brief Refreshes the display by rendering the current buffer.
@@ -161,9 +195,33 @@ public:
     // === Button Functions ===
 
     /**
-     * @brief Waits for a button press before continuing execution.
+     * @brief Waits for a button press and release before continuing execution. (To be deprecated, use waitForBumped(int debouncems))
      */
     void waitForButton();
+
+    /**
+     * @brief Waits for a button press before continuing execution.
+     * @param debouncems delay in milliseconds after button is pressed.
+     */
+    void waitForPress(int debouncems = 0);
+
+    /**
+     * @brief Waits for a button released before continuing execution.
+     * @param debouncems delay in milliseconds after button is released.
+     */
+    void waitForRelease(int debouncems = 0);
+
+    /**
+     * @brief Waits for a button press and release before continuing execution.
+     * @param debouncems delay in milliseconds after button is pressed and button is released.
+     */
+    void waitForBump(int debouncems = 0);
+
+    /**
+     * @brief Gets the state of the button.
+     * @return The state of the button. PRESSED or RELEASED.
+     */
+    ButtonState getButton();
 
     // === Buzzer Functions ===
 
