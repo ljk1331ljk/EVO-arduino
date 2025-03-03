@@ -176,7 +176,13 @@
 <parametername>gain</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Gain value from the tcs34725Gain_t enum. </para>
+<para>Gain value from the tcs34725Gain_t enum. Default is TCS34725_GAIN_16X. Gain Values are:<itemizedlist>
+<listitem><para>TCS34725_GAIN_1X</para>
+</listitem><listitem><para>TCS34725_GAIN_4X</para>
+</listitem><listitem><para>TCS34725_GAIN_16X</para>
+</listitem><listitem><para>TCS34725_GAIN_60X </para>
+</listitem></itemizedlist>
+</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -184,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="49" column="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="55" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -202,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="55" column="14"/>
+        <location file="src/sensors/EvoTCS34725.h" line="61" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -220,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="61" column="14"/>
+        <location file="src/sensors/EvoTCS34725.h" line="67" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -238,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="67" column="14"/>
+        <location file="src/sensors/EvoTCS34725.h" line="73" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -256,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="73" column="14"/>
+        <location file="src/sensors/EvoTCS34725.h" line="79" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -274,7 +280,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="79" column="11"/>
+        <location file="src/sensors/EvoTCS34725.h" line="85" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -292,7 +298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="85" column="11"/>
+        <location file="src/sensors/EvoTCS34725.h" line="91" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -310,7 +316,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="91" column="11"/>
+        <location file="src/sensors/EvoTCS34725.h" line="97" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -363,7 +369,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="99" column="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="105" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -428,7 +434,60 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoTCS34725.h" line="108" column="10"/>
+        <location file="src/sensors/EvoTCS34725.h" line="114" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_c_s34725_1a32961d506551df13b05903df6369a3a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTCS34725::getHSV</definition>
+        <argsstring>(float *h, float *s, float *v)</argsstring>
+        <name>getHSV</name>
+        <qualifiedname>EvoTCS34725::getHSV</qualifiedname>
+        <param>
+          <type>float *</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the HSV (Hue, Saturation, Value) color values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the hue value (0-360). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the saturation value (0-100). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the value (0-100). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTCS34725.h" line="122" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -436,7 +495,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EvoTCS34725.h" line="15" column="1" bodyfile="src/sensors/EvoTCS34725.h" bodystart="16" bodyend="109"/>
+    <location file="src/sensors/EvoTCS34725.h" line="15" column="1" bodyfile="src/sensors/EvoTCS34725.h" bodystart="16" bodyend="123"/>
     <listofallmembers>
       <member refid="class_evo_t_c_s34725_1a29c30a8e6e311dcb97c69b1d5b83e94b" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>_channel</name></member>
       <member refid="class_evo_t_c_s34725_1a56ec7083df9ade912bbfbf954c748586" prot="private" virt="non-virtual"><scope>EvoTCS34725</scope><name>_tcs34725Gain</name></member>
@@ -445,6 +504,7 @@
       <member refid="class_evo_t_c_s34725_1a803efa994423cf326b5ed56b27d554a1" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>EvoTCS34725</name></member>
       <member refid="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getBlue</name></member>
       <member refid="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getGreen</name></member>
+      <member refid="class_evo_t_c_s34725_1a32961d506551df13b05903df6369a3a3" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getHSV</name></member>
       <member refid="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawBlue</name></member>
       <member refid="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawClear</name></member>
       <member refid="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" prot="public" virt="non-virtual"><scope>EvoTCS34725</scope><name>getRawGreen</name></member>

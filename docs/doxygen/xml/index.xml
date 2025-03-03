@@ -13,6 +13,20 @@
     <member refid="class_e_v3_color_sensor_1a991ccf9ee86ee0f23b4fbb1f2163c6d5" kind="function"><name>getColor</name></member>
     <member refid="class_e_v3_color_sensor_1a7672cf5e8bc0f2dfd9bd04c20e1f9297" kind="function"><name>messageHandler</name></member>
   </compound>
+  <compound refid="class_evo_husky_lens" kind="class"><name>EvoHuskyLens</name>
+    <member refid="class_evo_husky_lens_1a2260f285f327ef011f29f37eb750b1b0" kind="variable"><name>huskylens</name></member>
+    <member refid="class_evo_husky_lens_1ab4cdc1ec5fd09585c503adcaf24c3e36" kind="variable"><name>_channel</name></member>
+    <member refid="class_evo_husky_lens_1ab9cfd26e0febc3f07fdcc6a059d6bd51" kind="variable"><name>i2CDevice</name></member>
+    <member refid="class_evo_husky_lens_1a6da69e614c972ed7599a7f2b02575542" kind="variable"><name>_algorithmType</name></member>
+    <member refid="class_evo_husky_lens_1ad2e121832b901613a01b002590a92d7b" kind="function"><name>EvoHuskyLens</name></member>
+    <member refid="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" kind="function"><name>begin</name></member>
+    <member refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" kind="function"><name>setMode</name></member>
+    <member refid="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" kind="function"><name>requestBlocks</name></member>
+    <member refid="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" kind="function"><name>requestArrows</name></member>
+    <member refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" kind="function"><name>writeString</name></member>
+    <member refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" kind="function"><name>clearScreen</name></member>
+    <member refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" kind="function"><name>printResult</name></member>
+  </compound>
   <compound refid="class_evo_motor" kind="class"><name>EvoMotor</name>
     <member refid="class_evo_motor_1af803a152981207abe69a4a01a76f6188" kind="variable"><name>_motorType</name></member>
     <member refid="class_evo_motor_1a8ad4eb02c94296a3239bba8f25446749" kind="variable"><name>_motorPort</name></member>
@@ -126,6 +140,7 @@
     <member refid="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" kind="function"><name>getBlue</name></member>
     <member refid="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" kind="function"><name>getRGB</name></member>
     <member refid="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" kind="function"><name>getRawRGBC</name></member>
+    <member refid="class_evo_t_c_s34725_1a32961d506551df13b05903df6369a3a3" kind="function"><name>getHSV</name></member>
   </compound>
   <compound refid="class_evo_v_l53_l0_x" kind="class"><name>EvoVL53L0X</name>
     <member refid="class_evo_v_l53_l0_x_1a89ea00487b2d5dbd46fe2da2bb900baf" kind="variable"><name>lox</name></member>
@@ -139,6 +154,8 @@
   <compound refid="class_e_v_o_x1" kind="class"><name>EVOX1</name>
     <member refid="class_e_v_o_x1_1af25408a7256e13e8dd1b958e42bd4ca6" kind="variable"><name>display</name></member>
     <member refid="class_e_v_o_x1_1ac35df0bfa755ece3175697b8c22aeb00" kind="variable"><name>rgb</name></member>
+    <member refid="class_e_v_o_x1_1a3e58b33added127cb5219d4b6fdbec4a" kind="variable"><name>_fontSize</name></member>
+    <member refid="class_e_v_o_x1_1a43bd32c1a1b0d97ab5aadade389289b1" kind="variable"><name>pinState</name></member>
     <member refid="class_e_v_o_x1_1a0e80d22348855596141d70accba4a63e" kind="variable"><name>i2CDevice</name></member>
     <member refid="class_e_v_o_x1_1a68727c7ee42efbbbb8a83aad2d8dc026" kind="variable"><name>charger</name></member>
     <member refid="class_e_v_o_x1_1a18d660e086a3a48e8e2f0d2c9fe84dfe" kind="function"><name>EVOX1</name></member>
@@ -154,9 +171,16 @@
     <member refid="class_e_v_o_x1_1a596f6a9e60e2c410ac663f720f0a0f59" kind="function"><name>writeToDisplay</name></member>
     <member refid="class_e_v_o_x1_1aa22b3f7707142bf83d9c37f51732dbb3" kind="function"><name>writeToDisplay</name></member>
     <member refid="class_e_v_o_x1_1a31f6412aca8e1e0b424ebaab2cc12d14" kind="function"><name>writeToDisplay</name></member>
+    <member refid="class_e_v_o_x1_1aba2d0ef27e85bd9293d77a50cdbe5dbc" kind="function"><name>writeLineToDisplay</name></member>
+    <member refid="class_e_v_o_x1_1a64746a53d6c97e51258f6d2b2c6a16e4" kind="function"><name>writeLineToDisplay</name></member>
+    <member refid="class_e_v_o_x1_1ab9143ac79b8a68ca39faaac9b8f14098" kind="function"><name>writeLineToDisplay</name></member>
     <member refid="class_e_v_o_x1_1a547b6e5ab9b035462cc1148031d37faf" kind="function"><name>drawDisplay</name></member>
     <member refid="class_e_v_o_x1_1a4524bcd7f2e78decfeadffb33a5555a8" kind="function"><name>setFontSize</name></member>
     <member refid="class_e_v_o_x1_1a1c1b7f315b41d4802c4a6e56220b37f9" kind="function"><name>waitForButton</name></member>
+    <member refid="class_e_v_o_x1_1ab9578f4c445db1302952166848d52e7b" kind="function"><name>waitForPress</name></member>
+    <member refid="class_e_v_o_x1_1aebc87ebd48a283cc52cb2150cc1b79fe" kind="function"><name>waitForRelease</name></member>
+    <member refid="class_e_v_o_x1_1add6dcc30412b45d868d3f85c07ecc21a" kind="function"><name>waitForBump</name></member>
+    <member refid="class_e_v_o_x1_1a7d956df679f8d7f3cb1573a07d478a3f" kind="function"><name>getButton</name></member>
     <member refid="class_e_v_o_x1_1a0b6466b1faaf530c58c3cd8dcfb974d6" kind="function"><name>playTone</name></member>
     <member refid="class_e_v_o_x1_1a7257fd59f8b9fc14e983e898d17ad9e7" kind="function"><name>setRGB</name></member>
     <member refid="class_e_v_o_x1_1af3a2cbe75b2c841d30b2031845780e25" kind="function"><name>getInstance</name></member>
@@ -171,6 +195,12 @@
     <member refid="_evo_8h_1a8650e6793d46032c617bb7b824f90bfd" kind="define"><name>LIBRARY_VERSION</name></member>
   </compound>
   <compound refid="_e_v_o_x1_8h" kind="file"><name>EVOX1.h</name>
+    <member refid="_e_v_o_x1_8h_1aa46074d34fe2d6631c6bd9dc74633657" kind="enum"><name>ButtonState</name></member>
+    <member refid="_e_v_o_x1_8h_1aa46074d34fe2d6631c6bd9dc74633657a5ef9a100ac8b4b8d6dec477c377b7901" kind="enumvalue"><name>PRESSED</name></member>
+    <member refid="_e_v_o_x1_8h_1aa46074d34fe2d6631c6bd9dc74633657aa38d18fe73a7fc82c112b6917d0b5cd0" kind="enumvalue"><name>RELEASED</name></member>
+    <member refid="_e_v_o_x1_8h_1a481bba4ee500a381c7ae5b767e641bdc" kind="enum"><name>PinState</name></member>
+    <member refid="_e_v_o_x1_8h_1a481bba4ee500a381c7ae5b767e641bdcae372ecd07aef87b0a475ce3100842e91" kind="enumvalue"><name>BUTTON_STATE</name></member>
+    <member refid="_e_v_o_x1_8h_1a481bba4ee500a381c7ae5b767e641bdca0a40c80a2b59db5d645fd48a7a366313" kind="enumvalue"><name>RGB_LED_STATE</name></member>
   </compound>
   <compound refid="_evo_motor_8h" kind="file"><name>EvoMotor.h</name>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3" kind="enum"><name>MotorType</name></member>
@@ -233,6 +263,8 @@
     <member refid="_e_v3_color_sensor_8h_1a372da9cab8b8051b8dc24fd7d0ef0727a0deb69ca1ebd3098a05940fdb37cd111" kind="enumvalue"><name>COL_AMBIENT</name></member>
     <member refid="_e_v3_color_sensor_8h_1a372da9cab8b8051b8dc24fd7d0ef0727a7fca79941985a7c0cdcb96325f606088" kind="enumvalue"><name>COL_REFLECT</name></member>
     <member refid="_e_v3_color_sensor_8h_1acf6ba32b3e37c7a81cb543b47a9baa91" kind="function"><name>toColor</name></member>
+  </compound>
+  <compound refid="_evo_husky_lens_8h" kind="file"><name>EvoHuskyLens.h</name>
   </compound>
   <compound refid="_evo_t_c_s34725_8h" kind="file"><name>EvoTCS34725.h</name>
   </compound>

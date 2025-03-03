@@ -68,3 +68,27 @@ Updating EVO Library
 ----------------------
 
 To update the EVO library when there is a new relsease available repeat the steps in :ref:`EVO Library Installation` and the library will be overwritten.
+
+.. _Using V2.0 Hardware:
+
+Using V2.0 Hardware
+--------------------
+
+If you are using V2.0 hardware. you need to perform the following steps to edit your library. 
+
+1. Go to you Arduino library folder. If it has not been changed, it will be at Documents/Arduino/libraries.
+
+2. Go to EVO/src/helper and open the X1pins.h file.
+
+3. Comment out line 4 and save the changes.
+
+.. image:: ../pictures/V2_0librarymodification.png
+    :align: center
+
+.. raw:: html
+
+   <br><br>
+
+4. To verify which version of pin configuration you are using, you can display PIN_VERSION on the serial monitor or on the display.
+
+5. To revert to using V3.0 pin configuration, uncomment line 4 and save the changes.

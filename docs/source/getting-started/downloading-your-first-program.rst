@@ -61,7 +61,7 @@ The EVOX1 uses the USB peripheral pins for program upload and serial communicati
 Uploading to the EVOX1
 -----------------------
 
-4. Click on the upload button on the top left corner to upload your program. The first compile and upload for each Arduino sketch will take the longest. Subsequent compilation will be faster as the compiler uses the already compiled libraries for upload. When upload is complete you should see the following.
+Click on the upload button on the top left corner to upload your program. The first compile and upload for each Arduino sketch will take the longest. Subsequent compilation will be faster as the compiler uses the already compiled libraries for upload. When upload is complete you should see the following.
 
 .. image:: ../pictures/uploadcomplete.png
     :align: center

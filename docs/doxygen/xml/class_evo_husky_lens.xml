@@ -1,0 +1,355 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_husky_lens" kind="class" language="C++" prot="public">
+    <compoundname>EvoHuskyLens</compoundname>
+    <includes refid="_evo_husky_lens_8h" local="no">EvoHuskyLens.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_husky_lens_1a2260f285f327ef011f29f37eb750b1b0" prot="private" static="no" mutable="no">
+        <type>HUSKYLENS</type>
+        <definition>HUSKYLENS EvoHuskyLens::huskylens</definition>
+        <argsstring></argsstring>
+        <name>huskylens</name>
+        <qualifiedname>EvoHuskyLens::huskylens</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="14" column="15" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_husky_lens_1ab4cdc1ec5fd09585c503adcaf24c3e36" prot="private" static="no" mutable="no">
+        <type>I2CChannel</type>
+        <definition>I2CChannel EvoHuskyLens::_channel</definition>
+        <argsstring></argsstring>
+        <name>_channel</name>
+        <qualifiedname>EvoHuskyLens::_channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="15" column="16" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_husky_lens_1ab9cfd26e0febc3f07fdcc6a059d6bd51" prot="private" static="no" mutable="no">
+        <type>I2CDevice &amp;</type>
+        <definition>I2CDevice&amp; EvoHuskyLens::i2CDevice</definition>
+        <argsstring></argsstring>
+        <name>i2CDevice</name>
+        <qualifiedname>EvoHuskyLens::i2CDevice</qualifiedname>
+        <initializer>= I2CDevice::getInstance()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="16" column="15" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_husky_lens_1a6da69e614c972ed7599a7f2b02575542" prot="private" static="no" mutable="no">
+        <type>protocolAlgorithm</type>
+        <definition>protocolAlgorithm EvoHuskyLens::_algorithmType</definition>
+        <argsstring></argsstring>
+        <name>_algorithmType</name>
+        <qualifiedname>EvoHuskyLens::_algorithmType</qualifiedname>
+        <initializer>= ALGORITHM_COLOR_RECOGNITION</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="17" column="23" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_husky_lens_1ad2e121832b901613a01b002590a92d7b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EvoHuskyLens::EvoHuskyLens</definition>
+        <argsstring>(I2CChannel channel)</argsstring>
+        <name>EvoHuskyLens</name>
+        <qualifiedname>EvoHuskyLens::EvoHuskyLens</qualifiedname>
+        <param>
+          <type>I2CChannel</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for <ref refid="class_evo_husky_lens" kindref="compound">EvoHuskyLens</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C channel used to communicate with the HuskyLens. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="24" column="5" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoHuskyLens::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoHuskyLens::begin</qualifiedname>
+        <briefdescription>
+<para>Initializes the HuskyLens sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="32" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoHuskyLens::setMode</definition>
+        <argsstring>(protocolAlgorithm algorithmType)</argsstring>
+        <name>setMode</name>
+        <qualifiedname>EvoHuskyLens::setMode</qualifiedname>
+        <param>
+          <type>protocolAlgorithm</type>
+          <declname>algorithmType</declname>
+        </param>
+        <briefdescription>
+<para>Sets the operating mode (algorithm) of the HuskyLens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The HuskyLens supports multiple AI algorithms for different types of object recognition and tracking:<itemizedlist>
+<listitem><para><computeroutput>ALGORITHM_FACE_RECOGNITION</computeroutput>: Recognizes and tracks human faces.</para>
+</listitem><listitem><para><computeroutput>ALGORITHM_OBJECT_TRACKING</computeroutput>: Tracks user-defined objects.</para>
+</listitem><listitem><para><computeroutput>ALGORITHM_OBJECT_RECOGNITION</computeroutput>: Recognizes multiple learned objects.</para>
+</listitem><listitem><para><computeroutput>ALGORITHM_LINE_TRACKING</computeroutput>: Detects and follows lines.</para>
+</listitem><listitem><para><computeroutput>ALGORITHM_COLOR_RECOGNITION</computeroutput>: Recognizes specific colors.</para>
+</listitem><listitem><para><computeroutput>ALGORITHM_TAG_RECOGNITION</computeroutput>: Recognizes and tracks AprilTags. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>algorithmType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The algorithm mode to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="45" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EvoHuskyLens::requestBlocks</definition>
+        <argsstring>(HUSKYLENSResult &amp;result, int16_t ID=0)</argsstring>
+        <name>requestBlocks</name>
+        <qualifiedname>EvoHuskyLens::requestBlocks</qualifiedname>
+        <param>
+          <type>HUSKYLENSResult &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>ID</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Requests detected blocks from the HuskyLens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a HUSKYLENSResult structure to store the results. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Optional) The specific ID of the object to track (default: 0 for all). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if blocks were successfully retrieved, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="53" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EvoHuskyLens::requestArrows</definition>
+        <argsstring>(HUSKYLENSResult &amp;result, int16_t ID=0)</argsstring>
+        <name>requestArrows</name>
+        <qualifiedname>EvoHuskyLens::requestArrows</qualifiedname>
+        <param>
+          <type>HUSKYLENSResult &amp;</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>int16_t</type>
+          <declname>ID</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Requests detected arrows from the HuskyLens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a HUSKYLENSResult structure to store the results. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(Optional) The specific ID of the arrow to track (default: 0 for all). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if arrows were successfully retrieved, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="61" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoHuskyLens::writeString</definition>
+        <argsstring>(String text, uint16_t x, uint8_t y)</argsstring>
+        <name>writeString</name>
+        <qualifiedname>EvoHuskyLens::writeString</qualifiedname>
+        <param>
+          <type>String</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Writes a string to the HuskyLens display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x-coordinate position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y-coordinate position. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="69" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoHuskyLens::clearScreen</definition>
+        <argsstring>()</argsstring>
+        <name>clearScreen</name>
+        <qualifiedname>EvoHuskyLens::clearScreen</qualifiedname>
+        <briefdescription>
+<para>Clears the HuskyLens display screen. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="74" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoHuskyLens::printResult</definition>
+        <argsstring>(HUSKYLENSResult result)</argsstring>
+        <name>printResult</name>
+        <qualifiedname>EvoHuskyLens::printResult</qualifiedname>
+        <param>
+          <type>HUSKYLENSResult</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Prints the result of an object or arrow detected by HuskyLens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The detection result to print. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="80" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A class for interfacing with the HuskyLens AI vision sensor using I2C. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/EvoHuskyLens.h" line="11" column="1" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="12" bodyend="81"/>
+    <listofallmembers>
+      <member refid="class_evo_husky_lens_1a6da69e614c972ed7599a7f2b02575542" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>_algorithmType</name></member>
+      <member refid="class_evo_husky_lens_1ab4cdc1ec5fd09585c503adcaf24c3e36" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>_channel</name></member>
+      <member refid="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>begin</name></member>
+      <member refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>clearScreen</name></member>
+      <member refid="class_evo_husky_lens_1ad2e121832b901613a01b002590a92d7b" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>EvoHuskyLens</name></member>
+      <member refid="class_evo_husky_lens_1a2260f285f327ef011f29f37eb750b1b0" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>huskylens</name></member>
+      <member refid="class_evo_husky_lens_1ab9cfd26e0febc3f07fdcc6a059d6bd51" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>i2CDevice</name></member>
+      <member refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>printResult</name></member>
+      <member refid="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>requestArrows</name></member>
+      <member refid="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>requestBlocks</name></member>
+      <member refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>setMode</name></member>
+      <member refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>writeString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
