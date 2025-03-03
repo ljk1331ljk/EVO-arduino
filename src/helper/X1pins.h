@@ -5,6 +5,7 @@
 
 #ifdef V3_0
 
+#define PIN_VERSION "V3.0"
 // LEGO Sensor pins
 #define S11 10
 #define S12 9
@@ -64,6 +65,8 @@
 
 #else // V2.0
 
+#define PIN_VERSION "V2.0"
+
 #define S11 41
 #define S12 42
 #define S21 39
@@ -92,6 +95,7 @@
 #define MOTOR42 15
 
 #define BUZZER_PIN 14
+#define BUTTON_PIN 10
 #define PIXEL_PIN 10
 
 // I2C
