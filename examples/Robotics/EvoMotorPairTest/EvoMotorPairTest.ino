@@ -2,8 +2,8 @@
 
 EVOX1 evo;
 
-EvoMotor left(M3, EVOMotor100, true);
-EvoMotor right(M4, EVOMotor100);
+EvoMotor left(M3, ITERMKS, true);
+EvoMotor right(M4, ITERMKS);
 EvoMotorPair robot(&left, &right);
 
 void setup()
@@ -20,8 +20,8 @@ void setup()
   robot.setMinimumSpeed(800);
   robot.setPD(10, 30);
 
-  robot.moveDegrees(2000, 2000, 1000);
-  delay(500);
+  robot.moveDegrees(3000, 2000, 2000);
+  delay(2000);
   robot.moveTime(-3000, 3000, 2000);
   delay(500);
   robot.coast();

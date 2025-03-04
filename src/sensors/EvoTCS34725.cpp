@@ -25,7 +25,7 @@ void EvoTCS34725::getHSV(float *h, float *s, float *v)
     float r, g, b;
     getRGB(&r, &g, &b);
 
-    // Normalize RGB values to 0-1s
+    // Normalize RGB values to 0-1sno
     float rNorm = r / 1024.0f;
     float gNorm = g / 1024.0f;
     float bNorm = b / 1024.0f;
