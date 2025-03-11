@@ -96,20 +96,35 @@
         </inbodydescription>
         <location file="src/sensors/EvoVL53L0X.h" line="28" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="class_evo_v_l53_l0_x_1af2f5b6f36e76e5a281586160c4f0f1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_evo_v_l53_l0_x_1ab53df5bac324aa2b6673d1d6f763ee11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void EvoVL53L0X::begin</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(bool continuous=false)</argsstring>
         <name>begin</name>
         <qualifiedname>EvoVL53L0X::begin</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>continuous</declname>
+          <defval>false</defval>
+        </param>
         <briefdescription>
 <para>Initializes the VL53L0X sensor. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>continuous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets the sensor in continuous or non-continuous mode; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="33" column="10"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="34" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_v_l53_l0_x_1ae069516a043dd39f891d283ed66e92eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -121,13 +136,31 @@
 <para>Retrieves the distance measured by the sensor. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>Distance in millimeters. </para>
+<para><simplesect kind="return"><para>Distance in millimeters. Returns 2000 when there is an error or when maximum reading range is reached. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="39" column="9"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="40" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_v_l53_l0_x_1a8bf3c53892b5ebd18b1fc42815083efc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoVL53L0X::getDistanceContinuous</definition>
+        <argsstring>()</argsstring>
+        <name>getDistanceContinuous</name>
+        <qualifiedname>EvoVL53L0X::getDistanceContinuous</qualifiedname>
+        <briefdescription>
+<para>Retrieves the distance measured by the sensor in continuous mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Distance in millimeters. Returns 2000 when there is an error or when maximum reading range is reached. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoVL53L0X.h" line="46" column="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -135,12 +168,13 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EvoVL53L0X.h" line="15" column="1" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="16" bodyend="40"/>
+    <location file="src/sensors/EvoVL53L0X.h" line="15" column="1" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="16" bodyend="47"/>
     <listofallmembers>
       <member refid="class_evo_v_l53_l0_x_1a2cfe6c4e89b58435760388f7aab24d53" prot="private" virt="non-virtual"><scope>EvoVL53L0X</scope><name>_channel</name></member>
-      <member refid="class_evo_v_l53_l0_x_1af2f5b6f36e76e5a281586160c4f0f1cb" prot="public" virt="non-virtual"><scope>EvoVL53L0X</scope><name>begin</name></member>
+      <member refid="class_evo_v_l53_l0_x_1ab53df5bac324aa2b6673d1d6f763ee11" prot="public" virt="non-virtual"><scope>EvoVL53L0X</scope><name>begin</name></member>
       <member refid="class_evo_v_l53_l0_x_1a6b907724df6a2d060c34fdcf8257fd73" prot="public" virt="non-virtual"><scope>EvoVL53L0X</scope><name>EvoVL53L0X</name></member>
       <member refid="class_evo_v_l53_l0_x_1ae069516a043dd39f891d283ed66e92eb" prot="public" virt="non-virtual"><scope>EvoVL53L0X</scope><name>getDistance</name></member>
+      <member refid="class_evo_v_l53_l0_x_1a8bf3c53892b5ebd18b1fc42815083efc" prot="public" virt="non-virtual"><scope>EvoVL53L0X</scope><name>getDistanceContinuous</name></member>
       <member refid="class_evo_v_l53_l0_x_1ad52766520608a17385eb54895680992e" prot="private" virt="non-virtual"><scope>EvoVL53L0X</scope><name>i2CDevice</name></member>
       <member refid="class_evo_v_l53_l0_x_1a89ea00487b2d5dbd46fe2da2bb900baf" prot="private" virt="non-virtual"><scope>EvoVL53L0X</scope><name>lox</name></member>
       <member refid="class_evo_v_l53_l0_x_1a8877053beb00d13d2f36b8546e938efa" prot="private" virt="non-virtual"><scope>EvoVL53L0X</scope><name>measure</name></member>

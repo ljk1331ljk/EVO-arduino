@@ -77,8 +77,8 @@ private:
         COUNT,
         ANGLE,
         TARGET,
-        HOLDPOS,
         STALLED,
+        HOLDPOS,
     } _runMode = runMode::NONE;
 
     MotorType _motorType;
@@ -271,23 +271,22 @@ public:
     /**
      * @brief Runs the motor to a specified absolute position.
      * @param speed Motor speed.
-     * @param degrees Motor absolute degree.
+     * @param angle Motor absolute degree.
+     * @param then Motor stop action after moving to target.
      * @param blocking Wait for action to be completed.
      */
     void runTarget(int speed, int angle, MotorStop then = MotorStop::HOLD, bool blocking = true);
 
     /**
-     * @brief Sets PID control values for runTarget()
+     * @brief Sets PD control values for runTarget()
      * @param kp Proportional gain.
-     * @param ki Integral gain.
      * @param kd Derivative gain.
      */
     void setTargetPD(float kp, float kd);
 
     /**
-     * @brief Gets the PID control values for runTarget()
+     * @brief Gets the PD control values for runTarget()
      * @param kp Pointer to store proportional gain.
-     * @param ki Pointer to store integral gain.
      * @param kd Pointer to store derivative gain.
      */
     void getTargetPD(float *kp, float *kd);

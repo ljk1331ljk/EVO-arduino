@@ -24,6 +24,10 @@ enum ButtonState
     RELEASED,
 };
 
+/**
+ * @enum PinState
+ * @brief Enumeration of the state of multiplexed button/rgb led pin
+ */
 enum PinState
 {
     BUTTON_STATE,
@@ -55,8 +59,7 @@ private:
     uint8_t _fontSize = 8;
 
     /**
-     * @enum PinState
-     * @brief Enumeration of different pin state
+     * @brief Initial of pin state of the multiplexed pin
      */
     PinState pinState = RGB_LED_STATE;
 
@@ -83,7 +86,6 @@ private:
 public:
     /**
      * @brief Gets the singleton instance of EVOX1.
-     * @return Reference to the singleton instance.
      */
     EVOX1() : display(U8G2_R0, U8X8_PIN_NONE),
               rgb(1, PIXEL_PIN, NEO_GRBW + NEO_KHZ800)

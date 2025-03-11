@@ -9,26 +9,27 @@
     <includes refid="_e_v3_color_sensor_8h" local="yes">sensors/EV3ColorSensor.h</includes>
     <includes refid="_evo_t_c_s34725_8h" local="yes">sensors/EvoTCS34725.h</includes>
     <includes refid="_evo_v_l53_l0_x_8h" local="yes">sensors/EvoVL53L0X.h</includes>
+    <includes refid="_evo_husky_lens_8h" local="yes">sensors/EvoHuskyLens.h</includes>
     <incdepgraph>
-      <node id="21">
+      <node id="22">
         <label>../helper/EvoI2CDevice.h</label>
       </node>
-      <node id="11">
+      <node id="12">
         <label>../helper/EvoPWMDriver.h</label>
       </node>
-      <node id="19">
+      <node id="20">
         <label>../helper/EvoSensorPort.h</label>
       </node>
-      <node id="12">
+      <node id="13">
         <label>../helper/X1pins.h</label>
       </node>
-      <node id="8">
+      <node id="9">
         <label>Adafruit_NeoPixel.h</label>
       </node>
-      <node id="22">
+      <node id="23">
         <label>Adafruit_TCS34725.h</label>
       </node>
-      <node id="24">
+      <node id="25">
         <label>Adafruit_VL53L0X.h</label>
       </node>
       <node id="3">
@@ -51,30 +52,32 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/Evo.h</label>
         <link refid="_evo_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>motors/EvoMotor.h</label>
         <link refid="_evo_motor_8h"/>
-        <childnode refid="11" relation="include">
-        </childnode>
         <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
@@ -83,60 +86,76 @@
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-      </node>
-      <node id="16">
-        <label>motors/EvoServo.h</label>
-        <link refid="_evo_servo_8h"/>
-        <childnode refid="11" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="17">
-        <label>robotics/EvoMotorPair.h</label>
-        <link refid="_evo_motor_pair_8h_source"/>
-        <childnode refid="10" relation="include">
+        <label>motors/EvoServo.h</label>
+        <link refid="_evo_servo_8h"/>
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="18">
+        <label>robotics/EvoMotorPair.h</label>
+        <link refid="_evo_motor_pair_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
         <label>sensors/EV3ColorSensor.h</label>
         <link refid="_e_v3_color_sensor_8h_source"/>
-        <childnode refid="19" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>sensors/EvoTCS34725.h</label>
-        <link refid="_evo_t_c_s34725_8h"/>
-        <childnode refid="21" relation="include">
-        </childnode>
+      <node id="26">
+        <label>sensors/EvoHuskyLens.h</label>
+        <link refid="_evo_husky_lens_8h_source"/>
         <childnode refid="22" relation="include">
         </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
       </node>
-      <node id="23">
+      <node id="21">
+        <label>sensors/EvoTCS34725.h</label>
+        <link refid="_evo_t_c_s34725_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
         <label>sensors/EvoVL53L0X.h</label>
         <link refid="_evo_v_l53_l0_x_8h"/>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
-      </node>
-      <node id="13">
-        <label>ESP32Encoder.h</label>
       </node>
       <node id="14">
-        <label>freertos/FreeRTOS.h</label>
+        <label>ESP32Encoder.h</label>
+      </node>
+      <node id="27">
+        <label>HUSKYLENS.h</label>
       </node>
       <node id="15">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="16">
         <label>freertos/task.h</label>
       </node>
-      <node id="7">
+      <node id="8">
         <label>helper/EvoBQ25887.h</label>
       </node>
       <node id="6">
         <label>helper/EvoI2CDevice.h</label>
       </node>
+      <node id="7">
+        <label>helper/EvoPWMDriver.h</label>
+      </node>
       <node id="5">
         <label>helper/Tones.h</label>
       </node>
-      <node id="9">
+      <node id="10">
         <label>helper/U8g2/U8g2lib.h</label>
       </node>
       <node id="4">
@@ -146,7 +165,7 @@
     <sectiondef kind="define">
       <memberdef kind="define" id="_evo_8h_1a8650e6793d46032c617bb7b824f90bfd" prot="public" static="no">
         <name>LIBRARY_VERSION</name>
-        <initializer>&quot;0.1.4&quot;</initializer>
+        <initializer>&quot;0.1.5&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -164,7 +183,7 @@
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVO_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBRARY_VERSION<sp/>&quot;0.1.4&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBRARY_VERSION<sp/>&quot;0.1.5&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_v_o_x1_8h" kindref="compound">EVOX1.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
@@ -176,8 +195,9 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sensors/EV3ColorSensor.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_t_c_s34725_8h" kindref="compound">sensors/EvoTCS34725.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_v_l53_l0_x_8h" kindref="compound">sensors/EvoVL53L0X.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sensors/EvoHuskyLens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="src/Evo.h"/>
   </compounddef>
