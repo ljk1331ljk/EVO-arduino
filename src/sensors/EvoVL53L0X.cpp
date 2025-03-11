@@ -5,13 +5,18 @@ EvoVL53L0X::EvoVL53L0X(I2CChannel channel)
     _channel = channel;
 }
 
-void EvoVL53L0X::begin()
+void EvoVL53L0X::begin(bool continuous)
 {
 
     i2CDevice.selectChannel(_channel);
     if (!this->lox.begin())
     {
         Serial.println(F("Failed to boot VL53L0X"));
+    }
+    if (continuous)
+    {
+        lox.startRangeContinuous(100);
+        delay(50);
     }
 }
 
@@ -23,5 +28,14 @@ int EvoVL53L0X::getDistance()
     {
         return this->measure.RangeMilliMeter;
     }
-    return 10000;
+    return 2000;
+}
+int EvoVL53L0X::getDistanceContinuous()
+{
+    i2CDevice.selectChannel(_channel);
+    if (lox.isRangeComplete())
+    {
+        return lox.readRangeResult();
+    }
+    return 2000;
 }

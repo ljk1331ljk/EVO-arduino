@@ -30,12 +30,18 @@ public:
     /**
      * @brief Initializes the VL53L0X sensor.
      */
-    void begin();
+    void begin(bool continuous = false);
 
     /**
      * @brief Retrieves the distance measured by the sensor.
-     * @return Distance in millimeters.
+     * @return Distance in millimeters. Returns 2000 when there is an error or when maximum reading range is reached.
      */
     int getDistance();
+
+    /**
+     * @brief Retrieves the distance measured by the sensor in continuous mode.
+     * @return Distance in millimeters. Returns 2000 when there is an error or when maximum reading range is reached.
+     */
+    int getDistanceContinuous();
 };
 #endif
