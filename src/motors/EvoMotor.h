@@ -77,8 +77,8 @@ private:
         COUNT,
         ANGLE,
         TARGET,
-        HOLDPOS,
         STALLED,
+        HOLDPOS,
     } _runMode = runMode::NONE;
 
     MotorType _motorType;
