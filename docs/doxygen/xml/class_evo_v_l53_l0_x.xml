@@ -111,10 +111,20 @@
 <para>Initializes the VL53L0X sensor. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>continuous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets the sensor in continuous or non-continuous mode; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="33" column="10"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="34" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_v_l53_l0_x_1ae069516a043dd39f891d283ed66e92eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -132,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="39" column="9"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="40" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_v_l53_l0_x_1a8bf3c53892b5ebd18b1fc42815083efc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -150,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoVL53L0X.h" line="45" column="9"/>
+        <location file="src/sensors/EvoVL53L0X.h" line="46" column="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -158,7 +168,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EvoVL53L0X.h" line="15" column="1" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="16" bodyend="46"/>
+    <location file="src/sensors/EvoVL53L0X.h" line="15" column="1" bodyfile="src/sensors/EvoVL53L0X.h" bodystart="16" bodyend="47"/>
     <listofallmembers>
       <member refid="class_evo_v_l53_l0_x_1a2cfe6c4e89b58435760388f7aab24d53" prot="private" virt="non-virtual"><scope>EvoVL53L0X</scope><name>_channel</name></member>
       <member refid="class_evo_v_l53_l0_x_1ab53df5bac324aa2b6673d1d6f763ee11" prot="public" virt="non-virtual"><scope>EvoVL53L0X</scope><name>begin</name></member>

@@ -29,6 +29,7 @@ public:
 
     /**
      * @brief Initializes the VL53L0X sensor.
+     * @param continuous Sets the sensor in continuous or non-continuous mode;
      */
     void begin(bool continuous = false);
 
