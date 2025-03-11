@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="28" column="41" bodyfile="src/EVOX1.h" bodystart="28" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="44" column="41" bodyfile="src/EVOX1.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v_o_x1_1ac35df0bfa755ece3175697b8c22aeb00" prot="private" static="no" mutable="no">
         <type>Adafruit_NeoPixel</type>
@@ -32,7 +32,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="33" column="23" bodyfile="src/EVOX1.h" bodystart="33" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="49" column="23" bodyfile="src/EVOX1.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_v_o_x1_1a3e58b33added127cb5219d4b6fdbec4a" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t EVOX1::_fontSize</definition>
+        <argsstring></argsstring>
+        <name>_fontSize</name>
+        <qualifiedname>EVOX1::_fontSize</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Size of font for display. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="54" column="13" bodyfile="src/EVOX1.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_e_v_o_x1_1a43bd32c1a1b0d97ab5aadade389289b1" prot="private" static="no" mutable="no">
+        <type>PinState</type>
+        <definition>PinState EVOX1::pinState</definition>
+        <argsstring></argsstring>
+        <name>pinState</name>
+        <qualifiedname>EVOX1::pinState</qualifiedname>
+        <initializer>= RGB_LED_STATE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="60" column="14" bodyfile="src/EVOX1.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v_o_x1_1a0e80d22348855596141d70accba4a63e" prot="private" static="no" mutable="no">
         <type>I2CDevice &amp;</type>
@@ -48,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="48" column="15" bodyfile="src/EVOX1.h" bodystart="48" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="75" column="15" bodyfile="src/EVOX1.h" bodystart="75" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-attrib">
@@ -66,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="71" column="16" bodyfile="src/EVOX1.h" bodystart="71" bodyend="-1"/>
+        <location file="src/EVOX1.h" line="99" column="16" bodyfile="src/EVOX1.h" bodystart="99" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -86,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="38" column="5"/>
+        <location file="src/EVOX1.h" line="65" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a555775df46b67fb8b35be45894463eab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_e_v_o_x1" kindref="compound">EVOX1</ref> &amp;</type>
@@ -104,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="43" column="11"/>
+        <location file="src/EVOX1.h" line="70" column="11"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -124,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="55" column="5" bodyfile="src/EVOX1.h" bodystart="55" bodyend="57"/>
+        <location file="src/EVOX1.h" line="82" column="5" bodyfile="src/EVOX1.h" bodystart="82" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1acfa5db0e8275e769bf7a44eb862567a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -139,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="76" column="10"/>
+        <location file="src/EVOX1.h" line="104" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a1ce7c07c25a2a66dda417208d04cf658" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="82" column="10"/>
+        <location file="src/EVOX1.h" line="110" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a5a17f181e3fe81dccaea80148e01cc5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -223,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="91" column="9"/>
+        <location file="src/EVOX1.h" line="119" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a2d8b5b3b782f5cf68b0032798192d076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -241,7 +272,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="99" column="11"/>
+        <location file="src/EVOX1.h" line="127" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a98c96b3a7ec90a3065371fc246f7ec1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -259,7 +290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="105" column="11"/>
+        <location file="src/EVOX1.h" line="133" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a5dc350b8ace794ae36b14564905d21ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>float</type>
@@ -277,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="111" column="11"/>
+        <location file="src/EVOX1.h" line="139" column="11"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a9bcae9bed5af1697e95853e34e032744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -292,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="118" column="10"/>
+        <location file="src/EVOX1.h" line="146" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a596f6a9e60e2c410ac663f720f0a0f59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -339,7 +370,7 @@
 <parametername>x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>X-coordinate position. </para>
+<para>X-coordinate position (0-128). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -347,7 +378,7 @@
 <parametername>y</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Y-coordinate position. </para>
+<para>Y-coordinate position (0-64). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -371,7 +402,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="128" column="10"/>
+        <location file="src/EVOX1.h" line="156" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1aa22b3f7707142bf83d9c37f51732dbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -418,7 +449,7 @@
 <parametername>x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>X-coordinate position. </para>
+<para>X-coordinate position (0-128). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -426,7 +457,7 @@
 <parametername>y</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Y-coordinate position. </para>
+<para>Y-coordinate position (0-64). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -450,7 +481,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="138" column="10"/>
+        <location file="src/EVOX1.h" line="166" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a31f6412aca8e1e0b424ebaab2cc12d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -497,7 +528,7 @@
 <parametername>x</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>X-coordinate position. </para>
+<para>X-coordinate position (0-128). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -505,7 +536,7 @@
 <parametername>y</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Y-coordinate position. </para>
+<para>Y-coordinate position (0-64). </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -529,7 +560,103 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="148" column="10"/>
+        <location file="src/EVOX1.h" line="176" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_v_o_x1_1aba2d0ef27e85bd9293d77a50cdbe5dbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EVOX1::writeLineToDisplay</definition>
+        <argsstring>(int value, int line, bool clear=false, bool draw=false)</argsstring>
+        <name>writeLineToDisplay</name>
+        <qualifiedname>EVOX1::writeLineToDisplay</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="178" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_v_o_x1_1a64746a53d6c97e51258f6d2b2c6a16e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EVOX1::writeLineToDisplay</definition>
+        <argsstring>(double f, int line, bool clear=false, bool draw=false)</argsstring>
+        <name>writeLineToDisplay</name>
+        <qualifiedname>EVOX1::writeLineToDisplay</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="180" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_v_o_x1_1ab9143ac79b8a68ca39faaac9b8f14098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EVOX1::writeLineToDisplay</definition>
+        <argsstring>(const char *c, int line, bool clear=false, bool draw=false)</argsstring>
+        <name>writeLineToDisplay</name>
+        <qualifiedname>EVOX1::writeLineToDisplay</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="182" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a547b6e5ab9b035462cc1148031d37faf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -544,7 +671,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="153" column="10"/>
+        <location file="src/EVOX1.h" line="187" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a4524bcd7f2e78decfeadffb33a5555a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -573,7 +700,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="159" column="10"/>
+        <location file="src/EVOX1.h" line="193" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a1c1b7f315b41d4802c4a6e56220b37f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -582,13 +709,121 @@
         <name>waitForButton</name>
         <qualifiedname>EVOX1::waitForButton</qualifiedname>
         <briefdescription>
-<para>Waits for a button press before continuing execution. </para>
+<para>Waits for a button press and release before continuing execution. (To be deprecated, use waitForBumped(int debouncems)) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="166" column="10"/>
+        <location file="src/EVOX1.h" line="200" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_v_o_x1_1ab9578f4c445db1302952166848d52e7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EVOX1::waitForPress</definition>
+        <argsstring>(int debouncems=0)</argsstring>
+        <name>waitForPress</name>
+        <qualifiedname>EVOX1::waitForPress</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>debouncems</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Waits for a button press before continuing execution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debouncems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delay in milliseconds after button is pressed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="206" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_v_o_x1_1aebc87ebd48a283cc52cb2150cc1b79fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EVOX1::waitForRelease</definition>
+        <argsstring>(int debouncems=0)</argsstring>
+        <name>waitForRelease</name>
+        <qualifiedname>EVOX1::waitForRelease</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>debouncems</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Waits for a button released before continuing execution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debouncems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delay in milliseconds after button is released. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="212" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_v_o_x1_1add6dcc30412b45d868d3f85c07ecc21a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EVOX1::waitForBump</definition>
+        <argsstring>(int debouncems=0)</argsstring>
+        <name>waitForBump</name>
+        <qualifiedname>EVOX1::waitForBump</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>debouncems</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Waits for a button press and release before continuing execution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debouncems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>delay in milliseconds after button is pressed and button is released. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="218" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_e_v_o_x1_1a7d956df679f8d7f3cb1573a07d478a3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_e_v_o_x1_8h_1aa46074d34fe2d6631c6bd9dc74633657" kindref="member">ButtonState</ref></type>
+        <definition>ButtonState EVOX1::getButton</definition>
+        <argsstring>()</argsstring>
+        <name>getButton</name>
+        <qualifiedname>EVOX1::getButton</qualifiedname>
+        <briefdescription>
+<para>Gets the state of the button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The state of the button. PRESSED or RELEASED. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/EVOX1.h" line="224" column="17"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a0b6466b1faaf530c58c3cd8dcfb974d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -629,7 +864,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="175" column="10"/>
+        <location file="src/EVOX1.h" line="233" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a7257fd59f8b9fc14e983e898d17ad9e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -682,7 +917,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="185" column="10"/>
+        <location file="src/EVOX1.h" line="243" column="10"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -702,7 +937,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="62" column="18" bodyfile="src/EVOX1.h" bodystart="62" bodyend="66"/>
+        <location file="src/EVOX1.h" line="90" column="18" bodyfile="src/EVOX1.h" bodystart="90" bodyend="94"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -711,8 +946,9 @@
     <detaileddescription>
 <para>This class implements a singleton pattern to ensure only one instance is created. </para>
     </detaileddescription>
-    <location file="src/EVOX1.h" line="22" column="1" bodyfile="src/EVOX1.h" bodystart="23" bodyend="186"/>
+    <location file="src/EVOX1.h" line="38" column="1" bodyfile="src/EVOX1.h" bodystart="39" bodyend="244"/>
     <listofallmembers>
+      <member refid="class_e_v_o_x1_1a3e58b33added127cb5219d4b6fdbec4a" prot="private" virt="non-virtual"><scope>EVOX1</scope><name>_fontSize</name></member>
       <member refid="class_e_v_o_x1_1acfa5db0e8275e769bf7a44eb862567a6" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>begin</name></member>
       <member refid="class_e_v_o_x1_1a68727c7ee42efbbbb8a83aad2d8dc026" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>charger</name></member>
       <member refid="class_e_v_o_x1_1a9bcae9bed5af1697e95853e34e032744" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>clearDisplay</name></member>
@@ -722,17 +958,25 @@
       <member refid="class_e_v_o_x1_1ad6fa48fd17460ccbe0f4d415355d99ad" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>EVOX1</name></member>
       <member refid="class_e_v_o_x1_1a5dc350b8ace794ae36b14564905d21ce" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>getBattery</name></member>
       <member refid="class_e_v_o_x1_1a98c96b3a7ec90a3065371fc246f7ec1a" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>getBottomBattery</name></member>
+      <member refid="class_e_v_o_x1_1a7d956df679f8d7f3cb1573a07d478a3f" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>getButton</name></member>
       <member refid="class_e_v_o_x1_1af3a2cbe75b2c841d30b2031845780e25" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>getInstance</name></member>
       <member refid="class_e_v_o_x1_1a2d8b5b3b782f5cf68b0032798192d076" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>getTopBattery</name></member>
       <member refid="class_e_v_o_x1_1a0e80d22348855596141d70accba4a63e" prot="private" virt="non-virtual"><scope>EVOX1</scope><name>i2CDevice</name></member>
       <member refid="class_e_v_o_x1_1a555775df46b67fb8b35be45894463eab" prot="private" virt="non-virtual"><scope>EVOX1</scope><name>operator=</name></member>
+      <member refid="class_e_v_o_x1_1a43bd32c1a1b0d97ab5aadade389289b1" prot="private" virt="non-virtual"><scope>EVOX1</scope><name>pinState</name></member>
       <member refid="class_e_v_o_x1_1a0b6466b1faaf530c58c3cd8dcfb974d6" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>playTone</name></member>
       <member refid="class_e_v_o_x1_1ac35df0bfa755ece3175697b8c22aeb00" prot="private" virt="non-virtual"><scope>EVOX1</scope><name>rgb</name></member>
       <member refid="class_e_v_o_x1_1a5a17f181e3fe81dccaea80148e01cc5e" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>scanI2CChannel</name></member>
       <member refid="class_e_v_o_x1_1a1ce7c07c25a2a66dda417208d04cf658" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>selectI2CChannel</name></member>
       <member refid="class_e_v_o_x1_1a4524bcd7f2e78decfeadffb33a5555a8" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>setFontSize</name></member>
       <member refid="class_e_v_o_x1_1a7257fd59f8b9fc14e983e898d17ad9e7" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>setRGB</name></member>
+      <member refid="class_e_v_o_x1_1add6dcc30412b45d868d3f85c07ecc21a" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>waitForBump</name></member>
       <member refid="class_e_v_o_x1_1a1c1b7f315b41d4802c4a6e56220b37f9" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>waitForButton</name></member>
+      <member refid="class_e_v_o_x1_1ab9578f4c445db1302952166848d52e7b" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>waitForPress</name></member>
+      <member refid="class_e_v_o_x1_1aebc87ebd48a283cc52cb2150cc1b79fe" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>waitForRelease</name></member>
+      <member refid="class_e_v_o_x1_1aba2d0ef27e85bd9293d77a50cdbe5dbc" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>writeLineToDisplay</name></member>
+      <member refid="class_e_v_o_x1_1a64746a53d6c97e51258f6d2b2c6a16e4" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>writeLineToDisplay</name></member>
+      <member refid="class_e_v_o_x1_1ab9143ac79b8a68ca39faaac9b8f14098" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>writeLineToDisplay</name></member>
       <member refid="class_e_v_o_x1_1a596f6a9e60e2c410ac663f720f0a0f59" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>writeToDisplay</name></member>
       <member refid="class_e_v_o_x1_1aa22b3f7707142bf83d9c37f51732dbb3" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>writeToDisplay</name></member>
       <member refid="class_e_v_o_x1_1a31f6412aca8e1e0b424ebaab2cc12d14" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>writeToDisplay</name></member>

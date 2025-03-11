@@ -3,6 +3,7 @@
   <compounddef id="dir_7349e89ef19c117195f8e371603e1b1f" kind="dir">
     <compoundname>src/sensors</compoundname>
     <innerfile refid="_e_v3_color_sensor_8h">EV3ColorSensor.h</innerfile>
+    <innerfile refid="_evo_husky_lens_8h">EvoHuskyLens.h</innerfile>
     <innerfile refid="_evo_t_c_s34725_8h">EvoTCS34725.h</innerfile>
     <innerfile refid="_evo_v_l53_l0_x_8h">EvoVL53L0X.h</innerfile>
     <briefdescription>
