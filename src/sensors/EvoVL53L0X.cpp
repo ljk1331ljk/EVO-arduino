@@ -28,7 +28,7 @@ int EvoVL53L0X::getDistance()
     {
         return this->measure.RangeMilliMeter;
     }
-    return 0;
+    return 2000;
 }
 int EvoVL53L0X::getDistanceContinuous()
 {
@@ -37,5 +37,5 @@ int EvoVL53L0X::getDistanceContinuous()
     {
         return lox.readRangeResult();
     }
-    return 10000;
+    return 2000;
 }
