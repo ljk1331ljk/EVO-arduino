@@ -4,6 +4,7 @@
     <compoundname>EvoHuskyLens.h</compoundname>
     <includes local="yes">../helper/EvoI2CDevice.h</includes>
     <includes local="no">HUSKYLENS.h</includes>
+    <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
     <incdepgraph>
       <node id="2">
         <label>../helper/EvoI2CDevice.h</label>
@@ -20,6 +21,18 @@
         <label>HUSKYLENS.h</label>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Evo.h</label>
+        <link refid="_evo_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/sensors/EvoHuskyLens.h</label>
+        <link refid="_evo_husky_lens_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innerclass refid="class_evo_husky_lens" prot="public">EvoHuskyLens</innerclass>
     <briefdescription>
     </briefdescription>
