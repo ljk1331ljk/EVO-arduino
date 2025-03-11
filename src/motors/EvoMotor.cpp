@@ -1,30 +1,20 @@
 #include "EvoMotor.h"
 
-int clamp(int value, int min, int max)
-{
-    if (value < min)
-        return min;
-    else if (value > max)
-        return max;
-    else
-        return value;
-}
-
 EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
 {
     switch (motorType)
     {
     case GENERICWITHENCODER:
-        setParameters(motorPort, motorFlip, 4000, 100, 5, 30, true, 360);
+        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 360);
         break;
     case GENERICWITHOUTENCODER:
         setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
         break;
     case EV3LargeMotor:
-        setParameters(motorPort, motorFlip, 4000, 100, 5, 30, true, 720);
+        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 720);
         break;
     case EV3MediumMotor:
-        setParameters(motorPort, motorFlip, 4000, 100, 5, 30, true, 720);
+        setParameters(motorPort, motorFlip, 4000, 150, 150, 700, true, 720);
         break;
     case GeekServoDCMotor:
         setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
@@ -36,10 +26,10 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
         setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 1204);
         break;
     case EVOMotor300:
-        setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 2800);
+        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 2800);
         break;
     case EVOMotor100:
-        setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 8400);
+        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 8400);
         break;
     }
 
@@ -91,11 +81,12 @@ void EvoMotor::begin()
     encoder.clearCount();
 
     setStopBehaviour(BRAKE);
-    setStallThresholds(50, 10);
+    setStallThreshold(360);
 
     coast();
 
-    xTaskCreate(motorControlTask, "Motor Control Task", 2048, this, 1, NULL);
+    xTaskCreate(motorControlTask, "Motor Control Task", 2048, this, 1, &motorTaskHandle);
+    xTaskCreate(motorSpeedTask, "Motor Speed Task", 1024, this, 1, NULL);
 }
 
 void EvoMotor::flipEncoderDirection(bool flip)
@@ -136,6 +127,7 @@ bool EvoMotor::isEncoderAvailable()
 {
     return _encoderAvailable;
 }
+
 // Method to set encoder count per revolution
 void EvoMotor::setCountPerRevolution(int countPerRevolution)
 {
@@ -178,6 +170,7 @@ void EvoMotor::resetAngle()
     encoder.setCount(0);
 }
 
+// Method to set angle
 void EvoMotor::setAngle(int angle)
 {
     encoder.setCount(angle * _countPerRevolution / 360);
@@ -186,26 +179,25 @@ void EvoMotor::setAngle(int angle)
 // Method returns if the motor is stalled
 bool EvoMotor::isStalled()
 {
-    return _stalled;
+    return this->getSpeed() < this->_stallThreshold;
 }
 
 // Method to set the motor stall thersholds
-void EvoMotor::setStallThresholds(int timems, int angle)
+void EvoMotor::setStallThreshold(int threshold)
 {
-    _stallTime = timems;
-    _stallCountThreshold = angle;
+    _stallThreshold = threshold;
 }
 
 // Method to stop the motor
-void EvoMotor::setStopBehaviour(MotorState motorStopState)
+void EvoMotor::setStopBehaviour(MotorStop motorStopState)
 {
-    _motorStopState = motorStopState;
+    _motorStopBehaviour = motorStopState;
 }
 
 // Method to stop the motor using motorStopState
 void EvoMotor::stop()
 {
-    switch (_motorStopState)
+    switch (_motorStopBehaviour)
     {
     case BRAKE:
         brake();
@@ -220,40 +212,35 @@ void EvoMotor::stop()
         brake();
     }
 }
+
 // Method to stop the motor
 void EvoMotor::coast()
 {
-    this->_motorState = COAST;
+    this->move(0);
 }
 
 // Method to brake the motor
 void EvoMotor::brake()
 {
-    this->_motorState = BRAKE;
     driver.setPWM(_motorPins.power1, 4096, 0);
     driver.setPWM(_motorPins.power2, 4096, 0);
 }
 
 void EvoMotor::hold()
 {
-    this->runTarget(_maxSpd, this->getAngle());
-    // this->_targetAngle = this->getCount();
-    // this->_motorState = TARGET;
+    this->_targetValue = this->getAngle();
+    this->_targetSpeed = this->_holdPower;
+    this->_runMode = runMode::HOLDPOS;
+    this->resumeMotorTask();
+}
+void EvoMotor::setHoldPower(uint16_t power)
+{
+    this->_holdPower = power;
 }
 
 void EvoMotor::move(int speed)
 {
-    speed = clamp(speed, _maxSpd * -1, _maxSpd);
-
-    if (speed > 0)
-    {
-        speed = clamp(speed, _minSpd, _maxSpd);
-    }
-    else if (speed < 0)
-    {
-        speed = clamp(speed, _maxSpd * -1, _minSpd * -1);
-    }
-
+    speed = constrain(speed, -4096, 4096);
     if (speed > 0)
     {
         driver.setPWM(_motorPins.power1, 0, speed);
@@ -266,134 +253,296 @@ void EvoMotor::move(int speed)
     }
     else
     {
-        driver.setPWM(_motorPins.power1, 0, 4096);
-        driver.setPWM(_motorPins.power2, 0, 4096);
+        driver.setPWM(_motorPins.power1, 0, 0);
+        driver.setPWM(_motorPins.power2, 0, 0);
     }
 }
 
 void EvoMotor::run(int speed)
 {
-    this->_motorState = RUN;
+    this->pauseMotorTask();
     this->move(speed);
-    vTaskDelay(1 / portTICK_PERIOD_MS);
 }
 
-void EvoMotor::runCount(int speed, int count)
+void EvoMotor::runCount(int speed, int count, bool blocking)
 {
-    this->resetCount();
-    this->run(speed);
-    while (abs(this->getCount()) < abs(count))
-        vTaskDelay(1);
-    ;
-    this->stop();
+    if (blocking)
+    {
+        this->pauseMotorTask();
+        this->resetCount();
+        this->move(speed);
+        while (abs(this->getCount()) < abs(count))
+            vTaskDelay(1);
+        this->stop();
+    }
+    else
+    {
+        this->_targetValue = count;
+        this->_targetSpeed = speed;
+        this->_runMode = runMode::COUNT;
+        this->resumeMotorTask();
+    }
 }
 
 // Method to run the motor for a specified number of degrees
-void EvoMotor::runAngle(int speed, int angle)
+void EvoMotor::runAngle(int speed, int angle, bool blocking)
 {
-    this->resetAngle();
-    this->run(speed);
-    while (abs(this->getAngle()) < abs(angle))
-        vTaskDelay(1);
-    ;
-    this->stop();
-}
-
-void EvoMotor::runTime(int speed, int timeMS)
-{
-    this->run(speed);
-    int timeNow = millis();
-    while ((millis() - timeNow) < timeMS)
-    {
-        this->run(speed);
-        vTaskDelay(10);
-    }
-    this->stop();
-}
-
-void EvoMotor::runTarget(int speed, int angle, bool blocking)
-{
-    this->_targetSpeed = speed;
-    this->_targetAngle = angle;
-    this->_completed = false;
-    this->_motorState = TARGET;
     if (blocking)
     {
-        while (abs(this->getAngle() - this->_targetAngle) > 2)
+        this->pauseMotorTask();
+        this->resetAngle();
+        this->move(speed);
+        while (abs(this->getAngle()) < abs(angle))
+            vTaskDelay(1);
+        this->stop();
+    }
+    else
+    {
+        this->_targetValue = angle;
+        this->_targetSpeed = speed;
+        this->_runMode = runMode::ANGLE;
+        this->resumeMotorTask();
+    }
+}
+
+void EvoMotor::runTime(int speed, int timeMS, bool blocking)
+{
+    if (blocking)
+    {
+        this->pauseMotorTask();
+        this->move(speed);
+        vTaskDelay(timeMS / portTICK_PERIOD_MS);
+        this->stop();
+    }
+    else
+    {
+        this->_targetValue = timeMS;
+        this->_targetSpeed = speed;
+        this->_runMode = runMode::TIME;
+        this->resumeMotorTask();
+    }
+}
+
+void EvoMotor::runTarget(int speed, int angle, MotorStop then, bool blocking)
+{
+    if (blocking)
+    {
+        int count = 0;
+        int _error = 0, _previousError = 0;
+        int _motorSpeed;
+        while (true)
+        {
+            _error = angle - this->getAngle();
+            _motorSpeed = _error * _kp + (_error - _previousError) * _kd;
+            _motorSpeed = constrain(_motorSpeed, 0 - speed, speed);
+            this->move(_motorSpeed);
+            _previousError = _error;
+            if (abs(this->getAngle() - angle) < 3)
+            {
+
+                count++;
+                if (count > 10)
+                    break;
+            }
+            else
+            {
+                count = 0;
+            }
+            vTaskDelay(1);
+        }
+        switch (then)
+        {
+        case BRAKE:
+            this->brake();
+            break;
+        case COAST:
+            this->coast();
+            break;
+        case HOLD:
+            this->hold();
+            break;
+        default:
+            break;
+        }
+    }
+    else
+    {
+        this->_targetSpeed = speed;
+        this->_targetValue = angle;
+        this->_targetThen = then;
+        this->_runMode = runMode::TARGET;
+        this->resumeMotorTask();
+    }
+}
+
+void EvoMotor::setTargetPD(float kp, float kd)
+{
+    _kp = kp;
+    _kd = kd;
+}
+
+void EvoMotor::getTargetPD(float *kp, float *kd)
+{
+    *kp = _kp;
+    *kd = _kd;
+}
+
+void EvoMotor::runUntilStalled(int speed, bool blocking)
+{
+    if (blocking)
+    {
+        this->pauseMotorTask();
+        this->move(speed);
+        delay(300);
+        while (this->getSpeed() > _stallThreshold)
         {
             vTaskDelay(1);
         }
+        this->stop();
+    }
+    else
+    {
+        this->_targetSpeed = speed;
+        this->_runMode = runMode::STALLED;
+        this->resumeMotorTask();
     }
 }
 
-void EvoMotor::runUntilStalled(int speed)
+void EvoMotor::pauseMotorTask()
 {
-    this->run(speed);
-    delay(_stallTime * 2);
-    _stalled = false;
-    while (!this->_stalled)
+    if (!this->motorTaskSuspended)
     {
-        vTaskDelay(1);
+        vTaskSuspend(this->motorTaskHandle);
+        this->motorTaskSuspended = true;
     }
-    this->stop();
+}
+
+void EvoMotor::resumeMotorTask()
+{
+    if (this->motorTaskSuspended)
+    {
+        vTaskResume(this->motorTaskHandle);
+        this->motorTaskSuspended = false;
+    }
 }
 
 void EvoMotor::motorControlTask(void *parameter)
 {
     EvoMotor *motor = static_cast<EvoMotor *>(parameter);
     int _motorSpeed;
-    int _error, _perror = 0;
-    int encoder, prevencoder = 0, lastreadtime = 0;
-    int _measuredSpeed;
-    int timeNow, lastReadTime = 0;
+    int timeNow;
+    int count = 0;
+    int _error = 0, _previousError = 0;
     for (;;)
     {
-        encoder = motor->getAngle();
-        switch (motor->_motorState)
+        switch (motor->_runMode)
         {
-        case BRAKE:
+        case runMode::NONE:
             break;
-        case TARGET:
-            _error = encoder - motor->_targetAngle;
-
-            _motorSpeed = clamp(_error * motor->_kp * -1 + (_error - _perror) * motor->_kd, motor->_targetSpeed * -1, motor->_targetSpeed);
-            motor->move(_motorSpeed);
-            _perror = _error;
-            break;
-        case COAST:
-            motor->move(0);
-            break;
-        case RUN:
+        case runMode::TIME:
+            motor->resetAngle();
+            motor->move(motor->_targetSpeed);
             timeNow = millis();
-            if ((timeNow - lastReadTime) > motor->_stallTime)
+            while ((millis() - timeNow) < motor->_targetValue)
+                vTaskDelay(1);
+            motor->stop();
+            motor->pauseMotorTask();
+            break;
+        case runMode::ANGLE:
+            motor->resetAngle();
+            motor->move(motor->_targetSpeed);
+            while (abs(motor->getAngle()) < abs(motor->_targetValue))
+                vTaskDelay(1);
+            motor->stop();
+            motor->pauseMotorTask();
+            break;
+        case runMode::COUNT:
+            motor->resetCount();
+            motor->move(motor->_targetSpeed);
+            while (abs(motor->getCount()) < abs(motor->_targetValue))
+                vTaskDelay(1);
+            motor->stop();
+            motor->pauseMotorTask();
+            break;
+        case runMode::TARGET:
+            count = 0;
+            _error = 0;
+            _previousError = 0;
+            for (;;)
             {
-                if (abs(encoder - prevencoder) < motor->_stallCountThreshold)
+                _error = motor->_targetValue - motor->getAngle();
+                _motorSpeed = _error * motor->_kp + (_error - _previousError) * motor->_kd;
+                _motorSpeed = constrain(_motorSpeed, 0 - motor->_targetSpeed, motor->_targetSpeed);
+                motor->move(_motorSpeed);
+                _previousError = _error;
+                if (abs(motor->getAngle() - motor->_targetValue) < 3)
                 {
-                    motor->_stalled = true;
+                    count++;
+                    if (count > 10)
+                    {
+                        break;
+                    }
                 }
                 else
                 {
-                    motor->_stalled = false;
+                    count = 0;
                 }
-                lastReadTime = timeNow;
-                prevencoder = encoder;
+                vTaskDelay(1);
+            }
+            switch (motor->_targetThen)
+            {
+            case BRAKE:
+                motor->brake();
+                motor->pauseMotorTask();
+                break;
+            case COAST:
+                motor->coast();
+                motor->pauseMotorTask();
+                break;
+            case HOLD:
+                motor->_runMode = runMode::HOLDPOS;
+                break;
+            default:
+                break;
             }
             break;
+        case runMode::STALLED:
+            motor->move(motor->_targetSpeed);
+            delay(300);
+            while (motor->getSpeed() > motor->_stallThreshold)
+            {
+                vTaskDelay(1);
+            }
+            motor->stop();
+            motor->pauseMotorTask();
+        case runMode::HOLDPOS:
+            _error = motor->_targetValue - motor->getAngle();
+            _motorSpeed = _error * motor->_kp + (_error - _previousError) * motor->_kd;
+            _motorSpeed = constrain(_motorSpeed, 0 - motor->_targetSpeed, motor->_targetSpeed);
+            motor->move(_motorSpeed);
+            _previousError = _error;
+            vTaskDelay(1);
+            break;
         }
-        vTaskDelay(1);
+
+        vTaskDelay(10);
     }
 }
 
-void EvoMotor::setPID(float kp, float ki, float kd)
+void EvoMotor::motorSpeedTask(void *parameter)
 {
-    _kp = kp;
-    _ki = ki;
-    _kd = kd;
+    EvoMotor *motor = static_cast<EvoMotor *>(parameter);
+    long lastEncoder = 0, currentEncoder = 0;
+    for (;;)
+    {
+        currentEncoder = motor->getAngle();
+        motor->_measuredSpeed = (currentEncoder - lastEncoder) * 10;
+        lastEncoder = currentEncoder;
+        vTaskDelay(100 / portTICK_PERIOD_MS);
+    }
 }
 
-void EvoMotor::getPID(float *kp, float *ki, float *kd)
+int EvoMotor::getSpeed()
 {
-    *kp = _kp;
-    *ki = _ki;
-    *kd = _kd;
+    return this->_measuredSpeed;
 }

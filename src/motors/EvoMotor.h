@@ -53,16 +53,14 @@ enum MotorPort
 };
 
 /**
- * @enum MotorState
+ * @enum MotorStop
  * @brief Enumeration of motor states.
  */
-enum MotorState
+enum MotorStop
 {
-    RUN,    /**< Motor is running */
-    TARGET, /**< Motor is moving to a target position */
-    BRAKE,  /**< Motor is braking */
-    COAST,  /**< Motor is coasting */
-    HOLD    /**< Motor is holding position */
+    BRAKE, /**< Motor is braking */
+    COAST, /**< Motor is coasting */
+    HOLD   /**< Motor is holding position */
 };
 
 /**
@@ -72,6 +70,17 @@ enum MotorState
 class EvoMotor
 {
 private:
+    enum runMode
+    {
+        NONE,
+        TIME,
+        COUNT,
+        ANGLE,
+        TARGET,
+        HOLDPOS,
+        STALLED,
+    } _runMode = runMode::NONE;
+
     MotorType _motorType;
     MotorPort _motorPort;
     MotorPins _motorPins;
@@ -81,16 +90,21 @@ private:
     int _countPerRevolution;
 
     // Motor runtime parameters
-    MotorState _motorState = COAST, _motorStopState = COAST;
-    int _stallTime, _stallCountThreshold;
-    int _targetSpeed, _targetAngle = 0, _targetEncoder = 0;
-    bool _completed, _stalled;
-    float _kp = 5, _ki = 0.1, _kd = 30;
+    MotorStop _motorState = COAST, _motorStopBehaviour = BRAKE;
+    uint16_t _holdPower = 2000;
+    int _stallThreshold;
+    int _targetValue, _targetSpeed, _targetThen, _targetEncoder = 0;
+    int _measuredSpeed;
+    float _kp = 2000, _kd = 5000;
 
     ESP32Encoder encoder;
     EvoPWMDriver &driver = EvoPWMDriver::getInstance();
-
+    TaskHandle_t motorTaskHandle = NULL;
+    bool motorTaskSuspended;
+    void pauseMotorTask();
+    void resumeMotorTask();
     static void motorControlTask(void *parameter);
+    static void motorSpeedTask(void *parameter);
     void move(int speed);
     void setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, int minSpd, float kp, float kd, bool encoderAvailable, int countPerRevolution = 0);
 
@@ -151,15 +165,15 @@ public:
     int getCountPerRevolution();
 
     /**
+     * @brief Sets the encoder count.
+     */
+    void setCount(int count);
+
+    /**
      * @brief Gets the encoder count.
      * @return The encoder count.
      */
     int getCount();
-
-    /**
-     * @brief Sets the encoder count.
-     */
-    void setCount(int count);
 
     /**
      * @brief Resets the encoder count.
@@ -167,15 +181,15 @@ public:
     void resetCount();
 
     /**
+     * @brief Sets the current motor angle.
+     */
+    void setAngle(int degrees);
+
+    /**
      * @brief Gets the current motor angle.
      * @return The angle in degrees.
      */
     int getAngle();
-
-    /**
-     * @brief Sets the current motor angle.
-     */
-    void setAngle(int degrees);
 
     /**
      * @brief Resets the motor angle.
@@ -191,12 +205,12 @@ public:
     /**
      * @brief Sets motor stall thresholds.
      */
-    void setStallThresholds(int timems, int angle);
+    void setStallThreshold(int threshold);
 
     /**
      * @brief Sets motor stop behavior.
      */
-    void setStopBehaviour(MotorState motorStopState);
+    void setStopBehaviour(MotorStop motorStopState);
 
     /**
      * @brief Stops the motor based on the stop behaviour set using setStopBehaviour(MotorState motorStopState).
@@ -207,6 +221,12 @@ public:
      * @brief Holds the motor in its current position.
      */
     void hold();
+
+    /**
+     * @brief Set power used when holding
+     * @param power power to hold (0-4096)
+     */
+    void setHoldPower(uint16_t power);
 
     /**
      * @brief Removes power from the motors.
@@ -228,22 +248,25 @@ public:
      * @brief Runs the motor for a specified encoder count.
      * @param speed Motor speed.
      * @param count Encoder count.
+     * @param blocking Wait for action to be completed.
      */
-    void runCount(int speed, int count);
+    void runCount(int speed, int count, bool blocking = true);
 
     /**
      * @brief Runs the motor for a specified motor degree.
      * @param speed Motor speed.
      * @param degrees Motor degrees.
+     * @param blocking Wait for action to be completed.
      */
-    void runAngle(int speed, int degrees);
+    void runAngle(int speed, int degrees, bool blocking = true);
 
     /**
      * @brief Runs the motor for a specified time.
      * @param speed Motor speed.
      * @param timeMS Time in miliseconds.
+     * @param blocking Wait for action to be completed.
      */
-    void runTime(int speed, int timeMS);
+    void runTime(int speed, int timeMS, bool blocking = true);
 
     /**
      * @brief Runs the motor to a specified absolute position.
@@ -251,13 +274,7 @@ public:
      * @param degrees Motor absolute degree.
      * @param blocking Wait for action to be completed.
      */
-    void runTarget(int speed, int degrees, bool blocking = false);
-
-    /**
-     * @brief Runs the motor until it is stalled.
-     * @param speed Motor speed.
-     */
-    void runUntilStalled(int speed);
+    void runTarget(int speed, int angle, MotorStop then = MotorStop::HOLD, bool blocking = true);
 
     /**
      * @brief Sets PID control values for runTarget()
@@ -265,7 +282,7 @@ public:
      * @param ki Integral gain.
      * @param kd Derivative gain.
      */
-    void setPID(float kp, float ki, float kd);
+    void setTargetPD(float kp, float kd);
 
     /**
      * @brief Gets the PID control values for runTarget()
@@ -273,7 +290,20 @@ public:
      * @param ki Pointer to store integral gain.
      * @param kd Pointer to store derivative gain.
      */
-    void getPID(float *kp, float *ki, float *kd);
+    void getTargetPD(float *kp, float *kd);
+
+    /**
+     * @brief Runs the motor until it is stalled.
+     * @param speed Motor speed.
+     * @param blocking Wait for action to be completed.
+     */
+    void runUntilStalled(int speed, bool blocking = true);
+
+    /**
+     * @brief Gets the motor speed
+     * @return speed in deg/s
+     */
+    int getSpeed();
 };
 
 #endif

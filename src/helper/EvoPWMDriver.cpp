@@ -2,9 +2,14 @@
 
 void EvoPWMDriver::begin()
 {
-    pwm.begin();
-    pwm.setOscillatorFrequency(27000000);
-    pwm.setPWMFreq(100);
+    if (!begun)
+    {
+        pwm.begin();
+        pwm.reset();
+        pwm.setOscillatorFrequency(27000000);
+        pwm.setPWMFreq(100);
+        begun = true;
+    }
 }
 
 void EvoPWMDriver::setPWM(uint8_t channel, uint16_t on, uint16_t off)
