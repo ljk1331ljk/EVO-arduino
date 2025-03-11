@@ -30,12 +30,14 @@ public:
     /**
      * @brief Initializes the VL53L0X sensor.
      */
-    void begin();
+    void begin(bool continuous = false);
 
     /**
      * @brief Retrieves the distance measured by the sensor.
      * @return Distance in millimeters.
      */
     int getDistance();
+
+    int getDistanceContinuous();
 };
 #endif
