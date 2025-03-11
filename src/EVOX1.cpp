@@ -5,7 +5,10 @@ void EVOX1::begin()
     i2CDevice.selectChannel(SSD1309_CHANNEL);
     display.begin();
     this->setFontSize(8);
+
     charger.begin();
+    evoPWMDriver.begin();
+
     rgb.begin();
     setRGB(0, 0, 0);
 }

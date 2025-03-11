@@ -9,6 +9,7 @@
 #include <helper/X1pins.h>
 #include <helper/Tones.h>
 #include <helper/EvoI2CDevice.h>
+#include <helper/EvoPWMDriver.h>
 #include <helper/EvoBQ25887.h>
 #include <Adafruit_NeoPixel.h>
 #include <helper/U8g2/U8g2lib.h>
@@ -73,6 +74,11 @@ private:
      * @brief Singleton instance of I2CDevice.
      */
     I2CDevice &i2CDevice = I2CDevice::getInstance();
+
+    /**
+     * @brief Singleton instance of EvoPWMDriver.
+     */
+    EvoPWMDriver &evoPWMDriver = EvoPWMDriver::getInstance();
 
 public:
     /**
