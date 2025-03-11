@@ -13,5 +13,6 @@
 #include "sensors/EV3ColorSensor.h"
 #include "sensors/EvoTCS34725.h"
 #include "sensors/EvoVL53L0X.h"
+#include "sensors/EvoHuskyLens.h"
 
 #endif

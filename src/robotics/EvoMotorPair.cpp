@@ -20,7 +20,7 @@ void EvoMotorPair::setAcceleration(float accel, int accelDeg)
 void EvoMotorPair::setDeceleration(float decel, int decelDeg)
 {
     _decel = decel;
-    _decelDeg = _decelDeg;
+    _decelDeg = decelDeg;
 }
 
 void EvoMotorPair::setPD(float kp, float kd)
