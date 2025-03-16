@@ -14,5 +14,6 @@
 #include "sensors/EvoTCS34725.h"
 #include "sensors/EvoVL53L0X.h"
 #include "sensors/EvoHuskyLens.h"
+#include "sensors/EvoIMU.h"
 
 #endif
