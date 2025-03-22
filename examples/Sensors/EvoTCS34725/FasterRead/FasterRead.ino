@@ -1,20 +1,15 @@
 #include <Evo.h>
 
 EVOX1 evo;
-EvoTCS34725 cs(I2C8);
+EvoTCS34725 cs(I2C6);
 uint16_t rr, rg, rb, rc;
-float r, g, b;
-float h, s, v;
+float r, g, b, h, s, v;
 
 
 void setup() {
   Serial.begin(115200);
   evo.begin();
   cs.begin();
-  evo.writeToDisplay("Color Sensor Test", 0, 0, true, false);
-  evo.writeToDisplay("Battery:", 0, 16);
-  evo.writeToDisplay(evo.getBattery(), 50, 16, false, true);
-  evo.waitForButton();
   cs.setGain(TCS34725_GAIN_16X);
 }
 
