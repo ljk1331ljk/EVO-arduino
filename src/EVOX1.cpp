@@ -42,6 +42,11 @@ void EVOX1::playTone(uint frequency, int duration)
     tone(BUZZER_PIN, frequency, duration);
 }
 
+void EVOX1::flipDisplayOrientation(bool flip)
+{
+    display.setFlipMode(flip);
+}
+
 void EVOX1::setFontSize(uint8_t size)
 {
     _fontSize = size;
@@ -228,8 +233,8 @@ int EVOX1::scanI2CChannel(I2CChannel channel, uint8_t *addresses, int maxAddress
 
     for (uint8_t address = 1; address < 127; ++address)
     {
-        if (count < maxAddresses)
-            i2CDevice.isI2CConnected(address);
+        if ((count < maxAddresses) &&
+            i2CDevice.isI2CConnected(address))
         {
             addresses[count] = address;
             count++;
