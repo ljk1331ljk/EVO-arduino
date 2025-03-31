@@ -1,26 +1,30 @@
 #ifndef EVO_HC05_H
 #define EVO_HC05_H
 
-enum HC05Mode{
+#include <Arduino.h>
+#include "X1pins.h"
+
+enum HC05Mode
+{
     ATMODE,
     BLMODE
-}
-class EvoHC05{
-    private:
-        HC05Mode _mode;
-        int _pwr = HC05_PWR, _reset = HC05_RESET;
-        bool waitResponse(const char* c);
-    
-    public:
-        EvoHC05();
-        void begin();
-        void setMode(HC05Mode mode, int baud = 38400);
-        void factorySettings();
-        void setName(const char* newName);
-        void resetDevice();
-        void setBaud(const char* baud);
-        bool checkResponse();
-}
+};
+class EvoHC05
+{
+private:
+    HC05Mode _mode;
+    int _pwr = HC05_PWR, _reset = HC05_RESET;
+    bool waitResponse(const char *c);
 
+public:
+    EvoHC05();
+    void begin();
+    void setMode(HC05Mode mode, int baud = 38400);
+    bool factorySettings();
+    bool setName(const char *newName);
+    void resetDevice();
+    bool setBaud(int baud = 115200);
+    bool checkResponse();
+};
 
 #endif
