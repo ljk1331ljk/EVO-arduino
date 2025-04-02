@@ -95,5 +95,17 @@ public:
      * @return The angle in degrees.
      */
     int getAngle();
+
+    /**
+     * @brief Sets the use of IMU for movement.
+     * @param useIMU  Whether to use IMU (default: true).
+     */
+    void useIMU(bool useIMU = true);
+
+    void straight(int speed, int distance, bool brake = true);
+
+    void spotTurn(int speed, int angle, bool brake = true);
+
+    void pivotTurn(int speed, int angle, bool brake = true);
 };
 #endif
