@@ -2,6 +2,7 @@
 #define EVO_MOTORPAIR_H
 
 #include "../motors/EvoMotor.h"
+#include "../sensors/EvoBNO055.h"
 
 /**
  * @class EvoMotorPair
@@ -12,6 +13,8 @@ class EvoMotorPair
 private:
     EvoMotor *_m1;
     EvoMotor *_m2;
+    EvoBNO055 *_IMU;
+    bool _IMUAvailable = false, _useIMU = false;
     int _minSpeed = 800, _accelDeg = 2000, _decelDeg = 2000;
     float _accel = 8, _decel = 8, _kpSync = 20, _kdSync = 200;
 
@@ -20,8 +23,9 @@ public:
      * @brief Constructor to initialize a motor pair.
      * @param m1 Pointer to the first EvoMotor.
      * @param m2 Pointer to the second EvoMotor.
+     * @param imu Pointer to IMU
      */
-    EvoMotorPair(EvoMotor *m1, EvoMotor *m2);
+    EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoBNO055 *IMU = NULL);
 
     /**
      * @brief Sets the minimum speed for the motors.
@@ -96,13 +100,15 @@ public:
      */
     int getAngle();
 
-    /**
+    bool imuAvailable();
+    
+     * /**
      * @brief Sets the use of IMU for movement.
      * @param useIMU  Whether to use IMU (default: true).
      */
     void useIMU(bool useIMU = true);
 
-    void straight(int speed, int distance, bool brake = true);
+    void straight(int speed, int degrees, bool brake = true);
 
     void spotTurn(int speed, int angle, bool brake = true);
 
