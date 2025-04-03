@@ -216,7 +216,7 @@ ButtonState EVOX1::getButton()
 
 void EVOX1::setRGB(int r, int g, int b)
 {
-    this->pinState != RGB_LED_STATE;
+    this->pinState = RGB_LED_STATE;
     rgb.setPixelColor(0, rgb.Color(r, g, b));
     rgb.show();
 }
