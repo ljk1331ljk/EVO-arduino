@@ -223,6 +223,7 @@ void EvoMotor::coast()
 // Method to brake the motor
 void EvoMotor::brake()
 {
+    this->pauseMotorTask();
     driver.setPWM(_motorPins.power1, 4096, 0);
     driver.setPWM(_motorPins.power2, 4096, 0);
 }
