@@ -19,7 +19,9 @@ private:
     I2CChannel _channel;                             /**< I2C channel used for communication */
     I2CDevice &i2CDevice = I2CDevice::getInstance(); /**< Reference to the singleton I2CDevice instance */
     sensors_event_t event;                           /**< Event structure to hold sensor data */
-
+    float _referenceHeading = 0;                     /**< Reference heading for the sensor */
+    float _lastRelativeHeading = 0;
+    int _rotationCount = 0;
 public:
     /**
      * @brief Constructs an EvoTCS34725 object.
@@ -34,6 +36,18 @@ public:
      * @brief Initializes the BNO055 sensor.
      */
     bool begin();
+
+    /**
+     * @brief Sets the reference heading for the sensor.
+     */
+    void resetHeading();
+
+    /**
+     * @brief Get the Relative Heading object.
+     * @return Relative heading in degrees.
+     * @details The relative heading is the difference between the current heading and the reference heading.
+     */
+    float getRelativeHeading();
 
     /**
      * @brief Gets the Euler angles of the sensor.
