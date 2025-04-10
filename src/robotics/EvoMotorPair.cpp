@@ -1,18 +1,35 @@
 #include "EvoMotorPair.h"
 
-EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoBNO055 *imu)
+EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2, int wheelDiameter, int axleTrack, EvoBNO055 *imu)
 {
-    if (imu != NULL){
+    if (imu != NULL)
+    {
         _imu = imu;
         _imuAvailable = true;
     }
     _m1 = m1;
     _m2 = m2;
+    _wheelDiameter = wheelDiameter;
+    _axleTrack = axleTrack;
+    _gyroEncoderFactor = _axleTrack / _wheelDiameter;
 }
 
 void EvoMotorPair::setMinimumSpeed(int minSpeed)
 {
     _minSpeed = minSpeed;
+}
+
+void EvoMotorPair::setWheelDiameter(int wheelDiameter, int axleTrack)
+{
+    _wheelDiameter = wheelDiameter;
+    _axleTrack = axleTrack;
+    _gyroEncoderFactor = _axleTrack / _wheelDiameter;
+}
+
+void EvoMotorPair::getWheelDiameter(int *wheelDiameter, int *axleTrack)
+{
+    *wheelDiameter = _wheelDiameter;
+    *axleTrack = _axleTrack;
 }
 
 void EvoMotorPair::setAcceleration(float accel, int accelDeg)
@@ -72,19 +89,28 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         degToDecel = abs(degrees) * _accelDeg / (_accelDeg + _decelDeg); // assuming same rate of accel and decel
     }
     int currentLeftSpeed, currentRightSpeed;
-    while (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < degToDecel)
+    float leftEncoderRatio = leftSpeed / (leftSpeed + rightSpeed);
+    float rightEncoderRatio = rightSpeed / (leftSpeed + rightSpeed);
+
+    while (((abs(_m1->getAngle()) * leftEncoderRatio + abs(_m2->getAngle())) * rightEncoderRatio) < degToDecel)
     {
         if (leftSpeed == 0)
         {
             currentLeftSpeed = 0;
             currentRightSpeed = right * rightDir;
-            right += _accel;
+            if (right < abs(rightSpeed))
+            {
+                right += _accel;
+            }
         }
         else if (rightSpeed == 0)
         {
             currentLeftSpeed = left * leftDir;
             currentRightSpeed = 0;
-            left += _accel;
+            if (left < abs(leftSpeed))
+            {
+                left += _accel;
+            }
         }
         else
         {
@@ -110,13 +136,19 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         {
             currentLeftSpeed = 0;
             currentRightSpeed = right * rightDir;
-            right -= _decel;
+            if (right > _minSpeed)
+            {
+                right -= _decel;
+            }
         }
         else if (rightSpeed == 0)
         {
             currentLeftSpeed = left * leftDir;
             currentRightSpeed = 0;
-            left -= _decel;
+            if (left > _minSpeed)
+            {
+                left -= _decel;
+            }
         }
         else
         {
@@ -244,16 +276,19 @@ int EvoMotorPair::getAngle()
     return (_m1->getAngle() + _m2->getAngle());
 }
 
-bool EvoMotorPair::IMUAvailable(){
-    return _IMUAvailable;
-}
-    
-void EvoMotorPair::useIMU(bool useIMU = true){
-    _useIMU = useIMU;
+bool EvoMotorPair::imuAvailable()
+{
+    return _imuAvailable;
 }
 
-void EvoMotorPair::straightDegrees(int speed, int degrees, bool brake = true){
-        
+void EvoMotorPair::useIMU(bool useImu)
+{
+    _useImu = useImu;
+}
+
+void EvoMotorPair::straight(int speed, int degrees, bool brake)
+{
+
     int dir;
     int degToDecel, error, pError = 0;
     int PSync, DSync;
@@ -268,29 +303,32 @@ void EvoMotorPair::straightDegrees(int speed, int degrees, bool brake = true){
     {
         degToDecel = abs(degrees) * _accelDeg / (_accelDeg + _decelDeg); // assuming same rate of accel and decel
     }
-    
+
     _m1->resetAngle();
     _m2->resetAngle();
-    
+    _imu->resetHeading();
+    float _kpgyrosync = 1.0;
+    float _kdgyrosync = 30.0;
 
     while (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < degToDecel)
     {
-        if (_useIMU){
-            error = (int)(imu.getEulerX()* 100.0);    
-        } 
-        else 
+        if (_useImu)
+        {
+            error = (int)(_imu->getRelativeHeading() * 100.0) * dir;
+            PSync = error * _kpgyrosync;
+            DSync = (error - pError) * _kdgyrosync;
+        }
+        else
         {
             error = abs(_m1->getAngle()) - abs(_m2->getAngle());
+            PSync = error * _kpSync;
+            DSync = (error - pError) * _kdSync;
         }
-        
-        PSync = error * _kpSync;
-        DSync = (error - pError) * _kdSync;
-        
-        
+
         _m1->run((currentSpeed - (PSync + DSync)) * dir);
         _m2->run((currentSpeed + (PSync + DSync)) * dir);
-        
-        if (currentSpeed  < abs(speed))
+
+        if (currentSpeed < abs(speed))
         {
             currentSpeed += _accel;
         }
@@ -299,21 +337,23 @@ void EvoMotorPair::straightDegrees(int speed, int degrees, bool brake = true){
 
     while (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < abs(degrees))
     {
-        if (_useIMU){
-            error = (int)(imu.getEulerX()* 100.0);    
-        } 
-        else 
+        if (_useImu)
+        {
+            error = (int)(_imu->getRelativeHeading() * 100.0) * dir;
+            PSync = error * _kpgyrosync;
+            DSync = (error - pError) * _kdgyrosync;
+        }
+        else
         {
             error = abs(_m1->getAngle()) - abs(_m2->getAngle());
+            PSync = error * _kpSync;
+            DSync = (error - pError) * _kdSync;
         }
-        
-        PSync = error * _kpSync;
-        DSync = (error - pError) * _kdSync;
-        
+
         _m1->run((currentSpeed - (PSync + DSync)) * dir);
         _m2->run((currentSpeed + (PSync + DSync)) * dir);
-        
-        if (currentSpeed  < abs(speed))
+
+        if (currentSpeed < abs(speed))
         {
             currentSpeed -= _decel;
         }
@@ -332,97 +372,112 @@ void EvoMotorPair::straightDegrees(int speed, int degrees, bool brake = true){
     }
 }
 
-void EvoMotorPair::spotTurn(int speed, int degrees, bool brake = true){
+void EvoMotorPair::spotTurn(int speed, int degrees, bool brake)
+{
     int dir;
     int degToDecel, error, pError = 0;
     int PSync, DSync;
     int currentSpeed = _minSpeed;
-    if (speed !=0 && degrees != 0)
+
+    if (speed != 0 && degrees != 0)
     {
-        dir = ((degrees > 0) ? 1 : -1) * ((speed > 0) ? 1 : -1;
+        dir = ((degrees > 0) ? 1 : -1) * ((speed > 0) ? 1 : -1);
         // with positive power , positive dir is turning right, negative dir turning left
-        if (_useIMU){ // requite wheel spacing and wheel size to compute accel and decel distance
-            if (abs(degrees) > (_accelDeg + _decelDeg))
-            {
-                degToDecel = abs(degrees) - _decelDeg;
-            }
-            else
-            {
-                degToDecel = abs(degrees) * _accelDeg / (_accelDeg + _decelDeg); // assuming same rate of accel and decel
-            }
-        }
-        else 
+        if (_useImu)
         {
-            if (abs(degrees) > (_accelDeg + _decelDeg))
+            degToDecel = abs(degrees) / 2;
+            if ((float(abs(degrees)) * _gyroEncoderFactor) > (_accelDeg + _decelDeg))
             {
-                degToDecel = abs(degrees) - _decelDeg;
+                degToDecel = (float(abs(degrees)) * _gyroEncoderFactor) - _decelDeg;
             }
             else
             {
-                degToDecel = abs(degrees) * _accelDeg / (_accelDeg + _decelDeg); // assuming same rate of accel and decel
-            }    
+                degToDecel = (float(abs(degrees)) * _gyroEncoderFactor) * _accelDeg / (_accelDeg + _decelDeg);
+            }
         }
-        
+        else
+        {
+            if ((float(abs(degrees)) * _gyroEncoderFactor) > (_accelDeg + _decelDeg))
+            {
+                degToDecel = (float(abs(degrees)) * _gyroEncoderFactor) - _decelDeg;
+            }
+            else
+            {
+                degToDecel = (float(abs(degrees)) * _gyroEncoderFactor) * _accelDeg / (_accelDeg + _decelDeg);
+            }
+        }
+
         _m1->resetAngle();
         _m2->resetAngle();
-        
-    
-        while (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < degToDecel)
+        _imu->resetHeading();
+        Serial.println(_imu->getRelativeHeading());
+
+        while ((abs(_imu->getRelativeHeading()) * _gyroEncoderFactor) < degToDecel)
         {
             error = abs(_m1->getAngle()) - abs(_m2->getAngle());
-            
+
             PSync = error * _kpSync;
             DSync = (error - pError) * _kdSync;
-            currentLeftSpeed = (speed - (PSync + DSync)) * dir;
-            currentRightSpeed = (speed + (PSync + DSync)) * dir;
-            
-            
-            _m1->run((currentSpeed - (PSync + DSync)) * dir);
-            _m2->run((currentSpeed + (PSync + DSync)) * dir * -1);
-            
-            if (currentSpeed  < abs(speed))
+
+            _m1->run(constrain((currentSpeed - (PSync + DSync)), _minSpeed, abs(speed)) * dir);
+            _m2->run(constrain((currentSpeed + (PSync + DSync)), _minSpeed, abs(speed)) * dir * -1);
+
+            if (currentSpeed < abs(speed))
             {
                 currentSpeed += _accel;
             }
             pError = error;
+            Serial.println(_imu->getRelativeHeading());
         }
-    
-        while (true)
+        int kpgyro = 150;
+        int kdgyro = 1500;
+        int gyroPError = 0;
+        int gyroError = abs(degrees) - abs(_imu->getRelativeHeading());
+        while (gyroError < 0)
         {
-            if (_useIMU){
-                error = (int)(imu.getEulerX()* 100.0);    
-            } 
-            else 
-            {
-                error = abs(_m1->getAngle()) - abs(_m2->getAngle());
-            }
-            
+            gyroError = abs(degrees) - abs(_imu->getRelativeHeading());
+            error = abs(_m1->getAngle()) - abs(_m2->getAngle());
             PSync = error * _kpSync;
             DSync = (error - pError) * _kdSync;
-            
-            
-            _m1->run((currentSpeed - (PSync + DSync)) * dir);
-            _m2->run((currentSpeed + (PSync + DSync)) * dir * -1);
-            
-            if (currentSpeed  < abs(speed))
+            int PGyro = (gyroError * kpgyro);
+            int DGyro = (gyroError - gyroPError) * kdgyro;
+
+            _m1->run(constrain((PGyro + DGyro) - (PSync + DSync), _minSpeed, abs(speed)) * dir);
+            _m2->run(constrain((PGyro + DGyro) + (PSync + DSync), _minSpeed, abs(speed)) * dir * -1);
+
+            if (currentSpeed > abs(_minSpeed))
             {
                 currentSpeed -= _decel;
             }
+            gyroPError = gyroError;
             pError = error;
-            
-            if (_useIMU){
-                if (abs (imu.getEulerX()) > abs(degrees)){
-                    break;
-                }
-            }
-            else {
-                if (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < abs(degrees)){
-                    break;
-                }
-            }
         }
-    }
+        long timenow = millis();
+        while (millis() - timenow < 500)
+        {
+            gyroError = abs(degrees) - abs(_imu->getRelativeHeading());
+            error = abs(_m1->getAngle()) - abs(_m2->getAngle());
+            PSync = error * _kpSync;
+            DSync = (error - pError) * _kdSync;
+            int PGyro = (gyroError * kpgyro);
+            int DGyro = (gyroError - gyroPError) * kdgyro;
 
+            _m1->run(constrain((PGyro + DGyro) - (PSync + DSync), _minSpeed, abs(speed)) * dir);
+            _m2->run(constrain((PGyro + DGyro) + (PSync + DSync), _minSpeed, abs(speed)) * dir * -1);
+
+            if (currentSpeed > abs(_minSpeed))
+            {
+                currentSpeed -= _decel;
+            }
+            gyroPError = gyroError;
+            pError = error;
+        }
+
+        Serial0.print(currentSpeed);
+        Serial0.print(" ");
+        Serial0.println(_imu->getRelativeHeading());
+    }
+    Serial0.println(_imu->getRelativeHeading());
     if (brake)
     {
         _m1->brake();
@@ -434,9 +489,7 @@ void EvoMotorPair::spotTurn(int speed, int degrees, bool brake = true){
         _m2->coast();
     }
 }
-    
-}
 
-void EvoMotorPair::pivotTurn(int speed, int angle, bool brake = true){
-    
+void EvoMotorPair::pivotTurn(int speed, int angle, bool brake)
+{
 }
