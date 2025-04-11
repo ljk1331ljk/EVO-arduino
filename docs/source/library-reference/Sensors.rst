@@ -7,4 +7,5 @@ Sensors
 
    Sensors/EvoTCS34725
    Sensors/EvoVL53L0X
+   Sensors/EvoBNO055
    Sensors/EvoHuskyLens

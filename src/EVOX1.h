@@ -149,6 +149,12 @@ public:
     // === Display Functions ===
 
     /**
+     * @brief Flips the orientation of the display
+     * @param flip true to flip, false to not flip.
+     */
+    void flipDisplayOrientation(bool flip = true);
+
+    /**
      * @brief Clears the OLED display.
      */
     void clearDisplay();

@@ -2,6 +2,7 @@
 #define EVO_MOTORPAIR_H
 
 #include "../motors/EvoMotor.h"
+#include "../sensors/EvoBNO055.h"
 
 /**
  * @class EvoMotorPair

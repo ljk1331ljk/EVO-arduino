@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="13" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="13" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="14" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a23cdf06bdf897c50ba10450c4f1b6170" prot="private" static="no" mutable="no">
         <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="14" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="14" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="15" column="14" bodyfile="src/robotics/EvoMotorPair.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1aa10411a6bec1a0493b642d1a737dddec" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="15" column="9" bodyfile="src/robotics/EvoMotorPair.h" bodystart="15" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="16" column="9" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="15" column="20" bodyfile="src/robotics/EvoMotorPair.h" bodystart="15" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="16" column="20" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a878fbd3d02eca72a36c2521b35250ef2" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="15" column="31" bodyfile="src/robotics/EvoMotorPair.h" bodystart="15" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="16" column="31" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1a6ff3d6af2d604ae358755c7508a3c4e8" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="16" column="11" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="17" column="11" bodyfile="src/robotics/EvoMotorPair.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1affdde844d3736b9c727d89b33e4bc8a1" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="16" column="19" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="17" column="19" bodyfile="src/robotics/EvoMotorPair.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1ac6c5f3dde695bf91f4ca4dd4bfe300b2" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="16" column="27" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="17" column="27" bodyfile="src/robotics/EvoMotorPair.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_motor_pair_1aabea08734d7a185cdd49cba3162847ed" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="16" column="36" bodyfile="src/robotics/EvoMotorPair.h" bodystart="16" bodyend="-1"/>
+        <location file="src/robotics/EvoMotorPair.h" line="17" column="36" bodyfile="src/robotics/EvoMotorPair.h" bodystart="17" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -178,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="24" column="5"/>
+        <location file="src/robotics/EvoMotorPair.h" line="25" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a599c94cbdb1d9623a8af6dd698c2c65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -207,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="30" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="31" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a1e01be165eba3c20f876c41d3bb037f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -248,7 +248,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="37" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="38" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a8ac2d4c0350d331de5794aa5ab39e00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -289,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="44" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="45" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1ad49d35beca2b31314c004ee6aa9f6ddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -330,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="51" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="52" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a9c137b67db89843a4c980869381bbc04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -371,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="58" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="59" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a6bd00b3eb06838df90a32efabeeb5248" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -437,7 +437,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="67" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="68" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1af48734873b5c532f4bd6fa14d81b81b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -503,7 +503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="76" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="77" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1afdf62d2c9f4b1a41d94f3b2bfb83f7b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -518,7 +518,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="81" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="82" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1ab78b6f84726c6c2bc6fcc4a7ef5acde6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -533,7 +533,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="86" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="87" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a5cbf5869e56fc874ca0ae5f4495b7b0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -548,7 +548,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="91" column="10"/>
+        <location file="src/robotics/EvoMotorPair.h" line="92" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_motor_pair_1a651ee2a7479ae387a7c15a3c211ef9ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -566,7 +566,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoMotorPair.h" line="97" column="9"/>
+        <location file="src/robotics/EvoMotorPair.h" line="98" column="9"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -574,7 +574,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/robotics/EvoMotorPair.h" line="10" column="1" bodyfile="src/robotics/EvoMotorPair.h" bodystart="11" bodyend="98"/>
+    <location file="src/robotics/EvoMotorPair.h" line="11" column="1" bodyfile="src/robotics/EvoMotorPair.h" bodystart="12" bodyend="99"/>
     <listofallmembers>
       <member refid="class_evo_motor_pair_1a6ff3d6af2d604ae358755c7508a3c4e8" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_accel</name></member>
       <member refid="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" prot="private" virt="non-virtual"><scope>EvoMotorPair</scope><name>_accelDeg</name></member>
