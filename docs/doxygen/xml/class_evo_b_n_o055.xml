@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_b_n_o055" kind="class" language="C++" prot="public">
+    <compoundname>EvoBNO055</compoundname>
+    <includes refid="_evo_b_n_o055_8h" local="no">EvoBNO055.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_b_n_o055_1a726a11a7243af4c8c3d965185a1369a4" prot="private" static="no" mutable="no">
+        <type>Adafruit_BNO055</type>
+        <definition>Adafruit_BNO055 EvoBNO055::bno</definition>
+        <argsstring></argsstring>
+        <name>bno</name>
+        <qualifiedname>EvoBNO055::bno</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Instance of the Adafruit BNO055 driver </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="18" column="21" bodyfile="src/sensors/EvoBNO055.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_b_n_o055_1abd5ec27f1ad56835ea1bb3b927f85711" prot="private" static="no" mutable="no">
+        <type>I2CChannel</type>
+        <definition>I2CChannel EvoBNO055::_channel</definition>
+        <argsstring></argsstring>
+        <name>_channel</name>
+        <qualifiedname>EvoBNO055::_channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2C channel used for communication </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="19" column="16" bodyfile="src/sensors/EvoBNO055.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_b_n_o055_1a3ca6922cf3a0133b11b0308249d0b8e9" prot="private" static="no" mutable="no">
+        <type>I2CDevice &amp;</type>
+        <definition>I2CDevice&amp; EvoBNO055::i2CDevice</definition>
+        <argsstring></argsstring>
+        <name>i2CDevice</name>
+        <qualifiedname>EvoBNO055::i2CDevice</qualifiedname>
+        <initializer>= I2CDevice::getInstance()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference to the singleton I2CDevice instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="20" column="15" bodyfile="src/sensors/EvoBNO055.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_b_n_o055_1a25cb7e5b280b913fb505bcd81b40cd09" prot="private" static="no" mutable="no">
+        <type>sensors_event_t</type>
+        <definition>sensors_event_t EvoBNO055::event</definition>
+        <argsstring></argsstring>
+        <name>event</name>
+        <qualifiedname>EvoBNO055::event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Event structure to hold sensor data </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="21" column="21" bodyfile="src/sensors/EvoBNO055.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_b_n_o055_1ae9a9824ceafa142ee962677a42aee885" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoBNO055::_referenceHeading</definition>
+        <argsstring></argsstring>
+        <name>_referenceHeading</name>
+        <qualifiedname>EvoBNO055::_referenceHeading</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference heading for the sensor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="22" column="11" bodyfile="src/sensors/EvoBNO055.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_b_n_o055_1af13146903185680b26899a2003184e9e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoBNO055::_lastRelativeHeading</definition>
+        <argsstring></argsstring>
+        <name>_lastRelativeHeading</name>
+        <qualifiedname>EvoBNO055::_lastRelativeHeading</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="23" column="11" bodyfile="src/sensors/EvoBNO055.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_b_n_o055_1aed552f3c933370b28c823f70928f919f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoBNO055::_rotationCount</definition>
+        <argsstring></argsstring>
+        <name>_rotationCount</name>
+        <qualifiedname>EvoBNO055::_rotationCount</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="24" column="9" bodyfile="src/sensors/EvoBNO055.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_b_n_o055_1aaccf5d2102c690bd819468c657b21581" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EvoBNO055::EvoBNO055</definition>
+        <argsstring>(I2CChannel channel)</argsstring>
+        <name>EvoBNO055</name>
+        <qualifiedname>EvoBNO055::EvoBNO055</qualifiedname>
+        <param>
+          <type>I2CChannel</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C channel to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="30" column="5" bodyfile="src/sensors/EvoBNO055.h" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_b_n_o055_1a21f00d9e3e6b75da5ce3f4d7d8aad744" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EvoBNO055::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoBNO055::begin</qualifiedname>
+        <briefdescription>
+<para>Initializes the BNO055 sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="38" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_b_n_o055_1af899902c78ebc6db7273ef4a5a86621b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoBNO055::resetHeading</definition>
+        <argsstring>()</argsstring>
+        <name>resetHeading</name>
+        <qualifiedname>EvoBNO055::resetHeading</qualifiedname>
+        <briefdescription>
+<para>Sets the reference heading for the sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="43" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_b_n_o055_1a0bbbb0b1ed799f4ce37c31337221825e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoBNO055::getRelativeHeading</definition>
+        <argsstring>()</argsstring>
+        <name>getRelativeHeading</name>
+        <qualifiedname>EvoBNO055::getRelativeHeading</qualifiedname>
+        <briefdescription>
+<para>Get the Relative Heading object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Relative heading in degrees.</para>
+</simplesect>
+The relative heading is the difference between the current heading and the reference heading. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="50" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_b_n_o055_1a2b2f617985c6c2fc7417e9a2da76eb5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoBNO055::getEuler</definition>
+        <argsstring>(float *x, float *y, float *z)</argsstring>
+        <name>getEuler</name>
+        <qualifiedname>EvoBNO055::getEuler</qualifiedname>
+        <param>
+          <type>float *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+<para>Gets the Euler angles of the sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the X angle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the Y angle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store the Z angle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="58" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_b_n_o055_1adf641d138ab9413dbad8a9694281ae02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoBNO055::getEulerX</definition>
+        <argsstring>()</argsstring>
+        <name>getEulerX</name>
+        <qualifiedname>EvoBNO055::getEulerX</qualifiedname>
+        <briefdescription>
+<para>Gets the euler angle in the x direction of the sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Angle in degrees. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="64" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_b_n_o055_1a0a6bd3746398dce42e64105506c268b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoBNO055::getEulerY</definition>
+        <argsstring>()</argsstring>
+        <name>getEulerY</name>
+        <qualifiedname>EvoBNO055::getEulerY</qualifiedname>
+        <briefdescription>
+<para>Gets the euler angle in the y direction of the sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Angle in degrees. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="70" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_b_n_o055_1a919583ef213fda80ecae51e80104fda8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float EvoBNO055::getEulerZ</definition>
+        <argsstring>()</argsstring>
+        <name>getEulerZ</name>
+        <qualifiedname>EvoBNO055::getEulerZ</qualifiedname>
+        <briefdescription>
+<para>Gets the euler angle in the z direction of the sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Angle in degrees. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoBNO055.h" line="76" column="11"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class to interact with the BNO055 Inertial Measurement Unit (IMU) sensor. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/EvoBNO055.h" line="15" column="1" bodyfile="src/sensors/EvoBNO055.h" bodystart="16" bodyend="77"/>
+    <listofallmembers>
+      <member refid="class_evo_b_n_o055_1abd5ec27f1ad56835ea1bb3b927f85711" prot="private" virt="non-virtual"><scope>EvoBNO055</scope><name>_channel</name></member>
+      <member refid="class_evo_b_n_o055_1af13146903185680b26899a2003184e9e" prot="private" virt="non-virtual"><scope>EvoBNO055</scope><name>_lastRelativeHeading</name></member>
+      <member refid="class_evo_b_n_o055_1ae9a9824ceafa142ee962677a42aee885" prot="private" virt="non-virtual"><scope>EvoBNO055</scope><name>_referenceHeading</name></member>
+      <member refid="class_evo_b_n_o055_1aed552f3c933370b28c823f70928f919f" prot="private" virt="non-virtual"><scope>EvoBNO055</scope><name>_rotationCount</name></member>
+      <member refid="class_evo_b_n_o055_1a21f00d9e3e6b75da5ce3f4d7d8aad744" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>begin</name></member>
+      <member refid="class_evo_b_n_o055_1a726a11a7243af4c8c3d965185a1369a4" prot="private" virt="non-virtual"><scope>EvoBNO055</scope><name>bno</name></member>
+      <member refid="class_evo_b_n_o055_1a25cb7e5b280b913fb505bcd81b40cd09" prot="private" virt="non-virtual"><scope>EvoBNO055</scope><name>event</name></member>
+      <member refid="class_evo_b_n_o055_1aaccf5d2102c690bd819468c657b21581" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>EvoBNO055</name></member>
+      <member refid="class_evo_b_n_o055_1a2b2f617985c6c2fc7417e9a2da76eb5c" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>getEuler</name></member>
+      <member refid="class_evo_b_n_o055_1adf641d138ab9413dbad8a9694281ae02" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>getEulerX</name></member>
+      <member refid="class_evo_b_n_o055_1a0a6bd3746398dce42e64105506c268b5" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>getEulerY</name></member>
+      <member refid="class_evo_b_n_o055_1a919583ef213fda80ecae51e80104fda8" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>getEulerZ</name></member>
+      <member refid="class_evo_b_n_o055_1a0bbbb0b1ed799f4ce37c31337221825e" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>getRelativeHeading</name></member>
+      <member refid="class_evo_b_n_o055_1a3ca6922cf3a0133b11b0308249d0b8e9" prot="private" virt="non-virtual"><scope>EvoBNO055</scope><name>i2CDevice</name></member>
+      <member refid="class_evo_b_n_o055_1af899902c78ebc6db7273ef4a5a86621b" prot="public" virt="non-virtual"><scope>EvoBNO055</scope><name>resetHeading</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
