@@ -13,6 +13,23 @@
     <member refid="class_e_v3_color_sensor_1a991ccf9ee86ee0f23b4fbb1f2163c6d5" kind="function"><name>getColor</name></member>
     <member refid="class_e_v3_color_sensor_1a7672cf5e8bc0f2dfd9bd04c20e1f9297" kind="function"><name>messageHandler</name></member>
   </compound>
+  <compound refid="class_evo_b_n_o055" kind="class"><name>EvoBNO055</name>
+    <member refid="class_evo_b_n_o055_1a726a11a7243af4c8c3d965185a1369a4" kind="variable"><name>bno</name></member>
+    <member refid="class_evo_b_n_o055_1abd5ec27f1ad56835ea1bb3b927f85711" kind="variable"><name>_channel</name></member>
+    <member refid="class_evo_b_n_o055_1a3ca6922cf3a0133b11b0308249d0b8e9" kind="variable"><name>i2CDevice</name></member>
+    <member refid="class_evo_b_n_o055_1a25cb7e5b280b913fb505bcd81b40cd09" kind="variable"><name>event</name></member>
+    <member refid="class_evo_b_n_o055_1ae9a9824ceafa142ee962677a42aee885" kind="variable"><name>_referenceHeading</name></member>
+    <member refid="class_evo_b_n_o055_1af13146903185680b26899a2003184e9e" kind="variable"><name>_lastRelativeHeading</name></member>
+    <member refid="class_evo_b_n_o055_1aed552f3c933370b28c823f70928f919f" kind="variable"><name>_rotationCount</name></member>
+    <member refid="class_evo_b_n_o055_1aaccf5d2102c690bd819468c657b21581" kind="function"><name>EvoBNO055</name></member>
+    <member refid="class_evo_b_n_o055_1a21f00d9e3e6b75da5ce3f4d7d8aad744" kind="function"><name>begin</name></member>
+    <member refid="class_evo_b_n_o055_1af899902c78ebc6db7273ef4a5a86621b" kind="function"><name>resetHeading</name></member>
+    <member refid="class_evo_b_n_o055_1a0bbbb0b1ed799f4ce37c31337221825e" kind="function"><name>getRelativeHeading</name></member>
+    <member refid="class_evo_b_n_o055_1a2b2f617985c6c2fc7417e9a2da76eb5c" kind="function"><name>getEuler</name></member>
+    <member refid="class_evo_b_n_o055_1adf641d138ab9413dbad8a9694281ae02" kind="function"><name>getEulerX</name></member>
+    <member refid="class_evo_b_n_o055_1a0a6bd3746398dce42e64105506c268b5" kind="function"><name>getEulerY</name></member>
+    <member refid="class_evo_b_n_o055_1a919583ef213fda80ecae51e80104fda8" kind="function"><name>getEulerZ</name></member>
+  </compound>
   <compound refid="class_evo_husky_lens" kind="class"><name>EvoHuskyLens</name>
     <member refid="class_evo_husky_lens_1a2260f285f327ef011f29f37eb750b1b0" kind="variable"><name>huskylens</name></member>
     <member refid="class_evo_husky_lens_1ab4cdc1ec5fd09585c503adcaf24c3e36" kind="variable"><name>_channel</name></member>
@@ -184,6 +201,7 @@
     <member refid="class_e_v_o_x1_1a2d8b5b3b782f5cf68b0032798192d076" kind="function"><name>getTopBattery</name></member>
     <member refid="class_e_v_o_x1_1a98c96b3a7ec90a3065371fc246f7ec1a" kind="function"><name>getBottomBattery</name></member>
     <member refid="class_e_v_o_x1_1a5dc350b8ace794ae36b14564905d21ce" kind="function"><name>getBattery</name></member>
+    <member refid="class_e_v_o_x1_1a70fadcf08b46a97b29e31304f199f7df" kind="function"><name>flipDisplayOrientation</name></member>
     <member refid="class_e_v_o_x1_1a9bcae9bed5af1697e95853e34e032744" kind="function"><name>clearDisplay</name></member>
     <member refid="class_e_v_o_x1_1a596f6a9e60e2c410ac663f720f0a0f59" kind="function"><name>writeToDisplay</name></member>
     <member refid="class_e_v_o_x1_1aa22b3f7707142bf83d9c37f51732dbb3" kind="function"><name>writeToDisplay</name></member>
@@ -278,6 +296,8 @@
     <member refid="_e_v3_color_sensor_8h_1a372da9cab8b8051b8dc24fd7d0ef0727a0deb69ca1ebd3098a05940fdb37cd111" kind="enumvalue"><name>COL_AMBIENT</name></member>
     <member refid="_e_v3_color_sensor_8h_1a372da9cab8b8051b8dc24fd7d0ef0727a7fca79941985a7c0cdcb96325f606088" kind="enumvalue"><name>COL_REFLECT</name></member>
     <member refid="_e_v3_color_sensor_8h_1acf6ba32b3e37c7a81cb543b47a9baa91" kind="function"><name>toColor</name></member>
+  </compound>
+  <compound refid="_evo_b_n_o055_8h" kind="file"><name>EvoBNO055.h</name>
   </compound>
   <compound refid="_evo_husky_lens_8h" kind="file"><name>EvoHuskyLens.h</name>
   </compound>

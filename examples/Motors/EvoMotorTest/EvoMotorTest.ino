@@ -2,7 +2,7 @@
 
 EVOX1 evo;
 
-EvoMotor motor(M3, ITERMKS, true);
+EvoMotor motor(M3, EV3MediumMotor, true);
 /* Available motor types
   GENERICWITHENCODER,
   GENERISWITHOUTENCODER,

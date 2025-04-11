@@ -83,10 +83,10 @@ void EvoMotor::begin()
     setStopBehaviour(BRAKE);
     setStallThreshold(360);
 
-    coast();
-
     xTaskCreate(motorControlTask, "Motor Control Task", 2048, this, 1, &motorTaskHandle);
     xTaskCreate(motorSpeedTask, "Motor Speed Task", 1024, this, 1, NULL);
+
+    coast();
 }
 
 void EvoMotor::flipEncoderDirection(bool flip)
@@ -216,12 +216,14 @@ void EvoMotor::stop()
 // Method to stop the motor
 void EvoMotor::coast()
 {
+    this->pauseMotorTask();
     this->move(0);
 }
 
 // Method to brake the motor
 void EvoMotor::brake()
 {
+    this->pauseMotorTask();
     driver.setPWM(_motorPins.power1, 4096, 0);
     driver.setPWM(_motorPins.power2, 4096, 0);
 }
@@ -240,7 +242,7 @@ void EvoMotor::setHoldPower(uint16_t power)
 
 void EvoMotor::move(int speed)
 {
-    speed = constrain(speed, -4096, 4096);
+    speed = constrain(speed, -4095, 4095);
     if (speed > 0)
     {
         driver.setPWM(_motorPins.power1, 0, speed);

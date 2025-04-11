@@ -42,6 +42,11 @@ void EVOX1::playTone(uint frequency, int duration)
     tone(BUZZER_PIN, frequency, duration);
 }
 
+void EVOX1::flipDisplayOrientation(bool flip)
+{
+    display.setFlipMode(flip);
+}
+
 void EVOX1::setFontSize(uint8_t size)
 {
     _fontSize = size;
@@ -211,7 +216,7 @@ ButtonState EVOX1::getButton()
 
 void EVOX1::setRGB(int r, int g, int b)
 {
-    this->pinState != RGB_LED_STATE;
+    this->pinState = RGB_LED_STATE;
     rgb.setPixelColor(0, rgb.Color(r, g, b));
     rgb.show();
 }
@@ -228,8 +233,8 @@ int EVOX1::scanI2CChannel(I2CChannel channel, uint8_t *addresses, int maxAddress
 
     for (uint8_t address = 1; address < 127; ++address)
     {
-        if (count < maxAddresses)
-            i2CDevice.isI2CConnected(address);
+        if ((count < maxAddresses) &&
+            i2CDevice.isI2CConnected(address))
         {
             addresses[count] = address;
             count++;

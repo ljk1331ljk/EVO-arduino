@@ -25,6 +25,9 @@
 #define GPIO7 5
 #define GPIO8 4
 
+#define HC05_PWR 45
+#define HC05_RESET 46
+
 // Motor pins
 #define TACH41 42
 #define TACH42 41
