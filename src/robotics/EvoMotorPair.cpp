@@ -74,13 +74,19 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         {
             currentLeftSpeed = 0;
             currentRightSpeed = right * rightDir;
-            right += _accel;
+            if (right < abs(rightSpeed))
+            {
+                right += _accel;
+            }
         }
         else if (rightSpeed == 0)
         {
             currentLeftSpeed = left * leftDir;
             currentRightSpeed = 0;
-            left += _accel;
+            if (left < abs(leftSpeed))
+            {
+                left += _accel;
+            }
         }
         else
         {
@@ -106,13 +112,19 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         {
             currentLeftSpeed = 0;
             currentRightSpeed = right * rightDir;
-            right -= _decel;
+            if (right > abs(_minSpeed))
+            {
+                right -= _decel;
+            }
         }
         else if (rightSpeed == 0)
         {
             currentLeftSpeed = left * leftDir;
             currentRightSpeed = 0;
-            left -= _decel;
+            if (left > abs(_minSpeed))
+            {
+                left -= _decel;
+            }
         }
         else
         {
@@ -179,13 +191,19 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brak
             {
                 currentLeftSpeed = 0;
                 currentRightSpeed = right * rightDir;
-                right += _accel;
+                if (right < abs(rightSpeed))
+                {
+                    right += _accel;
+                }
             }
             else if (rightSpeed == 0)
             {
                 currentLeftSpeed = left * leftDir;
                 currentRightSpeed = 0;
-                left += _accel;
+                if (left < abs(leftSpeed))
+                {
+                    left += _accel;
+                }
             }
             else
             {
