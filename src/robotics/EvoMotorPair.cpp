@@ -1,5 +1,6 @@
 #include "EvoMotorPair.h"
 
+
 EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2, int wheelDiameter, int axleTrack, EvoBNO055 *imu)
 {
     if (imu != NULL)
@@ -136,7 +137,8 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         {
             currentLeftSpeed = 0;
             currentRightSpeed = right * rightDir;
-            if (right > _minSpeed)
+
+            if (right > abs(_minSpeed))
             {
                 right -= _decel;
             }
@@ -145,7 +147,8 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         {
             currentLeftSpeed = left * leftDir;
             currentRightSpeed = 0;
-            if (left > _minSpeed)
+
+            if (left > abs(_minSpeed))
             {
                 left -= _decel;
             }
@@ -215,13 +218,19 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brak
             {
                 currentLeftSpeed = 0;
                 currentRightSpeed = right * rightDir;
-                right += _accel;
+                if (right < abs(rightSpeed))
+                {
+                    right += _accel;
+                }
             }
             else if (rightSpeed == 0)
             {
                 currentLeftSpeed = left * leftDir;
                 currentRightSpeed = 0;
-                left += _accel;
+                if (left < abs(leftSpeed))
+                {
+                    left += _accel;
+                }
             }
             else
             {

@@ -46,6 +46,7 @@ public:
      */
     void getWheelDiameter(int *wheelDiameter, int *axleTrack);
 
+
     /**
      * @brief Sets the minimum speed for the motors.
      * @param minSpeed The minimum speed value.
@@ -119,6 +120,7 @@ public:
      */
     int getAngle();
 
+
     /**
      * @brief Checks if the IMU is available.
      * @return True if IMU is available, false otherwise.
@@ -155,5 +157,6 @@ public:
      * @param brake Whether to brake at the end of movement (default: true).
      */
     void pivotTurn(int speed, int degrees, bool brake = true);
+
 };
 #endif

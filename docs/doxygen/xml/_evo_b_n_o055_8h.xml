@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_evo_b_n_o055_8h" kind="file" language="C++">
+    <compoundname>EvoBNO055.h</compoundname>
+    <includes local="yes">../helper/EvoI2CDevice.h</includes>
+    <includes local="no">Adafruit_BNO055.h</includes>
+    <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
+    <includedby refid="_evo_motor_pair_8h" local="yes">src/robotics/EvoMotorPair.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>../helper/EvoI2CDevice.h</label>
+      </node>
+      <node id="3">
+        <label>Adafruit_BNO055.h</label>
+      </node>
+      <node id="1">
+        <label>src/sensors/EvoBNO055.h</label>
+        <link refid="_evo_b_n_o055_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Evo.h</label>
+        <link refid="_evo_8h_source"/>
+      </node>
+      <node id="3">
+        <label>src/robotics/EvoMotorPair.h</label>
+        <link refid="_evo_motor_pair_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/sensors/EvoBNO055.h</label>
+        <link refid="_evo_b_n_o055_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_evo_b_n_o055" prot="public">EvoBNO055</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EVO_BNO055_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_BNO055_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/EvoI2CDevice.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Adafruit_BNO055.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_evo_b_n_o055" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_evo_b_n_o055_1aaccf5d2102c690bd819468c657b21581" kindref="member">EvoBNO055</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>Adafruit_BNO055<sp/>bno;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>I2CChannel<sp/>_channel;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>I2CDevice<sp/>&amp;i2CDevice<sp/>=<sp/>I2CDevice::getInstance();<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>sensors_event_t<sp/>event;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_referenceHeading<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>_lastRelativeHeading<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_rotationCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30" refid="class_evo_b_n_o055_1aaccf5d2102c690bd819468c657b21581" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_b_n_o055_1aaccf5d2102c690bd819468c657b21581" kindref="member">EvoBNO055</ref>(I2CChannel<sp/>channel)<sp/>:<sp/>bno(55,<sp/>0x29)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_channel<sp/>=<sp/>channel;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_evo_b_n_o055_1a21f00d9e3e6b75da5ce3f4d7d8aad744" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_b_n_o055_1a21f00d9e3e6b75da5ce3f4d7d8aad744" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="class_evo_b_n_o055_1af899902c78ebc6db7273ef4a5a86621b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_b_n_o055_1af899902c78ebc6db7273ef4a5a86621b" kindref="member">resetHeading</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_evo_b_n_o055_1a0bbbb0b1ed799f4ce37c31337221825e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_evo_b_n_o055_1a0bbbb0b1ed799f4ce37c31337221825e" kindref="member">getRelativeHeading</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="class_evo_b_n_o055_1a2b2f617985c6c2fc7417e9a2da76eb5c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_b_n_o055_1a2b2f617985c6c2fc7417e9a2da76eb5c" kindref="member">getEuler</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*x,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*y,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*z);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="class_evo_b_n_o055_1adf641d138ab9413dbad8a9694281ae02" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_evo_b_n_o055_1adf641d138ab9413dbad8a9694281ae02" kindref="member">getEulerX</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_evo_b_n_o055_1a0a6bd3746398dce42e64105506c268b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_evo_b_n_o055_1a0a6bd3746398dce42e64105506c268b5" kindref="member">getEulerY</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_evo_b_n_o055_1a919583ef213fda80ecae51e80104fda8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_evo_b_n_o055_1a919583ef213fda80ecae51e80104fda8" kindref="member">getEulerZ</ref>();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/sensors/EvoBNO055.h"/>
+  </compounddef>
+</doxygen>
