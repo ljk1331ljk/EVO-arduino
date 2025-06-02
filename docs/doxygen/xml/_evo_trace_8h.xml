@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_evo_trace_8h" kind="file" language="C++">
+    <compoundname>EvoTrace.h</compoundname>
+    <includes refid="_evo_t_c_s34725_8h" local="yes">../sensors/EvoTCS34725.h</includes>
+    <includes refid="_evo_motor_8h" local="yes">../motors/EvoMotor.h</includes>
+    <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>../helper/EvoI2CDevice.h</label>
+      </node>
+      <node id="6">
+        <label>../helper/EvoPWMDriver.h</label>
+      </node>
+      <node id="7">
+        <label>../helper/X1pins.h</label>
+      </node>
+      <node id="4">
+        <label>Adafruit_TCS34725.h</label>
+      </node>
+      <node id="5">
+        <label>../motors/EvoMotor.h</label>
+        <link refid="_evo_motor_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/robotics/EvoTrace.h</label>
+        <link refid="_evo_trace_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>../sensors/EvoTCS34725.h</label>
+        <link refid="_evo_t_c_s34725_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ESP32Encoder.h</label>
+      </node>
+      <node id="9">
+        <label>freertos/FreeRTOS.h</label>
+      </node>
+      <node id="10">
+        <label>freertos/task.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Evo.h</label>
+        <link refid="_evo_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/robotics/EvoTrace.h</label>
+        <link refid="_evo_trace_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_evo_trace" prot="public">EvoTrace</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVO_TRACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_TRACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_t_c_s34725_8h" kindref="compound">../sensors/EvoTCS34725.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_motor_8h" kindref="compound">../motors/EvoMotor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_evo_trace" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" kindref="member">EvoTrace</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" kindref="member">EvoTrace</ref>(<ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref><sp/>*leftSensor,<sp/><ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref><sp/>*rightSensor,<sp/><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*leftMotor,<sp/><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*rightMotor);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_evo_trace_1ad6db63a6ecb412862f472325358f7db6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_trace_1ad6db63a6ecb412862f472325358f7db6" kindref="member">PDTrackOn</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kp,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ThV);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_evo_trace_1a66dfc54deec2544838c7cee6fd3f9201" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_trace_1a66dfc54deec2544838c7cee6fd3f9201" kindref="member">PDTrackDegrees</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kp,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>degrees,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode<sp/>=<sp/>3,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Thv<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>brake<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_evo_trace_1a805250145b0b34805e76294499533056" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_trace_1a805250145b0b34805e76294499533056" kindref="member">PDTrackJunction</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>speed,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kp,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>kd,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxJunctions,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mode<sp/>=<sp/>3,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Thv<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>brake<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref><sp/>*_leftSensor;<sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref><sp/>*_rightSensor;<sp/></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*_leftMotor;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref><sp/>*_rightMotor;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>lr,<sp/>lg,<sp/>lb,<sp/>lc;<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/>rr,<sp/>rg,<sp/>rb,<sp/>rc;<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>error,<sp/>prevError<sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>P,<sp/>D;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/robotics/EvoTrace.h"/>
+  </compounddef>
+</doxygen>

@@ -119,6 +119,9 @@
   <compound refid="class_evo_motor_pair" kind="class"><name>EvoMotorPair</name>
     <member refid="class_evo_motor_pair_1a7ab51dc6a7e8011ad0ff505c58de5152" kind="variable"><name>_m1</name></member>
     <member refid="class_evo_motor_pair_1a23cdf06bdf897c50ba10450c4f1b6170" kind="variable"><name>_m2</name></member>
+    <member refid="class_evo_motor_pair_1a62841447140cf08fb38b3c7ba5131c10" kind="variable"><name>_imu</name></member>
+    <member refid="class_evo_motor_pair_1acf479d8b4235c9d489a411d6f0e74125" kind="variable"><name>_imuAvailable</name></member>
+    <member refid="class_evo_motor_pair_1a2bba1817542e6c5cde2e004e02f255fa" kind="variable"><name>_useImu</name></member>
     <member refid="class_evo_motor_pair_1aa10411a6bec1a0493b642d1a737dddec" kind="variable"><name>_minSpeed</name></member>
     <member refid="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" kind="variable"><name>_accelDeg</name></member>
     <member refid="class_evo_motor_pair_1a878fbd3d02eca72a36c2521b35250ef2" kind="variable"><name>_decelDeg</name></member>
@@ -129,7 +132,9 @@
     <member refid="class_evo_motor_pair_1a2ec392d6004aaa0a85557c498347f2ba" kind="function"><name>EvoMotorPair</name></member>
     <member refid="class_evo_motor_pair_1a599c94cbdb1d9623a8af6dd698c2c65a" kind="function"><name>setMinimumSpeed</name></member>
     <member refid="class_evo_motor_pair_1a1e01be165eba3c20f876c41d3bb037f6" kind="function"><name>setAcceleration</name></member>
+    <member refid="class_evo_motor_pair_1aaa15f5624084a03347c4daf111df2e1d" kind="function"><name>getAcceleration</name></member>
     <member refid="class_evo_motor_pair_1a8ac2d4c0350d331de5794aa5ab39e00a" kind="function"><name>setDeceleration</name></member>
+    <member refid="class_evo_motor_pair_1aadbbbbc30a82a6f4a28e4ff1ad826d24" kind="function"><name>getDeceleration</name></member>
     <member refid="class_evo_motor_pair_1ad49d35beca2b31314c004ee6aa9f6ddf" kind="function"><name>setPD</name></member>
     <member refid="class_evo_motor_pair_1a9c137b67db89843a4c980869381bbc04" kind="function"><name>move</name></member>
     <member refid="class_evo_motor_pair_1a6bd00b3eb06838df90a32efabeeb5248" kind="function"><name>moveDegrees</name></member>
@@ -137,7 +142,6 @@
     <member refid="class_evo_motor_pair_1afdf62d2c9f4b1a41d94f3b2bfb83f7b0" kind="function"><name>brake</name></member>
     <member refid="class_evo_motor_pair_1ab78b6f84726c6c2bc6fcc4a7ef5acde6" kind="function"><name>coast</name></member>
     <member refid="class_evo_motor_pair_1a5cbf5869e56fc874ca0ae5f4495b7b0e" kind="function"><name>resetAngle</name></member>
-    <member refid="class_evo_motor_pair_1a651ee2a7479ae387a7c15a3c211ef9ab" kind="function"><name>getAngle</name></member>
   </compound>
   <compound refid="class_evo_servo" kind="class"><name>EvoServo</name>
     <member refid="class_evo_servo_1a7b1ad83f4bc1fb4501ef8a4346d74303" kind="variable"><name>driver</name></member>
@@ -173,6 +177,29 @@
     <member refid="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" kind="function"><name>getRGB</name></member>
     <member refid="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" kind="function"><name>getRawRGBC</name></member>
     <member refid="class_evo_t_c_s34725_1a32961d506551df13b05903df6369a3a3" kind="function"><name>getHSV</name></member>
+  </compound>
+  <compound refid="class_evo_trace" kind="class"><name>EvoTrace</name>
+    <member refid="class_evo_trace_1a538297446eca5d5289b1dd14130d2b01" kind="variable"><name>_leftSensor</name></member>
+    <member refid="class_evo_trace_1ab4bd21a527e716e348dc9cac8fe35a9d" kind="variable"><name>_rightSensor</name></member>
+    <member refid="class_evo_trace_1ad2239981255f137d0ab6673a0a19bfa4" kind="variable"><name>_leftMotor</name></member>
+    <member refid="class_evo_trace_1a9cc808fc649093d146cfa11bc0e70713" kind="variable"><name>_rightMotor</name></member>
+    <member refid="class_evo_trace_1a10e501145148b1219a34bb09acbcd1e6" kind="variable"><name>lr</name></member>
+    <member refid="class_evo_trace_1ae6e6e899498ba83a656e96ae49dbbe12" kind="variable"><name>lg</name></member>
+    <member refid="class_evo_trace_1affe418657f615116bebadb7f34eb48f3" kind="variable"><name>lb</name></member>
+    <member refid="class_evo_trace_1a6cbde09c53328a65b5e0e1bf61c08029" kind="variable"><name>lc</name></member>
+    <member refid="class_evo_trace_1a09dd0e833e8d50359cc6232717ce3b06" kind="variable"><name>rr</name></member>
+    <member refid="class_evo_trace_1a8fa11bc3bc74732674fb8902d6edc31d" kind="variable"><name>rg</name></member>
+    <member refid="class_evo_trace_1a3c63dc4d8d7f1a2fb3c76277f8ff6550" kind="variable"><name>rb</name></member>
+    <member refid="class_evo_trace_1a303c2a4641bd5c60ad20e9016fd5df3e" kind="variable"><name>rc</name></member>
+    <member refid="class_evo_trace_1a136f02ae688dfc38ca2c26c9a47f6cb1" kind="variable"><name>error</name></member>
+    <member refid="class_evo_trace_1ac0ac272cbe365b35baf93a312a51c3f7" kind="variable"><name>prevError</name></member>
+    <member refid="class_evo_trace_1a81f8de8c9ceaf018811fea702b0f7ff7" kind="variable"><name>P</name></member>
+    <member refid="class_evo_trace_1a8a1cffb9468ab3c3211b42900a59d3f2" kind="variable"><name>D</name></member>
+    <member refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" kind="function"><name>EvoTrace</name></member>
+    <member refid="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" kind="function"><name>begin</name></member>
+    <member refid="class_evo_trace_1ad6db63a6ecb412862f472325358f7db6" kind="function"><name>PDTrackOn</name></member>
+    <member refid="class_evo_trace_1a66dfc54deec2544838c7cee6fd3f9201" kind="function"><name>PDTrackDegrees</name></member>
+    <member refid="class_evo_trace_1a805250145b0b34805e76294499533056" kind="function"><name>PDTrackJunction</name></member>
   </compound>
   <compound refid="class_evo_v_l53_l0_x" kind="class"><name>EvoVL53L0X</name>
     <member refid="class_evo_v_l53_l0_x_1a89ea00487b2d5dbd46fe2da2bb900baf" kind="variable"><name>lox</name></member>
@@ -277,6 +304,8 @@
     <member refid="_evo_servo_8h_1a9c777541d4011132ebe5632c1eacb1f0a549c88fda994303357abb159f2a4bc4e" kind="enumvalue"><name>SERVO8</name></member>
   </compound>
   <compound refid="_evo_motor_pair_8h" kind="file"><name>EvoMotorPair.h</name>
+  </compound>
+  <compound refid="_evo_trace_8h" kind="file"><name>EvoTrace.h</name>
   </compound>
   <compound refid="_e_v3_color_sensor_8h" kind="file"><name>EV3ColorSensor.h</name>
     <member refid="_e_v3_color_sensor_8h_1abc28261c70dad421060cfc132490b174" kind="enum"><name>EV3ColorSensorColor</name></member>
