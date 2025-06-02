@@ -19,7 +19,7 @@ void setup()
   evo.clearDisplay();
   evo.writeToDisplay("Color sensor test", 0, 0, true, true);
 
-  evo.waitForButton();
+  evo.waitForBump();
 }
 unsigned long timenow = 0;
 int value;
