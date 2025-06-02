@@ -10,7 +10,7 @@ EvoServo::EvoServo(ServoChannel servoChannel, ServoType servoType)
         setRange(0, 180);
         break;
     case GeekServo360Grey:
-        setPulse(200, 980);
+        setPulse(200, 1100);
         setRange(0, 360);
         break;
     case GeekServo360Orange:
@@ -44,9 +44,12 @@ void EvoServo::setRange(int minRange, int maxRange)
 }
 void EvoServo::write(int position)
 {
+    driver.setPWMFreq(100); // Set frequency to 2500 Hz for servos
     driver.setPWM(_servoChannel, 0, map(position, _minRange, _maxRange, _minPulse, _maxPulse));
 }
+
 void EvoServo::setPWM(int on, int off)
 {
+    driver.setPWMFreq(100);
     driver.setPWM(_servoChannel, on, off);
 }
