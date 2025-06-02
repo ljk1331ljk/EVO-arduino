@@ -3,11 +3,14 @@
   <compounddef id="_evo_husky_lens_8h" kind="file" language="C++">
     <compoundname>EvoHuskyLens.h</compoundname>
     <includes local="yes">../helper/EvoI2CDevice.h</includes>
-    <includes local="no">HUSKYLENS.h</includes>
+    <includes local="yes">../helper/HuskyLens/HUSKYLENS.h</includes>
     <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
     <incdepgraph>
       <node id="2">
         <label>../helper/EvoI2CDevice.h</label>
+      </node>
+      <node id="3">
+        <label>../helper/HuskyLens/HUSKYLENS.h</label>
       </node>
       <node id="1">
         <label>src/sensors/EvoHuskyLens.h</label>
@@ -16,9 +19,6 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>HUSKYLENS.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -43,7 +43,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_HUSKY_LENS_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/EvoI2CDevice.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;HUSKYLENS.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/HuskyLens/HUSKYLENS.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11" refid="class_evo_husky_lens" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_evo_husky_lens_1ad2e121832b901613a01b002590a92d7b" kindref="member">EvoHuskyLens</ref></highlight></codeline>
 <codeline lineno="12"><highlight class="normal">{</highlight></codeline>
