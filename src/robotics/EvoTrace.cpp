@@ -16,12 +16,6 @@ void EvoTrace::begin()
     _rightMotor->begin();
 }
 
-void EvoTrace::readSensors()
-{
-    _leftSensor->getRawRGBC(&lr, &lg, &lb, &lc);
-    _rightSensor->getRawRGBC(&rr, &rg, &rb, &rc);
-}
-
 void EvoTrace::PDTrackOn(int speed, float kp, float kd, int mode, int ThV)
 {
     _leftSensor->getRawRGBC(&lr, &lg, &lb, &lc);
