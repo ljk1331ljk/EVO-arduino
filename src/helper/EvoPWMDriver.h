@@ -25,6 +25,7 @@ public:
 private:
     EvoPWMDriver(const EvoPWMDriver &) = delete;
     bool begun = false;
+    int _freq = 2500; // Default frequency
     static EvoPWMDriver *instance;
     Adafruit_PWMServoDriver pwm;
 };
