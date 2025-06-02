@@ -20,6 +20,7 @@ public:
     void begin();
     void setPWM(uint8_t channel, uint16_t on, uint16_t off);
     void setPin(uint8_t num, uint16_t val, bool invert = false);
+    void setPWMFreq(int freq);
 
 private:
     EvoPWMDriver(const EvoPWMDriver &) = delete;
