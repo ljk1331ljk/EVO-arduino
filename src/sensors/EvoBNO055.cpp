@@ -25,11 +25,9 @@ float EvoBNO055::getRelativeHeading()
     {
         relativeHeading += 360.0;
     }
-    Serial.print(relativeHeading);
-    Serial.print(" ");
+
     float delta = relativeHeading - _lastRelativeHeading;
-    Serial.print(delta);
-    Serial.print(" ");
+
     if (delta >= 180.0)
     {
         _rotationCount--;
@@ -40,9 +38,7 @@ float EvoBNO055::getRelativeHeading()
     }
     _lastRelativeHeading = relativeHeading;
     float continuousHeading = relativeHeading + (_rotationCount * 360.0);
-    Serial.print(_rotationCount);
-    Serial.print(" ");
-    Serial.println(continuousHeading);
+
     return continuousHeading;
 }
 
