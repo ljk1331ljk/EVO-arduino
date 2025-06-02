@@ -2,7 +2,7 @@
 #define EVO_HUSKY_LENS_H
 
 #include "../helper/EvoI2CDevice.h"
-#include <HUSKYLENS.h>
+#include "../helper/HuskyLens/HUSKYLENS.h"
 
 /**
  * @class EvoHuskyLens

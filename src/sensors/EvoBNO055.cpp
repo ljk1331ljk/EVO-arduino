@@ -14,7 +14,6 @@ bool EvoBNO055::begin()
 void EvoBNO055::resetHeading()
 {
     _referenceHeading = this->getEulerX();
-    _lastRelativeHeading = _referenceHeading;
     _rotationCount = 0;
 }
 
@@ -22,22 +21,24 @@ float EvoBNO055::getRelativeHeading()
 {
     float heading = (this->getEulerX() - _referenceHeading);
     float relativeHeading = fmod((heading + 180.0), 360.0) - 180.0;
-    if (relativeHeading < -180.0)
+    if (relativeHeading <= -180.0)
     {
         relativeHeading += 360.0;
     }
 
     float delta = relativeHeading - _lastRelativeHeading;
-    if (delta > 180.0)
+
+    if (delta >= 180.0)
     {
         _rotationCount--;
     }
-    else if (delta < -180.0)
+    else if (delta <= -180.0)
     {
         _rotationCount++;
     }
     _lastRelativeHeading = relativeHeading;
     float continuousHeading = relativeHeading + (_rotationCount * 360.0);
+
     return continuousHeading;
 }
 

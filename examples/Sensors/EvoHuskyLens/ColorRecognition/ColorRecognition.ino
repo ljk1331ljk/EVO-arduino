@@ -10,8 +10,20 @@ void setup()
   evo.writeLineToDisplay("HuskyLens", 0, true, true);
   hl.begin();
   hl.setMode(ALGORITHM_COLOR_RECOGNITION);
+  /*
+    The HuskyLens supports multiple AI algorithms for different types of object recognition and tracking:
+    ALGORITHM_FACE_RECOGNITION      // Recognizes and tracks human faces.
+    ALGORITHM_OBJECT_TRACKING       // Tracks user-defined objects.
+    ALGORITHM_OBJECT_RECOGNITION    // Recognizes multiple learned objects.
+    ALGORITHM_LINE_TRACKING         // Detects and follows lines.
+    ALGORITHM_COLOR_RECOGNITION     // Recognizes specific colors.
+    ALGORITHM_TAG_RECOGNITION       // Recognizes and tracks AprilTags.
+    ALGORITHM_OBJECT_CLASSIFICATION // Classifies objects based on learned features.
+  */
   hl.writeString("Color Recognition", 0, 0);
-  delay(1000);
+
+  evo.waitForBump();
+
   hl.clearScreen();
 }
 

@@ -74,7 +74,6 @@ void EvoHuskyLens::writeString(String text, uint16_t x, uint8_t y)
 void EvoHuskyLens::clearScreen()
 {
     i2CDevice.selectChannel(_channel);
-
     huskylens.clearCustomText();
 }
 

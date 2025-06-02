@@ -22,7 +22,7 @@ void setup()
   evo.clearDisplay();
   evo.writeToDisplay("Motor test", 0, 0, true, true);
 
-  evo.waitForButton();
+  evo.waitForBump();
 
   motor.runAngle(4000, 360);
   delay(1000);

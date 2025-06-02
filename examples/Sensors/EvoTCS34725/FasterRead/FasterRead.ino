@@ -5,16 +5,20 @@ EvoTCS34725 cs(I2C6);
 uint16_t rr, rg, rb, rc;
 float r, g, b, h, s, v;
 
-
-void setup() {
-  Serial.begin(115200);
+void setup()
+{
   evo.begin();
   cs.begin();
   cs.setGain(TCS34725_GAIN_16X);
+
+  evo.writeToDisplay("Faster Color Read", 0, 0, true, false);
+  evo.writeToDisplay("Battery:", 0, 16);
+  evo.writeToDisplay(evo.getBattery(), 50, 16, false, true);
+  evo.waitForBump();
 }
 
-void loop() {
-
+void loop()
+{
   cs.getRawRGBC(&rr, &rg, &rb, &rc);
   cs.getRGB(&r, &g, &b);
   cs.getHSV(&h, &s, &v);
@@ -25,7 +29,7 @@ void loop() {
   evo.writeToDisplay(int(rg), 58, 0);
   evo.writeToDisplay(int(rb), 81, 0);
   evo.writeToDisplay(int(rc), 104, 0);
-  evo.writeToDisplay("Filt:", 0, 16); 
+  evo.writeToDisplay("Filt:", 0, 16);
   evo.writeToDisplay(int(r), 35, 16);
   evo.writeToDisplay(int(g), 58, 16);
   evo.writeToDisplay(int(b), 81, 16);

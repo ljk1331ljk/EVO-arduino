@@ -2,38 +2,26 @@
 
 EVOX1 evo;
 
-EvoMotor left(M3, ITERMKS, true);
-EvoMotor right(M4, ITERMKS);
+EvoMotor leftM(M1, EV3MediumMotor, true);
+EvoMotor rightM(M2, EV3MediumMotor);
 EvoMotorPair robot(&left, &right);
 
 void setup()
 {
   evo.begin();
-  left.begin();
-  right.begin();
+  leftM.begin();
+  rightM.begin();
   evo.writeToDisplay("Program begin", 0, 0, true, true);
 
-  evo.waitForButton();
+  evo.waitForBump();
 
-  // robot.setAcceleration(8, 2500);
-  // robot.setDeceleration(8, 2500);
+  robot.setAcceleration(8, 1000);
+  robot.setDeceleration(8, 1000);
   robot.setMinimumSpeed(800);
-  robot.setPD(10, 30);
+  robot.setPD(400, 30);
   robot.moveDegrees(2500, 2500, 1000);
   delay(500);
-  robot.moveDegrees(-2500, 2500, 230);
-  delay(500);
-  robot.moveDegrees(2500, 2500, 1000);
-  delay(500);
-  robot.moveDegrees(-2500, 2500, 230);
-  delay(500);
-  robot.moveDegrees(2500, 2500, 1000);
-  delay(500);
-  robot.moveDegrees(-2500, 2500, 230);
-  delay(500);
-  robot.moveDegrees(2500, 2500, 1000);
-  delay(500);
-  robot.coast();
+  robot.moveTime(2500, 2500, 1000);
 }
 
 void loop()

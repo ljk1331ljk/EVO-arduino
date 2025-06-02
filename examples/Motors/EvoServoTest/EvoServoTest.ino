@@ -18,7 +18,7 @@ void setup()
   evo.clearDisplay();
   evo.writeToDisplay("Servo test", 0, 0, true, true);
 
-  evo.waitForButton();
+  evo.waitForBump();
 
   ser.write(0);
   delay(1000);
@@ -29,4 +29,5 @@ void setup()
 
 void loop()
 {
+  delay(1000);
 }
