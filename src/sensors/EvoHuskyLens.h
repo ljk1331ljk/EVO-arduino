@@ -45,6 +45,25 @@ public:
     void setMode(protocolAlgorithm algorithmType);
 
     /**
+     * @brief Gets the current operating mode of the HuskyLens.
+     * @return The current algorithm type.
+     */
+    protocolAlgorithm getMode();
+
+    /**
+     * @brief Gets the current operating mode of the HuskyLens.
+     * @return A string representation of the current mode.
+     * - ALGORITHM_FACE_RECOGNITION : "FACE REC"
+     * - ALGORITHM_OBJECT_TRACKING : "OBJ TRK"
+     * - ALGORITHM_OBJECT_RECOGNITION : "OBJ REC"
+     * - ALGORITHM_LINE_TRACKING : "LINE TRK"
+     * - ALGORITHM_COLOR_RECOGNITION : "COLOR REC"
+     * - ALGORITHM_TAG_RECOGNITION : "TAG REC"
+     * - Returns "UNKNOWN" if the mode is not recognized.
+     */
+    String getModeString();
+
+    /**
      * @brief Requests detected blocks from the HuskyLens.
      * @param result Reference to a HUSKYLENSResult structure to store the results.
      * @param ID (Optional) The specific ID of the object to track (default: 0 for all).
