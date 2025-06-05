@@ -145,6 +145,51 @@
         </inbodydescription>
         <location file="src/sensors/EvoHuskyLens.h" line="45" column="10"/>
       </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>protocolAlgorithm</type>
+        <definition>protocolAlgorithm EvoHuskyLens::getMode</definition>
+        <argsstring>()</argsstring>
+        <name>getMode</name>
+        <qualifiedname>EvoHuskyLens::getMode</qualifiedname>
+        <briefdescription>
+<para>Gets the current operating mode of the HuskyLens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current algorithm type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="51" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String EvoHuskyLens::getModeString</definition>
+        <argsstring>()</argsstring>
+        <name>getModeString</name>
+        <qualifiedname>EvoHuskyLens::getModeString</qualifiedname>
+        <briefdescription>
+<para>Gets the current operating mode of the HuskyLens. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A string representation of the current mode.<itemizedlist>
+<listitem><para>ALGORITHM_FACE_RECOGNITION : &quot;FACE REC&quot;</para>
+</listitem><listitem><para>ALGORITHM_OBJECT_TRACKING : &quot;OBJ TRK&quot;</para>
+</listitem><listitem><para>ALGORITHM_OBJECT_RECOGNITION : &quot;OBJ REC&quot;</para>
+</listitem><listitem><para>ALGORITHM_LINE_TRACKING : &quot;LINE TRK&quot;</para>
+</listitem><listitem><para>ALGORITHM_COLOR_RECOGNITION : &quot;COLOR REC&quot;</para>
+</listitem><listitem><para>ALGORITHM_TAG_RECOGNITION : &quot;TAG REC&quot;</para>
+</listitem><listitem><para>Returns &quot;UNKNOWN&quot; if the mode is not recognized. </para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoHuskyLens.h" line="64" column="12"/>
+      </memberdef>
       <memberdef kind="function" id="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool EvoHuskyLens::requestBlocks</definition>
@@ -187,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoHuskyLens.h" line="53" column="10"/>
+        <location file="src/sensors/EvoHuskyLens.h" line="72" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -231,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoHuskyLens.h" line="61" column="10"/>
+        <location file="src/sensors/EvoHuskyLens.h" line="80" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -284,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoHuskyLens.h" line="69" column="10"/>
+        <location file="src/sensors/EvoHuskyLens.h" line="88" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -299,7 +344,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoHuskyLens.h" line="74" column="10"/>
+        <location file="src/sensors/EvoHuskyLens.h" line="93" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -328,7 +373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoHuskyLens.h" line="80" column="10"/>
+        <location file="src/sensors/EvoHuskyLens.h" line="99" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -336,13 +381,15 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EvoHuskyLens.h" line="11" column="1" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="12" bodyend="81"/>
+    <location file="src/sensors/EvoHuskyLens.h" line="11" column="1" bodyfile="src/sensors/EvoHuskyLens.h" bodystart="12" bodyend="100"/>
     <listofallmembers>
       <member refid="class_evo_husky_lens_1a6da69e614c972ed7599a7f2b02575542" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>_algorithmType</name></member>
       <member refid="class_evo_husky_lens_1ab4cdc1ec5fd09585c503adcaf24c3e36" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>_channel</name></member>
       <member refid="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>begin</name></member>
       <member refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>clearScreen</name></member>
       <member refid="class_evo_husky_lens_1ad2e121832b901613a01b002590a92d7b" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>EvoHuskyLens</name></member>
+      <member refid="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>getMode</name></member>
+      <member refid="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>getModeString</name></member>
       <member refid="class_evo_husky_lens_1a2260f285f327ef011f29f37eb750b1b0" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>huskylens</name></member>
       <member refid="class_evo_husky_lens_1ab9cfd26e0febc3f07fdcc6a059d6bd51" prot="private" virt="non-virtual"><scope>EvoHuskyLens</scope><name>i2CDevice</name></member>
       <member refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" prot="public" virt="non-virtual"><scope>EvoHuskyLens</scope><name>printResult</name></member>

@@ -38,6 +38,8 @@
     <member refid="class_evo_husky_lens_1ad2e121832b901613a01b002590a92d7b" kind="function"><name>EvoHuskyLens</name></member>
     <member refid="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" kind="function"><name>begin</name></member>
     <member refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" kind="function"><name>setMode</name></member>
+    <member refid="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" kind="function"><name>getMode</name></member>
+    <member refid="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" kind="function"><name>getModeString</name></member>
     <member refid="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" kind="function"><name>requestBlocks</name></member>
     <member refid="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" kind="function"><name>requestArrows</name></member>
     <member refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" kind="function"><name>writeString</name></member>
