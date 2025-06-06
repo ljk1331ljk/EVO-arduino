@@ -62,8 +62,8 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
     rightDir = rightSpeed == 0 ? 0 : (rightSpeed > 0 ? 1 : -1);
     if (leftSpeed != 0 && rightSpeed != 0)
     {
-        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs(rightSpeed / leftSpeed);
-        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs(leftSpeed / rightSpeed) : 1;
+        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs((float)rightSpeed / (float)leftSpeed);
+        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs((float)leftSpeed / (float)rightSpeed) : 1;
     }
     else
     {
@@ -115,10 +115,6 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
             }
             pDegError = degError;
         }
-        Serial.print("Left Speed: ");
-        Serial.print(currentLeftSpeed);
-        Serial.print(" Right Speed: ");
-        Serial.println(currentRightSpeed);
         _m1->run(currentLeftSpeed);
         _m2->run(currentRightSpeed);
     }
