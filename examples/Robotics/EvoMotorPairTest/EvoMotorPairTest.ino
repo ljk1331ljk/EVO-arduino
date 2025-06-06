@@ -4,7 +4,7 @@ EVOX1 evo;
 
 EvoMotor leftM(M1, EV3MediumMotor, true);
 EvoMotor rightM(M2, EV3MediumMotor);
-EvoMotorPair robot(&left, &right);
+EvoMotorPair robot(&leftM, &rightM);
 
 void setup()
 {
@@ -27,7 +27,7 @@ void setup()
 void loop()
 {
   evo.writeToDisplay("Left:", 0, 0, true);
-  evo.writeToDisplay(left.getAngle(), 40, 0);
+  evo.writeToDisplay(leftM.getAngle(), 40, 0);
   evo.writeToDisplay("Right:", 0, 8);
-  evo.writeToDisplay(right.getAngle(), 40, 8, false, true);
+  evo.writeToDisplay(rightM.getAngle(), 40, 8, false, true);
 }
