@@ -187,8 +187,8 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brak
     rightDir = rightSpeed == 0 ? 0 : (rightSpeed > 0 ? 1 : -1);
     if (leftSpeed != 0 && rightSpeed != 0)
     {
-        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs(rightSpeed / leftSpeed);
-        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs(leftSpeed / rightSpeed) : 1;
+        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs((float)rightSpeed / (float)leftSpeed);
+        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs((float)leftSpeed / (float)rightSpeed) : 1;
     }
     else
     {
