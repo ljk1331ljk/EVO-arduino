@@ -3,6 +3,7 @@
   <compounddef id="dir_e6a61510919f187eaeca2aca7530646c" kind="dir">
     <compoundname>src/robotics</compoundname>
     <innerfile refid="_evo_motor_pair_8h">EvoMotorPair.h</innerfile>
+    <innerfile refid="_evo_trace_8h">EvoTrace.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

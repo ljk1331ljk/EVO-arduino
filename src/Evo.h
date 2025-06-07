@@ -1,7 +1,7 @@
 #ifndef EVO_H
 #define EVO_H
 
-#define LIBRARY_VERSION "0.1.7"
+#define LIBRARY_VERSION "0.1.8a"
 
 #include "EVOX1.h"
 
@@ -11,6 +11,7 @@
 #include "motors/EvoServo.h"
 
 #include "robotics/EvoMotorPair.h"
+#include "robotics/EvoTrace.h"
 
 #include "sensors/EV3ColorSensor.h"
 #include "sensors/EvoTCS34725.h"

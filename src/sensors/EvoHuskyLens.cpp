@@ -17,6 +17,41 @@ void EvoHuskyLens::setMode(protocolAlgorithm algorithmType)
     _algorithmType = algorithmType;
 }
 
+protocolAlgorithm EvoHuskyLens::getMode()
+{
+    return _algorithmType;
+}
+
+String EvoHuskyLens::getModeString()
+{
+    String Mode;
+    switch (_algorithmType)
+    {
+    case ALGORITHM_FACE_RECOGNITION:
+        Mode = "FACE REC";
+        break;
+    case ALGORITHM_OBJECT_TRACKING:
+        Mode = "OBJ TRK";
+        break;
+    case ALGORITHM_OBJECT_RECOGNITION:
+        Mode = "OBJ REC";
+        break;
+    case ALGORITHM_LINE_TRACKING:
+        Mode = "LINE TRK";
+        break;
+    case ALGORITHM_COLOR_RECOGNITION:
+        Mode = "COLOR REC";
+        break;
+    case ALGORITHM_TAG_RECOGNITION:
+        Mode = "TAG REC";
+        break;
+    default:
+        Mode = "UNKNOWN";
+        break;
+    }
+    return Mode;
+}
+
 bool EvoHuskyLens::requestBlocks(HUSKYLENSResult &result, int16_t ID)
 {
     i2CDevice.selectChannel(_channel);
@@ -74,7 +109,6 @@ void EvoHuskyLens::writeString(String text, uint16_t x, uint8_t y)
 void EvoHuskyLens::clearScreen()
 {
     i2CDevice.selectChannel(_channel);
-
     huskylens.clearCustomText();
 }
 

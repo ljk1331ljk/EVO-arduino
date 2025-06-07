@@ -6,3 +6,4 @@ Robotics
    :caption: Robotics
 
    Robotics/EvoMotorPair
+   Robotics/EvoTrace

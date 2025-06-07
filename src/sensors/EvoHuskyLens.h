@@ -2,7 +2,7 @@
 #define EVO_HUSKY_LENS_H
 
 #include "../helper/EvoI2CDevice.h"
-#include <HUSKYLENS.h>
+#include "../helper/HuskyLens/HUSKYLENS.h"
 
 /**
  * @class EvoHuskyLens
@@ -43,6 +43,25 @@ public:
      * @param algorithmType The algorithm mode to set.
      */
     void setMode(protocolAlgorithm algorithmType);
+
+    /**
+     * @brief Gets the current operating mode of the HuskyLens.
+     * @return The current algorithm type.
+     */
+    protocolAlgorithm getMode();
+
+    /**
+     * @brief Gets the current operating mode of the HuskyLens.
+     * @return A string representation of the current mode.
+     * - ALGORITHM_FACE_RECOGNITION : "FACE REC"
+     * - ALGORITHM_OBJECT_TRACKING : "OBJ TRK"
+     * - ALGORITHM_OBJECT_RECOGNITION : "OBJ REC"
+     * - ALGORITHM_LINE_TRACKING : "LINE TRK"
+     * - ALGORITHM_COLOR_RECOGNITION : "COLOR REC"
+     * - ALGORITHM_TAG_RECOGNITION : "TAG REC"
+     * - Returns "UNKNOWN" if the mode is not recognized.
+     */
+    String getModeString();
 
     /**
      * @brief Requests detected blocks from the HuskyLens.

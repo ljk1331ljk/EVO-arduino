@@ -17,10 +17,22 @@ void EvoMotorPair::setAcceleration(float accel, int accelDeg)
     _accelDeg = accelDeg;
 }
 
+void EvoMotorPair::getAcceleration(float &accel, int &accelDeg)
+{
+    accel = _accel;
+    accelDeg = _accelDeg;
+}
+
 void EvoMotorPair::setDeceleration(float decel, int decelDeg)
 {
     _decel = decel;
     _decelDeg = decelDeg;
+}
+
+void EvoMotorPair::getDeceleration(float &decel, int &decelDeg)
+{
+    decel = _decel;
+    decelDeg = _decelDeg;
 }
 
 void EvoMotorPair::setPD(float kp, float kd)
@@ -50,8 +62,8 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
     rightDir = rightSpeed == 0 ? 0 : (rightSpeed > 0 ? 1 : -1);
     if (leftSpeed != 0 && rightSpeed != 0)
     {
-        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs(rightSpeed / leftSpeed);
-        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs(leftSpeed / rightSpeed) : 1;
+        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs((float)rightSpeed / (float)leftSpeed);
+        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs((float)leftSpeed / (float)rightSpeed) : 1;
     }
     else
     {
@@ -68,7 +80,8 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         degToDecel = abs(degrees) * _accelDeg / (_accelDeg + _decelDeg); // assuming same rate of accel and decel
     }
     int currentLeftSpeed, currentRightSpeed;
-    while (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < degToDecel)
+
+    while ((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2 < degToDecel)
     {
         if (leftSpeed == 0)
         {
@@ -90,7 +103,7 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         }
         else
         {
-            degError = abs(_m1->getAngle() * leftPowerRatio) - abs(_m2->getAngle() * rightPowerRatio);
+            degError = (_m1->getAngle() * leftPowerRatio * leftDir) - (_m2->getAngle() * rightPowerRatio * rightDir);
             PSync = degError * _kpSync;
             DSync = (degError - pDegError) * _kdSync;
             currentLeftSpeed = ((left - ((PSync + DSync)) * rightPowerRatio)) * leftDir;
@@ -112,6 +125,7 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         {
             currentLeftSpeed = 0;
             currentRightSpeed = right * rightDir;
+
             if (right > abs(_minSpeed))
             {
                 right -= _decel;
@@ -121,6 +135,7 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         {
             currentLeftSpeed = left * leftDir;
             currentRightSpeed = 0;
+
             if (left > abs(_minSpeed))
             {
                 left -= _decel;
@@ -128,7 +143,7 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
         }
         else
         {
-            degError = abs(_m1->getAngle() * leftPowerRatio) - abs(_m2->getAngle() * rightPowerRatio);
+            degError = (_m1->getAngle() * leftPowerRatio * leftDir) - (_m2->getAngle() * rightPowerRatio * rightDir);
             PSync = degError * _kpSync;
             DSync = (degError - pDegError) * _kdSync;
             currentLeftSpeed = ((left - ((PSync + DSync)) * rightPowerRatio)) * leftDir;
@@ -172,8 +187,8 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brak
     rightDir = rightSpeed == 0 ? 0 : (rightSpeed > 0 ? 1 : -1);
     if (leftSpeed != 0 && rightSpeed != 0)
     {
-        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs(rightSpeed / leftSpeed);
-        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs(leftSpeed / rightSpeed) : 1;
+        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs((float)rightSpeed / (float)leftSpeed);
+        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs((float)leftSpeed / (float)rightSpeed) : 1;
     }
     else
     {
@@ -215,7 +230,7 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brak
                 pDegError = degError;
             }
         }
-        degError = abs(_m1->getAngle() * leftPowerRatio) - abs(_m2->getAngle() * rightPowerRatio);
+        degError = (_m1->getAngle() * leftPowerRatio * leftDir) - (_m2->getAngle() * rightPowerRatio * rightDir);
         PSync = degError * _kpSync;
         DSync = (degError - pDegError) * _kdSync;
         currentLeftSpeed = ((left - ((PSync + DSync)) * rightPowerRatio)) * leftDir;
@@ -251,9 +266,4 @@ void EvoMotorPair::resetAngle()
 {
     _m1->resetAngle();
     _m2->resetAngle();
-}
-
-int EvoMotorPair::getAngle()
-{
-    return (_m1->getAngle() + _m2->getAngle());
 }

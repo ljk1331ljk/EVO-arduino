@@ -5,13 +5,13 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     switch (motorType)
     {
     case GENERICWITHENCODER:
-        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 360);
+        setParameters(motorPort, !motorFlip, 4000, 100, 150, 700, true, 360);
         break;
     case GENERICWITHOUTENCODER:
-        setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
+        setParameters(motorPort, !motorFlip, 4000, 100, 0, 0, false);
         break;
     case EV3LargeMotor:
-        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 720);
+        setParameters(motorPort, !motorFlip, 4000, 100, 150, 700, true, 720);
         break;
     case EV3MediumMotor:
         setParameters(motorPort, motorFlip, 4000, 150, 150, 700, true, 720);
@@ -20,32 +20,32 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
         setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
         break;
     case ITERMKS:
-        setParameters(motorPort, motorFlip, 4000, 500, 10, 50, true, 1204);
+        setParameters(motorPort, !motorFlip, 4000, 500, 10, 50, true, 1204);
         break;
     case ITERMKT:
-        setParameters(motorPort, motorFlip, 4000, 100, 10, 50, true, 1204);
+        setParameters(motorPort, !motorFlip, 4000, 100, 10, 50, true, 1204);
         break;
     case EVOMotor300:
-        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 2800);
+        setParameters(motorPort, !motorFlip, 4000, 100, 150, 700, true, 2800);
         break;
     case EVOMotor100:
-        setParameters(motorPort, motorFlip, 4000, 100, 150, 700, true, 8400);
+        setParameters(motorPort, !motorFlip, 4000, 100, 150, 700, true, 8400);
         break;
     }
 
     switch (_motorPort)
     {
     case M1:
-        if (!_motorFlip)
-            _motorPins = {MOTOR11, MOTOR12, TACH11, TACH12};
+        if (_motorFlip)
+            _motorPins = {MOTOR11, MOTOR12, TACH12, TACH11};
         else
-            _motorPins = {MOTOR12, MOTOR11, TACH12, TACH11};
+            _motorPins = {MOTOR12, MOTOR11, TACH11, TACH12};
         break;
     case M2:
-        if (!_motorFlip)
-            _motorPins = {MOTOR22, MOTOR21, TACH21, TACH22};
+        if (_motorFlip)
+            _motorPins = {MOTOR22, MOTOR21, TACH22, TACH21};
         else
-            _motorPins = {MOTOR21, MOTOR22, TACH22, TACH21};
+            _motorPins = {MOTOR21, MOTOR22, TACH21, TACH22};
         break;
     case M3:
         if (!_motorFlip)
@@ -243,6 +243,7 @@ void EvoMotor::setHoldPower(uint16_t power)
 void EvoMotor::move(int speed)
 {
     speed = constrain(speed, -4095, 4095);
+    driver.setPWMFreq(2500);
     if (speed > 0)
     {
         driver.setPWM(_motorPins.power1, 0, speed);

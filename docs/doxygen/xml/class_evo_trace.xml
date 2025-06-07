@@ -1,0 +1,650 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_trace" kind="class" language="C++" prot="public">
+    <compoundname>EvoTrace</compoundname>
+    <includes refid="_evo_trace_8h" local="no">EvoTrace.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_trace_1a538297446eca5d5289b1dd14130d2b01" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref> *</type>
+        <definition>EvoTCS34725* EvoTrace::_leftSensor</definition>
+        <argsstring></argsstring>
+        <name>_leftSensor</name>
+        <qualifiedname>EvoTrace::_leftSensor</qualifiedname>
+        <briefdescription>
+<para>Pointer to the left color sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="64" column="17" bodyfile="src/robotics/EvoTrace.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1ab4bd21a527e716e348dc9cac8fe35a9d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref> *</type>
+        <definition>EvoTCS34725* EvoTrace::_rightSensor</definition>
+        <argsstring></argsstring>
+        <name>_rightSensor</name>
+        <qualifiedname>EvoTrace::_rightSensor</qualifiedname>
+        <briefdescription>
+<para>Pointer to the right color sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="65" column="17" bodyfile="src/robotics/EvoTrace.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1ad2239981255f137d0ab6673a0a19bfa4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
+        <definition>EvoMotor* EvoTrace::_leftMotor</definition>
+        <argsstring></argsstring>
+        <name>_leftMotor</name>
+        <qualifiedname>EvoTrace::_leftMotor</qualifiedname>
+        <briefdescription>
+<para>Pointer to the left motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="66" column="14" bodyfile="src/robotics/EvoTrace.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a9cc808fc649093d146cfa11bc0e70713" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
+        <definition>EvoMotor* EvoTrace::_rightMotor</definition>
+        <argsstring></argsstring>
+        <name>_rightMotor</name>
+        <qualifiedname>EvoTrace::_rightMotor</qualifiedname>
+        <briefdescription>
+<para>Pointer to the right motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="67" column="14" bodyfile="src/robotics/EvoTrace.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a10e501145148b1219a34bb09acbcd1e6" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::lr</definition>
+        <argsstring></argsstring>
+        <name>lr</name>
+        <qualifiedname>EvoTrace::lr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="69" column="14" bodyfile="src/robotics/EvoTrace.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1ae6e6e899498ba83a656e96ae49dbbe12" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::lg</definition>
+        <argsstring></argsstring>
+        <name>lg</name>
+        <qualifiedname>EvoTrace::lg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="69" column="17" bodyfile="src/robotics/EvoTrace.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1affe418657f615116bebadb7f34eb48f3" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::lb</definition>
+        <argsstring></argsstring>
+        <name>lb</name>
+        <qualifiedname>EvoTrace::lb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="69" column="20" bodyfile="src/robotics/EvoTrace.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a6cbde09c53328a65b5e0e1bf61c08029" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::lc</definition>
+        <argsstring></argsstring>
+        <name>lc</name>
+        <qualifiedname>EvoTrace::lc</qualifiedname>
+        <briefdescription>
+<para>Raw sensor values for the left sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="69" column="23" bodyfile="src/robotics/EvoTrace.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a09dd0e833e8d50359cc6232717ce3b06" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::rr</definition>
+        <argsstring></argsstring>
+        <name>rr</name>
+        <qualifiedname>EvoTrace::rr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="70" column="14" bodyfile="src/robotics/EvoTrace.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a8fa11bc3bc74732674fb8902d6edc31d" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::rg</definition>
+        <argsstring></argsstring>
+        <name>rg</name>
+        <qualifiedname>EvoTrace::rg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="70" column="17" bodyfile="src/robotics/EvoTrace.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a3c63dc4d8d7f1a2fb3c76277f8ff6550" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::rb</definition>
+        <argsstring></argsstring>
+        <name>rb</name>
+        <qualifiedname>EvoTrace::rb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="70" column="20" bodyfile="src/robotics/EvoTrace.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a303c2a4641bd5c60ad20e9016fd5df3e" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoTrace::rc</definition>
+        <argsstring></argsstring>
+        <name>rc</name>
+        <qualifiedname>EvoTrace::rc</qualifiedname>
+        <briefdescription>
+<para>Raw sensor values for the right sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="70" column="23" bodyfile="src/robotics/EvoTrace.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a136f02ae688dfc38ca2c26c9a47f6cb1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoTrace::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>EvoTrace::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="72" column="9" bodyfile="src/robotics/EvoTrace.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1ac0ac272cbe365b35baf93a312a51c3f7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoTrace::prevError</definition>
+        <argsstring></argsstring>
+        <name>prevError</name>
+        <qualifiedname>EvoTrace::prevError</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Error values for PD control. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="72" column="15" bodyfile="src/robotics/EvoTrace.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a81f8de8c9ceaf018811fea702b0f7ff7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoTrace::P</definition>
+        <argsstring></argsstring>
+        <name>P</name>
+        <qualifiedname>EvoTrace::P</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="73" column="11" bodyfile="src/robotics/EvoTrace.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_trace_1a8a1cffb9468ab3c3211b42900a59d3f2" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EvoTrace::D</definition>
+        <argsstring></argsstring>
+        <name>D</name>
+        <qualifiedname>EvoTrace::D</qualifiedname>
+        <briefdescription>
+<para>Proportional and derivative variables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="73" column="13" bodyfile="src/robotics/EvoTrace.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EvoTrace::EvoTrace</definition>
+        <argsstring>(EvoTCS34725 *leftSensor, EvoTCS34725 *rightSensor, EvoMotor *leftMotor, EvoMotor *rightMotor)</argsstring>
+        <name>EvoTrace</name>
+        <qualifiedname>EvoTrace::EvoTrace</qualifiedname>
+        <param>
+          <type><ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref> *</type>
+          <declname>leftSensor</declname>
+        </param>
+        <param>
+          <type><ref refid="class_evo_t_c_s34725" kindref="compound">EvoTCS34725</ref> *</type>
+          <declname>rightSensor</declname>
+        </param>
+        <param>
+          <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
+          <declname>leftMotor</declname>
+        </param>
+        <param>
+          <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
+          <declname>rightMotor</declname>
+        </param>
+        <briefdescription>
+<para>Constructor to initialize the <ref refid="class_evo_trace" kindref="compound">EvoTrace</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>leftSensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the left color sensor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rightSensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the right color sensor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>leftMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the left motor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rightMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the right motor. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="21" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTrace::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoTrace::begin</qualifiedname>
+        <briefdescription>
+<para>Initializes the sensors and motors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="26" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_trace_1ad6db63a6ecb412862f472325358f7db6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTrace::PDTrackOn</definition>
+        <argsstring>(int speed, float kp, float kd, int mode, int ThV)</argsstring>
+        <name>PDTrackOn</name>
+        <qualifiedname>EvoTrace::PDTrackOn</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ThV</declname>
+        </param>
+        <briefdescription>
+<para>Starts the PD tracking behavior. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The speed of the motors. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proportional gain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derivative gain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mode of operation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ThV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The threshold value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="36" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_trace_1a66dfc54deec2544838c7cee6fd3f9201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTrace::PDTrackDegrees</definition>
+        <argsstring>(int speed, float kp, float kd, int degrees, int mode=3, int Thv=0, bool brake=true)</argsstring>
+        <name>PDTrackDegrees</name>
+        <qualifiedname>EvoTrace::PDTrackDegrees</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>degrees</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+          <defval>3</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Thv</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>brake</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Tracks a specified number of degrees. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The speed of the motors. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proportional gain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derivative gain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>degrees</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of degrees to track. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mode of operation (default: 3). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Thv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The threshold value (default: 0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>brake</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to brake at the end of tracking (default: true). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="48" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_trace_1a805250145b0b34805e76294499533056" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTrace::PDTrackJunction</definition>
+        <argsstring>(int speed, float kp, float kd, int threshold, int maxJunctions, int mode=3, int Thv=0, bool brake=true)</argsstring>
+        <name>PDTrackJunction</name>
+        <qualifiedname>EvoTrace::PDTrackJunction</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kp</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>kd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxJunctions</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+          <defval>3</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Thv</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>brake</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Tracks junctions based on sensor readings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The speed of the motors. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The proportional gain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The derivative gain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The threshold value for junction detection. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxJunctions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of junctions to track. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mode of operation (default: 3). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Thv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The threshold value (default: 0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>brake</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to brake at the end of tracking (default: true). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/robotics/EvoTrace.h" line="61" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A class to control tracing behavior using two color sensors and two motors. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/robotics/EvoTrace.h" line="11" column="1" bodyfile="src/robotics/EvoTrace.h" bodystart="12" bodyend="74"/>
+    <listofallmembers>
+      <member refid="class_evo_trace_1ad2239981255f137d0ab6673a0a19bfa4" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_leftMotor</name></member>
+      <member refid="class_evo_trace_1a538297446eca5d5289b1dd14130d2b01" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_leftSensor</name></member>
+      <member refid="class_evo_trace_1a9cc808fc649093d146cfa11bc0e70713" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_rightMotor</name></member>
+      <member refid="class_evo_trace_1ab4bd21a527e716e348dc9cac8fe35a9d" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_rightSensor</name></member>
+      <member refid="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>begin</name></member>
+      <member refid="class_evo_trace_1a8a1cffb9468ab3c3211b42900a59d3f2" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>D</name></member>
+      <member refid="class_evo_trace_1a136f02ae688dfc38ca2c26c9a47f6cb1" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>error</name></member>
+      <member refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>EvoTrace</name></member>
+      <member refid="class_evo_trace_1affe418657f615116bebadb7f34eb48f3" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>lb</name></member>
+      <member refid="class_evo_trace_1a6cbde09c53328a65b5e0e1bf61c08029" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>lc</name></member>
+      <member refid="class_evo_trace_1ae6e6e899498ba83a656e96ae49dbbe12" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>lg</name></member>
+      <member refid="class_evo_trace_1a10e501145148b1219a34bb09acbcd1e6" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>lr</name></member>
+      <member refid="class_evo_trace_1a81f8de8c9ceaf018811fea702b0f7ff7" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>P</name></member>
+      <member refid="class_evo_trace_1a66dfc54deec2544838c7cee6fd3f9201" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>PDTrackDegrees</name></member>
+      <member refid="class_evo_trace_1a805250145b0b34805e76294499533056" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>PDTrackJunction</name></member>
+      <member refid="class_evo_trace_1ad6db63a6ecb412862f472325358f7db6" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>PDTrackOn</name></member>
+      <member refid="class_evo_trace_1ac0ac272cbe365b35baf93a312a51c3f7" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>prevError</name></member>
+      <member refid="class_evo_trace_1a3c63dc4d8d7f1a2fb3c76277f8ff6550" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>rb</name></member>
+      <member refid="class_evo_trace_1a303c2a4641bd5c60ad20e9016fd5df3e" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>rc</name></member>
+      <member refid="class_evo_trace_1a8fa11bc3bc74732674fb8902d6edc31d" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>rg</name></member>
+      <member refid="class_evo_trace_1a09dd0e833e8d50359cc6232717ce3b06" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>rr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

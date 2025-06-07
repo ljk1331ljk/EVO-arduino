@@ -13,8 +13,11 @@ class EvoMotorPair
 private:
     EvoMotor *_m1;
     EvoMotor *_m2;
+    EvoBNO055 *_imu;
+    bool _imuAvailable = false, _useImu = false;
     int _minSpeed = 800, _accelDeg = 2000, _decelDeg = 2000;
-    float _accel = 8, _decel = 8, _kpSync = 20, _kdSync = 200;
+    float _accel = 8, _decel = 8;
+    float _kpSync = 20, _kdSync = 200;
 
 public:
     /**
@@ -38,11 +41,25 @@ public:
     void setAcceleration(float accel, int accelDeg);
 
     /**
+     * @brief Gets the current acceleration parameters.
+     * @param accel Reference to store the acceleration factor.
+     * @param accelDeg Reference to store the number of degrees for acceleration.
+     */
+    void getAcceleration(float &accel, int &accelDeg);
+
+    /**
      * @brief Sets the deceleration parameters.
      * @param decel The deceleration factor.
      * @param decelDeg The number of degrees over which deceleration occurs.
      */
     void setDeceleration(float decel, int decelDeg);
+
+    /**
+     * @brief Gets the current deceleration parameters.
+     * @param decel Reference to store the deceleration factor.
+     * @param decelDeg Reference to store the number of degrees for deceleration.
+     */
+    void getDeceleration(float &decel, int &decelDeg);
 
     /**
      * @brief Sets the proportional-derivative (PD) control parameters for the motor pairing.
@@ -90,11 +107,5 @@ public:
      * @brief Resets both motor angles to zero.
      */
     void resetAngle();
-
-    /**
-     * @brief Gets the current motor angle.
-     * @return The angle in degrees.
-     */
-    int getAngle();
 };
 #endif

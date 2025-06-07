@@ -13,7 +13,7 @@ void setup()
   evo.writeLineToDisplay("Display Basic", 0); // writes the program name to the display
   evo.drawDisplay();
 
-  evo.waitForBump(200);
+  evo.waitForBump(200); // wait for button to be pressed and released
 
   /* Drawing something on the screen consists of 2 steps:
    * 1. Filling up a buffer.
