@@ -25,7 +25,7 @@ public:
      * @param m1 Pointer to the first EvoMotor.
      * @param m2 Pointer to the second EvoMotor.
      */
-    EvoMotorPair(EvoMotor *m1, EvoMotor *m2);
+    EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoBNO055 *imu);
 
     /**
      * @brief Sets the minimum speed for the motors.
@@ -92,6 +92,17 @@ public:
      * @param brake Whether to brake at the end of movement (default: true).
      */
     void moveTime(int leftSpeed, int rightSpeed, int timems, bool brake = true);
+
+    /**
+     * @brief Moves the motors following a Condition with the IMU.
+     * @param leftSpeed Speed for the left motor.
+     * @param rightSpeed Speed for the right motor.
+     * @param Condition Condition with the IMU.
+     * @param IMUkp The proportional gain.
+     * @param IMUkd The derivative gain.
+     * @param brake Whether to brake at the end of movement (default: true).
+     */
+    void moveIMU(int leftSpeed, int rightSpeed, int Condition, float IMUkp = 0, float IMUkd = 0, bool brake = true);
 
     /**
      * @brief Applies braking to both motors.
