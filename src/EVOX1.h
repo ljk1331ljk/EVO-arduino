@@ -242,9 +242,16 @@ public:
     /**
      * @brief Plays a tone on the buzzer.
      * @param frequency The frequency of the tone in Hz.
-     * @param duration The duration of the tone in milliseconds.
+     * @param duration The duration of the tone in milliseconds. If -1, plays indefinitely until stopped.
+     * @note If duration is -1, you must call stopTone() to stop the tone.
+     * @see stopTone()
      */
-    void playTone(uint frequency, int duration);
+    void playTone(uint frequency, int duration = -1, bool blocking = true);
+
+    /**
+     * @brief Stops the currently playing tone on the buzzer.
+     */
+    void stopTone();
 
     // === RGB LED Functions ===
 
