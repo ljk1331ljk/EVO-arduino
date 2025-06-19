@@ -43,7 +43,7 @@ enum PinState
 class EVOX1
 {
 private:
-        /**
+    /**
      * @brief RGB LED instance using Adafruit NeoPixel.
      */
     Adafruit_NeoPixel rgb;
