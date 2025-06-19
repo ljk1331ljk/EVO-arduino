@@ -29,9 +29,11 @@ public:
 
     /**
      * @brief Initializes the VL53L0X sensor.
-     * @param continuous Sets the sensor in continuous or non-continuous mode;
+     * @param continuous Sets the sensor in continuous or non-continuous mode
+     * if true, the sensor will continuously measure distance at a specified interval.
+     * @return True if the sensor was successfully initialized, false otherwise.
      */
-    void begin(bool continuous = false);
+    bool begin(bool continuous = false);
 
     /**
      * @brief Retrieves the distance measured by the sensor.

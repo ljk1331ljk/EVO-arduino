@@ -5,7 +5,6 @@ bool EvoBNO055::begin()
     i2CDevice.selectChannel(_channel);
     if (!this->bno.begin())
     {
-        Serial.println(F("Failed to boot BNO055"));
         return false;
     }
     return true;

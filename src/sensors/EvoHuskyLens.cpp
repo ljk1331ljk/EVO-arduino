@@ -1,13 +1,14 @@
 #include "EvoHuskyLens.h"
 
-void EvoHuskyLens::begin()
+bool EvoHuskyLens::begin()
 {
     i2CDevice.selectChannel(_channel);
     if (!huskylens.begin(Wire))
     {
-        Serial.println(F("Failed to boot HuskyLens"));
+        return false
     }
     setMode(ALGORITHM_COLOR_RECOGNITION);
+    return true;
 }
 
 void EvoHuskyLens::setMode(protocolAlgorithm algorithmType)
