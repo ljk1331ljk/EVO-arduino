@@ -43,12 +43,7 @@ enum PinState
 class EVOX1
 {
 private:
-    /**
-     * @brief OLED display instance using U8G2 library.
-     */
-    U8G2_SSD1306_128X64_NONAME_F_HW_I2C display;
-
-    /**
+        /**
      * @brief RGB LED instance using Adafruit NeoPixel.
      */
     Adafruit_NeoPixel rgb;
@@ -91,6 +86,12 @@ public:
               rgb(1, PIXEL_PIN, NEO_GRBW + NEO_KHZ800)
     {
     }
+
+    /**
+     * @brief OLED display instance using U8G2 library.
+     */
+    U8G2_SSD1306_128X64_NONAME_F_HW_I2C display;
+
     /**
      * @brief Gets the singleton instance of EVOX1.
      * @return Reference to the singleton instance.
