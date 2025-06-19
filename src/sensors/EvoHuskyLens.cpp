@@ -5,7 +5,7 @@ bool EvoHuskyLens::begin()
     i2CDevice.selectChannel(_channel);
     if (!huskylens.begin(Wire))
     {
-        return false
+        return false;
     }
     setMode(ALGORITHM_COLOR_RECOGNITION);
     return true;
