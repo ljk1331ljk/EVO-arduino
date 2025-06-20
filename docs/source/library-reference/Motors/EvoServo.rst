@@ -1,5 +1,5 @@
 EvoServo
-=======================
+========
 
 .. doxygenclass:: EvoServo
    :members:

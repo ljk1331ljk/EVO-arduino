@@ -1,5 +1,5 @@
 EvoHuskyLens
-=======================
+============
 
 .. doxygenclass:: EvoHuskyLens
    :members:

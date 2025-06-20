@@ -27,13 +27,27 @@ extensions = [
     'myst_parser',
 ]
 
+# -- Extension configuration
+
+# -- Options for Sphinx Autosummary
 autosummary_generate = True
 
+# -- Options for Sphinx Todo
+todo_include_todos = True
+
+# -- Options for Intersphinx mapping
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
 }
 intersphinx_disabled_domains = ['std']
+
+# -- Options for EPUB output
+epub_show_urls = 'footnote'
+
+# -- Options for Breathe
+breathe_projects = {"API": "../doxygen/xml"}
+breathe_default_project = "API"
 
 templates_path = ['_templates']
 
@@ -46,45 +60,27 @@ html_theme_options = {
     #     "image_light": "_static/numpylogo.svg",
     #     "image_dark": "_static/numpylogo_dark.svg",
     # },
-    "content_footer_items": ["last-updated"],
+    "collapse_navigation": True,
     "show_nav_level": 2,
-    "external_links": [
-        {
-            "name": "Changelog", 
-            "url": "https://github.com/PhoenixChee/Python-Recipe>"
-        },
-    ],
+    "show_toc_level": 3,
+    "icon_links_label": "Quick Links",
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/PhoenixChee/Python-Recipe",
+            "url": "https://github.com/ljk1331ljk/EVO-arduino",
             "icon": "fa-brands fa-github",
             "type": "fontawesome",
         },
-        {
-            "name": "Youtube",
-            "url": "https://Yotube.com",
-            "icon": "fa-brands fa-youtube",
-            "type": "fontawesome",
-        }
     ],
-    "icon_links_label": "Quick Links",
-    "announcement": "Here's a <a href='https://pydata.org'>PyData Announcement!</a>",
+    "external_links": [
+        {
+            "name": "Changelog", 
+            "url": "https://github.com/ljk1331ljk/EVO-arduino/releases"
+        },
+    ],
     "footer_start": ["copyright"],
     "footer_center": ["sphinx-version"],
 }
 html_show_sourcelink = False
 html_copy_source = False
 html_static_path = ['_static']
-html_css_files = ["custom.css"]
-html_js_files = ["custom.js"]
-
-def setup(app):
-    app.add_css_file("custom.css")
-    app.add_js_file("custom.js")
-
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
-
-breathe_projects = {"API": "../doxygen/xml"}
-breathe_default_project = "API"
