@@ -84,3 +84,4 @@ html_theme_options = {
 html_show_sourcelink = False
 html_copy_source = False
 html_static_path = ['_static']
+html_css_files = ["custom.css"]
