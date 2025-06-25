@@ -1,14 +1,14 @@
-Hardware Overview
-=================
+Overview
+========
 
-The EVOX1 is a 3.3V logic microcontroller. Sensors will need to be 3.3V compaitable for correct operation. Although the device is a 3.3V logic microcontroller, it has a 5V rail on the servo ports to provide sufficient power to the servos connected. 
+The EVOX1 is a 3.3V logic microcontroller. Sensors will need to be 3.3V compaitable for correct operation. Although the device is a 3.3V logic microcontroller, it has a 5V rail on the servo ports to provide sufficient power to the servos connected.
 
 Hardware Features
 -----------------
 
 The EVOX1 boasts the following features:
 
-.. card:: **Ports**
+.. card:: Ports
 
    * 4 x EV3 Motor Ports 
    * 4 x Motor Ports with Encoder *(shared pins with EV3 Motor Ports)*
@@ -19,25 +19,25 @@ The EVOX1 boasts the following features:
    * 2 x UART/ SPI hybrid port
    * 2 x I2C port
 
-.. card:: **Peripherals**
+.. card:: Peripherals
 
    * 4kHz Buzzer
-   * 128 x 64 1.54 inch OLED Display
+   * 128 x 64 - 1.54 inch OLED Display
    * Programmable Button
    * RGB LED Indicator *(shared pins with Programmable Button)*
 
-.. card:: **Wireless Functionalities**
+.. card:: Wireless Functionalities
 
    * Bluetooth Classic via inbuilt HC-05
    * Bluetooth Low Energy 5.0
    * Integrated Wi-Fi 4 *(802.11b/g/n, 2.4GHz)*
 
-Pherperials
+peripherals
 -----------
 
-.. figure:: ../_static/images/EVOX1pherperials.png
+.. figure:: /_static/images/EVOX1pherperials.png
    :alt: EVOX1 Pherperials
-   :width: 600px
+   :width: 100%
    :align: center
 
 .. list-table:: Peripherals
@@ -85,9 +85,9 @@ Pherperials
 Pinouts
 -------
 
-.. figure:: ../_static/images/EVOX1pinout.png
+.. figure:: /_static/images/EVOX1pinout.png
    :alt: EVOX1 Pinouts
-   :width: 600px
+   :width: 100%
    :align: center
 
 Connecting Hardware

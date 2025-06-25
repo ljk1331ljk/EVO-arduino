@@ -3,7 +3,7 @@ Libary Reference
 
 Release: |release|
 
-This reference manual details functions, modules, and objects included in EvoLib, describing what they are and what they do. For learning how to use EvoLib, see the :ref:`Getting Started`.
+This reference manual details functions, modules, and objects included in EvoLib, describing what they are and what they do. For learning how to use EvoLib, see the :ref:`User Guide`.
 
 **This Library Showcases**
 

@@ -37,6 +37,12 @@ Our mission is to make robotics and IoT development accessible, engaging, and sc
 
 **What's New!**
 
+.. versionadded:: 25-06-2025
+
+   - Restructured the Navigation Panel, featuring: Hardware, Software & Programming Sections
+   - Added a Contributor Guide Tab for developer documentation
+   - Use ``custom.css`` for a nicer font (Inter & Poppins) & added a ``h1`` underline for easier readability
+
 .. versionadded:: 20-06-2025
 
    - Added PyData Sphinx Theme into the Evo Documentation
@@ -47,5 +53,6 @@ Our mission is to make robotics and IoT development accessible, engaging, and sc
    :hidden:
    :maxdepth: 2
    
-   getting-started/index
+   user-guide/index
+   contributor-guide/index
    library-reference/index
