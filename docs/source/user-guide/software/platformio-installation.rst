@@ -26,7 +26,10 @@ Leave the Framework option on Arduino. The default project path on Windows is ``
 
 After clicking Finish, you’ll need to wait a bit while the board files are downloaded.
 
-   show screenshot
+.. figure:: /_static/gifs/opening-project-pio.gif
+   :alt: Opening Project in PlatformIO
+   :width: 100%
+   :align: center
 
 Project Structure
 --------------------
@@ -43,6 +46,11 @@ After creating a new empty PlatformIO project you're ready for the next step. Th
    * - ``lib`` directory
      - For the project-specific private libraries.
 
+.. figure:: /_static/images/project-structure-pio.png
+   :alt: Revealing Library Folder in Explorer
+   :width: 50%
+   :align: center
+
 .. note:: 
    
    We will be placing the Evo Library in the ``lib`` folder.
@@ -55,10 +63,19 @@ Library Installation
 3. In VSCode Explorer:
 
    - Right-Click on ``lib`` folder, select "Reveal in File Explorer"
+
+   .. figure:: /_static/gifs/install-library-1-pio.gif
+      :alt: Revealing Library Folder in Explorer
+      :width: 100%
+      :align: center
+
    - Extract the contents in the ``.zip`` folder into the ``lib`` folder
    - Rename the extracted folder to "Evo"
 
-      show screenshot
+   .. figure:: /_static/gifs/install-library-2-pio.gif
+      :alt: Placing Evo Library in Library Folder
+      :width: 100%
+      :align: center
 
 4. Go to the Libraries tab and search for the libraries listed below. Install them as such.
 
@@ -73,3 +90,14 @@ Library Installation
    .. warning::
 
       This list may grow over time, so check back here when new updates are released.
+
+5. Go to ``platform.ini`` to ensure the library dependencies ``lip_dep`` are listed correctly. 
+
+Enabling Serial Port
+--------------------
+
+The EVOX1 uses the USB peripheral pins for program upload and serial communication. At the end of the code, add this line to enable USB CDC for Serial.
+
+.. code-block:: ini
+
+   build_flags = -DARDUINO_USB_CDC_ON_BOOT=1

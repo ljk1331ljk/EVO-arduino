@@ -32,7 +32,7 @@ The EVOX1 boasts the following features:
    * Bluetooth Low Energy 5.0
    * Integrated Wi-Fi 4 *(802.11b/g/n, 2.4GHz)*
 
-peripherals
+Peripherals
 -----------
 
 .. figure:: /_static/images/EVOX1pherperials.png

@@ -60,6 +60,8 @@ html_theme_options = {
     #     "image_light": "_static/numpylogo.svg",
     #     "image_dark": "_static/numpylogo_dark.svg",
     # },
+    # "pygments_light_style": "github-light",
+    # "pygments_dark_style": "github-dark",
     "collapse_navigation": True,
     "show_nav_level": 2,
     "show_toc_level": 3,
@@ -83,5 +85,6 @@ html_theme_options = {
 }
 html_show_sourcelink = False
 html_copy_source = False
+
 html_static_path = ['_static']
 html_css_files = ["custom.css"]

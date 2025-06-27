@@ -27,17 +27,15 @@ Board Installation
 
 .. grid:: 2
 
-   .. grid-item-card::
-
-      In Arduino IDE
-      ^^^
-      1. Click on the Boards Manager on the left panel
-      2. Search for "esp32"
-      3. Install the board **esp32 by Espressif Systems**
-   
    .. grid-item::
 
-      .. figure:: /_static/images/esp32board.png
+      1. Open the Boards Manager from the left panel
+      2. Search for "esp32"
+      3. Install **esp32 by Espressif Systems** board
+
+   .. grid-item::
+
+      .. figure:: /_static/images/ESP32-library-install.png
          :alt: ESP32 Board
          :width: 100%
          :align: center
@@ -56,8 +54,8 @@ Library Installation
    - Add ``.zip`` Library and 
    - Select the file just downloaded.
 
-   .. figure:: /_static/images/addziplibrary.png
-      :alt: Add to ZIP Libary
+   .. figure:: /_static/gifs/install-library-ino.gif
+      :alt: Revealing Library Folder in Explorer
       :width: 100%
       :align: center
 
@@ -80,28 +78,12 @@ Updating EVO Library
 
 To update the EVO library when there is a new relsease available repeat the steps in :ref:`Library Installation` and the library will be overwritten.
 
-Using V2.0 Hardware
--------------------
+Enabling Serial Port
+--------------------
 
-If you are using V2.0 hardware. you need to perform the following steps to edit your library. 
+The EVOX1 uses the USB peripheral pins for program upload and serial communication. To enable the serial port, click on tools :octicon:`arrow-right` USB CDC on Boot :octicon:`arrow-right` Enabled
 
-1. Go to you Arduino library folder. If it has not been changed, it will be at ``Documents/Arduino/libraries``.
-2. Go to ``EVO/src/helper`` and open the ``X1pins.h`` file.
-3. Comment out line 4 and save the changes.
-
-.. code-block:: Arduino
-   :linenos:
-   :emphasize-lines: 4
-
-   #ifndef X1PINS_H
-   #define X1PINS_H
-
-   // #define V3_0
-
-   #ifdef V3_0
-
-   // rest of the code
-
-4. To verify which version of pin configuration you are using, you can display ``PIN_VERSION`` on the serial monitor or on the display.
-5. To revert to using V3.0 pin configuration, uncomment line 4 and save the changes.
-
+.. figure:: /_static/gifs/enable-usb-cdc-ino.gif
+   :alt: USB CDC Enabled
+   :width: 100%
+   :align: center
