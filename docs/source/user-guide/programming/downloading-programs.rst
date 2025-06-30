@@ -6,25 +6,31 @@ The Evo library comes with example program that you can use to help you get star
 EvoBasic
 --------
 
-Arduino
-^^^^^^^
+Open the ``EvoHC05.ino`` program 
 
-Click on File :octicon:`arrow-right` Examples :octicon:`arrow-right` EVO :octicon:`arrow-right` EvoBasics :octicon:`arrow-right` EvoBasic
+**Arduino**
 
-.. figure:: /_static/images/open-example-program.png
+1. Click on File :octicon:`arrow-right` Examples :octicon:`arrow-right` EVO :octicon:`arrow-right` EvoBasics :octicon:`arrow-right` EvoBasic
+
+.. figure:: /_static/images/open-example-program-ino.png
    :alt: Example Program
    :width: 100%
    :align: center
 
-Click on the upload button on the top left corner to upload your program. The first compile and upload for each Arduino sketch will take the longest. Subsequent compilation will be faster as the compiler uses the already compiled libraries for upload. When upload is complete you should see the following.
+2. Click on the upload button on the top left corner to upload your program
 
-.. figure:: /_static/images/uploadcomplete.png
+.. Note:: 
+
+   The first compile and upload for each Arduino sketch will take the longest. Subsequent compilation will be faster as the compiler uses the already compiled libraries for upload.
+
+3. When upload is complete you should see the following
+
+.. figure:: /_static/images/upload-complete-ino.png
    :alt: Upload Complete
    :width: 100%
    :align: center
 
-PlatformIO
-^^^^^^^^^^
+**PlatformIO**
 
 1. The ``EvoBasic.ino`` can be found under ``lib/Evo/examples/basic/EvoBasic``
 2. Copy & paste the program into the ``main.ino`` in the ``src`` folder
@@ -62,4 +68,4 @@ PlatformIO
 EvoHC05
 -------
 
-If you want to continue experimentaing with the Evo. You can try connecting the Evo via HC05 (Bluetooth). A guide on how to enable Bluetooth is explain :ref:`here<Bluetooth>`.
+Want to wirelessly connect your Evo? You can achieve this by connecting via Bluetooth. A guide on how to enable Bluetooth is explained :ref:`here<Bluetooth>` using the ``EvoHC05.ino`` program.

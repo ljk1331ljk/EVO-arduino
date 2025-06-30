@@ -35,7 +35,7 @@ Board Installation
 
    .. grid-item::
 
-      .. figure:: /_static/images/ESP32-library-install.png
+      .. figure:: /_static/images/library-board-install-ino.png
          :alt: ESP32 Board
          :width: 100%
          :align: center
@@ -77,13 +77,3 @@ Updating EVO Library
 --------------------
 
 To update the EVO library when there is a new relsease available repeat the steps in :ref:`Library Installation` and the library will be overwritten.
-
-Enabling Serial Port
---------------------
-
-The EVOX1 uses the USB peripheral pins for program upload and serial communication. To enable the serial port, click on tools :octicon:`arrow-right` USB CDC on Boot :octicon:`arrow-right` Enabled
-
-.. figure:: /_static/gifs/enable-usb-cdc-ino.gif
-   :alt: USB CDC Enabled
-   :width: 100%
-   :align: center

@@ -92,12 +92,3 @@ Library Installation
       This list may grow over time, so check back here when new updates are released.
 
 5. Go to ``platform.ini`` to ensure the library dependencies ``lip_dep`` are listed correctly. 
-
-Enabling Serial Port
---------------------
-
-The EVOX1 uses the USB peripheral pins for program upload and serial communication. At the end of the code, add this line to enable USB CDC for Serial.
-
-.. code-block:: ini
-
-   build_flags = -DARDUINO_USB_CDC_ON_BOOT=1
