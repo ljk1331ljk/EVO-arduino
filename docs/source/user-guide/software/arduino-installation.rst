@@ -25,7 +25,8 @@ IDE Installation
 Board Installation
 ------------------
 
-.. grid:: 2
+.. grid:: 1 2 2 2
+   :gutter: 2
 
    .. grid-item::
 

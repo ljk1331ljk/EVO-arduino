@@ -5,7 +5,8 @@ This guide aims to will walk you through the essentials & important features to 
 
 **What You'll Learn & Do**
 
-.. grid:: 2
+.. grid:: 1 1 2 2
+   :gutter: 2
 
    .. grid-item:: 
 
@@ -31,7 +32,8 @@ This guide aims to will walk you through the essentials & important features to 
 
 There are 2 platforms you can choose to code your programs. Arduino IDE & PlatformIO in VSCode. 
 
-.. grid:: 2
+.. grid:: 1 1 2 2
+   :gutter: 2
 
    .. grid-item:: 
 
@@ -43,7 +45,7 @@ There are 2 platforms you can choose to code your programs. Arduino IDE & Platfo
          ^^^
          Learn how to install and update Arduino libraries in Arduino IDE, and troubleshoot common installation issues.
 
-         :octicon:`thumbsup` Simple IDE, begineer-friendly
+         :octicon:`thumbsup` Simple IDE, beginner-friendly
          
          :octicon:`thumbsdown` Slow compilation
 
@@ -59,7 +61,7 @@ There are 2 platforms you can choose to code your programs. Arduino IDE & Platfo
 
          :octicon:`thumbsup` Faster compilation of programs
 
-         :octicon:`thumbsdown` Sophisticated IDE, not begineer-friendly
+         :octicon:`thumbsdown` Sophisticated IDE, not beginner-friendly
 
 .. toctree::
    :maxdepth: 2

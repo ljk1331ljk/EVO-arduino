@@ -7,21 +7,38 @@ This reference manual details functions, modules, and objects included in EvoLib
 
 **This Library Showcases**
 
-.. grid:: 4
+.. grid:: 1 2 2 4
+   :gutter: 2
 
-   .. grid-item-card::
+   .. grid-item::
+
+      .. card::
+         :link: EVOX1
+         :link-type: doc   
 
          :octicon:`cpu` **EVOX1**
 
-   .. grid-item-card::
+   .. grid-item::
+
+      .. card::
+         :link: Motors
+         :link-type: doc  
 
          :octicon:`gear` **Motors**
 
-   .. grid-item-card::
+   .. grid-item::
+
+      .. card::
+         :link: Robotics
+         :link-type: doc  
 
          :octicon:`gear` **Robotics**
 
-   .. grid-item-card:: 
+   .. grid-item:: 
+
+      .. card::
+         :link: Sensors
+         :link-type: doc  
 
          :octicon:`zap` **Sensors**
 
