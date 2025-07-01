@@ -40,4 +40,4 @@ Our mission is to make robotics and IoT development accessible, engaging, and sc
    
    user-guide/index
    development-guide/index
-   library-reference/index
+   api-reference/index
