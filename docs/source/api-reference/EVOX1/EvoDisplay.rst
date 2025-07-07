@@ -52,7 +52,7 @@ Display Control Functions
    :project: API
 
 Example
--------
+^^^^^^^
 
 Here is an example of how to use the EVOX1 display functions
 
@@ -61,10 +61,12 @@ Here is an example of how to use the EVOX1 display functions
 
    #include <Evo.h>
 
-   void setup() {
-      EVOX1::begin();        // Initialize EVOX1
+   EVOX1 evo;
 
-      EVOX1::clearDisplay(); // Clear the display
-      EVOX1::writeToDisplay("Hello, EVOX1!", 0, 0, true, true); // Write to display
-      EVOX1::drawDisplay();  // Render the display buffer
+   void setup() {
+      evo.begin();        // Initialize EVOX1
+
+      evo.clearDisplay(); // Clear the display
+      evo.writeToDisplay("Hello, EVOX1!", 0, 0, true, true); // Write to display
+      evo.drawDisplay();  // Render the display buffer
    }

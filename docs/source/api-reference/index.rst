@@ -63,13 +63,13 @@ Library Showcases
       :link: Sensors/EvoBNO055
       :link-type: doc
 
-      **Inertial Measurement Unit**
+      **Inertial Measurement Unit Sensor**
 
    .. grid-item-card::
       :link: Sensors/EvoHuskyLens
       :link-type: doc
 
-      **HuskyLens**
+      **HuskyLens AI Vision Sensor**
 
    .. grid-item-card::
       :link: Sensors/EvoTCS34725

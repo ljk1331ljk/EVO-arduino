@@ -65,6 +65,10 @@ To enable the serial port, include this line at the end of the code in ``platfor
 
    build_flags = -DARDUINO_USB_CDC_ON_BOOT=1
 
+   monitor_speed = 115200
+   upload_port = COM4 
+   monitor_port = COM4
+
 Bluetooth
 ---------
 
