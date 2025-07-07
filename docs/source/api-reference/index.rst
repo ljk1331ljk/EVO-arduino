@@ -10,155 +10,123 @@ This reference manual details functions, modules, and objects included in EvoLib
 EVOX1
 -----
 
-.. grid:: 1 1 2 2
+.. grid:: 2 2 3 3
    :gutter: 2
 
-   .. grid-item::
+   .. grid-item-card::
+      :link: EVOX1/EvoInitialisation
+      :link-type: doc
 
-      .. card::
-         :link: EVOX1/EvoInitialisation
-         :link-type: doc
+      **Initialisation**
 
-         **Initialisation**
+   .. grid-item-card::
+      :link: EVOX1/EvoI2C
+      :link-type: doc
 
-   .. grid-item::
+      **I2C Functions**
 
-      .. card::
-         :link: EVOX1/EvoI2C
-         :link-type: doc
+   .. grid-item-card::
+      :link: EVOX1/EvoBattery
+      :link-type: doc
 
-         **I2C Functions**
+      **Battery Functions**
 
-   .. grid-item::
+   .. grid-item-card::
+      :link: EVOX1/EvoButton
+      :link-type: doc
 
-      .. card::
-         :link: EVOX1/EvoBattery
-         :link-type: doc
+      **Button Functions**
 
-         **Battery Functions**
+   .. grid-item-card::
+      :link: EVOX1/EvoBuzzer
+      :link-type: doc
 
-   .. grid-item::
+      **Buzzer Functions**
 
-      .. card::
-         :link: EVOX1/EvoButton
-         :link-type: doc
+   .. grid-item-card::
+      :link: EVOX1/EvoDisplay
+      :link-type: doc
 
-         **Button Functions**
+      **Display Functions**
 
-   .. grid-item::
+   .. grid-item-card::
+      :link: EVOX1/EvoLED
+      :link-type: doc
 
-      .. card::
-         :link: EVOX1/EvoBuzzer
-         :link-type: doc
+      **RGB LED Functions**
 
-         **Buzzer Functions**
+   .. grid-item-card::
+      :link: EVOX1/EvoPrivate
+      :link-type: doc
 
-   .. grid-item::
-
-      .. card::
-         :link: EVOX1/EvoDisplay
-         :link-type: doc
-
-         **Display Functions**
-
-   .. grid-item::
-
-      .. card::
-         :link: EVOX1/EvoLED
-         :link-type: doc
-
-         **RGB LED Functions**
-
-   .. grid-item::
-
-      .. card::
-         :link: EVOX1/EvoPrivate
-         :link-type: doc
-
-         **Private Functions**
+      **Private Functions**
 
 
 Motors
 ------
 
-.. grid:: 1 1 2 2
+.. grid:: 2 2 3 3
    :gutter: 2
 
-   .. grid-item::
+   .. grid-item-card::
+      :link: Motors/EvoMotor
+      :link-type: doc
 
-      .. card::
-         :link: Motors/EvoMotor
-         :link-type: doc
+      **Motor Functions**
 
-         **Motor Functions**
+   .. grid-item-card::
+      :link: Motors/EvoServo
+      :link-type: doc
 
-   .. grid-item::
-
-      .. card::
-         :link: Motors/EvoServo
-         :link-type: doc
-
-         **Servo Functions**
+      **Servo Functions**
 
 Sensors
 -------
 
-.. grid:: 1 1 2 2
+.. grid:: 2 2 3 3
    :gutter: 2
 
-   .. grid-item::
+   .. grid-item-card::
+      :link: Sensors/EvoBNO055
+      :link-type: doc
 
-      .. card::
-         :link: Sensors/EvoBNO055
-         :link-type: doc
+      **Gyro Functions**
 
-         **Gyro Functions**
+   .. grid-item-card::
+      :link: Sensors/EvoHuskyLens
+      :link-type: doc
 
-   .. grid-item::
+      **HuskyLens Functions**
 
-      .. card::
-         :link: Sensors/EvoHuskyLens
-         :link-type: doc
+   .. grid-item-card::
+      :link: Sensors/EvoTCS34725
+      :link-type: doc
 
-         **HuskyLens Functions**
+      **Color Sensor Functions**
 
-   .. grid-item::
+   .. grid-item-card::
+      :link: Sensors/EvoVL53L0X
+      :link-type: doc
 
-      .. card::
-         :link: Sensors/EvoTCS34725
-         :link-type: doc
-
-         **Color Sensor Functions**
-
-   .. grid-item::
-
-      .. card::
-         :link: Sensors/EvoVL53L0X
-         :link-type: doc
-
-         **Distance Sensor Functions**
+      **Distance Sensor Functions**
 
 Robotics
 --------
 
-.. grid:: 1 1 2 2
+.. grid:: 2 2 3 3
    :gutter: 2
 
-   .. grid-item::
+   .. grid-item-card::
+      :link: Robotics/EvoMotorPair
+      :link-type: doc
 
-      .. card::
-         :link: Robotics/EvoMotorPair
-         :link-type: doc
-
-         **Motor Pair Functions**
+      **Motor Pair Functions**
    
-   .. grid-item::
+   .. grid-item-card::
+      :link: Robotics/EvoTrace
+      :link-type: doc
 
-      .. card::
-         :link: Robotics/EvoTrace
-         :link-type: doc
-
-         **Light Tracing Functions**
+      **Light Tracing Functions**
 
 .. toctree::
    :hidden:

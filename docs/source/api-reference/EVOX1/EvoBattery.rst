@@ -1,9 +1,6 @@
 Battery Functions
 =================
 
-.. doxygenvariable:: EVOX1::charger
-   :project: API
-
 .. doxygenfunction:: EVOX1::getTopBattery
    :project: API
 

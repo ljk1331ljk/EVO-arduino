@@ -13,3 +13,7 @@ h1 {
     padding-bottom: 0.3em;
     margin-bottom: 0.8em;
 }
+
+html[data-theme="dark"] .highlight span.linenos {
+    background-color: transparent !important;
+}
