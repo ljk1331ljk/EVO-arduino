@@ -63,7 +63,7 @@ Library Showcases
       :link: Sensors/EvoBNO055
       :link-type: doc
 
-      **Gyro**
+      **Inertial Measurement Unit**
 
    .. grid-item-card::
       :link: Sensors/EvoHuskyLens

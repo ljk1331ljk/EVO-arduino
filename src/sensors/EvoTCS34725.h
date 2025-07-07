@@ -44,8 +44,9 @@ public:
 
     /**
      * @brief Sets the gain level for the sensor.
-     * @param gain Gain value from the tcs34725Gain_t enum.
-     * Default is TCS34725_GAIN_16X.
+     * @param gain Gain value from the `tcs34725Gain_t` enum.
+     * (Default is TCS34725_GAIN_16X).
+     * 
      * Gain Values are:
      * - TCS34725_GAIN_1X
      * - TCS34725_GAIN_4X

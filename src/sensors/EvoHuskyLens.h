@@ -53,20 +53,19 @@ public:
     /**
      * @brief Gets the current operating mode of the HuskyLens.
      * @return A string representation of the current mode.
-     * - `ALGORITHM_FACE_RECOGNITION` : "FACE REC"
-     * - `ALGORITHM_OBJECT_TRACKING` : "OBJ TRK"
-     * - `ALGORITHM_OBJECT_RECOGNITION` : "OBJ REC"
-     * - `ALGORITHM_LINE_TRACKING` : "LINE TRK"
-     * - `ALGORITHM_COLOR_RECOGNITION` : "COLOR REC"
-     * - `ALGORITHM_TAG_RECOGNITION` : "TAG REC"
+     * - `ALGORITHM_FACE_RECOGNITION`: "FACE REC"
+     * - `ALGORITHM_OBJECT_TRACKING`: "OBJ TRK"
+     * - `ALGORITHM_OBJECT_RECOGNITION`: "OBJ REC"
+     * - `ALGORITHM_LINE_TRACKING`: "LINE TRK"
+     * - `ALGORITHM_COLOR_RECOGNITION`: "COLOR REC"
+     * - `ALGORITHM_TAG_RECOGNITION`: "TAG REC"
      * - Returns `UNKNOWN` if the mode is not recognized.
-     * @note This only works if an encoder is attached and available.
      */
     String getModeString();
 
     /**
      * @brief Requests detected blocks from the HuskyLens.
-     * @param result Reference to a HUSKYLENSResult structure to store the results.
+     * @param result Reference to a `HUSKYLENSResult` structure to store the results.
      * @param ID (Optional) The specific ID of the object to track (default: 0 for all).
      * @return True if blocks were successfully retrieved, false otherwise.
      */
@@ -74,7 +73,7 @@ public:
 
     /**
      * @brief Requests detected arrows from the HuskyLens.
-     * @param result Reference to a HUSKYLENSResult structure to store the results.
+     * @param result Reference to a `HUSKYLENSResult` structure to store the results.
      * @param ID (Optional) The specific ID of the arrow to track (default: 0 for all).
      * @return True if arrows were successfully retrieved, false otherwise.
      */
