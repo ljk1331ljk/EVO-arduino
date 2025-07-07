@@ -1,31 +1,22 @@
 Sensors
 =======
 
-.. grid:: 2
+.. grid:: 2 2 4 4
+   :gutter: 2
 
-   .. grid-item:: 
-
-      .. card:: Button Sensor
+   .. grid-item-card:: Button Sensor
          :link: button
          :link-type: doc
 
-   .. grid-item:: 
-
-      .. card:: Light Sensor
+   .. grid-item-card:: Light Sensor
          :link: light
          :link-type: doc
 
-.. grid:: 2
-
-   .. grid-item:: 
-
-      .. card:: Compass Sensor
-         :link: button
+   .. grid-item-card:: Compass Sensor
+         :link: compass
          :link-type: doc
 
-   .. grid-item:: 
-
-      .. card:: Distance Sensor
+   .. grid-item-card:: Distance Sensor
          :link: distance
          :link-type: doc
 

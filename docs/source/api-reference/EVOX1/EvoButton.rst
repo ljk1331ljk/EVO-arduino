@@ -1,5 +1,8 @@
-Button Functions
-================
+Button
+======
+
+Button Control Functions
+------------------------
 
 .. doxygenfunction:: EVOX1::waitForButton
    :project: API

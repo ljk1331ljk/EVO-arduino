@@ -5,65 +5,39 @@ Release: |release|
 
 This reference manual details functions, modules, and objects included in EvoLib, describing what they are and what they do. For learning how to use EvoLib, see the :ref:`User Guide`.
 
-**This Library Showcases**
+Library Showcases
+^^^^^^^^^^^^^^^^^
 
-EVOX1
------
+.. rubric:: EVOX1
 
 .. grid:: 2 2 3 3
    :gutter: 2
 
    .. grid-item-card::
-      :link: EVOX1/EvoInitialisation
+      :link: EVOX1/EvoX1
       :link-type: doc
 
-      **Initialisation**
-
-   .. grid-item-card::
-      :link: EVOX1/EvoI2C
-      :link-type: doc
-
-      **I2C Functions**
-
-   .. grid-item-card::
-      :link: EVOX1/EvoBattery
-      :link-type: doc
-
-      **Battery Functions**
+      **Hub Controller**
 
    .. grid-item-card::
       :link: EVOX1/EvoButton
       :link-type: doc
 
-      **Button Functions**
-
-   .. grid-item-card::
-      :link: EVOX1/EvoBuzzer
-      :link-type: doc
-
-      **Buzzer Functions**
+      **Button**
 
    .. grid-item-card::
       :link: EVOX1/EvoDisplay
       :link-type: doc
 
-      **Display Functions**
+      **Display**
 
    .. grid-item-card::
-      :link: EVOX1/EvoLED
+      :link: EVOX1/EvoLEDBuzzer
       :link-type: doc
 
-      **RGB LED Functions**
+      **LED & Buzzer**
 
-   .. grid-item-card::
-      :link: EVOX1/EvoPrivate
-      :link-type: doc
-
-      **Private Functions**
-
-
-Motors
-------
+.. rubric:: Motors
 
 .. grid:: 2 2 3 3
    :gutter: 2
@@ -72,16 +46,15 @@ Motors
       :link: Motors/EvoMotor
       :link-type: doc
 
-      **Motor Functions**
+      **EvoMotor**
 
    .. grid-item-card::
       :link: Motors/EvoServo
       :link-type: doc
 
-      **Servo Functions**
+      **EvoServo**
 
-Sensors
--------
+.. rubric:: Sensors
 
 .. grid:: 2 2 3 3
    :gutter: 2
@@ -90,28 +63,27 @@ Sensors
       :link: Sensors/EvoBNO055
       :link-type: doc
 
-      **Gyro Functions**
+      **Gyro**
 
    .. grid-item-card::
       :link: Sensors/EvoHuskyLens
       :link-type: doc
 
-      **HuskyLens Functions**
+      **HuskyLens**
 
    .. grid-item-card::
       :link: Sensors/EvoTCS34725
       :link-type: doc
 
-      **Color Sensor Functions**
+      **Color Sensor**
 
    .. grid-item-card::
       :link: Sensors/EvoVL53L0X
       :link-type: doc
 
-      **Distance Sensor Functions**
+      **Distance Sensor**
 
-Robotics
---------
+.. rubric:: Robotics
 
 .. grid:: 2 2 3 3
    :gutter: 2
@@ -120,27 +92,23 @@ Robotics
       :link: Robotics/EvoMotorPair
       :link-type: doc
 
-      **Motor Pair Functions**
+      **Motor Movement Sync**
    
    .. grid-item-card::
       :link: Robotics/EvoTrace
       :link-type: doc
 
-      **Light Tracing Functions**
+      **Line Tracing**
 
 .. toctree::
    :hidden:
    :maxdepth: 2
    :caption: EVOX1
 
-   EVOX1/EvoInitialisation
-   EVOX1/EvoI2C
-   EVOX1/EvoBattery
+   EVOX1/EvoX1
    EVOX1/EvoButton
    EVOX1/EvoDisplay
-   EVOX1/EvoBuzzer
-   EVOX1/EvoLED
-   EVOX1/EvoPrivate
+   EVOX1/EvoLEDBuzzer
 
 .. toctree::
    :hidden:

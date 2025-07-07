@@ -1,8 +1,8 @@
-Display Functions
-=================
+Display
+=======
 
-Functions
----------
+Display Control Functions
+-------------------------
 
 .. doxygenfunction:: EVOX1::flipDisplayOrientation
    :project: API
