@@ -1,8 +1,10 @@
-Development Guide
-=================
+Guides
+======
 
-What's New!
------------
+Development Updates
+-------------------
+
+**What's New!**
 
 .. versionadded:: 27-06-2025
 
@@ -33,3 +35,10 @@ Heading 5
 
 Heading 6
 *********
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   
+   diy-guide
+   

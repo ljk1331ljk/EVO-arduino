@@ -34,10 +34,17 @@ Our mission is to make robotics and IoT development accessible, engaging, and sc
       ^^^
       Designed for project-based learning and participation in robotics competitions, the Evo platform fosters creativity and innovation.
 
+Acknowledgements
+----------------
+
+- Jun Kang
+- Keane
+- Poh Hian
+
 .. toctree::
    :hidden:
    :maxdepth: 2
    
    user-guide/index
-   development-guide/index
+   guides/index
    api-reference/index

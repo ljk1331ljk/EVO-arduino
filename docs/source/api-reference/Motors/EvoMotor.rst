@@ -1,5 +1,5 @@
-EvoMotor
-========
+``EvoMotor``
+============
 
 .. doxygenclass:: EvoMotor
    :project: API

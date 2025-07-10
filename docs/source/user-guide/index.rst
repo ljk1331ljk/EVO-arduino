@@ -81,4 +81,5 @@ There are 2 platforms you can choose to code your programs. Arduino IDE & Platfo
    :hidden:
 
    programming/evo-connection
+   programming/troubleshooting
    programming/downloading-programs

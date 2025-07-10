@@ -17,7 +17,7 @@ Library Showcases
       :link: EVOX1/EvoX1
       :link-type: doc
 
-      **Hub Controller**
+      **Board**
 
    .. grid-item-card::
       :link: EVOX1/EvoButton
@@ -63,7 +63,7 @@ Library Showcases
       :link: Sensors/EvoBNO055
       :link-type: doc
 
-      **Inertial Measurement Unit Sensor**
+      **IMU Sensor**
 
    .. grid-item-card::
       :link: Sensors/EvoHuskyLens

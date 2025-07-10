@@ -1,5 +1,5 @@
-EvoTCS34725
-===========
+``EvoTCS34725``
+===============
 
 .. doxygenclass:: EvoTCS34725
    :project: API

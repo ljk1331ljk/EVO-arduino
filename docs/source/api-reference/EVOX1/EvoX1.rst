@@ -1,5 +1,5 @@
-Hub Controller
-==============
+Board
+=====
 
 .. doxygenclass:: EVOX1
    :project: API

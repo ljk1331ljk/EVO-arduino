@@ -72,10 +72,29 @@ To enable the serial port, include this line at the end of the code in ``platfor
 Bluetooth
 ---------
 
-Ensure the Bluetooth module is working by observing how the LED behaves. See the behaviours in :ref:`On-Board Peripherals`.
+Bluetooth Classic VS BLE
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+As you know, the ESP32S3 Dev Modules already has a built-in BLE capabilities. Additionally on the EVOX1 board, we have also included a Bluetooth Classic module (HC-05).
+
+Bluetooth Classic is good for sending a lot of data continuously, like in wireless speakers or when connecting to a robot for real-time control. It supports something called the Serial Port Profile (SPP), which lets devices send serial (UART) data wirelessly—very useful in robotics and embedded systems.
+
+Bluetooth Low Energy (BLE), on the other hand, is designed to save power. It’s better for devices that only need to send small amounts of data once in a while, like fitness bands or sensors. BLE doesn’t support serial communication directly, so it needs extra setup to send data like UART.
+
+Key Differences:
+
+- **Bluetooth Classic**: Higher speed, more power usage, supports wireless serial (SPP).
+- **BLE**: Lower power, slower speed, no native serial support.
+
+When to Use:
+
+- Use **Bluetooth Classic** for things like live control or audio.
+- Use **BLE** for low-power devices that don’t need to send data all the time.
 
 Naming the Evo
 ^^^^^^^^^^^^^^
+
+Ensure the Bluetooth module is working by observing how the LED behaves. See the behaviours in :ref:`On-Board Peripherals`.
 
 Open the ``EvoHC05.ino`` program 
 

@@ -93,18 +93,87 @@ Pinouts
 Connecting Hardware
 -------------------
 
-.. list-table:: Wire Color Codes
-   :widths: 25 75
+- Peripherals which uses GPIO or SERVO ports have 3-pin connectors
+- Peripherals which uses I2C or Serial Ports have 4-pin connectors
+- Motors uses 6-pin connectors
+
+.. note::
+
+   The wires are color coded to match the pin layout of the EVOX1. However do be careful as some peripherals may have their labels covered by the the 3D printed casing. Please see the schematic of the each peripherals.
+
+I2C
+"""
+
+.. list-table::
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Colour
+     - Pin
+     - Description
+   * - Black
+     - GND
+     - Ground
+   * - Red
+     - 3V3
+     - 3.3V Power
+   * - Yellow
+     - SCL
+     - Serial Clock
+   * - Yellow
+     - SDA
+     - Serial Data
+
+I2C is wired such that the SDA pin of the host (EVN Alpha) is connected to the SDA pin of a peripheral, and the same goes for the SCL pins.
+
+Motor Wiring
+"""""""""""""""""""
+
+.. list-table::
+   :widths: 25 25 50
+   :header-rows: 1
+
+   * - Colour
+     - Pin
+     - Description
+   * - Red
+     - M1
+     - ?
+   * - Red
+     - M2
+     - ?
+   * - Black
+     - GND
+     - Ground
+   * - Red
+     - 5V
+     - Power
+   * - Yellow
+     - IO
+     - ?
+   * - Yellow
+     - IO
+     - ?
+
+GPIO & Servo Wiring
+"""""""""""""""""""
+
+.. list-table::
+   :widths: 25 25 50
    :header-rows: 1
    :align: center
 
    * - Color
      - Pin
+     - Description
    * - Black
+     - GND
      - Ground
    * - Red
+     - VCC
      - Power
    * - Yellow
+     - GPIO
      - Data
 
 .. caution:: 

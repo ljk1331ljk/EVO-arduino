@@ -1,5 +1,5 @@
-EvoMotorPair
-============
+``EvoMotorPair``
+================
 
 .. doxygenclass:: EvoMotorPair
    :project: API

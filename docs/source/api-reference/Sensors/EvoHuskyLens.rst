@@ -1,5 +1,5 @@
-EvoHuskyLens
-============
+``EvoHuskyLens``
+================
 
 .. doxygenclass:: EvoHuskyLens
    :project: API

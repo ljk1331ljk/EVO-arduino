@@ -1,5 +1,5 @@
-EvoBNO055
-=========
+``EvoBNO055``
+=============
 
 .. doxygenclass:: EvoBNO055
    :project: API

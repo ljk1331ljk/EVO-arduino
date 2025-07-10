@@ -1,5 +1,5 @@
-EvoServo
-========
+``EvoServo``
+============
 
 .. doxygenclass:: EvoServo
    :project: API

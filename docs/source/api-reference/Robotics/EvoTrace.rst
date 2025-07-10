@@ -1,5 +1,5 @@
-EvoTrace
-========
+``EvoTrace``
+============
 
 .. doxygenclass:: EvoTrace
    :project: API
