@@ -101,8 +101,8 @@ Connecting Hardware
 
    The wires are color coded to match the pin layout of the EVOX1. However do be careful as some peripherals may have their labels covered by the the 3D printed casing. Please see the schematic of the each peripherals.
 
-I2C
-"""
+I2C Wiring
+""""""""""
 
 .. list-table::
    :widths: 25 25 50
@@ -127,7 +127,7 @@ I2C
 I2C is wired such that the SDA pin of the host (EVN Alpha) is connected to the SDA pin of a peripheral, and the same goes for the SCL pins.
 
 Motor Wiring
-"""""""""""""""""""
+""""""""""""
 
 .. list-table::
    :widths: 25 25 50

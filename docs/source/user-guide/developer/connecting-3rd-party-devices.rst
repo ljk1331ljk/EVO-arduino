@@ -67,7 +67,7 @@ Step 2: Source File
 ^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: cpp
-   :emphasize-lines: 11
+   :emphasize-lines: 12
    :linenos:
 
    #include "EvoSensorName.h"

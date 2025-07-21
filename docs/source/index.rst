@@ -46,5 +46,5 @@ Acknowledgements
    :maxdepth: 2
    
    user-guide/index
-   guides/index
+   development/index
    api-reference/index

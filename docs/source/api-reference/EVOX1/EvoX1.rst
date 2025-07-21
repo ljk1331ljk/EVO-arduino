@@ -113,3 +113,139 @@ Example
       Serial.println(" V");
       delay(1000);
    }
+
+Button Control Functions
+------------------------
+
+.. doxygenfunction:: EVOX1::waitForButton
+   :project: API
+
+.. doxygenfunction:: EVOX1::waitForPress
+   :project: API
+
+.. doxygenfunction:: EVOX1::waitForRelease
+   :project: API
+
+.. doxygenfunction:: EVOX1::waitForBump
+   :project: API
+
+.. doxygenfunction:: EVOX1::getButton
+   :project: API
+
+.. important::
+   Avoid using `waitForButton()` in loops — prefer `waitForBump()` for debounce reliability.
+
+Display Control Functions
+-------------------------
+
+.. doxygenfunction:: EVOX1::flipDisplayOrientation
+   :project: API
+
+.. doxygenfunction:: EVOX1::clearDisplay
+   :project: API
+
+.. rubric:: Writing to Display
+
+.. doxygenfunction:: EVOX1::writeToDisplay(int, int, int, bool, bool)
+   :project: API
+
+.. doxygenfunction:: EVOX1::writeToDisplay(double, int, int, bool, bool)
+   :project: API
+
+.. doxygenfunction:: EVOX1::writeToDisplay(const char *, int, int, bool, bool)
+   :project: API
+
+.. note::
+   These overloaded functions write data to the display at specific coordinates (x, y).
+   You can write integers, floating-point values, or C-style strings.
+   The optional `clear` parameter clears the display before writing,
+   and the optional `draw` parameter immediately renders the display buffer.
+
+.. rubric:: Writing Line to Display
+
+.. doxygenfunction:: EVOX1::writeLineToDisplay(int, int, bool, bool)
+   :project: API
+
+.. doxygenfunction:: EVOX1::writeLineToDisplay(double, int, bool, bool)
+   :project: API
+
+.. doxygenfunction:: EVOX1::writeLineToDisplay(const char *, int, bool, bool)
+   :project: API
+
+.. note::
+   These methods write a value to a specified line on the display.
+   Overloads accept integers, floating point numbers, or C-style strings.
+
+.. tip::
+   For centered or multiline display, calculate position before calling these methods.
+
+.. doxygenfunction:: EVOX1::drawDisplay
+   :project: API
+
+.. doxygenfunction:: EVOX1::setFontSize
+   :project: API
+
+Example
+^^^^^^^
+
+Here is an example of how to use the EVOX1 display functions
+
+.. code-block:: cpp
+   :linenos:
+
+   #include <Evo.h>
+
+   EVOX1 evo;
+
+   void setup() {
+      evo.begin();        // Initialize EVOX1
+
+      evo.clearDisplay(); // Clear the display
+      evo.writeToDisplay("Hello, EVOX1!", 0, 0, true, true); // Write to display
+      evo.drawDisplay();  // Render the display buffer
+   }
+
+LED & Buzzer Control Functions
+------------------------------
+
+.. doxygenfunction:: EVOX1::setRGB
+   :project: API
+
+.. tip::
+   Use colors to indicate system states — e.g., red = error, green = ready.
+
+.. doxygenfunction:: EVOX1::playTone
+   :project: API
+
+.. warning::
+   `playTone` is **blocking** — it will delay program execution.
+
+Example
+^^^^^^^
+
+.. code-block:: cpp
+   :linenos:
+
+   #include <Evo.h>
+
+   EVOX1 evo;
+
+   void setup() {
+   evo.begin(); // initialises the Evo-X1 peripherals
+
+   evo.clearDisplay(); // clears the display buffer
+   evo.writeLineToDisplay("Press Button", 0, false, true); // writes the program name to the display
+
+   evo.waitForBump(100);       // waits for the button to be pressed
+   evo.playTone(NOTE_G4, 300); // plays the buzzer for 300ms
+   }
+
+   void loop() {
+   // cycling through red green and blue colors using the RGB led
+   evo.setRGB(20, 0, 0);
+   delay(1000);
+   evo.setRGB(0, 20, 0);
+   delay(1000);
+   evo.setRGB(0, 0, 20);
+   delay(1000);
+   }

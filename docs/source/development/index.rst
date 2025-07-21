@@ -1,10 +1,10 @@
-Guides
-======
+Development
+===========
 
-Development Updates
--------------------
+This section provides essential information and guidelines for developing and maintaining the project. It includes setup instructions, coding standards, and key design decisions to help new developers get up to speed quickly. Whether you're fixing bugs, adding features, or continuing ongoing work, this guide ensures smooth project handover and consistent development practices.
 
 **What's New!**
+---------------
 
 .. versionadded:: 27-06-2025
 
@@ -24,21 +24,9 @@ Development Updates
    - Use ``sphinx.ext.autosectionlabel``, to auto-generated ``ref`` labels from header titles. No need for manual label for each section
    - Replaced ``.. image::`` with ``.. figure::`` for the automatic spacing below. No need to use ``.. raw:: html`` for the ``<br>`` spacing at the end of each image
 
-Heading 3
----------
-
-Heading 4
-^^^^^^^^^
-
-Heading 5
-~~~~~~~~~
-
-Heading 6
-*********
-
 .. toctree::
    :hidden:
    :maxdepth: 2
-   
-   diy-guide
-   
+
+   basic-formatting-syntax
+   advanced-formatting-syntax

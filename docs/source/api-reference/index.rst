@@ -19,24 +19,6 @@ Library Showcases
 
       **Board**
 
-   .. grid-item-card::
-      :link: EVOX1/EvoButton
-      :link-type: doc
-
-      **Button**
-
-   .. grid-item-card::
-      :link: EVOX1/EvoDisplay
-      :link-type: doc
-
-      **Display**
-
-   .. grid-item-card::
-      :link: EVOX1/EvoLEDBuzzer
-      :link-type: doc
-
-      **LED & Buzzer**
-
 .. rubric:: Motors
 
 .. grid:: 2 2 3 3
@@ -106,9 +88,6 @@ Library Showcases
    :caption: EVOX1
 
    EVOX1/EvoX1
-   EVOX1/EvoButton
-   EVOX1/EvoDisplay
-   EVOX1/EvoLEDBuzzer
 
 .. toctree::
    :hidden:
