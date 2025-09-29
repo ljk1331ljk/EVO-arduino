@@ -38,46 +38,31 @@ public:
 
     /*read the data from the before selected Analog Input default AIN0
      */
+    /**
+     * @brief Reads the ADC value from the specified position.
+     * @param position The ADC channel position (0-7).
+     */
     uint16_t readADC(byte position);
 
-    /*
-    Selects the oversampling ratio for ADC conversion result.
-    0b = No averaging
-    1b = 2 samples
-    10b = 4 samples
-    11b = 8 samples
-    100b = 16 samples
-    101b = 32 samples
-    110b = 64 samples
-    111b = 128 samples
-    */
+    /**
+     * @brief Sets the oversampling ratio for ADC conversion.
+     * @param ratio The oversampling ratio (0-7).
+     * @details 0b = No averaging
+     *          1b = 2 samples
+     *          10b = 4 samples
+     *          11b = 8 samples
+     *          100b = 16 samples
+     *          101b = 32 samples
+     *          110b = 64 samples
+     *          111b = 128 samples
+     */
     void setOversamplingRatio(byte ratio);
-    /*
-     Selects the oversampling ratio for ADC conversion result.
-     0b = No averaging
-     1b = 2 samples
-     10b = 4 samples
-     11b = 8 samples
-     100b = 16 samples
-     101b = 32 samples
-     110b = 64 samples
-     111b = 128 samples
+
+    /**
+     * @brief Gets the current oversampling ratio for ADC conversion.
+     * @return The oversampling ratio (0-7).
      */
     byte getOversamplingRatio();
-
-    // reads one byte of a requested register
-    byte getRegisterData(byte id);
-    // writes one byte to the selected register
-    void setRegisterData(byte id, byte data);
-
-    // returns the Voltage that is set on a Analog Input
-    float getVoltage();
-    // returns the Voltage that  set on a Analog Input
-    float getVoltage(uint16_t in);
-
-    // set and read the MAX_INPUT_VOLTAGE
-    void setMAX_INPUT_VOLTAGE(float in);
-    float getMAX_INPUT_VOLTAGE();
 };
 
 #endif
