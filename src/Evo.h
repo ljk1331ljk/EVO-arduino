@@ -19,5 +19,6 @@
 #include "sensors/EvoBNO055.h"
 #include "sensors/EvoHuskyLens.h"
 #include "sensors/EvoOLED.h"
+#include "sensors/EvoLineLeader.h"
 
 #endif
