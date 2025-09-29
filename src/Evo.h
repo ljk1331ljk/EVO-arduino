@@ -6,6 +6,7 @@
 #include "EVOX1.h"
 
 #include "helper/EvoHC05.h"
+#include "helper/OTAHandler.h"
 
 #include "motors/EvoMotor.h"
 #include "motors/EvoServo.h"
