@@ -44,11 +44,6 @@ class EVOX1
 {
 private:
     /**
-     * @brief OLED display instance using U8G2 library.
-     */
-    U8G2_SSD1306_128X64_NONAME_F_HW_I2C display;
-
-    /**
      * @brief RGB LED instance using Adafruit NeoPixel.
      */
     Adafruit_NeoPixel rgb;
@@ -91,6 +86,12 @@ public:
               rgb(1, PIXEL_PIN, NEO_GRBW + NEO_KHZ800)
     {
     }
+
+    /**
+     * @brief OLED display instance using U8G2 library.
+     */
+    U8G2_SSD1306_128X64_NONAME_F_HW_I2C display;
+
     /**
      * @brief Gets the singleton instance of EVOX1.
      * @return Reference to the singleton instance.
@@ -242,9 +243,16 @@ public:
     /**
      * @brief Plays a tone on the buzzer.
      * @param frequency The frequency of the tone in Hz.
-     * @param duration The duration of the tone in milliseconds.
+     * @param duration The duration of the tone in milliseconds. If -1, plays indefinitely until stopped.
+     * @note If duration is -1, you must call stopTone() to stop the tone.
+     * @see stopTone()
      */
-    void playTone(uint frequency, int duration);
+    void playTone(uint frequency, int duration = -1, bool blocking = true);
+
+    /**
+     * @brief Stops the currently playing tone on the buzzer.
+     */
+    void stopTone();
 
     // === RGB LED Functions ===
 

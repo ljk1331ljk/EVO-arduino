@@ -33,8 +33,9 @@ public:
 
     /**
      * @brief Initializes the TCS34725 sensor.
+     * @return True if the sensor was successfully initialized, false otherwise.
      */
-    void begin();
+    bool begin();
 
     /**
      * @brief Sets the integration time for the sensor.
@@ -50,7 +51,7 @@ public:
      * - TCS34725_GAIN_1X
      * - TCS34725_GAIN_4X
      * - TCS34725_GAIN_16X
-     * - TCS34725_GAIN_60X 
+     * - TCS34725_GAIN_60X
      */
     void setGain(tcs34725Gain_t gain);
 

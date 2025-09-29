@@ -1,12 +1,13 @@
 #include "EvoTCS34725.h"
 
-void EvoTCS34725::begin()
+bool EvoTCS34725::begin()
 {
     i2CDevice.selectChannel(_channel);
     if (!this->tcs.begin())
     {
-        Serial.println(F("Failed to boot TCS34725"));
+        return false;
     }
+    return true;
 }
 
 void EvoTCS34725::getRGB(float *r, float *g, float *b)
