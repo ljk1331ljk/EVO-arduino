@@ -1,9 +1,10 @@
 #include "EvoMotorPair.h"
 
-EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2)
+EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoBNO055 *imu)
 {
     _m1 = m1;
     _m2 = m2;
+    _imu = imu;
 }
 
 void EvoMotorPair::setMinimumSpeed(int minSpeed)
@@ -146,8 +147,8 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool 
             degError = (_m1->getAngle() * leftPowerRatio * leftDir) - (_m2->getAngle() * rightPowerRatio * rightDir);
             PSync = degError * _kpSync;
             DSync = (degError - pDegError) * _kdSync;
-            currentLeftSpeed = ((left - ((PSync + DSync)) * rightPowerRatio)) * leftDir;
-            currentRightSpeed = ((right + ((PSync + DSync)) * leftPowerRatio)) * rightDir;
+            currentLeftSpeed = (left - (PSync + DSync) * rightPowerRatio) * leftDir;
+            currentRightSpeed = (right + (PSync + DSync) * leftPowerRatio) * rightDir;
             if (left > _minSpeed && right > _minSpeed)
             {
                 left -= _decel;
@@ -233,8 +234,8 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brak
         degError = (_m1->getAngle() * leftPowerRatio * leftDir) - (_m2->getAngle() * rightPowerRatio * rightDir);
         PSync = degError * _kpSync;
         DSync = (degError - pDegError) * _kdSync;
-        currentLeftSpeed = ((left - ((PSync + DSync)) * rightPowerRatio)) * leftDir;
-        currentRightSpeed = ((right + ((PSync + DSync)) * leftPowerRatio)) * rightDir;
+        currentLeftSpeed = (left - (PSync + DSync) * rightPowerRatio) * leftDir;
+        currentRightSpeed = (right + (PSync + DSync) * leftPowerRatio) * rightDir;
         _m1->run(currentLeftSpeed);
         _m2->run(currentRightSpeed);
     }
@@ -250,6 +251,160 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, bool brak
     }
 }
 
+void EvoMotorPair::moveIMU(int leftSpeed, int rightSpeed, int Condition, float IMUkp, float IMUkd, bool brake)
+{
+    _m1->resetAngle();
+    _m2->resetAngle();
+    int currentLeftSpeed, currentRightSpeed, degToDecel, angToDecel;
+    float leftPowerRatio, rightPowerRatio, currentHeading, error, prevError = 0, P, D;
+    int left = _minSpeed;
+    int right = _minSpeed;
+
+    int leftDir = leftSpeed == 0 ? 0 : (leftSpeed > 0 ? 1 : -1);
+    int rightDir = rightSpeed == 0 ? 0 : (rightSpeed > 0 ? 1 : -1);
+
+    if (leftSpeed != 0 && rightSpeed != 0)
+    {
+        leftPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? 1 : abs((float)rightSpeed / (float)leftSpeed);
+        rightPowerRatio = abs(leftSpeed) > abs(rightSpeed) ? abs((float)leftSpeed / (float)rightSpeed) : 1;
+    }
+    else
+    {
+        leftPowerRatio = leftSpeed == 0 ? 0 : 1;
+        rightPowerRatio = leftSpeed == 0 ? 1 : 0;
+    }
+
+    if (leftSpeed = rightSpeed)
+    {
+        if (IMUkp == 0 && IMUkd == 0) {
+            IMUkp = 40;
+            IMUkd = 100;
+        }
+
+        float initialHeading = _imu->getRelativeHeading();
+        while ((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2 < degToDecel)
+        {
+            error = (_m1->getAngle() * leftPowerRatio * leftDir) - (_m2->getAngle() * rightPowerRatio * rightDir);
+            P = error * _kpSync;
+            D = (error - prevError) * _kdSync;
+            currentLeftSpeed = (left - (P + D) * rightPowerRatio) * leftDir;
+            currentRightSpeed = (right + (P + D) * leftPowerRatio) * rightDir;
+            if (left > _minSpeed && right > _minSpeed)
+            {
+                left -= _decel;
+                right -= _decel;
+            }
+            prevError = error;
+
+            _m1->run(currentLeftSpeed);
+            _m2->run(currentRightSpeed);
+        }
+        while (((abs(_m1->getAngle()) + abs(_m2->getAngle())) / 2) < abs(Condition))
+        {
+            error = _imu->getRelativeHeading() - initialHeading;
+            P = error * IMUkp;
+            D = (error - prevError) * IMUkd;
+            currentLeftSpeed = (left - (P + D) * rightPowerRatio) * leftDir;
+            currentRightSpeed = (right + (P + D) * leftPowerRatio) * rightDir;
+            if (left > _minSpeed && right > _minSpeed)
+            {
+                left -= _decel;
+                right -= _decel;
+            }
+            prevError = error;
+
+            _m1->run(currentLeftSpeed);
+            _m2->run(currentRightSpeed);
+        }
+        if (brake)
+        {
+            _m1->brake();
+            _m2->brake();
+        }
+        else
+        {
+            _m1->coast();
+            _m2->coast();
+        }
+    }
+
+    else if (rightSpeed = 0)   {
+        float targetHeading = abs(_imu->getRelativeHeading()) + abs(Condition);
+        angToDecel = abs(Condition)/3;
+        Serial.print("RightMotor = 0");
+        while(abs(targetHeading) - abs(_imu->getRelativeHeading()) < angToDecel)    {
+            currentLeftSpeed = left * leftDir;
+            currentRightSpeed = 0;
+            if (left < abs(leftSpeed))
+            {
+                left += _accel;
+            }
+            _m1->run(currentLeftSpeed);
+            _m2->run(currentRightSpeed);
+        }
+        while(abs(abs(targetHeading) - abs(_imu->getRelativeHeading())) < abs(Condition))  {
+            currentLeftSpeed = left * leftDir;
+            currentRightSpeed = 0;
+
+            if (left > abs(_minSpeed))
+            {
+                left -= _decel;
+            }
+            _m1->run(currentLeftSpeed);
+            _m2->run(currentRightSpeed);
+        }
+
+        if (brake)
+        {
+            _m1->brake();
+            _m2->brake();
+        }
+        else
+        {
+            _m1->coast();
+            _m2->coast();
+        }
+    }
+
+    else if 
+    (leftSpeed = 0)  {
+        float targetHeading = abs(_imu->getRelativeHeading()) + abs(Condition);
+        angToDecel = abs(Condition)/3;
+        Serial.print("LeftMotor = 0");
+        while(abs(targetHeading) - abs(_imu->getRelativeHeading()) < angToDecel)   {
+            currentLeftSpeed = 0;
+            currentRightSpeed = right * rightDir;
+            if (right < abs(rightSpeed))
+            {
+                right += _accel;
+            }
+            _m1->run(currentLeftSpeed);
+            _m2->run(currentRightSpeed);
+        }
+        while((abs(targetHeading) - abs(_imu->getRelativeHeading()) / 2) < abs(Condition))  {
+            currentLeftSpeed = 0;
+            currentRightSpeed = right * rightDir;
+
+            if (right > abs(_minSpeed))
+            {
+                right -= _decel;
+            }
+            _m1->run(currentLeftSpeed);
+            _m2->run(currentRightSpeed);
+        }
+
+        if (brake)
+        {
+            _m1->brake();
+            _m2->brake();
+        }
+        else
+        {
+            _m1->coast();
+            _m2->coast();
+        }
+    }
+}
 void EvoMotorPair::brake()
 {
     _m1->brake();

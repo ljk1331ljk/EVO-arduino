@@ -1,7 +1,7 @@
 #include <Evo.h>
 
 EVOX1 evo;
-EvoBNO055 bno(I2C1);
+EvoBNO055 bno(I2C8);
 
 void setup()
 {
