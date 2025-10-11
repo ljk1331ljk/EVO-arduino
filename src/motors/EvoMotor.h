@@ -34,8 +34,9 @@ enum MotorType
     EV3LargeMotor,         /**< EV3 Large Motor */
     EV3MediumMotor,        /**< EV3 Medium Motor */
     GeekServoDCMotor,      /**< GeekServo DC Motor */
-    ITERMKS,               /**< ITER Speed motor */
-    ITERMKT,               /**< ITER Torque motor */
+    ITERMK495,             /**< ITERMotor 495rpm */
+    ITERMK330,             /**< ITERMotor 330rpm */
+    ITERMK195,             /**< ITERMotor 195rpm */
     EVOMotor300,           /**< EVO Motor 300 */
     EVOMotor100            /**< EVO Motor 100 */
 };

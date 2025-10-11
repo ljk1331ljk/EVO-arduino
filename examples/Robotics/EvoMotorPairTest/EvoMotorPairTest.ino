@@ -2,8 +2,8 @@
 
 EVOX1 evo;
 
-EvoMotor leftM(M1, ITERMKS, true);
-EvoMotor rightM(M2, ITERMKS);
+EvoMotor leftM(M1, ITERMK330, true);
+EvoMotor rightM(M2, ITERMK330);
 EvoBNO055 bno(I2C8);
 EvoMotorPair robot(&leftM, &rightM, &bno);
 
