@@ -4,6 +4,8 @@ EVOX1 evo;
 
 EvoMotor leftM(M1, ITERMK330, true);
 EvoMotor rightM(M2, ITERMK330);
+EvoMotor Mech1(M3, ITERMK330);
+EvoMotor Mech2(M4, ITERMK195);
 EvoBNO055 bno(I2C8);
 EvoMotorPair robot(&leftM, &rightM, &bno);
 
@@ -19,19 +21,24 @@ void setup()
   evo.waitForBump();
 
   bno.resetHeading();
-  robot.setAcceleration(8, 1000);
-  robot.setDeceleration(8, 1000);
-  robot.setMinimumSpeed(1000);
+  robot.setAcceleration(50, 500);
+  robot.setDeceleration(50, 500);
   robot.setPD(100, 30);
-  // robot.moveDegrees(1500, -1500, 200);
-  // delay(500);
-  // robot.moveTime(-1000, -1000, 1000);
-  // delay(500);
-  robot.moveDegrees(1500, 1500, 1000);
+  robot.moveTime(-1000, -1000, 1000);
   delay(500);
-  robot.moveIMU(1500, 1500, 1000);
+  robot.moveIMU(2000, 2000, 1000);
   delay(500);
-  robot.moveIMU(0, 1000, 90);
+  robot.moveDegrees(1500, -1500, 200);
+  delay(500);
+  robot.moveIMU(0, 1500, 90);
+  delay(500);
+  robot.moveIMU(1500, 0, 90);
+  delay(500);
+  robot.moveIMU(-1500, 0, 45);
+  delay(500);
+  robot.moveIMU(0, -1500, 45);
+  delay(500);
+  robot.moveIMU(1500, - 1500, 90);
   delay(500);
 }
 
