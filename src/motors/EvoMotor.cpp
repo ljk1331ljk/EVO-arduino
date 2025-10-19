@@ -23,7 +23,7 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
         setParameters(motorPort, !motorFlip, 4000, 500, 10, 50, true, 1204);
         break;
     case ITERMK330:
-        setParameters(motorPort, !motorFlip, 4000, 100, 10, 50, true, 1807);
+        setParameters(motorPort, !motorFlip, 4000, 500, 10, 50, true, 1807);
         break;
     case ITERMK195:
         setParameters(motorPort, !motorFlip, 4000, 100, 10, 50, true, 2988);
