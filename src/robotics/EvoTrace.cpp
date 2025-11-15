@@ -16,32 +16,32 @@ void EvoTrace::begin()
     _rightMotor->begin();
 }
 
-void EvoTrace::PDTrackOn(int speed, float kp, float kd, int mode, int ThV)
+void EvoTrace::PDTrackOn(int speed, float kp, float kd, TraceMode mode, int ThV)
 {
     _leftSensor->getRawRGBC(&lr, &lg, &lb, &lc);
     _rightSensor->getRawRGBC(&rr, &rg, &rb, &rc);
 
-    if (mode == 1)
+    if (mode == LEFT_FOLLOWER)
     {
         error = lc - ThV; // Calculate error based on clear values
     }
 
-    else if (mode == 2)
+    else if (mode == LEFT_INVERTER)
     {
         error = ThV - lc; // Calculate error based on clear values
     }
 
-    else if (mode == 3)
+    else if (mode == BOTH_FOLLOWER)
     {
         error = lc - rc; // Calculate error based on clear values
     }
 
-    else if (mode == 4)
+    else if (mode == RIGHT_FOLLOWER)
     {
         error = rc - ThV; // Calculate error based on clear values
     }
 
-    else if (mode == 5)
+    else if (mode == RIGHT_INVERTER)
     {
         error = ThV - rc; // Calculate error based on clear values
     }
@@ -56,7 +56,7 @@ void EvoTrace::PDTrackOn(int speed, float kp, float kd, int mode, int ThV)
     prevError = error; // Update previous error
 }
 
-void EvoTrace::PDTrackDegrees(int speed, float kp, float kd, int degrees, int mode, int ThV, bool brake)
+void EvoTrace::PDTrackDegrees(int speed, float kp, float kd, int degrees, TraceMode mode, int ThV, bool brake)
 {
     _leftMotor->resetAngle();  // Reset the angle for the left motor
     _rightMotor->resetAngle(); // Reset the angle for the right motor
@@ -66,27 +66,27 @@ void EvoTrace::PDTrackDegrees(int speed, float kp, float kd, int degrees, int mo
         _leftSensor->getRawRGBC(&lr, &lg, &lb, &lc);
         _rightSensor->getRawRGBC(&rr, &rg, &rb, &rc);
 
-        if (mode == 1)
+        if (mode == LEFT_FOLLOWER)
         {
             error = lc - ThV; // Calculate error based on clear values
         }
 
-        else if (mode == 2)
+        else if (mode == LEFT_INVERTER)
         {
             error = ThV - lc; // Calculate error based on clear values
         }
 
-        else if (mode == 3)
+        else if (mode == BOTH_FOLLOWER)
         {
             error = lc - rc; // Calculate error based on clear values
         }
 
-        else if (mode == 4)
+        else if (mode == RIGHT_FOLLOWER)
         {
             error = rc - ThV; // Calculate error based on clear values
         }
 
-        else if (mode == 5)
+        else if (mode == RIGHT_INVERTER)
         {
             error = ThV - rc; // Calculate error based on clear values
         }
@@ -108,7 +108,7 @@ void EvoTrace::PDTrackDegrees(int speed, float kp, float kd, int degrees, int mo
     }
 }
 
-void EvoTrace::PDTrackJunction(int speed, float kp, float kd, int threshold, int maxJunctions, int mode, int ThV, bool brake)
+void EvoTrace::PDTrackJunction(int speed, float kp, float kd, int threshold, int maxJunctions, TraceMode mode, int ThV, bool brake)
 {
     int junctionCount = 0;   // Initialize junction counter
     bool atJunction = false; // State variable to track junction detection
@@ -136,27 +136,27 @@ void EvoTrace::PDTrackJunction(int speed, float kp, float kd, int threshold, int
         }
 
         // Calculate error based on clear values
-        if (mode == 1)
+        if (mode == LEFT_FOLLOWER)
         {
             error = lc - ThV; // Calculate error based on clear values
         }
 
-        else if (mode == 2)
+        else if (mode == LEFT_INVERTER)
         {
             error = ThV - lc; // Calculate error based on clear values
         }
 
-        else if (mode == 3)
+        else if (mode == BOTH_FOLLOWER)
         {
             error = lc - rc; // Calculate error based on clear values
         }
 
-        else if (mode == 4)
+        else if (mode == RIGHT_FOLLOWER)
         {
             error = rc - ThV; // Calculate error based on clear values
         }
 
-        else if (mode == 5)
+        else if (mode == RIGHT_INVERTER)
         {
             error = ThV - rc; // Calculate error based on clear values
         }
