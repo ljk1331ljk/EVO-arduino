@@ -10,7 +10,7 @@ enum TraceMode
     LEFT_INVERTER,
     BOTH_FOLLOWER,
     RIGHT_FOLLOWER,
-    RIGHT_INVERTER 
+    RIGHT_INVERTER
 };
 
 /**
