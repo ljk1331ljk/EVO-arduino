@@ -278,8 +278,8 @@ void EvoMotorPair::moveIMU(int leftSpeed, int rightSpeed, int Condition, float I
     if (leftSpeed == rightSpeed && leftSpeed != 0 && rightSpeed != 0) 
     {
         if (IMUkp == 0 && IMUkd == 0) {
-            IMUkp = 10;
-            IMUkd = 50;
+            IMUkp = 50;
+            IMUkd = 200;
         }
 
         if (abs(Condition) > (_accelDeg + _decelDeg))
