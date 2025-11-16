@@ -6,8 +6,11 @@ EvoMotor leftM(M1, ITERMK330, true);
 EvoMotor rightM(M2, ITERMK330);
 EvoMotor Mech1(M3, ITERMK330);
 EvoMotor Mech2(M4, ITERMK195);
+EvoTCS34725 sensorLeft(I2C4);
+EvoTCS34725 sensorRight(I2C5);
 EvoBNO055 bno(I2C8);
 EvoMotorPair robot(&leftM, &rightM, &bno);
+EvoTrace trace(&sensorLeft, &sensorRight, &leftM, &rightM);
 
 void setup()
 {
@@ -21,8 +24,8 @@ void setup()
   evo.waitForBump();
 
   bno.resetHeading();
-  robot.setAcceleration(50, 500);
-  robot.setDeceleration(50, 500);
+  robot.setAcceleration(75, 500);
+  robot.setDeceleration(75, 500);
   robot.setPD(100, 30);
   robot.moveTime(-1000, -1000, 1000);
   delay(500);
@@ -39,6 +42,11 @@ void setup()
   robot.moveIMU(0, -1500, 45);
   delay(500);
   robot.moveIMU(1500, - 1500, 90);
+  delay(500);
+
+  evo.waitForBump();
+
+  trace.PDTrackDegrees(500, 0.1, BOTH_FOLLOWER, 2000);
   delay(500);
 }
 
