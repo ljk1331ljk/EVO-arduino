@@ -11,7 +11,7 @@
 #include <helper/EvoI2CDevice.h>
 #include <helper/EvoPWMDriver.h>
 #include <helper/EvoBQ25887.h>
-#include <Adafruit_NeoPixel.h>
+#include "helper/AdafruitSensors/Adafruit_NeoPixel.h"
 #include <helper/U8g2/U8g2lib.h>
 
 /**
