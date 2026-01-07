@@ -29,7 +29,7 @@ void setup()
   motor.runTime(4000, 1000);
   delay(1000);
   motor.resetAngle();
-  motor.runTarget(2000, -360, true);
+  motor.runTarget(2000, -360);
   delay(1000);
   motor.runUntilStalled(2000);
   delay(1000);
