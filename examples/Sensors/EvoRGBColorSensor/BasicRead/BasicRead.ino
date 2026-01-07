@@ -1,7 +1,7 @@
 #include <Evo.h>
 
 EVOX1 evo;
-EvoTCS34725 cs(I2C1);
+EvoRGBColorSensor cs(I2C1);
 
 void setup()
 {

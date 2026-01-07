@@ -1,7 +1,7 @@
 #include <Evo.h>
 
 EVOX1 evo;
-EvoTCS34725 cs(I2C6);
+EvoRGBColorSensor cs(I2C6);
 uint16_t rr, rg, rb, rc;
 float r, g, b, h, s, v;
 
