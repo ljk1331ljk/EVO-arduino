@@ -1,6 +1,6 @@
-#include "EvoTCS34725.h"
+#include "EvoRGBColorSensor.h"
 
-bool EvoTCS34725::begin()
+bool EvoRGBColorSensor::begin()
 {
     i2CDevice.selectChannel(_channel);
     if (!this->tcs.begin())
@@ -10,18 +10,18 @@ bool EvoTCS34725::begin()
     return true;
 }
 
-void EvoTCS34725::getRGB(float *r, float *g, float *b)
+void EvoRGBColorSensor::getRGB(float *r, float *g, float *b)
 {
     i2CDevice.selectChannel(_channel);
     tcs.getRGB(r, g, b);
 }
-void EvoTCS34725::getRawRGBC(uint16_t *r, uint16_t *g, uint16_t *b, uint16_t *c)
+void EvoRGBColorSensor::getRawRGBC(uint16_t *r, uint16_t *g, uint16_t *b, uint16_t *c)
 {
     i2CDevice.selectChannel(_channel);
     tcs.getRawData(r, g, b, c);
 }
 
-void EvoTCS34725::getHSV(float *h, float *s, float *v)
+void EvoRGBColorSensor::getHSV(float *h, float *s, float *v)
 {
     float r, g, b;
     getRGB(&r, &g, &b);
@@ -63,40 +63,40 @@ void EvoTCS34725::getHSV(float *h, float *s, float *v)
         *h += 360;
 }
 
-void EvoTCS34725::setIntegrationTime(uint8_t it)
+void EvoRGBColorSensor::setIntegrationTime(uint8_t it)
 {
     i2CDevice.selectChannel(_channel);
     _tcs34725IntegrationTime = it;
     tcs.setIntegrationTime(_tcs34725IntegrationTime);
 }
-void EvoTCS34725::setGain(tcs34725Gain_t gain)
+void EvoRGBColorSensor::setGain(tcs34725Gain_t gain)
 {
     i2CDevice.selectChannel(_channel);
     _tcs34725Gain = gain;
     tcs.setGain(_tcs34725Gain);
 }
-uint16_t EvoTCS34725::getRawRed()
+uint16_t EvoRGBColorSensor::getRawRed()
 {
     i2CDevice.selectChannel(_channel);
     uint16_t red = tcs.read16(TCS34725_RDATAL);
     delay((256 - _tcs34725IntegrationTime) * 12 / 5 + 1);
     return red;
 }
-uint16_t EvoTCS34725::getRawGreen()
+uint16_t EvoRGBColorSensor::getRawGreen()
 {
     i2CDevice.selectChannel(_channel);
     uint16_t green = tcs.read16(TCS34725_GDATAL);
     delay((256 - _tcs34725IntegrationTime) * 12 / 5 + 1);
     return green;
 }
-uint16_t EvoTCS34725::getRawBlue()
+uint16_t EvoRGBColorSensor::getRawBlue()
 {
     i2CDevice.selectChannel(_channel);
     uint16_t blue = tcs.read16(TCS34725_BDATAL);
     delay((256 - _tcs34725IntegrationTime) * 12 / 5 + 1);
     return blue;
 }
-uint16_t EvoTCS34725::getRawClear()
+uint16_t EvoRGBColorSensor::getRawClear()
 {
     i2CDevice.selectChannel(_channel);
     uint16_t clear = tcs.read16(TCS34725_CDATAL);
@@ -104,7 +104,7 @@ uint16_t EvoTCS34725::getRawClear()
     return clear;
 }
 
-float EvoTCS34725::getRed()
+float EvoRGBColorSensor::getRed()
 {
     i2CDevice.selectChannel(_channel);
     uint16_t red = tcs.read16(TCS34725_RDATAL);
@@ -119,7 +119,7 @@ float EvoTCS34725::getRed()
         return (float)red / clear * 255.0;
     }
 }
-float EvoTCS34725::getGreen()
+float EvoRGBColorSensor::getGreen()
 {
     i2CDevice.selectChannel(_channel);
     uint16_t green = tcs.read16(TCS34725_GDATAL);
@@ -134,7 +134,7 @@ float EvoTCS34725::getGreen()
         return (float)green / clear * 255.0;
     }
 }
-float EvoTCS34725::getBlue()
+float EvoRGBColorSensor::getBlue()
 {
     i2CDevice.selectChannel(_channel);
     uint16_t blue = tcs.read16(TCS34725_BDATAL);

@@ -1,31 +1,30 @@
 /**
- * @file EvoVL53L0X.h
+ * @file EvoTOF.h
  * @brief Class for interfacing with the VL53L0X Time-of-Flight distance sensor using the EvoI2CDevice library.
  */
-#ifndef EVO_VL53L0X_H
-#define EVO_VL53L0X_H
+#ifndef EVO_TOF_H
+#define EVO_TOF_H
 
 #include "../helper/EvoI2CDevice.h"
-#include <Adafruit_VL53L0X.h>
+#include "../helper/VL53L0X.h"
 
 /**
- * @class EvoVL53L0X
+ * @class EvoTOF
  * @brief Class to interact with the VL53L0X Time-of-Flight (ToF) distance sensor.
  */
-class EvoVL53L0X
+class EvoTOF
 {
 private:
-    Adafruit_VL53L0X lox;                            /**< Instance of the Adafruit VL53L0X driver */
     I2CChannel _channel;                             /**< I2C channel used for communication */
-    VL53L0X_RangingMeasurementData_t measure;        /**< Struct to store distance measurement data */
+    VL53L0X lox;                                     /**< Instance of the VL53L0X driver */
     I2CDevice &i2CDevice = I2CDevice::getInstance(); /**< Reference to the singleton I2CDevice instance */
 
 public:
     /**
-     * @brief Constructs an EvoVL53L0X object.
+     * @brief Constructs an EvoTOF object.
      * @param channel The I2C channel to use.
      */
-    EvoVL53L0X(I2CChannel channel);
+    EvoTOF(I2CChannel channel);
 
     /**
      * @brief Initializes the VL53L0X sensor.
@@ -46,5 +45,21 @@ public:
      * @return Distance in millimeters. Returns 2000 when there is an error or when maximum reading range is reached.
      */
     int getDistanceContinuous();
+
+    /**
+     * @brief Configures the sensor for long-range measurements.
+     * @param enable If true, configures the sensor for long-range mode; otherwise, sets it to default mode.
+     */
+    void setLongRange(bool enable);
+
+    /**
+     * @brief Sets the sensor to high accuracy mode.
+     */
+    void setHighAccuracyMode();
+
+    /**
+     * @brief Sets the sensor to high speed mode.
+     */
+    void setHighSpeedMode();
 };
 #endif

@@ -2,17 +2,17 @@
  * @file EvoTCS34725.h
  * @brief Class for interfacing with the TCS34725 color sensor using the EvoI2CDevice library.
  */
-#ifndef EVO_BNO055_H
-#define EVO_BNO055_H
+#ifndef EVO_IMU_H
+#define EVO_IMU_H
 
 #include "../helper/EvoI2CDevice.h"
-#include <Adafruit_BNO055.h>
+#include "../helper/AdafruitSensors/Adafruit_BNO055.h"
 
 /**
- * @class EvoBNO055
+ * @class EvoIMU
  * @brief Class to interact with the BNO055 Inertial Measurement Unit (IMU) sensor.
  */
-class EvoBNO055
+class EvoIMU
 {
 private:
     Adafruit_BNO055 bno;                             /**< Instance of the Adafruit BNO055 driver */
@@ -22,12 +22,13 @@ private:
     float _referenceHeading = 0;                     /**< Reference heading for the sensor */
     float _lastRelativeHeading = 0;
     int _rotationCount = 0;
+
 public:
     /**
      * @brief Constructs an EvoTCS34725 object.
      * @param channel The I2C channel to use.
      */
-    EvoBNO055(I2CChannel channel) : bno(55, 0x29)
+    EvoIMU(I2CChannel channel) : bno(55, 0x29)
     {
         _channel = channel;
     }

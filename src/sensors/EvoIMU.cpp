@@ -1,6 +1,6 @@
-#include "EvoBNO055.h"
+#include "EvoIMU.h"
 
-bool EvoBNO055::begin()
+bool EvoIMU::begin()
 {
     i2CDevice.selectChannel(_channel);
     if (!this->bno.begin())
@@ -10,13 +10,13 @@ bool EvoBNO055::begin()
     return true;
 }
 
-void EvoBNO055::resetHeading()
+void EvoIMU::resetHeading()
 {
     _referenceHeading = this->getEulerX();
     _rotationCount = 0;
 }
 
-float EvoBNO055::getRelativeHeading()
+float EvoIMU::getRelativeHeading()
 {
     float heading = (this->getEulerX() - _referenceHeading);
     float relativeHeading = fmod((heading + 180.0), 360.0) - 180.0;
@@ -41,7 +41,7 @@ float EvoBNO055::getRelativeHeading()
     return continuousHeading;
 }
 
-void EvoBNO055::getEuler(float *x, float *y, float *z)
+void EvoIMU::getEuler(float *x, float *y, float *z)
 {
     i2CDevice.selectChannel(_channel);
     bno.getEvent(&event);
@@ -50,21 +50,21 @@ void EvoBNO055::getEuler(float *x, float *y, float *z)
     *z = event.orientation.z;
 }
 
-float EvoBNO055::getEulerX()
+float EvoIMU::getEulerX()
 {
     i2CDevice.selectChannel(_channel);
     bno.getEvent(&event);
     return event.orientation.x;
 }
 
-float EvoBNO055::getEulerY()
+float EvoIMU::getEulerY()
 {
     i2CDevice.selectChannel(_channel);
     bno.getEvent(&event);
     return event.orientation.y;
 }
 
-float EvoBNO055::getEulerZ()
+float EvoIMU::getEulerZ()
 {
     i2CDevice.selectChannel(_channel);
     bno.getEvent(&event);

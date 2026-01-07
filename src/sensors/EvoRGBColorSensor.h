@@ -1,18 +1,17 @@
 /**
- * @file EvoTCS34725.h
+ * @file EvoRGBColorSensor.h
  * @brief Class for interfacing with the TCS34725 color sensor using the EvoI2CDevice library.
  */
-#ifndef EVO_TCS34725_H
-#define EVO_TCS34725_H
-
+#ifndef EVO_RGB_COLOR_SENSOR_H
+#define EVO_RGB_COLOR_SENSOR_H
 #include "../helper/EvoI2CDevice.h"
-#include <Adafruit_TCS34725.h>
+#include "../helper/AdafruitSensors/Adafruit_TCS34725.h"
 
 /**
- * @class EvoTCS34725
+ * @class EvoRGBColorSensor
  * @brief Class to interact with the TCS34725 color sensor.
  */
-class EvoTCS34725
+class EvoRGBColorSensor
 {
 private:
     Adafruit_TCS34725 tcs;                                             /**< Instance of the Adafruit TCS34725 driver */
@@ -26,7 +25,7 @@ public:
      * @brief Constructs an EvoTCS34725 object.
      * @param channel The I2C channel to use.
      */
-    EvoTCS34725(I2CChannel channel) : tcs(TCS34725_INTEGRATIONTIME_2_4MS, TCS34725_GAIN_16X)
+    EvoRGBColorSensor(I2CChannel channel) : tcs(TCS34725_INTEGRATIONTIME_2_4MS, TCS34725_GAIN_16X)
     {
         _channel = channel;
     }
