@@ -2,7 +2,9 @@
 #define EVO_PWM_DRIVER_H
 
 #include <Wire.h>
-#include <Adafruit_PWMServoDriver.h>
+#include "../helper/AdafruitSensors/Adafruit_PWMServoDriver.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
 
 class EvoPWMDriver
 {
@@ -10,6 +12,8 @@ class EvoPWMDriver
 public:
     EvoPWMDriver() : pwm(0x40, Wire1)
     {
+        _mutex = xSemaphoreCreateMutex();
+        configASSERT(_mutex != nullptr); // Crash early if allocation fails
     }
     static EvoPWMDriver &getInstance()
     {
@@ -28,6 +32,7 @@ private:
     int _freq = 2500; // Default frequency
     static EvoPWMDriver *instance;
     Adafruit_PWMServoDriver pwm;
+    SemaphoreHandle_t _mutex;
 };
 
 #endif

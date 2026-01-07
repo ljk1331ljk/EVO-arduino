@@ -148,6 +148,7 @@ bool EvoHC05::setBaud(int baud)
         }
         return true;
     }
+    return true;
 }
 
 bool EvoHC05::checkResponse()
