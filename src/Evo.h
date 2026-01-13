@@ -16,6 +16,7 @@
 #include "robotics/EvoTrace.h"
 
 #include "sensors/EV3ColorSensor.h"
+#include "sensors/EV3TouchSensor.h"
 #include "sensors/EvoRGBColorSensor.h"
 #include "sensors/EvoTOF.h"
 #include "sensors/EvoIMU.h"
