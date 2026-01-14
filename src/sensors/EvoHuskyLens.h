@@ -28,8 +28,12 @@ public:
 
     /**
      * @brief Initializes the HuskyLens sensor.
+     * This method sets up the HuskyLens for communication over I2C.
+     * It must be called before any other methods to ensure the HuskyLens is ready for use.
+     * Default mode is set to ALGORITHM_COLOR_RECOGNITION.
+     * @return True if the HuskyLens was successfully initialized, false otherwise.
      */
-    void begin();
+    bool begin();
     /**
      * @brief Sets the operating mode (algorithm) of the HuskyLens.
      *

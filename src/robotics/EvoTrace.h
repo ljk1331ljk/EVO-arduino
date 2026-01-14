@@ -4,6 +4,15 @@
 #include "../sensors/EvoTCS34725.h"
 #include "../motors/EvoMotor.h"
 
+enum TraceMode
+{
+    LEFT_FOLLOWER,
+    LEFT_INVERTER,
+    BOTH_FOLLOWER,
+    RIGHT_FOLLOWER,
+    RIGHT_INVERTER
+};
+
 /**
  * @class EvoTrace
  * @brief A class to control tracing behavior using two color sensors and two motors.
@@ -33,7 +42,7 @@ public:
      * @param mode The mode of operation.
      * @param ThV The threshold value.
      */
-    void PDTrackOn(int speed, float kp, float kd, int mode, int ThV);
+    void PDTrackOn(int speed, float kp, float kd, TraceMode mode, int ThV);
 
     /**
      * @brief Tracks a specified number of degrees.
@@ -41,11 +50,11 @@ public:
      * @param kp The proportional gain.
      * @param kd The derivative gain.
      * @param degrees The number of degrees to track.
-     * @param mode The mode of operation (default: 3).
+     * @param mode The mode of operation (default: BOTH_FOLLOWER).
      * @param Thv The threshold value (default: 0).
      * @param brake Whether to brake at the end of tracking (default: true).
      */
-    void PDTrackDegrees(int speed, float kp, float kd, int degrees, int mode = 3, int Thv = 0, bool brake = true);
+    void PDTrackDegrees(int speed, float kp, float kd, int degrees, TraceMode mode = BOTH_FOLLOWER, int Thv = 0, bool brake = true);
 
     /**
      * @brief Tracks junctions based on sensor readings.
@@ -54,11 +63,11 @@ public:
      * @param kd The derivative gain.
      * @param threshold The threshold value for junction detection.
      * @param maxJunctions The maximum number of junctions to track.
-     * @param mode The mode of operation (default: 3).
+     * @param mode The mode of operation (default: BOTH_FOLLOWER).
      * @param Thv The threshold value (default: 0).
      * @param brake Whether to brake at the end of tracking (default: true).
      */
-    void PDTrackJunction(int speed, float kp, float kd, int threshold, int maxJunctions, int mode = 3, int Thv = 0, bool brake = true);
+    void PDTrackJunction(int speed, float kp, float kd, int threshold, int maxJunctions, TraceMode mode = BOTH_FOLLOWER, int Thv = 0, bool brake = true);
 
 private:
     EvoTCS34725 *_leftSensor;  ///< Pointer to the left color sensor.

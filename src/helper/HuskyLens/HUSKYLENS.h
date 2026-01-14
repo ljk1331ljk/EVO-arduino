@@ -88,7 +88,7 @@ typedef struct
 typedef struct
 {
     uint8_t length;
-    uint8_t * data;
+    uint8_t *data;
 } ProtocolFirmwareVersion_t;
 
 typedef struct
@@ -621,85 +621,98 @@ public:
         return wait(COMMAND_RETURN_OK);
     }
 
-    bool setCustomName(String name,uint8_t id)
-    {   
-        const char* nameC = name.c_str();
+    bool setCustomName(String name, uint8_t id)
+    {
+        const char *nameC = name.c_str();
         Protocol_t protocol;
-        protocol.customNameHeader.nameDataSize=strlen(nameC);
-        protocol.customNameHeader.id=id;
-        if(protocol.customNameHeader.nameDataSize > 20){
+        protocol.customNameHeader.nameDataSize = strlen(nameC);
+        protocol.customNameHeader.id = id;
+        if (protocol.customNameHeader.nameDataSize > 20)
+        {
             return false;
         }
-        memcpy(protocol.customNameHeader.dataBuffer,nameC,protocol.customNameHeader.nameDataSize);
+        memcpy(protocol.customNameHeader.dataBuffer, nameC, protocol.customNameHeader.nameDataSize);
         protocolWriteRequestCustomNames(protocol);
         return wait(COMMAND_RETURN_OK);
     }
 
-    bool savePictureToSDCard(){
+    bool savePictureToSDCard()
+    {
         Protocol_t protocol;
         protocolWriteRequestPhoto(protocol);
         return wait(COMMAND_RETURN_OK);
     }
 
-    bool saveModelToSDCard(int fileNum){
+    bool saveModelToSDCard(int fileNum)
+    {
         Protocol_t protocol;
-        protocol.first=fileNum;
+        protocol.first = fileNum;
         protocolWriteRequestSendKnowledges(protocol);
         return wait(COMMAND_RETURN_OK);
     }
 
-    bool loadModelFromSDCard(int fileNum){
+    bool loadModelFromSDCard(int fileNum)
+    {
         Protocol_t protocol;
-        protocol.first=fileNum;
+        protocol.first = fileNum;
         protocolWriteRequestReceiveKnowledges(protocol);
         return wait(COMMAND_RETURN_OK);
     }
 
-    bool clearCustomText(){
+    bool clearCustomText()
+    {
         Protocol_t protocol;
         protocolWriteRequestClearText(protocol);
         return wait(COMMAND_RETURN_OK);
     }
 
-    bool customText(String text,uint16_t x,uint8_t y){
-        const char* textC = text.c_str();
+    bool customText(String text, uint16_t x, uint8_t y)
+    {
+        const char *textC = text.c_str();
         Protocol_t protocol;
-        protocol.customText.textSize=strlen(textC);
-        if(protocol.customText.textSize>20){
+        protocol.customText.textSize = strlen(textC);
+        if (protocol.customText.textSize > 20)
+        {
             return false;
         }
-        protocol.customText.x=x;
-        protocol.customText.y=y;
-        memcpy(protocol.customText.text,textC,protocol.customText.textSize);
+        protocol.customText.x = x;
+        protocol.customText.y = y;
+        memcpy(protocol.customText.text, textC, protocol.customText.textSize);
         protocolWriteRequestCustomText(protocol);
         return wait(COMMAND_RETURN_OK);
     }
-    
 
-    bool saveScreenshotToSDCard(){
+    bool saveScreenshotToSDCard()
+    {
         Protocol_t protocol;
         protocolWriteRequestSaveScreenshot(protocol);
         return wait(COMMAND_RETURN_OK);
     }
 
-    bool isPro(){
+    bool isPro()
+    {
         Protocol_t protocolRequest;
         Protocol_t protocolResonse;
         protocolWriteRequestIsPro(protocolRequest);
         wait(COMMAND_RETURN_INFO);
-        if(protocolReadRequestIsPro(protocolResonse)){
+        if (protocolReadRequestIsPro(protocolResonse))
+        {
             return protocolResonse.first;
-        }else{
+        }
+        else
+        {
             return false;
         }
     }
 
-    #define HUSKYLENS_FIRMWARE_VERSION "0.4.1"
-    bool checkFirmwareVersion(){
-       return writeFirmwareVersion(HUSKYLENS_FIRMWARE_VERSION);
+#define HUSKYLENS_FIRMWARE_VERSION "0.4.1"
+    bool checkFirmwareVersion()
+    {
+        writeFirmwareVersion(HUSKYLENS_FIRMWARE_VERSION);
+        return true;
     }
 
-     bool writeFirmwareVersion(String version)
+    bool writeFirmwareVersion(String version)
     {
         Protocol_t protocol;
         uint8_t length = version.length();
@@ -824,7 +837,8 @@ public:
         uint8_t *buffer = husky_lens_protocol_write_begin(protocol.command);
         husky_lens_protocol_write_uint8(protocol.customNameHeader.id);
         husky_lens_protocol_write_uint8(protocol.customNameHeader.nameDataSize);
-        for(int i=0;i<20;i++){
+        for (int i = 0; i < 20; i++)
+        {
             husky_lens_protocol_write_uint8(protocol.customNameHeader.dataBuffer[i]);
         }
         husky_lens_protocol_write_uint8(0x0);
@@ -877,7 +891,7 @@ public:
                 protocol.customText.text[i] = husky_lens_protocol_read_uint8();
             }
             protocol.customText.text[20] = 0x00;
-            //Null terminate the string
+            // Null terminate the string
             protocol.customText.text[protocol.customText.textSize] = 0x00;
             husky_lens_protocol_read_end();
             return true;
@@ -893,14 +907,18 @@ public:
         protocol.command = command;
         uint8_t *buffer = husky_lens_protocol_write_begin(protocol.command);
         husky_lens_protocol_write_uint8(protocol.customText.textSize);
-        if(protocol.customText.x >= 255){
+        if (protocol.customText.x >= 255)
+        {
             husky_lens_protocol_write_uint8(0xFF);
-        }else{
+        }
+        else
+        {
             husky_lens_protocol_write_uint8(0x00);
         }
         husky_lens_protocol_write_uint8(protocol.customText.x & 0xFF);
         husky_lens_protocol_write_uint8(protocol.customText.y);
-        for(int i=0;i<protocol.customText.textSize;i++){
+        for (int i = 0; i < protocol.customText.textSize; i++)
+        {
             husky_lens_protocol_write_uint8(protocol.customText.text[i]);
         }
         husky_lens_protocol_write_uint8(0x0);
@@ -938,12 +956,13 @@ public:
 
     bool protocolWriteFirmwareVersion(Protocol_t &protocol, uint8_t command)
     {
-       protocol.command = command;
+        protocol.command = command;
         uint8_t *buffer = husky_lens_protocol_write_begin(protocol.command);
         husky_lens_protocol_write_buffer_uint8(protocol.firmwareVersion.data, protocol.firmwareVersion.length);
         int length = husky_lens_protocol_write_end();
-        for(int i=0; i<protocol.firmwareVersion.length; i++){
-           Serial.println(protocol.firmwareVersion.data[i]);
+        for (int i = 0; i < protocol.firmwareVersion.length; i++)
+        {
+            Serial.println(protocol.firmwareVersion.data[i]);
         }
         protocolWrite(buffer, length);
         return true;

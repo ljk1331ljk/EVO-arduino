@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <Arduino.h>
 #include <functional>
-#include <SoftwareSerial.h>
+#include "SoftwareSerial/SoftwareSerial.h"
 #include "X1pins.h"
 
 enum SensorPort

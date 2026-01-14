@@ -19,11 +19,14 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     case GeekServoDCMotor:
         setParameters(motorPort, motorFlip, 4000, 100, 0, 0, false);
         break;
-    case ITERMKS:
+    case ITERMK495:
         setParameters(motorPort, !motorFlip, 4000, 500, 10, 50, true, 1204);
         break;
-    case ITERMKT:
-        setParameters(motorPort, !motorFlip, 4000, 100, 10, 50, true, 1204);
+    case ITERMK330:
+        setParameters(motorPort, !motorFlip, 4000, 500, 10, 50, true, 1807);
+        break;
+    case ITERMK195:
+        setParameters(motorPort, !motorFlip, 4000, 100, 10, 50, true, 2988);
         break;
     case EVOMotor300:
         setParameters(motorPort, !motorFlip, 4000, 100, 150, 700, true, 2800);

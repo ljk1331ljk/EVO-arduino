@@ -37,9 +37,31 @@ float EVOX1::getBottomBattery()
     return charger.getADC_VCELLBOT();
 }
 
-void EVOX1::playTone(uint frequency, int duration)
+void EVOX1::playTone(uint frequency, int duration, bool blocking)
 {
-    tone(BUZZER_PIN, frequency, duration);
+    if (duration == 0)
+    {
+        return;
+    }
+    else if (duration == -1)
+    {
+        tone(BUZZER_PIN, frequency, 0);
+        return;
+    }
+    else
+    {
+        tone(BUZZER_PIN, frequency, duration);
+        if (blocking)
+        {
+            delay(duration);
+            noTone(BUZZER_PIN);
+        }
+    }
+}
+
+void EVOX1::stopTone()
+{
+    noTone(BUZZER_PIN);
 }
 
 void EVOX1::flipDisplayOrientation(bool flip)
