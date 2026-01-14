@@ -17,6 +17,7 @@ private:
     bool _imuAvailable = false, _useImu = false;
     int _startSpeed = 800, _endSpeed = 800, _accel = 10000, _decel = 10000;
     int _kpSync = 70, _kiSync = 5, _kdSync = 800;
+    float _kpGyro = 70, _kiGyro = 10, _kdGyro = 1200;
     int _kpIMU = 10, _kdIMU = 50;
     MotorStop _stopBehavior = MotorStop::BRAKE;
 
@@ -68,12 +69,20 @@ public:
     int getDeceleration();
 
     /**
-     * @brief Sets the proportional-derivative (PD) control parameters for the motor pairing.
+     * @brief Sets the proportional-integral-derivative (PID) control parameters for the motor pairing.
      * @param kp The proportional gain.
      * @param ki The integral gain.
      * @param kd The derivative gain.
      */
-    void setPID(float kp, float ki, float kd);
+    void setSyncPID(int kp, int ki, int kd);
+
+    /**
+     * @brief Sets the proportional-integral-derivative (PID) control parameters for the gyro.
+     * @param kp The proportional gain.
+     * @param ki The integral gain.
+     * @param kd The derivative gain.
+     */
+    void setGyroPID(float kp, float ki, float kd);
 
     /**
      * @brief Sets the stopping behavior for the motors.
@@ -107,16 +116,14 @@ public:
      */
     void moveTime(int leftSpeed, int rightSpeed, int timems, int slowdowntime = 200, MotorStop stopBehaviour = MotorStop::HOLD);
 
-    // /**
-    //  * @brief Moves the motors following a Condition with the IMU.
-    //  * @param leftSpeed Speed for the left motor.
-    //  * @param rightSpeed Speed for the right motor.
-    //  * @param Condition Condition with the IMU.
-    //  * @param IMUkp The proportional gain.
-    //  * @param IMUkd The derivative gain.
-    //  * @param brake Whether to brake at the end of movement (default: true).
-    //  */
-    // void moveIMU(int leftSpeed, int rightSpeed, int Condition, float IMUkp = 0, float IMUkd = 0, bool brake = true);
+    /**
+     * @brief Moves the motors following a Condition with the IMU.
+     * @param speed Speed for the motors.
+     * @param degrees The number of degrees to move.
+     * @param heading The target heading angle. If -1, the current heading is maintained.
+     * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
+     */
+    void StraightDegreesIMU(int motorSpeed, int degrees, int heading = -1, MotorStop stopBehaviour = MotorStop::HOLD);
 
     /**
      * @brief Performs a spot turn to a specific heading using the IMU.
@@ -125,12 +132,13 @@ public:
      * @param decelHeading The heading angle to start deceleration.
      * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST).
      */
-    void spotTurnIMU(int moveSpeed, float heading, float decelHeading, MotorStop stopBehaviour);
+    void spotTurnGyro(int motorSpeed, float heading, bool reset = true, MotorStop stopBehaviour = MotorStop::HOLD);
 
     /**
      * @brief Stops both motors based on the stop behavior.
      */
     void stop();
+
     /**
      * @brief Applies braking to both motors.
      */
