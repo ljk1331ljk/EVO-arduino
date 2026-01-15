@@ -273,6 +273,17 @@
     <member refid="class_evo_trace_1ac2d5fd21b9ad269126ed0fde2189348f" kind="function"><name>PDTrackDegrees</name></member>
     <member refid="class_evo_trace_1af9d66a1a9dc5cc7bdd1cf8ca9d67590b" kind="function"><name>PDTrackJunction</name></member>
   </compound>
+  <compound refid="class_evo_tri_button" kind="class"><name>EvoTriButton</name>
+    <member refid="class_evo_tri_button_1a1474b0a634eba726ee13d45b011377e1" kind="variable"><name>_pin</name></member>
+    <member refid="class_evo_tri_button_1a438b0fa9784409fd7c669ab0d366778f" kind="variable"><name>buttonLows</name></member>
+    <member refid="class_evo_tri_button_1a5f533cef5f8363f31d5a46681cb62397" kind="variable"><name>buttonHighs</name></member>
+    <member refid="class_evo_tri_button_1a01ff91c97847a5ff48b469893a3dd628" kind="function"><name>EvoTriButton</name></member>
+    <member refid="class_evo_tri_button_1a5649c0c5f8cfbf5d37b4e6f0633b9627" kind="function"><name>getButton</name></member>
+    <member refid="class_evo_tri_button_1a4082720c73d504baae26b95a61a042ba" kind="function"><name>getButtonPressed</name></member>
+    <member refid="class_evo_tri_button_1a27af7eeb02fecbf712d2a1dc52eacca0" kind="function"><name>waitForPress</name></member>
+    <member refid="class_evo_tri_button_1a2d954ea40e17ac917e840828d77bdcea" kind="function"><name>waitForRelease</name></member>
+    <member refid="class_evo_tri_button_1ac0fd4bb45c442d37285d4f2f01743d59" kind="function"><name>waitForBump</name></member>
+  </compound>
   <compound refid="class_e_v_o_x1" kind="class"><name>EVOX1</name>
     <member refid="class_e_v_o_x1_1ac35df0bfa755ece3175697b8c22aeb00" kind="variable"><name>rgb</name></member>
     <member refid="class_e_v_o_x1_1a3e58b33added127cb5219d4b6fdbec4a" kind="variable"><name>_fontSize</name></member>
@@ -416,6 +427,8 @@
   <compound refid="_evo_r_g_b_color_sensor_8h" kind="file"><name>EvoRGBColorSensor.h</name>
   </compound>
   <compound refid="_evo_t_o_f_8h" kind="file"><name>EvoTOF.h</name>
+  </compound>
+  <compound refid="_evo_tri_button_8h" kind="file"><name>EvoTriButton.h</name>
   </compound>
   <compound refid="dir_6adb56cee76d6d026f8f38e703b50393" kind="dir"><name>src/motors</name>
   </compound>

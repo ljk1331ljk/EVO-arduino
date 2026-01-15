@@ -2,8 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="class_e_v3_color_sensor" kind="class" language="C++" prot="public">
     <compoundname>EV3ColorSensor</compoundname>
-    <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="class_e_v3_color_sensor_1acdcafd13ed871d026a308805ca29ebdd" prot="public" static="no" mutable="no">
+    <includes refid="_e_v3_color_sensor_8h" local="no">EV3ColorSensor.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_e_v3_color_sensor_1acdcafd13ed871d026a308805ca29ebdd" prot="private" static="no" mutable="no">
         <type>SensorPort</type>
         <definition>SensorPort EV3ColorSensor::_port</definition>
         <argsstring></argsstring>
@@ -15,10 +16,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="33" column="16" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="33" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="88" column="16" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="88" bodyend="-1"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_e_v3_color_sensor_1a88cec3612cf48c5827351d9af560e5e4" prot="private" static="no" mutable="no">
         <type>EvoSensorPort</type>
         <definition>EvoSensorPort EV3ColorSensor::_EV3port</definition>
@@ -31,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="42" column="19" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="42" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="89" column="19" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v3_color_sensor_1a3868d2f47703b68ccff9a19636bae8e6" prot="private" static="no" mutable="no">
         <type>EV3ColorSensorMode</type>
@@ -45,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="43" column="24" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="43" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="90" column="24" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v3_color_sensor_1ae52af58bad762e9138669a680b1a26de" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -59,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="45" column="9" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="45" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="92" column="9" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="92" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -74,12 +73,23 @@
           <declname>port</declname>
         </param>
         <briefdescription>
+<para>Constructs an <ref refid="class_e_v3_color_sensor" kindref="compound">EV3ColorSensor</ref> object. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sensor port the color sensor is connected to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="34" column="5"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="41" column="5"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1a2f581f5a060afccfa351798e5def37dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -88,12 +98,16 @@
         <name>begin</name>
         <qualifiedname>EV3ColorSensor::begin</qualifiedname>
         <briefdescription>
+<para>Initializes the EV3 Color Sensor. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>True if the EV3 Color Sensor was successfully initialized, false otherwise. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="35" column="10"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="47" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1a9d8ca264f9d7a697d1ca00d60d8ddd1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -106,12 +120,23 @@
           <declname>mode</declname>
         </param>
         <briefdescription>
+<para>Sets the operating mode of the EV3 Color Sensor. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The operating mode to set COL_CAL RGB_RAW REF_RAW COL_COLOR COL_AMBIENT COL_REFLECT </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="36" column="10"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="59" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1a09cbfc6e751afcd6b1d190c1ef137710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -120,12 +145,16 @@
         <name>getReflection</name>
         <qualifiedname>EV3ColorSensor::getReflection</qualifiedname>
         <briefdescription>
+<para>Retrieves the reflected light sensor value. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>reflected light sensor value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="37" column="9"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="65" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1af4042a7df32e33b56156cd60c7f02c0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -134,12 +163,16 @@
         <name>getAmbient</name>
         <qualifiedname>EV3ColorSensor::getAmbient</qualifiedname>
         <briefdescription>
+<para>Retrieves the ambient light sensor value. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>ambient light sensor value. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="38" column="9"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="71" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1a991ccf9ee86ee0f23b4fbb1f2163c6d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -148,12 +181,16 @@
         <name>getColor</name>
         <qualifiedname>EV3ColorSensor::getColor</qualifiedname>
         <briefdescription>
+<para>Retrieves the detected color. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>detected color as EV3ColorSensorColor enum. NONE = 0 COLOR_BLACK = 1 COLOR_BLUE = 2 COLOR_GREEN = 3 COLOR_YELLOW = 4 COLOR_RED = 5 COLOR_WHITE = 6 COLOR_BROWN = 7 </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="39" column="9"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="85" column="9"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -181,18 +218,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="46" column="10"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="93" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Class to interact with the EV3 Color Sensor. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EV3ColorSensor.h" line="30" column="1" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="31" bodyend="47"/>
+    <location file="src/sensors/EV3ColorSensor.h" line="34" column="1" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="35" bodyend="94"/>
     <listofallmembers>
       <member refid="class_e_v3_color_sensor_1a88cec3612cf48c5827351d9af560e5e4" prot="private" virt="non-virtual"><scope>EV3ColorSensor</scope><name>_EV3port</name></member>
       <member refid="class_e_v3_color_sensor_1a3868d2f47703b68ccff9a19636bae8e6" prot="private" virt="non-virtual"><scope>EV3ColorSensor</scope><name>_mode</name></member>
-      <member refid="class_e_v3_color_sensor_1acdcafd13ed871d026a308805ca29ebdd" prot="public" virt="non-virtual"><scope>EV3ColorSensor</scope><name>_port</name></member>
+      <member refid="class_e_v3_color_sensor_1acdcafd13ed871d026a308805ca29ebdd" prot="private" virt="non-virtual"><scope>EV3ColorSensor</scope><name>_port</name></member>
       <member refid="class_e_v3_color_sensor_1a2f581f5a060afccfa351798e5def37dd" prot="public" virt="non-virtual"><scope>EV3ColorSensor</scope><name>begin</name></member>
       <member refid="class_e_v3_color_sensor_1aacfaf9b67093e83ad38c10bb55dd4075" prot="public" virt="non-virtual"><scope>EV3ColorSensor</scope><name>EV3ColorSensor</name></member>
       <member refid="class_e_v3_color_sensor_1af4042a7df32e33b56156cd60c7f02c0a" prot="public" virt="non-virtual"><scope>EV3ColorSensor</scope><name>getAmbient</name></member>

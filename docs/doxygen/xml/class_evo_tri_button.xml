@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_tri_button" kind="class" language="C++" prot="public">
+    <compoundname>EvoTriButton</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_tri_button_1a1474b0a634eba726ee13d45b011377e1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoTriButton::_pin</definition>
+        <argsstring></argsstring>
+        <name>_pin</name>
+        <qualifiedname>EvoTriButton::_pin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="13" column="9" bodyfile="src/sensors/EvoTriButton.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_tri_button_1a438b0fa9784409fd7c669ab0d366778f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoTriButton::buttonLows[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>buttonLows</name>
+        <qualifiedname>EvoTriButton::buttonLows</qualifiedname>
+        <initializer>= {0, 600, 1100, 1800}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="14" column="9" bodyfile="src/sensors/EvoTriButton.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_tri_button_1a5f533cef5f8363f31d5a46681cb62397" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoTriButton::buttonHighs[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>buttonHighs</name>
+        <qualifiedname>EvoTriButton::buttonHighs</qualifiedname>
+        <initializer>= {0, 800, 1300, 2100}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="15" column="9" bodyfile="src/sensors/EvoTriButton.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_tri_button_1a01ff91c97847a5ff48b469893a3dd628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EvoTriButton::EvoTriButton</definition>
+        <argsstring>(int pin)</argsstring>
+        <name>EvoTriButton</name>
+        <qualifiedname>EvoTriButton::EvoTriButton</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for TriButton. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>GPIOpin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The TriButton GPIO pin. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="22" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_tri_button_1a5649c0c5f8cfbf5d37b4e6f0633b9627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoTriButton::getButton</definition>
+        <argsstring>(int button=0)</argsstring>
+        <name>getButton</name>
+        <qualifiedname>EvoTriButton::getButton</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>button</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Gets the state of the selected button. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The button to check. (0 = Raw | 1 = Black | 2 = Red | 3 = Blue). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The state of the button. (0 = RELEASED | 1 = PRESSED). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="29" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_tri_button_1a4082720c73d504baae26b95a61a042ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoTriButton::getButtonPressed</definition>
+        <argsstring>()</argsstring>
+        <name>getButtonPressed</name>
+        <qualifiedname>EvoTriButton::getButtonPressed</qualifiedname>
+        <briefdescription>
+<para>Gets which button is currently pressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The button number that is pressed (0 = None | 1 = Black | 2 = Red | 3 = Blue). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="35" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_tri_button_1a27af7eeb02fecbf712d2a1dc52eacca0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTriButton::waitForPress</definition>
+        <argsstring>(int button, int debouncems=200)</argsstring>
+        <name>waitForPress</name>
+        <qualifiedname>EvoTriButton::waitForPress</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>debouncems</declname>
+          <defval>200</defval>
+        </param>
+        <briefdescription>
+<para>Waits for selected button pressed before continuing execution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The button to check. (1 = Black | 2 = Red | 3 = Blue). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>debouncems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay in milliseconds after button is pressed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="42" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_tri_button_1a2d954ea40e17ac917e840828d77bdcea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTriButton::waitForRelease</definition>
+        <argsstring>(int debouncems=200)</argsstring>
+        <name>waitForRelease</name>
+        <qualifiedname>EvoTriButton::waitForRelease</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>debouncems</declname>
+          <defval>200</defval>
+        </param>
+        <briefdescription>
+<para>Waits for selected button released before continuing execution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>debouncems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay in milliseconds after button is released. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="48" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_tri_button_1ac0fd4bb45c442d37285d4f2f01743d59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTriButton::waitForBump</definition>
+        <argsstring>(int button, int debouncems=200)</argsstring>
+        <name>waitForBump</name>
+        <qualifiedname>EvoTriButton::waitForBump</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>button</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>debouncems</declname>
+          <defval>200</defval>
+        </param>
+        <briefdescription>
+<para>Waits for selected button pressed and released before continuing execution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>button</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The button to check. (1 = Black | 2 = Red | 3 = Blue). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>debouncems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay in milliseconds after button is pressed and released. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTriButton.h" line="55" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/EvoTriButton.h" line="10" column="1" bodyfile="src/sensors/EvoTriButton.h" bodystart="11" bodyend="56"/>
+    <listofallmembers>
+      <member refid="class_evo_tri_button_1a1474b0a634eba726ee13d45b011377e1" prot="private" virt="non-virtual"><scope>EvoTriButton</scope><name>_pin</name></member>
+      <member refid="class_evo_tri_button_1a5f533cef5f8363f31d5a46681cb62397" prot="private" virt="non-virtual"><scope>EvoTriButton</scope><name>buttonHighs</name></member>
+      <member refid="class_evo_tri_button_1a438b0fa9784409fd7c669ab0d366778f" prot="private" virt="non-virtual"><scope>EvoTriButton</scope><name>buttonLows</name></member>
+      <member refid="class_evo_tri_button_1a01ff91c97847a5ff48b469893a3dd628" prot="public" virt="non-virtual"><scope>EvoTriButton</scope><name>EvoTriButton</name></member>
+      <member refid="class_evo_tri_button_1a5649c0c5f8cfbf5d37b4e6f0633b9627" prot="public" virt="non-virtual"><scope>EvoTriButton</scope><name>getButton</name></member>
+      <member refid="class_evo_tri_button_1a4082720c73d504baae26b95a61a042ba" prot="public" virt="non-virtual"><scope>EvoTriButton</scope><name>getButtonPressed</name></member>
+      <member refid="class_evo_tri_button_1ac0fd4bb45c442d37285d4f2f01743d59" prot="public" virt="non-virtual"><scope>EvoTriButton</scope><name>waitForBump</name></member>
+      <member refid="class_evo_tri_button_1a27af7eeb02fecbf712d2a1dc52eacca0" prot="public" virt="non-virtual"><scope>EvoTriButton</scope><name>waitForPress</name></member>
+      <member refid="class_evo_tri_button_1a2d954ea40e17ac917e840828d77bdcea" prot="public" virt="non-virtual"><scope>EvoTriButton</scope><name>waitForRelease</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

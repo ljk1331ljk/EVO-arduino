@@ -10,6 +10,7 @@
     <innerfile refid="_evo_o_l_e_d_8h">EvoOLED.h</innerfile>
     <innerfile refid="_evo_r_g_b_color_sensor_8h">EvoRGBColorSensor.h</innerfile>
     <innerfile refid="_evo_t_o_f_8h">EvoTOF.h</innerfile>
+    <innerfile refid="_evo_tri_button_8h">EvoTriButton.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
