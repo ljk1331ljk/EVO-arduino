@@ -19,3 +19,12 @@
 
 .. doxygenfunction:: EvoTOF::getDistanceContinuous
    :project: API
+
+.. doxygenfunction:: EvoTOF::setLongRange
+   :project: API
+
+.. doxygenfunction:: EvoTOF::setHighSpeedMode
+   :project: API
+
+.. doxygenfunction:: EvoTOF::setHighAccuracyMode
+   :project: API
