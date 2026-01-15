@@ -75,9 +75,9 @@ Bluetooth
 Bluetooth Classic VS BLE
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-As you know, the ESP32S3 Dev Modules already has a built-in BLE capabilities. Additionally on the EVOX1 board, we have also included a Bluetooth Classic module (HC-05).
+The ESP32S3 Dev Modules has a built-in BLE capabilities. A Bluetooth Classic module, HC-05 is also added onto the Evo to give the device bluetooth classic capabilities.
 
-Bluetooth Classic is good for sending a lot of data continuously, like in wireless speakers or when connecting to a robot for real-time control. It supports something called the Serial Port Profile (SPP), which lets devices send serial (UART) data wirelessly—very useful in robotics and embedded systems.
+Bluetooth Classic is good for sending a lot of data continuously, like in wireless speakers or when connecting to a robot for real-time control. The bluetooth module supports the Serial Port Profile (SPP), which lets devices send serial (UART) data wirelessly—very useful in robotics and embedded systems.
 
 Bluetooth Low Energy (BLE), on the other hand, is designed to save power. It’s better for devices that only need to send small amounts of data once in a while, like fitness bands or sensors. BLE doesn’t support serial communication directly, so it needs extra setup to send data like UART.
 
