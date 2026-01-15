@@ -119,12 +119,31 @@
           <defval>0x17</defval>
         </param>
         <briefdescription>
+<para>Constructor for the EvoLineLeader class. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C channel to use for communication. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C address of the EvoLineLeader sensor (default is 0x17). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoLineLeader.h" line="30" column="5" bodyfile="src/sensors/EvoLineLeader.h" bodystart="30" bodyend="34"/>
+        <location file="src/sensors/EvoLineLeader.h" line="35" column="5" bodyfile="src/sensors/EvoLineLeader.h" bodystart="35" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_line_leader_1ae534284470ad252c5a255d62a281a9a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -138,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoLineLeader.h" line="37" column="10"/>
+        <location file="src/sensors/EvoLineLeader.h" line="42" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_line_leader_1a1d15f5d208cdf90b581ff3b19287b9ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint16_t</type>
@@ -167,7 +186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoLineLeader.h" line="45" column="14"/>
+        <location file="src/sensors/EvoLineLeader.h" line="50" column="14"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_line_leader_1ac6688d961679d6141dfce970df84697d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -196,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoLineLeader.h" line="59" column="10"/>
+        <location file="src/sensors/EvoLineLeader.h" line="64" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_evo_line_leader_1ad81ad80d2f8d146367729b822ac26e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>byte</type>
@@ -214,14 +233,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EvoLineLeader.h" line="65" column="10"/>
+        <location file="src/sensors/EvoLineLeader.h" line="70" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EvoLineLeader.h" line="18" column="1" bodyfile="src/sensors/EvoLineLeader.h" bodystart="19" bodyend="66"/>
+    <location file="src/sensors/EvoLineLeader.h" line="18" column="1" bodyfile="src/sensors/EvoLineLeader.h" bodystart="19" bodyend="71"/>
     <listofallmembers>
       <member refid="class_evo_line_leader_1a0f3d645836e4b8e495b03e8c615f0579" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>_address</name></member>
       <member refid="class_evo_line_leader_1a1282c7bbc55b42af6f4c2c1a3fafd2eb" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>_channel</name></member>
