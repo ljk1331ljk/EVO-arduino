@@ -1,5 +1,5 @@
 /**
- * @file EvoTCS34725.h
+ * @file EvoIMU.h
  * @brief Class for interfacing with the TCS34725 color sensor using the EvoI2CDevice library.
  */
 #ifndef EVO_IMU_H

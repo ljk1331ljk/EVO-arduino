@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_e_v3_touch_sensor_8h" kind="file" language="C++">
+    <compoundname>EV3TouchSensor.h</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes local="yes">../helper/EvoSensorPort.h</includes>
+    <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>../helper/EvoSensorPort.h</label>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>src/sensors/EV3TouchSensor.h</label>
+        <link refid="_e_v3_touch_sensor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Evo.h</label>
+        <link refid="_evo_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/sensors/EV3TouchSensor.h</label>
+        <link refid="_e_v3_touch_sensor_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_e_v3_touch_sensor" prot="public">EV3TouchSensor</innerclass>
+    <briefdescription>
+<para>Class for interfacing with the EV3 Touch Sensor. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EVO_EV3TOUCHSENSOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_EV3TOUCHSENSOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/EvoSensorPort.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_e_v3_touch_sensor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_e_v3_touch_sensor_1af0639ebc1e1215c17df86da89996115d" kindref="member">EV3TouchSensor</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>SensorPort<sp/>_port;<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_pin;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="class_e_v3_touch_sensor_1af0639ebc1e1215c17df86da89996115d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_e_v3_touch_sensor_1af0639ebc1e1215c17df86da89996115d" kindref="member">EV3TouchSensor</ref>(SensorPort<sp/>port);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_e_v3_touch_sensor_1a0dcfa18c067a35bc7b7ec946f69f31ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_e_v3_touch_sensor_1a0dcfa18c067a35bc7b7ec946f69f31ba" kindref="member">getButton</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_e_v3_touch_sensor_1a5a2d66657b51e866a4ed6c94d0d58950" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_e_v3_touch_sensor_1a5a2d66657b51e866a4ed6c94d0d58950" kindref="member">waitForPress</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>debouncems<sp/>=<sp/>200);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_e_v3_touch_sensor_1a8857c9cede0b0c6c5e47d6e630575bbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_e_v3_touch_sensor_1a8857c9cede0b0c6c5e47d6e630575bbf" kindref="member">waitForRelease</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>debouncems<sp/>=<sp/>200);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_e_v3_touch_sensor_1a3dd0bcef0755a469363a01e7deab93b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_e_v3_touch_sensor_1a3dd0bcef0755a469363a01e7deab93b4" kindref="member">waitForBump</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>debouncems<sp/>=<sp/>200);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/sensors/EV3TouchSensor.h"/>
+  </compounddef>
+</doxygen>

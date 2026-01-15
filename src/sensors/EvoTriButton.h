@@ -17,7 +17,7 @@ private:
 public:
     /**
      * @brief Constructor for TriButton.
-     * @param GPIOpin The TriButton GPIO pin.
+     * @param pin The TriButton GPIO pin.
      */
     EvoTriButton(int pin);
 

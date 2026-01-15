@@ -26,7 +26,7 @@ public:
      * @brief Constructor to initialize a motor pair.
      * @param m1 Pointer to the first EvoMotor.
      * @param m2 Pointer to the second EvoMotor.
-     * @param imu Pointer to the EvoBNO055 IMU sensor.
+     * @param imu Pointer to the EvoIMU sensor.
      */
     EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoIMU *imu = nullptr);
 
@@ -50,7 +50,6 @@ public:
 
     /**
      * @brief Gets the current acceleration parameters.
-     * @param accel Reference to store the acceleration factor.
      * @return The acceleration factor.
      */
     int getAcceleration();
@@ -63,7 +62,6 @@ public:
 
     /**
      * @brief Gets the current deceleration parameters.
-     * @param decel Reference to store the deceleration factor.
      * @return The deceleration factor.
      */
     int getDeceleration();
@@ -102,23 +100,23 @@ public:
      * @param leftSpeed Speed for the left motor.
      * @param rightSpeed Speed for the right motor.
      * @param degrees The number of degrees to move.
-     * @param stop The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
+     * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void moveDegrees(int leftSpeed, int rightSpeed, int degrees);
-    void moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour);
+    void moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour = MotorStop::HOLD);
 
     /**
      * @brief Moves the motors for a specified duration.
      * @param leftSpeed Speed for the left motor.
      * @param rightSpeed Speed for the right motor.
      * @param timems Duration in milliseconds.
-     * @param stop The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
+     * @param slowdowntime Duration where the motors start to slow down.
+     * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
     void moveTime(int leftSpeed, int rightSpeed, int timems, int slowdowntime = 200, MotorStop stopBehaviour = MotorStop::HOLD);
 
     /**
      * @brief Moves the motors following a Condition with the IMU.
-     * @param speed Speed for the motors.
+     * @param motorSpeed Speed for the motors.
      * @param degrees The number of degrees to move.
      * @param heading The target heading angle. If -1, the current heading is maintained.
      * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
@@ -127,9 +125,9 @@ public:
 
     /**
      * @brief Performs a spot turn to a specific heading using the IMU.
-     * @param speed The speed of the turn.
+     * @param motorSpeed The speed of the turn.
      * @param heading The target heading angle.
-     * @param decelHeading The heading angle to start deceleration.
+     * @param reset Settign true will reset the IMU heading.
      * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST).
      */
     void spotTurnGyro(int motorSpeed, float heading, bool reset = true, MotorStop stopBehaviour = MotorStop::HOLD);
