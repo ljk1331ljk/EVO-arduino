@@ -104,7 +104,6 @@ public:
      * @param degrees The number of degrees to move.
      * @param stop The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void moveDegrees(int leftSpeed, int rightSpeed, int degrees);
     void moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour);
 
     /**
