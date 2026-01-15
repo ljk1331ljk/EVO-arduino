@@ -55,7 +55,7 @@ When the Evo is running OTA and the computer is connected to it via Wi-Fi, you s
    :width: 100%
    :align: center
 
-When you download code to it for the first time, it will prompt you for a the ``ArduinoOTAPassword``
+When you download code to it for the first time, it will prompt you for the ``ArduinoOTAPassword``.
 
 .. figure:: /_static/images/ArduinoIDEOTAPassword.png
    :alt: Arduino OTA password
