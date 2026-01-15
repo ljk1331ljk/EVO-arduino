@@ -37,7 +37,7 @@ There are 2 platforms you can choose to code your programs. Arduino IDE & Platfo
       :link: software/arduino-installation
       :link-type: doc
 
-      **Use Arduino IDE 2 [Recommended]**
+      **Use Arduino IDE 2 **
       ^^^
       Learn how to install and update Arduino libraries in Arduino IDE, and troubleshoot common installation issues.
 
@@ -64,8 +64,8 @@ There are 2 platforms you can choose to code your programs. Arduino IDE & Platfo
 
    hardware/overview
    hardware/first-boot
-   hardware/motors/index
-   hardware/sensors/index
+   .. hardware/motors/index
+   .. hardware/sensors/index
 
 .. toctree::
    :maxdepth: 2

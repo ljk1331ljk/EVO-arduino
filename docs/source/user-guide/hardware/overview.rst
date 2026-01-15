@@ -138,22 +138,22 @@ Motor Wiring
      - Description
    * - Red
      - M1
-     - ?
+     - Motor output 1
    * - Red
      - M2
-     - ?
+     - Motor output 2
    * - Black
      - GND
      - Ground
    * - Red
-     - 5V
+     - 3.3V
      - Power
    * - Yellow
      - IO
-     - ?
+     - Encoder pin 1
    * - Yellow
      - IO
-     - ?
+     - Encoder pin 2
 
 GPIO & Servo Wiring
 """""""""""""""""""
