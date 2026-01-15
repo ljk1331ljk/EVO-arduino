@@ -1,4 +1,4 @@
-Over-The-Air (OTA) download
+Over-The-Air (OTA) Download
 =========================
 
 The Evo library has built in Over-The-Air support based on `ArduinoOTA <https://docs.arduino.cc/arduino-cloud/features/ota-getting-started/>`_. OTA update is supported in both Arduino IDE 2 and PlatformIO.
@@ -48,7 +48,8 @@ If AP_MODE is selected, the Evo will generate a 2.4GHz access point where the SS
 OTA update on Arduino IDE 2
 ----------------------------
 
-When the Evo is running OTA and the computer is connected to it via Wi-Fi, you should see the device on select board 
+When the Evo is running OTA and the computer is connected to it via Wi-Fi, you should see the device on select board.
+
 .. figure:: /_static/images/ArduinoIDEOTADevice.png
    :alt: Arduino OTA device selection
    :width: 100%
@@ -66,7 +67,9 @@ Password is required for the first time and no longer reguired subsequently.
 OTA update on PlatformIO
 ----------------------------
 
-To download on PlatformIO, the ``platform.ini`` needs to be configured correctly.
+To download on PlatformIO, the ``platform.ini`` needs to be configured correctly. Add the following into ``platform.ini``. 
+The ``upload_port`` is given by the name set in the OTA declaration.
+``--auth`` is the password set in ``ArduinoOTAPassword`` 
 
 .. code-block:: 
    :linenos:
