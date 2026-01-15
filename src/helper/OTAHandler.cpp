@@ -1,14 +1,10 @@
 #include "OTAHandler.h"
 
-OTAHandler::OTAHandler(const char *ssid, const char *wifiPassword, const char *otaPassword)
-    : _ssid(ssid), _wifiPassword(wifiPassword), _otaPassword(otaPassword) {}
+OTAHandler::OTAHandler(OTAMode mode, const char *hostname, const char *ssid, const char *wifiPassword, const char *otaPassword)
+    : _mode(mode), _hostname(hostname), _ssid(ssid), _wifiPassword(wifiPassword), _otaPassword(otaPassword) {}
 
-void OTAHandler::begin(OTAMode mode, const char *hostname)
+void OTAHandler::begin()
 {
-    _mode = mode;
-    if (hostname && strlen(hostname) > 0)
-        _hostname = hostname;
-
     setupWiFiEvents();
 
     if (_mode == AP_MODE)
