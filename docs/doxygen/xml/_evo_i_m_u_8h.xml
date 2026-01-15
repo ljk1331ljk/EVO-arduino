@@ -44,6 +44,7 @@
     </invincdepgraph>
     <innerclass refid="class_evo_i_m_u" prot="public">EvoIMU</innerclass>
     <briefdescription>
+<para>Class for interfacing with the TCS34725 color sensor using the EvoI2CDevice library. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

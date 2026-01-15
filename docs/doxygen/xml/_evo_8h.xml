@@ -171,7 +171,7 @@
       </node>
       <node id="21">
         <label>../sensors/EvoIMU.h</label>
-        <link refid="_evo_i_m_u_8h_source"/>
+        <link refid="_evo_i_m_u_8h"/>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
@@ -289,7 +289,7 @@
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_v3_touch_sensor_8h" kindref="compound">sensors/EV3TouchSensor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_r_g_b_color_sensor_8h" kindref="compound">sensors/EvoRGBColorSensor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_t_o_f_8h" kindref="compound">sensors/EvoTOF.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sensors/EvoIMU.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_i_m_u_8h" kindref="compound">sensors/EvoIMU.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sensors/EvoHuskyLens.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_evo_o_l_e_d_8h" kindref="compound">sensors/EvoOLED.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sensors/EvoLineLeader.h&quot;</highlight><highlight class="normal"></highlight></codeline>

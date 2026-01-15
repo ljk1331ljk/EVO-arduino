@@ -244,6 +244,7 @@ public:
      * @brief Plays a tone on the buzzer.
      * @param frequency The frequency of the tone in Hz.
      * @param duration The duration of the tone in milliseconds. If -1, plays indefinitely until stopped.
+     * @param blocking If true, the program waits for the tone to complete playing. Default is true.
      * @note If duration is -1, you must call stopTone() to stop the tone.
      * @see stopTone()
      */

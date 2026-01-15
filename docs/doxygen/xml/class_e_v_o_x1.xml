@@ -909,6 +909,14 @@
 <para>The duration of the tone in milliseconds. If -1, plays indefinitely until stopped. </para>
 </parameterdescription>
 </parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>blocking</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the program waits for the tone to complete playing. Default is true. </para>
+</parameterdescription>
+</parameteritem>
 </parameterlist>
 <simplesect kind="note"><para>If duration is -1, you must call <ref refid="class_e_v_o_x1_1a4716de3a9a996c09713bdd93cf6d693b" kindref="member">stopTone()</ref> to stop the tone. </para>
 </simplesect>
@@ -918,7 +926,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="250" column="10"/>
+        <location file="src/EVOX1.h" line="251" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a4716de3a9a996c09713bdd93cf6d693b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -933,7 +941,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="255" column="10"/>
+        <location file="src/EVOX1.h" line="256" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v_o_x1_1a7257fd59f8b9fc14e983e898d17ad9e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -986,7 +994,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/EVOX1.h" line="265" column="10"/>
+        <location file="src/EVOX1.h" line="266" column="10"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -1015,7 +1023,7 @@
     <detaileddescription>
 <para>This class implements a singleton pattern to ensure only one instance is created. </para>
     </detaileddescription>
-    <location file="src/EVOX1.h" line="43" column="1" bodyfile="src/EVOX1.h" bodystart="44" bodyend="266"/>
+    <location file="src/EVOX1.h" line="43" column="1" bodyfile="src/EVOX1.h" bodystart="44" bodyend="267"/>
     <listofallmembers>
       <member refid="class_e_v_o_x1_1a3e58b33added127cb5219d4b6fdbec4a" prot="private" virt="non-virtual"><scope>EVOX1</scope><name>_fontSize</name></member>
       <member refid="class_e_v_o_x1_1acfa5db0e8275e769bf7a44eb862567a6" prot="public" virt="non-virtual"><scope>EVOX1</scope><name>begin</name></member>

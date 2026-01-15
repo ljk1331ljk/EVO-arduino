@@ -65,7 +65,7 @@
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>GPIOpin</parametername>
+<parametername>pin</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The TriButton GPIO pin. </para>

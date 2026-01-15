@@ -170,7 +170,7 @@
     <member refid="class_evo_motor_pair_1a0172d6f068a822010dd33fea9b3178c4" kind="function"><name>setGyroPID</name></member>
     <member refid="class_evo_motor_pair_1a5f47b78b2570b985168738231503b657" kind="function"><name>setStopBehavior</name></member>
     <member refid="class_evo_motor_pair_1a9c137b67db89843a4c980869381bbc04" kind="function"><name>move</name></member>
-    <member refid="class_evo_motor_pair_1a9f08f8a26d88015b7932d2813e8855a0" kind="function"><name>moveDegrees</name></member>
+    <member refid="class_evo_motor_pair_1a37c8566415f6939dab0c8bf9fbec0f64" kind="function"><name>moveDegrees</name></member>
     <member refid="class_evo_motor_pair_1a17b7e7b8fda7ad2af8a0041abe3af274" kind="function"><name>moveTime</name></member>
     <member refid="class_evo_motor_pair_1a64c57e6d967fe974fae528d9f38025b4" kind="function"><name>StraightDegreesIMU</name></member>
     <member refid="class_evo_motor_pair_1a33c84cc5bfcd11a8852dc061de6e336c" kind="function"><name>spotTurnGyro</name></member>
