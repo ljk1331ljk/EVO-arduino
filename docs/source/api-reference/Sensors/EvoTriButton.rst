@@ -9,9 +9,6 @@
 .. doxygenfunction:: EvoTriButton
    :project: API
 
-.. doxygenfunction:: EvoTriButton::begin
-   :project: API
-
 .. rubric:: Control Functions
 
 .. doxygenfunction:: EvoTriButton::getButton
