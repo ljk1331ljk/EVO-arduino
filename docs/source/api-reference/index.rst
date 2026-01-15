@@ -78,6 +78,12 @@ Library Showcases
       **LineLeader Sensor**
 
    .. grid-item-card::
+      :link: Sensors/EvoTriButton
+      :link-type: doc
+
+      **TriButton Sensor**
+
+   .. grid-item-card::
       :link: Sensors/EvoOLED
       :link-type: doc
 
