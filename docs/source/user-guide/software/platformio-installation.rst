@@ -55,7 +55,7 @@ After creating a new empty PlatformIO project you're ready for the next step. Th
    
    We will be placing the Evo Library in the ``lib`` folder.
 
-Library Installation
+Library Installation (Pre v1.0.0)
 --------------------
 
 1. Go to to the `Evo Github Releases Page <https://github.com/ljk1331ljk/EVO-arduino/releases>`_
@@ -92,3 +92,12 @@ Library Installation
       This list may grow over time, so check back here when new updates are released.
 
 5. Go to ``platform.ini`` to ensure the library dependencies ``lip_dep`` are listed correctly. 
+
+Library Installation (From v1.0.0)
+--------------------
+
+1. Open ``platform.ini`` from your project folder.
+
+2. Under ``lib.deps`` add ``https://github.com/ljk1331ljk/EVO-arduino.git``
+
+3. Save the file and PlatformIO will download the library.

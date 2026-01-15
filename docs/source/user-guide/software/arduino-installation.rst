@@ -1,4 +1,4 @@
-Arduino IDE [Recommended]
+Arduino IDE
 =========================
 
 The Arduino IDE 2 is an improvement of the classic IDE, with increased performance, improved user interface and many new features, such as autocompletion, a built-in debugger and syncing sketches with Arduino Cloud.
@@ -73,6 +73,10 @@ Library Installation
    .. warning::
 
       This list may grow over time, so check back here when new updates are released.
+
+   ..  note::
+
+      As of version 1.0.0 of the library released on 16/1/2026, installation of additional libraries are no longer required. The libraries are integrated into the Evo library for a more seemless installation expereince.
 
 Updating EVO Library
 --------------------
