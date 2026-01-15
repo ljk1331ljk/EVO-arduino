@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_line_leader" kind="class" language="C++" prot="public">
+    <compoundname>EvoLineLeader</compoundname>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_line_leader_1a0f3d645836e4b8e495b03e8c615f0579" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EvoLineLeader::_address</definition>
+        <argsstring></argsstring>
+        <name>_address</name>
+        <qualifiedname>EvoLineLeader::_address</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="21" column="9" bodyfile="src/sensors/EvoLineLeader.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_line_leader_1ac761c2a257dc45e96add196867c6ec9f" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte EvoLineLeader::_position</definition>
+        <argsstring></argsstring>
+        <name>_position</name>
+        <qualifiedname>EvoLineLeader::_position</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="22" column="10" bodyfile="src/sensors/EvoLineLeader.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_line_leader_1a1282c7bbc55b42af6f4c2c1a3fafd2eb" prot="private" static="no" mutable="no">
+        <type>I2CChannel</type>
+        <definition>I2CChannel EvoLineLeader::_channel</definition>
+        <argsstring></argsstring>
+        <name>_channel</name>
+        <qualifiedname>EvoLineLeader::_channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2C channel used for communication </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="23" column="16" bodyfile="src/sensors/EvoLineLeader.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_line_leader_1a0e2b446581fd7257d303e23f408c929e" prot="private" static="no" mutable="no">
+        <type>I2CDevice &amp;</type>
+        <definition>I2CDevice&amp; EvoLineLeader::i2CDevice</definition>
+        <argsstring></argsstring>
+        <name>i2CDevice</name>
+        <qualifiedname>EvoLineLeader::i2CDevice</qualifiedname>
+        <initializer>= I2CDevice::getInstance()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference to the singleton I2CDevice instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="24" column="15" bodyfile="src/sensors/EvoLineLeader.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_evo_line_leader_1a2075d6a62d71a78a2aa6b5a219a2451d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoLineLeader::startReadRegister</definition>
+        <argsstring>(uint16_t registerAddress)</argsstring>
+        <name>startReadRegister</name>
+        <qualifiedname>EvoLineLeader::startReadRegister</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>registerAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="26" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_line_leader_1aa63828ed724b6c0e6010d498aef93759" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoLineLeader::startWriteRegister</definition>
+        <argsstring>(uint16_t registerAddress)</argsstring>
+        <name>startWriteRegister</name>
+        <qualifiedname>EvoLineLeader::startWriteRegister</qualifiedname>
+        <param>
+          <type>uint16_t</type>
+          <declname>registerAddress</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="27" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_line_leader_1acd07f5d2b3e76e33f16bf926d65f761d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EvoLineLeader::EvoLineLeader</definition>
+        <argsstring>(I2CChannel channel, int address=0x17)</argsstring>
+        <name>EvoLineLeader</name>
+        <qualifiedname>EvoLineLeader::EvoLineLeader</qualifiedname>
+        <param>
+          <type>I2CChannel</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>address</declname>
+          <defval>0x17</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="30" column="5" bodyfile="src/sensors/EvoLineLeader.h" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_line_leader_1ae534284470ad252c5a255d62a281a9a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoLineLeader::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoLineLeader::begin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="37" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_line_leader_1a1d15f5d208cdf90b581ff3b19287b9ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t EvoLineLeader::readADC</definition>
+        <argsstring>(byte position)</argsstring>
+        <name>readADC</name>
+        <qualifiedname>EvoLineLeader::readADC</qualifiedname>
+        <param>
+          <type>byte</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Reads the ADC value from the specified position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ADC channel position (0-7). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="45" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_line_leader_1ac6688d961679d6141dfce970df84697d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoLineLeader::setOversamplingRatio</definition>
+        <argsstring>(byte ratio)</argsstring>
+        <name>setOversamplingRatio</name>
+        <qualifiedname>EvoLineLeader::setOversamplingRatio</qualifiedname>
+        <param>
+          <type>byte</type>
+          <declname>ratio</declname>
+        </param>
+        <briefdescription>
+<para>Sets the oversampling ratio for ADC conversion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The oversampling ratio (0-7).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+0b = No averaging 1b = 2 samples 10b = 4 samples 11b = 8 samples 100b = 16 samples 101b = 32 samples 110b = 64 samples 111b = 128 samples </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="59" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_line_leader_1ad81ad80d2f8d146367729b822ac26e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>byte</type>
+        <definition>byte EvoLineLeader::getOversamplingRatio</definition>
+        <argsstring>()</argsstring>
+        <name>getOversamplingRatio</name>
+        <qualifiedname>EvoLineLeader::getOversamplingRatio</qualifiedname>
+        <briefdescription>
+<para>Gets the current oversampling ratio for ADC conversion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The oversampling ratio (0-7). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoLineLeader.h" line="65" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/EvoLineLeader.h" line="18" column="1" bodyfile="src/sensors/EvoLineLeader.h" bodystart="19" bodyend="66"/>
+    <listofallmembers>
+      <member refid="class_evo_line_leader_1a0f3d645836e4b8e495b03e8c615f0579" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>_address</name></member>
+      <member refid="class_evo_line_leader_1a1282c7bbc55b42af6f4c2c1a3fafd2eb" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>_channel</name></member>
+      <member refid="class_evo_line_leader_1ac761c2a257dc45e96add196867c6ec9f" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>_position</name></member>
+      <member refid="class_evo_line_leader_1ae534284470ad252c5a255d62a281a9a0" prot="public" virt="non-virtual"><scope>EvoLineLeader</scope><name>begin</name></member>
+      <member refid="class_evo_line_leader_1acd07f5d2b3e76e33f16bf926d65f761d" prot="public" virt="non-virtual"><scope>EvoLineLeader</scope><name>EvoLineLeader</name></member>
+      <member refid="class_evo_line_leader_1ad81ad80d2f8d146367729b822ac26e92" prot="public" virt="non-virtual"><scope>EvoLineLeader</scope><name>getOversamplingRatio</name></member>
+      <member refid="class_evo_line_leader_1a0e2b446581fd7257d303e23f408c929e" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>i2CDevice</name></member>
+      <member refid="class_evo_line_leader_1a1d15f5d208cdf90b581ff3b19287b9ff" prot="public" virt="non-virtual"><scope>EvoLineLeader</scope><name>readADC</name></member>
+      <member refid="class_evo_line_leader_1ac6688d961679d6141dfce970df84697d" prot="public" virt="non-virtual"><scope>EvoLineLeader</scope><name>setOversamplingRatio</name></member>
+      <member refid="class_evo_line_leader_1a2075d6a62d71a78a2aa6b5a219a2451d" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>startReadRegister</name></member>
+      <member refid="class_evo_line_leader_1aa63828ed724b6c0e6010d498aef93759" prot="private" virt="non-virtual"><scope>EvoLineLeader</scope><name>startWriteRegister</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

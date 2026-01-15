@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_t_o_f" kind="class" language="C++" prot="public">
+    <compoundname>EvoTOF</compoundname>
+    <includes refid="_evo_t_o_f_8h" local="no">EvoTOF.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_t_o_f_1aa4ac8bc95fb7655c9e677913de22b6a1" prot="private" static="no" mutable="no">
+        <type>I2CChannel</type>
+        <definition>I2CChannel EvoTOF::_channel</definition>
+        <argsstring></argsstring>
+        <name>_channel</name>
+        <qualifiedname>EvoTOF::_channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2C channel used for communication </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="18" column="16" bodyfile="src/sensors/EvoTOF.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_t_o_f_1a54668ce29fedeeb52f5e10d0eb0701a4" prot="private" static="no" mutable="no">
+        <type>VL53L0X</type>
+        <definition>VL53L0X EvoTOF::lox</definition>
+        <argsstring></argsstring>
+        <name>lox</name>
+        <qualifiedname>EvoTOF::lox</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Instance of the VL53L0X driver </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="19" column="13" bodyfile="src/sensors/EvoTOF.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_t_o_f_1a74f089063779dbecec1c3649855c5036" prot="private" static="no" mutable="no">
+        <type>I2CDevice &amp;</type>
+        <definition>I2CDevice&amp; EvoTOF::i2CDevice</definition>
+        <argsstring></argsstring>
+        <name>i2CDevice</name>
+        <qualifiedname>EvoTOF::i2CDevice</qualifiedname>
+        <initializer>= I2CDevice::getInstance()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference to the singleton I2CDevice instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="20" column="15" bodyfile="src/sensors/EvoTOF.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_t_o_f_1a4eb1edc1570215ca0fbaf2025f3f381b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>EvoTOF::EvoTOF</definition>
+        <argsstring>(I2CChannel channel)</argsstring>
+        <name>EvoTOF</name>
+        <qualifiedname>EvoTOF::EvoTOF</qualifiedname>
+        <param>
+          <type>I2CChannel</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="class_evo_t_o_f" kindref="compound">EvoTOF</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C channel to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_o_f_1aba683af3952b3de2aabb4d4224405840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EvoTOF::begin</definition>
+        <argsstring>(bool continuous=false)</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoTOF::begin</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>continuous</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Initializes the VL53L0X sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>continuous</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Sets the sensor in continuous or non-continuous mode if true, the sensor will continuously measure distance at a specified interval. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the sensor was successfully initialized, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="35" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_o_f_1a1bb2ed69aeef41ae436036b2047936d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoTOF::getDistance</definition>
+        <argsstring>()</argsstring>
+        <name>getDistance</name>
+        <qualifiedname>EvoTOF::getDistance</qualifiedname>
+        <briefdescription>
+<para>Retrieves the distance measured by the sensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Distance in millimeters. Returns 2000 when there is an error or when maximum reading range is reached. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="41" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_o_f_1ac9eeebeb930ec0edb340bc96b4206b8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int EvoTOF::getDistanceContinuous</definition>
+        <argsstring>()</argsstring>
+        <name>getDistanceContinuous</name>
+        <qualifiedname>EvoTOF::getDistanceContinuous</qualifiedname>
+        <briefdescription>
+<para>Retrieves the distance measured by the sensor in continuous mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Distance in millimeters. Returns 2000 when there is an error or when maximum reading range is reached. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="47" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_o_f_1a6929e2ef34dcfc9a29e81fd60aeec3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTOF::setLongRange</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>setLongRange</name>
+        <qualifiedname>EvoTOF::setLongRange</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+<para>Configures the sensor for long-range measurements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, configures the sensor for long-range mode; otherwise, sets it to default mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="53" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_o_f_1a0be4a1e1e540d6de2563c78cff0d612f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTOF::setHighAccuracyMode</definition>
+        <argsstring>()</argsstring>
+        <name>setHighAccuracyMode</name>
+        <qualifiedname>EvoTOF::setHighAccuracyMode</qualifiedname>
+        <briefdescription>
+<para>Sets the sensor to high accuracy mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="58" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_t_o_f_1a2c73bbbff25cd2d4bab93f35e6b938bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoTOF::setHighSpeedMode</definition>
+        <argsstring>()</argsstring>
+        <name>setHighSpeedMode</name>
+        <qualifiedname>EvoTOF::setHighSpeedMode</qualifiedname>
+        <briefdescription>
+<para>Sets the sensor to high speed mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoTOF.h" line="63" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class to interact with the VL53L0X Time-of-Flight (ToF) distance sensor. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/EvoTOF.h" line="15" column="1" bodyfile="src/sensors/EvoTOF.h" bodystart="16" bodyend="64"/>
+    <listofallmembers>
+      <member refid="class_evo_t_o_f_1aa4ac8bc95fb7655c9e677913de22b6a1" prot="private" virt="non-virtual"><scope>EvoTOF</scope><name>_channel</name></member>
+      <member refid="class_evo_t_o_f_1aba683af3952b3de2aabb4d4224405840" prot="public" virt="non-virtual"><scope>EvoTOF</scope><name>begin</name></member>
+      <member refid="class_evo_t_o_f_1a4eb1edc1570215ca0fbaf2025f3f381b" prot="public" virt="non-virtual"><scope>EvoTOF</scope><name>EvoTOF</name></member>
+      <member refid="class_evo_t_o_f_1a1bb2ed69aeef41ae436036b2047936d9" prot="public" virt="non-virtual"><scope>EvoTOF</scope><name>getDistance</name></member>
+      <member refid="class_evo_t_o_f_1ac9eeebeb930ec0edb340bc96b4206b8e" prot="public" virt="non-virtual"><scope>EvoTOF</scope><name>getDistanceContinuous</name></member>
+      <member refid="class_evo_t_o_f_1a74f089063779dbecec1c3649855c5036" prot="private" virt="non-virtual"><scope>EvoTOF</scope><name>i2CDevice</name></member>
+      <member refid="class_evo_t_o_f_1a54668ce29fedeeb52f5e10d0eb0701a4" prot="private" virt="non-virtual"><scope>EvoTOF</scope><name>lox</name></member>
+      <member refid="class_evo_t_o_f_1a0be4a1e1e540d6de2563c78cff0d612f" prot="public" virt="non-virtual"><scope>EvoTOF</scope><name>setHighAccuracyMode</name></member>
+      <member refid="class_evo_t_o_f_1a2c73bbbff25cd2d4bab93f35e6b938bb" prot="public" virt="non-virtual"><scope>EvoTOF</scope><name>setHighSpeedMode</name></member>
+      <member refid="class_evo_t_o_f_1a6929e2ef34dcfc9a29e81fd60aeec3d4" prot="public" virt="non-virtual"><scope>EvoTOF</scope><name>setLongRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

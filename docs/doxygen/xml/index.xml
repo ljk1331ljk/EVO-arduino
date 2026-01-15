@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.14.0" xml:lang="en-US">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
   <compound refid="class_e_v3_color_sensor" kind="class"><name>EV3ColorSensor</name>
     <member refid="class_e_v3_color_sensor_1acdcafd13ed871d026a308805ca29ebdd" kind="variable"><name>_port</name></member>
     <member refid="class_e_v3_color_sensor_1a88cec3612cf48c5827351d9af560e5e4" kind="variable"><name>_EV3port</name></member>
@@ -13,22 +13,14 @@
     <member refid="class_e_v3_color_sensor_1a991ccf9ee86ee0f23b4fbb1f2163c6d5" kind="function"><name>getColor</name></member>
     <member refid="class_e_v3_color_sensor_1a7672cf5e8bc0f2dfd9bd04c20e1f9297" kind="function"><name>messageHandler</name></member>
   </compound>
-  <compound refid="class_evo_b_n_o055" kind="class"><name>EvoBNO055</name>
-    <member refid="class_evo_b_n_o055_1a726a11a7243af4c8c3d965185a1369a4" kind="variable"><name>bno</name></member>
-    <member refid="class_evo_b_n_o055_1abd5ec27f1ad56835ea1bb3b927f85711" kind="variable"><name>_channel</name></member>
-    <member refid="class_evo_b_n_o055_1a3ca6922cf3a0133b11b0308249d0b8e9" kind="variable"><name>i2CDevice</name></member>
-    <member refid="class_evo_b_n_o055_1a25cb7e5b280b913fb505bcd81b40cd09" kind="variable"><name>event</name></member>
-    <member refid="class_evo_b_n_o055_1ae9a9824ceafa142ee962677a42aee885" kind="variable"><name>_referenceHeading</name></member>
-    <member refid="class_evo_b_n_o055_1af13146903185680b26899a2003184e9e" kind="variable"><name>_lastRelativeHeading</name></member>
-    <member refid="class_evo_b_n_o055_1aed552f3c933370b28c823f70928f919f" kind="variable"><name>_rotationCount</name></member>
-    <member refid="class_evo_b_n_o055_1aaccf5d2102c690bd819468c657b21581" kind="function"><name>EvoBNO055</name></member>
-    <member refid="class_evo_b_n_o055_1a21f00d9e3e6b75da5ce3f4d7d8aad744" kind="function"><name>begin</name></member>
-    <member refid="class_evo_b_n_o055_1af899902c78ebc6db7273ef4a5a86621b" kind="function"><name>resetHeading</name></member>
-    <member refid="class_evo_b_n_o055_1a0bbbb0b1ed799f4ce37c31337221825e" kind="function"><name>getRelativeHeading</name></member>
-    <member refid="class_evo_b_n_o055_1a2b2f617985c6c2fc7417e9a2da76eb5c" kind="function"><name>getEuler</name></member>
-    <member refid="class_evo_b_n_o055_1adf641d138ab9413dbad8a9694281ae02" kind="function"><name>getEulerX</name></member>
-    <member refid="class_evo_b_n_o055_1a0a6bd3746398dce42e64105506c268b5" kind="function"><name>getEulerY</name></member>
-    <member refid="class_evo_b_n_o055_1a919583ef213fda80ecae51e80104fda8" kind="function"><name>getEulerZ</name></member>
+  <compound refid="class_e_v3_touch_sensor" kind="class"><name>EV3TouchSensor</name>
+    <member refid="class_e_v3_touch_sensor_1a953e7b02acc35737931e3a439157983f" kind="variable"><name>_port</name></member>
+    <member refid="class_e_v3_touch_sensor_1a65a779ee070675acb450f09c56eab8d9" kind="variable"><name>_pin</name></member>
+    <member refid="class_e_v3_touch_sensor_1af0639ebc1e1215c17df86da89996115d" kind="function"><name>EV3TouchSensor</name></member>
+    <member refid="class_e_v3_touch_sensor_1a0dcfa18c067a35bc7b7ec946f69f31ba" kind="function"><name>getButton</name></member>
+    <member refid="class_e_v3_touch_sensor_1a5a2d66657b51e866a4ed6c94d0d58950" kind="function"><name>waitForPress</name></member>
+    <member refid="class_e_v3_touch_sensor_1a8857c9cede0b0c6c5e47d6e630575bbf" kind="function"><name>waitForRelease</name></member>
+    <member refid="class_e_v3_touch_sensor_1a3dd0bcef0755a469363a01e7deab93b4" kind="function"><name>waitForBump</name></member>
   </compound>
   <compound refid="class_evo_husky_lens" kind="class"><name>EvoHuskyLens</name>
     <member refid="class_evo_husky_lens_1a2260f285f327ef011f29f37eb750b1b0" kind="variable"><name>huskylens</name></member>
@@ -36,7 +28,7 @@
     <member refid="class_evo_husky_lens_1ab9cfd26e0febc3f07fdcc6a059d6bd51" kind="variable"><name>i2CDevice</name></member>
     <member refid="class_evo_husky_lens_1a6da69e614c972ed7599a7f2b02575542" kind="variable"><name>_algorithmType</name></member>
     <member refid="class_evo_husky_lens_1ad2e121832b901613a01b002590a92d7b" kind="function"><name>EvoHuskyLens</name></member>
-    <member refid="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" kind="function"><name>begin</name></member>
+    <member refid="class_evo_husky_lens_1a9137854802bfa570fa5ddc3667d60031" kind="function"><name>begin</name></member>
     <member refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" kind="function"><name>setMode</name></member>
     <member refid="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" kind="function"><name>getMode</name></member>
     <member refid="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" kind="function"><name>getModeString</name></member>
@@ -45,6 +37,36 @@
     <member refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" kind="function"><name>writeString</name></member>
     <member refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" kind="function"><name>clearScreen</name></member>
     <member refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" kind="function"><name>printResult</name></member>
+  </compound>
+  <compound refid="class_evo_i_m_u" kind="class"><name>EvoIMU</name>
+    <member refid="class_evo_i_m_u_1abb162898a6e20f20448561da2ad06041" kind="variable"><name>bno</name></member>
+    <member refid="class_evo_i_m_u_1a11daab9ca830423edfc56162d93f2d1c" kind="variable"><name>_channel</name></member>
+    <member refid="class_evo_i_m_u_1a2f3fe81d593026fbdac2c3b91a2e1fc2" kind="variable"><name>i2CDevice</name></member>
+    <member refid="class_evo_i_m_u_1a277730cfa2c1a7becbfa11c29ebc14ba" kind="variable"><name>event</name></member>
+    <member refid="class_evo_i_m_u_1a3fa73405a2f00b7077e5819ee99a1b93" kind="variable"><name>_referenceHeading</name></member>
+    <member refid="class_evo_i_m_u_1a50e1dccc00ff50a33b365c90388f7765" kind="variable"><name>_lastRelativeHeading</name></member>
+    <member refid="class_evo_i_m_u_1a7070cf04f11dcd0f30a0e1f5d1e4d3a1" kind="variable"><name>_rotationCount</name></member>
+    <member refid="class_evo_i_m_u_1a51e69fc63cfbac0b0f41d5de1cef4363" kind="function"><name>EvoIMU</name></member>
+    <member refid="class_evo_i_m_u_1afeed70b2d57d5bb8a51321d7c0849940" kind="function"><name>begin</name></member>
+    <member refid="class_evo_i_m_u_1a4af97044a66d4461a1d35bb880bedcdf" kind="function"><name>resetHeading</name></member>
+    <member refid="class_evo_i_m_u_1ab4bf57c161ad7cd08002e421fcf64f56" kind="function"><name>getRelativeHeading</name></member>
+    <member refid="class_evo_i_m_u_1aa7e673a65cf11d49f92e6a967a11e643" kind="function"><name>getEuler</name></member>
+    <member refid="class_evo_i_m_u_1a0a103a455da0312dc9637e6baa4c4f98" kind="function"><name>getEulerX</name></member>
+    <member refid="class_evo_i_m_u_1a3767d1ed4d54688006a9c5e265fa0cc6" kind="function"><name>getEulerY</name></member>
+    <member refid="class_evo_i_m_u_1aebac966af1b6e4a433c7d39639954704" kind="function"><name>getEulerZ</name></member>
+  </compound>
+  <compound refid="class_evo_line_leader" kind="class"><name>EvoLineLeader</name>
+    <member refid="class_evo_line_leader_1a0f3d645836e4b8e495b03e8c615f0579" kind="variable"><name>_address</name></member>
+    <member refid="class_evo_line_leader_1ac761c2a257dc45e96add196867c6ec9f" kind="variable"><name>_position</name></member>
+    <member refid="class_evo_line_leader_1a1282c7bbc55b42af6f4c2c1a3fafd2eb" kind="variable"><name>_channel</name></member>
+    <member refid="class_evo_line_leader_1a0e2b446581fd7257d303e23f408c929e" kind="variable"><name>i2CDevice</name></member>
+    <member refid="class_evo_line_leader_1a2075d6a62d71a78a2aa6b5a219a2451d" kind="function"><name>startReadRegister</name></member>
+    <member refid="class_evo_line_leader_1aa63828ed724b6c0e6010d498aef93759" kind="function"><name>startWriteRegister</name></member>
+    <member refid="class_evo_line_leader_1acd07f5d2b3e76e33f16bf926d65f761d" kind="function"><name>EvoLineLeader</name></member>
+    <member refid="class_evo_line_leader_1ae534284470ad252c5a255d62a281a9a0" kind="function"><name>begin</name></member>
+    <member refid="class_evo_line_leader_1a1d15f5d208cdf90b581ff3b19287b9ff" kind="function"><name>readADC</name></member>
+    <member refid="class_evo_line_leader_1ac6688d961679d6141dfce970df84697d" kind="function"><name>setOversamplingRatio</name></member>
+    <member refid="class_evo_line_leader_1ad81ad80d2f8d146367729b822ac26e92" kind="function"><name>getOversamplingRatio</name></member>
   </compound>
   <compound refid="class_evo_motor" kind="class"><name>EvoMotor</name>
     <member refid="class_evo_motor_1a73db3936299272b483a26532132d478a" kind="enum"><name>runMode</name></member>
@@ -121,29 +143,87 @@
   <compound refid="class_evo_motor_pair" kind="class"><name>EvoMotorPair</name>
     <member refid="class_evo_motor_pair_1a7ab51dc6a7e8011ad0ff505c58de5152" kind="variable"><name>_m1</name></member>
     <member refid="class_evo_motor_pair_1a23cdf06bdf897c50ba10450c4f1b6170" kind="variable"><name>_m2</name></member>
-    <member refid="class_evo_motor_pair_1a62841447140cf08fb38b3c7ba5131c10" kind="variable"><name>_imu</name></member>
+    <member refid="class_evo_motor_pair_1ad0d873f08adce48fa7a6c5a35a68bfa6" kind="variable"><name>_imu</name></member>
     <member refid="class_evo_motor_pair_1acf479d8b4235c9d489a411d6f0e74125" kind="variable"><name>_imuAvailable</name></member>
     <member refid="class_evo_motor_pair_1a2bba1817542e6c5cde2e004e02f255fa" kind="variable"><name>_useImu</name></member>
-    <member refid="class_evo_motor_pair_1aa10411a6bec1a0493b642d1a737dddec" kind="variable"><name>_minSpeed</name></member>
-    <member refid="class_evo_motor_pair_1a178d70e9e3b6bc3283e7f312665552d4" kind="variable"><name>_accelDeg</name></member>
-    <member refid="class_evo_motor_pair_1a878fbd3d02eca72a36c2521b35250ef2" kind="variable"><name>_decelDeg</name></member>
-    <member refid="class_evo_motor_pair_1a6ff3d6af2d604ae358755c7508a3c4e8" kind="variable"><name>_accel</name></member>
-    <member refid="class_evo_motor_pair_1affdde844d3736b9c727d89b33e4bc8a1" kind="variable"><name>_decel</name></member>
-    <member refid="class_evo_motor_pair_1ac6c5f3dde695bf91f4ca4dd4bfe300b2" kind="variable"><name>_kpSync</name></member>
-    <member refid="class_evo_motor_pair_1aabea08734d7a185cdd49cba3162847ed" kind="variable"><name>_kdSync</name></member>
-    <member refid="class_evo_motor_pair_1a2ec392d6004aaa0a85557c498347f2ba" kind="function"><name>EvoMotorPair</name></member>
-    <member refid="class_evo_motor_pair_1a599c94cbdb1d9623a8af6dd698c2c65a" kind="function"><name>setMinimumSpeed</name></member>
-    <member refid="class_evo_motor_pair_1a1e01be165eba3c20f876c41d3bb037f6" kind="function"><name>setAcceleration</name></member>
-    <member refid="class_evo_motor_pair_1aaa15f5624084a03347c4daf111df2e1d" kind="function"><name>getAcceleration</name></member>
-    <member refid="class_evo_motor_pair_1a8ac2d4c0350d331de5794aa5ab39e00a" kind="function"><name>setDeceleration</name></member>
-    <member refid="class_evo_motor_pair_1aadbbbbc30a82a6f4a28e4ff1ad826d24" kind="function"><name>getDeceleration</name></member>
-    <member refid="class_evo_motor_pair_1ad49d35beca2b31314c004ee6aa9f6ddf" kind="function"><name>setPD</name></member>
+    <member refid="class_evo_motor_pair_1a3b7b3401abd6508a1b902313c9fab322" kind="variable"><name>_startSpeed</name></member>
+    <member refid="class_evo_motor_pair_1ab01b44155b99cd6349ef3b1d3be4dc43" kind="variable"><name>_endSpeed</name></member>
+    <member refid="class_evo_motor_pair_1a0b19a535362febacdc75c80ff946f00a" kind="variable"><name>_accel</name></member>
+    <member refid="class_evo_motor_pair_1af5fb520db67deca4655d231b7c1ef6b1" kind="variable"><name>_decel</name></member>
+    <member refid="class_evo_motor_pair_1a9caf3d109e0dcce83affbc3e4bae448b" kind="variable"><name>_kpSync</name></member>
+    <member refid="class_evo_motor_pair_1a15ccb4f4c82f7187f6d32b0f788079a3" kind="variable"><name>_kiSync</name></member>
+    <member refid="class_evo_motor_pair_1adb2e5d5d1438bcd576cb4d61f854f1c8" kind="variable"><name>_kdSync</name></member>
+    <member refid="class_evo_motor_pair_1a1d3564a74210de4f040bfa30d332585d" kind="variable"><name>_kpGyro</name></member>
+    <member refid="class_evo_motor_pair_1a0fb2c8ed03a0798b5b1e6d7cdca8b9c2" kind="variable"><name>_kiGyro</name></member>
+    <member refid="class_evo_motor_pair_1aa2e089a186bcecd562d4f3cb01cbd988" kind="variable"><name>_kdGyro</name></member>
+    <member refid="class_evo_motor_pair_1ab683472495e9e19e5c3b336597a337f5" kind="variable"><name>_kpIMU</name></member>
+    <member refid="class_evo_motor_pair_1a6fa7453ea3aa730dedf66e1d0b2a8447" kind="variable"><name>_kdIMU</name></member>
+    <member refid="class_evo_motor_pair_1ab7a1037a7d8a192e1f863796d1c080ed" kind="variable"><name>_stopBehavior</name></member>
+    <member refid="class_evo_motor_pair_1aef708232a438d769d1c9a68f90b98bf3" kind="function"><name>EvoMotorPair</name></member>
+    <member refid="class_evo_motor_pair_1a12bd3ff5feccaba71f2c3ed5794f9738" kind="function"><name>setStartSpeed</name></member>
+    <member refid="class_evo_motor_pair_1a31fae85cfb6691e0dc6f0fa172596930" kind="function"><name>setEndSpeed</name></member>
+    <member refid="class_evo_motor_pair_1a534d198d8dd8a88165e6046b10a4129d" kind="function"><name>setAcceleration</name></member>
+    <member refid="class_evo_motor_pair_1a66a6406b87f93aa83a82ba624deff5b4" kind="function"><name>getAcceleration</name></member>
+    <member refid="class_evo_motor_pair_1a8a08bc1caa99b4d3ea4be1fea4d1e0e3" kind="function"><name>setDeceleration</name></member>
+    <member refid="class_evo_motor_pair_1a826d8ccc97415a49a20cf0ff05589237" kind="function"><name>getDeceleration</name></member>
+    <member refid="class_evo_motor_pair_1a6d90a7fa42fa6421c0aa86969355739e" kind="function"><name>setSyncPID</name></member>
+    <member refid="class_evo_motor_pair_1a0172d6f068a822010dd33fea9b3178c4" kind="function"><name>setGyroPID</name></member>
+    <member refid="class_evo_motor_pair_1a5f47b78b2570b985168738231503b657" kind="function"><name>setStopBehavior</name></member>
     <member refid="class_evo_motor_pair_1a9c137b67db89843a4c980869381bbc04" kind="function"><name>move</name></member>
-    <member refid="class_evo_motor_pair_1a6bd00b3eb06838df90a32efabeeb5248" kind="function"><name>moveDegrees</name></member>
-    <member refid="class_evo_motor_pair_1af48734873b5c532f4bd6fa14d81b81b1" kind="function"><name>moveTime</name></member>
+    <member refid="class_evo_motor_pair_1ac611963f9ced12cea59839cf0a1b4c63" kind="function"><name>moveDegrees</name></member>
+    <member refid="class_evo_motor_pair_1a9f08f8a26d88015b7932d2813e8855a0" kind="function"><name>moveDegrees</name></member>
+    <member refid="class_evo_motor_pair_1a17b7e7b8fda7ad2af8a0041abe3af274" kind="function"><name>moveTime</name></member>
+    <member refid="class_evo_motor_pair_1a64c57e6d967fe974fae528d9f38025b4" kind="function"><name>StraightDegreesIMU</name></member>
+    <member refid="class_evo_motor_pair_1a33c84cc5bfcd11a8852dc061de6e336c" kind="function"><name>spotTurnGyro</name></member>
+    <member refid="class_evo_motor_pair_1a09a7a656ec866361942f14f4879f6d5b" kind="function"><name>stop</name></member>
     <member refid="class_evo_motor_pair_1afdf62d2c9f4b1a41d94f3b2bfb83f7b0" kind="function"><name>brake</name></member>
     <member refid="class_evo_motor_pair_1ab78b6f84726c6c2bc6fcc4a7ef5acde6" kind="function"><name>coast</name></member>
+    <member refid="class_evo_motor_pair_1a6033775b123161d6f3bc9388deab4bb4" kind="function"><name>hold</name></member>
     <member refid="class_evo_motor_pair_1a5cbf5869e56fc874ca0ae5f4495b7b0e" kind="function"><name>resetAngle</name></member>
+  </compound>
+  <compound refid="class_evo_o_l_e_d" kind="class"><name>EvoOLED</name>
+    <member refid="class_evo_o_l_e_d_1ae0cfc910095d22a318e3117e7326778c" kind="variable"><name>oled</name></member>
+    <member refid="class_evo_o_l_e_d_1a38d59ccd5f1675b697045ebd4ce3f758" kind="variable"><name>_channel</name></member>
+    <member refid="class_evo_o_l_e_d_1a18b3904ace6f0c405ac8104fecdc27b5" kind="variable"><name>i2CDevice</name></member>
+    <member refid="class_evo_o_l_e_d_1a9d2e8d5c5065bed74829628d6108418f" kind="variable"><name>_fontSize</name></member>
+    <member refid="class_evo_o_l_e_d_1a547283fddaf5e1ef283af546b05d6181" kind="function"><name>EvoOLED</name></member>
+    <member refid="class_evo_o_l_e_d_1aaa1fe63e2155db76e5ff3c5e8dd9020d" kind="function"><name>begin</name></member>
+    <member refid="class_evo_o_l_e_d_1a9ae0d0ba8fefbb4dd7cec41465bae5ba" kind="function"><name>flipDisplayOrientation</name></member>
+    <member refid="class_evo_o_l_e_d_1a0e7eaf952798d40939f5e801acbe1b1d" kind="function"><name>clearDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1a28970197bd02c163c4914fc0b097ff97" kind="function"><name>setFontSize</name></member>
+    <member refid="class_evo_o_l_e_d_1aabe468b73b20eb759007a2c51aa45ce1" kind="function"><name>writeToDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1a82d31f9ee1a5beecceb491da9f24e57f" kind="function"><name>writeToDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1a0696a301973f051dec6895e96247d266" kind="function"><name>writeToDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1af6e4a8cef0dadd3e5ea45c2895645473" kind="function"><name>writeLineToDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1a5a0c18ee02630b46a8a8197b7ccbec44" kind="function"><name>writeLineToDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1a436da61f6da172df6fe0dedaad72e4a1" kind="function"><name>writeLineToDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1af4e48a7835ff4742c3f05619bd997590" kind="function"><name>drawDisplay</name></member>
+    <member refid="class_evo_o_l_e_d_1a932d9186ff767f7f16a51433515280f5" kind="function"><name>drawPixel</name></member>
+    <member refid="class_evo_o_l_e_d_1aeea3244cc3483237f906e65288b85942" kind="function"><name>drawLine</name></member>
+    <member refid="class_evo_o_l_e_d_1afa864e30a6e74a46e883301b7db99f45" kind="function"><name>drawRect</name></member>
+    <member refid="class_evo_o_l_e_d_1a3eec9bb5f803d78759c2f09f1f8e6204" kind="function"><name>drawCircle</name></member>
+    <member refid="class_evo_o_l_e_d_1a306e80ddae152887f2cb7b91752b30f9" kind="function"><name>drawTriangle</name></member>
+  </compound>
+  <compound refid="class_evo_r_g_b_color_sensor" kind="class"><name>EvoRGBColorSensor</name>
+    <member refid="class_evo_r_g_b_color_sensor_1addc99b9451147c0d64e8b9a565da38e8" kind="variable"><name>tcs</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a5e2607dac304ded28e07dbeb9d5f40a0" kind="variable"><name>_channel</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a4b6daae210c9bac43f7de38db2cc6a36" kind="variable"><name>i2CDevice</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1afd3057627c20903fdd3a60b44eb89379" kind="variable"><name>_tcs34725IntegrationTime</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a11ddb3ef0780fd29eeeac4ace715ce65" kind="variable"><name>_tcs34725Gain</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a7ff4bf892d059448d20e7988683141cd" kind="function"><name>EvoRGBColorSensor</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a7722fe2225b0c31fc90cc632f62df33e" kind="function"><name>begin</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a41f0164c0085be4917b0e3d816525b2f" kind="function"><name>setIntegrationTime</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1afb95b8b784a25ebc7ec0b8c75ad817ae" kind="function"><name>setGain</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a409fa7bf003664debe9b98186a25a948" kind="function"><name>getRawRed</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a78b3b81c8593bcabbd4f3c485e484ea3" kind="function"><name>getRawGreen</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a60d5f6667a47f985b3c53ff1c51253fa" kind="function"><name>getRawBlue</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a76051c4f7dc7f53f78f964a3f1d6f4f8" kind="function"><name>getRawClear</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a9fc3867f6d54ebdad0e4e2c62172b916" kind="function"><name>getRed</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1aa36aaa4944318b1c458e7cd0e0ebbeec" kind="function"><name>getGreen</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1aef21e75f356da5a1c5fec08f6bdf00b2" kind="function"><name>getBlue</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a6db445a7f108cf350a9b2cdfc6aab07f" kind="function"><name>getRGB</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1ac8db7f1e4d6aa64d782940b39ed187d4" kind="function"><name>getRawRGBC</name></member>
+    <member refid="class_evo_r_g_b_color_sensor_1a2594b6a68565ee788c487598ee01a1ed" kind="function"><name>getHSV</name></member>
   </compound>
   <compound refid="class_evo_servo" kind="class"><name>EvoServo</name>
     <member refid="class_evo_servo_1a7b1ad83f4bc1fb4501ef8a4346d74303" kind="variable"><name>driver</name></member>
@@ -159,26 +239,17 @@
     <member refid="class_evo_servo_1a9489eda55822fb7a531ecbaf7bc72b64" kind="function"><name>write</name></member>
     <member refid="class_evo_servo_1a2701bf2c49ea2aa3c1d493841a674996" kind="function"><name>setPWM</name></member>
   </compound>
-  <compound refid="class_evo_t_c_s34725" kind="class"><name>EvoTCS34725</name>
-    <member refid="class_evo_t_c_s34725_1ad3234413660e9381beaaf89802bf2171" kind="variable"><name>tcs</name></member>
-    <member refid="class_evo_t_c_s34725_1a29c30a8e6e311dcb97c69b1d5b83e94b" kind="variable"><name>_channel</name></member>
-    <member refid="class_evo_t_c_s34725_1a68e0731533fd95c5e7ef20fd4aa4112d" kind="variable"><name>i2CDevice</name></member>
-    <member refid="class_evo_t_c_s34725_1a29d37068868f7f5caa9134b2202135b5" kind="variable"><name>_tcs34725IntegrationTime</name></member>
-    <member refid="class_evo_t_c_s34725_1a56ec7083df9ade912bbfbf954c748586" kind="variable"><name>_tcs34725Gain</name></member>
-    <member refid="class_evo_t_c_s34725_1a803efa994423cf326b5ed56b27d554a1" kind="function"><name>EvoTCS34725</name></member>
-    <member refid="class_evo_t_c_s34725_1a039fff25dcaea72f7624b89be5092926" kind="function"><name>begin</name></member>
-    <member refid="class_evo_t_c_s34725_1aca92216d91bea091a53129aa38b20031" kind="function"><name>setIntegrationTime</name></member>
-    <member refid="class_evo_t_c_s34725_1a43460244cea2d8cba6c2d2ef88dc5736" kind="function"><name>setGain</name></member>
-    <member refid="class_evo_t_c_s34725_1a7b1c670be056e6f76e2128fe556360c2" kind="function"><name>getRawRed</name></member>
-    <member refid="class_evo_t_c_s34725_1add5a10ea5a498501f4c11ddcff57bb08" kind="function"><name>getRawGreen</name></member>
-    <member refid="class_evo_t_c_s34725_1ae2f3494beafa1eb184a8791347e8bdc7" kind="function"><name>getRawBlue</name></member>
-    <member refid="class_evo_t_c_s34725_1a4c3016ad13ae96343b39ccc2d03b8538" kind="function"><name>getRawClear</name></member>
-    <member refid="class_evo_t_c_s34725_1a1bddd047275b6a32984d885ca0055b33" kind="function"><name>getRed</name></member>
-    <member refid="class_evo_t_c_s34725_1adf90ecdaa5cfee422d3c5372a6351ed4" kind="function"><name>getGreen</name></member>
-    <member refid="class_evo_t_c_s34725_1af951e1d768b89918ea4c51be1f5e99fd" kind="function"><name>getBlue</name></member>
-    <member refid="class_evo_t_c_s34725_1a1dc62289577fb2c67a89b9f3a28cc68b" kind="function"><name>getRGB</name></member>
-    <member refid="class_evo_t_c_s34725_1aed71fe7126e2df2a46f1b3639abbc943" kind="function"><name>getRawRGBC</name></member>
-    <member refid="class_evo_t_c_s34725_1a32961d506551df13b05903df6369a3a3" kind="function"><name>getHSV</name></member>
+  <compound refid="class_evo_t_o_f" kind="class"><name>EvoTOF</name>
+    <member refid="class_evo_t_o_f_1aa4ac8bc95fb7655c9e677913de22b6a1" kind="variable"><name>_channel</name></member>
+    <member refid="class_evo_t_o_f_1a54668ce29fedeeb52f5e10d0eb0701a4" kind="variable"><name>lox</name></member>
+    <member refid="class_evo_t_o_f_1a74f089063779dbecec1c3649855c5036" kind="variable"><name>i2CDevice</name></member>
+    <member refid="class_evo_t_o_f_1a4eb1edc1570215ca0fbaf2025f3f381b" kind="function"><name>EvoTOF</name></member>
+    <member refid="class_evo_t_o_f_1aba683af3952b3de2aabb4d4224405840" kind="function"><name>begin</name></member>
+    <member refid="class_evo_t_o_f_1a1bb2ed69aeef41ae436036b2047936d9" kind="function"><name>getDistance</name></member>
+    <member refid="class_evo_t_o_f_1ac9eeebeb930ec0edb340bc96b4206b8e" kind="function"><name>getDistanceContinuous</name></member>
+    <member refid="class_evo_t_o_f_1a6929e2ef34dcfc9a29e81fd60aeec3d4" kind="function"><name>setLongRange</name></member>
+    <member refid="class_evo_t_o_f_1a0be4a1e1e540d6de2563c78cff0d612f" kind="function"><name>setHighAccuracyMode</name></member>
+    <member refid="class_evo_t_o_f_1a2c73bbbff25cd2d4bab93f35e6b938bb" kind="function"><name>setHighSpeedMode</name></member>
   </compound>
   <compound refid="class_evo_trace" kind="class"><name>EvoTrace</name>
     <member refid="class_evo_trace_1a538297446eca5d5289b1dd14130d2b01" kind="variable"><name>_leftSensor</name></member>
@@ -199,27 +270,17 @@
     <member refid="class_evo_trace_1a8a1cffb9468ab3c3211b42900a59d3f2" kind="variable"><name>D</name></member>
     <member refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" kind="function"><name>EvoTrace</name></member>
     <member refid="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" kind="function"><name>begin</name></member>
-    <member refid="class_evo_trace_1ad6db63a6ecb412862f472325358f7db6" kind="function"><name>PDTrackOn</name></member>
-    <member refid="class_evo_trace_1a66dfc54deec2544838c7cee6fd3f9201" kind="function"><name>PDTrackDegrees</name></member>
-    <member refid="class_evo_trace_1a805250145b0b34805e76294499533056" kind="function"><name>PDTrackJunction</name></member>
-  </compound>
-  <compound refid="class_evo_v_l53_l0_x" kind="class"><name>EvoVL53L0X</name>
-    <member refid="class_evo_v_l53_l0_x_1a89ea00487b2d5dbd46fe2da2bb900baf" kind="variable"><name>lox</name></member>
-    <member refid="class_evo_v_l53_l0_x_1a2cfe6c4e89b58435760388f7aab24d53" kind="variable"><name>_channel</name></member>
-    <member refid="class_evo_v_l53_l0_x_1a8877053beb00d13d2f36b8546e938efa" kind="variable"><name>measure</name></member>
-    <member refid="class_evo_v_l53_l0_x_1ad52766520608a17385eb54895680992e" kind="variable"><name>i2CDevice</name></member>
-    <member refid="class_evo_v_l53_l0_x_1a6b907724df6a2d060c34fdcf8257fd73" kind="function"><name>EvoVL53L0X</name></member>
-    <member refid="class_evo_v_l53_l0_x_1ab53df5bac324aa2b6673d1d6f763ee11" kind="function"><name>begin</name></member>
-    <member refid="class_evo_v_l53_l0_x_1ae069516a043dd39f891d283ed66e92eb" kind="function"><name>getDistance</name></member>
-    <member refid="class_evo_v_l53_l0_x_1a8bf3c53892b5ebd18b1fc42815083efc" kind="function"><name>getDistanceContinuous</name></member>
+    <member refid="class_evo_trace_1a3e6bfdfa1ec44c5ddcf27bbb4c6fc09d" kind="function"><name>PDTrackOn</name></member>
+    <member refid="class_evo_trace_1ac2d5fd21b9ad269126ed0fde2189348f" kind="function"><name>PDTrackDegrees</name></member>
+    <member refid="class_evo_trace_1af9d66a1a9dc5cc7bdd1cf8ca9d67590b" kind="function"><name>PDTrackJunction</name></member>
   </compound>
   <compound refid="class_e_v_o_x1" kind="class"><name>EVOX1</name>
-    <member refid="class_e_v_o_x1_1af25408a7256e13e8dd1b958e42bd4ca6" kind="variable"><name>display</name></member>
     <member refid="class_e_v_o_x1_1ac35df0bfa755ece3175697b8c22aeb00" kind="variable"><name>rgb</name></member>
     <member refid="class_e_v_o_x1_1a3e58b33added127cb5219d4b6fdbec4a" kind="variable"><name>_fontSize</name></member>
     <member refid="class_e_v_o_x1_1a43bd32c1a1b0d97ab5aadade389289b1" kind="variable"><name>pinState</name></member>
     <member refid="class_e_v_o_x1_1a0e80d22348855596141d70accba4a63e" kind="variable"><name>i2CDevice</name></member>
     <member refid="class_e_v_o_x1_1a61461b320f95800a29fb9071321a3ae8" kind="variable"><name>evoPWMDriver</name></member>
+    <member refid="class_e_v_o_x1_1af25408a7256e13e8dd1b958e42bd4ca6" kind="variable"><name>display</name></member>
     <member refid="class_e_v_o_x1_1a68727c7ee42efbbbb8a83aad2d8dc026" kind="variable"><name>charger</name></member>
     <member refid="class_e_v_o_x1_1a18d660e086a3a48e8e2f0d2c9fe84dfe" kind="function"><name>EVOX1</name></member>
     <member refid="class_e_v_o_x1_1a555775df46b67fb8b35be45894463eab" kind="function"><name>operator=</name></member>
@@ -245,7 +306,8 @@
     <member refid="class_e_v_o_x1_1aebc87ebd48a283cc52cb2150cc1b79fe" kind="function"><name>waitForRelease</name></member>
     <member refid="class_e_v_o_x1_1add6dcc30412b45d868d3f85c07ecc21a" kind="function"><name>waitForBump</name></member>
     <member refid="class_e_v_o_x1_1a7d956df679f8d7f3cb1573a07d478a3f" kind="function"><name>getButton</name></member>
-    <member refid="class_e_v_o_x1_1a0b6466b1faaf530c58c3cd8dcfb974d6" kind="function"><name>playTone</name></member>
+    <member refid="class_e_v_o_x1_1ab7767e17968a18ec6e40503cf367e7a7" kind="function"><name>playTone</name></member>
+    <member refid="class_e_v_o_x1_1a4716de3a9a996c09713bdd93cf6d693b" kind="function"><name>stopTone</name></member>
     <member refid="class_e_v_o_x1_1a7257fd59f8b9fc14e983e898d17ad9e7" kind="function"><name>setRGB</name></member>
     <member refid="class_e_v_o_x1_1af3a2cbe75b2c841d30b2031845780e25" kind="function"><name>getInstance</name></member>
   </compound>
@@ -273,8 +335,9 @@
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aa205c6489713024afeff4c9b317cc7e3" kind="enumvalue"><name>EV3LargeMotor</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a3390414988bdc309762d948223485fa6" kind="enumvalue"><name>EV3MediumMotor</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3aeeadb54321e160838668b4a256731429" kind="enumvalue"><name>GeekServoDCMotor</name></member>
-    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ada00e760ed435a4b9f32141e312fc35e" kind="enumvalue"><name>ITERMKS</name></member>
-    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a97dbb74836f4041d6a9e54e14bea5549" kind="enumvalue"><name>ITERMKT</name></member>
+    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a43cdb2d55e6a45c9b81a158a81d507bd" kind="enumvalue"><name>ITERMK495</name></member>
+    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ace01d313f769400b4a1111c2ddacfa32" kind="enumvalue"><name>ITERMK330</name></member>
+    <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a8b9852713a6944719756c6523a020673" kind="enumvalue"><name>ITERMK195</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3a11f738d220b218d14f372e7f83fb59f3" kind="enumvalue"><name>EVOMotor300</name></member>
     <member refid="_evo_motor_8h_1a3f29f8952bca737db7bc832cd0a6d6f3ad57989a4121060bce339670d1b5b8f7b" kind="enumvalue"><name>EVOMotor100</name></member>
     <member refid="_evo_motor_8h_1ab699736bb74479e355616050ebf95493" kind="enum"><name>MotorPort</name></member>
@@ -308,6 +371,12 @@
   <compound refid="_evo_motor_pair_8h" kind="file"><name>EvoMotorPair.h</name>
   </compound>
   <compound refid="_evo_trace_8h" kind="file"><name>EvoTrace.h</name>
+    <member refid="_evo_trace_8h_1aab71651317733b100aa50184e780cfb5" kind="enum"><name>TraceMode</name></member>
+    <member refid="_evo_trace_8h_1aab71651317733b100aa50184e780cfb5ab375c525c8cfe730f9365a723921f742" kind="enumvalue"><name>LEFT_FOLLOWER</name></member>
+    <member refid="_evo_trace_8h_1aab71651317733b100aa50184e780cfb5a8b75dcd35cfdef8b19298fe2f1980e3e" kind="enumvalue"><name>LEFT_INVERTER</name></member>
+    <member refid="_evo_trace_8h_1aab71651317733b100aa50184e780cfb5ad0d8e337ef370994f4e2996eb0471c95" kind="enumvalue"><name>BOTH_FOLLOWER</name></member>
+    <member refid="_evo_trace_8h_1aab71651317733b100aa50184e780cfb5a5d59c071fe51a0f475f5e6598eaa9e6d" kind="enumvalue"><name>RIGHT_FOLLOWER</name></member>
+    <member refid="_evo_trace_8h_1aab71651317733b100aa50184e780cfb5a2dab5d5b4fab216e46c9e384a6d38e99" kind="enumvalue"><name>RIGHT_INVERTER</name></member>
   </compound>
   <compound refid="_e_v3_color_sensor_8h" kind="file"><name>EV3ColorSensor.h</name>
     <member refid="_e_v3_color_sensor_8h_1abc28261c70dad421060cfc132490b174" kind="enum"><name>EV3ColorSensorColor</name></member>
@@ -328,15 +397,26 @@
     <member refid="_e_v3_color_sensor_8h_1a372da9cab8b8051b8dc24fd7d0ef0727a7fca79941985a7c0cdcb96325f606088" kind="enumvalue"><name>COL_REFLECT</name></member>
     <member refid="_e_v3_color_sensor_8h_1acf6ba32b3e37c7a81cb543b47a9baa91" kind="function"><name>toColor</name></member>
   </compound>
-  <compound refid="_evo_b_n_o055_8h" kind="file"><name>EvoBNO055.h</name>
+  <compound refid="_e_v3_touch_sensor_8h" kind="file"><name>EV3TouchSensor.h</name>
   </compound>
   <compound refid="_evo_husky_lens_8h" kind="file"><name>EvoHuskyLens.h</name>
   </compound>
-  <compound refid="_evo_t_c_s34725_8h" kind="file"><name>EvoTCS34725.h</name>
+  <compound refid="_evo_i_m_u_8h" kind="file"><name>EvoIMU.h</name>
   </compound>
-  <compound refid="_evo_v_l53_l0_x_8h" kind="file"><name>EvoVL53L0X.h</name>
+  <compound refid="_evo_line_leader_8h" kind="file"><name>EvoLineLeader.h</name>
+    <member refid="_evo_line_leader_8h_1a476490a3d78ad11e45249c88e46a9340" kind="define"><name>SYSTEM_STATUS_REGISTER</name></member>
+    <member refid="_evo_line_leader_8h_1a7655daa7f9a459a14221d2634b1396c2" kind="define"><name>CHANNEL_SEL_REGISTER</name></member>
+    <member refid="_evo_line_leader_8h_1ad99fbbe31ce5662a2d9ef98b394cba0a" kind="define"><name>DATA_CFG_REGISTER</name></member>
+    <member refid="_evo_line_leader_8h_1a79f64d76fad793ce6856ca0296c5d97f" kind="define"><name>OSR_CFG_REGISTER</name></member>
+    <member refid="_evo_line_leader_8h_1af8e09fb01368fdc0ce20b5d1753b4fc7" kind="define"><name>PIN_CFG_REGISTER</name></member>
+    <member refid="_evo_line_leader_8h_1aeda7a52f58416e5dfb729bce0d61fe8e" kind="define"><name>GPIO_CFG_REGISTER</name></member>
+    <member refid="_evo_line_leader_8h_1ab3929312ccf12d07d3c52bb4d8395f92" kind="define"><name>GPO_DRIVE_CFG_REGISTER</name></member>
   </compound>
-  <compound refid="deprecated" kind="page"><name>deprecated</name>
+  <compound refid="_evo_o_l_e_d_8h" kind="file"><name>EvoOLED.h</name>
+  </compound>
+  <compound refid="_evo_r_g_b_color_sensor_8h" kind="file"><name>EvoRGBColorSensor.h</name>
+  </compound>
+  <compound refid="_evo_t_o_f_8h" kind="file"><name>EvoTOF.h</name>
   </compound>
   <compound refid="dir_6adb56cee76d6d026f8f38e703b50393" kind="dir"><name>src/motors</name>
   </compound>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
   <compounddef id="_evo_husky_lens_8h" kind="file" language="C++">
     <compoundname>EvoHuskyLens.h</compoundname>
     <includes local="yes">../helper/EvoI2CDevice.h</includes>
@@ -59,24 +59,24 @@
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_channel<sp/>=<sp/>channel;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32" refid="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a62795e29cfff3f4d57209ff98067aef2" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="45" refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" kindref="member">setMode</ref>(protocolAlgorithm<sp/>algorithmType);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51" refid="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>protocolAlgorithm<sp/><ref refid="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" kindref="member">getMode</ref>();</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70" refid="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/><ref refid="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" kindref="member">getModeString</ref>();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" kindref="member">requestBlocks</ref>(HUSKYLENSResult<sp/>&amp;result,<sp/>int16_t<sp/>ID<sp/>=<sp/>0);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86" refid="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" kindref="member">requestArrows</ref>(HUSKYLENSResult<sp/>&amp;result,<sp/>int16_t<sp/>ID<sp/>=<sp/>0);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94" refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" kindref="member">writeString</ref>(String<sp/>text,<sp/>uint16_t<sp/>x,<sp/>uint8_t<sp/>y);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99" refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" kindref="member">clearScreen</ref>();</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105" refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" kindref="member">printResult</ref>(HUSKYLENSResult<sp/>result);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="36" refid="class_evo_husky_lens_1a9137854802bfa570fa5ddc3667d60031" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a9137854802bfa570fa5ddc3667d60031" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="49" refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a70c86c9f4e10cbbe4536b17293468d21" kindref="member">setMode</ref>(protocolAlgorithm<sp/>algorithmType);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>protocolAlgorithm<sp/><ref refid="class_evo_husky_lens_1ab427e28823854c374f0d488382ce2236" kindref="member">getMode</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/><ref refid="class_evo_husky_lens_1a3a9e1477132c47e4b677fa920a9fe687" kindref="member">getModeString</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a92d532c50dbff2de7e7a12d0be07e7bb" kindref="member">requestBlocks</ref>(HUSKYLENSResult<sp/>&amp;result,<sp/>int16_t<sp/>ID<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a7fb3e6c048252af48f2aa14e9528faa7" kindref="member">requestArrows</ref>(HUSKYLENSResult<sp/>&amp;result,<sp/>int16_t<sp/>ID<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a27aeaec7d98812b694cf439a03e7f2c8" kindref="member">writeString</ref>(String<sp/>text,<sp/>uint16_t<sp/>x,<sp/>uint8_t<sp/>y);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a3c3cd43255692d6ec8ee3ab355629419" kindref="member">clearScreen</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_husky_lens_1a9227d62ac356c1bd7a639e3612d16eb9" kindref="member">printResult</ref>(HUSKYLENSResult<sp/>result);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="src/sensors/EvoHuskyLens.h"/>
   </compounddef>

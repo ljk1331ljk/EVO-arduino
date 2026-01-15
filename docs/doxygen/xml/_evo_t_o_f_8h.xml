@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="_evo_t_o_f_8h" kind="file" language="C++">
+    <compoundname>EvoTOF.h</compoundname>
+    <includes local="yes">../helper/EvoI2CDevice.h</includes>
+    <includes local="yes">../helper/VL53L0X.h</includes>
+    <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>../helper/EvoI2CDevice.h</label>
+      </node>
+      <node id="3">
+        <label>../helper/VL53L0X.h</label>
+      </node>
+      <node id="1">
+        <label>src/sensors/EvoTOF.h</label>
+        <link refid="_evo_t_o_f_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/Evo.h</label>
+        <link refid="_evo_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/sensors/EvoTOF.h</label>
+        <link refid="_evo_t_o_f_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_evo_t_o_f" prot="public">EvoTOF</innerclass>
+    <briefdescription>
+<para>Class for interfacing with the VL53L0X Time-of-Flight distance sensor using the EvoI2CDevice library. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EVO_TOF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_TOF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/EvoI2CDevice.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/VL53L0X.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_evo_t_o_f" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_evo_t_o_f_1a4eb1edc1570215ca0fbaf2025f3f381b" kindref="member">EvoTOF</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>I2CChannel<sp/>_channel;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>VL53L0X<sp/>lox;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>I2CDevice<sp/>&amp;i2CDevice<sp/>=<sp/>I2CDevice::getInstance();<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="class_evo_t_o_f_1a4eb1edc1570215ca0fbaf2025f3f381b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_evo_t_o_f_1a4eb1edc1570215ca0fbaf2025f3f381b" kindref="member">EvoTOF</ref>(I2CChannel<sp/>channel);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_evo_t_o_f_1aba683af3952b3de2aabb4d4224405840" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_evo_t_o_f_1aba683af3952b3de2aabb4d4224405840" kindref="member">begin</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>continuous<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_evo_t_o_f_1a1bb2ed69aeef41ae436036b2047936d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_evo_t_o_f_1a1bb2ed69aeef41ae436036b2047936d9" kindref="member">getDistance</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_evo_t_o_f_1ac9eeebeb930ec0edb340bc96b4206b8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_evo_t_o_f_1ac9eeebeb930ec0edb340bc96b4206b8e" kindref="member">getDistanceContinuous</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_evo_t_o_f_1a6929e2ef34dcfc9a29e81fd60aeec3d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_t_o_f_1a6929e2ef34dcfc9a29e81fd60aeec3d4" kindref="member">setLongRange</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enable);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="class_evo_t_o_f_1a0be4a1e1e540d6de2563c78cff0d612f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_t_o_f_1a0be4a1e1e540d6de2563c78cff0d612f" kindref="member">setHighAccuracyMode</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="class_evo_t_o_f_1a2c73bbbff25cd2d4bab93f35e6b938bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_evo_t_o_f_1a2c73bbbff25cd2d4bab93f35e6b938bb" kindref="member">setHighSpeedMode</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/sensors/EvoTOF.h"/>
+  </compounddef>
+</doxygen>
