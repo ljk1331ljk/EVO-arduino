@@ -23,5 +23,6 @@
 #include "sensors/EvoHuskyLens.h"
 #include "sensors/EvoOLED.h"
 #include "sensors/EvoLineLeader.h"
+#include "sensors/EvoTriButton.h"
 
 #endif
