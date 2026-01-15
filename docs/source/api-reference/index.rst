@@ -42,28 +42,51 @@ Library Showcases
    :gutter: 2
 
    .. grid-item-card::
-      :link: Sensors/EvoBNO055
+      :link: Sensors/EV3ColorSensor
       :link-type: doc
 
-      **IMU Sensor**
+      **EV3 Color Sensor**
+   
+   .. grid-item-card::
+      :link: Sensors/EV3TouchSensor
+      :link-type: doc
 
+      **EV3 Touch Sensor**
+
+   .. grid-item-card::
+      :link: Sensors/EvoRGBColorSensor
+      :link-type: doc
+
+      **TCS34725 RGB Color Sensor**
+
+   .. grid-item-card::
+      :link: Sensors/EvoTOF
+      :link-type: doc
+
+      **VL53L0X Distance Sensor**
+   
+   .. grid-item-card::
+      :link: Sensors/EvoIMU
+      :link-type: doc
+
+      **BNO055 IMU Sensor**
+
+   .. grid-item-card::
+      :link: Sensors/EvoLineLeader
+      :link-type: doc
+
+      **LineLeader Sensor**
+
+   .. grid-item-card::
+      :link: Sensors/EvoOLED
+      :link-type: doc
+
+      **OLED Display**
    .. grid-item-card::
       :link: Sensors/EvoHuskyLens
       :link-type: doc
 
       **HuskyLens AI Vision Sensor**
-
-   .. grid-item-card::
-      :link: Sensors/EvoTCS34725
-      :link-type: doc
-
-      **Color Sensor**
-
-   .. grid-item-card::
-      :link: Sensors/EvoVL53L0X
-      :link-type: doc
-
-      **Distance Sensor**
 
 .. rubric:: Robotics
 
