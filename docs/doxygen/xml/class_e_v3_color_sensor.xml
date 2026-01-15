@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="88" column="16" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="88" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="91" column="16" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v3_color_sensor_1a88cec3612cf48c5827351d9af560e5e4" prot="private" static="no" mutable="no">
         <type>EvoSensorPort</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="89" column="19" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="89" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="92" column="19" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v3_color_sensor_1a3868d2f47703b68ccff9a19636bae8e6" prot="private" static="no" mutable="no">
         <type>EV3ColorSensorMode</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="90" column="24" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="90" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="93" column="24" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_e_v3_color_sensor_1ae52af58bad762e9138669a680b1a26de" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="92" column="9" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="92" bodyend="-1"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="95" column="9" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="95" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -128,15 +128,23 @@
 <parametername>mode</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The operating mode to set COL_CAL RGB_RAW REF_RAW COL_COLOR COL_AMBIENT COL_REFLECT </para>
+<para>The operating mode to set</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
+The operating modes supported are:<itemizedlist>
+<listitem><para>COL_CAL</para>
+</listitem><listitem><para>RGB_RAW</para>
+</listitem><listitem><para>REF_RAW</para>
+</listitem><listitem><para>COL_COLOR</para>
+</listitem><listitem><para>COL_AMBIENT</para>
+</listitem><listitem><para>COL_REFLECT </para>
+</listitem></itemizedlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="59" column="10"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="61" column="10"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1a09cbfc6e751afcd6b1d190c1ef137710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -154,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="65" column="9"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="67" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1af4042a7df32e33b56156cd60c7f02c0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -172,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="71" column="9"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="73" column="9"/>
       </memberdef>
       <memberdef kind="function" id="class_e_v3_color_sensor_1a991ccf9ee86ee0f23b4fbb1f2163c6d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -184,13 +192,23 @@
 <para>Retrieves the detected color. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>detected color as EV3ColorSensorColor enum. NONE = 0 COLOR_BLACK = 1 COLOR_BLUE = 2 COLOR_GREEN = 3 COLOR_YELLOW = 4 COLOR_RED = 5 COLOR_WHITE = 6 COLOR_BROWN = 7 </para>
+<para><simplesect kind="return"><para>detected color as EV3ColorSensorColor enum. The colors supported are:<itemizedlist>
+<listitem><para>NONE = 0</para>
+</listitem><listitem><para>COLOR_BLACK = 1</para>
+</listitem><listitem><para>COLOR_BLUE = 2</para>
+</listitem><listitem><para>COLOR_GREEN = 3</para>
+</listitem><listitem><para>COLOR_YELLOW = 4</para>
+</listitem><listitem><para>COLOR_RED = 5</para>
+</listitem><listitem><para>COLOR_WHITE = 6</para>
+</listitem><listitem><para>COLOR_BROWN = 7 </para>
+</listitem></itemizedlist>
+</para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="85" column="9"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="88" column="9"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -218,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/sensors/EV3ColorSensor.h" line="93" column="10"/>
+        <location file="src/sensors/EV3ColorSensor.h" line="96" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -226,7 +244,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/sensors/EV3ColorSensor.h" line="34" column="1" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="35" bodyend="94"/>
+    <location file="src/sensors/EV3ColorSensor.h" line="34" column="1" bodyfile="src/sensors/EV3ColorSensor.h" bodystart="35" bodyend="97"/>
     <listofallmembers>
       <member refid="class_e_v3_color_sensor_1a88cec3612cf48c5827351d9af560e5e4" prot="private" virt="non-virtual"><scope>EV3ColorSensor</scope><name>_EV3port</name></member>
       <member refid="class_e_v3_color_sensor_1a3868d2f47703b68ccff9a19636bae8e6" prot="private" virt="non-virtual"><scope>EV3ColorSensor</scope><name>_mode</name></member>

@@ -29,7 +29,7 @@
 .. doxygenfunction:: EvoOLED::writeToDisplay
    :project: API
 
-.. doxygenfunction:: EvoOLED::writeToDisplay
+.. doxygenfunction:: EvoOLED::writeLineToDisplay
    :project: API
 
 

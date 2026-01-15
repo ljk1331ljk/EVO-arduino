@@ -49,12 +49,14 @@ public:
     /**
      * @brief Sets the operating mode of the EV3 Color Sensor.
      * @param mode The operating mode to set
-     * COL_CAL
-     * RGB_RAW
-     * REF_RAW
-     * COL_COLOR
-     * COL_AMBIENT
-     * COL_REFLECT
+     *
+     * The operating modes supported are:
+     * - COL_CAL
+     * - RGB_RAW
+     * - REF_RAW
+     * - COL_COLOR
+     * - COL_AMBIENT
+     * - COL_REFLECT
      */
     void setMode(EV3ColorSensorMode mode);
 
@@ -73,14 +75,15 @@ public:
     /**
      * @brief Retrieves the detected color.
      * @return detected color as EV3ColorSensorColor enum.
-     * NONE = 0
-     * COLOR_BLACK = 1
-     * COLOR_BLUE = 2
-     * COLOR_GREEN = 3
-     * COLOR_YELLOW = 4
-     * COLOR_RED = 5
-     * COLOR_WHITE = 6
-     *COLOR_BROWN = 7
+     * The colors supported are:
+     * - NONE = 0
+     * - COLOR_BLACK = 1
+     * - COLOR_BLUE = 2
+     * - COLOR_GREEN = 3
+     * - COLOR_YELLOW = 4
+     * - COLOR_RED = 5
+     * - COLOR_WHITE = 6
+     * - COLOR_BROWN = 7
      */
     int getColor();
 
