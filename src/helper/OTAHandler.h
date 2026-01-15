@@ -12,8 +12,8 @@ enum OTAMode
 class OTAHandler
 {
 public:
-    OTAHandler(const char *ssid, const char *wifiPassword, const char *otaPassword);
-    void begin(OTAMode mode, const char *hostname = nullptr);
+    OTAHandler(OTAMode mode, const char *hostname, const char *ssid, const char *wifiPassword, const char *otaPassword);
+    void begin();
 
     // If you want manual polling in loop() as well, you still can call this, it's safe.
     void poll();
