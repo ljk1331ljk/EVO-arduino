@@ -131,11 +131,16 @@ Library Showcases
    :maxdepth: 2
    :caption: Sensors
 
-   Sensors/EvoBNO055
+   Sensors/EV3ColorSensor
+   Sensors/EV3TouchSensor
+   Sensors/EvoRGBColorSensor
+   Sensors/EvoTriButton
+   Sensors/EvoTOF
+   Sensors/EvoIMU
+   Sensors/EvoLineLeader
+   Sensors/EvoOLED
    Sensors/EvoHuskyLens
-   Sensors/EvoTCS34725
-   Sensors/EvoVL53L0X
-
+   
 .. toctree::
    :hidden:
    :maxdepth: 2
