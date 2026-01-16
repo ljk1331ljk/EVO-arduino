@@ -1,5 +1,0 @@
-EvoTrace
-=======================
-
-.. doxygenclass:: EvoTrace
-   :members:

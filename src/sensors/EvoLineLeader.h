@@ -27,6 +27,11 @@ private:
     void startWriteRegister(uint16_t registerAddress);
 
 public:
+    /**
+     * @brief Constructor for the EvoLineLeader class.
+     * @param channel The I2C channel to use for communication.
+     * @param address The I2C address of the EvoLineLeader sensor (default is 0x17).
+     */
     EvoLineLeader(I2CChannel channel, int address = 0x17)
     {
         _channel = channel;

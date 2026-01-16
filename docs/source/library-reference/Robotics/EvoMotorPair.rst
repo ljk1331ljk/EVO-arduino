@@ -1,5 +1,0 @@
-EvoMotorPair
-=======================
-
-.. doxygenclass:: EvoMotorPair
-   :members:

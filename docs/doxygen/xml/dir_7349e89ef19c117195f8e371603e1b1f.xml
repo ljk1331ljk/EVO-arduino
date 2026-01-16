@@ -3,10 +3,14 @@
   <compounddef id="dir_7349e89ef19c117195f8e371603e1b1f" kind="dir">
     <compoundname>src/sensors</compoundname>
     <innerfile refid="_e_v3_color_sensor_8h">EV3ColorSensor.h</innerfile>
-    <innerfile refid="_evo_b_n_o055_8h">EvoBNO055.h</innerfile>
+    <innerfile refid="_e_v3_touch_sensor_8h">EV3TouchSensor.h</innerfile>
     <innerfile refid="_evo_husky_lens_8h">EvoHuskyLens.h</innerfile>
-    <innerfile refid="_evo_t_c_s34725_8h">EvoTCS34725.h</innerfile>
-    <innerfile refid="_evo_v_l53_l0_x_8h">EvoVL53L0X.h</innerfile>
+    <innerfile refid="_evo_i_m_u_8h">EvoIMU.h</innerfile>
+    <innerfile refid="_evo_line_leader_8h">EvoLineLeader.h</innerfile>
+    <innerfile refid="_evo_o_l_e_d_8h">EvoOLED.h</innerfile>
+    <innerfile refid="_evo_r_g_b_color_sensor_8h">EvoRGBColorSensor.h</innerfile>
+    <innerfile refid="_evo_t_o_f_8h">EvoTOF.h</innerfile>
+    <innerfile refid="_evo_tri_button_8h">EvoTriButton.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

@@ -1,0 +1,1145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="class_evo_o_l_e_d" kind="class" language="C++" prot="public">
+    <compoundname>EvoOLED</compoundname>
+    <includes refid="_evo_o_l_e_d_8h" local="no">EvoOLED.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_evo_o_l_e_d_1ae0cfc910095d22a318e3117e7326778c" prot="private" static="no" mutable="no">
+        <type>U8G2_SSD1306_128X64_NONAME_F_HW_I2C</type>
+        <definition>U8G2_SSD1306_128X64_NONAME_F_HW_I2C EvoOLED::oled</definition>
+        <argsstring></argsstring>
+        <name>oled</name>
+        <qualifiedname>EvoOLED::oled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>U8g2 display object for OLED </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="18" column="41" bodyfile="src/sensors/EvoOLED.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_o_l_e_d_1a38d59ccd5f1675b697045ebd4ce3f758" prot="private" static="no" mutable="no">
+        <type>I2CChannel</type>
+        <definition>I2CChannel EvoOLED::_channel</definition>
+        <argsstring></argsstring>
+        <name>_channel</name>
+        <qualifiedname>EvoOLED::_channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>I2C channel used for communication </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="19" column="16" bodyfile="src/sensors/EvoOLED.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_o_l_e_d_1a18b3904ace6f0c405ac8104fecdc27b5" prot="private" static="no" mutable="no">
+        <type>I2CDevice &amp;</type>
+        <definition>I2CDevice&amp; EvoOLED::i2CDevice</definition>
+        <argsstring></argsstring>
+        <name>i2CDevice</name>
+        <qualifiedname>EvoOLED::i2CDevice</qualifiedname>
+        <initializer>= I2CDevice::getInstance()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reference to the singleton I2CDevice instance </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="20" column="15" bodyfile="src/sensors/EvoOLED.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_evo_o_l_e_d_1a9d2e8d5c5065bed74829628d6108418f" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t EvoOLED::_fontSize</definition>
+        <argsstring></argsstring>
+        <name>_fontSize</name>
+        <qualifiedname>EvoOLED::_fontSize</qualifiedname>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Size of font for display. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="24" column="13" bodyfile="src/sensors/EvoOLED.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a547283fddaf5e1ef283af546b05d6181" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EvoOLED::EvoOLED</definition>
+        <argsstring>(I2CChannel channel)</argsstring>
+        <name>EvoOLED</name>
+        <qualifiedname>EvoOLED::EvoOLED</qualifiedname>
+        <param>
+          <type>I2CChannel</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="class_evo_o_l_e_d" kindref="compound">EvoOLED</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The I2C channel to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="31" column="5" bodyfile="src/sensors/EvoOLED.h" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1aaa1fe63e2155db76e5ff3c5e8dd9020d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EvoOLED::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>EvoOLED::begin</qualifiedname>
+        <briefdescription>
+<para>Initializes the OLED display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the display was successfully initialized, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="40" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a9ae0d0ba8fefbb4dd7cec41465bae5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::flipDisplayOrientation</definition>
+        <argsstring>(bool flip=true)</argsstring>
+        <name>flipDisplayOrientation</name>
+        <qualifiedname>EvoOLED::flipDisplayOrientation</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>flip</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Flips the orientation of the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to flip, false to not flip. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="47" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a0e7eaf952798d40939f5e801acbe1b1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::clearDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>clearDisplay</name>
+        <qualifiedname>EvoOLED::clearDisplay</qualifiedname>
+        <briefdescription>
+<para>Clears the OLED display. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="52" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a28970197bd02c163c4914fc0b097ff97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::setFontSize</definition>
+        <argsstring>(uint8_t size)</argsstring>
+        <name>setFontSize</name>
+        <qualifiedname>EvoOLED::setFontSize</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Sets the font size for the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The font size to set. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="58" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1aabe468b73b20eb759007a2c51aa45ce1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::writeToDisplay</definition>
+        <argsstring>(int value, int x, int y, bool clear=false, bool draw=false)</argsstring>
+        <name>writeToDisplay</name>
+        <qualifiedname>EvoOLED::writeToDisplay</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Writes an integer value to the display at a specific position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integer value to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate position (0-128). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate position (0-64). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the screen before drawing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="69" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a82d31f9ee1a5beecceb491da9f24e57f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::writeToDisplay</definition>
+        <argsstring>(double f, int x, int y, bool clear=false, bool draw=false)</argsstring>
+        <name>writeToDisplay</name>
+        <qualifiedname>EvoOLED::writeToDisplay</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Writes a floating-point number to the display at a specific position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating-point number to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate position (0-128). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate position (0-64). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the screen before drawing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="78" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a0696a301973f051dec6895e96247d266" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::writeToDisplay</definition>
+        <argsstring>(const char *c, int x, int y, bool clear=false, bool draw=false)</argsstring>
+        <name>writeToDisplay</name>
+        <qualifiedname>EvoOLED::writeToDisplay</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Writes a string to the display at a specific position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate position (0-128). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate position (0-64). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the screen before drawing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="88" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1af6e4a8cef0dadd3e5ea45c2895645473" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::writeLineToDisplay</definition>
+        <argsstring>(int value, int line, bool clear=false, bool draw=false)</argsstring>
+        <name>writeLineToDisplay</name>
+        <qualifiedname>EvoOLED::writeLineToDisplay</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Writes an integer value to the display on a specific line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integer value to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number (0-7). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the screen before drawing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="97" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a5a0c18ee02630b46a8a8197b7ccbec44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::writeLineToDisplay</definition>
+        <argsstring>(double f, int line, bool clear=false, bool draw=false)</argsstring>
+        <name>writeLineToDisplay</name>
+        <qualifiedname>EvoOLED::writeLineToDisplay</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Writes a floating-point number to the display on a specific line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating-point number to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number (0-7). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the screen before drawing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="107" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a436da61f6da172df6fe0dedaad72e4a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::writeLineToDisplay</definition>
+        <argsstring>(const char *c, int line, bool clear=false, bool draw=false)</argsstring>
+        <name>writeLineToDisplay</name>
+        <qualifiedname>EvoOLED::writeLineToDisplay</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Writes a string to the display on a specific line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line number (0-7). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the screen before drawing. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="116" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1af4e48a7835ff4742c3f05619bd997590" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::drawDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>drawDisplay</name>
+        <qualifiedname>EvoOLED::drawDisplay</qualifiedname>
+        <briefdescription>
+<para>Refreshes the display by rendering the current buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="121" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a932d9186ff767f7f16a51433515280f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::drawPixel</definition>
+        <argsstring>(int x, int y, bool clear=false, bool draw=false)</argsstring>
+        <name>drawPixel</name>
+        <qualifiedname>EvoOLED::drawPixel</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Draws a pixel on the display at the specified coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the pixel (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the pixel (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the pixel (true) or draw it (false). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen after setting the pixel. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="130" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1aeea3244cc3483237f906e65288b85942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::drawLine</definition>
+        <argsstring>(int x0, int y0, int x1, int y1, bool clear=false, bool draw=false)</argsstring>
+        <name>drawLine</name>
+        <qualifiedname>EvoOLED::drawLine</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Draws a line between two points on the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the start point (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the start point (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the end point (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the end point (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the line (true) or draw it (false). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen after setting the line. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="141" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1afa864e30a6e74a46e883301b7db99f45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::drawRect</definition>
+        <argsstring>(int x, int y, int w, int h, bool fill=false, bool clear=false, bool draw=false)</argsstring>
+        <name>drawRect</name>
+        <qualifiedname>EvoOLED::drawRect</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fill</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Draws a rectangle on the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the top-left corner (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the top-left corner (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the rectangle (1-128). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the rectangle (1-64). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fill</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to fill the rectangle (true) or draw only the outline (false). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the rectangle (true) or draw it (false). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen after setting the rectangle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="153" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a3eec9bb5f803d78759c2f09f1f8e6204" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::drawCircle</definition>
+        <argsstring>(int x, int y, int r, bool fill=false, bool clear=false, bool draw=false)</argsstring>
+        <name>drawCircle</name>
+        <qualifiedname>EvoOLED::drawCircle</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>fill</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Draws a circle on the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the center of the circle (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the center of the circle (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radius of the circle (1-64). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fill</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to fill the circle (true) or draw only the outline (false). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the circle (true) or draw it (false). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen after setting the circle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="164" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_evo_o_l_e_d_1a306e80ddae152887f2cb7b91752b30f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EvoOLED::drawTriangle</definition>
+        <argsstring>(int x0, int y0, int x1, int y1, int x2, int y2, bool clear=false, bool draw=false)</argsstring>
+        <name>drawTriangle</name>
+        <qualifiedname>EvoOLED::drawTriangle</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y2</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>clear</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>draw</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Draws a triangle on the display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the first vertex (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the first vertex (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the second vertex (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the second vertex (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X-coordinate of the third vertex (0-127). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y-coordinate of the third vertex (0-63). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to clear the triangle (true) or draw it (false). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>draw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to immediately draw the screen after setting the triangle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/sensors/EvoOLED.h" line="177" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class to interact with the OLED display using the EvoI2CDevice library. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/sensors/EvoOLED.h" line="15" column="1" bodyfile="src/sensors/EvoOLED.h" bodystart="16" bodyend="178"/>
+    <listofallmembers>
+      <member refid="class_evo_o_l_e_d_1a38d59ccd5f1675b697045ebd4ce3f758" prot="private" virt="non-virtual"><scope>EvoOLED</scope><name>_channel</name></member>
+      <member refid="class_evo_o_l_e_d_1a9d2e8d5c5065bed74829628d6108418f" prot="private" virt="non-virtual"><scope>EvoOLED</scope><name>_fontSize</name></member>
+      <member refid="class_evo_o_l_e_d_1aaa1fe63e2155db76e5ff3c5e8dd9020d" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>begin</name></member>
+      <member refid="class_evo_o_l_e_d_1a0e7eaf952798d40939f5e801acbe1b1d" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>clearDisplay</name></member>
+      <member refid="class_evo_o_l_e_d_1a3eec9bb5f803d78759c2f09f1f8e6204" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>drawCircle</name></member>
+      <member refid="class_evo_o_l_e_d_1af4e48a7835ff4742c3f05619bd997590" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>drawDisplay</name></member>
+      <member refid="class_evo_o_l_e_d_1aeea3244cc3483237f906e65288b85942" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>drawLine</name></member>
+      <member refid="class_evo_o_l_e_d_1a932d9186ff767f7f16a51433515280f5" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>drawPixel</name></member>
+      <member refid="class_evo_o_l_e_d_1afa864e30a6e74a46e883301b7db99f45" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>drawRect</name></member>
+      <member refid="class_evo_o_l_e_d_1a306e80ddae152887f2cb7b91752b30f9" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>drawTriangle</name></member>
+      <member refid="class_evo_o_l_e_d_1a547283fddaf5e1ef283af546b05d6181" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>EvoOLED</name></member>
+      <member refid="class_evo_o_l_e_d_1a9ae0d0ba8fefbb4dd7cec41465bae5ba" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>flipDisplayOrientation</name></member>
+      <member refid="class_evo_o_l_e_d_1a18b3904ace6f0c405ac8104fecdc27b5" prot="private" virt="non-virtual"><scope>EvoOLED</scope><name>i2CDevice</name></member>
+      <member refid="class_evo_o_l_e_d_1ae0cfc910095d22a318e3117e7326778c" prot="private" virt="non-virtual"><scope>EvoOLED</scope><name>oled</name></member>
+      <member refid="class_evo_o_l_e_d_1a28970197bd02c163c4914fc0b097ff97" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>setFontSize</name></member>
+      <member refid="class_evo_o_l_e_d_1af6e4a8cef0dadd3e5ea45c2895645473" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>writeLineToDisplay</name></member>
+      <member refid="class_evo_o_l_e_d_1a5a0c18ee02630b46a8a8197b7ccbec44" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>writeLineToDisplay</name></member>
+      <member refid="class_evo_o_l_e_d_1a436da61f6da172df6fe0dedaad72e4a1" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>writeLineToDisplay</name></member>
+      <member refid="class_evo_o_l_e_d_1aabe468b73b20eb759007a2c51aa45ce1" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>writeToDisplay</name></member>
+      <member refid="class_evo_o_l_e_d_1a82d31f9ee1a5beecceb491da9f24e57f" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>writeToDisplay</name></member>
+      <member refid="class_evo_o_l_e_d_1a0696a301973f051dec6895e96247d266" prot="public" virt="non-virtual"><scope>EvoOLED</scope><name>writeToDisplay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

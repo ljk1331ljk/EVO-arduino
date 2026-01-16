@@ -41,6 +41,7 @@ bool I2CDevice::selectChannel(I2CChannel channel)
         }
         return false;
     }
+    return false;
 }
 
 // Get selected channel

@@ -2,7 +2,7 @@
 #define EVO_MOTORPAIR_H
 
 #include "../motors/EvoMotor.h"
-#include "../sensors/EvoBNO055.h"
+#include "../sensors/EvoIMU.h"
 
 /**
  * @class EvoMotorPair
@@ -13,60 +13,80 @@ class EvoMotorPair
 private:
     EvoMotor *_m1;
     EvoMotor *_m2;
-    EvoBNO055 *_imu;
+    EvoIMU *_imu;
     bool _imuAvailable = false, _useImu = false;
-    int _minSpeed = 800, _accelDeg = 2000, _decelDeg = 2000;
-    float _accel = 8, _decel = 8;
-    float _kpSync = 20, _kdSync = 200;
+    int _startSpeed = 800, _endSpeed = 800, _accel = 10000, _decel = 10000;
+    int _kpSync = 70, _kiSync = 5, _kdSync = 800;
+    float _kpGyro = 70, _kiGyro = 10, _kdGyro = 1200;
+    int _kpIMU = 10, _kdIMU = 50;
+    MotorStop _stopBehavior = MotorStop::BRAKE;
 
 public:
     /**
      * @brief Constructor to initialize a motor pair.
      * @param m1 Pointer to the first EvoMotor.
      * @param m2 Pointer to the second EvoMotor.
+     * @param imu Pointer to the EvoIMU sensor.
      */
-    EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoBNO055 *imu);
+    EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoIMU *imu = nullptr);
 
     /**
-     * @brief Sets the minimum speed for the motors.
-     * @param minSpeed The minimum speed value.
+     * @brief Sets the start speed for the motors.
+     * @param startSpeed The minimum speed value.
      */
-    void setMinimumSpeed(int minSpeed);
+    void setStartSpeed(int startSpeed);
+
+    /**
+     * @brief Sets the end speed for the motors.
+     * @param endSpeed The minimum speed value.
+     */
+    void setEndSpeed(int endSpeed);
 
     /**
      * @brief Sets the acceleration parameters.
      * @param accel The acceleration factor.
-     * @param accelDeg The number of degrees over which acceleration occurs.
      */
-    void setAcceleration(float accel, int accelDeg);
+    void setAcceleration(int accel);
 
     /**
      * @brief Gets the current acceleration parameters.
-     * @param accel Reference to store the acceleration factor.
-     * @param accelDeg Reference to store the number of degrees for acceleration.
+     * @return The acceleration factor.
      */
-    void getAcceleration(float &accel, int &accelDeg);
+    int getAcceleration();
 
     /**
      * @brief Sets the deceleration parameters.
      * @param decel The deceleration factor.
-     * @param decelDeg The number of degrees over which deceleration occurs.
      */
-    void setDeceleration(float decel, int decelDeg);
+    void setDeceleration(int decel);
 
     /**
      * @brief Gets the current deceleration parameters.
-     * @param decel Reference to store the deceleration factor.
-     * @param decelDeg Reference to store the number of degrees for deceleration.
+     * @return The deceleration factor.
      */
-    void getDeceleration(float &decel, int &decelDeg);
+    int getDeceleration();
 
     /**
-     * @brief Sets the proportional-derivative (PD) control parameters for the motor pairing.
+     * @brief Sets the proportional-integral-derivative (PID) control parameters for the motor pairing.
      * @param kp The proportional gain.
+     * @param ki The integral gain.
      * @param kd The derivative gain.
      */
-    void setPD(float kp, float kd);
+    void setSyncPID(int kp, int ki, int kd);
+
+    /**
+     * @brief Sets the proportional-integral-derivative (PID) control parameters for the gyro.
+     * @param kp The proportional gain.
+     * @param ki The integral gain.
+     * @param kd The derivative gain.
+     */
+    void setGyroPID(float kp, float ki, float kd);
+
+    /**
+     * @brief Sets the stopping behavior for the motors.
+     * @param stopBehavior The stopping behavior (HOLD, BRAKE, or COAST).
+     */
+    void setStopBehavior(MotorStop stopBehavior);
 
     /**
      * @brief Moves the motors at the specified speeds.
@@ -80,29 +100,42 @@ public:
      * @param leftSpeed Speed for the left motor.
      * @param rightSpeed Speed for the right motor.
      * @param degrees The number of degrees to move.
-     * @param brake Whether to brake at the end of movement (default: true).
+     * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void moveDegrees(int leftSpeed, int rightSpeed, int degrees, bool brake = true);
+    void moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour = MotorStop::HOLD);
 
     /**
      * @brief Moves the motors for a specified duration.
      * @param leftSpeed Speed for the left motor.
      * @param rightSpeed Speed for the right motor.
      * @param timems Duration in milliseconds.
-     * @param brake Whether to brake at the end of movement (default: true).
+     * @param slowdowntime Duration where the motors start to slow down.
+     * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void moveTime(int leftSpeed, int rightSpeed, int timems, bool brake = true);
+    void moveTime(int leftSpeed, int rightSpeed, int timems, int slowdowntime = 200, MotorStop stopBehaviour = MotorStop::HOLD);
 
     /**
      * @brief Moves the motors following a Condition with the IMU.
-     * @param leftSpeed Speed for the left motor.
-     * @param rightSpeed Speed for the right motor.
-     * @param Condition Condition with the IMU.
-     * @param IMUkp The proportional gain.
-     * @param IMUkd The derivative gain.
-     * @param brake Whether to brake at the end of movement (default: true).
+     * @param motorSpeed Speed for the motors.
+     * @param degrees The number of degrees to move.
+     * @param heading The target heading angle. If -1, the current heading is maintained.
+     * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void moveIMU(int leftSpeed, int rightSpeed, int Condition, float IMUkp = 0, float IMUkd = 0, bool brake = true);
+    void StraightDegreesIMU(int motorSpeed, int degrees, int heading = -1, MotorStop stopBehaviour = MotorStop::HOLD);
+
+    /**
+     * @brief Performs a spot turn to a specific heading using the IMU.
+     * @param motorSpeed The speed of the turn.
+     * @param heading The target heading angle.
+     * @param reset Settign true will reset the IMU heading.
+     * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST).
+     */
+    void spotTurnGyro(int motorSpeed, float heading, bool reset = true, MotorStop stopBehaviour = MotorStop::HOLD);
+
+    /**
+     * @brief Stops both motors based on the stop behavior.
+     */
+    void stop();
 
     /**
      * @brief Applies braking to both motors.
@@ -113,6 +146,11 @@ public:
      * @brief Coasts both motors to a stop.
      */
     void coast();
+
+    /**
+     * @brief Holds the current position of both motors.
+     */
+    void hold();
 
     /**
      * @brief Resets both motor angles to zero.
