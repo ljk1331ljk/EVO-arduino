@@ -10,6 +10,7 @@ OTA Usage
 ----------------
 
 To be able to perform OTA the following requirements must be met.
+
 1. It must not be in a program crashed state.
 2. It also must not be in any loop without delay being called at some point in the code.
 3. The Wi-Fi connection on the EVO must not be used for anything else.
