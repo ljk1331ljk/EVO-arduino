@@ -1,7 +1,7 @@
 #ifndef EVO_TRACE_H
 #define EVO_TRACE_H
 
-#include "../sensors/EvoTCS34725.h"
+#include "../sensors/EvoRGBColorSensor.h"
 #include "../motors/EvoMotor.h"
 
 enum TraceMode
@@ -27,7 +27,7 @@ public:
      * @param leftMotor Pointer to the left motor.
      * @param rightMotor Pointer to the right motor.
      */
-    EvoTrace(EvoTCS34725 *leftSensor, EvoTCS34725 *rightSensor, EvoMotor *leftMotor, EvoMotor *rightMotor);
+    EvoTrace(EvoRGBColorSensor *leftSensor, EvoRGBColorSensor *rightSensor, EvoMotor *leftMotor, EvoMotor *rightMotor);
 
     /**
      * @brief Initializes the sensors and motors.
@@ -70,10 +70,10 @@ public:
     void PDTrackJunction(int speed, float kp, float kd, int threshold, int maxJunctions, TraceMode mode = BOTH_FOLLOWER, int Thv = 0, bool brake = true);
 
 private:
-    EvoTCS34725 *_leftSensor;  ///< Pointer to the left color sensor.
-    EvoTCS34725 *_rightSensor; ///< Pointer to the right color sensor.
-    EvoMotor *_leftMotor;      ///< Pointer to the left motor.
-    EvoMotor *_rightMotor;     ///< Pointer to the right motor.
+    EvoRGBColorSensor *_leftSensor;  ///< Pointer to the left color sensor.
+    EvoRGBColorSensor *_rightSensor; ///< Pointer to the right color sensor.
+    EvoMotor *_leftMotor;            ///< Pointer to the left motor.
+    EvoMotor *_rightMotor;           ///< Pointer to the right motor.
 
     uint16_t lr, lg, lb, lc; ///< Raw sensor values for the left sensor.
     uint16_t rr, rg, rb, rc; ///< Raw sensor values for the right sensor.

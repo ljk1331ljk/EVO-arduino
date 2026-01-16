@@ -1,6 +1,6 @@
 #include "EvoTrace.h"
 
-EvoTrace::EvoTrace(EvoTCS34725 *leftSensor, EvoTCS34725 *rightSensor, EvoMotor *leftMotor, EvoMotor *rightMotor)
+EvoTrace::EvoTrace(EvoRGBColorSensor *leftSensor, EvoRGBColorSensor *rightSensor, EvoMotor *leftMotor, EvoMotor *rightMotor)
 {
     _leftSensor = leftSensor;
     _rightSensor = rightSensor;

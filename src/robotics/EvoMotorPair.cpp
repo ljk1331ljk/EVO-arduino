@@ -60,7 +60,7 @@ void EvoMotorPair::move(int leftSpeed, int rightSpeed)
     _m2->run(rightSpeed);
 }
 
-void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour = MotorStop::HOLD)
+void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour)
 {
     _m1->resetAngle();
     _m2->resetAngle();
