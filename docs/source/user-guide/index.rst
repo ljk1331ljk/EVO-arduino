@@ -83,6 +83,7 @@ There are 2 platforms you can choose to code your programs. Arduino IDE & Platfo
    programming/evo-connection
    programming/troubleshooting
    programming/downloading-programs
+   programming/OTA-update
 
 .. toctree::
    :maxdepth: 2
