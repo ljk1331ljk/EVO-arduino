@@ -1,3 +1,6 @@
+/*
+  This program uses the functions that read multiple values at the same time to achieve faster read times.
+*/
 #include <Evo.h>
 
 EVOX1 evo;
