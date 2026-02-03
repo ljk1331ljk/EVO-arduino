@@ -1,7 +1,7 @@
 #ifndef EVO_H
 #define EVO_H
 
-#define LIBRARY_VERSION "0.1.9"
+#define LIBRARY_VERSION "1.0.0-beta"
 
 #include "EVOX1.h"
 
