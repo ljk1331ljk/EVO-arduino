@@ -60,24 +60,6 @@ Library Installation
       :width: 100%
       :align: center
 
-4. Go to the Libraries tab and search for the libraries listed below. Install them as such.
-
-   * ``Adafruit NeoPixel`` by Adafruit
-   * ``Adafruit PWM Servo Driver Library`` by Adafruit
-   * ``EspSoftwareSerial`` by Dirk Kaar, Peter Lerup
-   * ``ESP32Encoder`` by Kevin Harrington
-   * ``Adafruit VL53L0X`` by Adafruit
-   * ``Adafruit TCS34725`` by Adafruit
-   * ``Adafruit BNO055`` by Adafruit
-
-   .. warning::
-
-      This list may grow over time, so check back here when new updates are released.
-
-   ..  note::
-
-      As of version 1.0.0 of the library released on 16/1/2026, installation of additional libraries are no longer required. The libraries are integrated into the Evo library for a more seemless installation expereince.
-
 Updating EVO Library
 --------------------
 

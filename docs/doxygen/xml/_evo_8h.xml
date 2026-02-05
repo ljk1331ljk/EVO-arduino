@@ -23,8 +23,11 @@
       <node id="23">
         <label>../helper/AdafruitSensors/Adafruit_BNO055.h</label>
       </node>
-      <node id="30">
+      <node id="26">
         <label>../helper/AdafruitSensors/Adafruit_TCS34725.h</label>
+      </node>
+      <node id="16">
+        <label>../helper/ESP32Encoder/ESP32Encoder.h</label>
       </node>
       <node id="22">
         <label>../helper/EvoI2CDevice.h</label>
@@ -32,23 +35,20 @@
       <node id="14">
         <label>../helper/EvoPWMDriver.h</label>
       </node>
-      <node id="27">
+      <node id="28">
         <label>../helper/EvoSensorPort.h</label>
       </node>
-      <node id="34">
+      <node id="33">
         <label>../helper/HuskyLens/HUSKYLENS.h</label>
       </node>
-      <node id="36">
+      <node id="35">
         <label>../helper/U8g2/U8g2lib.h</label>
       </node>
-      <node id="32">
+      <node id="31">
         <label>../helper/VL53L0X.h</label>
       </node>
       <node id="15">
         <label>../helper/X1pins.h</label>
-      </node>
-      <node id="25">
-        <label>../sensors/EvoTCS34725.h</label>
       </node>
       <node id="3">
         <label>Arduino.h</label>
@@ -92,23 +92,23 @@
         </childnode>
         <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
         </childnode>
         <childnode refid="37" relation="include">
-        </childnode>
-        <childnode refid="38" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -147,26 +147,26 @@
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="26">
+      <node id="27">
         <label>sensors/EV3ColorSensor.h</label>
         <link refid="_e_v3_color_sensor_8h_source"/>
-        <childnode refid="27" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="28">
+      <node id="29">
         <label>sensors/EV3TouchSensor.h</label>
         <link refid="_e_v3_touch_sensor_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="27" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="32">
         <label>sensors/EvoHuskyLens.h</label>
         <link refid="_evo_husky_lens_8h_source"/>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
       </node>
       <node id="21">
@@ -177,44 +177,41 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="36">
         <label>sensors/EvoLineLeader.h</label>
         <link refid="_evo_line_leader_8h_source"/>
         <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="35">
+      <node id="34">
         <label>sensors/EvoOLED.h</label>
         <link refid="_evo_o_l_e_d_8h"/>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
-      <node id="29">
-        <label>sensors/EvoRGBColorSensor.h</label>
+      <node id="25">
+        <label>../sensors/EvoRGBColorSensor.h</label>
         <link refid="_evo_r_g_b_color_sensor_8h"/>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
+        <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="31">
+      <node id="30">
         <label>sensors/EvoTOF.h</label>
         <link refid="_evo_t_o_f_8h"/>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="38">
+      <node id="37">
         <label>sensors/EvoTriButton.h</label>
         <link refid="_evo_tri_button_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="16">
-        <label>ESP32Encoder.h</label>
       </node>
       <node id="17">
         <label>freertos/FreeRTOS.h</label>
@@ -253,7 +250,7 @@
     <sectiondef kind="define">
       <memberdef kind="define" id="_evo_8h_1a8650e6793d46032c617bb7b824f90bfd" prot="public" static="no">
         <name>LIBRARY_VERSION</name>
-        <initializer>&quot;0.1.9&quot;</initializer>
+        <initializer>&quot;1.0.0-beta&quot;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -271,7 +268,7 @@
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVO_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVO_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBRARY_VERSION<sp/>&quot;0.1.9&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LIBRARY_VERSION<sp/>&quot;1.0.0-beta&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_e_v_o_x1_8h" kindref="compound">EVOX1.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
