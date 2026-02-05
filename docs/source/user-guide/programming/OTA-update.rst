@@ -71,6 +71,7 @@ OTA update on PlatformIO
 To download on PlatformIO, the ``platform.ini`` needs to be configured correctly. Add the following into ``platform.ini``. 
 
 Create a new environment in ``platform.ini`` as shown below:
+
 .. code-block:: 
    :linenos:
 
@@ -84,4 +85,5 @@ Create a new environment in ``platform.ini`` as shown below:
 
 
 ``upload_port`` is given by the name set in the OTA declaration.
-``--auth`` is the password set in ``ArduinoOTAPassword`` 
+
+``auth`` is the password set in ``ArduinoOTAPassword`` 
