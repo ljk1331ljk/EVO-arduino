@@ -52,7 +52,7 @@ Library Installation
 
    - Click on Sketch on the top left bar
    - Include Library 
-   - Add ``.zip`` Library and 
+   - Add ``.zip`` Library and    
    - Select the file just downloaded.
 
    .. figure:: /_static/gifs/install-library-ino.gif
