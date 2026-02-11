@@ -9,6 +9,7 @@ void EvoHC05::begin()
 {
     pinMode(this->_pwr, OUTPUT);
     pinMode(this->_reset, OUTPUT);
+    _sw.begin(2400, SWSERIAL_8N1, 44, 43);
 }
 
 void EvoHC05::setMode(HC05Mode mode, int baud)
@@ -23,7 +24,7 @@ void EvoHC05::setMode(HC05Mode mode, int baud)
             digitalWrite(this->_pwr, LOW);
             delay(2000); // minimum : 700ms
             digitalWrite(this->_reset, LOW);
-            Serial0.begin(38400);
+            _sw.begin(38400, SWSERIAL_8N1, 44, 43);
             this->_mode = ATMODE;
         }
         else if (mode == BLMODE)
@@ -31,7 +32,7 @@ void EvoHC05::setMode(HC05Mode mode, int baud)
             digitalWrite(this->_pwr, HIGH);
             delay(200);
             digitalWrite(this->_pwr, LOW);
-            Serial0.begin(baud);
+            _sw.begin(baud, SWSERIAL_8N1, 44, 43);
             this->_mode = BLMODE;
         }
     }
@@ -43,15 +44,9 @@ bool EvoHC05::waitResponse(const char *c)
 {
     if (this->_mode == ATMODE)
     {
-        String input = Serial0.readString();
-        Serial.println(input);
+        String input = _sw.readString();
         char *str = (char *)input.c_str();
         int len = input.length();
-        // for (size_t i = 0; i < len; i++){
-        //     Serial.print(str[i], DEC);
-        //     Serial.print(" ");
-        // }
-        // Serial.println();
         if (input.indexOf(c) >= 0)
         {
             return true;
@@ -64,8 +59,7 @@ bool EvoHC05::factorySettings()
 {
     if (this->_mode == ATMODE)
     {
-        Serial.println("AT+ORGL");
-        Serial0.write("AT+ORGL\r\n");
+        _sw.write("AT+ORGL\r\n");
         if (!this->waitResponse("OK"))
         {
             Serial.println("ERROR");
@@ -87,7 +81,7 @@ bool EvoHC05::setName(const char *newName)
         strcpy(result, prefix);
         strcat(result, newName);
         strcat(result, "\r\n");
-        Serial0.write(result);
+        _sw.write(result);
         Serial.println(result);
         if (!this->waitResponse("OK"))
         {
@@ -104,7 +98,7 @@ void EvoHC05::resetDevice()
     if (this->_mode == ATMODE)
     {
         Serial.println("AT+RESET");
-        Serial0.write("AT+RESET");
+        _sw.write("AT+RESET");
         digitalWrite(this->_pwr, HIGH);
         delay(200);
         digitalWrite(this->_pwr, LOW);
@@ -118,23 +112,23 @@ bool EvoHC05::setBaud(int baud)
     {
         if (baud == 9600)
         {
-            Serial0.write("AT+UART=9600,0,0\r\n");
+            _sw.write("AT+UART=9600,0,0\r\n");
         }
         else if (baud == 38400)
         {
-            Serial0.write("AT+UART=38400,0,0\r\n");
+            _sw.write("AT+UART=38400,0,0\r\n");
         }
         else if (baud == 57600)
         {
-            Serial0.write("AT+UART=57600,0,0\r\n");
+            _sw.write("AT+UART=57600,0,0\r\n");
         }
         else if (baud == 115200)
         {
-            Serial0.write("AT+UART=115200,0,0\r\n");
+            _sw.write("AT+UART=115200,0,0\r\n");
         }
         else if (baud == 921600)
         {
-            Serial0.write("AT+UART=921600,0,0\r\n");
+            _sw.write("AT+UART=921600,0,0\r\n");
         }
         else
         {
@@ -155,7 +149,7 @@ bool EvoHC05::checkResponse()
 {
     if (this->_mode == ATMODE)
     {
-        Serial0.write("AT\r\n");
+        _sw.write("AT\r\n");
         return this->waitResponse("OK");
     }
     return false;

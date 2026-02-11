@@ -35,7 +35,7 @@ void EvoPWMDriver::setPWMFreq(int freq)
     xSemaphoreTake(_mutex, portMAX_DELAY);
     if (freq != _freq)
     {
-        pwm.setPWMFreq(_freq);
+        pwm.setPWMFreq(freq);
         _freq = freq;
     }
     xSemaphoreGive(_mutex);
