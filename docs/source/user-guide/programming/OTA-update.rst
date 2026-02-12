@@ -81,7 +81,7 @@ Create a new environment in ``platform.ini`` as shown below:
    framework = arduino
    upload_protocol = espota
    upload_port = EvoX1-OTA.local
-   upload_flags = --host_port=55910, --auth=admin
+   upload_flags = --host_port=55910, --auth=ArduinoOTAPassword
 
 
 ``upload_port`` is given by the name set in the OTA declaration.
