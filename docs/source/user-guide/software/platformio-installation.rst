@@ -65,7 +65,7 @@ Library Installation
       platform = espressif32
       board = esp32-s3-devkitm-1
       framework = arduino
-      lib.deps =https://github.com/ljk1331ljk/EVO-arduino.git
+      lib_deps =https://github.com/ljk1331ljk/EVO-arduino.git
       
 
 3. Save the file and PlatformIO will download the library.

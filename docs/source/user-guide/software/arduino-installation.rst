@@ -22,6 +22,21 @@ IDE Installation
 
    3. Install Arduino IDE by following the on-screen instructions
 
+   4. If you do not have git installed or see the following error when trying to install the library:
+
+      .. code-block:: text
+
+         UserSideException: Please install Git client from https://git-scm.com/downloads_ and make sure to add it to your system PATH during installation.
+
+      Look for the Github Actions extension in VSCode to install git on your system.
+
+      .. figure:: /_static/images/github-actions-extension.png
+         :alt: ESP32 Board
+         :width: 80%
+         :align: center
+
+
+
 Board Installation
 ------------------
 
