@@ -1,3 +1,8 @@
+
+/* This program configures the HC05 on the EVO to allow UART communication via bluetooth classic.
+ *  This allows features like wireless serial mmnitering as well as wireless code upload through bluetooth
+ */
+
 #include <Evo.h>
 
 #define DEVICE_NAME "EVOX1E-1" // Change this to your device name

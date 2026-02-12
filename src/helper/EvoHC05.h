@@ -2,6 +2,7 @@
 #define EVO_HC05_H
 
 #include <Arduino.h>
+#include "SoftwareSerial/SoftwareSerial.h"
 #include "X1pins.h"
 
 enum HC05Mode
@@ -12,6 +13,7 @@ enum HC05Mode
 class EvoHC05
 {
 private:
+    SoftwareSerial _sw;
     HC05Mode _mode;
     int _pwr = HC05_PWR, _reset = HC05_RESET;
     bool waitResponse(const char *c);
