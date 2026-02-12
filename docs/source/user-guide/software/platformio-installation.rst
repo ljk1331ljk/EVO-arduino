@@ -51,53 +51,21 @@ After creating a new empty PlatformIO project you're ready for the next step. Th
    :width: 50%
    :align: center
 
-.. note:: 
-   
-   We will be placing the Evo Library in the ``lib`` folder.
 
-Library Installation (Pre v1.0.0)
---------------------
-
-1. Go to to the `Evo Github Releases Page <https://github.com/ljk1331ljk/EVO-arduino/releases>`_
-2. Download the Source code ``.zip`` under Assets from the latest release.
-3. In VSCode Explorer:
-
-   - Right-Click on ``lib`` folder, select "Reveal in File Explorer"
-
-   .. figure:: /_static/gifs/install-library-1-pio.gif
-      :alt: Revealing Library Folder in Explorer
-      :width: 100%
-      :align: center
-
-   - Extract the contents in the ``.zip`` folder into the ``lib`` folder
-   - Rename the extracted folder to "Evo"
-
-   .. figure:: /_static/gifs/install-library-2-pio.gif
-      :alt: Placing Evo Library in Library Folder
-      :width: 100%
-      :align: center
-
-4. Go to the Libraries tab and search for the libraries listed below. Install them as such.
-
-   * ``Adafruit NeoPixel`` by Adafruit
-   * ``Adafruit PWM Servo Driver Library`` by Adafruit
-   * ``EspSoftwareSerial`` by Dirk Kaar, Peter Lerup
-   * ``ESP32Encoder`` by Kevin Harrington
-   * ``Adafruit VL53L0X`` by Adafruit
-   * ``Adafruit TCS34725`` by Adafruit
-   * ``Adafruit BNO055`` by Adafruit
-
-   .. warning::
-
-      This list may grow over time, so check back here when new updates are released.
-
-5. Go to ``platform.ini`` to ensure the library dependencies ``lip_dep`` are listed correctly. 
-
-Library Installation (From v1.0.0)
+Library Installation
 --------------------
 
 1. Open ``platform.ini`` from your project folder.
 
-2. Under ``lib.deps`` add ``https://github.com/ljk1331ljk/EVO-arduino.git``
+2. Add ``lib.deps =https://github.com/ljk1331ljk/EVO-arduino.git`` under the ``[env:esp32-s3-devkitm-1]`` section.
+
+   .. code-block:: ini
+
+      [env:esp32-s3-devkitm-1]
+      platform = espressif32
+      board = esp32-s3-devkitm-1
+      framework = arduino
+      lib_deps =https://github.com/ljk1331ljk/EVO-arduino.git
+      
 
 3. Save the file and PlatformIO will download the library.

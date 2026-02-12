@@ -22,6 +22,21 @@ IDE Installation
 
    3. Install Arduino IDE by following the on-screen instructions
 
+   4. If you do not have git installed or see the following error when trying to install the library:
+
+      .. code-block:: text
+
+         UserSideException: Please install Git client from https://git-scm.com/downloads_ and make sure to add it to your system PATH during installation.
+
+      Look for the Github Actions extension in VSCode to install git on your system.
+
+      .. figure:: /_static/images/github-actions-extension.png
+         :alt: ESP32 Board
+         :width: 80%
+         :align: center
+
+
+
 Board Installation
 ------------------
 
@@ -52,31 +67,13 @@ Library Installation
 
    - Click on Sketch on the top left bar
    - Include Library 
-   - Add ``.zip`` Library and 
+   - Add ``.zip`` Library and    
    - Select the file just downloaded.
 
    .. figure:: /_static/gifs/install-library-ino.gif
       :alt: Revealing Library Folder in Explorer
       :width: 100%
       :align: center
-
-4. Go to the Libraries tab and search for the libraries listed below. Install them as such.
-
-   * ``Adafruit NeoPixel`` by Adafruit
-   * ``Adafruit PWM Servo Driver Library`` by Adafruit
-   * ``EspSoftwareSerial`` by Dirk Kaar, Peter Lerup
-   * ``ESP32Encoder`` by Kevin Harrington
-   * ``Adafruit VL53L0X`` by Adafruit
-   * ``Adafruit TCS34725`` by Adafruit
-   * ``Adafruit BNO055`` by Adafruit
-
-   .. warning::
-
-      This list may grow over time, so check back here when new updates are released.
-
-   ..  note::
-
-      As of version 1.0.0 of the library released on 16/1/2026, installation of additional libraries are no longer required. The libraries are integrated into the Evo library for a more seemless installation expereince.
 
 Updating EVO Library
 --------------------

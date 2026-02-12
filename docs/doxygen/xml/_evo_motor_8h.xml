@@ -4,13 +4,16 @@
     <compoundname>EvoMotor.h</compoundname>
     <includes local="yes">../helper/EvoPWMDriver.h</includes>
     <includes local="yes">../helper/X1pins.h</includes>
-    <includes local="no">ESP32Encoder.h</includes>
+    <includes local="yes">../helper/ESP32Encoder/ESP32Encoder.h</includes>
     <includes local="no">freertos/FreeRTOS.h</includes>
     <includes local="no">freertos/task.h</includes>
     <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
     <includedby refid="_evo_motor_pair_8h" local="yes">src/robotics/EvoMotorPair.h</includedby>
     <includedby refid="_evo_trace_8h" local="yes">src/robotics/EvoTrace.h</includedby>
     <incdepgraph>
+      <node id="4">
+        <label>../helper/ESP32Encoder/ESP32Encoder.h</label>
+      </node>
       <node id="2">
         <label>../helper/EvoPWMDriver.h</label>
       </node>
@@ -30,9 +33,6 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>ESP32Encoder.h</label>
       </node>
       <node id="5">
         <label>freertos/FreeRTOS.h</label>
@@ -257,7 +257,7 @@
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVOMOTOR_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/EvoPWMDriver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/X1pins.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ESP32Encoder.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../helper/ESP32Encoder/ESP32Encoder.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;freertos/FreeRTOS.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;freertos/task.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>

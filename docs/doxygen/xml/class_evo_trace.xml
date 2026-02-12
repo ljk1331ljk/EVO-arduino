@@ -4,9 +4,9 @@
     <compoundname>EvoTrace</compoundname>
     <includes refid="_evo_trace_8h" local="no">EvoTrace.h</includes>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_evo_trace_1a538297446eca5d5289b1dd14130d2b01" prot="private" static="no" mutable="no">
-        <type>EvoTCS34725 *</type>
-        <definition>EvoTCS34725* EvoTrace::_leftSensor</definition>
+      <memberdef kind="variable" id="class_evo_trace_1a2814a76cfae98bfae9504c722d710806" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evo_r_g_b_color_sensor" kindref="compound">EvoRGBColorSensor</ref> *</type>
+        <definition>EvoRGBColorSensor* EvoTrace::_leftSensor</definition>
         <argsstring></argsstring>
         <name>_leftSensor</name>
         <qualifiedname>EvoTrace::_leftSensor</qualifiedname>
@@ -17,11 +17,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoTrace.h" line="73" column="17" bodyfile="src/robotics/EvoTrace.h" bodystart="73" bodyend="-1"/>
+        <location file="src/robotics/EvoTrace.h" line="73" column="23" bodyfile="src/robotics/EvoTrace.h" bodystart="73" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_evo_trace_1ab4bd21a527e716e348dc9cac8fe35a9d" prot="private" static="no" mutable="no">
-        <type>EvoTCS34725 *</type>
-        <definition>EvoTCS34725* EvoTrace::_rightSensor</definition>
+      <memberdef kind="variable" id="class_evo_trace_1af4ad76d9583963ea7ad0bd5345dc42f6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_evo_r_g_b_color_sensor" kindref="compound">EvoRGBColorSensor</ref> *</type>
+        <definition>EvoRGBColorSensor* EvoTrace::_rightSensor</definition>
         <argsstring></argsstring>
         <name>_rightSensor</name>
         <qualifiedname>EvoTrace::_rightSensor</qualifiedname>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/robotics/EvoTrace.h" line="74" column="17" bodyfile="src/robotics/EvoTrace.h" bodystart="74" bodyend="-1"/>
+        <location file="src/robotics/EvoTrace.h" line="74" column="23" bodyfile="src/robotics/EvoTrace.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_evo_trace_1ad2239981255f137d0ab6673a0a19bfa4" prot="private" static="no" mutable="no">
         <type><ref refid="class_evo_motor" kindref="compound">EvoMotor</ref> *</type>
@@ -239,18 +239,18 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_evo_trace_1af516bb79e2b7a47f9297414aadb3be4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>EvoTrace::EvoTrace</definition>
-        <argsstring>(EvoTCS34725 *leftSensor, EvoTCS34725 *rightSensor, EvoMotor *leftMotor, EvoMotor *rightMotor)</argsstring>
+        <argsstring>(EvoRGBColorSensor *leftSensor, EvoRGBColorSensor *rightSensor, EvoMotor *leftMotor, EvoMotor *rightMotor)</argsstring>
         <name>EvoTrace</name>
         <qualifiedname>EvoTrace::EvoTrace</qualifiedname>
         <param>
-          <type>EvoTCS34725 *</type>
+          <type><ref refid="class_evo_r_g_b_color_sensor" kindref="compound">EvoRGBColorSensor</ref> *</type>
           <declname>leftSensor</declname>
         </param>
         <param>
-          <type>EvoTCS34725 *</type>
+          <type><ref refid="class_evo_r_g_b_color_sensor" kindref="compound">EvoRGBColorSensor</ref> *</type>
           <declname>rightSensor</declname>
         </param>
         <param>
@@ -625,13 +625,13 @@
     <location file="src/robotics/EvoTrace.h" line="20" column="1" bodyfile="src/robotics/EvoTrace.h" bodystart="21" bodyend="83"/>
     <listofallmembers>
       <member refid="class_evo_trace_1ad2239981255f137d0ab6673a0a19bfa4" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_leftMotor</name></member>
-      <member refid="class_evo_trace_1a538297446eca5d5289b1dd14130d2b01" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_leftSensor</name></member>
+      <member refid="class_evo_trace_1a2814a76cfae98bfae9504c722d710806" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_leftSensor</name></member>
       <member refid="class_evo_trace_1a9cc808fc649093d146cfa11bc0e70713" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_rightMotor</name></member>
-      <member refid="class_evo_trace_1ab4bd21a527e716e348dc9cac8fe35a9d" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_rightSensor</name></member>
+      <member refid="class_evo_trace_1af4ad76d9583963ea7ad0bd5345dc42f6" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>_rightSensor</name></member>
       <member refid="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>begin</name></member>
       <member refid="class_evo_trace_1a8a1cffb9468ab3c3211b42900a59d3f2" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>D</name></member>
       <member refid="class_evo_trace_1a136f02ae688dfc38ca2c26c9a47f6cb1" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>error</name></member>
-      <member refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>EvoTrace</name></member>
+      <member refid="class_evo_trace_1af516bb79e2b7a47f9297414aadb3be4b" prot="public" virt="non-virtual"><scope>EvoTrace</scope><name>EvoTrace</name></member>
       <member refid="class_evo_trace_1affe418657f615116bebadb7f34eb48f3" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>lb</name></member>
       <member refid="class_evo_trace_1a6cbde09c53328a65b5e0e1bf61c08029" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>lc</name></member>
       <member refid="class_evo_trace_1ae6e6e899498ba83a656e96ae49dbbe12" prot="private" virt="non-virtual"><scope>EvoTrace</scope><name>lg</name></member>

@@ -5,6 +5,7 @@
     <includes local="yes">../helper/EvoI2CDevice.h</includes>
     <includes local="yes">../helper/AdafruitSensors/Adafruit_TCS34725.h</includes>
     <includedby refid="_evo_8h" local="yes">src/Evo.h</includedby>
+    <includedby refid="_evo_trace_8h" local="yes">src/robotics/EvoTrace.h</includedby>
     <incdepgraph>
       <node id="3">
         <label>../helper/AdafruitSensors/Adafruit_TCS34725.h</label>
@@ -26,10 +27,18 @@
         <label>src/Evo.h</label>
         <link refid="_evo_8h_source"/>
       </node>
+      <node id="3">
+        <label>src/robotics/EvoTrace.h</label>
+        <link refid="_evo_trace_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>src/sensors/EvoRGBColorSensor.h</label>
         <link refid="_evo_r_g_b_color_sensor_8h"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

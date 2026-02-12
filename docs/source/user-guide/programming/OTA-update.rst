@@ -69,18 +69,21 @@ OTA update on PlatformIO
 ----------------------------
 
 To download on PlatformIO, the ``platform.ini`` needs to be configured correctly. Add the following into ``platform.ini``. 
-The ``upload_port`` is given by the name set in the OTA declaration.
-``--auth`` is the password set in ``ArduinoOTAPassword`` 
+
+Create a new environment in ``platform.ini`` as shown below:
 
 .. code-block:: 
    :linenos:
 
    [env:OTA]
-   platform = platformio/espressif32
+   platform = espressif32
    board = esp32-s3-devkitm-1
    framework = arduino
    upload_protocol = espota
    upload_port = EvoX1-OTA.local
-   upload_flags = --host_port=55910, --auth=admin
+   upload_flags = --host_port=55910, --auth=ArduinoOTAPassword
 
 
+``upload_port`` is given by the name set in the OTA declaration.
+
+``auth`` is the password set in ``ArduinoOTAPassword`` 

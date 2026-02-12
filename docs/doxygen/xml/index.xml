@@ -251,8 +251,8 @@
     <member refid="class_evo_t_o_f_1a2c73bbbff25cd2d4bab93f35e6b938bb" kind="function"><name>setHighSpeedMode</name></member>
   </compound>
   <compound refid="class_evo_trace" kind="class"><name>EvoTrace</name>
-    <member refid="class_evo_trace_1a538297446eca5d5289b1dd14130d2b01" kind="variable"><name>_leftSensor</name></member>
-    <member refid="class_evo_trace_1ab4bd21a527e716e348dc9cac8fe35a9d" kind="variable"><name>_rightSensor</name></member>
+    <member refid="class_evo_trace_1a2814a76cfae98bfae9504c722d710806" kind="variable"><name>_leftSensor</name></member>
+    <member refid="class_evo_trace_1af4ad76d9583963ea7ad0bd5345dc42f6" kind="variable"><name>_rightSensor</name></member>
     <member refid="class_evo_trace_1ad2239981255f137d0ab6673a0a19bfa4" kind="variable"><name>_leftMotor</name></member>
     <member refid="class_evo_trace_1a9cc808fc649093d146cfa11bc0e70713" kind="variable"><name>_rightMotor</name></member>
     <member refid="class_evo_trace_1a10e501145148b1219a34bb09acbcd1e6" kind="variable"><name>lr</name></member>
@@ -267,7 +267,7 @@
     <member refid="class_evo_trace_1ac0ac272cbe365b35baf93a312a51c3f7" kind="variable"><name>prevError</name></member>
     <member refid="class_evo_trace_1a81f8de8c9ceaf018811fea702b0f7ff7" kind="variable"><name>P</name></member>
     <member refid="class_evo_trace_1a8a1cffb9468ab3c3211b42900a59d3f2" kind="variable"><name>D</name></member>
-    <member refid="class_evo_trace_1a441be77be3fb2075d8f3e3546415bdbc" kind="function"><name>EvoTrace</name></member>
+    <member refid="class_evo_trace_1af516bb79e2b7a47f9297414aadb3be4b" kind="function"><name>EvoTrace</name></member>
     <member refid="class_evo_trace_1a8104d0f605684a3cb137611210f6621e" kind="function"><name>begin</name></member>
     <member refid="class_evo_trace_1a3e6bfdfa1ec44c5ddcf27bbb4c6fc09d" kind="function"><name>PDTrackOn</name></member>
     <member refid="class_evo_trace_1ac2d5fd21b9ad269126ed0fde2189348f" kind="function"><name>PDTrackDegrees</name></member>

@@ -9,6 +9,9 @@
       <node id="10">
         <label>../helper/AdafruitSensors/Adafruit_BNO055.h</label>
       </node>
+      <node id="5">
+        <label>../helper/ESP32Encoder/ESP32Encoder.h</label>
+      </node>
       <node id="9">
         <label>../helper/EvoI2CDevice.h</label>
       </node>
@@ -47,9 +50,6 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>ESP32Encoder.h</label>
       </node>
       <node id="6">
         <label>freertos/FreeRTOS.h</label>
