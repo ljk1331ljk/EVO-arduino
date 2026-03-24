@@ -102,7 +102,7 @@ public:
      * @param degrees The number of degrees to move.
      * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour = MotorStop::HOLD);
+    void moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour = MotorStop::BRAKE);
 
     /**
      * @brief Moves the motors for a specified duration.
@@ -112,7 +112,7 @@ public:
      * @param slowdowntime Duration where the motors start to slow down.
      * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void moveTime(int leftSpeed, int rightSpeed, int timems, int slowdowntime = 200, MotorStop stopBehaviour = MotorStop::HOLD);
+    void moveTime(int leftSpeed, int rightSpeed, int timems, int slowdowntime = 200, MotorStop stopBehaviour = MotorStop::BRAKE);
 
     /**
      * @brief Moves the motors following a Condition with the IMU.
@@ -121,7 +121,7 @@ public:
      * @param heading The target heading angle. If -1, the current heading is maintained.
      * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST) Default is hold.
      */
-    void StraightDegreesIMU(int motorSpeed, int degrees, int heading = -1, MotorStop stopBehaviour = MotorStop::HOLD);
+    void StraightDegreesIMU(int motorSpeed, int degrees, int heading = -1, MotorStop stopBehaviour = MotorStop::BRAKE);
 
     /**
      * @brief Performs a spot turn to a specific heading using the IMU.
@@ -130,7 +130,7 @@ public:
      * @param reset Settign true will reset the IMU heading.
      * @param stopBehaviour The stopping behavior after movement (HOLD, BRAKE, or COAST).
      */
-    void spotTurnGyro(int motorSpeed, float heading, bool reset = true, MotorStop stopBehaviour = MotorStop::HOLD);
+    void spotTurnGyro(int motorSpeed, float heading, bool reset = true, MotorStop stopBehaviour = MotorStop::BRAKE);
 
     /**
      * @brief Stops both motors based on the stop behavior.
