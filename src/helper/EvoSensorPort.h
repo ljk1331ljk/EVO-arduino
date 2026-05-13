@@ -5,14 +5,18 @@
 #include <Arduino.h>
 #include <functional>
 #include "SoftwareSerial/SoftwareSerial.h"
-#include "X1pins.h"
+#include "EvoControllerConfig.h"
 
 enum SensorPort
 {
-    S1,
-    S2,
-    S3,
-    S4
+    S1 = 0,
+    S2 = 1,
+    S3 = 2,
+    S4 = 3,
+    S5 = 4,
+    S6 = 5,
+    S7 = 6,
+    S8 = 7
 };
 
 /**

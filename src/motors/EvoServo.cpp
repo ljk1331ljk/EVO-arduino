@@ -2,7 +2,13 @@
 
 EvoServo::EvoServo(ServoChannel servoChannel, ServoType servoType)
 {
-    _servoChannel = static_cast<uint8_t>(servoChannel);
+    uint8_t requestedChannel = static_cast<uint8_t>(servoChannel);
+    const EvoControllerConfig &config = EvoControllerConfigManager::getInstance().getConfig();
+    if (requestedChannel >= config.servoPortCount)
+    {
+        requestedChannel = 0;
+    }
+    _servoChannel = config.servoChannels[requestedChannel];
     switch (servoType)
     {
     case SG90:

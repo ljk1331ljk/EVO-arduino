@@ -6,7 +6,7 @@
 #ifndef EVOX1_H
 #define EVOX1_H
 #include <Arduino.h>
-#include <helper/X1pins.h>
+#include <helper/EvoControllerConfig.h>
 #include <helper/Tones.h>
 #include <helper/EvoI2CDevice.h>
 #include <helper/EvoPWMDriver.h>
@@ -83,7 +83,7 @@ public:
      * @brief Gets the singleton instance of EVOX1.
      */
     EVOX1() : display(U8G2_R0, U8X8_PIN_NONE),
-              rgb(1, PIXEL_PIN, NEO_GRBW + NEO_KHZ800)
+              rgb(1, 0, NEO_GRBW + NEO_KHZ800)
     {
     }
 
@@ -111,6 +111,24 @@ public:
      * @brief Initializes the EVOX1 board and its peripherals.
      */
     void begin();
+
+    /**
+     * @brief Configure predefined controller variant.
+     */
+    void setControllerVariant(EvoControllerVariant variant);
+
+    /**
+     * @brief Configure a fully custom controller mapping.
+     */
+    void setCustomControllerConfig(const EvoControllerConfig &config);
+
+    const EvoControllerConfig &getControllerConfig() const;
+
+    uint8_t getMotorPortCount() const;
+    uint8_t getSensorPortCount() const;
+    uint8_t getServoPortCount() const;
+    uint8_t getI2CPortCount() const;
+
 
     /**
      * @brief Selects an I2C channel on the multiplexer.

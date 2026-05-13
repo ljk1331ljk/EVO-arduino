@@ -1,16 +1,29 @@
 #include <Evo.h>
 
+static EvoControllerConfigManager &cfgMgr = EvoControllerConfigManager::getInstance();
+static const EvoControllerConfig &cfg()
+{
+    return cfgMgr.getConfig();
+}
+
 void EVOX1::begin()
 {
-    i2CDevice.selectChannel(SSD1309_CHANNEL);
-    display.begin();
-    this->setFontSize(8);
+    i2CDevice.selectChannel(cfg().displayChannel);
+    if (cfg().hasDisplay)
+    {
+        display.begin();
+        this->setFontSize(8);
+    }
 
     charger.begin();
     evoPWMDriver.begin();
 
-    rgb.begin();
-    setRGB(0, 0, 0);
+    if (cfg().hasNeoPixel)
+    {
+        rgb.setPin(cfg().pixelPin);
+        rgb.begin();
+        setRGB(0, 0, 0);
+    }
 }
 
 float EVOX1::getBattery()
@@ -45,23 +58,23 @@ void EVOX1::playTone(uint frequency, int duration, bool blocking)
     }
     else if (duration == -1)
     {
-        tone(BUZZER_PIN, frequency, 0);
+        if (cfg().hasBuzzer) tone(cfg().buzzerPin, frequency, 0);
         return;
     }
     else
     {
-        tone(BUZZER_PIN, frequency, duration);
+        if (cfg().hasBuzzer) tone(cfg().buzzerPin, frequency, duration);
         if (blocking)
         {
             delay(duration);
-            noTone(BUZZER_PIN);
+            if (cfg().hasBuzzer) noTone(cfg().buzzerPin);
         }
     }
 }
 
 void EVOX1::stopTone()
 {
-    noTone(BUZZER_PIN);
+    if (cfg().hasBuzzer) noTone(cfg().buzzerPin);
 }
 
 void EVOX1::flipDisplayOrientation(bool flip)
@@ -103,13 +116,13 @@ void EVOX1::setFontSize(uint8_t size)
 
 void EVOX1::clearDisplay()
 {
-    i2CDevice.selectChannel(SSD1309_CHANNEL);
+    i2CDevice.selectChannel(cfg().displayChannel);
     display.clearBuffer();
 }
 
 void EVOX1::writeToDisplay(int value, int x, int y, bool clear, bool draw)
 {
-    i2CDevice.selectChannel(SSD1309_CHANNEL);
+    i2CDevice.selectChannel(cfg().displayChannel);
     if (clear)
     {
         this->clearDisplay();
@@ -125,7 +138,7 @@ void EVOX1::writeToDisplay(int value, int x, int y, bool clear, bool draw)
 
 void EVOX1::writeToDisplay(double f, int x, int y, bool clear, bool draw)
 {
-    i2CDevice.selectChannel(SSD1309_CHANNEL);
+    i2CDevice.selectChannel(cfg().displayChannel);
     if (clear)
     {
         this->clearDisplay();
@@ -141,7 +154,7 @@ void EVOX1::writeToDisplay(double f, int x, int y, bool clear, bool draw)
 
 void EVOX1::writeToDisplay(const char *c, int x, int y, bool clear, bool draw)
 {
-    i2CDevice.selectChannel(SSD1309_CHANNEL);
+    i2CDevice.selectChannel(cfg().displayChannel);
     if (clear)
     {
         this->clearDisplay();
@@ -170,7 +183,7 @@ void EVOX1::writeLineToDisplay(const char *c, int line, bool clear, bool draw)
 
 void EVOX1::drawDisplay()
 {
-    i2CDevice.selectChannel(SSD1309_CHANNEL);
+    i2CDevice.selectChannel(cfg().displayChannel);
     display.sendBuffer();
 }
 
@@ -178,12 +191,12 @@ void EVOX1::waitForButton()
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinMode(cfg().buttonPin, INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (digitalRead(BUTTON_PIN))
+    while (digitalRead(cfg().buttonPin))
         ;
-    while (!digitalRead(BUTTON_PIN))
+    while (!digitalRead(cfg().buttonPin))
         ;
 }
 
@@ -191,10 +204,10 @@ void EVOX1::waitForPress(int debouncems)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinMode(cfg().buttonPin, INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (digitalRead(BUTTON_PIN))
+    while (digitalRead(cfg().buttonPin))
         ;
     delay(debouncems);
 }
@@ -203,10 +216,10 @@ void EVOX1::waitForRelease(int debouncems)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinMode(cfg().buttonPin, INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (!digitalRead(BUTTON_PIN))
+    while (!digitalRead(cfg().buttonPin))
         ;
     delay(debouncems);
 }
@@ -215,13 +228,13 @@ void EVOX1::waitForBump(int debouncems)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinMode(cfg().buttonPin, INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (digitalRead(BUTTON_PIN))
+    while (digitalRead(cfg().buttonPin))
         ;
     delay(debouncems);
-    while (!digitalRead(BUTTON_PIN))
+    while (!digitalRead(cfg().buttonPin))
         ;
     delay(debouncems);
 }
@@ -230,14 +243,18 @@ ButtonState EVOX1::getButton()
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(BUTTON_PIN, INPUT_PULLUP);
+        pinMode(cfg().buttonPin, INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    return static_cast<ButtonState>(digitalRead(BUTTON_PIN));
+    return static_cast<ButtonState>(digitalRead(cfg().buttonPin));
 }
 
 void EVOX1::setRGB(int r, int g, int b)
 {
+    if (!cfg().hasNeoPixel)
+    {
+        return;
+    }
     this->pinState = RGB_LED_STATE;
     rgb.setPixelColor(0, rgb.Color(r, g, b));
     rgb.show();
@@ -263,4 +280,39 @@ int EVOX1::scanI2CChannel(I2CChannel channel, uint8_t *addresses, int maxAddress
         }
     }
     return count;
+}
+
+void EVOX1::setControllerVariant(EvoControllerVariant variant)
+{
+    cfgMgr.setVariant(variant);
+}
+
+void EVOX1::setCustomControllerConfig(const EvoControllerConfig &config)
+{
+    cfgMgr.setCustomConfig(config);
+}
+
+const EvoControllerConfig &EVOX1::getControllerConfig() const
+{
+    return cfg();
+}
+
+uint8_t EVOX1::getMotorPortCount() const
+{
+    return cfg().motorPortCount;
+}
+
+uint8_t EVOX1::getSensorPortCount() const
+{
+    return cfg().sensorPortCount;
+}
+
+uint8_t EVOX1::getServoPortCount() const
+{
+    return cfg().servoPortCount;
+}
+
+uint8_t EVOX1::getI2CPortCount() const
+{
+    return cfg().i2cPortCount;
 }
