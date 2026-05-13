@@ -5,25 +5,15 @@ static const char *TAG = "EvoSensorPort";
 EvoSensorPort::EvoSensorPort(SensorPort port) : _port(port)
 {
     // _port = port;
-    switch (_port)
+    const EvoControllerConfig &config = EvoControllerConfigManager::getInstance().getConfig();
+    uint8_t portIndex = static_cast<uint8_t>(_port);
+    if (portIndex >= config.sensorPortCount)
     {
-    case S1:
-        _rxPin = S12;
-        _txPin = S11;
-        break;
-    case S2:
-        _rxPin = S22;
-        _txPin = S21;
-        break;
-    case S3:
-        _rxPin = S32;
-        _txPin = S31;
-        break;
-    case S4:
-        _rxPin = S42;
-        _txPin = S41;
-        break;
+        portIndex = 0;
     }
+
+    _txPin = config.sensorPorts[portIndex].txPin;
+    _rxPin = config.sensorPorts[portIndex].rxPin;
     this->_serialMutex = xSemaphoreCreateMutex();
 }
 

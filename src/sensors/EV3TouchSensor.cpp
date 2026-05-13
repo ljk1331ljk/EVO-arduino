@@ -2,21 +2,14 @@
 
 EV3TouchSensor::EV3TouchSensor(SensorPort port) : _port(port)
 {
-    switch (_port)
+    const EvoControllerConfig &config = EvoControllerConfigManager::getInstance().getConfig();
+    uint8_t portIndex = static_cast<uint8_t>(_port);
+    if (portIndex >= config.sensorPortCount)
     {
-    case S1:
-        _pin = S11;
-        break;
-    case S2:
-        _pin = S21;
-        break;
-    case S3:
-        _pin = S31;
-        break;
-    case S4:
-        _pin = S41;
-        break;
+        portIndex = 0;
     }
+
+    _pin = config.sensorPorts[portIndex].digitalPin;
     pinMode(_pin, INPUT_PULLDOWN);
 }
 int EV3TouchSensor::getButton()
