@@ -6,7 +6,7 @@
 #ifndef EVOMOTOR_H
 #define EVOMOTOR_H
 #include "../helper/EvoPWMDriver.h"
-#include "../helper/X1pins.h"
+#include "../helper/EvoControllerConfig.h"
 #include "../helper/ESP32Encoder/ESP32Encoder.h"
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
@@ -47,10 +47,14 @@ enum MotorType
  */
 enum MotorPort
 {
-    M1 = 8,
-    M2 = 10,
-    M3 = 12,
-    M4 = 14
+    M1 = 0,
+    M2 = 1,
+    M3 = 2,
+    M4 = 3,
+    M5 = 4,
+    M6 = 5,
+    M7 = 6,
+    M8 = 7
 };
 
 /**

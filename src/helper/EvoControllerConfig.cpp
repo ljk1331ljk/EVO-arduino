@@ -30,10 +30,10 @@ EvoControllerConfig makeEvoX1EConfig()
     config.motorPorts[2] = {11, 10, 40, 39};
     config.motorPorts[3] = {9, 8, 42, 41};
 
-    config.sensorPorts[0] = {10, 9, 10};
-    config.sensorPorts[1] = {8, 3, 8};
-    config.sensorPorts[2] = {7, 6, 7};
-    config.sensorPorts[3] = {5, 4, 5};
+    config.sensorPorts[0] = {10, 9};
+    config.sensorPorts[1] = {8, 3};
+    config.sensorPorts[2] = {7, 6};
+    config.sensorPorts[3] = {5, 4};
 
     for (uint8_t i = 0; i < config.servoPortCount; i++)
     {
