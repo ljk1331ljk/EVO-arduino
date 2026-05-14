@@ -12,8 +12,8 @@ EvoSensorPort::EvoSensorPort(SensorPort port) : _port(port)
         portIndex = 0;
     }
 
-    _txPin = config.sensorPorts[portIndex].txPin;
-    _rxPin = config.sensorPorts[portIndex].rxPin;
+    _txPin = config.sensorPorts[portIndex].digitalPin1;
+    _rxPin = config.sensorPorts[portIndex].digitalPin2;
     this->_serialMutex = xSemaphoreCreateMutex();
 }
 

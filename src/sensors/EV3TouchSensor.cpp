@@ -9,7 +9,7 @@ EV3TouchSensor::EV3TouchSensor(SensorPort port) : _port(port)
         portIndex = 0;
     }
 
-    _pin = config.sensorPorts[portIndex].digitalPin;
+    _pin = config.sensorPorts[portIndex].digitalPin1;
     pinMode(_pin, INPUT_PULLDOWN);
 }
 int EV3TouchSensor::getButton()

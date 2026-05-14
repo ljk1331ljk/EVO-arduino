@@ -21,9 +21,8 @@ struct EvoMotorPortConfig
 
 struct EvoSensorPortConfig
 {
-    uint8_t txPin = 0;
-    uint8_t rxPin = 0;
-    uint8_t digitalPin = 0;
+    uint8_t digitalPin1 = 0;
+    uint8_t digitalPin2 = 0;
 };
 
 struct EvoControllerConfig
