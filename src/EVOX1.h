@@ -6,7 +6,7 @@
 #ifndef EVOX1_H
 #define EVOX1_H
 #include <Arduino.h>
-#include <helper/X1pins.h>
+#include <helper/EvoControllerConfig.h>
 #include <helper/Tones.h>
 #include <helper/EvoI2CDevice.h>
 #include <helper/EvoPWMDriver.h>
@@ -83,7 +83,7 @@ public:
      * @brief Gets the singleton instance of EVOX1.
      */
     EVOX1() : display(U8G2_R0, U8X8_PIN_NONE),
-              rgb(1, PIXEL_PIN, NEO_GRBW + NEO_KHZ800)
+              rgb(1, 0, NEO_GRBW + NEO_KHZ800)
     {
     }
 
@@ -111,6 +111,19 @@ public:
      * @brief Initializes the EVOX1 board and its peripherals.
      */
     void begin();
+
+    /**
+     * @brief Configure a fully custom controller mapping.
+     */
+    void setCustomControllerConfig(const EvoControllerConfig &config);
+
+    const EvoControllerConfig &getControllerConfig() const;
+
+    uint8_t getMotorPortCount() const;
+    uint8_t getSensorPortCount() const;
+    uint8_t getServoPortCount() const;
+    uint8_t getI2CPortCount() const;
+
 
     /**
      * @brief Selects an I2C channel on the multiplexer.
@@ -212,31 +225,31 @@ public:
     /**
      * @brief Waits for a button press and release before continuing execution. (To be deprecated, use waitForBumped(int debouncems))
      */
-    void waitForButton();
+    void waitForButton(uint8_t buttonIndex = 0);
 
     /**
      * @brief Waits for a button press before continuing execution.
      * @param debouncems delay in milliseconds after button is pressed.
      */
-    void waitForPress(int debouncems = 0);
+    void waitForPress(int debouncems = 0, uint8_t buttonIndex = 0);
 
     /**
      * @brief Waits for a button released before continuing execution.
      * @param debouncems delay in milliseconds after button is released.
      */
-    void waitForRelease(int debouncems = 0);
+    void waitForRelease(int debouncems = 0, uint8_t buttonIndex = 0);
 
     /**
      * @brief Waits for a button press and release before continuing execution.
      * @param debouncems delay in milliseconds after button is pressed and button is released.
      */
-    void waitForBump(int debouncems = 0);
+    void waitForBump(int debouncems = 0, uint8_t buttonIndex = 0);
 
     /**
      * @brief Gets the state of the button.
      * @return The state of the button. PRESSED or RELEASED.
      */
-    ButtonState getButton();
+    ButtonState getButton(uint8_t buttonIndex = 0);
 
     // === Buzzer Functions ===
 
@@ -264,6 +277,25 @@ public:
      * @param b Blue intensity (0-255).
      */
     void setRGB(int r, int g, int b);
+};
+
+
+class EVOX1E : public EVOX1
+{
+public:
+    EVOX1E()
+    {
+        setCustomControllerConfig(makeEvoX1EConfig());
+    }
+};
+
+class EVOX1P : public EVOX1
+{
+public:
+    EVOX1P()
+    {
+        setCustomControllerConfig(makeEvoX1PConfig());
+    }
 };
 
 #endif // EVOX1_H

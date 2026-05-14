@@ -5,6 +5,7 @@
 #define EVO_EV3TOUCHSENSOR_H
 #include <Arduino.h>
 #include "../helper/EvoSensorPort.h"
+#include "../helper/EvoControllerConfig.h"
 
 /**
  * @class EV3TouchSensor
