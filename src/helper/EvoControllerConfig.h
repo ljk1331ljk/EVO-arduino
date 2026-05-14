@@ -6,9 +6,10 @@
 
 constexpr uint8_t EVO_MAX_MOTOR_PORTS = 8;
 constexpr uint8_t EVO_MAX_SENSOR_PORTS = 8;
-constexpr uint8_t EVO_MAX_SERVO_PORTS = 16;
+constexpr uint8_t EVO_MAX_SERVO_PORTS = 8;
 constexpr uint8_t EVO_MAX_I2C_PORTS = 8;
-constexpr uint8_t EVO_MAX_GPIO_PORTS = 16;
+constexpr uint8_t EVO_MAX_GPIO_PORTS = 8;
+constexpr uint8_t EVO_MAX_BUTTONS = 8;
 
 struct EvoMotorPortConfig
 {
@@ -23,14 +24,6 @@ struct EvoSensorPortConfig
     uint8_t txPin = 0;
     uint8_t rxPin = 0;
     uint8_t digitalPin = 0;
-};
-
-enum class EvoControllerVariant
-{
-    EvoX1E,
-    EvoX1P,
-    EvoX1R,
-    Custom,
 };
 
 struct EvoControllerConfig
@@ -48,7 +41,8 @@ struct EvoControllerConfig
     bool hasDisplay = true;
 
     uint8_t buzzerPin = 0;
-    uint8_t buttonPin = 0;
+    uint8_t buttonCount = 1;
+    uint8_t buttonPins[EVO_MAX_BUTTONS] = {14};
     uint8_t pixelPin = 0;
     I2CChannel displayChannel = I2C8;
 
@@ -63,24 +57,21 @@ struct EvoControllerConfig
     uint8_t gpioPins[EVO_MAX_GPIO_PORTS];
 };
 
+EvoControllerConfig makeEvoX1EConfig();
+EvoControllerConfig makeEvoX1PConfig();
+
 class EvoControllerConfigManager
 {
 public:
     static EvoControllerConfigManager &getInstance();
 
     const EvoControllerConfig &getConfig() const;
-    void setVariant(EvoControllerVariant variant);
     void setCustomConfig(const EvoControllerConfig &config);
 
 private:
     EvoControllerConfigManager();
 
     EvoControllerConfig _activeConfig;
-    EvoControllerVariant _variant = EvoControllerVariant::EvoX1E;
-
-    EvoControllerConfig createEvoX1EConfig() const;
-    EvoControllerConfig createEvoX1PConfig() const;
-    EvoControllerConfig createEvoX1RConfig() const;
 };
 
 #endif

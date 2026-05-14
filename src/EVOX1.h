@@ -113,11 +113,6 @@ public:
     void begin();
 
     /**
-     * @brief Configure predefined controller variant.
-     */
-    void setControllerVariant(EvoControllerVariant variant);
-
-    /**
      * @brief Configure a fully custom controller mapping.
      */
     void setCustomControllerConfig(const EvoControllerConfig &config);
@@ -230,31 +225,31 @@ public:
     /**
      * @brief Waits for a button press and release before continuing execution. (To be deprecated, use waitForBumped(int debouncems))
      */
-    void waitForButton();
+    void waitForButton(uint8_t buttonIndex = 0);
 
     /**
      * @brief Waits for a button press before continuing execution.
      * @param debouncems delay in milliseconds after button is pressed.
      */
-    void waitForPress(int debouncems = 0);
+    void waitForPress(int debouncems = 0, uint8_t buttonIndex = 0);
 
     /**
      * @brief Waits for a button released before continuing execution.
      * @param debouncems delay in milliseconds after button is released.
      */
-    void waitForRelease(int debouncems = 0);
+    void waitForRelease(int debouncems = 0, uint8_t buttonIndex = 0);
 
     /**
      * @brief Waits for a button press and release before continuing execution.
      * @param debouncems delay in milliseconds after button is pressed and button is released.
      */
-    void waitForBump(int debouncems = 0);
+    void waitForBump(int debouncems = 0, uint8_t buttonIndex = 0);
 
     /**
      * @brief Gets the state of the button.
      * @return The state of the button. PRESSED or RELEASED.
      */
-    ButtonState getButton();
+    ButtonState getButton(uint8_t buttonIndex = 0);
 
     // === Buzzer Functions ===
 
@@ -282,6 +277,25 @@ public:
      * @param b Blue intensity (0-255).
      */
     void setRGB(int r, int g, int b);
+};
+
+
+class EVOX1E : public EVOX1
+{
+public:
+    EVOX1E()
+    {
+        setCustomControllerConfig(makeEvoX1EConfig());
+    }
+};
+
+class EVOX1P : public EVOX1
+{
+public:
+    EVOX1P()
+    {
+        setCustomControllerConfig(makeEvoX1PConfig());
+    }
 };
 
 #endif // EVOX1_H

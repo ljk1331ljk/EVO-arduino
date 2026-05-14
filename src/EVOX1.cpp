@@ -6,6 +6,19 @@ static const EvoControllerConfig &cfg()
     return cfgMgr.getConfig();
 }
 
+static uint8_t getButtonPin(uint8_t buttonIndex)
+{
+    if (cfg().buttonCount == 0)
+    {
+        return 0;
+    }
+    if (buttonIndex >= cfg().buttonCount)
+    {
+        buttonIndex = 0;
+    }
+    return cfg().buttonPins[buttonIndex];
+}
+
 void EVOX1::begin()
 {
     i2CDevice.selectChannel(cfg().displayChannel);
@@ -187,66 +200,66 @@ void EVOX1::drawDisplay()
     display.sendBuffer();
 }
 
-void EVOX1::waitForButton()
+void EVOX1::waitForButton(uint8_t buttonIndex)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(cfg().buttonPin, INPUT_PULLUP);
+        pinMode(getButtonPin(buttonIndex), INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (digitalRead(cfg().buttonPin))
+    while (digitalRead(getButtonPin(buttonIndex)))
         ;
-    while (!digitalRead(cfg().buttonPin))
+    while (!digitalRead(getButtonPin(buttonIndex)))
         ;
 }
 
-void EVOX1::waitForPress(int debouncems)
+void EVOX1::waitForPress(int debouncems, uint8_t buttonIndex)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(cfg().buttonPin, INPUT_PULLUP);
+        pinMode(getButtonPin(buttonIndex), INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (digitalRead(cfg().buttonPin))
+    while (digitalRead(getButtonPin(buttonIndex)))
         ;
     delay(debouncems);
 }
 
-void EVOX1::waitForRelease(int debouncems)
+void EVOX1::waitForRelease(int debouncems, uint8_t buttonIndex)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(cfg().buttonPin, INPUT_PULLUP);
+        pinMode(getButtonPin(buttonIndex), INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (!digitalRead(cfg().buttonPin))
+    while (!digitalRead(getButtonPin(buttonIndex)))
         ;
     delay(debouncems);
 }
 
-void EVOX1::waitForBump(int debouncems)
+void EVOX1::waitForBump(int debouncems, uint8_t buttonIndex)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(cfg().buttonPin, INPUT_PULLUP);
+        pinMode(getButtonPin(buttonIndex), INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    while (digitalRead(cfg().buttonPin))
+    while (digitalRead(getButtonPin(buttonIndex)))
         ;
     delay(debouncems);
-    while (!digitalRead(cfg().buttonPin))
+    while (!digitalRead(getButtonPin(buttonIndex)))
         ;
     delay(debouncems);
 }
 
-ButtonState EVOX1::getButton()
+ButtonState EVOX1::getButton(uint8_t buttonIndex)
 {
     if (pinState != BUTTON_STATE)
     {
-        pinMode(cfg().buttonPin, INPUT_PULLUP);
+        pinMode(getButtonPin(buttonIndex), INPUT_PULLUP);
         pinState = BUTTON_STATE;
     }
-    return static_cast<ButtonState>(digitalRead(cfg().buttonPin));
+    return static_cast<ButtonState>(digitalRead(getButtonPin(buttonIndex)));
 }
 
 void EVOX1::setRGB(int r, int g, int b)
@@ -282,10 +295,6 @@ int EVOX1::scanI2CChannel(I2CChannel channel, uint8_t *addresses, int maxAddress
     return count;
 }
 
-void EVOX1::setControllerVariant(EvoControllerVariant variant)
-{
-    cfgMgr.setVariant(variant);
-}
 
 void EVOX1::setCustomControllerConfig(const EvoControllerConfig &config)
 {

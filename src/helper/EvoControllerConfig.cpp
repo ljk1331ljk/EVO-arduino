@@ -1,48 +1,6 @@
 #include "EvoControllerConfig.h"
 
-EvoControllerConfigManager &EvoControllerConfigManager::getInstance()
-{
-    static EvoControllerConfigManager instance;
-    return instance;
-}
-
-EvoControllerConfigManager::EvoControllerConfigManager()
-{
-    _activeConfig = createEvoX1EConfig();
-}
-
-const EvoControllerConfig &EvoControllerConfigManager::getConfig() const
-{
-    return _activeConfig;
-}
-
-void EvoControllerConfigManager::setVariant(EvoControllerVariant variant)
-{
-    _variant = variant;
-    switch (variant)
-    {
-    case EvoControllerVariant::EvoX1P:
-        _activeConfig = createEvoX1PConfig();
-        break;
-    case EvoControllerVariant::EvoX1R:
-        _activeConfig = createEvoX1RConfig();
-        break;
-    case EvoControllerVariant::Custom:
-        break;
-    case EvoControllerVariant::EvoX1E:
-    default:
-        _activeConfig = createEvoX1EConfig();
-        break;
-    }
-}
-
-void EvoControllerConfigManager::setCustomConfig(const EvoControllerConfig &config)
-{
-    _variant = EvoControllerVariant::Custom;
-    _activeConfig = config;
-}
-
-EvoControllerConfig EvoControllerConfigManager::createEvoX1EConfig() const
+EvoControllerConfig makeEvoX1EConfig()
 {
     EvoControllerConfig config;
     config.name = "EvoX1E";
@@ -57,7 +15,8 @@ EvoControllerConfig EvoControllerConfigManager::createEvoX1EConfig() const
     config.hasDisplay = true;
 
     config.buzzerPin = 11;
-    config.buttonPin = 14;
+    config.buttonCount = 1;
+    config.buttonPins[0] = 14;
     config.pixelPin = 14;
     config.displayChannel = I2C8;
 
@@ -97,16 +56,30 @@ EvoControllerConfig EvoControllerConfigManager::createEvoX1EConfig() const
     return config;
 }
 
-EvoControllerConfig EvoControllerConfigManager::createEvoX1PConfig() const
+EvoControllerConfig makeEvoX1PConfig()
 {
-    EvoControllerConfig config = createEvoX1EConfig();
+    EvoControllerConfig config = makeEvoX1EConfig();
     config.name = "EvoX1P";
     return config;
 }
 
-EvoControllerConfig EvoControllerConfigManager::createEvoX1RConfig() const
+EvoControllerConfigManager &EvoControllerConfigManager::getInstance()
 {
-    EvoControllerConfig config = createEvoX1EConfig();
-    config.name = "EvoX1R";
-    return config;
+    static EvoControllerConfigManager instance;
+    return instance;
+}
+
+EvoControllerConfigManager::EvoControllerConfigManager()
+{
+    _activeConfig = makeEvoX1EConfig();
+}
+
+const EvoControllerConfig &EvoControllerConfigManager::getConfig() const
+{
+    return _activeConfig;
+}
+
+void EvoControllerConfigManager::setCustomConfig(const EvoControllerConfig &config)
+{
+    _activeConfig = config;
 }
