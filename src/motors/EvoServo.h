@@ -7,6 +7,7 @@
 #define EVO_SERVO_H
 
 #include "../helper/EvoPWMDriver.h"
+#include "../helper/EvoControllerConfig.h"
 
 /**
  * @enum ServoType
@@ -87,7 +88,11 @@ public:
 
 private:
     EvoPWMDriver &driver = EvoPWMDriver::getInstance(); /**< Reference to the singleton PWM driver */
-    uint8_t _servoChannel;                              /**< The assigned servo channel */
+    uint8_t _servoChannel;
+    bool _useGPIODirect = false;
+    uint8_t _servoPin = 0;
+    uint8_t _gpioChannel = 0;
+                              /**< The assigned servo channel */
     int _minPulse = 300;                                /**< Minimum pulse width */
     int _maxPulse = 1100;                               /**< Maximum pulse width */
     int _minRange = 0;                                  /**< Minimum servo angle */

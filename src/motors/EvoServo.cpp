@@ -2,7 +2,22 @@
 
 EvoServo::EvoServo(ServoChannel servoChannel, ServoType servoType)
 {
-    _servoChannel = static_cast<uint8_t>(servoChannel);
+    const EvoControllerConfig &config = EvoControllerConfigManager::getInstance().getConfig();
+    uint8_t requestedChannel = static_cast<uint8_t>(servoChannel);
+    if (requestedChannel >= config.servoPortCount)
+    {
+        requestedChannel = 0;
+    }
+    _useGPIODirect = (config.servoControlMethod == EvoServoControlMethod::GPIODirect);
+    if (_useGPIODirect)
+    {
+        _servoPin = config.servoGPIOPins[requestedChannel];
+        _gpioChannel = requestedChannel % 16;
+    }
+    else
+    {
+        _servoChannel = config.servoChannels[requestedChannel];
+    }
     switch (servoType)
     {
     case SG90:
@@ -30,7 +45,17 @@ EvoServo::EvoServo(ServoChannel servoChannel, ServoType servoType)
 
 void EvoServo::begin()
 {
-    driver.begin();
+    if (_useGPIODirect)
+    {
+#if defined(ARDUINO_ARCH_ESP32)
+        ledcSetup(_gpioChannel, 50, 16);
+        ledcAttachPin(_servoPin, _gpioChannel);
+#endif
+    }
+    else
+    {
+        driver.begin();
+    }
 }
 void EvoServo::setPulse(int minPulse, int maxPulse)
 {
@@ -44,12 +69,29 @@ void EvoServo::setRange(int minRange, int maxRange)
 }
 void EvoServo::write(int position)
 {
-    driver.setPWMFreq(100); // Set frequency to 2500 Hz for servos
-    driver.setPWM(_servoChannel, 0, map(position, _minRange, _maxRange, _minPulse, _maxPulse));
+    int pulse = map(position, _minRange, _maxRange, _minPulse, _maxPulse);
+    if (_useGPIODirect)
+    {
+#if defined(ARDUINO_ARCH_ESP32)
+        uint32_t duty = map(pulse, 0, 20000, 0, 65535);
+        ledcWrite(_gpioChannel, duty);
+#endif
+        return;
+    }
+    driver.setPWMFreq(100);
+    driver.setPWM(_servoChannel, 0, pulse);
 }
 
 void EvoServo::setPWM(int on, int off)
 {
+    if (_useGPIODirect)
+    {
+#if defined(ARDUINO_ARCH_ESP32)
+        uint32_t duty = map(off, 0, 20000, 0, 65535);
+        ledcWrite(_gpioChannel, duty);
+#endif
+        return;
+    }
     driver.setPWMFreq(100);
     driver.setPWM(_servoChannel, on, off);
 }
