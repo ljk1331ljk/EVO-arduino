@@ -36,32 +36,21 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
         break;
     }
 
-    switch (_motorPort)
+    const EvoControllerConfig &config = EvoControllerConfigManager::getInstance().getConfig();
+    uint8_t portIndex = static_cast<uint8_t>(_motorPort);
+    if (portIndex >= config.motorPortCount)
     {
-    case M1:
-        if (_motorFlip)
-            _motorPins = {MOTOR11, MOTOR12, TACH12, TACH11};
-        else
-            _motorPins = {MOTOR12, MOTOR11, TACH11, TACH12};
-        break;
-    case M2:
-        if (_motorFlip)
-            _motorPins = {MOTOR22, MOTOR21, TACH22, TACH21};
-        else
-            _motorPins = {MOTOR21, MOTOR22, TACH21, TACH22};
-        break;
-    case M3:
-        if (!_motorFlip)
-            _motorPins = {MOTOR31, MOTOR32, TACH31, TACH32};
-        else
-            _motorPins = {MOTOR32, MOTOR31, TACH32, TACH31};
-        break;
-    case M4:
-        if (!_motorFlip)
-            _motorPins = {MOTOR41, MOTOR42, TACH41, TACH42};
-        else
-            _motorPins = {MOTOR42, MOTOR41, TACH42, TACH41};
-        break;
+        portIndex = 0;
+    }
+
+    const EvoMotorPortConfig &portConfig = config.motorPorts[portIndex];
+    if (_motorFlip)
+    {
+        _motorPins = {portConfig.power2, portConfig.power1, portConfig.tach2, portConfig.tach1};
+    }
+    else
+    {
+        _motorPins = {portConfig.power1, portConfig.power2, portConfig.tach1, portConfig.tach2};
     }
 }
 

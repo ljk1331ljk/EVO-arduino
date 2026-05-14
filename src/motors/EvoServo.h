@@ -7,6 +7,7 @@
 #define EVO_SERVO_H
 
 #include "../helper/EvoPWMDriver.h"
+#include "../helper/EvoControllerConfig.h"
 
 /**
  * @enum ServoType
@@ -35,7 +36,15 @@ enum ServoChannel
     SERVO5 = 4, // Channel 4 on the multiplexer
     SERVO6 = 5, // Channel 5 on the multiplexer
     SERVO7 = 6, // Channel 6 on the multiplexer
-    SERVO8 = 7  // Channel 7 on the multiplexer
+    SERVO8 = 7,  // Channel 7 on the multiplexer
+    SERVO9 = 8,
+    SERVO10 = 9,
+    SERVO11 = 10,
+    SERVO12 = 11,
+    SERVO13 = 12,
+    SERVO14 = 13,
+    SERVO15 = 14,
+    SERVO16 = 15
 };
 
 /**
