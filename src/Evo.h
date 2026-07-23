@@ -1,9 +1,13 @@
 #ifndef EVO_H
 #define EVO_H
 
-#define LIBRARY_VERSION "1.0.0-beta"
+#define LIBRARY_VERSION "2.0.0-beta"
 
-#include "EVOX1.h"
+#include "boards/SelectedBoard.h"
+
+#include "controllers/EvoControllerBase.h"
+#include "controllers/EvoX1E.h"
+#include "controllers/EvoX1P.h"
 
 #include "helper/EvoHC05.h"
 #include "helper/OTAHandler.h"
