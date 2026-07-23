@@ -4,8 +4,8 @@
 /*
  * The Arduino Boards Manager package must set build.board to either:
  *
- *   EVO_X1E  -> Arduino defines ARDUINO_EVO_X1E
- *   EVO_X1P  -> Arduino defines ARDUINO_EVO_X1P
+ *   EVO_X1E  -> Arduino defines EVO_BOARD_X1E
+ *   EVO_X1P  -> Arduino defines EVO_BOARD_X1P
  */
 
 #if defined(EVO_BOARD_X1E)
