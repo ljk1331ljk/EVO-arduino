@@ -8,12 +8,12 @@
  *   EVO_X1P  -> Arduino defines ARDUINO_EVO_X1P
  */
 
-#if defined(ARDUINO_EVO_X1E)
+#if defined(EVO_BOARD_X1E)
 
 #include "BoardX1E.h"
 using EvoBoard = BoardX1E;
 
-#elif defined(ARDUINO_EVO_X1P)
+#elif defined(EVO_BOARD_X1P)
 
 #include "BoardX1P.h"
 using EvoBoard = BoardX1P;
