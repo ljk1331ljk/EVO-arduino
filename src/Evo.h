@@ -1,32 +1,24 @@
 #ifndef EVO_H
 #define EVO_H
 
-#define LIBRARY_VERSION "2.0.0-beta"
+#define EVO_LIBRARY_VERSION "2.0.0-beta"
 
-#include "boards/SelectedBoard.h"
-
+#include "controllers/ControllerDefinition.h"
+#include "controllers/SelectedController.h"
 #include "controllers/EvoControllerBase.h"
+
+#if defined(EVO_BOARD_X1E)
+
 #include "controllers/EvoX1E.h"
+
+#elif defined(EVO_BOARD_X1P)
+
 #include "controllers/EvoX1P.h"
 
-#include "helper/EvoHC05.h"
-#include "helper/OTAHandler.h"
-#include "helper/EvoPWMDriver.h"
+#else
 
-#include "motors/EvoMotor.h"
-#include "motors/EvoServo.h"
+#error "No EVO controller selected."
 
-#include "robotics/EvoMotorPair.h"
-#include "robotics/EvoTrace.h"
-
-#include "sensors/EV3ColorSensor.h"
-#include "sensors/EV3TouchSensor.h"
-#include "sensors/EvoRGBColorSensor.h"
-#include "sensors/EvoTOF.h"
-#include "sensors/EvoIMU.h"
-#include "sensors/EvoHuskyLens.h"
-#include "sensors/EvoOLED.h"
-#include "sensors/EvoLineLeader.h"
-#include "sensors/EvoTriButton.h"
+#endif
 
 #endif
