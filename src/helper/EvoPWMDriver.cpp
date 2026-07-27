@@ -1,17 +1,19 @@
 #include "EvoPWMDriver.h"
 
-void EvoPWMDriver::begin()
+bool EvoPWMDriver::begin()
 {
     xSemaphoreTake(_mutex, portMAX_DELAY);
     if (!begun)
     {
-        pwm.begin();
-        pwm.reset();
-        pwm.setOscillatorFrequency(27000000);
-        pwm.setPWMFreq(2500);
-        begun = true;
+        begun = pwm.begin();
+        if (begun)
+        {
+            pwm.setOscillatorFrequency(27000000);
+            pwm.setPWMFreq(_freq);
+        }
     }
     xSemaphoreGive(_mutex);
+    return begun;
 }
 
 void EvoPWMDriver::setPWM(uint8_t channel, uint16_t on, uint16_t off)

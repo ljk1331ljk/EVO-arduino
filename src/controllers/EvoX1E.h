@@ -27,6 +27,13 @@ public:
     static constexpr uint8_t HC05_PWR=45,HC05_RESET=46,HC05_RX=44,HC05_TX=43;
     static constexpr uint8_t TACH41=42,TACH42=41,TACH31=40,TACH32=39,TACH21=38,TACH22=48,TACH11=47,TACH12=21;
     static constexpr uint8_t MOTOR21=13,MOTOR22=12,MOTOR11=14,MOTOR12=15,MOTOR41=9,MOTOR42=8,MOTOR31=11,MOTOR32=10;
+    static constexpr MotorPinDefinition motorPins(uint8_t index)
+    {
+        return index == 0 ? MotorPinDefinition{MOTOR12, MOTOR11, TACH11, TACH12}
+             : index == 1 ? MotorPinDefinition{MOTOR21, MOTOR22, TACH21, TACH22}
+             : index == 2 ? MotorPinDefinition{MOTOR31, MOTOR32, TACH31, TACH32}
+                          : MotorPinDefinition{MOTOR41, MOTOR42, TACH41, TACH42};
+    }
     static constexpr uint8_t BUZZER_PIN=11,BUTTON_PIN=14,PIXEL_PIN=14;
     static constexpr uint8_t buttonPin(uint8_t) { return BUTTON_PIN; }
     static constexpr uint8_t SDA0_PIN=1,SCL0_PIN=2,SDA1_PIN=12,SCL1_PIN=13;

@@ -26,6 +26,13 @@ public:
     static constexpr uint8_t GPIO1A = 5, GPIO1B = 4, GPIO2A = 7, GPIO2B = 6;
     static constexpr uint8_t TACH41 = 42, TACH42 = 39, TACH31 = 41, TACH32 = 40, TACH21 = 38, TACH22 = 48, TACH11 = 47, TACH12 = 21;
     static constexpr uint8_t MOTOR11 = 12, MOTOR12 = 13, MOTOR21 = 15, MOTOR22 = 14, MOTOR31 = 0, MOTOR32 = 1, MOTOR41 = 2, MOTOR42 = 3;
+    static constexpr MotorPinDefinition motorPins(uint8_t index)
+    {
+        return index == 0 ? MotorPinDefinition{MOTOR12, MOTOR11, TACH11, TACH12}
+             : index == 1 ? MotorPinDefinition{MOTOR21, MOTOR22, TACH21, TACH22}
+             : index == 2 ? MotorPinDefinition{MOTOR31, MOTOR32, TACH31, TACH32}
+                          : MotorPinDefinition{MOTOR41, MOTOR42, TACH41, TACH42};
+    }
     static constexpr uint8_t I2C1 = 0, I2C2 = 1, I2C3 = 2, I2C4 = 3, I2C5 = 7, I2C6 = 6, I2C7 = 5, I2C8 = 4;
     static constexpr uint8_t BUZZER_PIN = 8, BUTTON_PIN_1 = 11, BUTTON_PIN_2 = 10, BUTTON_PIN_3 = 3;
     static constexpr uint8_t buttonPin(uint8_t index)
@@ -33,6 +40,13 @@ public:
         return index == 0 ? BUTTON_PIN_1 : (index == 1 ? BUTTON_PIN_2 : BUTTON_PIN_3);
     }
     static constexpr uint8_t NSLEEP_PIN = 46, BOOT_LED_PIN = 45, SHUTDOWN_PIN = 14;
+    static void enableMotorDriver()
+    {
+        // Preload the output latch before changing the pin mode so nSLEEP
+        // cannot briefly pulse LOW while the motor driver is enabled.
+        digitalWrite(NSLEEP_PIN, HIGH);
+        pinMode(NSLEEP_PIN, OUTPUT);
+    }
     static constexpr uint8_t SDA0_PIN = 1, SCL0_PIN = 2, SDA1_PIN = 12, SCL1_PIN = 13;
     static constexpr uint8_t DISPLAY_I2C_PORT = 7;
     static constexpr uint8_t TCA9548A_ADDR = 0x70, SSD1309_ADDR = 0x3C, SSD1309_CHANNEL_NUMBER = I2C8, BATTERY_CHARGER_ADDRESS = 0x6A, PCA9685PW_ADDRESS = 0x40;
