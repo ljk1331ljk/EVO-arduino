@@ -161,3 +161,5 @@ cython_debug/
 **/desktop.ini
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
+# PlatformIO build output
+.pio/

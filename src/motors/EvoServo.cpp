@@ -3,6 +3,10 @@
 EvoServo::EvoServo(ServoChannel servoChannel, ServoType servoType)
 {
     _servoChannel = static_cast<uint8_t>(servoChannel);
+    if (_servoChannel >= SelectedEvoController::SERVO_COUNT)
+    {
+        _servoChannel = static_cast<uint8_t>(SERVOUNDEFINED);
+    }
     switch (servoType)
     {
     case SG90:
@@ -30,6 +34,8 @@ EvoServo::EvoServo(ServoChannel servoChannel, ServoType servoType)
 
 void EvoServo::begin()
 {
+    if (_servoChannel == static_cast<uint8_t>(SERVOUNDEFINED))
+        return;
     driver.begin();
 }
 void EvoServo::setPulse(int minPulse, int maxPulse)
@@ -44,12 +50,16 @@ void EvoServo::setRange(int minRange, int maxRange)
 }
 void EvoServo::write(int position)
 {
+    if (_servoChannel == static_cast<uint8_t>(SERVOUNDEFINED))
+        return;
     driver.setPWMFreq(100); // Set frequency to 2500 Hz for servos
     driver.setPWM(_servoChannel, 0, map(position, _minRange, _maxRange, _minPulse, _maxPulse));
 }
 
 void EvoServo::setPWM(int on, int off)
 {
+    if (_servoChannel == static_cast<uint8_t>(SERVOUNDEFINED))
+        return;
     driver.setPWMFreq(100);
     driver.setPWM(_servoChannel, on, off);
 }

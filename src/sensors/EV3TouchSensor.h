@@ -14,7 +14,7 @@ class EV3TouchSensor
 {
 private:
     SensorPort _port; /**< The sensor port the touch sensor is connected to */
-    int _pin;         /**< The pin number for reading the touch sensor state */
+    int _pin = -1;    /**< The pin number for reading the touch sensor state */
 public:
     /**
      * @brief Constructs an EV3TouchSensor object.

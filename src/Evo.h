@@ -1,13 +1,14 @@
 #ifndef EVO_H
 #define EVO_H
 
-#define LIBRARY_VERSION "1.0.0-beta"
+#define EVO_LIBRARY_VERSION "2.0.0-beta"
 
-#include "EVOX1.h"
+#include "controllers/ControllerDefinition.h"
+#include "controllers/SelectedController.h"
 
-#include "helper/EvoHC05.h"
-#include "helper/OTAHandler.h"
-#include "helper/EvoPWMDriver.h"
+#include "helper/EvoI2CDevice.h"
+#include "helper/EvoSensorPort.h"
+#include "helper/Tones.h"
 
 #include "motors/EvoMotor.h"
 #include "motors/EvoServo.h"
@@ -17,12 +18,12 @@
 
 #include "sensors/EV3ColorSensor.h"
 #include "sensors/EV3TouchSensor.h"
+#include "sensors/EvoHuskyLens.h"
+#include "sensors/EvoIMU.h"
+#include "sensors/EvoLineLeader.h"
+#include "sensors/EvoOLED.h"
 #include "sensors/EvoRGBColorSensor.h"
 #include "sensors/EvoTOF.h"
-#include "sensors/EvoIMU.h"
-#include "sensors/EvoHuskyLens.h"
-#include "sensors/EvoOLED.h"
-#include "sensors/EvoLineLeader.h"
 #include "sensors/EvoTriButton.h"
 
 #endif

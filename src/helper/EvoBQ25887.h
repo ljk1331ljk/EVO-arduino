@@ -3,10 +3,10 @@
 
 #include <Arduino.h>
 #include <Wire.h>
-#include "X1pins.h"
+#include "../controllers/SelectedController.h"
 
 /* BQ25887 I2C Address*/
-#define BQ25887_I2C_ADDRESS 0x6A
+#define BQ25887_I2C_ADDRESS SelectedEvoController::BATTERY_CHARGER_ADDRESS
 
 #define BQ25887_PARTINFO 0x29 // 0b00101001
 

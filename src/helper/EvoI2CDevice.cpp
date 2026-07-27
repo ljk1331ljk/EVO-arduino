@@ -1,15 +1,21 @@
 #include "EvoI2CDevice.h"
+#include "../controllers/SelectedController.h"
 
 // Singleton instance
-I2CDevice &I2CDevice::getInstance(uint8_t muxAddress, int sda, int scl)
+I2CDevice &I2CDevice::getInstance()
 {
-    static I2CDevice instance(muxAddress, sda, scl);
+    static I2CDevice instance;
     return instance;
 }
 
 // Private constructor
-I2CDevice::I2CDevice(uint8_t muxAddress, int sda, int scl)
-    : wire(Wire), muxAddr(muxAddress), initialized(false), sdaPin(sda), sclPin(scl)
+I2CDevice::I2CDevice()
+    : wire(Wire),
+      muxAddr(SelectedEvoController::TCA9548A_ADDR),
+      initialized(false),
+      sdaPin(SelectedEvoController::SDA0_PIN),
+      sclPin(SelectedEvoController::SCL0_PIN),
+      selectedMuxChannel(0xFF)
 {
     initBus();
 }
@@ -29,19 +35,40 @@ void I2CDevice::initBus()
 // Select the I2C channel based on the enum class
 bool I2CDevice::selectChannel(I2CChannel channel)
 {
+    const int logicalChannel = static_cast<int>(channel);
+    if (logicalChannel < 0 || logicalChannel >= SelectedEvoController::I2C_CHANNEL_COUNT)
+        return false;
+
     if (channel != channelSelected)
     {
-        uint8_t channelNum = static_cast<uint8_t>(channel); // Convert enum to number
+        const uint8_t channelNum = getMuxChannel(channel);
         wire.beginTransmission(muxAddr);
         wire.write(1 << channelNum);
         if (wire.endTransmission() == 0)
         {
             channelSelected = channel;
+            selectedMuxChannel = channelNum;
             return true;
         }
         return false;
     }
-    return false;
+    return true;
+}
+
+uint8_t I2CDevice::getMuxChannel(I2CChannel channel) const
+{
+    switch (channel)
+    {
+    case I2C1: return SelectedEvoController::I2C1;
+    case I2C2: return SelectedEvoController::I2C2;
+    case I2C3: return SelectedEvoController::I2C3;
+    case I2C4: return SelectedEvoController::I2C4;
+    case I2C5: return SelectedEvoController::I2C5;
+    case I2C6: return SelectedEvoController::I2C6;
+    case I2C7: return SelectedEvoController::I2C7;
+    case I2C8: return SelectedEvoController::I2C8;
+    default: return 0xFF;
+    }
 }
 
 // Get selected channel

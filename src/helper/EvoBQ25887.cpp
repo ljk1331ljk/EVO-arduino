@@ -8,7 +8,7 @@ EvoBQ25887::EvoBQ25887()
 bool EvoBQ25887::begin()
 {
 
-    Wire1.begin(SDA1_PIN, SCL1_PIN);
+    Wire1.begin(SelectedEvoController::SDA1_PIN, SelectedEvoController::SCL1_PIN);
 
     if (this->readPartInfoReg() != BQ25887_PARTINFO)
     {
@@ -2305,7 +2305,7 @@ uint8_t EvoBQ25887::read8(uint8_t reg)
     Wire1.write(reg);
     Wire1.endTransmission(false);
 
-    Wire1.requestFrom(BQ25887_I2C_ADDRESS, 1, true);
+    Wire1.requestFrom(static_cast<uint8_t>(BQ25887_I2C_ADDRESS), static_cast<size_t>(1), true);
     byte0 = Wire1.read();
 
     return byte0;
@@ -2320,7 +2320,7 @@ uint16_t EvoBQ25887::read16(uint8_t reg)
     Wire1.write(reg);
     Wire1.endTransmission(false);
 
-    Wire1.requestFrom(BQ25887_I2C_ADDRESS, 2, true);
+    Wire1.requestFrom(static_cast<uint8_t>(BQ25887_I2C_ADDRESS), static_cast<size_t>(2), true);
     byte0 = Wire1.read();
     byte1 = Wire1.read();
 
@@ -2339,7 +2339,7 @@ uint32_t EvoBQ25887::read32(uint8_t reg)
     Wire1.write(reg);
     Wire1.endTransmission(false);
 
-    Wire1.requestFrom(BQ25887_I2C_ADDRESS, 4, true);
+    Wire1.requestFrom(static_cast<uint8_t>(BQ25887_I2C_ADDRESS), static_cast<size_t>(4), true);
     byte0 = Wire1.read();
     byte1 = Wire1.read();
     byte2 = Wire1.read();
@@ -2364,7 +2364,7 @@ int16_t EvoBQ25887::readADC(uint8_t reg)
     Wire1.write(reg);
     Wire1.endTransmission(false);
 
-    Wire1.requestFrom(BQ25887_I2C_ADDRESS, 2, true);
+    Wire1.requestFrom(static_cast<uint8_t>(BQ25887_I2C_ADDRESS), static_cast<size_t>(2), true);
     byte1 = Wire1.read();
     byte0 = Wire1.read();
 

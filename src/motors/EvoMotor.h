@@ -6,7 +6,7 @@
 #ifndef EVOMOTOR_H
 #define EVOMOTOR_H
 #include "../helper/EvoPWMDriver.h"
-#include "../helper/X1pins.h"
+#include "../controllers/SelectedController.h"
 #include "../helper/ESP32Encoder/ESP32Encoder.h"
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>

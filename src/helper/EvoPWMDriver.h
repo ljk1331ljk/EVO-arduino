@@ -2,6 +2,7 @@
 #define EVO_PWM_DRIVER_H
 
 #include <Wire.h>
+#include "../controllers/SelectedController.h"
 #include "../helper/AdafruitSensors/Adafruit_PWMServoDriver.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/semphr.h"
@@ -10,7 +11,7 @@ class EvoPWMDriver
 {
 
 public:
-    EvoPWMDriver() : pwm(0x40, Wire1)
+    EvoPWMDriver() : pwm(SelectedEvoController::PCA9685PW_ADDRESS, Wire1)
     {
         _mutex = xSemaphoreCreateMutex();
         configASSERT(_mutex != nullptr); // Crash early if allocation fails
