@@ -2,35 +2,44 @@
 
 EvoX1E evo;
 
+void showChannel(uint8_t channel)
+{
+  constexpr int maxAddresses = 5;
+  uint8_t addresses[maxAddresses];
+  int addressCount = evo.scanI2CChannel(
+      static_cast<I2CChannel>(channel), addresses, maxAddresses);
+
+  char line[22];
+  evo.clearDisplay();
+  snprintf(line, sizeof(line), "I2C channel %u", channel + 1);
+  evo.writeLineToDisplay(line, 0);
+
+  if (addressCount == 0)
+  {
+    evo.writeLineToDisplay("No devices found", 2);
+  }
+  else
+  {
+    for (int i = 0; i < addressCount; ++i)
+    {
+      snprintf(line, sizeof(line), "%d: 0x%02X", i + 1, addresses[i]);
+      evo.writeLineToDisplay(line, i + 2);
+    }
+  }
+  evo.drawDisplay();
+}
+
 void setup()
 {
   evo.begin();
-  Serial.begin(115200);
-  while (!Serial) // Waits for serial to be connected
-    ;
-  Serial.println("I2C Scanner");
-  delay(1000);
-  Serial.println("0x70 is the address of the multiplexor. It will show up on every I2C port.");
-
-  int maxAddresses = 5;
-  int numAddress = 0;
-  uint8_t i2CAddress[maxAddresses];
-  for (uint8_t i = 0; i < evo.getI2CChannelCount(); i++)
-  {
-    numAddress = evo.scanI2CChannel((I2CChannel)i, i2CAddress, maxAddresses);
-    if (numAddress != 0)
-    {
-      Serial.printf("%d addresse(s) found on I2C%d:", numAddress, i + 1);
-      for (int j = 0; j < numAddress; j++)
-      {
-        Serial.printf(" 0x%x", i2CAddress[j]);
-      }
-      Serial.println();
-    }
-  }
+  evo.setFontSize(8);
 }
 
 void loop()
 {
-  delay(1000);
+  for (uint8_t channel = 0; channel < evo.getI2CChannelCount(); ++channel)
+  {
+    showChannel(channel);
+    delay(2000);
+  }
 }
