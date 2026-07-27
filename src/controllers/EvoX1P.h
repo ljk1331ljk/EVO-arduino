@@ -40,6 +40,13 @@ public:
         return index == 0 ? BUTTON_PIN_1 : (index == 1 ? BUTTON_PIN_2 : BUTTON_PIN_3);
     }
     static constexpr uint8_t NSLEEP_PIN = 46, BOOT_LED_PIN = 45, SHUTDOWN_PIN = 14;
+    static void enableMotorDriver()
+    {
+        // Preload the output latch before changing the pin mode so nSLEEP
+        // cannot briefly pulse LOW while the motor driver is enabled.
+        digitalWrite(NSLEEP_PIN, HIGH);
+        pinMode(NSLEEP_PIN, OUTPUT);
+    }
     static constexpr uint8_t SDA0_PIN = 1, SCL0_PIN = 2, SDA1_PIN = 12, SCL1_PIN = 13;
     static constexpr uint8_t DISPLAY_I2C_PORT = 7;
     static constexpr uint8_t TCA9548A_ADDR = 0x70, SSD1309_ADDR = 0x3C, SSD1309_CHANNEL_NUMBER = I2C8, BATTERY_CHARGER_ADDRESS = 0x6A, PCA9685PW_ADDRESS = 0x40;

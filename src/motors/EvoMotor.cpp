@@ -13,6 +13,13 @@ uint8_t motorPortIndex(MotorPort motorPort)
     }
     return 0;
 }
+
+template <typename Board>
+void enableMotorDriver()
+{
+    if constexpr (Board::HAS_NSLEEP_PIN)
+        Board::enableMotorDriver();
+}
 }
 
 EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
@@ -78,6 +85,8 @@ void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, in
 
 void EvoMotor::begin()
 {
+    enableMotorDriver<SelectedEvoController>();
+
     driver.begin();
     encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
     encoder.clearCount();
@@ -415,7 +424,7 @@ void EvoMotor::runUntilStalled(int speed, bool blocking)
 
 void EvoMotor::pauseMotorTask()
 {
-    if (!this->motorTaskSuspended)
+    if (!this->motorTaskSuspended && this->motorTaskHandle != nullptr)
     {
         vTaskSuspend(this->motorTaskHandle);
         this->motorTaskSuspended = true;
@@ -424,7 +433,7 @@ void EvoMotor::pauseMotorTask()
 
 void EvoMotor::resumeMotorTask()
 {
-    if (this->motorTaskSuspended)
+    if (this->motorTaskSuspended && this->motorTaskHandle != nullptr)
     {
         vTaskResume(this->motorTaskHandle);
         this->motorTaskSuspended = false;

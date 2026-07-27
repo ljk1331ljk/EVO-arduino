@@ -59,11 +59,13 @@ void initializeOptionalPins()
     {
         pinMode(Board::SHUTDOWN_PIN, OUTPUT);
     }
+}
+
+template <typename Board>
+void enableMotorDriver()
+{
     if constexpr (Board::HAS_NSLEEP_PIN)
-    {
-        pinMode(Board::NSLEEP_PIN, OUTPUT);
-        digitalWrite(Board::NSLEEP_PIN, HIGH);
-    }
+        Board::enableMotorDriver();
 }
 
 bool getOnboardButtonPin(uint8_t buttonNumber, uint8_t &pin)
@@ -78,6 +80,8 @@ bool getOnboardButtonPin(uint8_t buttonNumber, uint8_t &pin)
 
 void EvoController::begin()
 {
+    enableMotorDriver<SelectedEvoController>();
+
     Wire.begin(SelectedEvoController::SDA0_PIN, SelectedEvoController::SCL0_PIN);
     Wire1.begin(SelectedEvoController::SDA1_PIN, SelectedEvoController::SCL1_PIN);
 
