@@ -7,6 +7,23 @@ EvoX1E evo;
 EvoX1P evo;
 #endif
 
+// Compile-only coverage for the public motor API. This function is never
+// called, so opening this example cannot unexpectedly move connected motors.
+[[maybe_unused]] static void verifyMotorApi()
+{
+    EvoMotor motor(M1, GENERICWITHOUTENCODER);
+    motor.setSpeedLimit(2000, 100);
+    motor.setStopBehaviour(BRAKE);
+    motor.setEncoderAvailable(false);
+    motor.run(0);
+    motor.coast();
+
+    EvoServo servo(SERVO1);
+    servo.setRange(0, 180);
+    servo.setPulse(300, 1200);
+    servo.write(90);
+}
+
 void setup()
 {
     Serial.begin(115200);

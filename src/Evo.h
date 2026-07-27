@@ -9,6 +9,12 @@
 #include "helper/EvoI2CDevice.h"
 #include "helper/EvoSensorPort.h"
 
+#include "motors/EvoMotor.h"
+#include "motors/EvoServo.h"
+
+#include "robotics/EvoMotorPair.h"
+#include "robotics/EvoTrace.h"
+
 #include "sensors/EV3ColorSensor.h"
 #include "sensors/EV3TouchSensor.h"
 #include "sensors/EvoHuskyLens.h"
