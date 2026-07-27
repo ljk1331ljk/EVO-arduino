@@ -5,7 +5,7 @@
 #include <Arduino.h>
 #include <functional>
 #include "SoftwareSerial/SoftwareSerial.h"
-#include "X1pins.h"
+#include "../controllers/SelectedController.h"
 
 enum SensorPort
 {
@@ -115,7 +115,8 @@ public:
 
 private:
     SoftwareSerial _sw;
-    uint8_t _txPin, _rxPin;
+    uint8_t _txPin = 0, _rxPin = 0;
+    bool _available = false;
     SensorPort _port;
     EV3SensorConfig _config;
 

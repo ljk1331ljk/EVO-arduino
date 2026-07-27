@@ -2,28 +2,28 @@
 
 static const char *TAG = "EvoSensorPort";
 
+namespace
+{
+template <typename Board>
+void configureEV3Port(SensorPort port, uint8_t &txPin, uint8_t &rxPin, bool &available)
+{
+    if constexpr (Board::HAS_EV3_SENSOR_PORTS)
+    {
+        switch (port)
+        {
+        case S1: txPin = Board::S11; rxPin = Board::S12; break;
+        case S2: txPin = Board::S21; rxPin = Board::S22; break;
+        case S3: txPin = Board::S31; rxPin = Board::S32; break;
+        case S4: txPin = Board::S41; rxPin = Board::S42; break;
+        }
+        available = true;
+    }
+}
+}
+
 EvoSensorPort::EvoSensorPort(SensorPort port) : _port(port)
 {
-    // _port = port;
-    switch (_port)
-    {
-    case S1:
-        _rxPin = S12;
-        _txPin = S11;
-        break;
-    case S2:
-        _rxPin = S22;
-        _txPin = S21;
-        break;
-    case S3:
-        _rxPin = S32;
-        _txPin = S31;
-        break;
-    case S4:
-        _rxPin = S42;
-        _txPin = S41;
-        break;
-    }
+    configureEV3Port<SelectedEvoController>(_port, _txPin, _rxPin, _available);
     this->_serialMutex = xSemaphoreCreateMutex();
 }
 
@@ -34,6 +34,9 @@ void EvoSensorPort::setBaudrate(uint8_t baud)
 
 bool EvoSensorPort::begin(int retries)
 {
+    if (!_available)
+        return false;
+
     stop();
     this->retries = retries;
 

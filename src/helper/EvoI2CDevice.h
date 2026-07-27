@@ -45,7 +45,9 @@ private:
     int sdaPin;       // SDA pin
     int sclPin;       // SCL pin
     I2CChannel channelSelected;
+    uint8_t selectedMuxChannel;
     void initBus(); // Private method to initialize the I2C bus
+    uint8_t getMuxChannel(I2CChannel channel) const;
 };
 
 #endif
