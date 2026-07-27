@@ -33,6 +33,15 @@ public:
     float getTopBattery();
     float getBottomBattery();
 
+    void waitForButton();
+    void waitForPress(int debounceMs = 0);
+    void waitForRelease(int debounceMs = 0);
+    void waitForBump(int debounceMs = 0);
+    void waitForPress(uint8_t buttonNumber, int debounceMs);
+    void waitForRelease(uint8_t buttonNumber, int debounceMs);
+    void waitForBump(uint8_t buttonNumber, int debounceMs);
+    ButtonState getButton(uint8_t buttonNumber = 1);
+
     void playTone(unsigned int frequency, int duration = -1, bool blocking = true);
     void stopTone();
 

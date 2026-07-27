@@ -28,6 +28,7 @@ public:
     static constexpr uint8_t MOTOR11 = 12, MOTOR12 = 13, MOTOR21 = 15, MOTOR22 = 14, MOTOR31 = 0, MOTOR32 = 1, MOTOR41 = 2, MOTOR42 = 3;
     static constexpr uint8_t I2C1 = 0, I2C2 = 1, I2C3 = 2, I2C4 = 3, I2C5 = 7, I2C6 = 6, I2C7 = 5, I2C8 = 4;
     static constexpr uint8_t BUZZER_PIN = 8, BUTTON_PIN_1 = 11, BUTTON_PIN_2 = 10, BUTTON_PIN_3 = 3;
+    static constexpr uint8_t BUTTON_PINS[BUTTON_COUNT] = {BUTTON_PIN_1, BUTTON_PIN_2, BUTTON_PIN_3};
     static constexpr uint8_t NSLEEP_PIN = 46, BOOT_LED_PIN = 45, SHUTDOWN_PIN = 14;
     static constexpr uint8_t SDA0_PIN = 1, SCL0_PIN = 2, SDA1_PIN = 12, SCL1_PIN = 13;
     static constexpr uint8_t DISPLAY_I2C_PORT = 7;

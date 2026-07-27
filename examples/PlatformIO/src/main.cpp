@@ -33,6 +33,21 @@ EvoX1P evo;
     (void)evo.getBottomBattery();
 }
 
+// Compile-only coverage for the onboard button API. The waits are never
+// executed, so the example does not block during startup.
+[[maybe_unused]] static void verifyButtonApi()
+{
+    (void)evo.getButton();
+    (void)evo.getButton(1);
+    evo.waitForButton();
+    evo.waitForPress(20);
+    evo.waitForRelease(20);
+    evo.waitForBump(20);
+    evo.waitForPress(1, 20);
+    evo.waitForRelease(1, 20);
+    evo.waitForBump(1, 20);
+}
+
 void setup()
 {
     Serial.begin(115200);

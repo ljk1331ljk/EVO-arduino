@@ -65,6 +65,15 @@ void initializeOptionalPins()
         digitalWrite(Board::NSLEEP_PIN, HIGH);
     }
 }
+
+bool getOnboardButtonPin(uint8_t buttonNumber, uint8_t &pin)
+{
+    if (buttonNumber == 0 || buttonNumber > SelectedEvoController::BUTTON_COUNT)
+        return false;
+
+    pin = SelectedEvoController::BUTTON_PINS[buttonNumber - 1];
+    return true;
+}
 }
 
 void EvoController::begin()
@@ -83,6 +92,10 @@ void EvoController::begin()
     }
 
     initializeOptionalPins<SelectedEvoController>();
+    for (uint8_t button = 0; button < SelectedEvoController::BUTTON_COUNT; ++button)
+    {
+        pinMode(SelectedEvoController::BUTTON_PINS[button], INPUT_PULLUP);
+    }
     initializeOnboardDisplay<SelectedEvoController>();
     setFontSize(8);
 }
@@ -140,6 +153,65 @@ float EvoController::getBottomBattery()
         return batteryCharger().getADC_VCELLBOT();
     }
     return 0.0f;
+}
+
+void EvoController::waitForButton()
+{
+    waitForBump(1, 0);
+}
+
+void EvoController::waitForPress(int debounceMs)
+{
+    waitForPress(1, debounceMs);
+}
+
+void EvoController::waitForRelease(int debounceMs)
+{
+    waitForRelease(1, debounceMs);
+}
+
+void EvoController::waitForBump(int debounceMs)
+{
+    waitForBump(1, debounceMs);
+}
+
+void EvoController::waitForPress(uint8_t buttonNumber, int debounceMs)
+{
+    uint8_t pin;
+    if (!getOnboardButtonPin(buttonNumber, pin))
+        return;
+
+    while (digitalRead(pin) != LOW)
+    {
+    }
+    delay(debounceMs);
+}
+
+void EvoController::waitForRelease(uint8_t buttonNumber, int debounceMs)
+{
+    uint8_t pin;
+    if (!getOnboardButtonPin(buttonNumber, pin))
+        return;
+
+    while (digitalRead(pin) == LOW)
+    {
+    }
+    delay(debounceMs);
+}
+
+void EvoController::waitForBump(uint8_t buttonNumber, int debounceMs)
+{
+    waitForPress(buttonNumber, debounceMs);
+    waitForRelease(buttonNumber, debounceMs);
+}
+
+ButtonState EvoController::getButton(uint8_t buttonNumber)
+{
+    uint8_t pin;
+    if (!getOnboardButtonPin(buttonNumber, pin))
+        return RELEASED;
+
+    return digitalRead(pin) == LOW ? PRESSED : RELEASED;
 }
 
 void EvoController::playTone(unsigned int frequency, int duration, bool blocking)
