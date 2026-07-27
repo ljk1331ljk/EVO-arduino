@@ -22,4 +22,12 @@ enum I2CChannel
     I2C8 = 7
 };
 
+struct MotorPinDefinition
+{
+    uint8_t power1;
+    uint8_t power2;
+    uint8_t encoder1;
+    uint8_t encoder2;
+};
+
 #endif
