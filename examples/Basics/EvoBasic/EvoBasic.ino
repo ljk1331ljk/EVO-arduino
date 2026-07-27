@@ -1,32 +1,28 @@
 #include <Evo.h>
 
-EVOX1 evo;
+#if defined(EVO_BOARD_X1E)
+EvoX1E evo;
+#elif defined(EVO_BOARD_X1P)
+EvoX1P evo;
+#endif
 
 void setup()
 {
-  evo.begin(); // initialises the Evo-X1 peripherals
+  Serial.begin(115200);
+  evo.begin();
 
-  evo.clearDisplay(); // clears the display buffer
-  evo.drawDisplay();  // draws the empty screen
+  Serial.print("EVO library: ");
+  Serial.println(EVO_LIBRARY_VERSION);
+  Serial.print("Controller: ");
+  Serial.println(evo.getControllerName());
+  Serial.print("Motor ports: ");
+  Serial.println(evo.getMotorCount());
+  Serial.print("Servo ports: ");
+  Serial.println(evo.getServoCount());
 
-  evo.clearDisplay();
-  evo.writeLineToDisplay("EvoBasic", 0);       // writes the program name to the display
-  evo.writeToDisplay("Evo Lib. Ver.", 0, 16);  // writes character array to the display
-  evo.writeToDisplay(LIBRARY_VERSION, 80, 16); // writes integers to the display
-  evo.writeToDisplay("Battery :", 0, 32);
-  evo.writeToDisplay(evo.getBattery(), 60, 32); // gets the battery level and displays on the screen
-  evo.drawDisplay();                            // draws the display
-
-  evo.waitForBump(100);       // waits for the button to be pressed
-  evo.playTone(NOTE_G4, 300); // plays the buzzer for 300ms
+  evo.playTone(880, 100);
 }
+
 void loop()
 {
-  // cycling through red green and blue colors using the RGB led
-  evo.setRGB(20, 0, 0);
-  delay(1000);
-  evo.setRGB(0, 20, 0);
-  delay(1000);
-  evo.setRGB(0, 0, 20);
-  delay(1000);
 }

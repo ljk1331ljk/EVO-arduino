@@ -1,19 +1,40 @@
 #include "EvoHC05.h"
 
+namespace
+{
+template <typename Board>
+void configureHC05Pins(int &pwr, int &reset, int &rx, int &tx, bool &available)
+{
+    if constexpr (Board::HAS_HC05)
+    {
+        pwr = Board::HC05_PWR;
+        reset = Board::HC05_RESET;
+        rx = Board::HC05_RX;
+        tx = Board::HC05_TX;
+        available = true;
+    }
+}
+}
+
 EvoHC05::EvoHC05()
 {
     this->_mode = BLMODE;
+    configureHC05Pins<SelectedEvoController>(_pwr, _reset, _rx, _tx, _available);
 }
 
 void EvoHC05::begin()
 {
+    if (!_available)
+        return;
     pinMode(this->_pwr, OUTPUT);
     pinMode(this->_reset, OUTPUT);
-    _sw.begin(2400, SWSERIAL_8N1, 44, 43);
+    _sw.begin(2400, SWSERIAL_8N1, _rx, _tx);
 }
 
 void EvoHC05::setMode(HC05Mode mode, int baud)
 {
+    if (!_available)
+        return;
     if (this->_mode != mode)
     {
         if (mode == ATMODE)
@@ -24,7 +45,7 @@ void EvoHC05::setMode(HC05Mode mode, int baud)
             digitalWrite(this->_pwr, LOW);
             delay(2000); // minimum : 700ms
             digitalWrite(this->_reset, LOW);
-            _sw.begin(38400, SWSERIAL_8N1, 44, 43);
+            _sw.begin(38400, SWSERIAL_8N1, _rx, _tx);
             this->_mode = ATMODE;
         }
         else if (mode == BLMODE)
@@ -32,7 +53,7 @@ void EvoHC05::setMode(HC05Mode mode, int baud)
             digitalWrite(this->_pwr, HIGH);
             delay(200);
             digitalWrite(this->_pwr, LOW);
-            _sw.begin(baud, SWSERIAL_8N1, 44, 43);
+            _sw.begin(baud, SWSERIAL_8N1, _rx, _tx);
             this->_mode = BLMODE;
         }
     }

@@ -1,10 +1,10 @@
 #ifndef EVO_X1P_H
 #define EVO_X1P_H
 #include "ControllerDefinition.h"
-#include "EvoControllerBase.h"
-class EvoX1P : public EvoControllerBase {
+#include "EvoController.h"
+class EvoX1P : public EvoController {
 public:
-    static constexpr EvoControllerId ID = EvoControllerId::X1P;
+    static constexpr EvoControllerId ID = 2;
     static constexpr const char *NAME = "Evo X1P";
     static constexpr bool HAS_RGB_LED = false;
     static constexpr bool HAS_DISPLAY = true;
@@ -30,6 +30,5 @@ public:
     static constexpr uint8_t NSLEEP_PIN=46,BOOT_LED_PIN=45,SHUTDOWN_PIN=14;
     static constexpr uint8_t SDA0_PIN=1,SCL0_PIN=2,SDA1_PIN=12,SCL1_PIN=13;
     static constexpr uint8_t TCA9548A_ADDR=0x70,SSD1309_ADDR=0x3C,SSD1309_CHANNEL_NUMBER=I2C8,BATTERY_CHARGER_ADDRESS=0x6A,PCA9685PW_ADDRESS=0x40;
-    EvoX1P(){ static_assert(SelectedEvoController::ID == EvoControllerId::X1P, "EvoX1P requires EVO_BOARD_X1P."); }
 };
 #endif

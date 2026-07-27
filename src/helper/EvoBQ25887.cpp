@@ -8,7 +8,7 @@ EvoBQ25887::EvoBQ25887()
 bool EvoBQ25887::begin()
 {
 
-    Wire1.begin(SDA1_PIN, SCL1_PIN);
+    Wire1.begin(SelectedEvoController::SDA1_PIN, SelectedEvoController::SCL1_PIN);
 
     if (this->readPartInfoReg() != BQ25887_PARTINFO)
     {

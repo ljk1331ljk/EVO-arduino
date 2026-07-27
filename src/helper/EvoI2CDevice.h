@@ -2,6 +2,7 @@
 #define EVO_I2C_DEVICE_H
 #include <Arduino.h>
 #include <Wire.h>
+#include "../controllers/SelectedController.h"
 
 enum I2CChannel
 {
@@ -20,7 +21,7 @@ class I2CDevice
 {
 public:
     // Singleton pattern to get the I2CDevice instance
-    static I2CDevice &getInstance(uint8_t muxAddress = 0x70, int sda = 1, int scl = 2);
+    static I2CDevice &getInstance();
 
     // Method to select the I2C channel on the multiplexer
     bool selectChannel(I2CChannel channel);
@@ -34,7 +35,7 @@ public:
     TwoWire &getBus();
 
 private:
-    I2CDevice(uint8_t muxAddress = 0x70, int sda = 1, int scl = 2); // Private constructor
+    I2CDevice();
     I2CDevice(const I2CDevice &) = delete;                          // Delete copy constructor
     I2CDevice &operator=(const I2CDevice &) = delete;               // Delete assignment operator
 

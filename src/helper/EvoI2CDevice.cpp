@@ -1,15 +1,19 @@
 #include "EvoI2CDevice.h"
 
 // Singleton instance
-I2CDevice &I2CDevice::getInstance(uint8_t muxAddress, int sda, int scl)
+I2CDevice &I2CDevice::getInstance()
 {
-    static I2CDevice instance(muxAddress, sda, scl);
+    static I2CDevice instance;
     return instance;
 }
 
 // Private constructor
-I2CDevice::I2CDevice(uint8_t muxAddress, int sda, int scl)
-    : wire(Wire), muxAddr(muxAddress), initialized(false), sdaPin(sda), sclPin(scl)
+I2CDevice::I2CDevice()
+    : wire(Wire),
+      muxAddr(SelectedEvoController::TCA9548A_ADDR),
+      initialized(false),
+      sdaPin(SelectedEvoController::SDA0_PIN),
+      sclPin(SelectedEvoController::SCL0_PIN)
 {
     initBus();
 }

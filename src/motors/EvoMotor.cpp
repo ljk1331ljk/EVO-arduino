@@ -40,27 +40,27 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
     {
     case M1:
         if (_motorFlip)
-            _motorPins = {MOTOR11, MOTOR12, TACH12, TACH11};
+            _motorPins = {SelectedEvoController::MOTOR11, SelectedEvoController::MOTOR12, SelectedEvoController::TACH12, SelectedEvoController::TACH11};
         else
-            _motorPins = {MOTOR12, MOTOR11, TACH11, TACH12};
+            _motorPins = {SelectedEvoController::MOTOR12, SelectedEvoController::MOTOR11, SelectedEvoController::TACH11, SelectedEvoController::TACH12};
         break;
     case M2:
         if (_motorFlip)
-            _motorPins = {MOTOR22, MOTOR21, TACH22, TACH21};
+            _motorPins = {SelectedEvoController::MOTOR22, SelectedEvoController::MOTOR21, SelectedEvoController::TACH22, SelectedEvoController::TACH21};
         else
-            _motorPins = {MOTOR21, MOTOR22, TACH21, TACH22};
+            _motorPins = {SelectedEvoController::MOTOR21, SelectedEvoController::MOTOR22, SelectedEvoController::TACH21, SelectedEvoController::TACH22};
         break;
     case M3:
         if (!_motorFlip)
-            _motorPins = {MOTOR31, MOTOR32, TACH31, TACH32};
+            _motorPins = {SelectedEvoController::MOTOR31, SelectedEvoController::MOTOR32, SelectedEvoController::TACH31, SelectedEvoController::TACH32};
         else
-            _motorPins = {MOTOR32, MOTOR31, TACH32, TACH31};
+            _motorPins = {SelectedEvoController::MOTOR32, SelectedEvoController::MOTOR31, SelectedEvoController::TACH32, SelectedEvoController::TACH31};
         break;
     case M4:
         if (!_motorFlip)
-            _motorPins = {MOTOR41, MOTOR42, TACH41, TACH42};
+            _motorPins = {SelectedEvoController::MOTOR41, SelectedEvoController::MOTOR42, SelectedEvoController::TACH41, SelectedEvoController::TACH42};
         else
-            _motorPins = {MOTOR42, MOTOR41, TACH42, TACH41};
+            _motorPins = {SelectedEvoController::MOTOR42, SelectedEvoController::MOTOR41, SelectedEvoController::TACH42, SelectedEvoController::TACH41};
         break;
     }
 }

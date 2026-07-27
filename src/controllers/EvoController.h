@@ -1,10 +1,14 @@
-#ifndef EVO_CONTROLLER_BASE_H
-#define EVO_CONTROLLER_BASE_H
+#ifndef EVO_CONTROLLER_H
+#define EVO_CONTROLLER_H
+
 #include <Arduino.h>
 #include "ControllerDefinition.h"
-#include "SelectedController.h"
-class EvoControllerBase {
+
+class EvoController
+{
 public:
+    void begin();
+
     const char *getControllerName() const;
     EvoControllerId getControllerId() const;
     uint8_t getMotorCount() const;
@@ -12,6 +16,7 @@ public:
     uint8_t getGPIOCount() const;
     uint8_t getButtonCount() const;
     uint8_t getI2CChannelCount() const;
+
     bool hasRGBLed() const;
     bool hasDisplay() const;
     bool hasBuzzer() const;
@@ -23,5 +28,9 @@ public:
     bool hasBootLed() const;
     bool hasShutdownPin() const;
     bool hasNSleepPin() const;
+
+    void playTone(unsigned int frequency, int duration = -1, bool blocking = true);
+    void stopTone();
 };
+
 #endif

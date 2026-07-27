@@ -7,6 +7,7 @@
 #define EVO_SERVO_H
 
 #include "../helper/EvoPWMDriver.h"
+#include "../controllers/SelectedController.h"
 
 /**
  * @enum ServoType
