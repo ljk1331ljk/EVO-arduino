@@ -48,6 +48,15 @@ EvoX1P evo;
     evo.waitForBump(1, 20);
 }
 
+// Compile-only coverage for I2C channel selection and scanning. This function
+// is never called, so it does not probe the bus during startup.
+[[maybe_unused]] static void verifyI2CApi()
+{
+    uint8_t addresses[5];
+    (void)evo.selectI2CChannel(I2C1);
+    (void)evo.scanI2CChannel(I2C1, addresses, 5);
+}
+
 void setup()
 {
     Serial.begin(115200);

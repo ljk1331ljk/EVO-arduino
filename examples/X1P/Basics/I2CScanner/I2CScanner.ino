@@ -15,7 +15,7 @@ void setup()
   int maxAddresses = 5;
   int numAddress = 0;
   uint8_t i2CAddress[maxAddresses];
-  for (int i = 0; i < 8; i++)
+  for (uint8_t i = 0; i < evo.getI2CChannelCount(); i++)
   {
     numAddress = evo.scanI2CChannel((I2CChannel)i, i2CAddress, maxAddresses);
     if (numAddress != 0)

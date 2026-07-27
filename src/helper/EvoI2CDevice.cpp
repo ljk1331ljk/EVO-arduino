@@ -1,4 +1,5 @@
 #include "EvoI2CDevice.h"
+#include "../controllers/SelectedController.h"
 
 // Singleton instance
 I2CDevice &I2CDevice::getInstance()

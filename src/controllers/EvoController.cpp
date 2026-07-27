@@ -107,6 +107,29 @@ uint8_t EvoController::getServoCount() const { return SelectedEvoController::SER
 uint8_t EvoController::getGPIOCount() const { return SelectedEvoController::GPIO_COUNT; }
 uint8_t EvoController::getButtonCount() const { return SelectedEvoController::BUTTON_COUNT; }
 uint8_t EvoController::getI2CChannelCount() const { return SelectedEvoController::I2C_CHANNEL_COUNT; }
+
+bool EvoController::selectI2CChannel(I2CChannel channel)
+{
+    return I2CDevice::getInstance().selectChannel(channel);
+}
+
+int EvoController::scanI2CChannel(
+    I2CChannel channel,
+    uint8_t *addresses,
+    int maxAddresses)
+{
+    if (addresses == nullptr || maxAddresses <= 0 || !selectI2CChannel(channel))
+        return 0;
+
+    int count = 0;
+    for (uint8_t address = 1; address < 127 && count < maxAddresses; ++address)
+    {
+        if (I2CDevice::getInstance().isI2CConnected(address))
+            addresses[count++] = address;
+    }
+    return count;
+}
+
 bool EvoController::hasRGBLed() const { return SelectedEvoController::HAS_RGB_LED; }
 bool EvoController::hasDisplay() const { return SelectedEvoController::HAS_DISPLAY; }
 bool EvoController::hasBuzzer() const { return SelectedEvoController::HAS_BUZZER; }

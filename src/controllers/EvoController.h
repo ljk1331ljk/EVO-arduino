@@ -16,6 +16,8 @@ public:
     uint8_t getGPIOCount() const;
     uint8_t getButtonCount() const;
     uint8_t getI2CChannelCount() const;
+    bool selectI2CChannel(I2CChannel channel);
+    int scanI2CChannel(I2CChannel channel, uint8_t *addresses, int maxAddresses = 5);
 
     bool hasRGBLed() const;
     bool hasDisplay() const;

@@ -2,20 +2,7 @@
 #define EVO_I2C_DEVICE_H
 #include <Arduino.h>
 #include <Wire.h>
-#include "../controllers/SelectedController.h"
-
-enum I2CChannel
-{
-    I2CUNDEFINED = -1,
-    I2C1 = 0, // Channel 0 on the multiplexer
-    I2C2 = 1, // Channel 1 on the multiplexer
-    I2C3 = 2, // Channel 2 on the multiplexer
-    I2C4 = 3, // Channel 3 on the multiplexer
-    I2C5 = 4, // Channel 4 on the multiplexer
-    I2C6 = 5, // Channel 5 on the multiplexer
-    I2C7 = 6, // Channel 6 on the multiplexer
-    I2C8 = 7  // Channel 7 on the multiplexer
-};
+#include "../controllers/ControllerDefinition.h"
 
 class I2CDevice
 {
