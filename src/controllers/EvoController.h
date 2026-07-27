@@ -31,6 +31,22 @@ public:
 
     void playTone(unsigned int frequency, int duration = -1, bool blocking = true);
     void stopTone();
+
+    void flipDisplayOrientation(bool flip = true);
+    void clearDisplay();
+    void setFontSize(uint8_t size);
+    void writeToDisplay(int value, int x, int y, bool clear = false, bool draw = false);
+    void writeToDisplay(double value, int x, int y, bool clear = false, bool draw = false);
+    void writeToDisplay(const char *value, int x, int y, bool clear = false, bool draw = false);
+    void writeLineToDisplay(int value, int line, bool clear = false, bool draw = false);
+    void writeLineToDisplay(double value, int line, bool clear = false, bool draw = false);
+    void writeLineToDisplay(const char *value, int line, bool clear = false, bool draw = false);
+    void drawDisplay();
+    void drawPixel(int x, int y, bool clear = false, bool draw = false);
+    void drawLine(int x0, int y0, int x1, int y1, bool clear = false, bool draw = false);
+    void drawRect(int x, int y, int width, int height, bool fill = false, bool clear = false, bool draw = false);
+    void drawCircle(int x, int y, int radius, bool fill = false, bool clear = false, bool draw = false);
+    void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2, bool clear = false, bool draw = false);
 };
 
 #endif

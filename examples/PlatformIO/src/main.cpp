@@ -26,6 +26,14 @@ void setup()
     {
         evo.playTone(880, 100);
     }
+
+    if (evo.hasDisplay())
+    {
+        evo.clearDisplay();
+        evo.writeLineToDisplay(evo.getControllerName(), 0);
+        evo.writeLineToDisplay(EVO_LIBRARY_VERSION, 1);
+        evo.drawDisplay();
+    }
 }
 
 void loop()

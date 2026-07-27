@@ -29,6 +29,7 @@ public:
     static constexpr uint8_t BUZZER_PIN=8,BUTTON_PIN_1=11,BUTTON_PIN_2=10,BUTTON_PIN_3=3;
     static constexpr uint8_t NSLEEP_PIN=46,BOOT_LED_PIN=45,SHUTDOWN_PIN=14;
     static constexpr uint8_t SDA0_PIN=1,SCL0_PIN=2,SDA1_PIN=12,SCL1_PIN=13;
+    static constexpr uint8_t DISPLAY_I2C_PORT=7;
     static constexpr uint8_t TCA9548A_ADDR=0x70,SSD1309_ADDR=0x3C,SSD1309_CHANNEL_NUMBER=I2C8,BATTERY_CHARGER_ADDRESS=0x6A,PCA9685PW_ADDRESS=0x40;
 };
 #endif

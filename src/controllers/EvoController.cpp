@@ -1,10 +1,46 @@
 #include "EvoController.h"
 #include "SelectedController.h"
 #include "../helper/EvoPWMDriver.h"
+#include "../helper/EvoI2CDevice.h"
+#include "../helper/U8g2/U8g2lib.h"
 #include <Wire.h>
 
 namespace
 {
+U8G2_SSD1306_128X64_NONAME_F_HW_I2C &onboardDisplay()
+{
+    static U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, U8X8_PIN_NONE);
+    return display;
+}
+
+uint8_t &onboardDisplayFontSize()
+{
+    static uint8_t fontSize = 8;
+    return fontSize;
+}
+
+template <typename Board>
+bool selectOnboardDisplay()
+{
+    if constexpr (Board::HAS_DISPLAY)
+    {
+        return I2CDevice::getInstance().selectChannel(
+            static_cast<I2CChannel>(Board::DISPLAY_I2C_PORT));
+    }
+    return false;
+}
+
+template <typename Board>
+void initializeOnboardDisplay()
+{
+    if constexpr (Board::HAS_DISPLAY)
+    {
+        selectOnboardDisplay<Board>();
+        onboardDisplay().setI2CAddress(Board::SSD1309_ADDR << 1);
+        onboardDisplay().begin();
+    }
+}
+
 template <typename Board>
 void initializeOptionalPins()
 {
@@ -35,6 +71,8 @@ void EvoController::begin()
     }
 
     initializeOptionalPins<SelectedEvoController>();
+    initializeOnboardDisplay<SelectedEvoController>();
+    setFontSize(8);
 }
 
 const char *EvoController::getControllerName() const { return SelectedEvoController::NAME; }
@@ -78,4 +116,160 @@ void EvoController::stopTone()
     {
         noTone(SelectedEvoController::BUZZER_PIN);
     }
+}
+
+void EvoController::flipDisplayOrientation(bool flip)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    onboardDisplay().setFlipMode(flip);
+}
+
+void EvoController::clearDisplay()
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    onboardDisplay().clearBuffer();
+}
+
+void EvoController::setFontSize(uint8_t size)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+
+    onboardDisplayFontSize() = size;
+    onboardDisplay().setFontPosTop();
+    switch (size)
+    {
+    case 4: onboardDisplay().setFont(u8g2_font_minimal3x3_tu); break;
+    case 5: onboardDisplay().setFont(u8g2_font_u8glib_4_tf); break;
+    case 6: onboardDisplay().setFont(u8g2_font_tiny5_tf); break;
+    case 7: onboardDisplay().setFont(u8g2_font_5x7_tf); break;
+    case 8: onboardDisplay().setFont(u8g2_font_6x10_tf); break;
+    case 9: onboardDisplay().setFont(u8g2_font_profont12_tf); break;
+    case 10: onboardDisplay().setFont(u8g2_font_6x13_tf); break;
+    default:
+        onboardDisplayFontSize() = 7;
+        onboardDisplay().setFont(u8g2_font_5x7_tf);
+        break;
+    }
+}
+
+void EvoController::writeToDisplay(int value, int x, int y, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    onboardDisplay().setCursor(x, y);
+    onboardDisplay().print(value);
+    if (draw)
+        onboardDisplay().sendBuffer();
+}
+
+void EvoController::writeToDisplay(double value, int x, int y, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    onboardDisplay().setCursor(x, y);
+    onboardDisplay().print(value);
+    if (draw)
+        onboardDisplay().sendBuffer();
+}
+
+void EvoController::writeToDisplay(const char *value, int x, int y, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    onboardDisplay().setCursor(x, y);
+    onboardDisplay().print(value);
+    if (draw)
+        onboardDisplay().sendBuffer();
+}
+
+void EvoController::writeLineToDisplay(int value, int line, bool clear, bool draw)
+{
+    writeToDisplay(value, 0, line * onboardDisplayFontSize(), clear, draw);
+}
+
+void EvoController::writeLineToDisplay(double value, int line, bool clear, bool draw)
+{
+    writeToDisplay(value, 0, line * onboardDisplayFontSize(), clear, draw);
+}
+
+void EvoController::writeLineToDisplay(const char *value, int line, bool clear, bool draw)
+{
+    writeToDisplay(value, 0, line * onboardDisplayFontSize(), clear, draw);
+}
+
+void EvoController::drawDisplay()
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    onboardDisplay().sendBuffer();
+}
+
+void EvoController::drawPixel(int x, int y, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    onboardDisplay().drawPixel(x, y);
+    if (draw)
+        onboardDisplay().sendBuffer();
+}
+
+void EvoController::drawLine(int x0, int y0, int x1, int y1, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    onboardDisplay().drawLine(x0, y0, x1, y1);
+    if (draw)
+        onboardDisplay().sendBuffer();
+}
+
+void EvoController::drawRect(int x, int y, int width, int height, bool fill, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    if (fill)
+        onboardDisplay().drawBox(x, y, width, height);
+    else
+        onboardDisplay().drawFrame(x, y, width, height);
+    if (draw)
+        onboardDisplay().sendBuffer();
+}
+
+void EvoController::drawCircle(int x, int y, int radius, bool fill, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    if (fill)
+        onboardDisplay().drawDisc(x, y, radius);
+    else
+        onboardDisplay().drawCircle(x, y, radius);
+    if (draw)
+        onboardDisplay().sendBuffer();
+}
+
+void EvoController::drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2, bool clear, bool draw)
+{
+    if (!selectOnboardDisplay<SelectedEvoController>())
+        return;
+    if (clear)
+        onboardDisplay().clearBuffer();
+    onboardDisplay().drawTriangle(x0, y0, x1, y1, x2, y2);
+    if (draw)
+        onboardDisplay().sendBuffer();
 }
