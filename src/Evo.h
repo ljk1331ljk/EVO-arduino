@@ -8,6 +8,7 @@
 
 #include "helper/EvoI2CDevice.h"
 #include "helper/EvoSensorPort.h"
+#include "helper/Tones.h"
 
 #include "motors/EvoMotor.h"
 #include "motors/EvoServo.h"
