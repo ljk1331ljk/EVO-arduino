@@ -71,7 +71,7 @@ bool getOnboardButtonPin(uint8_t buttonNumber, uint8_t &pin)
     if (buttonNumber == 0 || buttonNumber > SelectedEvoController::BUTTON_COUNT)
         return false;
 
-    pin = SelectedEvoController::BUTTON_PINS[buttonNumber - 1];
+    pin = SelectedEvoController::buttonPin(buttonNumber - 1);
     return true;
 }
 }
@@ -94,7 +94,7 @@ void EvoController::begin()
     initializeOptionalPins<SelectedEvoController>();
     for (uint8_t button = 0; button < SelectedEvoController::BUTTON_COUNT; ++button)
     {
-        pinMode(SelectedEvoController::BUTTON_PINS[button], INPUT_PULLUP);
+        pinMode(SelectedEvoController::buttonPin(button), INPUT_PULLUP);
     }
     initializeOnboardDisplay<SelectedEvoController>();
     setFontSize(8);
