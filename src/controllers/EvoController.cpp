@@ -1,5 +1,6 @@
 #include "EvoController.h"
 #include "SelectedController.h"
+#include "../helper/EvoBQ25887.h"
 #include "../helper/EvoPWMDriver.h"
 #include "../helper/EvoI2CDevice.h"
 #include "../helper/U8g2/U8g2lib.h"
@@ -7,6 +8,12 @@
 
 namespace
 {
+EvoBQ25887 &batteryCharger()
+{
+    static EvoBQ25887 charger;
+    return charger;
+}
+
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C &onboardDisplay()
 {
     static U8G2_SSD1306_128X64_NONAME_F_HW_I2C display(U8G2_R0, U8X8_PIN_NONE);
@@ -70,6 +77,11 @@ void EvoController::begin()
         EvoPWMDriver::getInstance().begin();
     }
 
+    if constexpr (SelectedEvoController::HAS_BATTERY_CHARGER)
+    {
+        batteryCharger().begin();
+    }
+
     initializeOptionalPins<SelectedEvoController>();
     initializeOnboardDisplay<SelectedEvoController>();
     setFontSize(8);
@@ -93,6 +105,42 @@ bool EvoController::hasPWMMultiplexer() const { return SelectedEvoController::HA
 bool EvoController::hasBootLed() const { return SelectedEvoController::HAS_BOOT_LED; }
 bool EvoController::hasShutdownPin() const { return SelectedEvoController::HAS_SHUTDOWN_PIN; }
 bool EvoController::hasNSleepPin() const { return SelectedEvoController::HAS_NSLEEP_PIN; }
+
+float EvoController::getBattery()
+{
+    if constexpr (SelectedEvoController::HAS_BATTERY_CHARGER)
+    {
+        batteryCharger().wdReset();
+        batteryCharger().setADC_EN(true);
+        batteryCharger().pollAllRegs();
+        return batteryCharger().getADC_VBAT();
+    }
+    return 0.0f;
+}
+
+float EvoController::getTopBattery()
+{
+    if constexpr (SelectedEvoController::HAS_BATTERY_CHARGER)
+    {
+        batteryCharger().wdReset();
+        batteryCharger().setADC_EN(true);
+        batteryCharger().pollAllRegs();
+        return batteryCharger().getADC_VCELLTOP();
+    }
+    return 0.0f;
+}
+
+float EvoController::getBottomBattery()
+{
+    if constexpr (SelectedEvoController::HAS_BATTERY_CHARGER)
+    {
+        batteryCharger().wdReset();
+        batteryCharger().setADC_EN(true);
+        batteryCharger().pollAllRegs();
+        return batteryCharger().getADC_VCELLBOT();
+    }
+    return 0.0f;
+}
 
 void EvoController::playTone(unsigned int frequency, int duration, bool blocking)
 {

@@ -24,6 +24,15 @@ EvoX1P evo;
     servo.write(90);
 }
 
+// Compile-only coverage for battery readings. This function is not called,
+// so it does not communicate with the charger in the example.
+[[maybe_unused]] static void verifyBatteryApi()
+{
+    (void)evo.getBattery();
+    (void)evo.getTopBattery();
+    (void)evo.getBottomBattery();
+}
+
 void setup()
 {
     Serial.begin(115200);

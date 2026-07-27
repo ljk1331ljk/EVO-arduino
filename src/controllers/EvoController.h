@@ -29,6 +29,10 @@ public:
     bool hasShutdownPin() const;
     bool hasNSleepPin() const;
 
+    float getBattery();
+    float getTopBattery();
+    float getBottomBattery();
+
     void playTone(unsigned int frequency, int duration = -1, bool blocking = true);
     void stopTone();
 
