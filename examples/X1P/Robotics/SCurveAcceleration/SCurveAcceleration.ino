@@ -4,44 +4,13 @@ EvoX1P evo;
 
 EvoMotor leftMotor(M1, ITERMK330, true);
 EvoMotor rightMotor(M2, ITERMK330);
+EvoMotorPair robot(&leftMotor, &rightMotor);
 
+const int START_SPEED = 200;
 const int MAX_SPEED = 1500;
-const unsigned long RAMP_TIME_MS = 2000;
-const unsigned long CRUISE_TIME_MS = 1000;
-const unsigned long UPDATE_INTERVAL_MS = 10;
-
-// Quintic smoothstep: position, velocity, and acceleration change smoothly.
-float sCurve(float progress)
-{
-  progress = constrain(progress, 0.0f, 1.0f);
-  return progress * progress * progress *
-         (progress * (progress * 6.0f - 15.0f) + 10.0f);
-}
-
-void setDriveSpeed(int speed)
-{
-  leftMotor.run(speed);
-  rightMotor.run(speed);
-}
-
-void rampSpeed(int startSpeed, int endSpeed, unsigned long durationMs)
-{
-  unsigned long startTime = millis();
-  unsigned long elapsed = 0;
-
-  while (elapsed < durationMs)
-  {
-    float progress = (float)elapsed / durationMs;
-    float blend = sCurve(progress);
-    int speed = startSpeed + (int)((endSpeed - startSpeed) * blend);
-
-    setDriveSpeed(speed);
-    delay(UPDATE_INTERVAL_MS);
-    elapsed = millis() - startTime;
-  }
-
-  setDriveSpeed(endSpeed);
-}
+const int ACCELERATION = 1000;
+const int DECELERATION = 1000;
+const int TRAVEL_DEGREES = 3600;
 
 void setup()
 {
@@ -52,12 +21,13 @@ void setup()
   evo.writeToDisplay("S-curve ready", 0, 0, true, true);
   evo.waitForBump();
 
-  rampSpeed(0, MAX_SPEED, RAMP_TIME_MS);
-  delay(CRUISE_TIME_MS);
-  rampSpeed(MAX_SPEED, 0, RAMP_TIME_MS);
+  robot.setStartSpeed(START_SPEED);
+  robot.setEndSpeed(START_SPEED);
+  robot.setAcceleration(ACCELERATION);
+  robot.setDeceleration(DECELERATION);
+  robot.setAccelerationProfile(AccelerationProfile::SCurve);
+  robot.moveDegrees(MAX_SPEED, MAX_SPEED, TRAVEL_DEGREES, BRAKE);
 
-  leftMotor.brake();
-  rightMotor.brake();
   evo.writeToDisplay("Complete", 0, 0, true, true);
 }
 
