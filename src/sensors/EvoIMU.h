@@ -15,6 +15,14 @@
 class EvoIMU
 {
 private:
+#if defined(EVO_BOARD_X1E)
+    static constexpr uint8_t IMU_ADDRESS = BNO055_ADDRESS_B; // 0x29
+#elif defined(EVO_BOARD_X1P)
+    static constexpr uint8_t IMU_ADDRESS = BNO055_ADDRESS_A; // 0x28
+#else
+#error "No EVO controller selected. Define EVO_BOARD_X1E or EVO_BOARD_X1P."
+#endif
+
     Adafruit_BNO055 bno;                             /**< Instance of the Adafruit BNO055 driver */
     I2CChannel _channel;                             /**< I2C channel used for communication */
     I2CDevice &i2CDevice = I2CDevice::getInstance(); /**< Reference to the singleton I2CDevice instance */
@@ -28,7 +36,7 @@ public:
      * @brief Constructs an EvoTCS34725 object.
      * @param channel The I2C channel to use.
      */
-    EvoIMU(I2CChannel channel) : bno(55, 0x29)
+    EvoIMU(I2CChannel channel) : bno(55, IMU_ADDRESS)
     {
         _channel = channel;
     }
