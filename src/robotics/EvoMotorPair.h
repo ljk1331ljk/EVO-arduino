@@ -4,6 +4,12 @@
 #include "../motors/EvoMotor.h"
 #include "../sensors/EvoIMU.h"
 
+enum class AccelerationProfile
+{
+    Trapezoidal,
+    SCurve
+};
+
 /**
  * @class EvoMotorPair
  * @brief A class to control a pair of EvoMotors synchronously.
@@ -16,6 +22,7 @@ private:
     EvoIMU *_imu;
     bool _imuAvailable = false, _useImu = false;
     int _startSpeed = 800, _endSpeed = 800, _accel = 10000, _decel = 10000;
+    AccelerationProfile _accelerationProfile = AccelerationProfile::Trapezoidal;
     int _kpSync = 70, _kiSync = 5, _kdSync = 800;
     float _kpGyro = 70, _kiGyro = 10, _kdGyro = 1200;
     int _kpIMU = 10, _kdIMU = 50;
@@ -65,6 +72,18 @@ public:
      * @return The deceleration factor.
      */
     int getDeceleration();
+
+    /**
+     * @brief Selects the acceleration profile used by profiled movements.
+     * @param profile Trapezoidal preserves the original behavior; SCurve
+     * provides smoother acceleration and deceleration transitions.
+     */
+    void setAccelerationProfile(AccelerationProfile profile);
+
+    /**
+     * @brief Gets the currently selected acceleration profile.
+     */
+    AccelerationProfile getAccelerationProfile() const;
 
     /**
      * @brief Sets the proportional-integral-derivative (PID) control parameters for the motor pairing.

@@ -1,4 +1,73 @@
 #include "EvoMotorPair.h"
+#include <climits>
+
+namespace
+{
+float sCurveProgress(float progress)
+{
+    progress = constrain(progress, 0.0f, 1.0f);
+    return progress * progress * progress *
+           (progress * (progress * 6.0f - 15.0f) + 10.0f);
+}
+
+int sCurveSpeed(int startSpeed, int endSpeed, float progress)
+{
+    return lroundf(startSpeed +
+                   (endSpeed - startSpeed) * sCurveProgress(progress));
+}
+
+int distanceProfileSpeed(
+    int startSpeed,
+    int peakSpeed,
+    int endSpeed,
+    int distance,
+    int accelDistance,
+    int decelDistance,
+    int totalDistance,
+    int acceleration,
+    int deceleration,
+    AccelerationProfile profile)
+{
+    const int decelStart = totalDistance - decelDistance;
+    if (profile == AccelerationProfile::Trapezoidal)
+    {
+        if (accelDistance > 0 && distance < accelDistance)
+            return min(
+                static_cast<int>(sqrt(
+                    startSpeed * startSpeed + 2.0f * acceleration * distance)),
+                peakSpeed);
+
+        if (decelDistance > 0 && distance > decelStart)
+            return max(
+                static_cast<int>(sqrt(max(
+                    0.0f,
+                    peakSpeed * peakSpeed -
+                        2.0f * deceleration * (distance - decelStart)))),
+                endSpeed);
+
+        return peakSpeed;
+    }
+
+    if (accelDistance > 0 && distance < accelDistance)
+        return sCurveSpeed(
+            startSpeed, peakSpeed, static_cast<float>(distance) / accelDistance);
+
+    if (decelDistance > 0 && distance > decelStart)
+        return sCurveSpeed(
+            peakSpeed,
+            endSpeed,
+            static_cast<float>(distance - decelStart) / decelDistance);
+
+    return peakSpeed;
+}
+
+int scaledMotorAngle(EvoMotor *motor, float powerRatio, int direction)
+{
+    if (powerRatio <= 0.0f)
+        return 0;
+    return static_cast<int>(motor->getAngle() / powerRatio) * direction;
+}
+}
 
 EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoIMU *imu)
 {
@@ -17,7 +86,7 @@ void EvoMotorPair::setEndSpeed(int endSpeed)
 
 void EvoMotorPair::setAcceleration(int accel)
 {
-    _accel = abs(accel);
+    _accel = max(abs(accel), 1);
 }
 
 int EvoMotorPair::getAcceleration()
@@ -27,12 +96,22 @@ int EvoMotorPair::getAcceleration()
 
 void EvoMotorPair::setDeceleration(int decel)
 {
-    _decel = abs(decel);
+    _decel = max(abs(decel), 1);
 }
 
 int EvoMotorPair::getDeceleration()
 {
     return _decel;
+}
+
+void EvoMotorPair::setAccelerationProfile(AccelerationProfile profile)
+{
+    _accelerationProfile = profile;
+}
+
+AccelerationProfile EvoMotorPair::getAccelerationProfile() const
+{
+    return _accelerationProfile;
 }
 
 void EvoMotorPair::setStopBehavior(MotorStop stopBehavior)
@@ -62,6 +141,13 @@ void EvoMotorPair::move(int leftSpeed, int rightSpeed)
 
 void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, MotorStop stopBehaviour)
 {
+    degrees = abs(degrees);
+    if (degrees == 0 || (leftSpeed == 0 && rightSpeed == 0))
+    {
+        stop();
+        return;
+    }
+
     _m1->resetAngle();
     _m2->resetAngle();
     int leftDir = leftSpeed == 0 ? 0 : (leftSpeed > 0 ? 1 : -1);
@@ -138,18 +224,18 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, Motor
     int integralIndex = 0;
     int integralSum = 0;
     int speed = startSpeed;
-    int leftEnc = _m1->getAngle() / leftPowerRatio;
-    int rightEnc = _m2->getAngle() / rightPowerRatio;
-    int enc = (leftEnc * leftDir + rightEnc * rightDir) / 2;
-    int encError = leftEnc * leftDir - rightEnc * rightDir;
+    int leftEnc = scaledMotorAngle(_m1, leftPowerRatio, leftDir);
+    int rightEnc = scaledMotorAngle(_m2, rightPowerRatio, rightDir);
+    int enc = (leftEnc + rightEnc) / 2;
+    int encError = leftEnc - rightEnc;
     int lSpeed, rSpeed;
     int sync;
 
     // ==================== ACCELERATION PHASE ====================
     while (enc < (degrees - decelDist))
     {
-        leftEnc = _m1->getAngle() / leftPowerRatio * leftDir;
-        rightEnc = _m2->getAngle() / rightPowerRatio * rightDir;
+        leftEnc = scaledMotorAngle(_m1, leftPowerRatio, leftDir);
+        rightEnc = scaledMotorAngle(_m2, rightPowerRatio, rightDir);
 
         if (leftSpeed != 0 && rightSpeed != 0)
         {
@@ -159,7 +245,10 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, Motor
             integralSum += encError - integralError[(integralIndex + 19) % 20];
             integralError[integralIndex] = encError;
 
-            speed = min(int(sqrt(startSpeed * startSpeed + 2 * accel * enc)), maxSpeed);
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, enc,
+                accelDist, decelDist, degrees, accel, decel,
+                _accelerationProfile);
 
             sync = encError * _kpSync + (encError - encPError) * _kdSync + integralSum * _kiSync;
 
@@ -170,23 +259,32 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, Motor
         {
             enc = rightEnc;
             lSpeed = 0;
-            rSpeed = min(int(sqrt(startSpeed * startSpeed + 2 * accel * rightEnc)), maxSpeed) * rightDir;
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, rightEnc,
+                accelDist, decelDist, degrees, accel, decel,
+                _accelerationProfile);
+            rSpeed = speed * rightDir;
         }
         else if (rightSpeed == 0)
         {
             enc = leftEnc;
             rSpeed = 0;
-            lSpeed = min(int(sqrt(startSpeed * startSpeed + 2 * accel * leftEnc)), maxSpeed) * leftDir;
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, leftEnc,
+                accelDist, decelDist, degrees, accel, decel,
+                _accelerationProfile);
+            lSpeed = speed * leftDir;
         }
         _m1->run(lSpeed);
         _m2->run(rSpeed);
         integralIndex = (integralIndex + 1) % 20;
         encPError = encError;
+        vTaskDelay(1);
     }
     while (enc < degrees)
     {
-        leftEnc = _m1->getAngle() / leftPowerRatio * leftDir;
-        rightEnc = _m2->getAngle() / rightPowerRatio * rightDir;
+        leftEnc = scaledMotorAngle(_m1, leftPowerRatio, leftDir);
+        rightEnc = scaledMotorAngle(_m2, rightPowerRatio, rightDir);
 
         if (leftSpeed != 0 && rightSpeed != 0)
         {
@@ -196,7 +294,10 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, Motor
             integralSum += encError - integralError[(integralIndex + 19) % 20];
             integralError[integralIndex] = encError;
 
-            speed = max(int(sqrt(maxSpeed * maxSpeed - 2 * decel * (enc - (degrees - decelDist)))), endSpeed);
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, enc,
+                accelDist, decelDist, degrees, accel, decel,
+                _accelerationProfile);
 
             int sync = encError * _kpSync + (encError - encPError) * _kdSync + integralSum * _kiSync;
 
@@ -207,19 +308,28 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, Motor
         {
             enc = rightEnc;
             lSpeed = 0;
-            rSpeed = max(int(sqrt(maxSpeed * maxSpeed - 2 * decel * (rightEnc - (degrees - decelDist)))), endSpeed) * rightDir;
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, rightEnc,
+                accelDist, decelDist, degrees, accel, decel,
+                _accelerationProfile);
+            rSpeed = speed * rightDir;
         }
         else if (rightSpeed == 0)
         {
             enc = leftEnc;
             rSpeed = 0;
-            lSpeed = max(int(sqrt(maxSpeed * maxSpeed - 2 * decel * (leftEnc - (degrees - decelDist)))), endSpeed) * leftDir;
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, leftEnc,
+                accelDist, decelDist, degrees, accel, decel,
+                _accelerationProfile);
+            lSpeed = speed * leftDir;
         }
 
         _m1->run(lSpeed);
         _m2->run(rSpeed);
         integralIndex = (integralIndex + 1) % 20;
         encPError = encError;
+        vTaskDelay(1);
     }
 
     if (stopBehaviour == MotorStop::HOLD)
@@ -241,6 +351,12 @@ void EvoMotorPair::moveDegrees(int leftSpeed, int rightSpeed, int degrees, Motor
 
 void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, int slowdowntime, MotorStop stopBehaviour)
 {
+    if (timems <= 0 || (leftSpeed == 0 && rightSpeed == 0))
+    {
+        stop();
+        return;
+    }
+
     _m1->resetAngle();
     _m2->resetAngle();
     int leftDir = leftSpeed == 0 ? 0 : (leftSpeed > 0 ? 1 : -1);
@@ -268,32 +384,43 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, int slowd
         accel = _accel * 2;
         decel = _decel * 2;
     }
+    const int startSpeed = min(_startSpeed, maxSpeed);
+    const int endSpeed = min(_endSpeed, maxSpeed);
+    const int accelDist =
+        maxSpeed > startSpeed
+            ? (maxSpeed * maxSpeed - startSpeed * startSpeed) / 2 / accel
+            : 0;
+    slowdowntime = constrain(slowdowntime, 0, timems);
 
-    long timenow = millis();
+    unsigned long timenow = millis();
 
     int encPError = 0;
     int integralError[20] = {0};
     int integralIndex = 1;
     int integralSum = 0;
-    int speed = _startSpeed;
-    int leftEnc = _m1->getAngle() / leftPowerRatio, rightEnc = _m2->getAngle() / rightPowerRatio;
-    int enc = (leftEnc * leftDir + rightEnc * rightDir) / 2;
-    int encError = leftEnc * leftDir - rightEnc * rightDir;
+    int speed = startSpeed;
+    int leftEnc = scaledMotorAngle(_m1, leftPowerRatio, leftDir);
+    int rightEnc = scaledMotorAngle(_m2, rightPowerRatio, rightDir);
+    int enc = (leftEnc + rightEnc) / 2;
+    int encError = leftEnc - rightEnc;
     int lSpeed, rSpeed;
-    while (timenow + timems - slowdowntime > millis())
+    while (millis() - timenow < static_cast<unsigned long>(timems - slowdowntime))
     {
-        leftEnc = _m1->getAngle() / leftPowerRatio * leftDir;
-        rightEnc = _m2->getAngle() / rightPowerRatio * rightDir;
+        leftEnc = scaledMotorAngle(_m1, leftPowerRatio, leftDir);
+        rightEnc = scaledMotorAngle(_m2, rightPowerRatio, rightDir);
 
         if (leftSpeed != 0 && rightSpeed != 0)
         {
             enc = (leftEnc + rightEnc) / 2;
             encError = leftEnc - rightEnc;
 
+            integralSum += encError - integralError[(integralIndex + 19) % 20];
             integralError[integralIndex] = encError;
-            integralSum += encError - integralError[(integralIndex - 1) % 20];
 
-            speed = min(int(sqrt(_startSpeed * _startSpeed + 2 * accel * enc)), abs(maxSpeed));
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, enc,
+                accelDist, 0, INT_MAX, accel, decel,
+                _accelerationProfile);
 
             int sync = encError * _kpSync + (encError - encPError) * _kdSync + integralSum * _kiSync;
 
@@ -304,33 +431,52 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, int slowd
         {
             enc = rightEnc;
             lSpeed = 0;
-            rSpeed = min(int(sqrt(_startSpeed * _startSpeed + 2 * accel * rightEnc)), abs(maxSpeed)) * rightDir;
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, rightEnc,
+                accelDist, 0, INT_MAX, accel, decel,
+                _accelerationProfile);
+            rSpeed = speed * rightDir;
         }
         else if (rightSpeed == 0)
         {
             enc = leftEnc;
             rSpeed = 0;
-            lSpeed = min(int(sqrt(_startSpeed * _startSpeed + 2 * accel * leftEnc)), abs(maxSpeed)) * leftDir;
+            speed = distanceProfileSpeed(
+                startSpeed, maxSpeed, endSpeed, leftEnc,
+                accelDist, 0, INT_MAX, accel, decel,
+                _accelerationProfile);
+            lSpeed = speed * leftDir;
         }
         _m1->run(constrain(lSpeed, -4000, 4000));
         _m2->run(constrain(rSpeed, -4000, 4000));
         integralIndex = (integralIndex + 1) % 20;
         encPError = encError;
+        vTaskDelay(1);
     }
-    while (timenow + timems > millis())
+    while (millis() - timenow < static_cast<unsigned long>(timems))
     {
-        leftEnc = _m1->getAngle() / leftPowerRatio * leftDir;
-        rightEnc = _m2->getAngle() / rightPowerRatio * rightDir;
+        leftEnc = scaledMotorAngle(_m1, leftPowerRatio, leftDir);
+        rightEnc = scaledMotorAngle(_m2, rightPowerRatio, rightDir);
+        const float decelProgress = slowdowntime == 0
+            ? 1.0f
+            : static_cast<float>(
+                  millis() - timenow - (timems - slowdowntime)) /
+                  slowdowntime;
 
         if (leftSpeed != 0 && rightSpeed != 0)
         {
             enc = (leftEnc + rightEnc) / 2;
             encError = leftEnc - rightEnc;
 
+            integralSum += encError - integralError[(integralIndex + 19) % 20];
             integralError[integralIndex] = encError;
-            integralSum += encError - integralError[(integralIndex - 1) % 20];
 
-            speed = max(int(sqrt(maxSpeed * maxSpeed - 2 * decel * enc)), abs(_endSpeed));
+            speed = _accelerationProfile == AccelerationProfile::SCurve
+                ? sCurveSpeed(maxSpeed, endSpeed, decelProgress)
+                : max(int(sqrt(max(
+                          0.0f,
+                          maxSpeed * maxSpeed - 2.0f * decel * enc))),
+                      endSpeed);
 
             int sync = encError * _kpSync + (encError - encPError) * _kdSync + integralSum * _kiSync;
 
@@ -341,18 +487,31 @@ void EvoMotorPair::moveTime(int leftSpeed, int rightSpeed, int timems, int slowd
         {
             enc = rightEnc;
             lSpeed = 0;
-            rSpeed = max(int(sqrt(maxSpeed * maxSpeed - 2 * decel * rightEnc)), abs(_endSpeed)) * rightDir;
+            speed = _accelerationProfile == AccelerationProfile::SCurve
+                ? sCurveSpeed(maxSpeed, endSpeed, decelProgress)
+                : max(int(sqrt(max(
+                          0.0f,
+                          maxSpeed * maxSpeed - 2.0f * decel * rightEnc))),
+                      endSpeed);
+            rSpeed = speed * rightDir;
         }
         else if (rightSpeed == 0)
         {
             enc = leftEnc;
             rSpeed = 0;
-            lSpeed = max(int(sqrt(maxSpeed * maxSpeed - 2 * decel * leftEnc)), abs(_endSpeed)) * leftDir;
+            speed = _accelerationProfile == AccelerationProfile::SCurve
+                ? sCurveSpeed(maxSpeed, endSpeed, decelProgress)
+                : max(int(sqrt(max(
+                          0.0f,
+                          maxSpeed * maxSpeed - 2.0f * decel * leftEnc))),
+                      endSpeed);
+            lSpeed = speed * leftDir;
         }
         _m1->run(constrain(lSpeed, -4000, 4000));
         _m2->run(constrain(rSpeed, -4000, 4000));
         integralIndex = (integralIndex + 1) % 20;
         encPError = encError;
+        vTaskDelay(1);
     }
     if (stopBehaviour == MotorStop::HOLD)
     {
@@ -453,6 +612,13 @@ void EvoMotorPair::spotTurnGyro(int motorSpeed, float heading, bool reset, Motor
 
 void EvoMotorPair::StraightDegreesIMU(int motorSpeed, int degrees, int heading, MotorStop stopBehaviour)
 {
+    degrees = abs(degrees);
+    if (degrees == 0 || motorSpeed == 0)
+    {
+        stop();
+        return;
+    }
+
     _m1->resetAngle();
     _m2->resetAngle();
     int dir = motorSpeed == 0 ? 0 : (motorSpeed > 0 ? 1 : -1);
@@ -521,7 +687,10 @@ void EvoMotorPair::StraightDegreesIMU(int motorSpeed, int degrees, int heading, 
         integralSum += headingError - integralError[(integralIndex + 19) % 20];
         integralError[integralIndex] = headingError;
 
-        speed = min(int(sqrt(startSpeed * startSpeed + 2 * accel * enc)), maxSpeed);
+        speed = distanceProfileSpeed(
+            startSpeed, maxSpeed, endSpeed, enc,
+            accelDist, decelDist, degrees, accel, decel,
+            _accelerationProfile);
 
         sync = (headingError * _kpGyro + (headingError - headingPError) * _kdGyro + integralSum * _kiGyro) * dir;
 
@@ -532,6 +701,7 @@ void EvoMotorPair::StraightDegreesIMU(int motorSpeed, int degrees, int heading, 
         _m2->run(rSpeed);
         integralIndex = (integralIndex + 1) % 20;
         headingPError = headingError;
+        vTaskDelay(1);
     }
     while (enc < degrees)
     {
@@ -544,7 +714,10 @@ void EvoMotorPair::StraightDegreesIMU(int motorSpeed, int degrees, int heading, 
         integralSum += headingError - integralError[(integralIndex + 19) % 20];
         integralError[integralIndex] = headingError;
 
-        speed = max(int(sqrt(maxSpeed * maxSpeed - 2 * decel * (enc - (degrees - decelDist)))), endSpeed);
+        speed = distanceProfileSpeed(
+            startSpeed, maxSpeed, endSpeed, enc,
+            accelDist, decelDist, degrees, accel, decel,
+            _accelerationProfile);
 
         sync = (headingError * _kpGyro + (headingError - headingPError) * _kdGyro + integralSum * _kiGyro) * dir;
 
@@ -555,6 +728,7 @@ void EvoMotorPair::StraightDegreesIMU(int motorSpeed, int degrees, int heading, 
         _m2->run(rSpeed);
         integralIndex = (integralIndex + 1) % 20;
         headingPError = headingError;
+        vTaskDelay(1);
     }
 
     if (stopBehaviour == MotorStop::HOLD)
@@ -578,6 +752,23 @@ void EvoMotorPair::brake()
 {
     _m1->brake();
     _m2->brake();
+}
+
+void EvoMotorPair::stop()
+{
+    switch (_stopBehavior)
+    {
+    case MotorStop::HOLD:
+        hold();
+        break;
+    case MotorStop::COAST:
+        coast();
+        break;
+    case MotorStop::BRAKE:
+    default:
+        brake();
+        break;
+    }
 }
 
 void EvoMotorPair::coast()

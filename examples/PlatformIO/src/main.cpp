@@ -18,6 +18,12 @@ EvoX1P evo;
     motor.run(0);
     motor.coast();
 
+    EvoMotor secondMotor(M2, GENERICWITHOUTENCODER);
+    EvoMotorPair motorPair(&motor, &secondMotor);
+    motorPair.setAccelerationProfile(AccelerationProfile::SCurve);
+    (void)motorPair.getAccelerationProfile();
+    motorPair.setAccelerationProfile(AccelerationProfile::Trapezoidal);
+
     EvoServo servo(SERVO1);
     servo.setRange(0, 180);
     servo.setPulse(300, 1200);
