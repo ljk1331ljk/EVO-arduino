@@ -30,12 +30,24 @@ private:
 
 public:
     /**
-     * @brief Constructor to initialize a motor pair.
+     * @brief Constructor to initialize a motor pair without an IMU.
+     * @param m1 Pointer to the first EvoMotor.
+     * @param m2 Pointer to the second EvoMotor.
+     */
+    EvoMotorPair(EvoMotor *m1, EvoMotor *m2);
+
+    /**
+     * @brief Constructor to initialize a motor pair with an IMU.
      * @param m1 Pointer to the first EvoMotor.
      * @param m2 Pointer to the second EvoMotor.
      * @param imu Pointer to the EvoIMU sensor.
      */
-    EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoIMU *imu = nullptr);
+    EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoIMU *imu);
+
+    /**
+     * @brief Checks whether this motor pair was constructed with an IMU.
+     */
+    bool hasIMU() const;
 
     /**
      * @brief Sets the start speed for the motors.

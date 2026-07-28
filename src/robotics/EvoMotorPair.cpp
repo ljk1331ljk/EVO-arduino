@@ -69,12 +69,24 @@ int scaledMotorAngle(EvoMotor *motor, float powerRatio, int direction)
 }
 }
 
-EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoIMU *imu)
+EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2)
+    : EvoMotorPair(m1, m2, nullptr)
 {
-    _m1 = m1;
-    _m2 = m2;
-    _imu = imu;
 }
+
+EvoMotorPair::EvoMotorPair(EvoMotor *m1, EvoMotor *m2, EvoIMU *imu)
+    : _m1(m1),
+      _m2(m2),
+      _imu(imu),
+      _imuAvailable(imu != nullptr)
+{
+}
+
+bool EvoMotorPair::hasIMU() const
+{
+    return _imuAvailable;
+}
+
 void EvoMotorPair::setStartSpeed(int startSpeed)
 {
     _startSpeed = abs(startSpeed);

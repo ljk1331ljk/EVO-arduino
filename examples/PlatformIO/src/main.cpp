@@ -20,6 +20,7 @@ EvoX1P evo;
 
     EvoMotor secondMotor(M2, GENERICWITHOUTENCODER);
     EvoMotorPair motorPair(&motor, &secondMotor);
+    (void)motorPair.hasIMU();
     motorPair.setAccelerationProfile(AccelerationProfile::SCurve);
     (void)motorPair.getAccelerationProfile();
     motorPair.setAccelerationProfile(AccelerationProfile::Trapezoidal);
