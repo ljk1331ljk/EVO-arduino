@@ -1,5 +1,27 @@
 #include "EvoMotor.h"
 
+namespace
+{
+uint8_t motorPortIndex(MotorPort motorPort)
+{
+    switch (motorPort)
+    {
+    case M1: return 0;
+    case M2: return 1;
+    case M3: return 2;
+    case M4: return 3;
+    }
+    return 0;
+}
+
+template <typename Board>
+void enableMotorDriver()
+{
+    if constexpr (Board::HAS_NSLEEP_PIN)
+        Board::enableMotorDriver();
+}
+}
+
 EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
 {
     switch (motorType)
@@ -36,32 +58,16 @@ EvoMotor::EvoMotor(MotorPort motorPort, MotorType motorType, bool motorFlip)
         break;
     }
 
-    switch (_motorPort)
+    const MotorPinDefinition pins =
+        SelectedEvoController::motorPins(motorPortIndex(_motorPort));
+
+    if (_motorFlip)
     {
-    case M1:
-        if (_motorFlip)
-            _motorPins = {SelectedEvoController::MOTOR11, SelectedEvoController::MOTOR12, SelectedEvoController::TACH12, SelectedEvoController::TACH11};
-        else
-            _motorPins = {SelectedEvoController::MOTOR12, SelectedEvoController::MOTOR11, SelectedEvoController::TACH11, SelectedEvoController::TACH12};
-        break;
-    case M2:
-        if (_motorFlip)
-            _motorPins = {SelectedEvoController::MOTOR22, SelectedEvoController::MOTOR21, SelectedEvoController::TACH22, SelectedEvoController::TACH21};
-        else
-            _motorPins = {SelectedEvoController::MOTOR21, SelectedEvoController::MOTOR22, SelectedEvoController::TACH21, SelectedEvoController::TACH22};
-        break;
-    case M3:
-        if (!_motorFlip)
-            _motorPins = {SelectedEvoController::MOTOR31, SelectedEvoController::MOTOR32, SelectedEvoController::TACH31, SelectedEvoController::TACH32};
-        else
-            _motorPins = {SelectedEvoController::MOTOR32, SelectedEvoController::MOTOR31, SelectedEvoController::TACH32, SelectedEvoController::TACH31};
-        break;
-    case M4:
-        if (!_motorFlip)
-            _motorPins = {SelectedEvoController::MOTOR41, SelectedEvoController::MOTOR42, SelectedEvoController::TACH41, SelectedEvoController::TACH42};
-        else
-            _motorPins = {SelectedEvoController::MOTOR42, SelectedEvoController::MOTOR41, SelectedEvoController::TACH42, SelectedEvoController::TACH41};
-        break;
+        _motorPins = {pins.power2, pins.power1, pins.encoder2, pins.encoder1};
+    }
+    else
+    {
+        _motorPins = {pins.power1, pins.power2, pins.encoder1, pins.encoder2};
     }
 }
 
@@ -79,6 +85,8 @@ void EvoMotor::setParameters(MotorPort motorPort, bool motorFlip, int maxSpd, in
 
 void EvoMotor::begin()
 {
+    enableMotorDriver<SelectedEvoController>();
+
     driver.begin();
     encoder.attachFullQuad(_motorPins.tach1, _motorPins.tach2);
     encoder.clearCount();
@@ -416,7 +424,7 @@ void EvoMotor::runUntilStalled(int speed, bool blocking)
 
 void EvoMotor::pauseMotorTask()
 {
-    if (!this->motorTaskSuspended)
+    if (!this->motorTaskSuspended && this->motorTaskHandle != nullptr)
     {
         vTaskSuspend(this->motorTaskHandle);
         this->motorTaskSuspended = true;
@@ -425,7 +433,7 @@ void EvoMotor::pauseMotorTask()
 
 void EvoMotor::resumeMotorTask()
 {
-    if (this->motorTaskSuspended)
+    if (this->motorTaskSuspended && this->motorTaskHandle != nullptr)
     {
         vTaskResume(this->motorTaskHandle);
         this->motorTaskSuspended = false;

@@ -95,13 +95,13 @@ private:
     uint16_t _holdPower = 2000;
     int _stallThreshold;
     int _targetValue, _targetSpeed, _targetThen, _targetEncoder = 0;
-    int _measuredSpeed;
+    int _measuredSpeed = 0;
     float _kp = 2000, _kd = 5000;
 
     ESP32Encoder encoder;
     EvoPWMDriver &driver = EvoPWMDriver::getInstance();
-    TaskHandle_t motorTaskHandle = NULL;
-    bool motorTaskSuspended;
+    TaskHandle_t motorTaskHandle = nullptr;
+    bool motorTaskSuspended = false;
     void pauseMotorTask();
     void resumeMotorTask();
     static void motorControlTask(void *parameter);
