@@ -26,6 +26,7 @@ public:
     static constexpr uint8_t GPIO1A = 5, GPIO1B = 4, GPIO2A = 7, GPIO2B = 6;
     static constexpr uint8_t TACH41 = 42, TACH42 = 39, TACH31 = 41, TACH32 = 40, TACH21 = 38, TACH22 = 48, TACH11 = 47, TACH12 = 21;
     static constexpr uint8_t MOTOR11 = 12, MOTOR12 = 13, MOTOR21 = 15, MOTOR22 = 14, MOTOR31 = 0, MOTOR32 = 1, MOTOR41 = 2, MOTOR42 = 3;
+    static constexpr uint8_t SERVO1 = 15, SERVO2 = 16, SERVO3 = 17, SERVO4 = 18;
     static constexpr uint8_t I2C1 = 0, I2C2 = 1, I2C3 = 2, I2C4 = 3, I2C5 = 7, I2C6 = 6, I2C7 = 5, I2C8 = 4;
     static constexpr uint8_t BUZZER_PIN = 8, BUTTON_PIN_1 = 11, BUTTON_PIN_2 = 10, BUTTON_PIN_3 = 3;
     static constexpr uint8_t buttonPin(uint8_t index)
